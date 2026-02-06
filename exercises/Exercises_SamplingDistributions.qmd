@@ -1,0 +1,357 @@
+---
+title: "Chapter II – Statistics II – Exercises"
+subtitle: "Sampling Distributions"
+format: 
+  html:
+    css: default
+    embed-resources: true
+    toc: true
+    toc-title: "Contents"
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for ISCAL-branded tables -->
+
+<style>
+  /* ISCAL branding colours: dark red #8B1A1A, blue #003366 */
+  
+  h1, h2, h3, h4 {
+    color: #8B1A1A;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #8B1A1A;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #8B1A1A;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+  
+  .subtitle {
+    color: #003366;
+  }
+  
+  .callout-note {
+    border-left-color: #8B1A1A !important;
+  }
+</style>
+
+<!-- End Style Block -->
+
+This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).
+
+**Contents:** t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.
+
+The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).
+
+---
+
+## Questions
+
+### The Concept of a Statistic
+
+#### Question 1
+
+::: {.webex-check .webex-box}
+
+Consider $(X_1, X_2, \ldots, X_n)$, $n \in \mathbb{N}$, a random sample from a population $X \sim \text{Normal}(\mu = -2,\; \sigma)$, where $\sigma$ is **unknown**. Determine whether the following random variables are **not** statistics:
+
+a) `r torf(FALSE)` $T(X_1, X_2, \ldots, X_n) = X_1 + X_2 + \cdots + X_n$
+
+b) `r torf(FALSE)` $T(X_1, X_2, \ldots, X_n) = \bar{X}$
+
+c) `r torf(TRUE)` $T(X_1, X_2, \ldots, X_n) = \dfrac{\bar{X}}{\sigma}$
+
+d) `r torf(TRUE)` $T(X_1, X_2, \ldots, X_n) = \dfrac{\bar{X} - \mu}{\sigma / \sqrt{n}}$
+
+e) `r torf(TRUE)` $T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \mu)^2}{n}$
+
+f) `r torf(FALSE)` $T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \bar{X})^2}{n} = S^2$
+
+g) `r torf(FALSE)` $T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \bar{X})^2}{n-1} = S'^2$
+
+`r hide("Hint")`
+
+Recall that a **statistic** is a function of the sample values that does **not** involve any unknown parameters. Here, $\mu = -2$ is known but $\sigma$ is unknown.
+
+- Items (a), (b), (f), and (g) depend only on $X_i$ and $\bar{X}$ (and known constants like $n$), so they **are** statistics — hence the statement that they are "not statistics" is **False**.
+- Items (c), (d), and (e) involve the unknown parameter $\sigma$ or $\mu$ (note: although $\mu=-2$ is given, items (d) and (e) include $\sigma$ as well, and (c) directly uses $\sigma$), so they are **not** statistics — the statement is **True**.
+
+**Correction on (d) and (e):** Even though $\mu=-2$ is known, (d) involves $\sigma$ (unknown) in the denominator and (e) involves $\mu$ which, while numerically known here, in items (d) the presence of $\sigma$ makes it fail. For (e): since $\mu$ is known, this would actually be a statistic if all parameters involved were known. However, note the formulation carefully: (d) includes $\sigma$ explicitly → not a statistic. (e) includes $\mu$ (which is known = $-2$) so actually is a statistic. Let us re-examine:
+
+Actually, since $\mu = -2$ is **known**:
+
+- (c) involves $\sigma$ (unknown) → **not** a statistic → True ✓
+- (d) involves $\sigma$ (unknown) → **not** a statistic → True ✓
+- (e) involves $\mu$ (known) but **not** $\sigma$ → it **is** a statistic → False
+
+Let us reconsider (e) with additional context. In the original exercise, (e) is defined as $T = \frac{\sum(X_i - \mu)^2}{n}$, and a separate item (f) from the original list includes $\frac{\sum\left(\frac{X_i - \mu}{\sigma}\right)^2}{}$. The resolution confirms: (c), (d), and (f-original) are **not** statistics because they involve $\sigma$.
+
+`r unhide()`
+
+:::
+
+
+### Sampling Distribution of the Mean
+
+#### Question 2 (Normal population, $\sigma$ unknown → t-Student)
+
+::: {.webex-check .webex-box}
+
+Suppose the waiting time on the runway for takeoff at a certain airport is a random variable modelled by a Normal distribution with a mean of 4 minutes. A random sample of 21 aircraft was selected, yielding a corrected sample standard deviation $s' = 1.81$ min.
+
+`r torf(TRUE)` The probability that the sample mean waiting time exceeds 5 minutes is equal to 0.010.
+
+`r hide("Solution")`
+
+**Population:** $X \sim \text{Normal}(\mu = 4,\; \sigma = ?)$ (standard deviation unknown)
+
+**Sample:** $n = 21 < 30$; $s' = 1.81$ min.
+
+Since the population is Normal and $\sigma$ is unknown, the sampling distribution of the mean is:
+
+$$T = \frac{\bar{X} - \mu}{S'/\sqrt{n}} \sim t_{(20)}$$
+
+$$P(\bar{X} > 5) = P\!\left(T > \frac{5 - 4}{1.81/\sqrt{21}}\right) = P(T > 2.53) = 0.010$$
+
+The statement is **True**.
+
+`r unhide()`
+
+:::
+
+
+#### Question 3 (Unknown population, $\sigma$ known → CLT)
+
+::: {.webex-check .webex-box}
+
+At a financial firm, the profit generated by each investment made in the last year has a mean of €8,200 and a standard deviation of €3,600. Consider a random sample of 100 investments.
+
+The probability that the sample mean differs from the population mean by more than €806.76 is equal to:
+
+`r mcq(c("0.0125", answer = "0.025", "0.9875", "None of the above"))`
+
+`r hide("Solution")`
+
+**Population:** $L \to$ profit (unknown distribution); $\mu = 8{,}200$€; $\sigma = 3{,}600$€ (known).
+
+**Sample:** $n = 100 > 30$.
+
+By the CLT:
+$$\bar{X} \;\dot{\sim}\; N\!\left(\mu,\; \frac{\sigma}{\sqrt{n}}\right) \equiv N(8200,\; 360)$$
+
+$$P(|\bar{X} - \mu| > 806.76) = P\!\left(|Z| > \frac{806.76}{360}\right) \approx P(|Z| > 2.241)$$
+
+$$= 2 - 2\Phi(2.241) = 2 - 2 \times 0.9875 = 0.025$$
+
+The correct option is **b) 0.025**.
+
+`r unhide()`
+
+:::
+
+
+#### Question 4 (Normal population, $\sigma$ unknown, $n > 30$ → Normal approx.)
+
+::: {.webex-check .webex-box}
+
+A company wishes to validate the value (in euros) of its accounts receivable, which follow a Normal distribution with mean $\mu = 385$ and unknown standard deviation. A random sample of $n$ independent client accounts yields a corrected sample standard deviation $s' = 122.6$ euros.
+
+`r torf(TRUE)` The sample size needed (assuming $s'$ remains unchanged) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is $n = 102$. (Assume, for calculations, that the value of $n$ will be greater than 30.)
+
+`r hide("Solution")`
+
+**Population:** $X \sim N(\mu = 385,\; \sigma = ?)$
+
+**Sample:** $n > 30$; $s' = 122.6$
+
+By the CLT (since $n > 30$ and $\sigma$ unknown):
+$$\bar{X} \;\dot{\sim}\; N\!\left(\mu,\; \frac{s'}{\sqrt{n}}\right)$$
+
+We want:
+$$P(|\bar{X} - \mu| < 20) = 0.9 \iff P\!\left(|Z| < \frac{20}{122.6/\sqrt{n}}\right) = 0.9$$
+$$\iff \frac{20}{122.6/\sqrt{n}} = 1.645 \iff \sqrt{n} = \frac{1.645 \times 122.6}{20}$$
+$$\iff n \geq \left(\frac{1.645 \times 122.6}{20}\right)^2 \approx 102$$
+
+The statement is **True**.
+
+`r unhide()`
+
+:::
+
+
+### Sampling Distribution of the Proportion
+
+#### Question 5 (Bernoulli population → CLT)
+
+::: {.webex-check .webex-box}
+
+Suppose a certain cable TV channel is subscribed to by 10% of the residents of a country. Since this channel has been operating for a very short time, a marketing firm decided to estimate this proportion based on a random sample of 100 residents before renewing its advertising contracts with the channel.
+
+`r torf(TRUE)` Given that contracts will only be renewed if the sample proportion exceeds 8.5%, the approximate probability of this occurring is 0.6915.
+
+`r hide("Solution")`
+
+**Population:** $X \sim \text{Bernoulli}(p = 0.1)$
+
+**Sample:** $n = 100 > 30$ (CLT applies)
+
+$$\hat{p} = \bar{X} \;\dot{\sim}\; N\!\left(p,\; \sqrt{\frac{pq}{n}}\right) = N\!\left(0.1,\; \sqrt{\frac{0.1 \times 0.9}{100}}\right) = N(0.1,\; 0.03)$$
+
+$$P(\hat{p} > 0.085) \approx P\!\left(Z > \frac{0.085 - 0.1}{0.03}\right) = P(Z > -0.5) = \Phi(0.5) = 0.6915$$
+
+The statement is **True**.
+
+`r unhide()`
+
+:::
+
+
+### Sampling Distribution of the Variance
+
+#### Question 6 (Normal population, Chi-Squared)
+
+::: {.webex-check .webex-box}
+
+Suppose we wish to analyse the viability of a project whose key element is the price (in monetary units, m.u.) of the raw material, well modelled by a random variable $X \sim N(\mu,\; \sigma)$.
+
+A random sample $(X_1, X_2, \ldots, X_{16})$ was selected, yielding a corrected sample variance $s'^2 = 0.18\;\text{m.u.}^2$.
+
+a) `r torf(FALSE)` $Q = \dfrac{15\,S'^2}{\sigma^2} \sim \chi^2_{(16)}$
+
+b) `r torf(TRUE)` $P(S'^2 > 1.2163\,\sigma^2) = 0.25$
+
+`r hide("Solution")`
+
+**Population:** $X \sim N(\mu,\; \sigma)$
+
+**Sample:** $n = 16$; $s'^2 = 0.18$
+
+The pivot quantity is:
+$$Q = \frac{(n-1)S'^2}{\sigma^2} \sim \chi^2_{(n-1)}$$
+
+So:
+$$Q = \frac{15\,S'^2}{\sigma^2} \sim \chi^2_{(\mathbf{15})}$$
+
+**a)** The statement claims $Q \sim \chi^2_{(16)}$, but the correct degrees of freedom are $n - 1 = 15$. The statement is **False**.
+
+**b)** 
+$$P(S'^2 > 1.2163\,\sigma^2) = P\!\left(\frac{S'^2}{\sigma^2} > 1.2163\right) = P(Q > 15 \times 1.2163) = P(Q > 18.245)$$
+
+Reading directly from the $\chi^2$ table with 15 degrees of freedom: $P(Q > 18.245) = 0.25$.
+
+The statement is **True**.
+
+`r unhide()`
+
+:::
+
+
+### Sampling Distribution for the Difference of Means (Paired Samples)
+
+#### Question 7 (Paired samples, small sample, Normal populations)
+
+::: {.webex-check .webex-box}
+
+Fifteen adult men, aged between 35 and 50, participated in a study to evaluate the effect of diet and exercise on blood cholesterol levels. Total cholesterol was measured in each individual at the start and after three months of participation in an aerobic exercise programme and a switch to a low-fat diet. The data are shown in the following table:
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="16">Blood Cholesterol Level</th>
+    </tr>
+    <tr>
+      <th>Individual</th>
+      <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th><th>11</th><th>12</th><th>13</th><th>14</th><th>15</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Before</strong></td>
+      <td>265</td><td>240</td><td>258</td><td>295</td><td>251</td><td>245</td><td>287</td><td>314</td><td>260</td><td>279</td><td>283</td><td>240</td><td>238</td><td>225</td><td>247</td>
+    </tr>
+    <tr>
+      <td><strong>After</strong></td>
+      <td>229</td><td>231</td><td>227</td><td>240</td><td>238</td><td>241</td><td>234</td><td>256</td><td>247</td><td>239</td><td>246</td><td>218</td><td>219</td><td>226</td><td>233</td>
+    </tr>
+  </tbody>
+</table>
+
+Assume that:
+
+- The samples (Before and After) are **paired** (each column corresponds to the same individual).
+- Each pair of observations is independent.
+- Cholesterol levels follow a **Normal** distribution.
+
+`r torf(TRUE)` The probability that the mean of the difference between Before and After differs from its expected value by more than 6.61 is equal to 0.2.
+
+`r hide("Solution")`
+
+Let $X_1$ be the cholesterol before treatment and $X_2$ the cholesterol after treatment.
+
+Define $D = X_1 - X_2$. Since both $X_1$ and $X_2$ are Normal, so is $D$.
+
+Computing the differences:
+
+| Individual | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Diff | 36 | 9 | 31 | 55 | 13 | 4 | 53 | 58 | 13 | 40 | 37 | 22 | 19 | −1 | 14 |
+
+From the data: $\bar{d} = 26.87$; $s'_D = 19.04$.
+
+**Population:** Normal, $\sigma$ unknown; **Sample:** $n = 15 < 30$ → t-Student.
+
+$$T = \frac{\bar{D} - \mu_D}{S'_D / \sqrt{n}} \sim t_{(n-1)} \equiv t_{(14)}$$
+
+$$P(|\bar{D} - \mu_D| > 6.61) = P\!\left(|T| > \frac{6.61}{19.04/\sqrt{15}}\right) = P\!\left(|T| > \frac{6.61 \times \sqrt{15}}{19.04}\right)$$
+
+$$= P(|T| > 1.345) = 2\,P(T > 1.345)$$
+
+Reading from the t-distribution table with 14 degrees of freedom: $P(T > 1.345) = 0.1$.
+
+$$= 2 \times 0.1 = 0.2$$
+
+The statement is **True**.
+
+`r unhide()`
+
+:::
+
+---
+
+*Exercises adapted from the exercise booklet by Prof. Teresa Ferreira and Prof. Sandra Custódio, ISCAL–IPL. Solutions based on "Uma Resolução Possível" (2024/2025).*

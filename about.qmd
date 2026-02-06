@@ -1,5 +1,11 @@
 ---
-title: "About"
+title: "Material"
 ---
 
-About this site
+## Slides
+
+1. [Sampling Distributions](slides/sampling_distributions.qmd)
+
+## Exercises
+
+1. [Sampling Distributions](exercises/Exercises_SamplingDistributions.qmd)

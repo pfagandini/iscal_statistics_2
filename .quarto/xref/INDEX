@@ -4,5 +4,20 @@
   },
   "about.qmd": {
     "about.html": "92f216d4"
+  },
+  "slides/sampling_distributions.qmd": {
+    "sampling_distributions.html": "e706697e"
+  },
+  "slides/sampling_distributions_D.qmd": {
+    "sampling_distributions_D.html": "65b57520"
+  },
+  "exercises/Exercises_SamplingDistributions.qmd": {
+    "Exercises_SamplingDistributions.html": "1c133b06"
+  },
+  "exercises/Exercises/Exercises_1.qmd": {
+    "Exercises_1.html": "ecff606b"
+  },
+  "exercises/Exercises_1.qmd": {
+    "Exercises_1.html": "359b18dc"
   }
 }
