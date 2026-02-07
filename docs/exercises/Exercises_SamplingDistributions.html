@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Chapter II – Statistics II – Exercises – iscal_statistics_2</title>
+<title>Chapter I - Statistics II - Exercises – iscal_statistics_2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3969,7 +3969,111 @@ window.Quarto = {
 
 <style type="text/css">
 </style>
-<link rel="stylesheet" href="default">
+<style type="text/css">:root {
+--incorrect: #983E82;
+--incorrect_alpha: #edaddd;
+--correct: #59935B;
+--correct_alpha: #c0edc2;
+--highlight: #467AAC;
+}
+.webex-check {}
+.webex-box {
+border: 2px solid var(--highlight);
+padding: 0.5em 0.25em;
+margin: 1em 0;
+border-radius: .25em;
+background-color: rgba(127, 127, 127, 0.05);
+}
+.webex-total_correct {
+margin-left: 1em;
+}
+.unchecked .webex-total_correct {
+display: none;
+}
+.unchecked .webex-incorrect,
+.unchecked .webex-correct {
+border: 2px dotted grey !important;
+background-color: white !important;
+}
+
+.webex-select, input.webex-solveme,
+.unchecked .webex-radiogroup label.webex-incorrect,
+.unchecked .webex-radiogroup label.webex-correct{
+border: 2px dotted grey;
+background-color: white;
+border-radius: 0.25em;
+}
+.webex-incorrect,
+input.webex-solveme.webex-incorrect,
+.webex-radiogroup label.webex-incorrect {
+border: 2px dotted var(--incorrect);
+background-color: var(--incorrect_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.webex-correct,
+input.webex-solveme.webex-correct,
+.webex-radiogroup label.webex-correct {
+border: 2px solid var(--correct);
+background-color: var(--correct_alpha);
+color: black;
+border-radius: 0.25em;
+}
+.unchecked .webex-incorrect span::before,
+.unchecked .webex-incorrect + .webex-icon::after,
+.unchecked .webex-correct span::before,
+.unchecked .webex-correct + .webex-icon::after {
+content: " ";
+}
+.webex-incorrect span::before,
+.webex-incorrect + .webex-icon::after {
+content: "\274C ";
+}
+.webex-correct span::before,
+.webex-correct + .webex-icon::after {
+content: "\2705 ";
+}
+
+.webex-solution {
+height: 2.5em;
+overflow-y: hidden;
+padding: 0.5em;
+margin-bottom: 10px;
+}
+.webex-solution.open {
+height: auto;
+border: 2px solid var(--highlight);
+border-radius: 5px;
+}
+.webex-solution button, .webex-check-button {
+height: 2em;
+margin-bottom: 0.5em;
+border-radius: 0.5em;
+background-color: var(--highlight);
+color: white;
+padding: 0 0.5em;
+}
+.webex-solution pre.sourceCode {
+border-color: var(--correct);
+}
+.webex-radiogroup label {
+margin-left: 2em;
+text-indent: -1em;
+padding-left: 0.5em;
+font-weight: 400;
+display: block;
+border: 2px solid rgba(255, 255, 255, 0);
+background-color: inherit;
+border-radius: 0.25em;
+}
+.webex-radiogroup label input {
+position: relative;
+left: -1em;
+}
+.webex-radiogroup {
+margin: 1em 0;
+}
+</style>
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -4012,7 +4116,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Contents</h2>
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#questions" id="toc-questions" class="nav-link active" data-scroll-target="#questions">Questions</a>
@@ -4031,8 +4135,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chapter II – Statistics II – Exercises</h1>
-<p class="subtitle lead">Sampling Distributions</p>
+<h1 class="title">Chapter I - Statistics II - Exercises</h1>
 </div>
 
 
@@ -4049,15 +4152,8 @@ window.Quarto = {
 </header>
 
 
-<!-- Webexercises JavaScript and CSS -->
-<script src="data:text/html; charset=utf-8;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3C%21%2D%2D%20Generated%20by%20pkgdown%3A%20do%20not%20edit%20by%20hand%20%2D%2D%3E%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%3Cmeta%20http%2Dequiv%3D%22Content%2DType%22%20content%3D%22text%2Fhtml%3B%20charset%3DUTF%2D8%22%3E%0A%3Cmeta%20charset%3D%22utf%2D8%22%3E%0A%3Cmeta%20http%2Dequiv%3D%22X%2DUA%2DCompatible%22%20content%3D%22IE%3Dedge%22%3E%0A%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice%2Dwidth%2C%20initial%2Dscale%3D1%2E0%22%3E%0A%3Ctitle%3EPage%20not%20found%20%28404%29%20%E2%80%A2%20webexercises%3C%2Ftitle%3E%0A%3C%21%2D%2D%20favicons%20%2D%2D%3E%3Clink%20rel%3D%22icon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2216x16%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Ffavicon%2D16x16%2Epng%22%3E%0A%3Clink%20rel%3D%22icon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2232x32%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Ffavicon%2D32x32%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%22180x180%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%22120x120%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D120x120%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2276x76%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D76x76%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2260x60%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D60x60%2Epng%22%3E%0A%3C%21%2D%2D%20jquery%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fjquery%2F3%2E4%2E1%2Fjquery%2Emin%2Ejs%22%20integrity%3D%22sha256%2DCSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20Bootstrap%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ftwitter%2Dbootstrap%2F3%2E4%2E1%2Fcss%2Fbootstrap%2Emin%2Ecss%22%20integrity%3D%22sha256%2DbZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd%2BtIvLhE%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ftwitter%2Dbootstrap%2F3%2E4%2E1%2Fjs%2Fbootstrap%2Emin%2Ejs%22%20integrity%3D%22sha256%2DnuL8%2F2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL%2B1ev4%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20bootstrap%2Dtoc%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fbootstrap%2Dtoc%2Ecss%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fbootstrap%2Dtoc%2Ejs%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20Font%20Awesome%20icons%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ffont%2Dawesome%2F5%2E12%2E1%2Fcss%2Fall%2Emin%2Ecss%22%20integrity%3D%22sha256%2DmmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ffont%2Dawesome%2F5%2E12%2E1%2Fcss%2Fv4%2Dshims%2Emin%2Ecss%22%20integrity%3D%22sha256%2DwZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3C%21%2D%2D%20clipboard%2Ejs%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fclipboard%2Ejs%2F2%2E0%2E6%2Fclipboard%2Emin%2Ejs%22%20integrity%3D%22sha256%2Dinc5kl9MA1hkeYUt%2BEC3BhlIgyp%2F2jDIyBLS6k3UxPI%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20headroom%2Ejs%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fheadroom%2F0%2E11%2E0%2Fheadroom%2Emin%2Ejs%22%20integrity%3D%22sha256%2DAsUX4SJE1%2ByuDu5%2BmAVzJbuYNPHj%2FWroHuZ8Ir%2FCkE0%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fheadroom%2F0%2E11%2E0%2FjQuery%2Eheadroom%2Emin%2Ejs%22%20integrity%3D%22sha256%2DZX%2FyNShbjqsohH1k95liqY9Gd8uOiE1S4vZc%2B9KQ1K4%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20pkgdown%20%2D%2D%3E%3Clink%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fpkgdown%2Ecss%22%20rel%3D%22stylesheet%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fpkgdown%2Ejs%22%3E%3C%2Fscript%3E%3Clink%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fextra%2Ecss%22%20rel%3D%22stylesheet%22%3E%0A%3Cmeta%20property%3D%22og%3Atitle%22%20content%3D%22Page%20not%20found%20%28404%29%22%3E%0A%3Cmeta%20property%3D%22og%3Aimage%22%20content%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Freference%2Ffigures%2Fcard%2Epng%22%3E%0A%3Cmeta%20property%3D%22og%3Aimage%3Aalt%22%20content%3D%22Hexagon%20with%20the%20word%20webexercises%22%3E%0A%3Cmeta%20name%3D%22twitter%3Acard%22%20content%3D%22summary%5Flarge%5Fimage%22%3E%0A%3Cmeta%20name%3D%22twitter%3Acreator%22%20content%3D%22%40dalejbarr%22%3E%0A%3Cmeta%20name%3D%22twitter%3Asite%22%20content%3D%22%40psyteachr%22%3E%0A%3C%21%2D%2D%20mathjax%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fmathjax%2F2%2E7%2E5%2FMathJax%2Ejs%22%20integrity%3D%22sha256%2DnvJJv9wWKEm88qvoQl9ekL2J%2Bk%2FRWIsaSScxxlsrv8k%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fmathjax%2F2%2E7%2E5%2Fconfig%2FTeX%2DAMS%2DMML%5FHTMLorMML%2Ejs%22%20integrity%3D%22sha256%2D84DKXVJXs0%2FF8OTMzX4UR909%2Bjtl4G7SPypPavF%2BGfA%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%5Bif%20lt%20IE%209%5D%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Foss%2Emaxcdn%2Ecom%2Fhtml5shiv%2F3%2E7%2E3%2Fhtml5shiv%2Emin%2Ejs%22%3E%3C%2Fscript%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Foss%2Emaxcdn%2Ecom%2Frespond%2F1%2E4%2E2%2Frespond%2Emin%2Ejs%22%3E%3C%2Fscript%3E%0A%3C%21%5Bendif%5D%2D%2D%3E%0A%3C%2Fhead%3E%0A%3Cbody%20data%2Dspy%3D%22scroll%22%20data%2Dtarget%3D%22%23toc%22%3E%0A%20%20%20%20%0A%0A%20%20%20%20%3Cdiv%20class%3D%22container%20template%2Dtitle%2Dbody%22%3E%0A%20%20%20%20%20%20%3Cheader%3E%3Cdiv%20class%3D%22navbar%20navbar%2Ddefault%20navbar%2Dfixed%2Dtop%22%20role%3D%22navigation%22%3E%0A%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22navbar%2Dheader%22%3E%0A%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22navbar%2Dtoggle%20collapsed%22%20data%2Dtoggle%3D%22collapse%22%20data%2Dtarget%3D%22%23navbar%22%20aria%2Dexpanded%3D%22false%22%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22sr%2Donly%22%3EToggle%20navigation%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22navbar%2Dbrand%22%3E%0A%20%20%20%20%20%20%20%20%3Ca%20class%3D%22navbar%2Dlink%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Findex%2Ehtml%22%3Ewebexercises%3C%2Fa%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22version%20label%20label%2Ddefault%22%20data%2Dtoggle%3D%22tooltip%22%20data%2Dplacement%3D%22bottom%22%20title%3D%22%22%3E1%2E1%2E0%2E9000%3C%2Fspan%3E%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%0A%20%20%20%20%3Cdiv%20id%3D%22navbar%22%20class%3D%22navbar%2Dcollapse%20collapse%22%3E%0A%20%20%20%20%20%20%3Cul%20class%3D%22nav%20navbar%2Dnav%22%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Farticles%2Fwebexercises%2Ehtml%22%3EGet%20started%3C%2Fa%3E%0A%3C%2Fli%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Freference%2Findex%2Ehtml%22%3EReference%3C%2Fa%3E%0A%3C%2Fli%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fnews%2Findex%2Ehtml%22%3EChangelog%3C%2Fa%3E%0A%3C%2Fli%3E%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%3Cul%20class%3D%22nav%20navbar%2Dnav%20navbar%2Dright%22%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fgithub%2Ecom%2Fpsyteachr%2Fwebexercises%2F%22%20class%3D%22external%2Dlink%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22fab%20fa%2Dgithub%20fa%2Dlg%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%0A%20%20%3C%2Fa%3E%0A%3C%2Fli%3E%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Enav%2Dcollapse%20%2D%2D%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Econtainer%20%2D%2D%3E%0A%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Enavbar%20%2D%2D%3E%0A%0A%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%3C%2Fheader%3E%3Cdiv%20class%3D%22row%22%3E%0A%20%20%3Cdiv%20class%3D%22contents%20col%2Dmd%2D9%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22page%2Dheader%22%3E%0A%20%20%20%20%20%20%3Ch1%3EPage%20not%20found%20%28404%29%3C%2Fh1%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%0AContent%20not%20found%2E%20Please%20use%20links%20in%20the%20navbar%2E%0A%0A%20%20%3C%2Fdiv%3E%0A%0A%20%20%3Cdiv%20class%3D%22col%2Dmd%2D3%20hidden%2Dxs%20hidden%2Dsm%22%20id%3D%22pkgdown%2Dsidebar%22%3E%0A%20%20%20%20%3Cnav%20id%3D%22toc%22%20data%2Dtoggle%3D%22toc%22%20class%3D%22sticky%2Dtop%22%3E%3Ch2%20data%2Dtoc%2Dskip%3EContents%3C%2Fh2%3E%0A%20%20%20%20%3C%2Fnav%3E%0A%3C%2Fdiv%3E%0A%0A%3C%2Fdiv%3E%0A%0A%0A%0A%20%20%20%20%20%20%3Cfooter%3E%3Cdiv%20class%3D%22copyright%22%3E%0A%20%20%3Cp%3E%3C%2Fp%3E%0A%3Cp%3EDeveloped%20by%20Dale%20Barr%2C%20Lisa%20DeBruine%2E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%0A%3Cdiv%20class%3D%22pkgdown%22%3E%0A%20%20%3Cp%3E%3C%2Fp%3E%0A%3Cp%3ESite%20built%20with%20%3Ca%20href%3D%22https%3A%2F%2Fpkgdown%2Er%2Dlib%2Eorg%2F%22%20class%3D%22external%2Dlink%22%3Epkgdown%3C%2Fa%3E%202%2E0%2E6%2E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%0A%20%20%20%20%20%20%3C%2Ffooter%3E%0A%3C%2Fdiv%3E%0A%0A%20%20%0A%0A%0A%20%20%0A%0A%20%20%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A"></script>
-<p><link href="data:text/html; charset=utf-8;charset=utf-8,%3C%21DOCTYPE%20html%3E%0A%3C%21%2D%2D%20Generated%20by%20pkgdown%3A%20do%20not%20edit%20by%20hand%20%2D%2D%3E%3Chtml%20lang%3D%22en%22%3E%0A%3Chead%3E%0A%3Cmeta%20http%2Dequiv%3D%22Content%2DType%22%20content%3D%22text%2Fhtml%3B%20charset%3DUTF%2D8%22%3E%0A%3Cmeta%20charset%3D%22utf%2D8%22%3E%0A%3Cmeta%20http%2Dequiv%3D%22X%2DUA%2DCompatible%22%20content%3D%22IE%3Dedge%22%3E%0A%3Cmeta%20name%3D%22viewport%22%20content%3D%22width%3Ddevice%2Dwidth%2C%20initial%2Dscale%3D1%2E0%22%3E%0A%3Ctitle%3EPage%20not%20found%20%28404%29%20%E2%80%A2%20webexercises%3C%2Ftitle%3E%0A%3C%21%2D%2D%20favicons%20%2D%2D%3E%3Clink%20rel%3D%22icon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2216x16%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Ffavicon%2D16x16%2Epng%22%3E%0A%3Clink%20rel%3D%22icon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2232x32%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Ffavicon%2D32x32%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%22180x180%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%22120x120%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D120x120%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2276x76%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D76x76%2Epng%22%3E%0A%3Clink%20rel%3D%22apple%2Dtouch%2Dicon%22%20type%3D%22image%2Fpng%22%20sizes%3D%2260x60%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fapple%2Dtouch%2Dicon%2D60x60%2Epng%22%3E%0A%3C%21%2D%2D%20jquery%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fjquery%2F3%2E4%2E1%2Fjquery%2Emin%2Ejs%22%20integrity%3D%22sha256%2DCSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20Bootstrap%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ftwitter%2Dbootstrap%2F3%2E4%2E1%2Fcss%2Fbootstrap%2Emin%2Ecss%22%20integrity%3D%22sha256%2DbZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd%2BtIvLhE%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ftwitter%2Dbootstrap%2F3%2E4%2E1%2Fjs%2Fbootstrap%2Emin%2Ejs%22%20integrity%3D%22sha256%2DnuL8%2F2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL%2B1ev4%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20bootstrap%2Dtoc%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fbootstrap%2Dtoc%2Ecss%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fbootstrap%2Dtoc%2Ejs%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20Font%20Awesome%20icons%20%2D%2D%3E%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ffont%2Dawesome%2F5%2E12%2E1%2Fcss%2Fall%2Emin%2Ecss%22%20integrity%3D%22sha256%2DmmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3Clink%20rel%3D%22stylesheet%22%20href%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Ffont%2Dawesome%2F5%2E12%2E1%2Fcss%2Fv4%2Dshims%2Emin%2Ecss%22%20integrity%3D%22sha256%2DwZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw%3D%22%20crossorigin%3D%22anonymous%22%3E%0A%3C%21%2D%2D%20clipboard%2Ejs%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fclipboard%2Ejs%2F2%2E0%2E6%2Fclipboard%2Emin%2Ejs%22%20integrity%3D%22sha256%2Dinc5kl9MA1hkeYUt%2BEC3BhlIgyp%2F2jDIyBLS6k3UxPI%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20headroom%2Ejs%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fheadroom%2F0%2E11%2E0%2Fheadroom%2Emin%2Ejs%22%20integrity%3D%22sha256%2DAsUX4SJE1%2ByuDu5%2BmAVzJbuYNPHj%2FWroHuZ8Ir%2FCkE0%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fheadroom%2F0%2E11%2E0%2FjQuery%2Eheadroom%2Emin%2Ejs%22%20integrity%3D%22sha256%2DZX%2FyNShbjqsohH1k95liqY9Gd8uOiE1S4vZc%2B9KQ1K4%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%20pkgdown%20%2D%2D%3E%3Clink%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fpkgdown%2Ecss%22%20rel%3D%22stylesheet%22%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fpkgdown%2Ejs%22%3E%3C%2Fscript%3E%3Clink%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fextra%2Ecss%22%20rel%3D%22stylesheet%22%3E%0A%3Cmeta%20property%3D%22og%3Atitle%22%20content%3D%22Page%20not%20found%20%28404%29%22%3E%0A%3Cmeta%20property%3D%22og%3Aimage%22%20content%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Freference%2Ffigures%2Fcard%2Epng%22%3E%0A%3Cmeta%20property%3D%22og%3Aimage%3Aalt%22%20content%3D%22Hexagon%20with%20the%20word%20webexercises%22%3E%0A%3Cmeta%20name%3D%22twitter%3Acard%22%20content%3D%22summary%5Flarge%5Fimage%22%3E%0A%3Cmeta%20name%3D%22twitter%3Acreator%22%20content%3D%22%40dalejbarr%22%3E%0A%3Cmeta%20name%3D%22twitter%3Asite%22%20content%3D%22%40psyteachr%22%3E%0A%3C%21%2D%2D%20mathjax%20%2D%2D%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fmathjax%2F2%2E7%2E5%2FMathJax%2Ejs%22%20integrity%3D%22sha256%2DnvJJv9wWKEm88qvoQl9ekL2J%2Bk%2FRWIsaSScxxlsrv8k%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3Cscript%20src%3D%22https%3A%2F%2Fcdnjs%2Ecloudflare%2Ecom%2Fajax%2Flibs%2Fmathjax%2F2%2E7%2E5%2Fconfig%2FTeX%2DAMS%2DMML%5FHTMLorMML%2Ejs%22%20integrity%3D%22sha256%2D84DKXVJXs0%2FF8OTMzX4UR909%2Bjtl4G7SPypPavF%2BGfA%3D%22%20crossorigin%3D%22anonymous%22%3E%3C%2Fscript%3E%3C%21%2D%2D%5Bif%20lt%20IE%209%5D%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Foss%2Emaxcdn%2Ecom%2Fhtml5shiv%2F3%2E7%2E3%2Fhtml5shiv%2Emin%2Ejs%22%3E%3C%2Fscript%3E%0A%3Cscript%20src%3D%22https%3A%2F%2Foss%2Emaxcdn%2Ecom%2Frespond%2F1%2E4%2E2%2Frespond%2Emin%2Ejs%22%3E%3C%2Fscript%3E%0A%3C%21%5Bendif%5D%2D%2D%3E%0A%3C%2Fhead%3E%0A%3Cbody%20data%2Dspy%3D%22scroll%22%20data%2Dtarget%3D%22%23toc%22%3E%0A%20%20%20%20%0A%0A%20%20%20%20%3Cdiv%20class%3D%22container%20template%2Dtitle%2Dbody%22%3E%0A%20%20%20%20%20%20%3Cheader%3E%3Cdiv%20class%3D%22navbar%20navbar%2Ddefault%20navbar%2Dfixed%2Dtop%22%20role%3D%22navigation%22%3E%0A%20%20%3Cdiv%20class%3D%22container%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22navbar%2Dheader%22%3E%0A%20%20%20%20%20%20%3Cbutton%20type%3D%22button%22%20class%3D%22navbar%2Dtoggle%20collapsed%22%20data%2Dtoggle%3D%22collapse%22%20data%2Dtarget%3D%22%23navbar%22%20aria%2Dexpanded%3D%22false%22%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22sr%2Donly%22%3EToggle%20navigation%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22icon%2Dbar%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%20%3C%2Fbutton%3E%0A%20%20%20%20%20%20%3Cspan%20class%3D%22navbar%2Dbrand%22%3E%0A%20%20%20%20%20%20%20%20%3Ca%20class%3D%22navbar%2Dlink%22%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Findex%2Ehtml%22%3Ewebexercises%3C%2Fa%3E%0A%20%20%20%20%20%20%20%20%3Cspan%20class%3D%22version%20label%20label%2Ddefault%22%20data%2Dtoggle%3D%22tooltip%22%20data%2Dplacement%3D%22bottom%22%20title%3D%22%22%3E1%2E1%2E0%2E9000%3C%2Fspan%3E%0A%20%20%20%20%20%20%3C%2Fspan%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%0A%20%20%20%20%3Cdiv%20id%3D%22navbar%22%20class%3D%22navbar%2Dcollapse%20collapse%22%3E%0A%20%20%20%20%20%20%3Cul%20class%3D%22nav%20navbar%2Dnav%22%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Farticles%2Fwebexercises%2Ehtml%22%3EGet%20started%3C%2Fa%3E%0A%3C%2Fli%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Freference%2Findex%2Ehtml%22%3EReference%3C%2Fa%3E%0A%3C%2Fli%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fpsyteachr%2Egithub%2Eio%2Fwebexercises%2Fnews%2Findex%2Ehtml%22%3EChangelog%3C%2Fa%3E%0A%3C%2Fli%3E%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%3Cul%20class%3D%22nav%20navbar%2Dnav%20navbar%2Dright%22%3E%0A%3Cli%3E%0A%20%20%3Ca%20href%3D%22https%3A%2F%2Fgithub%2Ecom%2Fpsyteachr%2Fwebexercises%2F%22%20class%3D%22external%2Dlink%22%3E%0A%20%20%20%20%3Cspan%20class%3D%22fab%20fa%2Dgithub%20fa%2Dlg%22%3E%3C%2Fspan%3E%0A%20%20%20%20%20%0A%20%20%3C%2Fa%3E%0A%3C%2Fli%3E%0A%20%20%20%20%20%20%3C%2Ful%3E%0A%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Enav%2Dcollapse%20%2D%2D%3E%0A%20%20%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Econtainer%20%2D%2D%3E%0A%3C%2Fdiv%3E%0A%3C%21%2D%2D%2F%2Enavbar%20%2D%2D%3E%0A%0A%20%20%20%20%20%20%0A%0A%20%20%20%20%20%20%3C%2Fheader%3E%3Cdiv%20class%3D%22row%22%3E%0A%20%20%3Cdiv%20class%3D%22contents%20col%2Dmd%2D9%22%3E%0A%20%20%20%20%3Cdiv%20class%3D%22page%2Dheader%22%3E%0A%20%20%20%20%20%20%3Ch1%3EPage%20not%20found%20%28404%29%3C%2Fh1%3E%0A%20%20%20%20%3C%2Fdiv%3E%0A%0AContent%20not%20found%2E%20Please%20use%20links%20in%20the%20navbar%2E%0A%0A%20%20%3C%2Fdiv%3E%0A%0A%20%20%3Cdiv%20class%3D%22col%2Dmd%2D3%20hidden%2Dxs%20hidden%2Dsm%22%20id%3D%22pkgdown%2Dsidebar%22%3E%0A%20%20%20%20%3Cnav%20id%3D%22toc%22%20data%2Dtoggle%3D%22toc%22%20class%3D%22sticky%2Dtop%22%3E%3Ch2%20data%2Dtoc%2Dskip%3EContents%3C%2Fh2%3E%0A%20%20%20%20%3C%2Fnav%3E%0A%3C%2Fdiv%3E%0A%0A%3C%2Fdiv%3E%0A%0A%0A%0A%20%20%20%20%20%20%3Cfooter%3E%3Cdiv%20class%3D%22copyright%22%3E%0A%20%20%3Cp%3E%3C%2Fp%3E%0A%3Cp%3EDeveloped%20by%20Dale%20Barr%2C%20Lisa%20DeBruine%2E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%0A%3Cdiv%20class%3D%22pkgdown%22%3E%0A%20%20%3Cp%3E%3C%2Fp%3E%0A%3Cp%3ESite%20built%20with%20%3Ca%20href%3D%22https%3A%2F%2Fpkgdown%2Er%2Dlib%2Eorg%2F%22%20class%3D%22external%2Dlink%22%3Epkgdown%3C%2Fa%3E%202%2E0%2E6%2E%3C%2Fp%3E%0A%3C%2Fdiv%3E%0A%0A%20%20%20%20%20%20%3C%2Ffooter%3E%0A%3C%2Fdiv%3E%0A%0A%20%20%0A%0A%0A%20%20%0A%0A%20%20%3C%2Fbody%3E%0A%3C%2Fhtml%3E%0A" rel="stylesheet"></p>
-<!-- Style Block for ISCAL-branded tables -->
+<!-- Style Block for nice tables -->
 <style>
-
-h1, h2, h3, h4 {
-color: #8B1A1A;
-}
 table {
 width: 100%;
 border-collapse: collapse;
@@ -4066,11 +4162,11 @@ font-family: Arial, sans-serif;
 }
 thead tr:first-child th {
 background-color: #f2f2f2;
-border-bottom: 2px solid #8B1A1A;
+border-bottom: 2px solid #999;
 }
 thead tr:nth-child(2) th {
 background-color: #e0e0e0;
-border-bottom: 2px solid #8B1A1A;
+border-bottom: 2px solid #999;
 }
 tbody td {
 padding: 8px;
@@ -4082,14 +4178,8 @@ background-color: #f9f9f9;
 th, td {
 vertical-align: middle;
 }
-.subtitle {
-color: #003366;
-}
-.callout-note {
-border-left-color: #8B1A1A !important;
-}
 </style>
-<!-- End Style Block -->
+<!-- Style Block for nice tables -->
 <p>This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).</p>
 <p><strong>Contents:</strong> t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.</p>
 <p>The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).</p>
@@ -4502,6 +4592,212 @@ Solution
 </section>
 
 </main> <!-- /main -->
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  var t = document.getElementsByClassName("webex-total_correct");
+  for (var i = 0; i < t.length; i++) {
+    p = t[i].parentElement;
+    var correct = p.getElementsByClassName("webex-correct").length;
+    var solvemes = p.getElementsByClassName("webex-solveme").length;
+    var radiogroups = p.getElementsByClassName("webex-radiogroup").length;
+    var selects = p.getElementsByClassName("webex-select").length;
+
+    t[i].innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* check answers */
+check_func = function() {
+  console.log("webex: check answers");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('unchecked')) {
+    cl.remove("unchecked");
+    this.innerHTML = "Undo";
+  } else {
+    cl.add("unchecked");
+    this.innerHTML = "Check Answers";
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  var check_sections = document.getElementsByClassName("webex-check");
+  console.log("check:", check_sections.length);
+  for (var i = 0; i < check_sections.length; i++) {
+    check_sections[i].classList.add("unchecked");
+
+    let btn = document.createElement("button");
+    btn.innerHTML = "Show Answers";
+    btn.classList.add("webex-check-button");
+    btn.onclick = check_func;
+    check_sections[i].appendChild(btn);
+
+    let spn = document.createElement("span");
+    spn.classList.add("webex-total_correct");
+    check_sections[i].appendChild(spn);
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    solveme[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    selects[i].insertAdjacentHTML("afterend", " <span class='webex-icon'></span>")
+  }
+
+  update_total_correct();
+}
+
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
