@@ -11,17 +11,19 @@ lang: en
 editor: source
 page-layout: full
 ---
-
 ```{r setup, include = FALSE, echo = FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 
 library(webexercises)
 ```
-
 ```{r, echo = FALSE, results='asis'}
 # Uncomment to change widget colours:
 #style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
 ```
+
+<!-- Webexercises JavaScript and CSS -->
+<script src="https://psyteachr.github.io/webexercises/webexercises.js"></script>
+<link rel="stylesheet" href="https://psyteachr.github.io/webexercises/webexercises.css">
 
 <!-- Style Block for ISCAL-branded tables -->
 
