@@ -4,21 +4,26 @@ author: "Paulo Fagandini"
 institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
 format: 
   revealjs:
+    fig-height: 4
+    fig-width: 7
     theme:
       - default
       - iscal_theme.scss
     self-contained: false
-    logo: images/iscal_logo.svg
+    logo: ../images/iscal_logo.svg
     slide-number: true
     transition: slide
     footer: "Statistics II | Sampling Distributions"
     incremental: true
     math:
-      method: mathjax
+      method: mathjax+emoji
     code-overflow: wrap
     progress: true
 editor: source
 ---
+
+<div style="font-size: 70%;">
+</div>
 
 # Introduction
 
@@ -46,6 +51,16 @@ A sample of size $n$, drawn from a population according to a random process, is 
 - $X_n$ denotes the $n$-th element
 :::
 
+## Important Concepts
+
+:::{.callout-note icon=false}
+## Statistical Inference
+
+Statistical inference is the use of a set of methods that allows to draw conclusions about a population, from a **random sample** of that population.
+
+:::
+
+
 ## Parameters and Statistics
 
 :::{.callout-important icon=false}
@@ -61,14 +76,24 @@ Examples: population mean $\mu$, population variance $\sigma^2$
 :::{.callout-note icon=false}
 ## Statistic
 
-A **statistic** is a characteristic that is a function of the sample values; that is, it's a random variable that does not involve any unknown parameters.
+A **statistic** is a characteristic that is a **function of the sample** values; that is, it's a **random variable** that does not involve any unknown parameters. If the statistic is used to *estimate* a *parameter*, then this statistic is called an **estimator**.
 
 Symbolized by: $T(X_1, X_2, \ldots, X_n)$
 :::
 
+## Parameters and Statistics
+
+:::{.callout-note icon=false}
+## Estimate
+
+An **estimate** for a *parameter* is the realized value of a statistic, *i.e.*, the value you obtain from aplying the function *statistic* to a particular sample.
+:::
+
+Given that the sample is random, because it is a collection of realized random variables, the statistic is itself a random variable. Every time you draw a new sample, you obtain a different estimate.
+
 ## Example: What is a Statistic?
 
-Consider a random sample $(X_1, X_2, \ldots, X_n)$, $n \in \mathbb{N}$, from a population $X \sim Normal(\mu = -2, \sigma)$, where $\sigma$ is unknown.
+Consider a random sample $(X_1, X_2, \ldots, X_n)$, $n \in \mathbb{N}$, from a population $X \sim Normal(\mu = -2, \sigma^2)$, where $\sigma^2$ is unknown.
 
 Which of the following are **statistics**?
 
@@ -93,35 +118,297 @@ d) $T(X_1, X_2, \ldots, X_n) = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}$
 
 *Note:* For it to be a statistic, we must be able to calculate it from the sample data alone, without knowledge of unknown population parameters.
 
+## Example 2
+
+<div style="font-size: 70%;">
+
+Let $(X_1,X_2,\dots,X_n),n\in\mathbb{N}$, a random sample from a population $X$ (with unknown distribution), but with expected value $\mu$ and variance $\sigma^2$, both known:
+
+::::{.columns}
+
+:::{.column width=50% .nonincremental}
+
+The expected value of $\sum_{i=1}^n X_i$ and $\bar{X}$ are:
+
+1. $n\mu$ and $\mu$
+2. $n\mu$ and $\mu/n$
+3. $\mu$ and $\mu/n$
+4. None of the above
+
+:::
+
+:::{.column width=50% .nonincremental}
+
+The variance of $\sum_{i=1}^n X_i$ and $\bar{X}$ are:
+
+1. $n\sigma^2$ and $\sigma^2$
+2. $n\sigma^2$ and $\sigma^2/n$
+3. $\sigma^2$ and $\sigma^2/n$
+4. None of the above
+   
+:::
+
+::::
+
+</div>
+
+. . . 
+
+**Answer:** (a) and (b)
+
+## The sample average as an estimator for $\mu$
+
+Suppose you have a random sample $\{X_i\}_{i=1}^n$. Then we just saw the average is going to be:
+
+$$\bar{X}=\frac{\sum_{i=1}^n X_i}{n}$$
+
+And we saw that $E[\bar{X}]=\mu$, and $V[\bar{X}]=\frac{\sigma^2}{n}$. This second result is beautiful. Note that we did not make any assumptions on the distribution of $X$; if we gather a large sample, its average will be close to the **true** mean with higher probability.
+
+# Distributions for statistics and random variables
+
+## A question
+
+> How could we obtain the distribution, using a random sample, for a statistic or a random variable?
+
+. . .
+
+To answer this, we need to introduce two new distributions (not covered in Statistics I)
+
+# $\chi^2$ distribution
+
+## $\chi^2$ distribution
+
+Let $Z_1,Z_2,\dots, Z_n$ random variables *iid* distributed $Z_i\sim N(0,1)$.
+
+$$Y=\sum_{i=1}^n Z_i^2=\sum_{i=1}^n\left(\frac{X_i-\mu}{\sigma}\right)^2$$
+
+is a random variable distributed $\chi^2_{\nu}$, where $\nu$ represents the *degrees of freedom*.
+
+## Degrees of Freedom
+
+:::{.callout-note icon="false"}
+## Definition
+
+The number of independent values that are **free to vary** in your data without breaking any constraints.
+
+:::
+
+**Formula:** $dof = N - P$
+
+- $N$ = sample size  
+- $P$ = number of parameters estimated
+
+## The Intuitive Example
+
+Imagine you have **4 numbers** that must **average to 20**.
+
+- **First person picks:** 15 ✓ (free to choose)
+- **Second person picks:** 30 ✓ (free to choose)  
+- **Third person picks:** 10 ✓ (free to choose)
+- **Fourth person picks:** ? ✗ (not free!)
+
+The fourth number **must be 25** to keep the average at 20.
+
+**Result:** 3 degrees of freedom ($df = 4 - 1 = 3$)
+
+## Why Degrees of Freedom Matter
+
+**In Practice:**
+
+- ✓ More $df$ → More reliable estimates  
+- ✓ Affects the shape of distributions ($t$, $\chi^2$, $F$)
+
+**Key Insight:**
+
+When you estimate a parameter (like the mean), you **"spend"** one degree of freedom. It's the cost of using your data to calculate statistics.
+
+## Back to the $\chi^2$ Distribution
+
+$X\sim N(0,1)$
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+ggplot(data.frame(x = c(-4, 4)), aes(x)) +
+  stat_function(fun = dnorm, linewidth = 1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+
+## Back to the $\chi^2$ Distribution
+
+How is $Y=X^2$ distributed?
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+ggplot(data.frame(x = c(0, 8)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 1), linewidth = 1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL) +
+  coord_cartesian(ylim = c(0, 2))
+```
+
+This **is** the $\chi^2_1$!
+
+## Back to the $\chi^2$ Distribution
+
+How is $Y_1+Y_2=X_1^2+X_2^2$ distributed?
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+ggplot(data.frame(x = c(0, 8)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 2), linewidth = 1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+This **is** the $\chi^2_2$!
+
+## Back to the $\chi^2$ Distribution
+
+How is $\sum_{i=1}^{10} Y_i$ distributed?
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+ggplot(data.frame(x = c(0, 20)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 10), linewidth = 1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+This **is** the $\chi^2_{10}$!
+
+## Back to the $\chi^2$ Distribution
+
+How is $\sum_{i=1}^{100} Y_i$ distributed?
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+ggplot(data.frame(x = c(50, 150)), aes(x)) +
+  stat_function(fun = dchisq, args = list(df = 100), linewidth = 1) +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+This **is** the $\chi^2_{100}$!
+
+## Properties of $\chi^2$
+
+**Key Properties:**
+
+- $E[Y] = \nu$ (mean equals degrees of freedom)
+- $V[Y] = 2\nu$
+- Right-skewed distribution (not symmetric)
+- Only positive values
+- Sum property: If $Q_1 \sim \chi^2_{\nu_1}$ and $Q_2 \sim \chi^2_{\nu_2}$ are independent, then $Q_1 + Q_2 \sim \chi^2_{\nu_1 + \nu_2}$
+
+## $\chi^2$ Distribution Shape
+
+```{R}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
+
+dfs <- c(1, 2, 5, 10, 30)
+
+ggplot(data.frame(x = c(0, 50)), aes(x)) +
+  lapply(dfs, \(k) stat_function(fun = dchisq, args = list(df = k), aes(color = factor(k)), linewidth = 0.8)) +
+  scale_color_discrete(name = "df") +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+<small>$\chi^2$ distributions for different degrees of freedom. As $\nu$ increases, the distribution becomes more symmetric.</small>
+
+## $\chi^2$ Distribution Shape
+
+$$\nu\rightarrow\infty\ \Rightarrow\ \chi^2_{\nu}\rightarrow N(\nu,2\nu)$$
+
+Thanks to the Central Limit Theorem (forthcoming). Note that this equivalent to say that,
+
+$$\nu\rightarrow\infty\ \Rightarrow\ Z_n=\frac{\chi^2_{\nu}-\nu}{\sqrt{2\nu}}\sim N(0,1)$$
+
+## Using $\chi^2$ Tables
+
+For a $\chi^2$ distribution with $\nu$ degrees of freedom:
+
+- Tables provide: $P(Y > \chi^2_{\alpha, \nu}) = \alpha$
+- **Important:** Not symmetric, so $\chi^2_{1-\alpha, \nu} \neq -\chi^2_{\alpha, \nu}$
+
+. . .
+
+**Example:** For $\nu = 10$:
+
+- $\chi^2_{0.05, 10} = 18.307$ means $P(Y > 18.307) = 0.05$
+- $\chi^2_{0.95, 10} = 3.940$ means $P(Y > 3.940) = 0.95$
+
+## Exercise
+
+Let $\{Z_i\}_{i=1}^5$ a random sample from a population $N(0,1)$ and $Y=\sum_{i=1}^5Z_i^2$
+
+```{r}
+library(webexercises)
+```
+
+1. **T/F** $P(1.610<Y<9.236)=0.8$
+2. **T/F** The standard deviation of $Z_3^2+Z_4^2$ is equal to 4.
+
+## Exercise
+
+1. $Y\sim \chi^2_5$ and then 
+    $$
+    \begin{aligned}
+      P(1.61<Y<9.236)&=P(Y>1.61)-P(Y>9.236)\\&=0.9-0.1=0.8
+    \end{aligned}
+    $$
+2. $Z_3^2\sim \chi_1^2$, $Z_4^2\sim \chi_1^2$, then $Z_3^2+Z_4^2\sim \chi_2^2$: $$V[Z_3^2+Z_4^2]=2\times 2 = 4\ \Rightarrow\ \sigma = 2$$
+
 # t-Student Distribution
 
 ## The t-Student Distribution
 
-:::{.callout-note icon=false}
-## Definition
+Let $X\sim N(0,1)$ and $Y\sim \chi^2_\nu$, independent random variables. Then, the random variable $$T=\frac{X}{\sqrt{\frac{Y}{\nu}}}\sim t_\nu$$
 
-A continuous random variable $T$ follows a **t-Student distribution** with $\nu$ degrees of freedom if its probability density function is:
-
-$$f(t) = \frac{\Gamma\left(\frac{\nu+1}{2}\right)}{\sqrt{\nu\pi}\,\Gamma\left(\frac{\nu}{2}\right)} \left(1 + \frac{t^2}{\nu}\right)^{-\frac{\nu+1}{2}}, \quad t \in \mathbb{R}$$
-
-Notation: $T \sim t_\nu$
-:::
+has a $t-student$ distribution with $\nu$ degrees of freedom, *i.e.* $T\sim t_\nu$
 
 ## Properties of t-Student
 
 **Key Properties:**
 
-- Symmetric around zero: $E(T) = 0$ (for $\nu > 1$)
-- Variance: $Var(T) = \frac{\nu}{\nu - 2}$ (for $\nu > 2$)
+- Symmetric around zero: $E[T] = 0$ (for $\nu > 1$)
+- Variance: $Var[T] = \frac{\nu}{\nu - 2}$ (for $\nu > 2$)
 - As $\nu \to \infty$: $t_\nu \to N(0,1)$
 - Heavier tails than the standard normal distribution
 - Shape depends on degrees of freedom $\nu$
 
 ## t-Student vs. Normal Distribution
 
-![](images/t_vs_normal.png){fig-align="center" width="70%"}
+```{R}
+#| echo: false
+#| fig-align: center
+library(ggplot2)
 
-<small>The t-distribution (red) has heavier tails than the Normal (blue). As $\nu$ increases, it approaches the Normal distribution.</small>
+dfs <- c(1, 2, 5, 10)
+
+ggplot(data.frame(x = c(-5, 5)), aes(x)) +
+  lapply(dfs, \(k) stat_function(fun = dt, args = list(df = k), aes(color = factor(k)), linewidth = 0.8)) +
+  stat_function(fun = dnorm, aes(color = "N(0,1)"), linewidth = 0.8, linetype = "dashed") +
+  scale_color_discrete(name = "df") +
+  theme_minimal() +
+  labs(x = NULL, y = NULL)
+```
+
+<small>The t-distribution (red) has heavier tails than the Normal (dashed). As $\nu$ increases, it approaches the Normal distribution.</small>
 
 ## Using t-Student Tables
 
@@ -130,53 +417,29 @@ For a t-Student distribution with $\nu$ degrees of freedom:
 - Tables typically provide: $P(T > t_{\alpha, \nu}) = \alpha$
 - Due to symmetry: $t_{1-\alpha, \nu} = -t_{\alpha, \nu}$
 
+. . . 
+
 **Example:** For $\nu = 10$ and $\alpha = 0.05$:
 
 - $t_{0.05, 10} = 1.812$
 - This means: $P(T > 1.812) = 0.05$
 - By symmetry: $P(T < -1.812) = 0.05$
 
-# Chi-square Distribution
+## Exercise
 
-## The Chi-square Distribution
+Consider the *rv* $T\sim t_{11}$.
 
-:::{.callout-note icon=false}
-## Definition
+1. **T/F** For $P(T\leq k)=0.75$, it must be that $k=0.303$.
+2. $P(|T|>2.201)$ is:
+   1. $0.025$
+   2. $0.95$
+   3. $0.05$
+   4. None of the above.
 
-A continuous random variable $Q$ follows a **chi-square distribution** with $\nu$ degrees of freedom if:
+## Exercise
 
-$$f(q) = \frac{1}{2^{\nu/2}\Gamma(\nu/2)} q^{(\nu/2)-1} e^{-q/2}, \quad q > 0$$
-
-Notation: $Q \sim \chi^2_\nu$
-:::
-
-## Properties of Chi-square
-
-**Key Properties:**
-
-- $E(Q) = \nu$ (mean equals degrees of freedom)
-- $Var(Q) = 2\nu$
-- Right-skewed distribution (not symmetric)
-- Only positive values
-- Sum property: If $Q_1 \sim \chi^2_{\nu_1}$ and $Q_2 \sim \chi^2_{\nu_2}$ are independent, then $Q_1 + Q_2 \sim \chi^2_{\nu_1 + \nu_2}$
-
-## Chi-square Distribution Shape
-
-![](images/chisq_dist.png){fig-align="center" width="70%"}
-
-<small>Chi-square distributions for different degrees of freedom. As $\nu$ increases, the distribution becomes more symmetric.</small>
-
-## Using Chi-square Tables
-
-For a chi-square distribution with $\nu$ degrees of freedom:
-
-- Tables provide: $P(Q > \chi^2_{\alpha, \nu}) = \alpha$
-- **Important:** Not symmetric, so $\chi^2_{1-\alpha, \nu} \neq -\chi^2_{\alpha, \nu}$
-
-**Example:** For $\nu = 10$:
-
-- $\chi^2_{0.05, 10} = 18.307$ means $P(Q > 18.307) = 0.05$
-- $\chi^2_{0.95, 10} = 3.940$ means $P(Q > 3.940) = 0.95$
+1. $P(T\leq k)=0.75\ \Leftrightarrow\ P(T>k)=0.25\ \Leftrightarrow\ k=0.697$
+2. $P(|T|>2.201)=2P(T>2.201)=2\times 0.025=0.05$
 
 # Sampling Distribution of the Mean
 
@@ -190,7 +453,7 @@ For a chi-square distribution with $\nu$ degrees of freedom:
 - Statistic: Sample mean $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$
 :::
 
-. . .
+## Case 1: Normal Population, $\sigma$ Known
 
 **Sampling Distribution:**
 
@@ -208,13 +471,13 @@ $$\bar{X} \sim N\left(\mu, \frac{\sigma}{\sqrt{n}}\right) \Leftrightarrow Z = \f
 - Statistic: Sample mean $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$
 :::
 
-. . .
+## Case 2: Normal Population, $\sigma$ Unknown
 
 **Sampling Distribution:**
 
 We must use the sample standard deviation:
 
-$$T = \frac{\bar{X} - \mu}{S/(n-1)^{1/2}} = \frac{\bar{X} - \mu}{S'/\sqrt{n}} \sim t_{n-1}$$
+$$T = \frac{\bar{X} - \mu}{S/\sqrt{n-1}} = \frac{\bar{X} - \mu}{S'/\sqrt{n}} \sim t_{n-1}$$
 
 where $S' = \sqrt{\frac{n}{n-1}}S$ is the corrected sample standard deviation.
 
@@ -223,11 +486,26 @@ where $S' = \sqrt{\frac{n}{n-1}}S$ is the corrected sample standard deviation.
 :::{.callout-warning}
 ## When to Use t vs. Z
 
-- It's rare to know $\mu$ without knowing $\sigma$
+- It's rare to know $\sigma^2$ without knowing $\mu$
 - In practice, we almost always use the **t-Student** distribution
 - We estimate $\sigma$ using the sample standard deviation $S$ or $S'$
 - The t-distribution accounts for the uncertainty from estimating $\sigma$
 :::
+
+## Important Note
+
+Thus:
+
+$$S^2=\frac{1}{n}\sum_{i=1}^n (X_i-\bar{X})^2$$ and
+
+$$S'^2=\frac{1}{n-1}\sum_{i=1}^n (X_i-\bar{X})^2=\frac{n}{n-1}S^2$$
+
+## Important Note
+
+If we have a large enough sample (larger than 30), we can, from the sample, approximate the distribution of $\mu$, using the TLC (again, *forthcoming*):
+
+$$Z=\frac{\bar{X}-\mu}{\frac{S}{\sqrt{n-1}}}=\frac{\bar{X}-\mu}{\frac{S'}{\sqrt{n}}}\overset{\cdot}{\sim}N(0,1)$$
+
 
 ## Case 3: Unknown Population, Large Sample
 
@@ -239,13 +517,22 @@ where $S' = \sqrt{\frac{n}{n-1}}S$ is the corrected sample standard deviation.
 - Statistic: Sample mean $\bar{X} = \frac{1}{n}\sum_{i=1}^{n} X_i$
 :::
 
-. . .
+## Case 3: Unknown Population, Large Sample
 
 **Approximate Sampling Distribution (by CLT):**
 
 For $n$ sufficiently large ($n \geq 30$), by the Central Limit Theorem:
 
-$$Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \overset{CLT}{\sim} N(0, 1)$$
+$$Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \underbrace{\overset{\cdot}{\sim}}_{CLT} N(0, 1)$$
+
+## Case 3: Unknown Population, Large Sample
+
+:::{.callout-warning}
+## Note:
+
+If $\sigma^2$ is unknown, the aproximate sampling distribution is given by: $$Z=\frac{\bar{X}-\mu}{\frac{S}{\sqrt{n-1}}}=\frac{\bar{X}-\mu}{\frac{S'}{\sqrt{n}}}\underbrace{\overset{\cdot}{\sim}}_{CLT}N(0,1)$$
+
+:::
 
 ## Central Limit Theorem (CLT)
 
@@ -254,8 +541,8 @@ $$Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \overset{CLT}{\sim} N(0, 1)$$
 
 Regardless of the population distribution, as the sample size $n$ increases, the sampling distribution of $\bar{X}$ approaches a Normal distribution with:
 
-- Mean: $E(\bar{X}) = \mu$
-- Standard Deviation: $SD(\bar{X}) = \sigma/\sqrt{n}$
+- Mean: $E[\bar{X}] = \mu$
+- Standard Deviation: $\sqrt{V[\bar{X}]} = \sigma/\sqrt{n}$
 
 **This is one of the most important theorems in statistics!**
 :::
@@ -278,6 +565,61 @@ $$Z = \frac{\bar{X} - \mu}{S/(n-1)^{1/2}} = \frac{\bar{X} - \mu}{S'/\sqrt{n}} \o
 | Normal | Unknown | $n > 30$ | $Z \sim N(0,1)$ (approx.) |
 | Unknown | Known | $n \geq 30$ | $Z \sim N(0,1)$ (CLT) |
 | Unknown | Unknown | $n > 30$ | $Z \sim N(0,1)$ (CLT) |
+
+## Exercise 7 {.smaller}
+
+A company wishes to validate the value (in euros) of its accounts receivable from clients, assuming the underlying distribution of account values is $\text{Normal}(\mu = 385,\; \sigma = ?)$.
+
+A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation $s' = 122.6$ euros.
+
+&nbsp;
+
+**a)** $\boxed{V}$ $\boxed{F}$ The sampling distribution of the mean value of client accounts is $t_{(25)}$.
+
+**b)** $\boxed{V}$ $\boxed{F}$ The required sample size (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is $n = 102$. (Assume that the value of $n$ to be found will be greater than 30.)
+
+
+## Exercise 7 — Solution a) {.smaller}
+
+**Population:** $X \sim N(\mu = 385,\; \sigma = ?)$ (standard deviation unknown)
+
+**Sample:** $n = 25$; $s' = 122.6$
+
+&nbsp;
+
+The sampling distribution of the sample mean (mean value of client accounts) is given by:
+
+$$
+T = \frac{\bar{X} - \mu}{\dfrac{S'}{\sqrt{n}}} \sim t_{(n-1)} \equiv t_{(24)}
+$$
+
+The statement claims $t_{(25)}$, but the correct distribution is $t_{(24)}$.
+
+The statement is **False**.
+
+
+## Exercise 7 — Solution b) {.smaller}
+
+**Population:** $X \sim N(\mu = 385,\; \sigma = ?)$ | **Sample:** $n \geq 30$; $s' = 122.6$
+
+Since $n \geq 30$, by the CLT:
+
+$$
+\bar{X} \;\underset{\text{approx. by CLT}}{\sim}\; N\!\left(\mu,\; \frac{s'}{\sqrt{n}}\right) \equiv N\!\left(385,\; \frac{122.6}{\sqrt{n}}\right)
+$$
+
+We want $P(|\bar{X} - \mu| < 20) = 0.9$:
+
+$$
+P\!\left(|Z| < \frac{20}{\dfrac{122.6}{\sqrt{n}}}\right) = 0.9 \;\Leftrightarrow\; P\!\left(|Z| > \frac{20}{\dfrac{122.6}{\sqrt{n}}}\right) = 0.1
+$$
+
+$$
+\Leftrightarrow\; \frac{20}{\dfrac{122.6}{\sqrt{n}}} = 1.645 \;\Leftrightarrow\; n \geq 102
+$$
+
+The statement is **True**.
+
 
 # Sampling Distribution of the Variance
 
@@ -315,6 +657,44 @@ When calculating $S^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2$:
 - Therefore, only $n-1$ of them are "free" to vary
 - We say we have $n-1$ **degrees of freedom**
 
+## Exercise 8 {.smaller}
+
+A pharmaceutical company produces tablets in which the variability of the amount of active substance from one tablet to another must be very small. The population standard deviation is supposedly one milligram. Inspectors from the Ministry of Health selected a random sample of 16 tablets.
+
+Assuming the population is Normal, the probability that the corrected sample variance exceeds $0.736\;\text{mg}^2$ is:
+
+&nbsp;
+
+**a)** 0.76 &emsp; **b)** 0.25 &emsp; **c)** 0.75 &emsp; **d)** none of the above
+
+
+## Exercise 8 — Solution {.smaller}
+
+**Population:** $X \sim N(\mu,\; \sigma)$, with $\sigma = 1$ (i.e. $\sigma^2 = 1$)
+
+**Sample:** $n = 16$
+
+**Pivot quantity:**
+
+$$
+Q = \frac{(n-1)\,S'^2}{\sigma^2} = \frac{15\,S'^2}{1} = 15\,S'^2 \sim \chi^2_{(n-1)} \equiv \chi^2_{(15)}
+$$
+
+**We want:**
+
+$$
+P(S'^2 > 0.736) = P(Q > 15 \times 0.736) = P(Q > 11.04)
+$$
+
+Reading directly from the $\chi^2$ table with 15 degrees of freedom:
+
+$$
+P(Q > 11.04) \approx 0.75
+$$
+
+The correct answer is **c)**.
+
+
 # Sampling Distribution of a Proportion
 
 ## Bernoulli Population
@@ -325,7 +705,7 @@ When calculating $S^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2$:
 - Population: $X \sim Bernoulli(p)$ where
   - $P(X=1) = p$ (success)
   - $P(X=0) = 1-p = q$ (failure)
-- Parameters: $E(X) = p$ and $Var(X) = p(1-p) = pq$
+- Parameters: $E[X] = p$ and $V[X] = p(1-p) = pq$
 - Random sample: $(X_1, X_2, \ldots, X_n)$
 :::
 
@@ -335,11 +715,25 @@ The sample proportion is just the sample mean for a Bernoulli population:
 
 $$\hat{p} = \bar{X} = \frac{X_1 + X_2 + \cdots + X_n}{n} = \frac{\text{number of successes}}{n}$$
 
+## First case
+
+Let $Y=\sum_{i=1}^n X_i$, the total amount of successes. Then $Y$ has a sample distribution:
+
+$$Y=\sum_{i=1}^m\sim Binomial(n,p)$$
+
+If $n$ is large enough, we can apply the $CLT$ to get an approximate sample distribution: $$Y\overset{\cdot}{\sim} N\left(np,\sqrt{np(1-p)}\right)\Leftrightarrow Z_n=\frac{Y-np}{\sqrt{np(1-p)}}\overset{\cdot}{\sim}N(0,1)$$
+
+## Second case
+
+Let the statistic $\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i = \frac{Y}{n}$ the **proportion** of successess that, in a sample of size $n$, have some characteristic.
+
+It is of interest to know the **sampling distribution** of $\bar{X}=\hat{p}$
+
 **Expected Value and Variance:**
 
-$$E(\bar{X}) = E(\hat{p}) = p$$
+$$E[\bar{X}] = E[\hat{p}] = p$$
 
-$$Var(\bar{X}) = Var(\hat{p}) = \frac{p(1-p)}{n} = \frac{pq}{n}$$
+$$V[\bar{X}] = V[\hat{p}] = \frac{p(1-p)}{n} = \frac{pq}{n}$$
 
 ## Approximate Distribution (by CLT)
 
@@ -351,109 +745,58 @@ Equivalently:
 
 $$Z_n = \frac{\bar{X} - p}{\sqrt{p(1-p)/n}} = \frac{\hat{p} - p}{\sqrt{pq/n}} \overset{CLT}{\sim} N(0, 1)$$
 
-**Rule of thumb:** This approximation works well when $np \geq 5$ and $n(1-p) \geq 5$.
+## Exercise 10 {.smaller}
 
-# Examples and Applications
+In a certain neighborhood, the proportion of residents who consider useful the opening of a new supermarket is 0.8. The *Sweet Drop* supermarket chain intends to open a new store in this neighborhood. Nevertheless, before making a decision, a study was conducted in which 400 residents were casually interviewed to assess their intention to use the services of the new supermarket.
 
-## Example 1: Airport Waiting Times
+**a)** $\boxed{V}$ $\boxed{F}$ The **approximate** probability that in the sample of interviewed residents there are at least 300 who consider useful the opening of the *Sweet Drop* supermarket is equal to 0.9948.
 
-**Problem:** Waiting time for takeoff at an airport is Normally distributed with mean $\mu = 4$ minutes. A random sample of $n = 21$ planes gave $s' = 1.81$ minutes.
+**b)** $\boxed{V}$ $\boxed{F}$ The probability that the deviation between the sample proportion of residents who stated they would actually use the services of the new supermarket and the true proportion is less than 0.02 is 0.8413.
 
-**Questions:**
 
-a) What is the sampling distribution of $\bar{X}$?
-b) Find $P(\bar{X} > 4.5)$
+## Exercise 10 — Solution a) {.smaller}
 
-## Example 1: Solution (a)
+$p = 0.8$ (proportion of residents who consider the opening useful)
 
-Population: $X \sim N(\mu = 4, \sigma)$ with $\sigma$ **unknown**
+**a)** $X \to$ number of residents, out of 400, who find the opening of the new supermarket useful
 
-Sample: $n = 21$, $s' = 1.81$
+$$X \sim \text{Binomial}(n = 400,\; p = 0.8)$$
 
-**Sampling distribution:**
+$$
+\begin{align}
+P(X \geq 300) &= P(X \geq 299.5) \;\underset{1)}{\approx}\; P\!\left(Z \geq \frac{299.5 - 400 \times 0.8}{\sqrt{400 \times 0.8 \times 0.2}}\right) \\[8pt]
+&= P(Z \geq -2.56) = P(Z \leq 2.56) = \Phi(2.56) = 0.9948
+\end{align}
+$$
 
-$$T = \frac{\bar{X} - \mu}{s'/\sqrt{n}} = \frac{\bar{X} - 4}{1.81/\sqrt{21}} \sim t_{20}$$
+**Obs:**
 
-Therefore:
+1) Continuity correction
 
-$$\bar{X} \sim t_{20} \text{ distribution centered at } \mu = 4 \text{ with scale } s'/\sqrt{21}$$
+2) CLT, approximation of the Binomial distribution to the Normal distribution
 
-## Example 1: Solution (b)
+$$Z = \frac{X - np}{\sqrt{np(1-p)}} \sim N(0,1)$$
 
-Find $P(\bar{X} > 4.5)$:
+The statement is **true**.
 
-$$P(\bar{X} > 4.5) = P\left(\frac{\bar{X} - 4}{1.81/\sqrt{21}} > \frac{4.5 - 4}{1.81/\sqrt{21}}\right)$$
 
-$$= P(T > 1.266) = P(T_{20} > 1.266)$$
+## Exercise 10 — Solution b) {.smaller}
 
-From t-table with 20 degrees of freedom:
+**b)** From the interviews conducted, $X$ residents out of $n$ stated they would use *Sweet Drop*, thus the sample proportion is $\dfrac{X}{n}$.
 
-- $t_{0.10, 20} = 1.325$, so $P(T > 1.325) = 0.10$
-- Since $1.266 < 1.325$, we have $P(T > 1.266) > 0.10$
+$$
+\begin{align}
+P\!\left(\left|\frac{X}{n} - p\right| < 0.02\right) &\;\underset{1)}{\approx}\; P\!\left(|Z| < \frac{0.02}{\sqrt{\dfrac{0.8 \times 0.2}{400}}}\right) = P(|Z| < 1) \\[8pt]
+&= P(-1 < Z < 1) = \Phi(1) - \Phi(-1) = \Phi(1) - [1 - \Phi(1)] \\[8pt]
+&= 2\Phi(1) - 1 = 2 \times 0.8413 - 1 = 0.6826
+\end{align}
+$$
 
-Approximate answer: $P(\bar{X} > 4.5) \approx 0.11$
+**Obs:** 1) Note that we have $\dfrac{x - np}{\sqrt{np(1-p)}} = \dfrac{\dfrac{x}{n} - p}{\sqrt{\dfrac{p(1-p)}{n}}} = \dfrac{\dfrac{x}{n} - p}{\sqrt{\dfrac{p(1-p)}{n}}}$ and that, by CLT,
 
-## Example 2: Client Accounts
+$$Z = \frac{X - np}{\sqrt{np(1-p)}} \sim N(0,1) \text{ and therefore, also } Z = \frac{\dfrac{X}{n} - p}{\sqrt{\dfrac{p(1-p)}{n}}} \sim N(0,1)$$
 
-**Problem:** A company wants to validate client account values (in euros). Accounts follow $N(\mu = 385, \sigma = ?)$. A sample of $n$ accounts gives $s' = 122.6$ euros.
-
-**Question:** Find $n$ such that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases. (Assume $n > 30$)
-
-## Example 2: Solution
-
-Since $n > 30$, we can use the Normal approximation:
-
-$$\bar{X} \overset{CLT}{\sim} N\left(385, \frac{122.6}{\sqrt{n}}\right)$$
-
-We want: $P(|\bar{X} - 385| < 20) = 0.90$
-
-This is equivalent to: $P(|\bar{X} - 385| > 20) = 0.10$
-
-## Example 2: Solution (Continued)
-
-$$P\left(\left|\frac{\bar{X} - 385}{122.6/\sqrt{n}}\right| > \frac{20}{122.6/\sqrt{n}}\right) = 0.10$$
-
-$$P\left(|Z| > \frac{20\sqrt{n}}{122.6}\right) = 0.10$$
-
-From Normal table: $P(|Z| > 1.645) = 0.10$
-
-Therefore:
-
-$$\frac{20\sqrt{n}}{122.6} = 1.645$$
-
-$$\sqrt{n} = \frac{1.645 \times 122.6}{20} = 10.084$$
-
-$$n \approx 102$$
-
-## Example 3: TV Cable Subscription
-
-**Problem:** A cable TV channel is subscribed by 10% of residents ($p = 0.10$). A marketing company surveys $n = 100$ random residents.
-
-**Question:** Advertising contracts will only be renewed if the sample proportion exceeds 8.5%. What's the probability this occurs?
-
-## Example 3: Solution
-
-Population: $X \sim Bernoulli(p = 0.10)$
-
-Sample: $n = 100$
-
-Check CLT conditions: $np = 10 \geq 5$ and $n(1-p) = 90 \geq 5$ ✓
-
-**Sampling distribution:**
-
-$$\hat{p} \overset{CLT}{\sim} N\left(0.10, \sqrt{\frac{0.10 \times 0.90}{100}}\right) = N(0.10, 0.03)$$
-
-## Example 3: Solution (Continued)
-
-Find $P(\hat{p} > 0.085)$:
-
-$$P(\hat{p} > 0.085) = P\left(\frac{\hat{p} - 0.10}{0.03} > \frac{0.085 - 0.10}{0.03}\right)$$
-
-$$= P(Z > -0.50) = P(Z < 0.50)$$
-
-From Normal table: $P(Z < 0.50) = 0.6915$
-
-**Answer:** The probability of renewing the contract is approximately **69.15%**.
+The statement is **false**.
 
 # Key Takeaways
 

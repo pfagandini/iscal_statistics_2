@@ -9,9 +9,9 @@
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Material",
     "section": "",
-    "text": "About this site"
+    "text": "Sampling Distributions"
   },
   {
     "objectID": "slides/sampling_distributions.html#what-well-cover",
@@ -32,14 +32,14 @@
     "href": "slides/sampling_distributions.html#parameters-and-statistics",
     "title": "Sampling Distributions",
     "section": "Parameters and Statistics",
-    "text": "Parameters and Statistics\n\n\n\nParameter\n\n\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\nExamples: population mean \\(\\mu\\), population variance \\(\\sigma^2\\)\n\n\n\n\n\n\n\nStatistic\n\n\nA statistic is a characteristic that is a function of the sample values; that is, it’s a random variable that does not involve any unknown parameters.\nSymbolized by: \\(T(X_1, X_2, \\ldots, X_n)\\)"
+    "text": "Parameters and Statistics\n\n\n\nParameter\n\n\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\nExamples: population mean \\(\\mu\\), population variance \\(\\sigma^2\\)\n\n\n\n\n\n\n\nStatistic\n\n\nA statistic is a characteristic that is a function of the sample values; that is, it’s a random variable that does not involve any unknown parameters. If the statistic is used to estimate a parameter, then this statistic is called an estimator.\nSymbolized by: \\(T(X_1, X_2, \\ldots, X_n)\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#example-what-is-a-statistic",
     "href": "slides/sampling_distributions.html#example-what-is-a-statistic",
     "title": "Sampling Distributions",
     "section": "Example: What is a Statistic?",
-    "text": "Example: What is a Statistic?\nConsider a random sample \\((X_1, X_2, \\ldots, X_n)\\), \\(n \\in \\mathbb{N}\\), from a population \\(X \\sim Normal(\\mu = -2, \\sigma)\\), where \\(\\sigma\\) is unknown.\nWhich of the following are statistics?\n\n\\(T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{X_1 + X_2 + \\cdots + X_n}{n} = \\bar{X}\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{\\bar{X}}{\\sigma}\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}}\\)"
+    "text": "Example: What is a Statistic?\nConsider a random sample \\((X_1, X_2, \\ldots, X_n)\\), \\(n \\in \\mathbb{N}\\), from a population \\(X \\sim Normal(\\mu = -2, \\sigma^2)\\), where \\(\\sigma^2\\) is unknown.\nWhich of the following are statistics?\n\n\\(T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{X_1 + X_2 + \\cdots + X_n}{n} = \\bar{X}\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{\\bar{X}}{\\sigma}\\)\n\\(T(X_1, X_2, \\ldots, X_n) = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}}\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#example-solution",
@@ -53,42 +53,42 @@
     "href": "slides/sampling_distributions.html#the-t-student-distribution",
     "title": "Sampling Distributions",
     "section": "The t-Student Distribution",
-    "text": "The t-Student Distribution\n\n\n\nDefinition\n\n\nA continuous random variable \\(T\\) follows a t-Student distribution with \\(\\nu\\) degrees of freedom if its probability density function is:\n\\[f(t) = \\frac{\\Gamma\\left(\\frac{\\nu+1}{2}\\right)}{\\sqrt{\\nu\\pi}\\,\\Gamma\\left(\\frac{\\nu}{2}\\right)} \\left(1 + \\frac{t^2}{\\nu}\\right)^{-\\frac{\\nu+1}{2}}, \\quad t \\in \\mathbb{R}\\]\nNotation: \\(T \\sim t_\\nu\\)"
+    "text": "The t-Student Distribution\nLet \\(X\\sim N(0,1)\\) and \\(Y\\sim \\chi^2_\\nu\\), independent random variables. Then, the random variable \\[T=\\frac{X}{\\sqrt{\\frac{Y}{\\nu}}}\\sim t_\\nu\\]\nhas a \\(t-student\\) distribution with \\(\\nu\\) degrees of freedom, i.e. \\(T\\sim t_\\nu\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#properties-of-t-student",
     "href": "slides/sampling_distributions.html#properties-of-t-student",
     "title": "Sampling Distributions",
     "section": "Properties of t-Student",
-    "text": "Properties of t-Student\nKey Properties:\n\nSymmetric around zero: \\(E(T) = 0\\) (for \\(\\nu &gt; 1\\))\nVariance: \\(Var(T) = \\frac{\\nu}{\\nu - 2}\\) (for \\(\\nu &gt; 2\\))\nAs \\(\\nu \\to \\infty\\): \\(t_\\nu \\to N(0,1)\\)\nHeavier tails than the standard normal distribution\nShape depends on degrees of freedom \\(\\nu\\)"
+    "text": "Properties of t-Student\nKey Properties:\n\nSymmetric around zero: \\(E[T] = 0\\) (for \\(\\nu &gt; 1\\))\nVariance: \\(Var[T] = \\frac{\\nu}{\\nu - 2}\\) (for \\(\\nu &gt; 2\\))\nAs \\(\\nu \\to \\infty\\): \\(t_\\nu \\to N(0,1)\\)\nHeavier tails than the standard normal distribution\nShape depends on degrees of freedom \\(\\nu\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#t-student-vs.-normal-distribution",
     "href": "slides/sampling_distributions.html#t-student-vs.-normal-distribution",
     "title": "Sampling Distributions",
     "section": "t-Student vs. Normal Distribution",
-    "text": "t-Student vs. Normal Distribution\n\nThe t-distribution (red) has heavier tails than the Normal (blue). As \\(\\nu\\) increases, it approaches the Normal distribution."
+    "text": "t-Student vs. Normal Distribution\n\nThe t-distribution (red) has heavier tails than the Normal (dashed). As \\(\\nu\\) increases, it approaches the Normal distribution."
   },
   {
     "objectID": "slides/sampling_distributions.html#using-t-student-tables",
     "href": "slides/sampling_distributions.html#using-t-student-tables",
     "title": "Sampling Distributions",
     "section": "Using t-Student Tables",
-    "text": "Using t-Student Tables\nFor a t-Student distribution with \\(\\nu\\) degrees of freedom:\n\nTables typically provide: \\(P(T &gt; t_{\\alpha, \\nu}) = \\alpha\\)\nDue to symmetry: \\(t_{1-\\alpha, \\nu} = -t_{\\alpha, \\nu}\\)\n\nExample: For \\(\\nu = 10\\) and \\(\\alpha = 0.05\\):\n\n\\(t_{0.05, 10} = 1.812\\)\nThis means: \\(P(T &gt; 1.812) = 0.05\\)\nBy symmetry: \\(P(T &lt; -1.812) = 0.05\\)"
+    "text": "Using t-Student Tables\nFor a t-Student distribution with \\(\\nu\\) degrees of freedom:\n\nTables typically provide: \\(P(T &gt; t_{\\alpha, \\nu}) = \\alpha\\)\nDue to symmetry: \\(t_{1-\\alpha, \\nu} = -t_{\\alpha, \\nu}\\)\n\n\nExample: For \\(\\nu = 10\\) and \\(\\alpha = 0.05\\):\n\n\\(t_{0.05, 10} = 1.812\\)\nThis means: \\(P(T &gt; 1.812) = 0.05\\)\nBy symmetry: \\(P(T &lt; -1.812) = 0.05\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#the-chi-square-distribution",
     "href": "slides/sampling_distributions.html#the-chi-square-distribution",
     "title": "Sampling Distributions",
     "section": "The Chi-square Distribution",
-    "text": "The Chi-square Distribution\n\n\n\nDefinition\n\n\nA continuous random variable \\(Q\\) follows a chi-square distribution with \\(\\nu\\) degrees of freedom if:\n\\[f(q) = \\frac{1}{2^{\\nu/2}\\Gamma(\\nu/2)} q^{(\\nu/2)-1} e^{-q/2}, \\quad q &gt; 0\\]\nNotation: \\(Q \\sim \\chi^2_\\nu\\)"
+    "text": "The Chi-square Distribution"
   },
   {
     "objectID": "slides/sampling_distributions.html#properties-of-chi-square",
     "href": "slides/sampling_distributions.html#properties-of-chi-square",
     "title": "Sampling Distributions",
     "section": "Properties of Chi-square",
-    "text": "Properties of Chi-square\nKey Properties:\n\n\\(E(Q) = \\nu\\) (mean equals degrees of freedom)\n\\(Var(Q) = 2\\nu\\)\nRight-skewed distribution (not symmetric)\nOnly positive values\nSum property: If \\(Q_1 \\sim \\chi^2_{\\nu_1}\\) and \\(Q_2 \\sim \\chi^2_{\\nu_2}\\) are independent, then \\(Q_1 + Q_2 \\sim \\chi^2_{\\nu_1 + \\nu_2}\\)"
+    "text": "Properties of Chi-square\nKey Properties:\n\n\\(E[Y] = \\nu\\) (mean equals degrees of freedom)\n\\(V[Y] = 2\\nu\\)\nRight-skewed distribution (not symmetric)\nOnly positive values\nSum property: If \\(Q_1 \\sim \\chi^2_{\\nu_1}\\) and \\(Q_2 \\sim \\chi^2_{\\nu_2}\\) are independent, then \\(Q_1 + Q_2 \\sim \\chi^2_{\\nu_1 + \\nu_2}\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#chi-square-distribution-shape",
@@ -109,35 +109,35 @@
     "href": "slides/sampling_distributions.html#case-1-normal-population-sigma-known",
     "title": "Sampling Distributions",
     "section": "Case 1: Normal Population, \\(\\sigma\\) Known",
-    "text": "Case 1: Normal Population, \\(\\sigma\\) Known\n\nSetup:\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\) with \\(\\sigma^2\\) known\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\) where \\(X_i \\sim N(\\mu, \\sigma)\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\n\n\n\nSampling Distribution:\nBy the additivity theorem for Normal distributions:\n\\[\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right) \\Leftrightarrow Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\sim N(0, 1)\\]"
+    "text": "Case 1: Normal Population, \\(\\sigma\\) Known\n\nSetup:\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\) with \\(\\sigma^2\\) known\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\) where \\(X_i \\sim N(\\mu, \\sigma)\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#case-2-normal-population-sigma-unknown",
     "href": "slides/sampling_distributions.html#case-2-normal-population-sigma-unknown",
     "title": "Sampling Distributions",
     "section": "Case 2: Normal Population, \\(\\sigma\\) Unknown",
-    "text": "Case 2: Normal Population, \\(\\sigma\\) Unknown\n\nSetup:\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\) with \\(\\sigma^2\\) unknown\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\n\n\n\nSampling Distribution:\nWe must use the sample standard deviation:\n\\[T = \\frac{\\bar{X} - \\mu}{S/(n-1)^{1/2}} = \\frac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\sim t_{n-1}\\]\nwhere \\(S' = \\sqrt{\\frac{n}{n-1}}S\\) is the corrected sample standard deviation."
+    "text": "Case 2: Normal Population, \\(\\sigma\\) Unknown\n\nSetup:\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\) with \\(\\sigma^2\\) unknown\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#important-note",
     "href": "slides/sampling_distributions.html#important-note",
     "title": "Sampling Distributions",
     "section": "Important Note",
-    "text": "Important Note\n\n\n\n\n\n\nWhen to Use t vs. Z\n\n\n\nIt’s rare to know \\(\\mu\\) without knowing \\(\\sigma\\)\nIn practice, we almost always use the t-Student distribution\nWe estimate \\(\\sigma\\) using the sample standard deviation \\(S\\) or \\(S'\\)\nThe t-distribution accounts for the uncertainty from estimating \\(\\sigma\\)"
+    "text": "Important Note\n\n\n\n\n\n\nWhen to Use t vs. Z\n\n\n\nIt’s rare to know \\(\\sigma^2\\) without knowing \\(\\mu\\)\nIn practice, we almost always use the t-Student distribution\nWe estimate \\(\\sigma\\) using the sample standard deviation \\(S\\) or \\(S'\\)\nThe t-distribution accounts for the uncertainty from estimating \\(\\sigma\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#case-3-unknown-population-large-sample",
     "href": "slides/sampling_distributions.html#case-3-unknown-population-large-sample",
     "title": "Sampling Distributions",
     "section": "Case 3: Unknown Population, Large Sample",
-    "text": "Case 3: Unknown Population, Large Sample\n\nSetup:\n\nPopulation: Unknown distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\) known\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\) with \\(n \\geq 30\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)\n\n\n\nApproximate Sampling Distribution (by CLT):\nFor \\(n\\) sufficiently large (\\(n \\geq 30\\)), by the Central Limit Theorem:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\overset{CLT}{\\sim} N(0, 1)\\]"
+    "text": "Case 3: Unknown Population, Large Sample\n\nSetup:\n\nPopulation: Unknown distribution with mean \\(\\mu\\) and variance \\(\\sigma^2\\) known\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\) with \\(n \\geq 30\\)\nStatistic: Sample mean \\(\\bar{X} = \\frac{1}{n}\\sum_{i=1}^{n} X_i\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#central-limit-theorem-clt",
     "href": "slides/sampling_distributions.html#central-limit-theorem-clt",
     "title": "Sampling Distributions",
     "section": "Central Limit Theorem (CLT)",
-    "text": "Central Limit Theorem (CLT)\n\n\n\nCentral Limit Theorem\n\n\nRegardless of the population distribution, as the sample size \\(n\\) increases, the sampling distribution of \\(\\bar{X}\\) approaches a Normal distribution with:\n\nMean: \\(E(\\bar{X}) = \\mu\\)\nStandard Deviation: \\(SD(\\bar{X}) = \\sigma/\\sqrt{n}\\)\n\nThis is one of the most important theorems in statistics!"
+    "text": "Central Limit Theorem (CLT)\n\n\n\nCentral Limit Theorem\n\n\nRegardless of the population distribution, as the sample size \\(n\\) increases, the sampling distribution of \\(\\bar{X}\\) approaches a Normal distribution with:\n\nMean: \\(E[\\bar{X}] = \\mu\\)\nStandard Deviation: \\(\\sqrt{V[\\bar{X}]} = \\sigma/\\sqrt{n}\\)\n\nThis is one of the most important theorems in statistics!"
   },
   {
     "objectID": "slides/sampling_distributions.html#case-3-continued-sigma-unknown-large-sample",
@@ -179,21 +179,21 @@
     "href": "slides/sampling_distributions.html#bernoulli-population",
     "title": "Sampling Distributions",
     "section": "Bernoulli Population",
-    "text": "Bernoulli Population\n\nSetup:\n\nPopulation: \\(X \\sim Bernoulli(p)\\) where\n\n\\(P(X=1) = p\\) (success)\n\\(P(X=0) = 1-p = q\\) (failure)\n\nParameters: \\(E(X) = p\\) and \\(Var(X) = p(1-p) = pq\\)\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\)"
+    "text": "Bernoulli Population\n\nSetup:\n\nPopulation: \\(X \\sim Bernoulli(p)\\) where\n\n\\(P(X=1) = p\\) (success)\n\\(P(X=0) = 1-p = q\\) (failure)\n\nParameters: \\(E[X] = p\\) and \\(V[X] = p(1-p) = pq\\)\nRandom sample: \\((X_1, X_2, \\ldots, X_n)\\)"
   },
   {
     "objectID": "slides/sampling_distributions.html#sample-proportion",
     "href": "slides/sampling_distributions.html#sample-proportion",
     "title": "Sampling Distributions",
     "section": "Sample Proportion",
-    "text": "Sample Proportion\nThe sample proportion is just the sample mean for a Bernoulli population:\n\\[\\hat{p} = \\bar{X} = \\frac{X_1 + X_2 + \\cdots + X_n}{n} = \\frac{\\text{number of successes}}{n}\\]\nExpected Value and Variance:\n\\[E(\\bar{X}) = E(\\hat{p}) = p\\]\n\\[Var(\\bar{X}) = Var(\\hat{p}) = \\frac{p(1-p)}{n} = \\frac{pq}{n}\\]"
+    "text": "Sample Proportion\nThe sample proportion is just the sample mean for a Bernoulli population:\n\\[\\hat{p} = \\bar{X} = \\frac{X_1 + X_2 + \\cdots + X_n}{n} = \\frac{\\text{number of successes}}{n}\\]"
   },
   {
     "objectID": "slides/sampling_distributions.html#approximate-distribution-by-clt",
     "href": "slides/sampling_distributions.html#approximate-distribution-by-clt",
     "title": "Sampling Distributions",
     "section": "Approximate Distribution (by CLT)",
-    "text": "Approximate Distribution (by CLT)\nWhen \\(n \\to \\infty\\), the Central Limit Theorem gives us:\n\\[\\bar{X} = \\hat{p} \\overset{CLT}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\]\nEquivalently:\n\\[Z_n = \\frac{\\bar{X} - p}{\\sqrt{p(1-p)/n}} = \\frac{\\hat{p} - p}{\\sqrt{pq/n}} \\overset{CLT}{\\sim} N(0, 1)\\]\nRule of thumb: This approximation works well when \\(np \\geq 5\\) and \\(n(1-p) \\geq 5\\)."
+    "text": "Approximate Distribution (by CLT)\nWhen \\(n \\to \\infty\\), the Central Limit Theorem gives us:\n\\[\\bar{X} = \\hat{p} \\overset{CLT}{\\sim} N\\left(p, \\sqrt{\\frac{p(1-p)}{n}}\\right)\\]\nEquivalently:\n\\[Z_n = \\frac{\\bar{X} - p}{\\sqrt{p(1-p)/n}} = \\frac{\\hat{p} - p}{\\sqrt{pq/n}} \\overset{CLT}{\\sim} N(0, 1)\\]"
   },
   {
     "objectID": "slides/sampling_distributions.html#example-1-airport-waiting-times",
@@ -621,5 +621,397 @@
     "title": "Chapter I - Statistics I - Exercises",
     "section": "Questions",
     "text": "Questions\n\nQuestion 1\n\nConsider the following sales data, in thousands of euros, for a given company:\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales\n500\n650\n600\n800\n750\n950\n\n\n\n\n\nBuild the index series with fix base in 2020.\n\n\n\n\n\n\n\n\n\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\n\\(I^{sales}_{t|2020}\\)\n\n\n\n\n\n\n\n\n\n\nTRUEFALSE We could say that in year 2022, according to the index computed above, sales increased 20% relative to the base year.\nStudy the evolution of sales, between consecutive years.\n\n\n\nSolution\n\nWe need to compute the link or chain index.\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales\n500\n650\n600\n800\n750\n950\n\n\n\\(I^{sales}_{chain}\\)\n\n130\n92.3\n133.3\n93.8\n126.7\n\n\n\n\nFrom 2020 to 2021 sales grew by 30%, from 2021 to 2022 sales diminished 7.7%, from 2022 to 2023 sales grew 33.3%, from 2023 to 2024 sales dropped 6.2%, and from 2024 to 2025 sales grew 26.7%.\n\n\nWhat happened to sales during the whole studied period?\n\n\n\nSolution\n\nSales grew 90%, between 2020 and 2025.\n\n\nThe growth rate between 2022 and 2024 was 25%90%14%none of the above\nThe (rounded) average growth rate in the studied period is 18%9%14%None of the above\n\n\n\n\nQuestion 2\n\nConsider the following sales data, in thousands of euros, for a given company:\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales\n300\n250\n\\(a\\)\n240\n\\(b\\)\n340\n\n\n\n\n\nTRUEFALSE The average growth rate for sales, between 2020 and 2025 was, approximately, 2.53%.\nLet \\(i_{2022|2020}=67\\). Also, assume you know that the growth rate doubled between 2023 and 2024. The values for \\(a\\) and \\(b\\) are respectively: 201 and 333.1201 and 300240 and 333.1None of the above\nTRUEFALSE The average growth rate needed to triple sales between 2025 and 2029 would have to be 31.61%.\nTRUEFALSE Assuming an average growth rate of 10%, it would be necessary to wait for 6 years for sales to triple.\n\n\n\n\nQuestion 3\n\nA given company presented their financial statements with the following information:\n\n\n\n\n\n\n\n\n\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nGrowth rate of sales\n\n20%\n15%\n20%\n10%\n25%\n\n\nPrice Index (base = 2022)\n81.17\n89.29\n100\n115\n128.8\n148.12\n\n\n\n\n\nWrite the average growth rate of (nominal) sales for the whole period (rounded up, for example 11 if percentage, or 0.11 if decimal): \nFind the annual real growth rate for sales, when this was negative.\n\n\n\nSolution\n\nStart building the index for sales, base 2022, and remember \\(i^v_{t|b}=i^q_{t|b}\\times i^p_{t|b}\\) to build the real growth rates:\n\n\n\n\n\n\n\n\n\n\n\n\n\nYear\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales Index (base = 2022)\n72.46\n86.96\n100\n120\n132\n165\n\n\nPrice Index (base = 2022)\n81.17\n89.29\n100\n115\n128.8\n148.12\n\n\nReal Sales Index (base = 2022)\n89.27\n97.39\n100\n104.35\n102.48\n111.4\n\n\n\n\nClearly, the real growth rate was negative in 2024, and it was -1.79%.\n\n\nHow do you interpret the price index for years 2020 and 2021?\n\n\n\nSolution\n\nFrom 2020 to 2022 prices grew 23.2 %, and from 2021 to 2022 prices grew 11.99 %.\n\n\n\n\nQuestion 4\n\nFor some country, water consumption in the period 2017 and 2025 evolved according the simple index, base 2022, shown in the following table:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYear\n2017\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales Index (base = 2022)\n75.6\n78.5\n82.5\n88.1\n93.8\n100\n104.8\n107.7\n107.9\n\n\n\n\n\nTRUEFALSE Water consumption betwee 2019 and 2021 grew 12.5%.\nTRUEFALSE The chain index of 2019 and 2020 are respectively equal to 105.1 and 106.8.\nTaking yera 2017 as base year, \\(i_{2025|2017}\\) would be equal to: 136.32142.7175.6None of the above\nTRUEFALSE The average growth rate for water consumption in the whole period was 4.54%. Overall, during the whole period, water consumption grew 36.32%.\n\n\n\n\nQuestion 5\n\nWayne Industries reported sales using the chain index shown in the following table:\n\n\n\n\nYear\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nSales Index\n120\n125\n135\n145\n150\n160\n165\n\n\n\n\n\nThe average growth rate between 2019 and 2025 was approximately: 50%42.86%46.01%None of the above\nThe growth rate for sales between 2018 and 2025 is approximately: 1062.8%65%42.86None of the above\nTRUEFALSE The average semi-annual growth rate between 2021 and 2024 is approximately 23.10%.\nTRUEFALSE The value for the semi-annual growth rate, in real terms, if the IPC (fix base) went from 130 in 2021 to 180 in 2024, is approximately equal to 10%.\n\n\n\n\nQuestion 6\n\nConsider the following data regarding nominal wages for the workers of Watto’s Junkyard. You also have the inflation rate in Tatooine, for the period 2021 and 2025.\n\n\n\nYear\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nWage Index (base 2022)\n93.5\n100\n104.3\n103.8\n109.7\n\n\nInflation rate\n3.0%\n2.4%\n2.8%\n2.3 %\n3.0%\n\n\n\n\nTRUEFALSE The nominal wage growth rate, from 2021 to 2025, is 17.33%.\nTRUEFALSE The average growth rate of inflation between 2021 and 2025 is 2%.\nFill the following table (use 2 decimal places, for example 101.01):\n\n\n\n\n\n\n\n\n\n\n\nYear\n2022\n2023\n2024\n2025\n\n\n\n\nLinked-Chain Index for wages\n\n\n\n\n\n\n\n\nThe year where the wages had the largest real increase was .\n\n\n\n\nQuestion 7\n\nConsider the following data with respect to the evolution of the Euro Area GDP (EU27) between 2018 and 2024, constant prices (base 2015), as well as the chain index for prices for the same period:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nindicator\n2018\n2019\n2020\n2021\n2022\n2023\n2024\n2025\n\n\n\n\nGDP\n11333667\n11546231.7\n10904047.8\n11596602.4\n12007722.6\n12059826.7\n12187672.9\nNA\n\n\nCPI_link\nNA\n101.4\n100.7\n102.9\n109.2\n106.4\n102.6\n102.5\n\n\n\n\n\n\nTRUEFALSE The inflation rate between 2022 and 2023 was -2.56%.\nTRUEFALSE Prices grew from 2021 to 2025 -0.39%.\nTRUEFALSE The average growth rate between 2025 and 2018, for GDP, was NA % every year.\nTRUEFALSE In 2024 and 2025 the real and nominal growth rates (for GDP) were the same.\n\n\n\n\nQuestion 8\n\nThe table below has data on regular consumption goods. You will find prices and quantities, before and after austerity measures were put in place for a economically struggling country. In this period, the LQI and PQI were 91.4 and 91.3 respectively.\n\n\n\n\nProducts\n\n\nBefore austerity\n\n\nAfter austerity\n\n\n\n\nPrice\n\n\nQuantity\n\n\nPrice\n\n\nQuantity\n\n\n\n\n\n\nBread (units)\n\n\n0.2\n\n\n420\n\n\n0.25\n\n\n360\n\n\n\n\nMilk (Lts)\n\n\n0.7\n\n\n360\n\n\n0.80\n\n\n336\n\n\n\n\n\nAssume the time window, between the two periods, was 3 years. The average growth rate for the price of bread was: %. (use two decimals, for example 9.81)\nTRUEFALSE According to the Fisher index, in the studied period, the variation of consumed quantities, for both products, was negative and equal to -8.65%.\nTRUEFALSE The real and nominal growth rates, for sales, for both products, were similar after the implementation of the austerity measures.\nSuppose that after the implementation of the austerity measures, and until now, the price of milk dropped 5%. Then, the current price for milk would be  (again, use two decimal places, for example 0.56)\n\n\n\n\nQuestion 9\n\n\n\n\n\nPublic Transportation\n\n\nYear 1\n\n\nYear 2\n\n\n\n\nTrips\n\n\nPrice per trip\n\n\nTrips\n\n\nPrice Index (Base: year 1)\n\n\n\n\n\n\nBus\n\n\n1,763,521\n\n\n1.15\n\n\n1,875,345\n\n\n108.70\n\n\n\n\nMetro\n\n\n3,148,350\n\n\n1.2\n\n\n3,396,138\n\n\n112.50\n\n\n\n\n\nTRUEFALSE According to the LPI for year 2, prices for public transportation grew 11.17% compared to year 1.\nTRUEFALSE The real change, according to PQI in year 2, was 7.35% compared to year 1.\nThe composite index for value, in the public transportation sector, for year 2 compared to year 1, represents what type of change? realnominalquantityprices\n\n\n\n\nQuestion 10\n\nAfter tracking a basket with 30 goods for 3 years (2023 to 2025), the following data was collected:\n\n\n\n\n\n\n\n\n\n\n2023\n2024\n2025\n\n\n\n\n2023\n\\(\\sum p^k_{2023}q^k_{2023} = 8,562\\)\n\\(\\sum p^k_{2023}q^k_{2024}=9,210\\)\n\\(\\sum p^k_{2023} q^k_{2025} = 9,920\\)\n\n\n2024\n\\(\\sum p^k_{2024}q^k_{2023} = 9,150\\)\n\\(\\sum p^k_{2024}q^k_{2024} = 9,584\\)\n\n\n\n2025\n\\(\\sum p^k_{2025}q^k_{2023}=9,657\\)\n\n\\(\\sum p^k_{2025}q^k_{2025} = 10,013\\)\n\n\n\nFill the following table (use index in hundreds, rounded to the closest integer, for example 107):\n\n\n\n\n\n\n\n\n\n\n2023\n2024\n2025\n\n\n\n\n\\(LPI_{t|2023}\\)\n100\n\n\n\n\n\\(PPI_{t|2023}\\)\n100\n\n\n\n\n\\(FPI_{t|2023}\\)\n100\n\n\n\n\n\n\n\n\nQuestion 11\nAn Index Number is used:\n\n To measure the change in prices To measure the change in consumed quantities To measure the change of a variable/phenomena over time To measure the changes in the demand\n\nAn index number is expressed as\n\n Ratios Percentages Either of the above None of the above\n\nA price index number, computed with a constant reference is:\n\n A price index A price index (fixed base) Both of the above None of the above\n\nThe most adequate average to compute the average growth rate, for example, for prices, is:\n\n Median Arithmetic mean Harmonic mean Geometric mean\n\nThe Consumer Price Index (CPI) is computed using:\n\n The Laspeyres formula The Paasche formula Average of Laspeyres and Paasche The Fisher formula\n\nWhich of the following passes the test of time reversion?\n\n \\[IP_{t|0}=\\frac{\\sum p_tq_0}{\\sum p_0 q_0}\\] \\[IP_{t|0}=\\frac{\\sum p_t q_t}{\\sum p_0 q_t}\\] \\[IP_{t|0}=\\sqrt{\\frac{p_t q_0}{p_0q_0}\\times\\frac{\\sum p_tq_t}{p_0q_t}}\\] None of the above\n\nAn index number, computed using Fisher’s formula is considered ideal because passes:\n\n The factor reversion test Time reversion test Both test above Circularity test\n\nFrom the following identities, select the FALSE one\n\n \\(IV_{t|0}=LPI_{t|0}\\times PQI_{t|0}\\) \\(IV_{t|0}=CPI_{t|0}\\times PQI_{t|0}\\) \\(IV_{t|0}=FPI_{t|0}\\times FQI_{t|0}\\) \\(IV_{t|0}=PPI_{t|0}\\times PQI_{t|0}\\)\n\nTRUEFALSE The real growth rate, within a given timeframe, corresponds to the nominal growth rate, deflated by the CPI (consumer price index)."
+  },
+  {
+    "objectID": "about.html#slides",
+    "href": "about.html#slides",
+    "title": "Material",
+    "section": "",
+    "text": "Sampling Distributions"
+  },
+  {
+    "objectID": "about.html#exercises",
+    "href": "about.html#exercises",
+    "title": "Material",
+    "section": "Exercises",
+    "text": "Exercises\n\nSampling Distributions"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#important-concepts-1",
+    "href": "slides/sampling_distributions.html#important-concepts-1",
+    "title": "Sampling Distributions",
+    "section": "Important Concepts",
+    "text": "Important Concepts\n\n\n\nStatistical Inference\n\n\nStatistical inference is the use of a set of methods that allows to draw conclusions about a population, from a random sample of that population."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#parameters-and-statistics-1",
+    "href": "slides/sampling_distributions.html#parameters-and-statistics-1",
+    "title": "Sampling Distributions",
+    "section": "Parameters and Statistics",
+    "text": "Parameters and Statistics\n\n\n\nEstimate\n\n\nAn estimate for a parameter is the realized value of a statistic, i.e., the value you obtain from aplying the function statistic to a particular sample.\n\n\n\nGiven that the sample is random, because it is a collection of realized random variables, the statistic is itself a random variable. Every time you draw a new sample, you obtain a different estimate."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#example-2",
+    "href": "slides/sampling_distributions.html#example-2",
+    "title": "Sampling Distributions",
+    "section": "Example 2",
+    "text": "Example 2\n\nLet \\((X_1,X_2,\\dots,X_n),n\\in\\mathbb{N}\\), a random sample from a population \\(X\\) (with unknown distribution), but with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known:\n\n\nThe expected value of \\(\\sum_{i=1}^n X_i\\) and \\(\\bar{X}\\) are:\n\n\\(n\\mu\\) and \\(\\mu\\)\n\\(n\\mu\\) and \\(\\mu/n\\)\n\\(\\mu\\) and \\(\\mu/n\\)\nNone of the above\n\n\nThe variance of \\(\\sum_{i=1}^n X_i\\) and \\(\\bar{X}\\) are:\n\n\\(n\\sigma^2\\) and \\(\\sigma^2\\)\n\\(n\\sigma^2\\) and \\(\\sigma^2/n\\)\n\\(\\sigma^2\\) and \\(\\sigma^2/n\\)\nNone of the above\n\n\n\n\nAnswer: (a) and (b)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#the-old-normal-distribution",
+    "href": "slides/sampling_distributions.html#the-old-normal-distribution",
+    "title": "Sampling Distributions",
+    "section": "The Old Normal Distribution",
+    "text": "The Old Normal Distribution\n\nNormal distribution, \\(X\\sim Normal(\\mu,\\sigma^2)\\)\nIt can be standardized \\(Z=\\frac{X-\\mu}{\\sigma}\\sim Normal(0,1)\\)\nGiven this, from now on, we will focus on the standard normal."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#working-with-the-normal-distribution",
+    "href": "slides/sampling_distributions.html#working-with-the-normal-distribution",
+    "title": "Sampling Distributions",
+    "section": "Working with the Normal distribution",
+    "text": "Working with the Normal distribution\nSuppose you have a random sample \\(\\{X_i\\}_{i=1}^n\\). Then we just saw the average is going to be:\n\\[\\bar{X}=\\frac{\\sum_{i=1}^n X_i}{n}\\]\nAnd we saw that \\(E[\\bar{X}]=\\mu\\), and \\(V[\\bar{X}]=\\frac{\\sigma^2}{n}\\). This second result is beautiful. Note that we did not make any assumptions on the distribution of \\(X\\); if we gather a large sample, its average will be close to the true mean with higher probability."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#the-sample-average-as-an-estimator-for-mu",
+    "href": "slides/sampling_distributions.html#the-sample-average-as-an-estimator-for-mu",
+    "title": "Sampling Distributions",
+    "section": "The sample average as an estimator for \\(\\mu\\)",
+    "text": "The sample average as an estimator for \\(\\mu\\)\nSuppose you have a random sample \\(\\{X_i\\}_{i=1}^n\\). Then we just saw the average is going to be:\n\\[\\bar{X}=\\frac{\\sum_{i=1}^n X_i}{n}\\]\nAnd we saw that \\(E[\\bar{X}]=\\mu\\), and \\(V[\\bar{X}]=\\frac{\\sigma^2}{n}\\). This second result is beautiful. Note that we did not make any assumptions on the distribution of \\(X\\); if we gather a large sample, its average will be close to the true mean with higher probability."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#the-average",
+    "href": "slides/sampling_distributions.html#the-average",
+    "title": "Sampling Distributions",
+    "section": "The average",
+    "text": "The average\nAs a"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#a-question",
+    "href": "slides/sampling_distributions.html#a-question",
+    "title": "Sampling Distributions",
+    "section": "A question",
+    "text": "A question\n\nHow could we obtain the distribution, using a random sample, for a statistic or a random variable?\n\n\nTo answer this, we need to introduce two new distributions (not covered in Statistics I)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#chi2-distribution-1",
+    "href": "slides/sampling_distributions.html#chi2-distribution-1",
+    "title": "Sampling Distributions",
+    "section": "\\(\\chi^2\\) distribution",
+    "text": "\\(\\chi^2\\) distribution\nLet \\(Z_1,Z_2,\\dots, Z_n\\) random variables iid distributed \\(Z_i\\sim N(0,1)\\).\n\\[Y=\\sum_{i=1}^n Z_i^2=\\sum_{i=1}^n\\left(\\frac{X_i-\\mu}{\\sigma}\\right)^2\\]\nis a random variable distributed \\(\\chi^2_{\\nu}\\), where \\(\\nu\\) represents the degrees of freedom."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#degrees-of-freedom",
+    "href": "slides/sampling_distributions.html#degrees-of-freedom",
+    "title": "Sampling Distributions",
+    "section": "Degrees of Freedom",
+    "text": "Degrees of Freedom\n\n\n\nDefinition\n\n\nThe number of independent values that are free to vary in your data without breaking any constraints.\n\n\n\nFormula: \\(dof = N - P\\)\n\n\\(N\\) = sample size\n\n\\(P\\) = number of parameters estimated"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#the-intuitive-example",
+    "href": "slides/sampling_distributions.html#the-intuitive-example",
+    "title": "Sampling Distributions",
+    "section": "The Intuitive Example",
+    "text": "The Intuitive Example\nImagine you have 4 numbers that must average to 20.\n\nFirst person picks: 15 ✓ (free to choose)\nSecond person picks: 30 ✓ (free to choose)\n\nThird person picks: 10 ✓ (free to choose)\nFourth person picks: ? ✗ (not free!)\n\nThe fourth number must be 25 to keep the average at 20.\nResult: 3 degrees of freedom (\\(df = 4 - 1 = 3\\))"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#why-degrees-of-freedom-matter",
+    "href": "slides/sampling_distributions.html#why-degrees-of-freedom-matter",
+    "title": "Sampling Distributions",
+    "section": "Why Degrees of Freedom Matter",
+    "text": "Why Degrees of Freedom Matter\nIn Practice:\n\n✓ More \\(df\\) → More reliable estimates\n\n✓ Affects the shape of distributions (\\(t\\), \\(\\chi^2\\), \\(F\\))\n\nKey Insight:\nWhen you estimate a parameter (like the mean), you “spend” one degree of freedom. It’s the cost of using your data to calculate statistics."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#common-examples",
+    "href": "slides/sampling_distributions.html#common-examples",
+    "title": "Sampling Distributions",
+    "section": "Common Examples",
+    "text": "Common Examples\n\n\n\nStatistical Test\nDegrees of Freedom\n\n\n\n\nOne-sample t-test\ndf = n - 1\n\n\nTwo-sample t-test\ndf = n₁ + n₂ - 2\n\n\nChi-square test\ndf = (rows - 1) × (cols - 1)\n\n\nSimple regression\ndf = n - 2\n\n\n\nRemember: Each estimated parameter reduces df by 1"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#statistical-power-a-quick-refresher",
+    "href": "slides/sampling_distributions.html#statistical-power-a-quick-refresher",
+    "title": "Sampling Distributions",
+    "section": "Statistical Power: A Quick Refresher",
+    "text": "Statistical Power: A Quick Refresher\n\n\n\nStatistical Power\n\n\nStatistical Power is the probability that your test will detect an effect when there actually is one.\nFormula: \\(Power = 1 - \\beta\\) (where \\(\\beta\\) is Type II error rate)\nIn plain terms: The ability of your study to find a real difference if it exists."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#statistical-power-1",
+    "href": "slides/sampling_distributions.html#statistical-power-1",
+    "title": "Sampling Distributions",
+    "section": "Statistical Power",
+    "text": "Statistical Power\nKey Points:\n\nHigher power (e.g., 0.80 or 80%) = Better chance of detecting true effects\nPower increases with: larger sample size, larger effect size, higher α\nStandard convention: aim for power ≥ 0.80\n\nConnection to df: More degrees of freedom → More power (more information in your data)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi-square-distribution",
+    "href": "slides/sampling_distributions.html#back-to-the-chi-square-distribution",
+    "title": "Sampling Distributions",
+    "section": "Back to the Chi-square Distribution",
+    "text": "Back to the Chi-square Distribution\n\\(X\\sim N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-1",
+    "href": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-1",
+    "title": "Sampling Distributions",
+    "section": "Back to the Chi-square Distribution",
+    "text": "Back to the Chi-square Distribution\nHow is \\(Y=X^2\\) distributed?\n\nThis is the \\(\\chi^2_1\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-2",
+    "href": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-2",
+    "title": "Sampling Distributions",
+    "section": "Back to the Chi-square Distribution",
+    "text": "Back to the Chi-square Distribution\nHow is \\(Y_1+Y_2=X_1^2+X_2^2\\) distributed?\n\nThis is the \\(\\chi^2_2\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-3",
+    "href": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-3",
+    "title": "Sampling Distributions",
+    "section": "Back to the Chi-square Distribution",
+    "text": "Back to the Chi-square Distribution\nHow is \\(\\sum_{i=1}^{10} Y_i\\) distributed?\n\nThis is the \\(\\chi^2_{10}\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-4",
+    "href": "slides/sampling_distributions.html#back-to-the-chi-square-distribution-4",
+    "title": "Sampling Distributions",
+    "section": "Back to the Chi-square Distribution",
+    "text": "Back to the Chi-square Distribution\nHow is \\(\\sum_{i=1}^{100} Y_i\\) distributed?\n\nThis is the \\(\\chi^2_{100}\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi2-distribution",
+    "href": "slides/sampling_distributions.html#back-to-the-chi2-distribution",
+    "title": "Sampling Distributions",
+    "section": "Back to the \\(\\chi^2\\) Distribution",
+    "text": "Back to the \\(\\chi^2\\) Distribution\n\\(X\\sim N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi2-distribution-1",
+    "href": "slides/sampling_distributions.html#back-to-the-chi2-distribution-1",
+    "title": "Sampling Distributions",
+    "section": "Back to the \\(\\chi^2\\) Distribution",
+    "text": "Back to the \\(\\chi^2\\) Distribution\nHow is \\(Y=X^2\\) distributed?\n\nThis is the \\(\\chi^2_1\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi2-distribution-2",
+    "href": "slides/sampling_distributions.html#back-to-the-chi2-distribution-2",
+    "title": "Sampling Distributions",
+    "section": "Back to the \\(\\chi^2\\) Distribution",
+    "text": "Back to the \\(\\chi^2\\) Distribution\nHow is \\(Y_1+Y_2=X_1^2+X_2^2\\) distributed?\n\nThis is the \\(\\chi^2_2\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi2-distribution-3",
+    "href": "slides/sampling_distributions.html#back-to-the-chi2-distribution-3",
+    "title": "Sampling Distributions",
+    "section": "Back to the \\(\\chi^2\\) Distribution",
+    "text": "Back to the \\(\\chi^2\\) Distribution\nHow is \\(\\sum_{i=1}^{10} Y_i\\) distributed?\n\nThis is the \\(\\chi^2_{10}\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#back-to-the-chi2-distribution-4",
+    "href": "slides/sampling_distributions.html#back-to-the-chi2-distribution-4",
+    "title": "Sampling Distributions",
+    "section": "Back to the \\(\\chi^2\\) Distribution",
+    "text": "Back to the \\(\\chi^2\\) Distribution\nHow is \\(\\sum_{i=1}^{100} Y_i\\) distributed?\n\nThis is the \\(\\chi^2_{100}\\)!"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#properties-of-chi2",
+    "href": "slides/sampling_distributions.html#properties-of-chi2",
+    "title": "Sampling Distributions",
+    "section": "Properties of \\(\\chi^2\\)",
+    "text": "Properties of \\(\\chi^2\\)\nKey Properties:\n\n\\(E[Y] = \\nu\\) (mean equals degrees of freedom)\n\\(V[Y] = 2\\nu\\)\nRight-skewed distribution (not symmetric)\nOnly positive values\nSum property: If \\(Q_1 \\sim \\chi^2_{\\nu_1}\\) and \\(Q_2 \\sim \\chi^2_{\\nu_2}\\) are independent, then \\(Q_1 + Q_2 \\sim \\chi^2_{\\nu_1 + \\nu_2}\\)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#chi2-distribution-shape",
+    "href": "slides/sampling_distributions.html#chi2-distribution-shape",
+    "title": "Sampling Distributions",
+    "section": "\\(\\chi^2\\) Distribution Shape",
+    "text": "\\(\\chi^2\\) Distribution Shape\n\n\\(\\chi^2\\) distributions for different degrees of freedom. As \\(\\nu\\) increases, the distribution becomes more symmetric."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#using-chi2-tables",
+    "href": "slides/sampling_distributions.html#using-chi2-tables",
+    "title": "Sampling Distributions",
+    "section": "Using \\(\\chi^2\\) Tables",
+    "text": "Using \\(\\chi^2\\) Tables\nFor a \\(\\chi^2\\) distribution with \\(\\nu\\) degrees of freedom:\n\nTables provide: \\(P(Y &gt; \\chi^2_{\\alpha, \\nu}) = \\alpha\\)\nImportant: Not symmetric, so \\(\\chi^2_{1-\\alpha, \\nu} \\neq -\\chi^2_{\\alpha, \\nu}\\)\n\n\nExample: For \\(\\nu = 10\\):\n\n\\(\\chi^2_{0.05, 10} = 18.307\\) means \\(P(Y &gt; 18.307) = 0.05\\)\n\\(\\chi^2_{0.95, 10} = 3.940\\) means \\(P(Y &gt; 3.940) = 0.95\\)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#chi2-distribution-shape-1",
+    "href": "slides/sampling_distributions.html#chi2-distribution-shape-1",
+    "title": "Sampling Distributions",
+    "section": "\\(\\chi^2\\) Distribution Shape",
+    "text": "\\(\\chi^2\\) Distribution Shape\n\\[\\nu\\rightarrow\\infty\\ \\Rightarrow\\ \\chi^2_{\\nu}\\rightarrow N(\\nu,2\\nu)\\]\nThanks to the Central Limit Theorem (forthcoming). Note that this equivalent to say that,\n\\[\\nu\\rightarrow\\infty\\ \\Rightarrow\\ Z_n=\\frac{\\chi^2_{\\nu}-\\nu}{\\sqrt{2\\nu}}\\sim N(0,1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise",
+    "href": "slides/sampling_distributions.html#exercise",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise\nLet \\(\\{Z_i\\}_{i=1}^5\\) a random sample from a population \\(N(0,1)\\) and \\(Y=\\sum_{i=1}^5Z_i^2\\)\n\nT/F \\(P(1.610&lt;Y&lt;9.236)=0.8\\)\nT/F The standard deviation of \\(Z_3^2+Z_4^2\\) is equal to 4."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-1",
+    "href": "slides/sampling_distributions.html#exercise-1",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise\n\n\\(Y\\sim \\chi^2_5\\) and then \\[\n\\begin{aligned}\n   P(1.61&lt;Y&lt;9.236)&=P(Y&gt;1.61)-P(Y&gt;9.236)\\\\&=0.9-0.1=0.8\n\\end{aligned}\n\\]\n\\(Z_3^2\\sim \\chi_1^2\\), \\(Z_4^2\\sim \\chi_1^2\\), then \\(Z_3^2+Z_4^2\\sim \\chi_2^2\\): \\[V[Z_3^2+Z_4^2]=2\\times 2 = 4\\ \\Rightarrow\\ \\sigma = 2\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-2",
+    "href": "slides/sampling_distributions.html#exercise-2",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise\nConsider the rv \\(T\\sim t_{11}\\).\n\nT/F For \\(P(T\\leq k)=0.75\\), it must be that \\(k=0.303\\).\n\\(P(|T|&gt;2.201)\\) is:\n\n\\(0.025\\)\n\\(0.95\\)\n\\(0.05\\)\nNone of the above."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-3",
+    "href": "slides/sampling_distributions.html#exercise-3",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\)\n\\(P(|T|&gt;2.201)=2P(T&gt;2.201)=2\\times 0.025=0.05\\)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#case-1-normal-population-sigma-known-1",
+    "href": "slides/sampling_distributions.html#case-1-normal-population-sigma-known-1",
+    "title": "Sampling Distributions",
+    "section": "Case 1: Normal Population, \\(\\sigma\\) Known",
+    "text": "Case 1: Normal Population, \\(\\sigma\\) Known\nSampling Distribution:\nBy the additivity theorem for Normal distributions:\n\\[\\bar{X} \\sim N\\left(\\mu, \\frac{\\sigma}{\\sqrt{n}}\\right) \\Leftrightarrow Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\sim N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#case-2-normal-population-sigma-unknown-1",
+    "href": "slides/sampling_distributions.html#case-2-normal-population-sigma-unknown-1",
+    "title": "Sampling Distributions",
+    "section": "Case 2: Normal Population, \\(\\sigma\\) Unknown",
+    "text": "Case 2: Normal Population, \\(\\sigma\\) Unknown\nSampling Distribution:\nWe must use the sample standard deviation:\n\\[T = \\frac{\\bar{X} - \\mu}{S/\\sqrt{n-1}} = \\frac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\sim t_{n-1}\\]\nwhere \\(S' = \\sqrt{\\frac{n}{n-1}}S\\) is the corrected sample standard deviation."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#important-note-1",
+    "href": "slides/sampling_distributions.html#important-note-1",
+    "title": "Sampling Distributions",
+    "section": "Important Note",
+    "text": "Important Note\nThus:\n\\[S^2=\\frac{1}{n}\\sum_{i=1}^n (X_i-\\bar{X})^2\\] and\n\\[S'^2=\\frac{1}{n-1}\\sum_{i=1}^n (X_i-\\bar{X})^2=\\frac{n}{n-1}S^2\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#important-note-2",
+    "href": "slides/sampling_distributions.html#important-note-2",
+    "title": "Sampling Distributions",
+    "section": "Important Note",
+    "text": "Important Note\nIf we have a large enough sample (larger than 30), we can, from the sample, approximate the distribution of \\(\\mu\\), using the TLC (again, forthcoming):\n\\[Z=\\frac{\\bar{X}-\\mu}{\\frac{S}{\\sqrt{n-1}}}=\\frac{\\bar{X}-\\mu}{\\frac{S'}{\\sqrt{n}}}\\overset{\\cdot}{\\sim}N(0,1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#case-3-unknown-population-large-sample-1",
+    "href": "slides/sampling_distributions.html#case-3-unknown-population-large-sample-1",
+    "title": "Sampling Distributions",
+    "section": "Case 3: Unknown Population, Large Sample",
+    "text": "Case 3: Unknown Population, Large Sample\nApproximate Sampling Distribution (by CLT):\nFor \\(n\\) sufficiently large (\\(n \\geq 30\\)), by the Central Limit Theorem:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\sigma/\\sqrt{n}} \\underbrace{\\overset{\\cdot}{\\sim}}_{CLT} N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#case-3-unknown-population-large-sample-2",
+    "href": "slides/sampling_distributions.html#case-3-unknown-population-large-sample-2",
+    "title": "Sampling Distributions",
+    "section": "Case 3: Unknown Population, Large Sample",
+    "text": "Case 3: Unknown Population, Large Sample\n\n\n\n\n\n\nNote:\n\n\nIf \\(\\sigma^2\\) is unknown, the aproximate sampling distribution is given by: \\[Z=\\frac{\\bar{X}-\\mu}{\\frac{S}{\\sqrt{n-1}}}=\\frac{\\bar{X}-\\mu}{\\frac{S'}{\\sqrt{n}}}\\underbrace{\\overset{\\cdot}{\\sim}}_{CLT}N(0,1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-4",
+    "href": "slides/sampling_distributions.html#exercise-4",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise\nA company intends to check the value of accounts receivable, knowing that the underlying distribution of that value is Normal with \\(\\mu=385\\), but unknown variance. A random sample with 25 clients accounts (independent), the (adjusted) sample standard deviation is \\(S'=122.6\\).\n\nT/F The sample distribution for the mean is \\(t_{25}\\).\nT/F The sample size to colect (assuming the same \\(S'\\)) such that the sample mean is not farther away from the population mean by more than 20 in 90% of the cases is \\(n=102\\). (Assume for the computations, that \\(n\\) will be larger than 30.)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-1-1",
+    "href": "slides/sampling_distributions.html#exercise-1-1",
+    "title": "Sampling Distributions",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nPopulation: \\(X\\sim Normal(385, \\sigma^2)\\). Sample \\(n=25\\), \\(S'=122.6\\).\nThe distribution of the mean, using the sample mean, is \\[T=\\frac{\\bar{X}-\\mu}{\\frac{S'}{\\sqrt{n}}}\\sim t_{n-1}\\equiv \\frac{\\bar{X}-\\mu}{\\frac{S'}{\\sqrt{n}}}\\sim t_{24}\\]\nThe sentence is false"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-2-1",
+    "href": "slides/sampling_distributions.html#exercise-2-1",
+    "title": "Sampling Distributions",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nPopulation: \\(X\\sim N(\\mu=385,\\sigma^2)\\) (unknown \\(\\sigma^2\\)). Sample \\(n&gt;30\\) and \\(S'=122.6\\).\n\\[\\bar{X}\\underbrace{\\overset{\\cdot}{\\sim}}_{CLT} N\\left(\\mu,\\frac{S'}{\\sqrt{n}}\\right)\\equiv N\\left(385,\\frac{122.6}{\\sqrt{n}}\\right)\\]\nAnd \\[P\\left(|\\bar{X}-\\mu|&lt;20\\right)=0.9\\Leftrightarrow P\\left(|Z|&lt;\\frac{20}{\\frac{122.6}{\\sqrt{n}}}\\right)=0.9\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-2-2",
+    "href": "slides/sampling_distributions.html#exercise-2-2",
+    "title": "Sampling Distributions",
+    "section": "Exercise 2",
+    "text": "Exercise 2\n\\[P\\left(|Z|&gt;\\frac{20}{\\frac{122.6}{\\sqrt{n}}}\\right)=0.1\\Leftrightarrow \\frac{20}{\\frac{122.6}{\\sqrt{n}}}=1.645\\Leftrightarrow n\\geq 102\\]\nThe sentence is true"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-5",
+    "href": "slides/sampling_distributions.html#exercise-5",
+    "title": "Sampling Distributions",
+    "section": "Exercise",
+    "text": "Exercise"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-8",
+    "href": "slides/sampling_distributions.html#exercise-8",
+    "title": "Sampling Distributions",
+    "section": "Exercise 8",
+    "text": "Exercise 8\nA pharmaceutical company produces tablets in which the variability of the amount of active substance from one tablet to another must be very small. The population standard deviation is supposedly one milligram. Inspectors from the Ministry of Health selected a random sample of 16 tablets.\nAssuming the population is Normal, the probability that the corrected sample variance exceeds \\(0.736\\;\\text{mg}^2\\) is:\n \na) 0.76   b) 0.25   c) 0.75   d) none of the above"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-8-solution",
+    "href": "slides/sampling_distributions.html#exercise-8-solution",
+    "title": "Sampling Distributions",
+    "section": "Exercise 8 — Solution",
+    "text": "Exercise 8 — Solution\nPopulation: \\(X \\sim N(\\mu,\\; \\sigma)\\), with \\(\\sigma = 1\\) (i.e. \\(\\sigma^2 = 1\\))\nSample: \\(n = 16\\)\nPivot quantity:\n\\[\nQ = \\frac{(n-1)\\,S'^2}{\\sigma^2} = \\frac{15\\,S'^2}{1} = 15\\,S'^2 \\sim \\chi^2_{(n-1)} \\equiv \\chi^2_{(15)}\n\\]\nWe want:\n\\[\nP(S'^2 &gt; 0.736) = P(Q &gt; 15 \\times 0.736) = P(Q &gt; 11.04)\n\\]\nReading directly from the \\(\\chi^2\\) table with 15 degrees of freedom:\n\\[\nP(Q &gt; 11.04) \\approx 0.75\n\\]\nThe correct answer is c)."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-7",
+    "href": "slides/sampling_distributions.html#exercise-7",
+    "title": "Sampling Distributions",
+    "section": "Exercise 7",
+    "text": "Exercise 7\nA company wishes to validate the value (in euros) of its accounts receivable from clients, assuming the underlying distribution of account values is \\(\\text{Normal}(\\mu = 385,\\; \\sigma = ?)\\).\nA random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation \\(s' = 122.6\\) euros.\n \na) \\(\\boxed{V}\\) \\(\\boxed{F}\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\nb) \\(\\boxed{V}\\) \\(\\boxed{F}\\) The required sample size (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume that the value of \\(n\\) to be found will be greater than 30.)"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-7-solution-a",
+    "href": "slides/sampling_distributions.html#exercise-7-solution-a",
+    "title": "Sampling Distributions",
+    "section": "Exercise 7 — Solution a)",
+    "text": "Exercise 7 — Solution a)\nPopulation: \\(X \\sim N(\\mu = 385,\\; \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 25\\); \\(s' = 122.6\\)\n \nThe sampling distribution of the sample mean (mean value of client accounts) is given by:\n\\[\nT = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\sim t_{(n-1)} \\equiv t_{(24)}\n\\]\nThe statement claims \\(t_{(25)}\\), but the correct distribution is \\(t_{(24)}\\).\nThe statement is False."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-7-solution-b",
+    "href": "slides/sampling_distributions.html#exercise-7-solution-b",
+    "title": "Sampling Distributions",
+    "section": "Exercise 7 — Solution b)",
+    "text": "Exercise 7 — Solution b)\nPopulation: \\(X \\sim N(\\mu = 385,\\; \\sigma = ?)\\) | Sample: \\(n \\geq 30\\); \\(s' = 122.6\\)\nSince \\(n \\geq 30\\), by the CLT:\n\\[\n\\bar{X} \\;\\underset{\\text{approx. by CLT}}{\\sim}\\; N\\!\\left(\\mu,\\; \\frac{s'}{\\sqrt{n}}\\right) \\equiv N\\!\\left(385,\\; \\frac{122.6}{\\sqrt{n}}\\right)\n\\]\nWe want \\(P(|\\bar{X} - \\mu| &lt; 20) = 0.9\\):\n\\[\nP\\!\\left(|Z| &lt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.9 \\;\\Leftrightarrow\\; P\\!\\left(|Z| &gt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.1\n\\]\n\\[\n\\Leftrightarrow\\; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}} = 1.645 \\;\\Leftrightarrow\\; n \\geq 102\n\\]\nThe statement is True."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#first-case",
+    "href": "slides/sampling_distributions.html#first-case",
+    "title": "Sampling Distributions",
+    "section": "First case",
+    "text": "First case\nLet \\(Y=\\sum_{i=1}^n X_i\\), the total amount of successes. Then \\(Y\\) has a sample distribution:\n\\[Y=\\sum_{i=1}^m\\sim Binomial(n,p)\\]\nIf \\(n\\) is large enough, we can apply the \\(CLT\\) to get an approximate sample distribution: \\[Y\\overset{\\cdot}{\\sim} N\\left(np,\\sqrt{np(1-p)}\\right)\\Leftrightarrow Z_n=\\frac{Y-np}{\\sqrt{np(1-p)}}\\overset{\\cdot}{\\sim}N(0,1)\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#second-case",
+    "href": "slides/sampling_distributions.html#second-case",
+    "title": "Sampling Distributions",
+    "section": "Second case",
+    "text": "Second case\nLet the statistic \\(\\bar{X}=\\frac{1}{n}\\sum_{i=1}^n X_i = \\frac{Y}{n}\\) the proportion of successess that, in a sample of size \\(n\\), have some characteristic.\nIt is of interest to know the sampling distribution of \\(\\bar{X}=\\hat{p}\\)\nExpected Value and Variance:\n\\[E[\\bar{X}] = E[\\hat{p}] = p\\]\n\\[V[\\bar{X}] = V[\\hat{p}] = \\frac{p(1-p)}{n} = \\frac{pq}{n}\\]"
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-10",
+    "href": "slides/sampling_distributions.html#exercise-10",
+    "title": "Sampling Distributions",
+    "section": "Exercise 10",
+    "text": "Exercise 10\nIn a certain neighborhood, the proportion of residents who consider useful the opening of a new supermarket is 0.8. The Sweet Drop supermarket chain intends to open a new store in this neighborhood. Nevertheless, before making a decision, a study was conducted in which 400 residents were casually interviewed to assess their intention to use the services of the new supermarket.\na) \\(\\boxed{V}\\) \\(\\boxed{F}\\) The approximate probability that in the sample of interviewed residents there are at least 300 who consider useful the opening of the Sweet Drop supermarket is equal to 0.9948.\nb) \\(\\boxed{V}\\) \\(\\boxed{F}\\) The probability that the deviation between the sample proportion of residents who stated they would actually use the services of the new supermarket and the true proportion is less than 0.02 is 0.8413."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-10-solution-a",
+    "href": "slides/sampling_distributions.html#exercise-10-solution-a",
+    "title": "Sampling Distributions",
+    "section": "Exercise 10 — Solution a)",
+    "text": "Exercise 10 — Solution a)\n\\(p = 0.8\\) (proportion of residents who consider the opening useful)\na) \\(X \\to\\) number of residents, out of 400, who find the opening of the new supermarket useful\n\\[X \\sim \\text{Binomial}(n = 400,\\; p = 0.8)\\]\n\\[\n\\begin{align}\nP(X \\geq 300) &= P(X \\geq 299.5) \\;\\underset{1)}{\\approx}\\; P\\!\\left(Z \\geq \\frac{299.5 - 400 \\times 0.8}{\\sqrt{400 \\times 0.8 \\times 0.2}}\\right) \\\\[8pt]\n&= P(Z \\geq -2.56) = P(Z \\leq 2.56) = \\Phi(2.56) = 0.9948\n\\end{align}\n\\]\nObs:\n\nContinuity correction\nCLT, approximation of the Binomial distribution to the Normal distribution\n\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\sim N(0,1)\\]\nThe statement is true."
+  },
+  {
+    "objectID": "slides/sampling_distributions.html#exercise-10-solution-b",
+    "href": "slides/sampling_distributions.html#exercise-10-solution-b",
+    "title": "Sampling Distributions",
+    "section": "Exercise 10 — Solution b)",
+    "text": "Exercise 10 — Solution b)\nb) From the interviews conducted, \\(X\\) residents out of \\(n\\) stated they would use Sweet Drop, thus the sample proportion is \\(\\dfrac{X}{n}\\).\n\\[\n\\begin{align}\nP\\!\\left(\\left|\\frac{X}{n} - p\\right| &lt; 0.02\\right) &\\;\\underset{1)}{\\approx}\\; P\\!\\left(|Z| &lt; \\frac{0.02}{\\sqrt{\\dfrac{0.8 \\times 0.2}{400}}}\\right) = P(|Z| &lt; 1) \\\\[8pt]\n&= P(-1 &lt; Z &lt; 1) = \\Phi(1) - \\Phi(-1) = \\Phi(1) - [1 - \\Phi(1)] \\\\[8pt]\n&= 2\\Phi(1) - 1 = 2 \\times 0.8413 - 1 = 0.6826\n\\end{align}\n\\]\nObs: 1) Note that we have \\(\\dfrac{x - np}{\\sqrt{np(1-p)}} = \\dfrac{\\dfrac{x}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} = \\dfrac{\\dfrac{x}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}}\\) and that, by CLT,\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\sim N(0,1) \\text{ and therefore, also } Z = \\frac{\\dfrac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\sim N(0,1)\\]\nThe statement is false."
   }
 ]
