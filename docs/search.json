@@ -1,31 +1,241 @@
 [
   {
-    "objectID": "calendar.html",
-    "href": "calendar.html",
-    "title": "Statistics II — Calendar",
+    "objectID": "formulae.html",
+    "href": "formulae.html",
+    "title": "Statistics II — Formula Sheet",
     "section": "",
-    "text": "Week\nDate\nLecture\nTopic (from syllabus)\n\n\n\n\n1\nFev 24\n1-2\nCentral Limit Theorem (1.1-1.3)\n\n\n2\nMar 10\n3-4\nCentral Limit Theorem (1.4-1.6)\n\n\n3\nMar 17\n5-6\nParameter Estimation (2.1)\n\n\n4\nMar 24\n7-8\nTest 1\n\n\n5\nApr 7\n9-10\nParameter Estimation (2.2)\n\n\n6\nApr 14\n11-12\nParametric Hypothesis Tests (3.1-3.2)\n\n\n7\nApr 21\n13-14\nParametric Hypothesis Tests (3.3-3.5)\n\n\n8\nApr 28\n15-16\nLinear Regression Model (4.1-4.3)\n\n\n9\nMay 5\n17-18\nLinear Regression Model (4.4-4.5)\n\n\n10\nMay 12\n19-20\nLinear Regression Model (4.6-4.7)\n\n\n11\nMay 19\n21-22\nTest 2"
+    "text": "ISCAL\n    Lisbon Accounting and Business School\n    Polytechnic University of Lisbon\n  \n  \n    Statistics II — Formula Sheet\n    Bachelor's Degree in Management  |  Academic Year 2025/2026"
   },
   {
-    "objectID": "material.html",
-    "href": "material.html",
-    "title": "Material",
-    "section": "",
-    "text": "Central Limit Theorem\nSampling Distributions"
+    "objectID": "formulae.html#probability-models",
+    "href": "formulae.html#probability-models",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Probability Models",
+    "text": "Probability Models\n\nDiscrete Probability Models\n\nBinomial Distribution\n\\[X \\sim \\mathrm{Binomial}(n,\\, p)\\]\n\\[P(X = x) = \\binom{n}{x} p^x (1-p)^{n-x}, \\quad x = 0, 1, \\ldots, n\\]\n\\[E(X) = np \\qquad V(X) = npq \\qquad q = 1-p\\]\n\n\n\nHypergeometric Distribution\n\\[X \\sim \\mathrm{Hypergeometric}(N,\\, M,\\, n) \\qquad p = \\dfrac{M}{N}\\]\n\\[P(X = x) = \\dfrac{\\displaystyle\\binom{M}{x}\\binom{N-M}{n-x}}{\\displaystyle\\binom{N}{n}}, \\quad \\max(0,\\, M+n-N) \\leq x \\leq \\min(M,\\, n)\\]\n\\[E(X) = np \\qquad V(X) = npq\\,\\dfrac{N-n}{N-1}\\]\n\n\n\nPoisson Distribution\n\\[X \\sim \\mathrm{Poisson}(\\lambda),\\quad \\lambda &gt; 0\\]\n\\[P(X = x) = \\dfrac{e^{-\\lambda}\\,\\lambda^x}{x!}, \\quad x = 0, 1, 2, \\ldots\\]\n\\[E(X) = V(X) = \\lambda\\]\n\n\n\nGeometric Distribution\n\\[X \\sim \\mathrm{Geometric}(p), \\quad 0 \\leq p \\leq 1\\]\n\\[f(x) = p(1-p)^{x-1}, \\quad x = 1, 2, \\ldots \\qquad F(x) = 1 - (1-p)^k, \\quad k \\leq x &lt; k+1\\]\n\\[E(X) = \\dfrac{1}{p} \\qquad V(X) = \\dfrac{1-p}{p^2}\\]\n\n\n\n\nContinuous Probability Models\n\nUniform Distribution\n\\[X \\sim \\mathrm{Uniform}(a,\\, b), \\quad a,b \\in \\mathbb{R},\\; a &lt; b\\]\n\\[F(x) = \\begin{cases} 0 & x &lt; a \\\\ \\dfrac{x-a}{b-a} & a \\leq x &lt; b \\\\ 1 & x \\geq b \\end{cases}\\]\n\\[E(X) = \\dfrac{a+b}{2} \\qquad V(X) = \\dfrac{(b-a)^2}{12}\\]\n\n\n\nExponential Distribution\n\\[X \\sim \\mathrm{Exponential}(\\lambda), \\quad \\lambda &gt; 0\\]\n\\[F(x) = \\begin{cases} 0 & x \\leq 0 \\\\ 1 - e^{-\\lambda x} & x &gt; 0 \\end{cases}\\]\n\\[E(X) = \\dfrac{1}{\\lambda} \\qquad V(X) = \\dfrac{1}{\\lambda^2}\\]\n\n\n\nNormal Distribution\n\\[X \\sim \\mathrm{Normal}(\\mu,\\, \\sigma), \\quad \\mu \\in \\mathbb{R},\\; \\sigma &gt; 0\\]\n\\[E(X) = \\mu \\qquad V(X) = \\sigma^2\\]\n\\[Z = \\dfrac{X - \\mu}{\\sigma} \\sim \\mathrm{Normal}(0,\\,1) \\qquad E(Z) = 0 \\qquad V(Z) = 1\\]\n\\[\\Phi(z) = P(Z \\leq z) \\qquad \\Phi(-z) = 1 - \\Phi(z)\\]\n\n\n\nt-Student Distribution\n\\[T \\sim t_{(n)}, \\quad n \\text{ degrees of freedom}\\]\n\\[E(T) = 0 \\qquad V(T) = \\dfrac{n}{n-2},\\quad n &gt; 2\\]\n\n\n\nChi-Square Distribution\n\\[Q \\sim \\chi^2_{(n)}, \\quad n \\text{ degrees of freedom}\\]\n\\[E(Q) = n \\qquad V(Q) = 2n\\]\n\\[Y = \\sum_{i=1}^{n} Z_i^2 \\sim \\chi^2_{(n)}, \\quad Z_i \\sim \\mathrm{Normal}(0,\\,1) \\text{ i.i.d.}\\]"
   },
   {
-    "objectID": "material.html#slides",
-    "href": "material.html#slides",
-    "title": "Material",
-    "section": "",
-    "text": "Central Limit Theorem\nSampling Distributions"
+    "objectID": "formulae.html#sampling",
+    "href": "formulae.html#sampling",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Sampling",
+    "text": "Sampling\n\nSample Statistics\n\\[\\bar{X} = \\dfrac{1}{n}\\sum_{i=1}^{n} X_i\\]\n\\[S^2 = \\dfrac{1}{n}\\sum_{i=1}^{n}(X_i - \\bar{X})^2 = \\dfrac{1}{n}\\sum X_i^2 - \\bar{X}^2\\]\n\\[S'^{\\,2} = \\dfrac{1}{n-1}\\sum_{i=1}^{n}(X_i - \\bar{X})^2 = \\dfrac{1}{n-1}\\sum X_i^2 - \\dfrac{n}{n-1}\\bar{X}^2\\]\n\\[S^2 = \\dfrac{n-1}{n}\\,S'^{\\,2} \\qquad S'^{\\,2} = \\dfrac{n}{n-1}\\,S^2\\]"
   },
   {
-    "objectID": "material.html#exercises",
-    "href": "material.html#exercises",
-    "title": "Material",
-    "section": "Exercises",
-    "text": "Exercises\n\nSampling Distributions"
+    "objectID": "formulae.html#sampling-distributions-and-confidence-intervals-for-mu",
+    "href": "formulae.html#sampling-distributions-and-confidence-intervals-for-mu",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Sampling Distributions and Confidence Intervals for \\(\\mu\\)",
+    "text": "Sampling Distributions and Confidence Intervals for \\(\\mu\\)\n\n\n\n\n\n\n\n\n\n\n#\nPopulation\nDistribution of \\(\\bar{X}\\)\n\\((1-\\alpha)\\times 100\\%\\) Confidence Interval\n\n\n\n\n1\n\\(X\\sim N(\\mu,\\sigma)\\); \\(\\sigma^2\\) known\n\\(Z = \\dfrac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}}\\sim N(0,1)\\)\n\\(\\left(\\bar{x} - z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}}\\right)\\)\n\n\n2\n\\(X\\sim N(\\mu,\\sigma)\\); \\(\\sigma^2\\) unknown\n\\(T = \\dfrac{\\bar{X}-\\mu}{S'/\\sqrt{n}}\\sim t_{(n-1)}\\)\n\\(\\left(\\bar{x} - t_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}},\\; \\bar{x} + t_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}}\\right)\\)\n\n\n2b\n\\(X\\sim N(\\mu,\\sigma)\\); \\(\\sigma^2\\) unknown, \\(n \\geq 30\\)\n\\(Z = \\dfrac{\\bar{X}-\\mu}{S'/\\sqrt{n}}\\;\\dot{\\sim}\\; N(0,1)\\)\n\\(\\left(\\bar{x} - z_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}}\\right)\\) (approx.)\n\n\n3a\n\\(X\\sim{?}\\); \\(\\sigma^2\\) known, \\(n \\geq 30\\)\n\\(Z = \\dfrac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}}\\;\\dot{\\sim}\\; N(0,1)\\)\n\\(\\left(\\bar{x} - z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}}\\right)\\) (approx.)\n\n\n3b\n\\(X\\sim{?}\\); \\(\\sigma^2\\) unknown, \\(n \\geq 30\\)\n\\(Z = \\dfrac{\\bar{X}-\\mu}{S'/\\sqrt{n}}\\;\\dot{\\sim}\\; N(0,1)\\)\n\\(\\left(\\bar{x} - z_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\dfrac{s'}{\\sqrt{n}}\\right)\\) (approx.)"
+  },
+  {
+    "objectID": "formulae.html#sampling-distribution-and-confidence-interval-for-p",
+    "href": "formulae.html#sampling-distribution-and-confidence-interval-for-p",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Sampling Distribution and Confidence Interval for \\(p\\)",
+    "text": "Sampling Distribution and Confidence Interval for \\(p\\)\n\n\n\n\n\n\n\n\n\nPopulation\nDistribution of \\(\\hat{p} = X/n\\)\n\\((1-\\alpha)\\times 100\\%\\) Confidence Interval\n\n\n\n\n\\(X\\sim \\mathrm{Binomial}(n,p)\\), \\(n\\geq 30\\)\n\\(\\dfrac{\\hat{p}-p}{\\sqrt{\\hat{p}(1-\\hat{p})/n}}\\;\\dot{\\sim}\\; N(0,1)\\)\n\\(\\left(\\hat{p} - z_{\\alpha/2}\\sqrt{\\dfrac{\\hat{p}(1-\\hat{p})}{n}},\\; \\hat{p} + z_{\\alpha/2}\\sqrt{\\dfrac{\\hat{p}(1-\\hat{p})}{n}}\\right)\\) (approx.)"
+  },
+  {
+    "objectID": "formulae.html#sampling-distribution-and-confidence-interval-for-sigma2",
+    "href": "formulae.html#sampling-distribution-and-confidence-interval-for-sigma2",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Sampling Distribution and Confidence Interval for \\(\\sigma^2\\)",
+    "text": "Sampling Distribution and Confidence Interval for \\(\\sigma^2\\)\n\n\n\n\n\n\n\n\n\nPopulation\nDistribution of \\(S'^{\\,2}\\)\n\\((1-\\alpha)\\times 100\\%\\) Confidence Interval\n\n\n\n\n\\(X\\sim N(\\mu,\\sigma)\\)\n\\(Q = \\dfrac{(n-1)S'^{\\,2}}{\\sigma^2}\\sim\\chi^2_{(n-1)}\\)\n\\(\\left(\\dfrac{(n-1)s'^{\\,2}}{q_{\\sup}},\\; \\dfrac{(n-1)s'^{\\,2}}{q_{\\inf}}\\right)\\)\n\n\n\n\n\\[P(Q &gt; q_{\\inf}) = 1 - \\dfrac{\\alpha}{2} \\qquad P(Q &gt; q_{\\sup}) = \\dfrac{\\alpha}{2}\\]"
+  },
+  {
+    "objectID": "formulae.html#parametric-hypothesis-tests-at-level-alpha",
+    "href": "formulae.html#parametric-hypothesis-tests-at-level-alpha",
+    "title": "Statistics II — Formula Sheet",
+    "section": "Parametric Hypothesis Tests (at level \\(\\alpha\\))",
+    "text": "Parametric Hypothesis Tests (at level \\(\\alpha\\))\n\n\n\n\n\n\n\n\n\nHypotheses\nTest Statistic (TS)\nCritical Region\n\n\n\n\n\\(H_0: \\theta = \\theta_0 \\;\\text{vs}\\; H_1: \\theta \\neq \\theta_0\\)\n\\(\\mathrm{TS}_0\\)\n\\((-\\infty,\\, q_{\\alpha/2}) \\cup (q_{\\alpha/2},\\, +\\infty)\\)\n\n\n\\(H_0: \\theta \\leq \\theta_0 \\;\\text{vs}\\; H_1: \\theta &gt; \\theta_0\\)\n\\(\\mathrm{TS}_0\\)\n\\((q_{\\alpha},\\, +\\infty)\\)\n\n\n\\(H_0: \\theta \\geq \\theta_0 \\;\\text{vs}\\; H_1: \\theta &lt; \\theta_0\\)\n\\(\\mathrm{TS}_0\\)\n\\((-\\infty,\\, q_{\\alpha})\\)\n\n\n\n\n\\[P(\\mathrm{TS} &gt; q_\\alpha) = \\alpha \\qquad \\text{Reject } H_0 \\text{ if } \\alpha &gt; p\\text{-value}\\]\n\\[\\alpha = P\\!\\left(\\text{Reject } H_0 \\mid H_0 \\text{ true}\\right) \\quad \\text{(Type I error probability)}\\]\n\n\n  ISCAL · Instituto Superior de Contabilidade e Administração de Lisboa\n  Statistics II  |  2025/2026"
+  },
+  {
+    "objectID": "syllabus.html",
+    "href": "syllabus.html",
+    "title": "Statistics II — Course Syllabus",
+    "section": "",
+    "text": "ISCAL\n    Lisbon Accounting and Business School\n    Polytechnic University of Lisbon\n  \n  \n    Bachelor's Degree in Management\n    Program Director: Professor Maria Teresa Fortunato Pereira Martins"
+  },
+  {
+    "objectID": "syllabus.html#course-information",
+    "href": "syllabus.html#course-information",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Course Information",
+    "text": "Course Information\n\n\n\n\nCourse Unit\nStatistics II\n\n\nArea\nData Science and Statistics\n\n\nCourse Director\nSofia Delgado António\n\n\nInstructor\nPaulo Fagandini\n\n\nEmail\npfagandini@iscal.ipl.pt\n\n\nLectures\nTuesdays, 11:00 – 14:00\n\n\nYear / Semester\n2nd Year / 4th Semester\n\n\nWeekly Contact Hours\n3 Hours\n\n\nECTS\n4"
+  },
+  {
+    "objectID": "syllabus.html#general-objective",
+    "href": "syllabus.html#general-objective",
+    "title": "Statistics II — Course Syllabus",
+    "section": "General Objective",
+    "text": "General Objective\nThe objective of this course unit is to present several statistical techniques of great practical use in management. Within the context of random phenomena, students will identify and apply probabilistic models and use the notions of statistical inference to make decisions under uncertainty."
+  },
+  {
+    "objectID": "syllabus.html#competencies",
+    "href": "syllabus.html#competencies",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Competencies",
+    "text": "Competencies\nStudents are expected to acquire and reinforce fundamental concepts of Probability and Statistics. They should become proficient in the main techniques of statistical inference, supported by probability theory, with the primary goal of applying appropriate statistical methods and models to obtain conclusions that support decision-making in business contexts."
+  },
+  {
+    "objectID": "syllabus.html#learning-outcomes",
+    "href": "syllabus.html#learning-outcomes",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Learning Outcomes",
+    "text": "Learning Outcomes\nUpon completion of this course, students should be able to:\n\nInfer characteristics of a population from a sample, applying point and interval estimation techniques;\nUnderstand the general procedures for applying parametric hypothesis tests;\nUnderstand the specification and underlying assumptions of the linear regression model for cross-sectional data;\nDevelop competencies for the joint application of various statistical techniques, using basic software that implements the studied procedures, in order to obtain results that support decision-making under uncertainty."
+  },
+  {
+    "objectID": "syllabus.html#syllabus",
+    "href": "syllabus.html#syllabus",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Syllabus",
+    "text": "Syllabus\n\n1. Sampling Distributions\n1.1. Central Limit Theorem and applications: Normal approximation to the Binomial and to the Poisson distribution.\n1.2. Concepts of random sample and statistic.\n1.3. Basic results on the sample mean and sample variance.\n1.4. Sampling distributions of the mean in Normal and non-Normal populations. (Includes the t-Student distribution, in the context of this topic.)\n1.5. Sampling distributions of the variance in Normal populations. (Includes the Chi-Square distribution, in the context of this topic.)\n1.6. Sampling distribution of the proportion from a Bernoulli population.\n\n\n\n2. Parameter Estimation\n\n2.1. Point Estimation\n2.1.1. Introduction. Basic notions of estimation: point and interval estimation. The concepts of estimator and estimate.\n2.1.2. Point estimators. Properties of Estimators.\n\n\n2.2. Interval Estimation\n2.2.1. Basic notions.\n2.2.2. Confidence intervals for Normal populations: population mean, population variance, difference between two population means.\n2.2.3. Confidence intervals for non-Normal single-parameter populations (large samples).\n\n\n\n\n3. Parametric Hypothesis Testing\n3.1. Basic concepts: statistical test, null and alternative hypothesis, test statistic, significance level and critical region. Type I and Type II errors.\n3.2. The concept of p-value.\n3.3. Tests involving parameters of Normal populations: tests for means and variances.\n3.4. Tests for the difference between means of two Normal populations.\n3.5. Tests under asymptotic normality conditions (large samples).\n\n\n\n4. The Linear Regression Model\n4.1. Introduction: Theoretical Linear Regression Model, linear relationships.\n4.2. Classical Linear Regression Model for Cross-Sectional Data.\n4.3. OLS Estimation Method. Coefficient estimates and their interpretation.\n4.4. Properties of the OLS estimators of regression coefficients.\n4.5. Goodness of fit: Coefficient of determination and correlation coefficient.\n4.6. Statistical Inference: Hypothesis Tests and Confidence Intervals (one parameter).\n4.7. Validation of the Classical Linear Regression Model Assumptions (Brief Overview)."
+  },
+  {
+    "objectID": "syllabus.html#assessment",
+    "href": "syllabus.html#assessment",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Assessment",
+    "text": "Assessment\nAssessment may take place under a continuous assessment regime or by final exam.\n\nContinuous Assessment\n\n\n\n\n\n\n\n\n\n\n\nAssessment Element\nWeight\nDuration\nSyllabus Content\nIndicative Date\n\n\n\n\nWritten Test 1\n45%\n1h 20m\nTopics 1 + 2.1\nWeek of 23–27 March\n\n\nWritten Test 2\n55%\n1h 20m\nTopics 2.2 + 3 + 4\nWeek of 18–23 May\n\n\n\n\n\nContinuous assessment is based on two (2) written tests, held in person.\nFor approval under this regime, students must obtain a minimum grade of 7 (seven) points in each assessment element. Attendance at all assessment moments is compulsory.\nThe final grade is the weighted average of the two tests:\n\n\\[\\text{Final Grade (CA)} = 0.45\\,(\\text{Test 1}) + 0.55\\,(\\text{Test 2})\\]\n\nStudents under continuous assessment may be subject to an oral examination whenever the instructor deems it necessary to validate the assigned grade.\nNo additional minimum attendance requirements are defined beyond mandatory presence at assessment moments.\n\n\n\nFinal Exam Regime\nStudents who prefer the final exam regime may sit a comprehensive exam worth 100% of the final grade, covering all course content."
+  },
+  {
+    "objectID": "syllabus.html#bibliography",
+    "href": "syllabus.html#bibliography",
+    "title": "Statistics II — Course Syllabus",
+    "section": "Bibliography",
+    "text": "Bibliography\n\nPrimary Reference (English)\n\n📖 Newbold, P., Carlson, W. & Thorne, B. (2012) — Statistics for Business and Economics. 8th Edition. Prentice Hall.\n\n\n\nAdditional References (Portuguese)\nCustódio, S.G.; Ferreira, T.; Morgado, A.J. & Delgado, S. (2023) — Análise de Regressão Linear. Exercícios de Aplicação Geral e Económica. Sílabas&Desafios.\nFerreira, T. & Custódio, S.G. (2023) — Modelos Probabilísticos. Síntese Teórica e Exercícios Resolvidos. Edições Sílabo.\nMorgado, A.J.; Custódio, S.G. & Ferreira, T. (2023) — Análise de Regressão Linear. Uma abordagem modelar introdutória. Sílabas&Desafios.\nMurteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. & Pimenta, C. (2010) — Introdução à Estatística. Escolar Editora, McGraw-Hill.\nPaulino C. & Branco J. (2012) — Exercícios de Probabilidade e Estatística. Escolar Editora.\nPedrosa A.C. & Gama S.M.A. (2004) — Introdução Computacional à Probabilidade e Estatística. Porto Editora.\nPestana, D. D. & Velosa, S. F. (2006) — Introdução à Probabilidade e à Estatística. Vol. I. 2ª edição. Fundação Calouste Gulbenkian.\nPimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. & Murteira, B. (2015) — Introdução à Estatística — 3ª Edição. Escolar Editora.\nRobalo A. (2018) — Estatística. Exercícios. Vol. II. 6ª ed. Edições Sílabo.\nWooldridge, J. M. (2009) — Introductory Econometrics. A Modern Approach. 4th Ed. Thomson South-Western.\n\n\n  ISCAL · Instituto Superior de Contabilidade e Administração de Lisboa\n  Statistics II · 2025/2026"
+  },
+  {
+    "objectID": "exercises/Exercises_SamplingDistributions.html",
+    "href": "exercises/Exercises_SamplingDistributions.html",
+    "title": "Chapter I - Statistics II - Exercises",
+    "section": "",
+    "text": "This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).\nContents: t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.\nThe exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately)."
+  },
+  {
+    "objectID": "exercises/Exercises_SamplingDistributions.html#questions",
+    "href": "exercises/Exercises_SamplingDistributions.html#questions",
+    "title": "Chapter I - Statistics II - Exercises",
+    "section": "Questions",
+    "text": "Questions\n\nThe Concept of a Statistic\n\nQuestion 1\n\nConsider \\((X_1, X_2, \\ldots, X_n)\\), \\(n \\in \\mathbb{N}\\), a random sample from a population \\(X \\sim \\text{Normal}(\\mu = -2,\\; \\sigma)\\), where \\(\\sigma\\) is unknown. Determine whether the following random variables are not statistics:\n\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\mu)^2}{n}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n} = S^2\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n-1} = S'^2\\)\n\n\n\nHint\n\nRecall that a statistic is a function of the sample values that does not involve any unknown parameters. Here, \\(\\mu = -2\\) is known but \\(\\sigma\\) is unknown.\n\nItems (a), (b), (f), and (g) depend only on \\(X_i\\) and \\(\\bar{X}\\) (and known constants like \\(n\\)), so they are statistics — hence the statement that they are “not statistics” is False.\nItems (c), (d), and (e) involve the unknown parameter \\(\\sigma\\) or \\(\\mu\\) (note: although \\(\\mu=-2\\) is given, items (d) and (e) include \\(\\sigma\\) as well, and (c) directly uses \\(\\sigma\\)), so they are not statistics — the statement is True.\n\nCorrection on (d) and (e): Even though \\(\\mu=-2\\) is known, (d) involves \\(\\sigma\\) (unknown) in the denominator and (e) involves \\(\\mu\\) which, while numerically known here, in items (d) the presence of \\(\\sigma\\) makes it fail. For (e): since \\(\\mu\\) is known, this would actually be a statistic if all parameters involved were known. However, note the formulation carefully: (d) includes \\(\\sigma\\) explicitly → not a statistic. (e) includes \\(\\mu\\) (which is known = \\(-2\\)) so actually is a statistic. Let us re-examine:\nActually, since \\(\\mu = -2\\) is known:\n\n\ninvolves \\(\\sigma\\) (unknown) → not a statistic → True ✓\n\n\ninvolves \\(\\sigma\\) (unknown) → not a statistic → True ✓\n\n\ninvolves \\(\\mu\\) (known) but not \\(\\sigma\\) → it is a statistic → False\n\n\nLet us reconsider (e) with additional context. In the original exercise, (e) is defined as \\(T = \\frac{\\sum(X_i - \\mu)^2}{n}\\), and a separate item (f) from the original list includes \\(\\frac{\\sum\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2}{}\\). The resolution confirms: (c), (d), and (f-original) are not statistics because they involve \\(\\sigma\\).\n\n\n\n\n\nSampling Distribution of the Mean\n\nQuestion 2 (Normal population, \\(\\sigma\\) unknown → t-Student)\n\nSuppose the waiting time on the runway for takeoff at a certain airport is a random variable modelled by a Normal distribution with a mean of 4 minutes. A random sample of 21 aircraft was selected, yielding a corrected sample standard deviation \\(s' = 1.81\\) min.\nTRUEFALSE The probability that the sample mean waiting time exceeds 5 minutes is equal to 0.010.\n\n\nSolution\n\nPopulation: \\(X \\sim \\text{Normal}(\\mu = 4,\\; \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 21 &lt; 30\\); \\(s' = 1.81\\) min.\nSince the population is Normal and \\(\\sigma\\) is unknown, the sampling distribution of the mean is:\n\\[T = \\frac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\sim t_{(20)}\\]\n\\[P(\\bar{X} &gt; 5) = P\\!\\left(T &gt; \\frac{5 - 4}{1.81/\\sqrt{21}}\\right) = P(T &gt; 2.53) = 0.010\\]\nThe statement is True.\n\n\n\n\nQuestion 3 (Unknown population, \\(\\sigma\\) known → CLT)\n\nAt a financial firm, the profit generated by each investment made in the last year has a mean of €8,200 and a standard deviation of €3,600. Consider a random sample of 100 investments.\nThe probability that the sample mean differs from the population mean by more than €806.76 is equal to:\n0.01250.0250.9875None of the above\n\n\nSolution\n\nPopulation: \\(L \\to\\) profit (unknown distribution); \\(\\mu = 8{,}200\\)€; \\(\\sigma = 3{,}600\\)€ (known).\nSample: \\(n = 100 &gt; 30\\).\nBy the CLT: \\[\\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(\\mu,\\; \\frac{\\sigma}{\\sqrt{n}}\\right) \\equiv N(8200,\\; 360)\\]\n\\[P(|\\bar{X} - \\mu| &gt; 806.76) = P\\!\\left(|Z| &gt; \\frac{806.76}{360}\\right) \\approx P(|Z| &gt; 2.241)\\]\n\\[= 2 - 2\\Phi(2.241) = 2 - 2 \\times 0.9875 = 0.025\\]\nThe correct option is b) 0.025.\n\n\n\n\nQuestion 4 (Normal population, \\(\\sigma\\) unknown, \\(n &gt; 30\\) → Normal approx.)\n\nA company wishes to validate the value (in euros) of its accounts receivable, which follow a Normal distribution with mean \\(\\mu = 385\\) and unknown standard deviation. A random sample of \\(n\\) independent client accounts yields a corrected sample standard deviation \\(s' = 122.6\\) euros.\nTRUEFALSE The sample size needed (assuming \\(s'\\) remains unchanged) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for calculations, that the value of \\(n\\) will be greater than 30.)\n\n\nSolution\n\nPopulation: \\(X \\sim N(\\mu = 385,\\; \\sigma = ?)\\)\nSample: \\(n &gt; 30\\); \\(s' = 122.6\\)\nBy the CLT (since \\(n &gt; 30\\) and \\(\\sigma\\) unknown): \\[\\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(\\mu,\\; \\frac{s'}{\\sqrt{n}}\\right)\\]\nWe want: \\[P(|\\bar{X} - \\mu| &lt; 20) = 0.9 \\iff P\\!\\left(|Z| &lt; \\frac{20}{122.6/\\sqrt{n}}\\right) = 0.9\\] \\[\\iff \\frac{20}{122.6/\\sqrt{n}} = 1.645 \\iff \\sqrt{n} = \\frac{1.645 \\times 122.6}{20}\\] \\[\\iff n \\geq \\left(\\frac{1.645 \\times 122.6}{20}\\right)^2 \\approx 102\\]\nThe statement is True.\n\n\n\n\n\nSampling Distribution of the Proportion\n\nQuestion 5 (Bernoulli population → CLT)\n\nSuppose a certain cable TV channel is subscribed to by 10% of the residents of a country. Since this channel has been operating for a very short time, a marketing firm decided to estimate this proportion based on a random sample of 100 residents before renewing its advertising contracts with the channel.\nTRUEFALSE Given that contracts will only be renewed if the sample proportion exceeds 8.5%, the approximate probability of this occurring is 0.6915.\n\n\nSolution\n\nPopulation: \\(X \\sim \\text{Bernoulli}(p = 0.1)\\)\nSample: \\(n = 100 &gt; 30\\) (CLT applies)\n\\[\\hat{p} = \\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(p,\\; \\sqrt{\\frac{pq}{n}}\\right) = N\\!\\left(0.1,\\; \\sqrt{\\frac{0.1 \\times 0.9}{100}}\\right) = N(0.1,\\; 0.03)\\]\n\\[P(\\hat{p} &gt; 0.085) \\approx P\\!\\left(Z &gt; \\frac{0.085 - 0.1}{0.03}\\right) = P(Z &gt; -0.5) = \\Phi(0.5) = 0.6915\\]\nThe statement is True.\n\n\n\n\n\nSampling Distribution of the Variance\n\nQuestion 6 (Normal population, Chi-Squared)\n\nSuppose we wish to analyse the viability of a project whose key element is the price (in monetary units, m.u.) of the raw material, well modelled by a random variable \\(X \\sim N(\\mu,\\; \\sigma)\\).\nA random sample \\((X_1, X_2, \\ldots, X_{16})\\) was selected, yielding a corrected sample variance \\(s'^2 = 0.18\\;\\text{m.u.}^2\\).\n\nTRUEFALSE \\(Q = \\dfrac{15\\,S'^2}{\\sigma^2} \\sim \\chi^2_{(16)}\\)\nTRUEFALSE \\(P(S'^2 &gt; 1.2163\\,\\sigma^2) = 0.25\\)\n\n\n\nSolution\n\nPopulation: \\(X \\sim N(\\mu,\\; \\sigma)\\)\nSample: \\(n = 16\\); \\(s'^2 = 0.18\\)\nThe pivot quantity is: \\[Q = \\frac{(n-1)S'^2}{\\sigma^2} \\sim \\chi^2_{(n-1)}\\]\nSo: \\[Q = \\frac{15\\,S'^2}{\\sigma^2} \\sim \\chi^2_{(\\mathbf{15})}\\]\na) The statement claims \\(Q \\sim \\chi^2_{(16)}\\), but the correct degrees of freedom are \\(n - 1 = 15\\). The statement is False.\nb) \\[P(S'^2 &gt; 1.2163\\,\\sigma^2) = P\\!\\left(\\frac{S'^2}{\\sigma^2} &gt; 1.2163\\right) = P(Q &gt; 15 \\times 1.2163) = P(Q &gt; 18.245)\\]\nReading directly from the \\(\\chi^2\\) table with 15 degrees of freedom: \\(P(Q &gt; 18.245) = 0.25\\).\nThe statement is True.\n\n\n\n\n\nSampling Distribution for the Difference of Means (Paired Samples)\n\nQuestion 7 (Paired samples, small sample, Normal populations)\n\nFifteen adult men, aged between 35 and 50, participated in a study to evaluate the effect of diet and exercise on blood cholesterol levels. Total cholesterol was measured in each individual at the start and after three months of participation in an aerobic exercise programme and a switch to a low-fat diet. The data are shown in the following table:\n\n\n\n\nBlood Cholesterol Level\n\n\n\n\nIndividual\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n7\n\n\n8\n\n\n9\n\n\n10\n\n\n11\n\n\n12\n\n\n13\n\n\n14\n\n\n15\n\n\n\n\n\n\nBefore\n\n\n265\n\n\n240\n\n\n258\n\n\n295\n\n\n251\n\n\n245\n\n\n287\n\n\n314\n\n\n260\n\n\n279\n\n\n283\n\n\n240\n\n\n238\n\n\n225\n\n\n247\n\n\n\n\nAfter\n\n\n229\n\n\n231\n\n\n227\n\n\n240\n\n\n238\n\n\n241\n\n\n234\n\n\n256\n\n\n247\n\n\n239\n\n\n246\n\n\n218\n\n\n219\n\n\n226\n\n\n233\n\n\n\n\nAssume that:\n\nThe samples (Before and After) are paired (each column corresponds to the same individual).\nEach pair of observations is independent.\nCholesterol levels follow a Normal distribution.\n\nTRUEFALSE The probability that the mean of the difference between Before and After differs from its expected value by more than 6.61 is equal to 0.2.\n\n\nSolution\n\nLet \\(X_1\\) be the cholesterol before treatment and \\(X_2\\) the cholesterol after treatment.\nDefine \\(D = X_1 - X_2\\). Since both \\(X_1\\) and \\(X_2\\) are Normal, so is \\(D\\).\nComputing the differences:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndividual\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n\n\n\n\nDiff\n36\n9\n31\n55\n13\n4\n53\n58\n13\n40\n37\n22\n19\n−1\n14\n\n\n\nFrom the data: \\(\\bar{d} = 26.87\\); \\(s'_D = 19.04\\).\nPopulation: Normal, \\(\\sigma\\) unknown; Sample: \\(n = 15 &lt; 30\\) → t-Student.\n\\[T = \\frac{\\bar{D} - \\mu_D}{S'_D / \\sqrt{n}} \\sim t_{(n-1)} \\equiv t_{(14)}\\]\n\\[P(|\\bar{D} - \\mu_D| &gt; 6.61) = P\\!\\left(|T| &gt; \\frac{6.61}{19.04/\\sqrt{15}}\\right) = P\\!\\left(|T| &gt; \\frac{6.61 \\times \\sqrt{15}}{19.04}\\right)\\]\n\\[= P(|T| &gt; 1.345) = 2\\,P(T &gt; 1.345)\\]\nReading from the t-distribution table with 14 degrees of freedom: \\(P(T &gt; 1.345) = 0.1\\).\n\\[= 2 \\times 0.1 = 0.2\\]\nThe statement is True.\n\n\n\nExercises adapted from the exercise booklet by Prof. Teresa Ferreira and Prof. Sandra Custódio, ISCAL–IPL. Solutions based on “Uma Resolução Possível” (2024/2025)."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#additivity-normal-distribution",
+    "href": "slides/01_CLT_slides.html#additivity-normal-distribution",
+    "title": "Central Limit Theorem",
+    "section": "Additivity (Normal Distribution)",
+    "text": "Additivity (Normal Distribution)\nAdditivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1",
+    "href": "slides/01_CLT_slides.html#example-1",
+    "title": "Central Limit Theorem",
+    "section": "Example 1",
+    "text": "Example 1\nConsider:\n\nIndependent variables: \\(X_i \\sim Normal(\\mu_i = 40,\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean (\\(n = 25\\) and \\(n = 81\\) students)\n\nFind the probability that the sample mean lies between 39 and 41 minutes.\nSolution: (assuming Normal distribution)\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = 40,\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right)\\]\n\\[\\Rightarrow P\\!\\left(39 &lt; \\bar{X} \\leq 41\\right) = P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-solution-cont.",
+    "href": "slides/01_CLT_slides.html#example-1-solution-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Solution (cont.)",
+    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#central-limit-theorem-clt",
+    "href": "slides/01_CLT_slides.html#central-limit-theorem-clt",
+    "title": "Central Limit Theorem",
+    "section": "Central Limit Theorem (CLT)",
+    "text": "Central Limit Theorem (CLT)\nCentral Limit Theorem (CLT):\nIf:\n\n\\(X_i \\sim \\textit{Distribution}(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\), \\(\\quad \\bar{X} = \\dfrac{T}{n}\\)\n\nthen, for \\(n\\) sufficiently large (as a rule, \\(n \\geq 30\\)):\n\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-revisited-clt",
+    "href": "slides/01_CLT_slides.html#example-1-revisited-clt",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Revisited (CLT)",
+    "text": "Example 1 — Revisited (CLT)\nConsider:\n\nIndependent variables: \\(X_i \\sim \\textit{Distribution}(\\mu_i = 40,\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean\n\\(n = 25,\\; n = 81,\\; n = 225\\) students\n\nFind \\(P(39 &lt; \\bar{X} \\leq 41)\\). Solution: (without the assumption of normality)\nWith \\(\\mathbf{n \\geq 30}\\):\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = 40,\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right) \\quad \\xrightarrow{CLT}\\]\n\\[\\Rightarrow P(39 &lt; \\bar{X} \\leq 41) \\approx P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right) =\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-revisited-cont.",
+    "href": "slides/01_CLT_slides.html#example-1-revisited-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Revisited (cont.)",
+    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-2",
+    "href": "slides/01_CLT_slides.html#example-2",
+    "title": "Central Limit Theorem",
+    "section": "Example 2",
+    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die 🎲\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.",
+    "href": "slides/01_CLT_slides.html#example-2-solution-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 2 — Solution (cont.)",
+    "text": "Example 2 — Solution (cont.)\n\\(n = 36\\) (CLT): note that for a fair die \\(\\mu = 3.5\\) and \\(\\sigma = 1.7078\\)\n\\[= P\\!\\left(\\frac{2.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}} &lt; Z &lt; \\frac{3.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}}\\right) = \\Phi(0) - \\Phi(-3.51) = 0.4998\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
+    "href": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
+    "title": "Central Limit Theorem",
+    "section": "Example 2 — Solution (cont.)",
+    "text": "Example 2 — Solution (cont.)\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#corollaries-of-the-clt",
+    "href": "slides/01_CLT_slides.html#corollaries-of-the-clt",
+    "title": "Central Limit Theorem",
+    "section": "Corollaries of the CLT",
+    "text": "Corollaries of the CLT\n\nCorollary 1\nLet \\(X\\) be a random variable with a Binomial distribution with parameters \\(n\\) and \\(p\\), \\(X \\sim binomial(n,p)\\). If \\(n \\geq 30\\), \\(np &gt; 5\\) or \\(n(1-p) &gt; 5\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = np,\\;\\sigma = \\sqrt{npq}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - np}{\\sqrt{npq}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]\n\n\nCorollary 2\nLet \\(X\\) be a random variable with a Poisson distribution with parameter \\(\\lambda\\), \\(X \\sim Poisson(\\lambda)\\). In practice, if \\(\\lambda &gt; 20\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda,\\;\\sigma = \\sqrt{\\lambda}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - \\lambda}{\\sqrt{\\lambda}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#continuity-correction",
+    "href": "slides/01_CLT_slides.html#continuity-correction",
+    "title": "Central Limit Theorem",
+    "section": "Continuity Correction",
+    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#continuity-correction-other-cases",
+    "href": "slides/01_CLT_slides.html#continuity-correction-other-cases",
+    "title": "Central Limit Theorem",
+    "section": "Continuity Correction — Other Cases",
+    "text": "Continuity Correction — Other Cases\nRemaining cases (discrete \\(X\\), applying continuity correction):\n\\[P(X &lt; 40) = P(X \\leq 39) = P(X \\leq 39.5) \\approx \\cdots\\]\n\\[P(X &gt; 40) = P(X \\geq 41) = P(X \\geq 40.5) \\approx \\cdots\\]\n\\[P(35 &lt; X &lt; 40) = P(36 \\leq X \\leq 39) = P(35.5 \\leq X \\leq 39.5) \\approx \\cdots\\]\n\\[P(35 \\leq X &lt; 40) = P(35 \\leq X \\leq 39) = P(34.5 \\leq X \\leq 39.5) \\approx \\cdots\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-3",
+    "href": "slides/01_CLT_slides.html#example-3",
+    "title": "Central Limit Theorem",
+    "section": "Example 3",
+    "text": "Example 3\nConsider:\n\nIndependent variables: \\(X_i \\sim binomial(n_i = 1\\;;\\;p = 0.05)\\)\n\\(X_i = 1\\) if a tax return contains errors (otherwise \\(X_i = 0\\))\nConsider an inspection of a sample of \\(n = 1000\\) tax returns.\n\nFind the probability that there are at least 60 incorrect returns.\nSolution: (exact and approximate distributions)\nExact distribution:\n\\(T \\sim binomial(n = 1000\\;;\\;p = 0.05)\\) — by the additivity of the Binomial\n\\[P(T \\geq 60) = 1 - P(T &lt; 60) = 1 - P(T \\leq 59) = \\mathbf{0.0867}\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-3-approximate-solution",
+    "href": "slides/01_CLT_slides.html#example-3-approximate-solution",
+    "title": "Central Limit Theorem",
+    "section": "Example 3 — Approximate Solution",
+    "text": "Example 3 — Approximate Solution\nApproximate distribution (exact and approximate):\n\\[\\mu = n_i p = 1 \\times 0.05 \\qquad \\sigma = \\sqrt{n_i p(1-p)} = \\sqrt{1 \\times 0.05 \\times 0.95} = \\sqrt{0.0475}\\]\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = 1000 \\times 0.05\\;;\\;\\sigma_T = \\sqrt{1000} \\times \\sqrt{0.0475}\\right)\\]\nApplying the continuity correction:\n\\[P(T \\geq 60) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 59.5) = 1 - P(T &lt; 59.5)\\]\n\\[\\underset{CLT}{\\approx} 1 - P\\!\\left(Z \\leq \\frac{59.5 - 50}{6.89}\\right) = 1 - \\Phi(1.38) = \\mathbf{0.0838}\\]\n\nComment: The variable is discrete, so we applied a continuity correction."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-4-exercise-1",
+    "href": "slides/01_CLT_slides.html#example-4-exercise-1",
+    "title": "Central Limit Theorem",
+    "section": "Example 4 [Exercise 1]",
+    "text": "Example 4 [Exercise 1]\nConsider: \\(T \\sim Poisson(\\lambda_T = 30)\\)\n\\(T\\) = number of daily accesses to a website\nFind \\(P(T &gt; 40)\\).\nSolution: (exact and approximate distributions)\nExact distribution:\n\\[P(T &gt; 40) = 1 - P(T \\leq 40) = 0.0323 \\simeq 0.03\\]\n\nNote: Since this is a homogeneous Poisson process, the day can be viewed as a sum of \\(n\\) sub-periods, each with the same probability distribution."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-4-approximate-solution",
+    "href": "slides/01_CLT_slides.html#example-4-approximate-solution",
+    "title": "Central Limit Theorem",
+    "section": "Example 4 — Approximate Solution",
+    "text": "Example 4 — Approximate Solution\nApproximate distribution:\n\\(T = X_1 + \\ldots + X_n\\) (by additivity), where \\(X_i \\sim Poisson\\!\\left(\\lambda = \\dfrac{30}{n}\\right)\\)\n\\[T \\sim Poisson(\\lambda = 30) \\;\\Rightarrow\\; T \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda = 30,\\;\\sigma = \\sqrt{\\lambda} = \\sqrt{30}\\right)\\]\nApplying the continuity correction:\n\\[P(T &gt; 40) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 40.5) \\;\\underset{CLT}{\\approx}\\; P\\!\\left(Z \\geq \\frac{40.5 - 30}{\\sqrt{30}}\\right) = P(Z \\geq 1.92)\\]\n\\[= 1 - \\Phi(1.92) = 1 - 0.9726 = \\mathbf{0.0274}\\]\nApproximation error: \\(\\varepsilon = |0.0323 - 0.0274| = 0.0049\\)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "iscal_statistics_2",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
   },
   {
     "objectID": "slides/02_sampling_distributions.html#what-well-cover",
@@ -476,192 +686,38 @@
     "text": "References\n:book: Murteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. & Pimenta, C. (2010). Introdução à Estatística. Escolar Editora, McGraw-Hill.\n:book: Newbold, P., Carlson, W., & Thorne, B. (2022). Statistics for Business and Economics Global Edition (10th Ed.). Pearson."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "iscal_statistics_2",
+    "objectID": "material.html",
+    "href": "material.html",
+    "title": "Material",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "text": "Syllabus Formulae Calendar"
   },
   {
-    "objectID": "slides/01_CLT_slides.html#additivity-normal-distribution",
-    "href": "slides/01_CLT_slides.html#additivity-normal-distribution",
-    "title": "Central Limit Theorem",
-    "section": "Additivity (Normal Distribution)",
-    "text": "Additivity (Normal Distribution)\nAdditivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-1",
-    "href": "slides/01_CLT_slides.html#example-1",
-    "title": "Central Limit Theorem",
-    "section": "Example 1",
-    "text": "Example 1\nConsider:\n\nIndependent variables: \\(X_i \\sim Normal(\\mu_i = 40,\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean (\\(n = 25\\) and \\(n = 81\\) students)\n\nFind the probability that the sample mean lies between 39 and 41 minutes.\nSolution: (assuming Normal distribution)\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = 40,\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right)\\]\n\\[\\Rightarrow P\\!\\left(39 &lt; \\bar{X} \\leq 41\\right) = P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right)\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-1-solution-cont.",
-    "href": "slides/01_CLT_slides.html#example-1-solution-cont.",
-    "title": "Central Limit Theorem",
-    "section": "Example 1 — Solution (cont.)",
-    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#central-limit-theorem-clt",
-    "href": "slides/01_CLT_slides.html#central-limit-theorem-clt",
-    "title": "Central Limit Theorem",
-    "section": "Central Limit Theorem (CLT)",
-    "text": "Central Limit Theorem (CLT)\nCentral Limit Theorem (CLT):\nIf:\n\n\\(X_i \\sim \\textit{Distribution}(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\), \\(\\quad \\bar{X} = \\dfrac{T}{n}\\)\n\nthen, for \\(n\\) sufficiently large (as a rule, \\(n \\geq 30\\)):\n\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-1-revisited-clt",
-    "href": "slides/01_CLT_slides.html#example-1-revisited-clt",
-    "title": "Central Limit Theorem",
-    "section": "Example 1 — Revisited (CLT)",
-    "text": "Example 1 — Revisited (CLT)\nConsider:\n\nIndependent variables: \\(X_i \\sim \\textit{Distribution}(\\mu_i = 40,\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean\n\\(n = 25,\\; n = 81,\\; n = 225\\) students\n\nFind \\(P(39 &lt; \\bar{X} \\leq 41)\\). Solution: (without the assumption of normality)\nWith \\(\\mathbf{n \\geq 30}\\):\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = 40,\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right) \\quad \\xrightarrow{CLT}\\]\n\\[\\Rightarrow P(39 &lt; \\bar{X} \\leq 41) \\approx P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right) =\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-1-revisited-cont.",
-    "href": "slides/01_CLT_slides.html#example-1-revisited-cont.",
-    "title": "Central Limit Theorem",
-    "section": "Example 1 — Revisited (cont.)",
-    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-2",
-    "href": "slides/01_CLT_slides.html#example-2",
-    "title": "Central Limit Theorem",
-    "section": "Example 2",
-    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die 🎲\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.",
-    "href": "slides/01_CLT_slides.html#example-2-solution-cont.",
-    "title": "Central Limit Theorem",
-    "section": "Example 2 — Solution (cont.)",
-    "text": "Example 2 — Solution (cont.)\n\\(n = 36\\) (CLT): note that for a fair die \\(\\mu = 3.5\\) and \\(\\sigma = 1.7078\\)\n\\[= P\\!\\left(\\frac{2.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}} &lt; Z &lt; \\frac{3.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}}\\right) = \\Phi(0) - \\Phi(-3.51) = 0.4998\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
-    "href": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
-    "title": "Central Limit Theorem",
-    "section": "Example 2 — Solution (cont.)",
-    "text": "Example 2 — Solution (cont.)\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#corollaries-of-the-clt",
-    "href": "slides/01_CLT_slides.html#corollaries-of-the-clt",
-    "title": "Central Limit Theorem",
-    "section": "Corollaries of the CLT",
-    "text": "Corollaries of the CLT\n\nCorollary 1\nLet \\(X\\) be a random variable with a Binomial distribution with parameters \\(n\\) and \\(p\\), \\(X \\sim binomial(n,p)\\). If \\(n \\geq 30\\), \\(np &gt; 5\\) or \\(n(1-p) &gt; 5\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = np,\\;\\sigma = \\sqrt{npq}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - np}{\\sqrt{npq}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]\n\n\nCorollary 2\nLet \\(X\\) be a random variable with a Poisson distribution with parameter \\(\\lambda\\), \\(X \\sim Poisson(\\lambda)\\). In practice, if \\(\\lambda &gt; 20\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda,\\;\\sigma = \\sqrt{\\lambda}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - \\lambda}{\\sqrt{\\lambda}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#continuity-correction",
-    "href": "slides/01_CLT_slides.html#continuity-correction",
-    "title": "Central Limit Theorem",
-    "section": "Continuity Correction",
-    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#continuity-correction-other-cases",
-    "href": "slides/01_CLT_slides.html#continuity-correction-other-cases",
-    "title": "Central Limit Theorem",
-    "section": "Continuity Correction — Other Cases",
-    "text": "Continuity Correction — Other Cases\nRemaining cases (discrete \\(X\\), applying continuity correction):\n\\[P(X &lt; 40) = P(X \\leq 39) = P(X \\leq 39.5) \\approx \\cdots\\]\n\\[P(X &gt; 40) = P(X \\geq 41) = P(X \\geq 40.5) \\approx \\cdots\\]\n\\[P(35 &lt; X &lt; 40) = P(36 \\leq X \\leq 39) = P(35.5 \\leq X \\leq 39.5) \\approx \\cdots\\]\n\\[P(35 \\leq X &lt; 40) = P(35 \\leq X \\leq 39) = P(34.5 \\leq X \\leq 39.5) \\approx \\cdots\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-3",
-    "href": "slides/01_CLT_slides.html#example-3",
-    "title": "Central Limit Theorem",
-    "section": "Example 3",
-    "text": "Example 3\nConsider:\n\nIndependent variables: \\(X_i \\sim binomial(n_i = 1\\;;\\;p = 0.05)\\)\n\\(X_i = 1\\) if a tax return contains errors (otherwise \\(X_i = 0\\))\nConsider an inspection of a sample of \\(n = 1000\\) tax returns.\n\nFind the probability that there are at least 60 incorrect returns.\nSolution: (exact and approximate distributions)\nExact distribution:\n\\(T \\sim binomial(n = 1000\\;;\\;p = 0.05)\\) — by the additivity of the Binomial\n\\[P(T \\geq 60) = 1 - P(T &lt; 60) = 1 - P(T \\leq 59) = \\mathbf{0.0867}\\]"
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-3-approximate-solution",
-    "href": "slides/01_CLT_slides.html#example-3-approximate-solution",
-    "title": "Central Limit Theorem",
-    "section": "Example 3 — Approximate Solution",
-    "text": "Example 3 — Approximate Solution\nApproximate distribution (exact and approximate):\n\\[\\mu = n_i p = 1 \\times 0.05 \\qquad \\sigma = \\sqrt{n_i p(1-p)} = \\sqrt{1 \\times 0.05 \\times 0.95} = \\sqrt{0.0475}\\]\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = 1000 \\times 0.05\\;;\\;\\sigma_T = \\sqrt{1000} \\times \\sqrt{0.0475}\\right)\\]\nApplying the continuity correction:\n\\[P(T \\geq 60) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 59.5) = 1 - P(T &lt; 59.5)\\]\n\\[\\underset{CLT}{\\approx} 1 - P\\!\\left(Z \\leq \\frac{59.5 - 50}{6.89}\\right) = 1 - \\Phi(1.38) = \\mathbf{0.0838}\\]\n\nComment: The variable is discrete, so we applied a continuity correction."
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-4-exercise-1",
-    "href": "slides/01_CLT_slides.html#example-4-exercise-1",
-    "title": "Central Limit Theorem",
-    "section": "Example 4 [Exercise 1]",
-    "text": "Example 4 [Exercise 1]\nConsider: \\(T \\sim Poisson(\\lambda_T = 30)\\)\n\\(T\\) = number of daily accesses to a website\nFind \\(P(T &gt; 40)\\).\nSolution: (exact and approximate distributions)\nExact distribution:\n\\[P(T &gt; 40) = 1 - P(T \\leq 40) = 0.0323 \\simeq 0.03\\]\n\nNote: Since this is a homogeneous Poisson process, the day can be viewed as a sum of \\(n\\) sub-periods, each with the same probability distribution."
-  },
-  {
-    "objectID": "slides/01_CLT_slides.html#example-4-approximate-solution",
-    "href": "slides/01_CLT_slides.html#example-4-approximate-solution",
-    "title": "Central Limit Theorem",
-    "section": "Example 4 — Approximate Solution",
-    "text": "Example 4 — Approximate Solution\nApproximate distribution:\n\\(T = X_1 + \\ldots + X_n\\) (by additivity), where \\(X_i \\sim Poisson\\!\\left(\\lambda = \\dfrac{30}{n}\\right)\\)\n\\[T \\sim Poisson(\\lambda = 30) \\;\\Rightarrow\\; T \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda = 30,\\;\\sigma = \\sqrt{\\lambda} = \\sqrt{30}\\right)\\]\nApplying the continuity correction:\n\\[P(T &gt; 40) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 40.5) \\;\\underset{CLT}{\\approx}\\; P\\!\\left(Z \\geq \\frac{40.5 - 30}{\\sqrt{30}}\\right) = P(Z \\geq 1.92)\\]\n\\[= 1 - \\Phi(1.92) = 1 - 0.9726 = \\mathbf{0.0274}\\]\nApproximation error: \\(\\varepsilon = |0.0323 - 0.0274| = 0.0049\\)"
-  },
-  {
-    "objectID": "exercises/Exercises_SamplingDistributions.html",
-    "href": "exercises/Exercises_SamplingDistributions.html",
-    "title": "Chapter I - Statistics II - Exercises",
+    "objectID": "material.html#core-material",
+    "href": "material.html#core-material",
+    "title": "Material",
     "section": "",
-    "text": "This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).\nContents: t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.\nThe exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately)."
+    "text": "Syllabus Formulae Calendar"
   },
   {
-    "objectID": "exercises/Exercises_SamplingDistributions.html#questions",
-    "href": "exercises/Exercises_SamplingDistributions.html#questions",
-    "title": "Chapter I - Statistics II - Exercises",
-    "section": "Questions",
-    "text": "Questions\n\nThe Concept of a Statistic\n\nQuestion 1\n\nConsider \\((X_1, X_2, \\ldots, X_n)\\), \\(n \\in \\mathbb{N}\\), a random sample from a population \\(X \\sim \\text{Normal}(\\mu = -2,\\; \\sigma)\\), where \\(\\sigma\\) is unknown. Determine whether the following random variables are not statistics:\n\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\mu)^2}{n}\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n} = S^2\\)\nTRUEFALSE \\(T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum_{i=1}^{n}(X_i - \\bar{X})^2}{n-1} = S'^2\\)\n\n\n\nHint\n\nRecall that a statistic is a function of the sample values that does not involve any unknown parameters. Here, \\(\\mu = -2\\) is known but \\(\\sigma\\) is unknown.\n\nItems (a), (b), (f), and (g) depend only on \\(X_i\\) and \\(\\bar{X}\\) (and known constants like \\(n\\)), so they are statistics — hence the statement that they are “not statistics” is False.\nItems (c), (d), and (e) involve the unknown parameter \\(\\sigma\\) or \\(\\mu\\) (note: although \\(\\mu=-2\\) is given, items (d) and (e) include \\(\\sigma\\) as well, and (c) directly uses \\(\\sigma\\)), so they are not statistics — the statement is True.\n\nCorrection on (d) and (e): Even though \\(\\mu=-2\\) is known, (d) involves \\(\\sigma\\) (unknown) in the denominator and (e) involves \\(\\mu\\) which, while numerically known here, in items (d) the presence of \\(\\sigma\\) makes it fail. For (e): since \\(\\mu\\) is known, this would actually be a statistic if all parameters involved were known. However, note the formulation carefully: (d) includes \\(\\sigma\\) explicitly → not a statistic. (e) includes \\(\\mu\\) (which is known = \\(-2\\)) so actually is a statistic. Let us re-examine:\nActually, since \\(\\mu = -2\\) is known:\n\n\ninvolves \\(\\sigma\\) (unknown) → not a statistic → True ✓\n\n\ninvolves \\(\\sigma\\) (unknown) → not a statistic → True ✓\n\n\ninvolves \\(\\mu\\) (known) but not \\(\\sigma\\) → it is a statistic → False\n\n\nLet us reconsider (e) with additional context. In the original exercise, (e) is defined as \\(T = \\frac{\\sum(X_i - \\mu)^2}{n}\\), and a separate item (f) from the original list includes \\(\\frac{\\sum\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2}{}\\). The resolution confirms: (c), (d), and (f-original) are not statistics because they involve \\(\\sigma\\).\n\n\n\n\n\nSampling Distribution of the Mean\n\nQuestion 2 (Normal population, \\(\\sigma\\) unknown → t-Student)\n\nSuppose the waiting time on the runway for takeoff at a certain airport is a random variable modelled by a Normal distribution with a mean of 4 minutes. A random sample of 21 aircraft was selected, yielding a corrected sample standard deviation \\(s' = 1.81\\) min.\nTRUEFALSE The probability that the sample mean waiting time exceeds 5 minutes is equal to 0.010.\n\n\nSolution\n\nPopulation: \\(X \\sim \\text{Normal}(\\mu = 4,\\; \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 21 &lt; 30\\); \\(s' = 1.81\\) min.\nSince the population is Normal and \\(\\sigma\\) is unknown, the sampling distribution of the mean is:\n\\[T = \\frac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\sim t_{(20)}\\]\n\\[P(\\bar{X} &gt; 5) = P\\!\\left(T &gt; \\frac{5 - 4}{1.81/\\sqrt{21}}\\right) = P(T &gt; 2.53) = 0.010\\]\nThe statement is True.\n\n\n\n\nQuestion 3 (Unknown population, \\(\\sigma\\) known → CLT)\n\nAt a financial firm, the profit generated by each investment made in the last year has a mean of €8,200 and a standard deviation of €3,600. Consider a random sample of 100 investments.\nThe probability that the sample mean differs from the population mean by more than €806.76 is equal to:\n0.01250.0250.9875None of the above\n\n\nSolution\n\nPopulation: \\(L \\to\\) profit (unknown distribution); \\(\\mu = 8{,}200\\)€; \\(\\sigma = 3{,}600\\)€ (known).\nSample: \\(n = 100 &gt; 30\\).\nBy the CLT: \\[\\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(\\mu,\\; \\frac{\\sigma}{\\sqrt{n}}\\right) \\equiv N(8200,\\; 360)\\]\n\\[P(|\\bar{X} - \\mu| &gt; 806.76) = P\\!\\left(|Z| &gt; \\frac{806.76}{360}\\right) \\approx P(|Z| &gt; 2.241)\\]\n\\[= 2 - 2\\Phi(2.241) = 2 - 2 \\times 0.9875 = 0.025\\]\nThe correct option is b) 0.025.\n\n\n\n\nQuestion 4 (Normal population, \\(\\sigma\\) unknown, \\(n &gt; 30\\) → Normal approx.)\n\nA company wishes to validate the value (in euros) of its accounts receivable, which follow a Normal distribution with mean \\(\\mu = 385\\) and unknown standard deviation. A random sample of \\(n\\) independent client accounts yields a corrected sample standard deviation \\(s' = 122.6\\) euros.\nTRUEFALSE The sample size needed (assuming \\(s'\\) remains unchanged) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for calculations, that the value of \\(n\\) will be greater than 30.)\n\n\nSolution\n\nPopulation: \\(X \\sim N(\\mu = 385,\\; \\sigma = ?)\\)\nSample: \\(n &gt; 30\\); \\(s' = 122.6\\)\nBy the CLT (since \\(n &gt; 30\\) and \\(\\sigma\\) unknown): \\[\\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(\\mu,\\; \\frac{s'}{\\sqrt{n}}\\right)\\]\nWe want: \\[P(|\\bar{X} - \\mu| &lt; 20) = 0.9 \\iff P\\!\\left(|Z| &lt; \\frac{20}{122.6/\\sqrt{n}}\\right) = 0.9\\] \\[\\iff \\frac{20}{122.6/\\sqrt{n}} = 1.645 \\iff \\sqrt{n} = \\frac{1.645 \\times 122.6}{20}\\] \\[\\iff n \\geq \\left(\\frac{1.645 \\times 122.6}{20}\\right)^2 \\approx 102\\]\nThe statement is True.\n\n\n\n\n\nSampling Distribution of the Proportion\n\nQuestion 5 (Bernoulli population → CLT)\n\nSuppose a certain cable TV channel is subscribed to by 10% of the residents of a country. Since this channel has been operating for a very short time, a marketing firm decided to estimate this proportion based on a random sample of 100 residents before renewing its advertising contracts with the channel.\nTRUEFALSE Given that contracts will only be renewed if the sample proportion exceeds 8.5%, the approximate probability of this occurring is 0.6915.\n\n\nSolution\n\nPopulation: \\(X \\sim \\text{Bernoulli}(p = 0.1)\\)\nSample: \\(n = 100 &gt; 30\\) (CLT applies)\n\\[\\hat{p} = \\bar{X} \\;\\dot{\\sim}\\; N\\!\\left(p,\\; \\sqrt{\\frac{pq}{n}}\\right) = N\\!\\left(0.1,\\; \\sqrt{\\frac{0.1 \\times 0.9}{100}}\\right) = N(0.1,\\; 0.03)\\]\n\\[P(\\hat{p} &gt; 0.085) \\approx P\\!\\left(Z &gt; \\frac{0.085 - 0.1}{0.03}\\right) = P(Z &gt; -0.5) = \\Phi(0.5) = 0.6915\\]\nThe statement is True.\n\n\n\n\n\nSampling Distribution of the Variance\n\nQuestion 6 (Normal population, Chi-Squared)\n\nSuppose we wish to analyse the viability of a project whose key element is the price (in monetary units, m.u.) of the raw material, well modelled by a random variable \\(X \\sim N(\\mu,\\; \\sigma)\\).\nA random sample \\((X_1, X_2, \\ldots, X_{16})\\) was selected, yielding a corrected sample variance \\(s'^2 = 0.18\\;\\text{m.u.}^2\\).\n\nTRUEFALSE \\(Q = \\dfrac{15\\,S'^2}{\\sigma^2} \\sim \\chi^2_{(16)}\\)\nTRUEFALSE \\(P(S'^2 &gt; 1.2163\\,\\sigma^2) = 0.25\\)\n\n\n\nSolution\n\nPopulation: \\(X \\sim N(\\mu,\\; \\sigma)\\)\nSample: \\(n = 16\\); \\(s'^2 = 0.18\\)\nThe pivot quantity is: \\[Q = \\frac{(n-1)S'^2}{\\sigma^2} \\sim \\chi^2_{(n-1)}\\]\nSo: \\[Q = \\frac{15\\,S'^2}{\\sigma^2} \\sim \\chi^2_{(\\mathbf{15})}\\]\na) The statement claims \\(Q \\sim \\chi^2_{(16)}\\), but the correct degrees of freedom are \\(n - 1 = 15\\). The statement is False.\nb) \\[P(S'^2 &gt; 1.2163\\,\\sigma^2) = P\\!\\left(\\frac{S'^2}{\\sigma^2} &gt; 1.2163\\right) = P(Q &gt; 15 \\times 1.2163) = P(Q &gt; 18.245)\\]\nReading directly from the \\(\\chi^2\\) table with 15 degrees of freedom: \\(P(Q &gt; 18.245) = 0.25\\).\nThe statement is True.\n\n\n\n\n\nSampling Distribution for the Difference of Means (Paired Samples)\n\nQuestion 7 (Paired samples, small sample, Normal populations)\n\nFifteen adult men, aged between 35 and 50, participated in a study to evaluate the effect of diet and exercise on blood cholesterol levels. Total cholesterol was measured in each individual at the start and after three months of participation in an aerobic exercise programme and a switch to a low-fat diet. The data are shown in the following table:\n\n\n\n\nBlood Cholesterol Level\n\n\n\n\nIndividual\n\n\n1\n\n\n2\n\n\n3\n\n\n4\n\n\n5\n\n\n6\n\n\n7\n\n\n8\n\n\n9\n\n\n10\n\n\n11\n\n\n12\n\n\n13\n\n\n14\n\n\n15\n\n\n\n\n\n\nBefore\n\n\n265\n\n\n240\n\n\n258\n\n\n295\n\n\n251\n\n\n245\n\n\n287\n\n\n314\n\n\n260\n\n\n279\n\n\n283\n\n\n240\n\n\n238\n\n\n225\n\n\n247\n\n\n\n\nAfter\n\n\n229\n\n\n231\n\n\n227\n\n\n240\n\n\n238\n\n\n241\n\n\n234\n\n\n256\n\n\n247\n\n\n239\n\n\n246\n\n\n218\n\n\n219\n\n\n226\n\n\n233\n\n\n\n\nAssume that:\n\nThe samples (Before and After) are paired (each column corresponds to the same individual).\nEach pair of observations is independent.\nCholesterol levels follow a Normal distribution.\n\nTRUEFALSE The probability that the mean of the difference between Before and After differs from its expected value by more than 6.61 is equal to 0.2.\n\n\nSolution\n\nLet \\(X_1\\) be the cholesterol before treatment and \\(X_2\\) the cholesterol after treatment.\nDefine \\(D = X_1 - X_2\\). Since both \\(X_1\\) and \\(X_2\\) are Normal, so is \\(D\\).\nComputing the differences:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndividual\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n\n\n\n\nDiff\n36\n9\n31\n55\n13\n4\n53\n58\n13\n40\n37\n22\n19\n−1\n14\n\n\n\nFrom the data: \\(\\bar{d} = 26.87\\); \\(s'_D = 19.04\\).\nPopulation: Normal, \\(\\sigma\\) unknown; Sample: \\(n = 15 &lt; 30\\) → t-Student.\n\\[T = \\frac{\\bar{D} - \\mu_D}{S'_D / \\sqrt{n}} \\sim t_{(n-1)} \\equiv t_{(14)}\\]\n\\[P(|\\bar{D} - \\mu_D| &gt; 6.61) = P\\!\\left(|T| &gt; \\frac{6.61}{19.04/\\sqrt{15}}\\right) = P\\!\\left(|T| &gt; \\frac{6.61 \\times \\sqrt{15}}{19.04}\\right)\\]\n\\[= P(|T| &gt; 1.345) = 2\\,P(T &gt; 1.345)\\]\nReading from the t-distribution table with 14 degrees of freedom: \\(P(T &gt; 1.345) = 0.1\\).\n\\[= 2 \\times 0.1 = 0.2\\]\nThe statement is True.\n\n\n\nExercises adapted from the exercise booklet by Prof. Teresa Ferreira and Prof. Sandra Custódio, ISCAL–IPL. Solutions based on “Uma Resolução Possível” (2024/2025)."
+    "objectID": "material.html#slides",
+    "href": "material.html#slides",
+    "title": "Material",
+    "section": "Slides",
+    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions"
   },
   {
-    "objectID": "syllabus.html",
-    "href": "syllabus.html",
-    "title": "Statistics II — Course Syllabus",
+    "objectID": "material.html#exercises",
+    "href": "material.html#exercises",
+    "title": "Material",
+    "section": "Exercises",
+    "text": "Exercises\n\nSampling Distributions"
+  },
+  {
+    "objectID": "calendar.html",
+    "href": "calendar.html",
+    "title": "Statistics II — Calendar",
     "section": "",
-    "text": "ISCAL\n    Lisbon Accounting and Business School\n    Polytechnic University of Lisbon\n  \n  \n    Bachelor's Degree in Management\n    Program Director: Professor Maria Teresa Fortunato Pereira Martins"
-  },
-  {
-    "objectID": "syllabus.html#course-information",
-    "href": "syllabus.html#course-information",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Course Information",
-    "text": "Course Information\n\n\n\n\nCourse Unit\nStatistics II\n\n\nArea\nData Science and Statistics\n\n\nCourse Director\nSofia Delgado António\n\n\nInstructor\nPaulo Fagandini\n\n\nEmail\npfagandini@iscal.ipl.pt\n\n\nLectures\nTuesdays, 11:00 – 14:00\n\n\nYear / Semester\n2nd Year / 4th Semester\n\n\nWeekly Contact Hours\n3 Hours\n\n\nECTS\n4"
-  },
-  {
-    "objectID": "syllabus.html#general-objective",
-    "href": "syllabus.html#general-objective",
-    "title": "Statistics II — Course Syllabus",
-    "section": "General Objective",
-    "text": "General Objective\nThe objective of this course unit is to present several statistical techniques of great practical use in management. Within the context of random phenomena, students will identify and apply probabilistic models and use the notions of statistical inference to make decisions under uncertainty."
-  },
-  {
-    "objectID": "syllabus.html#competencies",
-    "href": "syllabus.html#competencies",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Competencies",
-    "text": "Competencies\nStudents are expected to acquire and reinforce fundamental concepts of Probability and Statistics. They should become proficient in the main techniques of statistical inference, supported by probability theory, with the primary goal of applying appropriate statistical methods and models to obtain conclusions that support decision-making in business contexts."
-  },
-  {
-    "objectID": "syllabus.html#learning-outcomes",
-    "href": "syllabus.html#learning-outcomes",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Learning Outcomes",
-    "text": "Learning Outcomes\nUpon completion of this course, students should be able to:\n\nInfer characteristics of a population from a sample, applying point and interval estimation techniques;\nUnderstand the general procedures for applying parametric hypothesis tests;\nUnderstand the specification and underlying assumptions of the linear regression model for cross-sectional data;\nDevelop competencies for the joint application of various statistical techniques, using basic software that implements the studied procedures, in order to obtain results that support decision-making under uncertainty."
-  },
-  {
-    "objectID": "syllabus.html#syllabus",
-    "href": "syllabus.html#syllabus",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Syllabus",
-    "text": "Syllabus\n\n1. Sampling Distributions\n1.1. Central Limit Theorem and applications: Normal approximation to the Binomial and to the Poisson distribution.\n1.2. Concepts of random sample and statistic.\n1.3. Basic results on the sample mean and sample variance.\n1.4. Sampling distributions of the mean in Normal and non-Normal populations. (Includes the t-Student distribution, in the context of this topic.)\n1.5. Sampling distributions of the variance in Normal populations. (Includes the Chi-Square distribution, in the context of this topic.)\n1.6. Sampling distribution of the proportion from a Bernoulli population.\n\n\n\n2. Parameter Estimation\n\n2.1. Point Estimation\n2.1.1. Introduction. Basic notions of estimation: point and interval estimation. The concepts of estimator and estimate.\n2.1.2. Point estimators. Properties of Estimators.\n\n\n2.2. Interval Estimation\n2.2.1. Basic notions.\n2.2.2. Confidence intervals for Normal populations: population mean, population variance, difference between two population means.\n2.2.3. Confidence intervals for non-Normal single-parameter populations (large samples).\n\n\n\n\n3. Parametric Hypothesis Testing\n3.1. Basic concepts: statistical test, null and alternative hypothesis, test statistic, significance level and critical region. Type I and Type II errors.\n3.2. The concept of p-value.\n3.3. Tests involving parameters of Normal populations: tests for means and variances.\n3.4. Tests for the difference between means of two Normal populations.\n3.5. Tests under asymptotic normality conditions (large samples).\n\n\n\n4. The Linear Regression Model\n4.1. Introduction: Theoretical Linear Regression Model, linear relationships.\n4.2. Classical Linear Regression Model for Cross-Sectional Data.\n4.3. OLS Estimation Method. Coefficient estimates and their interpretation.\n4.4. Properties of the OLS estimators of regression coefficients.\n4.5. Goodness of fit: Coefficient of determination and correlation coefficient.\n4.6. Statistical Inference: Hypothesis Tests and Confidence Intervals (one parameter).\n4.7. Validation of the Classical Linear Regression Model Assumptions (Brief Overview)."
-  },
-  {
-    "objectID": "syllabus.html#assessment",
-    "href": "syllabus.html#assessment",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Assessment",
-    "text": "Assessment\nAssessment may take place under a continuous assessment regime or by final exam.\n\nContinuous Assessment\n\n\n\n\n\n\n\n\n\n\n\nAssessment Element\nWeight\nDuration\nSyllabus Content\nIndicative Date\n\n\n\n\nWritten Test 1\n45%\n1h 20m\nTopics 1 + 2.1\nWeek of 23–27 March\n\n\nWritten Test 2\n55%\n1h 20m\nTopics 2.2 + 3 + 4\nWeek of 18–23 May\n\n\n\n\n\nContinuous assessment is based on two (2) written tests, held in person.\nFor approval under this regime, students must obtain a minimum grade of 7 (seven) points in each assessment element. Attendance at all assessment moments is compulsory.\nThe final grade is the weighted average of the two tests:\n\n\\[\\text{Final Grade (CA)} = 0.45\\,(\\text{Test 1}) + 0.55\\,(\\text{Test 2})\\]\n\nStudents under continuous assessment may be subject to an oral examination whenever the instructor deems it necessary to validate the assigned grade.\nNo additional minimum attendance requirements are defined beyond mandatory presence at assessment moments.\n\n\n\nFinal Exam Regime\nStudents who prefer the final exam regime may sit a comprehensive exam worth 100% of the final grade, covering all course content."
-  },
-  {
-    "objectID": "syllabus.html#bibliography",
-    "href": "syllabus.html#bibliography",
-    "title": "Statistics II — Course Syllabus",
-    "section": "Bibliography",
-    "text": "Bibliography\n\nPrimary Reference (English)\n\n📖 Newbold, P., Carlson, W. & Thorne, B. (2012) — Statistics for Business and Economics. 8th Edition. Prentice Hall.\n\n\n\nAdditional References (Portuguese)\nCustódio, S.G.; Ferreira, T.; Morgado, A.J. & Delgado, S. (2023) — Análise de Regressão Linear. Exercícios de Aplicação Geral e Económica. Sílabas&Desafios.\nFerreira, T. & Custódio, S.G. (2023) — Modelos Probabilísticos. Síntese Teórica e Exercícios Resolvidos. Edições Sílabo.\nMorgado, A.J.; Custódio, S.G. & Ferreira, T. (2023) — Análise de Regressão Linear. Uma abordagem modelar introdutória. Sílabas&Desafios.\nMurteira, B.; Silva Ribeiro, C.; Andrade e Silva, J. & Pimenta, C. (2010) — Introdução à Estatística. Escolar Editora, McGraw-Hill.\nPaulino C. & Branco J. (2012) — Exercícios de Probabilidade e Estatística. Escolar Editora.\nPedrosa A.C. & Gama S.M.A. (2004) — Introdução Computacional à Probabilidade e Estatística. Porto Editora.\nPestana, D. D. & Velosa, S. F. (2006) — Introdução à Probabilidade e à Estatística. Vol. I. 2ª edição. Fundação Calouste Gulbenkian.\nPimenta, F., Andrade e Silva, J.; Silva Ribeiro, C. & Murteira, B. (2015) — Introdução à Estatística — 3ª Edição. Escolar Editora.\nRobalo A. (2018) — Estatística. Exercícios. Vol. II. 6ª ed. Edições Sílabo.\nWooldridge, J. M. (2009) — Introductory Econometrics. A Modern Approach. 4th Ed. Thomson South-Western.\n\n\n  ISCAL · Instituto Superior de Contabilidade e Administração de Lisboa\n  Statistics II · 2025/2026"
+    "text": "Week\nDate\nLecture\nTopic (from syllabus)\n\n\n\n\n1\nFev 24\n1-2\nCentral Limit Theorem (1.1-1.3)\n\n\n2\nMar 10\n3-4\nCentral Limit Theorem (1.4-1.6)\n\n\n3\nMar 17\n5-6\nParameter Estimation (2.1)\n\n\n4\nMar 24\n7-8\nTest 1\n\n\n5\nApr 7\n9-10\nParameter Estimation (2.2)\n\n\n6\nApr 14\n11-12\nParametric Hypothesis Tests (3.1-3.2)\n\n\n7\nApr 21\n13-14\nParametric Hypothesis Tests (3.3-3.5)\n\n\n8\nApr 28\n15-16\nLinear Regression Model (4.1-4.3)\n\n\n9\nMay 5\n17-18\nLinear Regression Model (4.4-4.5)\n\n\n10\nMay 12\n19-20\nLinear Regression Model (4.6-4.7)\n\n\n11\nMay 19\n21-22\nTest 2"
   }
 ]

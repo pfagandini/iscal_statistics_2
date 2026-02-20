@@ -1,0 +1,210 @@
+/* =============================================
+   ISCAL Statistics II — Formula Sheet CSS
+   Branding: Burgundy #8B1538
+   ============================================= */
+
+:root {
+  --iscal-burgundy: #8B1538;
+  --iscal-dark-burgundy: #6B1028;
+  --iscal-light-burgundy: #f5e6eb;
+  --iscal-gray: #333333;
+  --iscal-light-gray: #F5F5F5;
+  --iscal-blue: #0066CC;
+}
+
+/* ---- Body & Typography ---- */
+body {
+  font-family: "Georgia", "Times New Roman", serif;
+  color: var(--iscal-gray);
+  line-height: 1.75;
+  font-size: 1rem;
+}
+
+h1.title {
+  color: var(--iscal-burgundy);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.2em;
+}
+
+p.subtitle {
+  color: var(--iscal-dark-burgundy);
+  font-size: 1.05rem;
+  font-style: italic;
+}
+
+h2 {
+  color: var(--iscal-burgundy);
+  font-size: 1.35rem;
+  font-weight: bold;
+  border-bottom: 3px solid var(--iscal-burgundy);
+  padding-bottom: 0.3em;
+  margin-top: 2em;
+}
+
+h3 {
+  color: var(--iscal-dark-burgundy);
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 1.5em;
+}
+
+h4 {
+  color: var(--iscal-burgundy);
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.4em;
+  margin-top: 0;
+}
+
+/* ---- ISCAL Header ---- */
+.iscal-header {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  background: linear-gradient(135deg, var(--iscal-burgundy) 0%, var(--iscal-dark-burgundy) 100%);
+  color: white;
+  padding: 1.4em 2em;
+  border-radius: 6px;
+  margin-bottom: 2em;
+}
+
+.iscal-wordmark {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  font-family: "Arial", sans-serif;
+  color: white;
+  line-height: 1;
+}
+
+.iscal-subtitle-inst {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  margin-top: 0.25em;
+  line-height: 1.4;
+}
+
+.politecnico {
+  opacity: 0.8;
+}
+
+.iscal-banner-text {
+  border-left: 2px solid rgba(255,255,255,0.4);
+  padding-left: 1.5em;
+}
+
+.banner-line-top {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+}
+
+.banner-line-bottom {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  margin-top: 0.3em;
+}
+
+/* ---- Formula block ---- */
+.formula-block {
+  background-color: var(--iscal-light-burgundy);
+  border-left: 5px solid var(--iscal-burgundy);
+  border-radius: 4px;
+  padding: 0.9em 1.3em;
+  margin: 0.5em 0 1em 0;
+}
+
+.formula-block h4 {
+  margin-top: 0;
+  border-bottom: 1px solid rgba(139,21,56,0.25);
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+}
+
+/* ---- Tables ---- */
+.table-wrap {
+  overflow-x: auto;
+  margin: 0.5em 0 1.2em 0;
+}
+
+.table-wrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.table-wrap table th {
+  background-color: var(--iscal-burgundy);
+  color: white;
+  padding: 0.55em 0.8em;
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.table-wrap table td {
+  padding: 0.6em 0.8em;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+}
+
+.table-wrap table tbody tr:nth-child(even) {
+  background-color: var(--iscal-light-gray);
+}
+
+/* Keep MathJax from overflowing narrow table cells */
+.table-wrap .MathJax {
+  font-size: 0.92em !important;
+}
+
+/* ---- Math display ---- */
+.math.display {
+  overflow-x: auto;
+  padding: 0.3em 0;
+}
+
+/* ---- HR ---- */
+hr {
+  border: none;
+  border-top: 1px solid #e0d0d5;
+  margin: 1.8em 0;
+}
+
+/* ---- TOC ---- */
+#TOC {
+  border-left: 4px solid var(--iscal-burgundy);
+  padding-left: 1em;
+  font-size: 0.88rem;
+}
+
+#TOC a {
+  color: var(--iscal-dark-burgundy);
+  text-decoration: none;
+}
+
+#TOC a:hover {
+  color: var(--iscal-burgundy);
+  text-decoration: underline;
+}
+
+/* ---- Footer ---- */
+.iscal-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  background-color: var(--iscal-burgundy);
+  padding: 0.8em 1.5em;
+  border-radius: 4px;
+  margin-top: 3em;
+}
+
+/* ---- Print ---- */
+@media print {
+  .iscal-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .iscal-footer { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .formula-block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h2 { page-break-after: avoid; }
+  .formula-block { page-break-inside: avoid; }
+}

@@ -1,0 +1,237 @@
+---
+title: "Statistics II — Formula Sheet"
+subtitle: "Bachelor's Degree in Management · Academic Year 2025/2026"
+author: ""
+date: ""
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-title: "Contents"
+    toc-depth: 2
+    toc-location: left
+    number-sections: false
+    self-contained: true
+    css: formulario_style.css
+    page-layout: article
+    grid:
+      sidebar-width: 230px
+      body-width: 900px
+    math: mathjax
+engine: knitr
+execute:
+  enabled: false
+---
+
+```{=html}
+<div class="iscal-header">
+  <div class="iscal-logo-area">
+    <div class="iscal-wordmark">ISCAL</div>
+    <div class="iscal-subtitle-inst">Lisbon Accounting and Business School<br>
+    <span class="politecnico">Polytechnic University of Lisbon</span></div>
+  </div>
+  <div class="iscal-banner-text">
+    <div class="banner-line-top">Statistics II &mdash; Formula Sheet</div>
+    <div class="banner-line-bottom">Bachelor's Degree in Management &nbsp;|&nbsp; Academic Year 2025/2026</div>
+  </div>
+</div>
+```
+
+---
+
+## Probability Models
+
+### Discrete Probability Models
+
+::: {.formula-block}
+#### Binomial Distribution
+
+$$X \sim \mathrm{Binomial}(n,\, p)$$
+
+$$P(X = x) = \binom{n}{x} p^x (1-p)^{n-x}, \quad x = 0, 1, \ldots, n$$
+
+$$E(X) = np \qquad V(X) = npq \qquad q = 1-p$$
+:::
+
+---
+
+::: {.formula-block}
+#### Hypergeometric Distribution
+
+$$X \sim \mathrm{Hypergeometric}(N,\, M,\, n) \qquad p = \dfrac{M}{N}$$
+
+$$P(X = x) = \dfrac{\displaystyle\binom{M}{x}\binom{N-M}{n-x}}{\displaystyle\binom{N}{n}}, \quad \max(0,\, M+n-N) \leq x \leq \min(M,\, n)$$
+
+$$E(X) = np \qquad V(X) = npq\,\dfrac{N-n}{N-1}$$
+:::
+
+---
+
+::: {.formula-block}
+#### Poisson Distribution
+
+$$X \sim \mathrm{Poisson}(\lambda),\quad \lambda > 0$$
+
+$$P(X = x) = \dfrac{e^{-\lambda}\,\lambda^x}{x!}, \quad x = 0, 1, 2, \ldots$$
+
+$$E(X) = V(X) = \lambda$$
+:::
+
+---
+
+::: {.formula-block}
+#### Geometric Distribution
+
+$$X \sim \mathrm{Geometric}(p), \quad 0 \leq p \leq 1$$
+
+$$f(x) = p(1-p)^{x-1}, \quad x = 1, 2, \ldots \qquad F(x) = 1 - (1-p)^k, \quad k \leq x < k+1$$
+
+$$E(X) = \dfrac{1}{p} \qquad V(X) = \dfrac{1-p}{p^2}$$
+:::
+
+---
+
+### Continuous Probability Models
+
+::: {.formula-block}
+#### Uniform Distribution
+
+$$X \sim \mathrm{Uniform}(a,\, b), \quad a,b \in \mathbb{R},\; a < b$$
+
+$$F(x) = \begin{cases} 0 & x < a \\ \dfrac{x-a}{b-a} & a \leq x < b \\ 1 & x \geq b \end{cases}$$
+
+$$E(X) = \dfrac{a+b}{2} \qquad V(X) = \dfrac{(b-a)^2}{12}$$
+:::
+
+---
+
+::: {.formula-block}
+#### Exponential Distribution
+
+$$X \sim \mathrm{Exponential}(\lambda), \quad \lambda > 0$$
+
+$$F(x) = \begin{cases} 0 & x \leq 0 \\ 1 - e^{-\lambda x} & x > 0 \end{cases}$$
+
+$$E(X) = \dfrac{1}{\lambda} \qquad V(X) = \dfrac{1}{\lambda^2}$$
+:::
+
+---
+
+::: {.formula-block}
+#### Normal Distribution
+
+$$X \sim \mathrm{Normal}(\mu,\, \sigma), \quad \mu \in \mathbb{R},\; \sigma > 0$$
+
+$$E(X) = \mu \qquad V(X) = \sigma^2$$
+
+$$Z = \dfrac{X - \mu}{\sigma} \sim \mathrm{Normal}(0,\,1) \qquad E(Z) = 0 \qquad V(Z) = 1$$
+
+$$\Phi(z) = P(Z \leq z) \qquad \Phi(-z) = 1 - \Phi(z)$$
+:::
+
+---
+
+::: {.formula-block}
+#### *t*-Student Distribution
+
+$$T \sim t_{(n)}, \quad n \text{ degrees of freedom}$$
+
+$$E(T) = 0 \qquad V(T) = \dfrac{n}{n-2},\quad n > 2$$
+:::
+
+---
+
+::: {.formula-block}
+#### Chi-Square Distribution
+
+$$Q \sim \chi^2_{(n)}, \quad n \text{ degrees of freedom}$$
+
+$$E(Q) = n \qquad V(Q) = 2n$$
+
+$$Y = \sum_{i=1}^{n} Z_i^2 \sim \chi^2_{(n)}, \quad Z_i \sim \mathrm{Normal}(0,\,1) \text{ i.i.d.}$$
+:::
+
+---
+
+## Sampling
+
+::: {.formula-block}
+#### Sample Statistics
+
+$$\bar{X} = \dfrac{1}{n}\sum_{i=1}^{n} X_i$$
+
+$$S^2 = \dfrac{1}{n}\sum_{i=1}^{n}(X_i - \bar{X})^2 = \dfrac{1}{n}\sum X_i^2 - \bar{X}^2$$
+
+$$S'^{\,2} = \dfrac{1}{n-1}\sum_{i=1}^{n}(X_i - \bar{X})^2 = \dfrac{1}{n-1}\sum X_i^2 - \dfrac{n}{n-1}\bar{X}^2$$
+
+$$S^2 = \dfrac{n-1}{n}\,S'^{\,2} \qquad S'^{\,2} = \dfrac{n}{n-1}\,S^2$$
+:::
+
+---
+
+## Sampling Distributions and Confidence Intervals for $\mu$
+
+::: {.table-wrap}
+
+| # | Population | Distribution of $\bar{X}$ | $(1-\alpha)\times 100\%$ Confidence Interval |
+|:--:|:--|:--|:--|
+| 1 | $X\sim N(\mu,\sigma)$; $\sigma^2$ **known** | $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$ |
+| 2 | $X\sim N(\mu,\sigma)$; $\sigma^2$ **unknown** | $T = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\sim t_{(n-1)}$ | $\left(\bar{x} - t_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + t_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ |
+| 2b | $X\sim N(\mu,\sigma)$; $\sigma^2$ **unknown**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ *(approx.)* |
+| 3a | $X\sim{?}$; $\sigma^2$ **known**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$ *(approx.)* |
+| 3b | $X\sim{?}$; $\sigma^2$ **unknown**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ *(approx.)* |
+
+:::
+
+---
+
+## Sampling Distribution and Confidence Interval for $p$
+
+::: {.table-wrap}
+
+| Population | Distribution of $\hat{p} = X/n$ | $(1-\alpha)\times 100\%$ Confidence Interval |
+|:--|:--|:--|
+| $X\sim \mathrm{Binomial}(n,p)$, $n\geq 30$ | $\dfrac{\hat{p}-p}{\sqrt{\hat{p}(1-\hat{p})/n}}\;\dot{\sim}\; N(0,1)$ | $\left(\hat{p} - z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}},\; \hat{p} + z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\right)$ *(approx.)* |
+
+:::
+
+---
+
+## Sampling Distribution and Confidence Interval for $\sigma^2$
+
+::: {.table-wrap}
+
+| Population | Distribution of $S'^{\,2}$ | $(1-\alpha)\times 100\%$ Confidence Interval |
+|:--|:--|:--|
+| $X\sim N(\mu,\sigma)$ | $Q = \dfrac{(n-1)S'^{\,2}}{\sigma^2}\sim\chi^2_{(n-1)}$ | $\left(\dfrac{(n-1)s'^{\,2}}{q_{\sup}},\; \dfrac{(n-1)s'^{\,2}}{q_{\inf}}\right)$ |
+
+:::
+
+$$P(Q > q_{\inf}) = 1 - \dfrac{\alpha}{2} \qquad P(Q > q_{\sup}) = \dfrac{\alpha}{2}$$
+
+---
+
+## Parametric Hypothesis Tests (at level $\alpha$)
+
+::: {.table-wrap}
+
+| Hypotheses | Test Statistic (TS) | Critical Region |
+|:--|:--:|:--|
+| $H_0: \theta = \theta_0 \;\text{vs}\; H_1: \theta \neq \theta_0$ | $\mathrm{TS}_0$ | $(-\infty,\, q_{\alpha/2}) \cup (q_{\alpha/2},\, +\infty)$ |
+| $H_0: \theta \leq \theta_0 \;\text{vs}\; H_1: \theta > \theta_0$ | $\mathrm{TS}_0$ | $(q_{\alpha},\, +\infty)$ |
+| $H_0: \theta \geq \theta_0 \;\text{vs}\; H_1: \theta < \theta_0$ | $\mathrm{TS}_0$ | $(-\infty,\, q_{\alpha})$ |
+
+:::
+
+$$P(\mathrm{TS} > q_\alpha) = \alpha \qquad \text{Reject } H_0 \text{ if } \alpha > p\text{-value}$$
+
+$$\alpha = P\!\left(\text{Reject } H_0 \mid H_0 \text{ true}\right) \quad \text{(Type I error probability)}$$
+
+---
+
+```{=html}
+<div class="iscal-footer">
+  <span>ISCAL &middot; Instituto Superior de Contabilidade e Administração de Lisboa</span>
+  <span>Statistics II &nbsp;|&nbsp; 2025/2026</span>
+</div>
+```

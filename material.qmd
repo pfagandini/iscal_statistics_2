@@ -2,6 +2,12 @@
 title: "Material"
 ---
 
+## Core Material
+
+[Syllabus](syllabus.qmd)
+[Formulae](formulae.qmd)
+[Calendar](calendar.qmd)
+
 ## Slides
 
 1. [Central Limit Theorem](slides/01_CLT_slides.qmd)
