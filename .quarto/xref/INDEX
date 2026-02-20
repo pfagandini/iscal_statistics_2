@@ -28,5 +28,8 @@
   },
   "formulae.qmd": {
     "formulae.html": "ee83ede0"
+  },
+  "exercises/01_Central_Limit_Theorem.qmd": {
+    "01_Central_Limit_Theorem.html": "5ae74e58"
   }
 }

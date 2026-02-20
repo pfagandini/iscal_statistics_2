@@ -1,0 +1,166 @@
+---
+title: "Chapter I - Statistics II - Central Limit Theorem"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).
+
+**Contents:** t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.
+
+The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).
+
+---
+
+## Questions
+
+#### Question 1
+
+::: {.webex-check .webex-box}
+The number of access to a certain website follows a Poisson distribution with an average rate of $30$ per day.
+
+
+a) `r torf(TRUE)` The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly $0.0323$. The **approximate** probability, by using the CLT, leads to an error of $0.0049$, from the exact result.
+
+b) The probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: `r mcq(c("0.5098","0.4879", answer = "0.4908", "None of the above"))`
+
+:::
+
+
+#### Question 2
+
+::: {.webex-check .webex-box}
+
+A complex system is formed by 100 parts that work indepedently. The probability that any of the components fails during the operating period is equal to $0.1$.
+
+a) `r torf(TRUE)` Knowing that the working of the system demands that at least 85 parts are operative, the approximate probability that the system works is equal to 0.9664.
+
+b) `r torf(FALSE)` In the previous calculus, the use of the CLT demands only that the sample size, from a non Normal population is large enough.
+
+:::
+
+
+#### Question 3
+
+::: {.webex-check .webex-box}
+
+It is known that, in the *TeleDigit*, the probability that any phone call is to fill a complaint is equal to 0.05. Consider that the random experiment, consisting in picking a random sample of 20 calls, and count the ones that are complaints.
+
+a) `r torf(TRUE)` The probability that in the sample there are between 2 and 5 (inclusive) is equal to 0.2639.
+
+b) The **approximate** probability that, in a random sample of 250 calls, at most 10 complaints are detected is:
+`r mcq(c("0.2909",answer="0.2810","0.2327","None of the above"))`
+
+:::
+
+
+#### Question 4
+
+::: {.webex-check .webex-box}
+
+The number of machines ordered every day to a factory can be considered a random variable distributed Poisson with mean 9.5.
+
+a) The percentage of days in which no more than 10 machines are ordered is equal to: `r mcq(c("64.53%","12.35%",answer="35.47%","87.65%"))`
+
+b) `r torf(TRUE)` Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.
+
+:::
+
+#### Question 5
+
+::: {.webex-check .webex-box}
+
+The lifetime, in years, of a lightning projector is a random variable. It is known that 20% of the projectors fail during the first year of use.
+
+In a random sample of 500 projectors, the **approximate** probability that at most 80 fail during the first year is: `r mcq(c("0.9854","0.0125",answer="0.0146","None of the above"))`
+
+:::
+
+
+#### Question 6 
+
+::: {.webex-check .webex-box}
+
+Consider the time interval that passess between the arrival of two people to the reception desk of a hospital follows an exponential distribution with mean of 30 seconds.
+
+a) `r torf(TRUE)` The approximate probability (by the CLT) that at most 40 people arrive to the reception desk of the hospital, during a time lapse of 18 minutes is 0.7734.
+
+:::
+
+#### Question 7
+
+::: {.webex-check .webex-box}
+
+In a gas station, each customer fills a random amount of gas $X$, that it is known to follow a Uniform distribution in $[10,40]$ liters. Assume that, each day, the gas station has 300 customers.
+
+`r torf(TRUE)` The **approximate** probability that the daily (total) gas bought in that gas station is above 7410 liters of gas is equal to $\Phi(0.6)$.
+
+:::
+
+#### Question 8
+
+::: {.webex-check .webex-box}
+
+A study about the sales in the sumermarket *Superstore* arrived to the conclusion that the daily rice demand (in Kg) is a random variable with mean 40Kg and standard deviation of 5Kg.
+
+`r torf(TRUE)` Having being ordered 14500 Kg of rice for sale in the next year, the probability that that stock satisfies the rice demand, in that year, is equal to 0.2643 (consider a year with 364 days).
+
+:::

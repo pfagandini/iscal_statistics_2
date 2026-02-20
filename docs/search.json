@@ -711,7 +711,7 @@
     "href": "material.html#exercises",
     "title": "Material",
     "section": "Exercises",
-    "text": "Exercises\n\nSampling Distributions"
+    "text": "Exercises\n\nCentral Limit Theorem"
   },
   {
     "objectID": "calendar.html",
@@ -719,5 +719,19 @@
     "title": "Statistics II — Calendar",
     "section": "",
     "text": "Week\nDate\nLecture\nTopic (from syllabus)\n\n\n\n\n1\nFev 24\n1-2\nCentral Limit Theorem (1.1-1.3)\n\n\n2\nMar 10\n3-4\nCentral Limit Theorem (1.4-1.6)\n\n\n3\nMar 17\n5-6\nParameter Estimation (2.1)\n\n\n4\nMar 24\n7-8\nTest 1\n\n\n5\nApr 7\n9-10\nParameter Estimation (2.2)\n\n\n6\nApr 14\n11-12\nParametric Hypothesis Tests (3.1-3.2)\n\n\n7\nApr 21\n13-14\nParametric Hypothesis Tests (3.3-3.5)\n\n\n8\nApr 28\n15-16\nLinear Regression Model (4.1-4.3)\n\n\n9\nMay 5\n17-18\nLinear Regression Model (4.4-4.5)\n\n\n10\nMay 12\n19-20\nLinear Regression Model (4.6-4.7)\n\n\n11\nMay 19\n21-22\nTest 2"
+  },
+  {
+    "objectID": "exercises/01_Central_Limit_Theorem.html",
+    "href": "exercises/01_Central_Limit_Theorem.html",
+    "title": "Chapter I - Statistics II - Central Limit Theorem",
+    "section": "",
+    "text": "This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).\nContents: t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.\nThe exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately)."
+  },
+  {
+    "objectID": "exercises/01_Central_Limit_Theorem.html#questions",
+    "href": "exercises/01_Central_Limit_Theorem.html#questions",
+    "title": "Chapter I - Statistics II - Central Limit Theorem",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 1\n\nThe number of access to a certain website follows a Poisson distribution with an average rate of \\(30\\) per day.\n\nTRUEFALSE The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly \\(0.0323\\). The approximate probability, by using the CLT, leads to an error of \\(0.0049\\), from the exact result.\nThe probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: 0.50980.48790.4908None of the above\n\n\n\n\nQuestion 2\n\nA complex system is formed by 100 parts that work indepedently. The probability that any of the components fails during the operating period is equal to \\(0.1\\).\n\nTRUEFALSE Knowing that the working of the system demands that at least 85 parts are operative, the approximate probability that the system works is equal to 0.9664.\nTRUEFALSE In the previous calculus, the use of the CLT demands only that the sample size, from a non Normal population is large enough.\n\n\n\n\nQuestion 3\n\nIt is known that, in the TeleDigit, the probability that any phone call is to fill a complaint is equal to 0.05. Consider that the random experiment, consisting in picking a random sample of 20 calls, and count the ones that are complaints.\n\nTRUEFALSE The probability that in the sample there are between 2 and 5 (inclusive) is equal to 0.2639.\nThe approximate probability that, in a random sample of 250 calls, at most 10 complaints are detected is: 0.29090.28100.2327None of the above\n\n\n\n\nQuestion 4\n\nThe number of machines ordered every day to a factory can be considered a random variable distributed Poisson with mean 9.5.\n\nThe percentage of days in which no more than 10 machines are ordered is equal to: 64.53%12.35%35.47%87.65%\nTRUEFALSE Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.\n\n\n\n\nQuestion 5\n\nThe lifetime, in years, of a lightning projector is a random variable. It is known that 20% of the projectors fail during the first year of use.\nIn a random sample of 500 projectors, the approximate probability that at most 80 fail during the first year is: 0.98540.01250.0146None of the above\n\n\n\nQuestion 6\n\nConsider the time interval that passess between the arrival of two people to the reception desk of a hospital follows an exponential distribution with mean of 30 seconds.\n\nTRUEFALSE The approximate probability (by the CLT) that at most 40 people arrive to the reception desk of the hospital, during a time lapse of 18 minutes is 0.7734.\n\n\n\n\nQuestion 7\n\nIn a gas station, each customer fills a random amount of gas \\(X\\), that it is known to follow a Uniform distribution in \\([10,40]\\) liters. Assume that, each day, the gas station has 300 customers.\nTRUEFALSE The approximate probability that the daily (total) gas bought in that gas station is above 7410 liters of gas is equal to \\(\\Phi(0.6)\\).\n\n\n\nQuestion 8\n\nA study about the sales in the sumermarket Superstore arrived to the conclusion that the daily rice demand (in Kg) is a random variable with mean 40Kg and standard deviation of 5Kg.\nTRUEFALSE Having being ordered 14500 Kg of rice for sale in the next year, the probability that that stock satisfies the rice demand, in that year, is equal to 0.2643 (consider a year with 364 days)."
   }
 ]
