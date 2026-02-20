@@ -1013,5 +1013,110 @@
     "title": "Sampling Distributions",
     "section": "Exercise 10 — Solution b)",
     "text": "Exercise 10 — Solution b)\nb) From the interviews conducted, \\(X\\) residents out of \\(n\\) stated they would use Sweet Drop, thus the sample proportion is \\(\\dfrac{X}{n}\\).\n\\[\n\\begin{align}\nP\\!\\left(\\left|\\frac{X}{n} - p\\right| &lt; 0.02\\right) &\\;\\underset{1)}{\\approx}\\; P\\!\\left(|Z| &lt; \\frac{0.02}{\\sqrt{\\dfrac{0.8 \\times 0.2}{400}}}\\right) = P(|Z| &lt; 1) \\\\[8pt]\n&= P(-1 &lt; Z &lt; 1) = \\Phi(1) - \\Phi(-1) = \\Phi(1) - [1 - \\Phi(1)] \\\\[8pt]\n&= 2\\Phi(1) - 1 = 2 \\times 0.8413 - 1 = 0.6826\n\\end{align}\n\\]\nObs: 1) Note that we have \\(\\dfrac{x - np}{\\sqrt{np(1-p)}} = \\dfrac{\\dfrac{x}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} = \\dfrac{\\dfrac{x}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}}\\) and that, by CLT,\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\sim N(0,1) \\text{ and therefore, also } Z = \\frac{\\dfrac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\sim N(0,1)\\]\nThe statement is false."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#additivity-normal-distribution",
+    "href": "slides/01_CLT_slides.html#additivity-normal-distribution",
+    "title": "Central Limit Theorem",
+    "section": "Additivity (Normal Distribution)",
+    "text": "Additivity (Normal Distribution)\nAdditivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu\\,;\\,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu\\;;\\;\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu\\;;\\;\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1",
+    "href": "slides/01_CLT_slides.html#example-1",
+    "title": "Central Limit Theorem",
+    "section": "Example 1",
+    "text": "Example 1\nConsider:\n\nIndependent variables: \\(X_i \\sim Normal(\\mu_i = 40\\;;\\;\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean (\\(n = 25\\) and \\(n = 81\\) students)\n\nFind the probability that the sample mean lies between 39 and 41 minutes.\nSolution: (assuming Normal distribution)\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = 40\\;;\\;\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right)\\]\n\\[\\Rightarrow P\\!\\left(39 &lt; \\bar{X} \\leq 41\\right) = P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-solution-cont.",
+    "href": "slides/01_CLT_slides.html#example-1-solution-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Solution (cont.)",
+    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#central-limit-theorem-clt",
+    "href": "slides/01_CLT_slides.html#central-limit-theorem-clt",
+    "title": "Central Limit Theorem",
+    "section": "Central Limit Theorem (CLT)",
+    "text": "Central Limit Theorem (CLT)\nCentral Limit Theorem (CLT):\nIf:\n\n\\(X_i \\sim \\textit{Distribution}(\\mu\\;;\\;\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\), \\(\\quad \\bar{X} = \\dfrac{T}{n}\\)\n\nthen, for \\(n\\) sufficiently large (as a rule, \\(n \\geq 30\\)):\n\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = n \\times \\mu\\;;\\;\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = \\mu\\;;\\;\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-revisited-clt",
+    "href": "slides/01_CLT_slides.html#example-1-revisited-clt",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Revisited (CLT)",
+    "text": "Example 1 — Revisited (CLT)\nConsider:\n\nIndependent variables: \\(X_i \\sim \\textit{Distribution}(\\mu_i = 40\\;;\\;\\sigma_i = 10)\\)\n\\(X_i\\) — lunch duration of student \\(i\\) (in minutes)\n\\(\\bar{X} = \\dfrac{1}{n}(X_1 + \\ldots + X_n)\\) — sample mean\n\\(n = 25,\\; n = 81,\\; n = 225\\) students\n\nFind \\(P(39 &lt; \\bar{X} \\leq 41)\\). Solution: (no normality assumption required)\nWith \\(\\mathbf{n \\geq 30}\\):\n\\[\\bar{X} \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_{\\bar{X}} = 40\\;;\\;\\sigma_{\\bar{X}} = \\frac{10}{\\sqrt{n}}\\right) \\quad \\xrightarrow{CLT}\\]\n\\[\\Rightarrow P(39 &lt; \\bar{X} \\leq 41) \\approx P\\!\\left(\\frac{39-40}{\\tfrac{10}{\\sqrt{n}}} &lt; Z \\leq \\frac{41-40}{\\tfrac{10}{\\sqrt{n}}}\\right) =\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-1-revisited-cont.",
+    "href": "slides/01_CLT_slides.html#example-1-revisited-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 1 — Revisited (cont.)",
+    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-2",
+    "href": "slides/01_CLT_slides.html#example-2",
+    "title": "Central Limit Theorem",
+    "section": "Example 2",
+    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.",
+    "href": "slides/01_CLT_slides.html#example-2-solution-cont.",
+    "title": "Central Limit Theorem",
+    "section": "Example 2 — Solution (cont.)",
+    "text": "Example 2 — Solution (cont.)\n\\(n = 36\\) (CLT): note that for a fair die \\(\\mu = 3.5\\) and \\(\\sigma = 1.7078\\)\n\\[= P\\!\\left(\\frac{2.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}} &lt; Z &lt; \\frac{3.5 - 3.5}{\\tfrac{1.7078}{\\sqrt{36}}}\\right) = \\Phi(0) - \\Phi(-3.51) = 0.4998\\]\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#corollaries-of-the-clt",
+    "href": "slides/01_CLT_slides.html#corollaries-of-the-clt",
+    "title": "Central Limit Theorem",
+    "section": "Corollaries of the CLT",
+    "text": "Corollaries of the CLT\nCorollary 1: Let \\(X\\) be a random variable with a Binomial distribution with parameters \\(n\\) and \\(p\\), \\(X \\sim binomial(n,p)\\). If \\(n \\geq 30\\), \\(np &gt; 5\\) or \\(n(1-p) &gt; 5\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = np,\\;\\sigma = \\sqrt{npq}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - np}{\\sqrt{npq}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]\nCorollary 2: Let \\(X\\) be a random variable with a Poisson distribution with parameter \\(\\lambda\\), \\(X \\sim Poisson(\\lambda)\\). In practice, if \\(\\lambda &gt; 20\\), then:\n\\[X \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda,\\;\\sigma = \\sqrt{\\lambda}\\right) \\;\\Leftrightarrow\\; Z_n = \\frac{X - \\lambda}{\\sqrt{\\lambda}} \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal(0,1)\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#continuity-correction",
+    "href": "slides/01_CLT_slides.html#continuity-correction",
+    "title": "Central Limit Theorem",
+    "section": "Continuity Correction",
+    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#continuity-correction-other-cases",
+    "href": "slides/01_CLT_slides.html#continuity-correction-other-cases",
+    "title": "Central Limit Theorem",
+    "section": "Continuity Correction — Other Cases",
+    "text": "Continuity Correction — Other Cases\nRemaining cases (discrete \\(X\\), applying continuity correction):\n\\[P(X &lt; 40) = P(X \\leq 39) = P(X \\leq 39.5) \\approx \\cdots\\]\n\\[P(X &gt; 40) = P(X \\geq 41) = P(X \\geq 40.5) \\approx \\cdots\\]\n\\[P(35 &lt; X &lt; 40) = P(36 \\leq X \\leq 39) = P(35.5 \\leq X \\leq 39.5) \\approx \\cdots\\]\n\\[P(35 \\leq X &lt; 40) = P(35 \\leq X \\leq 39) = P(34.5 \\leq X \\leq 39.5) \\approx \\cdots\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-3",
+    "href": "slides/01_CLT_slides.html#example-3",
+    "title": "Central Limit Theorem",
+    "section": "Example 3",
+    "text": "Example 3\nConsider:\n\nIndependent variables: \\(X_i \\sim binomial(n_i = 1\\;;\\;p = 0.05)\\)\n\\(X_i = 1\\) if a tax return contains errors (otherwise \\(X_i = 0\\))\nConsider an inspection of a sample of \\(n = 1000\\) tax returns.\n\nFind the probability that there are at least 60 incorrect returns.\nSolution: (exact and approximate distributions)\nExact distribution:\n\\(T \\sim binomial(n = 1000\\;;\\;p = 0.05)\\) — by the additivity of the Binomial\n\\[P(T \\geq 60) = 1 - P(T &lt; 60) = 1 - P(T \\leq 59) = \\mathbf{0.0867}\\]"
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-3-approximate-solution",
+    "href": "slides/01_CLT_slides.html#example-3-approximate-solution",
+    "title": "Central Limit Theorem",
+    "section": "Example 3 — Approximate Solution",
+    "text": "Example 3 — Approximate Solution\nApproximate distribution (exact and approximate):\n\\[\\mu = n_i p = 1 \\times 0.05 \\qquad \\sigma = \\sqrt{n_i p(1-p)} = \\sqrt{1 \\times 0.05 \\times 0.95} = \\sqrt{0.0475}\\]\n\\[T \\;\\dot{\\sim}\\; Normal\\!\\left(\\mu_T = 1000 \\times 0.05\\;;\\;\\sigma_T = \\sqrt{1000} \\times \\sqrt{0.0475}\\right)\\]\nApplying the continuity correction:\n\\[P(T \\geq 60) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 59.5) = 1 - P(T &lt; 59.5)\\]\n\\[\\underset{CLT}{\\approx} 1 - P\\!\\left(Z \\leq \\frac{59.5 - 50}{6.89}\\right) = 1 - \\Phi(1.38) = \\mathbf{0.0838}\\]\n\nComment: The variable is discrete, so we applied a continuity correction."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-4-exercise-1",
+    "href": "slides/01_CLT_slides.html#example-4-exercise-1",
+    "title": "Central Limit Theorem",
+    "section": "Example 4 [Exercise 1]",
+    "text": "Example 4 [Exercise 1]\nConsider: \\(T \\sim Poisson(\\lambda_T = 30)\\)\n\\(T\\) = number of daily accesses to a website\nFind \\(P(T &gt; 40)\\).\nSolution: (exact and approximate distributions)\nExact distribution:\n\\[P(T &gt; 40) = 1 - P(T \\leq 40) = 0.0323 \\simeq 0.03\\]\n\nNote: Since this is a homogeneous Poisson process, the day can be viewed as a sum of \\(n\\) sub-periods, each with the same probability distribution."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html#example-4-approximate-solution",
+    "href": "slides/01_CLT_slides.html#example-4-approximate-solution",
+    "title": "Central Limit Theorem",
+    "section": "Example 4 — Approximate Solution",
+    "text": "Example 4 — Approximate Solution\nApproximate distribution:\n\\(T = X_1 + \\ldots + X_n\\) (by additivity), where \\(X_i \\sim Poisson\\!\\left(\\lambda = \\dfrac{30}{n}\\right)\\)\n\\[T \\sim Poisson(\\lambda = 30) \\;\\Rightarrow\\; T \\;\\underset{CLT}{\\dot{\\sim}}\\; Normal\\!\\left(\\mu = \\lambda = 30,\\;\\sigma = \\sqrt{\\lambda} = \\sqrt{30}\\right)\\]\nApplying the continuity correction:\n\\[P(T &gt; 40) \\;\\underset{\\text{cont. corr.}}{=}\\; P(T \\geq 40.5) \\;\\underset{CLT}{\\approx}\\; P\\!\\left(Z \\geq \\frac{40.5 - 30}{\\sqrt{30}}\\right) = P(Z \\geq 1.92)\\]\n\\[= 1 - \\Phi(1.92) = 1 - 0.9726 = \\mathbf{0.0274}\\]\nApproximation error: \\(\\varepsilon = |0.0323 - 0.0274| = 0.0049\\)"
   }
 ]
