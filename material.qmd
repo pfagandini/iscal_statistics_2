@@ -4,9 +4,9 @@ title: "Material"
 
 ## Core Material
 
-[Syllabus](syllabus.qmd)
-[Formulae](formulae.qmd)
-[Calendar](calendar.qmd)
+* [Syllabus](syllabus.qmd)  
+* [Formulae](formulae.qmd)  
+* [Calendar](calendar.qmd)  
 
 ## Slides
 
