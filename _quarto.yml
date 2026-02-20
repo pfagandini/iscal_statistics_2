@@ -3,8 +3,9 @@ project:
   output-dir: docs
 
 website:
-  title: "iscal_statistics_2"
+  title: "Statistics II"
   navbar:
+    logo: images/ISCAL_logo.png
     left:
       - href: index.qmd
         text: Home

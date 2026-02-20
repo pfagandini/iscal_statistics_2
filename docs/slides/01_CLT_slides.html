@@ -6,12 +6,12 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.26">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
 
   <meta name="author" content="Paulo Fagandini">
   <meta name="dcterms.date" content="2026-01-01">
-  <title>iscal_statistics_2 – Central Limit Theorem</title>
+  <title>Statistics II – Central Limit Theorem</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -149,24 +149,24 @@ Paulo Fagandini
 <p><strong>Additivity</strong> (Normal Distribution):</p>
 <p>If:</p>
 <ol type="1">
-<li><p><span class="math inline">\(X_i \sim Normal(\mu\,;\,\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <strong>independent and identically distributed random variables</strong></p></li>
+<li><p><span class="math inline">\(X_i \sim Normal(\mu,\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <strong>independent and identically distributed random variables</strong></p></li>
 <li><p><span class="math inline">\(T = X_1 + \ldots + X_n\)</span> and <span class="math inline">\(\bar{X} = \dfrac{T}{n}\)</span></p></li>
 </ol>
 <p>then:</p>
-<p><span class="math display">\[T \sim Normal\!\left(\mu_T = n \times \mu\;;\;\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
-<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = \mu\;;\;\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
+<p><span class="math display">\[T \sim Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
+<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
 </section>
 <section id="example-1" class="slide level2 smaller">
 <h2>Example 1</h2>
 <p>Consider:</p>
 <ol type="1">
-<li><p>Independent variables: <span class="math inline">\(X_i \sim Normal(\mu_i = 40\;;\;\sigma_i = 10)\)</span></p>
+<li><p>Independent variables: <span class="math inline">\(X_i \sim Normal(\mu_i = 40,\sigma_i = 10)\)</span></p>
 <p><span class="math inline">\(X_i\)</span> — lunch duration of student <span class="math inline">\(i\)</span> (in minutes)</p></li>
 <li><p><span class="math inline">\(\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)\)</span> — sample mean (<span class="math inline">\(n = 25\)</span> and <span class="math inline">\(n = 81\)</span> students)</p></li>
 </ol>
 <p>Find the probability that the sample mean lies between 39 and 41 minutes.</p>
 <p><strong>Solution:</strong> (assuming Normal distribution)</p>
-<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = 40\;;\;\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right)\]</span></p>
+<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right)\]</span></p>
 <p><span class="math display">\[\Rightarrow P\!\left(39 &lt; \bar{X} \leq 41\right) = P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} &lt; Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right)\]</span></p>
 </section>
 <section id="example-1-solution-cont." class="slide level2 smaller">
@@ -186,27 +186,27 @@ Paulo Fagandini
 <p><strong>Central Limit Theorem (</strong><em>CLT</em><strong>):</strong></p>
 <p>If:</p>
 <ol type="1">
-<li><p><span class="math inline">\(X_i \sim \textit{Distribution}(\mu\;;\;\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <span style="color:#8B1538; font-weight:bold;">independent and identically distributed random variables</span></p></li>
+<li><p><span class="math inline">\(X_i \sim \textit{Distribution}(\mu,\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <span style="color:#8B1538; font-weight:bold;">independent and identically distributed random variables</span></p></li>
 <li><p><span class="math inline">\(T = X_1 + \ldots + X_n\)</span>, <span class="math inline">\(\quad \bar{X} = \dfrac{T}{n}\)</span></p></li>
 </ol>
 <p>then, for <span class="math inline">\(n\)</span> sufficiently large (as a rule, <span class="math inline">\(n \geq 30\)</span>):</p>
 <div style="border: 2px solid #8B1538; border-radius: 8px; padding: 0.6em 1.2em; margin: 0.6em auto; display: table;">
-<p><span class="math display">\[T \;\dot{\sim}\; Normal\!\left(\mu_T = n \times \mu\;;\;\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
-<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = \mu\;;\;\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
+<p><span class="math display">\[T \;\dot{\sim}\; Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
+<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
 </div>
 </section>
 <section id="example-1-revisited-clt" class="slide level2 smaller">
 <h2>Example 1 — Revisited (CLT)</h2>
 <p>Consider:</p>
 <ol type="1">
-<li><p>Independent variables: <span class="math inline">\(X_i \sim \textit{Distribution}(\mu_i = 40\;;\;\sigma_i = 10)\)</span></p>
+<li><p>Independent variables: <span class="math inline">\(X_i \sim \textit{Distribution}(\mu_i = 40,\sigma_i = 10)\)</span></p>
 <p><span class="math inline">\(X_i\)</span> — lunch duration of student <span class="math inline">\(i\)</span> (in minutes)</p></li>
 <li><p><span class="math inline">\(\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)\)</span> — sample mean</p>
 <p><span style="color:#8B1538;"><span class="math inline">\(n = 25,\; n = 81,\; n = 225\)</span> students</span></p></li>
 </ol>
-<p>Find <span class="math inline">\(P(39 &lt; \bar{X} \leq 41)\)</span>. Solution: (no normality assumption required)</p>
+<p>Find <span class="math inline">\(P(39 &lt; \bar{X} \leq 41)\)</span>. Solution: (without the assumption of normality)</p>
 <p>With <span class="math inline">\(\mathbf{n \geq 30}\)</span>:</p>
-<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = 40\;;\;\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right) \quad \xrightarrow{CLT}\]</span></p>
+<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right) \quad \xrightarrow{CLT}\]</span></p>
 <p><span class="math display">\[\Rightarrow P(39 &lt; \bar{X} \leq 41) \approx P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} &lt; Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right) =\]</span></p>
 </section>
 <section id="example-1-revisited-cont." class="slide level2 smaller">
@@ -225,17 +225,20 @@ Paulo Fagandini
 <section id="example-2" class="slide level2 smaller">
 <h2>Example 2</h2>
 <p>Consider the independent variables:</p>
-<p><span class="math inline">\(X_i\)</span> — number of points on the <span class="math inline">\(i\)</span>-th roll of a die</p>
+<p><span class="math inline">\(X_i\)</span> — number of points on the <span class="math inline">\(i\)</span>-th roll of a die <span class="emoji" data-emoji="game_die">🎲</span></p>
 <p>Find: <span class="math inline">\(P(2.5 &lt; \bar{X} &lt; 3.5)\)</span> for <span class="math inline">\(n = 1,\; n = 2,\; n = 36\)</span> rolls.</p>
 <p><strong>Solution:</strong></p>
 <p><span class="math inline">\(n = 1\)</span>: <span class="math inline">\(= P(X_1 = 3) = \dfrac{1}{6}\)</span></p>
 <p><span class="math inline">\(n = 2\)</span>:</p>
 <p><span class="math inline">\(= P(X_1=1,\,X_2=5) + P(X_1=2,\,X_2=4) + P(X_1=3,\,X_2=3)\)</span> <span class="math inline">\(+ P(X_1=4,\,X_2=2) + \ldots + P(X_1=5,\,X_2=1) = \dfrac{5}{36}\)</span></p>
 </section>
-<section id="example-2-solution-cont." class="slide level2 smaller">
+<section id="example-2-solution-cont." class="slide level2">
 <h2>Example 2 — Solution (cont.)</h2>
 <p><span class="math inline">\(n = 36\)</span> (CLT): note that for a fair die <span class="math inline">\(\mu = 3.5\)</span> and <span class="math inline">\(\sigma = 1.7078\)</span></p>
 <p><span class="math display">\[= P\!\left(\frac{2.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}} &lt; Z &lt; \frac{3.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}}\right) = \Phi(0) - \Phi(-3.51) = 0.4998\]</span></p>
+</section>
+<section id="example-2-solution-cont.-1" class="slide level2">
+<h2>Example 2 — Solution (cont.)</h2>
 
 <img data-src="01_CLT_slides_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><p><strong>Comments:</strong></p>
 <ol type="1">
@@ -245,10 +248,16 @@ Paulo Fagandini
 </section>
 <section id="corollaries-of-the-clt" class="slide level2 smaller">
 <h2>Corollaries of the CLT</h2>
-<p><strong>Corollary 1:</strong> Let <span class="math inline">\(X\)</span> be a random variable with a Binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, <span class="math inline">\(X \sim binomial(n,p)\)</span>. If <span class="math inline">\(n \geq 30\)</span>, <span class="math inline">\(np &gt; 5\)</span> or <span class="math inline">\(n(1-p) &gt; 5\)</span>, then:</p>
+<div class="highlight-box">
+<p><strong>Corollary 1</strong></p>
+<p>Let <span class="math inline">\(X\)</span> be a random variable with a Binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, <span class="math inline">\(X \sim binomial(n,p)\)</span>. If <span class="math inline">\(n \geq 30\)</span>, <span class="math inline">\(np &gt; 5\)</span> or <span class="math inline">\(n(1-p) &gt; 5\)</span>, then:</p>
 <p><span class="math display">\[X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = np,\;\sigma = \sqrt{npq}\right) \;\Leftrightarrow\; Z_n = \frac{X - np}{\sqrt{npq}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)\]</span></p>
-<p><strong>Corollary 2:</strong> Let <span class="math inline">\(X\)</span> be a random variable with a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(X \sim Poisson(\lambda)\)</span>. In practice, if <span class="math inline">\(\lambda &gt; 20\)</span>, then:</p>
+</div>
+<div class="highlight-box">
+<p><strong>Corollary 2</strong></p>
+<p>Let <span class="math inline">\(X\)</span> be a random variable with a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(X \sim Poisson(\lambda)\)</span>. In practice, if <span class="math inline">\(\lambda &gt; 20\)</span>, then:</p>
 <p><span class="math display">\[X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = \lambda,\;\sigma = \sqrt{\lambda}\right) \;\Leftrightarrow\; Z_n = \frac{X - \lambda}{\sqrt{\lambda}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)\]</span></p>
+</div>
 </section>
 <section id="continuity-correction" class="slide level2 smaller">
 <h2>Continuity Correction</h2>

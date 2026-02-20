@@ -4,8 +4,9 @@ title: "Material"
 
 ## Slides
 
-1. [Sampling Distributions](slides/sampling_distributions.qmd)
+1. [Central Limit Theorem](slides/01_CLT_slides.qmd)
+2. [Sampling Distributions](slides/02_sampling_distributions.qmd)
 
 ## Exercises
 
-1. [Sampling Distributions](exercises/Exercises_SamplingDistributions.qmd)
+2. [Sampling Distributions](exercises/Exercises_SamplingDistributions.qmd)

@@ -39,31 +39,31 @@ engine: knitr
 
 If:
 
-1) $X_i \sim Normal(\mu\,;\,\sigma)$, $i = 1,\ldots,n$ — **independent and identically distributed random variables**
+1. $X_i \sim Normal(\mu,\sigma)$, $i = 1,\ldots,n$ — **independent and identically distributed random variables**
 
-2) $T = X_1 + \ldots + X_n$ and $\bar{X} = \dfrac{T}{n}$
+2. $T = X_1 + \ldots + X_n$ and $\bar{X} = \dfrac{T}{n}$
 
 then:
 
-$$T \sim Normal\!\left(\mu_T = n \times \mu\;;\;\sigma_T = \sqrt{n} \times \sigma\right)$$
+$$T \sim Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)$$
 
-$$\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = \mu\;;\;\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)$$
+$$\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)$$
 
 ## Example 1 {.smaller}
 
 Consider:
 
-1) Independent variables: $X_i \sim Normal(\mu_i = 40\;;\;\sigma_i = 10)$
+1. Independent variables: $X_i \sim Normal(\mu_i = 40,\sigma_i = 10)$
 
    $X_i$ — lunch duration of student $i$ (in minutes)
 
-2) $\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)$ — sample mean ($n = 25$ and $n = 81$ students)
+2. $\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)$ — sample mean ($n = 25$ and $n = 81$ students)
 
 Find the probability that the sample mean lies between 39 and 41 minutes.
 
 **Solution:** (assuming Normal distribution)
 
-$$\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = 40\;;\;\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right)$$
+$$\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right)$$
 
 $$\Rightarrow P\!\left(39 < \bar{X} \leq 41\right) = P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} < Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right)$$
 
@@ -98,8 +98,8 @@ shade25 <- data.frame(x = x[x > 39 & x <= 41], y = dnorm(x[x > 39 & x <= 41], mu
 shade81 <- data.frame(x = x[x > 39 & x <= 41], y = dnorm(x[x > 39 & x <= 41], mu, 10/sqrt(81)))
 
 ggplot() +
-  geom_ribbon(data = shade25, aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.25) +
-  geom_ribbon(data = shade81, aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.45) +
+  geom_ribbon(data = shade25, aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.85) +
+  geom_ribbon(data = shade81, aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.25) +
   geom_line(data = df, aes(x = x, y = y, colour = grp, linetype = grp), linewidth = 0.9) +
   scale_colour_manual(values = c("n = 25" = "black", "n = 81" = "#8B1538")) +
   scale_linetype_manual(values = c("n = 25" = "solid", "n = 81" = "solid")) +
@@ -118,35 +118,35 @@ ggplot() +
 
 If:
 
-1) $X_i \sim \textit{Distribution}(\mu\;;\;\sigma)$, $i = 1,\ldots,n$ — [independent and identically distributed random variables]{style="color:#8B1538; font-weight:bold;"}
+1. $X_i \sim \textit{Distribution}(\mu,\sigma)$, $i = 1,\ldots,n$ — [independent and identically distributed random variables]{style="color:#8B1538; font-weight:bold;"}
 
-2) $T = X_1 + \ldots + X_n$, $\quad \bar{X} = \dfrac{T}{n}$
+2. $T = X_1 + \ldots + X_n$, $\quad \bar{X} = \dfrac{T}{n}$
 
 then, for $n$ sufficiently large (as a rule, $n \geq 30$):
 
 ::: {style="border: 2px solid #8B1538; border-radius: 8px; padding: 0.6em 1.2em; margin: 0.6em auto; display: table;"}
-$$T \;\dot{\sim}\; Normal\!\left(\mu_T = n \times \mu\;;\;\sigma_T = \sqrt{n} \times \sigma\right)$$
+$$T \;\dot{\sim}\; Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)$$
 
-$$\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = \mu\;;\;\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)$$
+$$\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)$$
 :::
 
 ## Example 1 — Revisited (CLT) {.smaller}
 
 Consider:
 
-1) Independent variables: $X_i \sim \textit{Distribution}(\mu_i = 40\;;\;\sigma_i = 10)$
+1. Independent variables: $X_i \sim \textit{Distribution}(\mu_i = 40,\sigma_i = 10)$
 
    $X_i$ — lunch duration of student $i$ (in minutes)
 
-2) $\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)$ — sample mean
+2. $\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)$ — sample mean
 
    [$n = 25,\; n = 81,\; n = 225$ students]{style="color:#8B1538;"}
 
-Find $P(39 < \bar{X} \leq 41)$. Solution: (no normality assumption required)
+Find $P(39 < \bar{X} \leq 41)$. Solution: (without the assumption of normality)
 
 With $\mathbf{n \geq 30}$:
 
-$$\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = 40\;;\;\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right) \quad \xrightarrow{CLT}$$
+$$\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right) \quad \xrightarrow{CLT}$$
 
 $$\Rightarrow P(39 < \bar{X} \leq 41) \approx P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} < Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right) =$$
 
@@ -179,8 +179,8 @@ shade81b  <- data.frame(x = x[x > 39 & x <= 41], y = dnorm(x[x > 39 & x <= 41], 
 shade225  <- data.frame(x = x[x > 39 & x <= 41], y = dnorm(x[x > 39 & x <= 41], 40, 10/sqrt(225)))
 
 ggplot() +
-  geom_ribbon(data = shade81b,  aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.25) +
-  geom_ribbon(data = shade225,  aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.45) +
+  geom_ribbon(data = shade81b,  aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.85) +
+  geom_ribbon(data = shade225,  aes(x = x, ymin = 0, ymax = y), fill = "#8B1538", alpha = 0.25) +
   geom_line(data = df2, aes(x = x, y = y, colour = grp), linewidth = 0.9) +
   scale_colour_manual(values = c("n = 81" = "black", "n = 225" = "#8B1538")) +
   labs(title = "Effect of Sample Size", x = expression(bar(X)), y = "f(x)",
@@ -196,7 +196,7 @@ ggplot() +
 
 Consider the independent variables:
 
-$X_i$ — number of points on the $i$-th roll of a die
+$X_i$ — number of points on the $i$-th roll of a die :game_die:
 
 Find: $P(2.5 < \bar{X} < 3.5)$ for $n = 1,\; n = 2,\; n = 36$ rolls.
 
@@ -209,11 +209,13 @@ $n = 2$:
 $= P(X_1=1,\,X_2=5) + P(X_1=2,\,X_2=4) + P(X_1=3,\,X_2=3)$
 $+ P(X_1=4,\,X_2=2) + \ldots + P(X_1=5,\,X_2=1) = \dfrac{5}{36}$
 
-## Example 2 — Solution (cont.) {.smaller}
+## Example 2 — Solution (cont.)
 
 $n = 36$ (CLT): note that for a fair die $\mu = 3.5$ and $\sigma = 1.7078$
 
 $$= P\!\left(\frac{2.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}} < Z < \frac{3.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}}\right) = \Phi(0) - \Phi(-3.51) = 0.4998$$
+
+## Example 2 — Solution (cont.)
 
 ```{r}
 #| fig-height: 3.2
@@ -265,13 +267,24 @@ p1 + p2 + p3
 
 ## Corollaries of the CLT {.smaller}
 
-**Corollary 1:** Let $X$ be a random variable with a Binomial distribution with parameters $n$ and $p$, $X \sim binomial(n,p)$. If $n \geq 30$, $np > 5$ or $n(1-p) > 5$, then:
+:::{.highlight-box}
+
+**Corollary 1**
+
+Let $X$ be a random variable with a Binomial distribution with parameters $n$ and $p$, $X \sim binomial(n,p)$. If $n \geq 30$, $np > 5$ or $n(1-p) > 5$, then:
 
 $$X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = np,\;\sigma = \sqrt{npq}\right) \;\Leftrightarrow\; Z_n = \frac{X - np}{\sqrt{npq}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)$$
+:::
 
-**Corollary 2:** Let $X$ be a random variable with a Poisson distribution with parameter $\lambda$, $X \sim Poisson(\lambda)$. In practice, if $\lambda > 20$, then:
+:::{.highlight-box}
+
+**Corollary 2**
+
+Let $X$ be a random variable with a Poisson distribution with parameter $\lambda$, $X \sim Poisson(\lambda)$. In practice, if $\lambda > 20$, then:
 
 $$X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = \lambda,\;\sigma = \sqrt{\lambda}\right) \;\Leftrightarrow\; Z_n = \frac{X - \lambda}{\sqrt{\lambda}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)$$
+
+:::
 
 ## Continuity Correction {.smaller}
 

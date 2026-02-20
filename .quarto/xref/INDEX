@@ -10,5 +10,20 @@
   },
   "slides/01_CLT_slides.qmd": {
     "01_CLT_slides.html": "921596af"
+  },
+  "syllabus.qmd": {
+    "syllabus.html": "203b0221"
+  },
+  "slides/02_sampling_distributions.qmd": {
+    "02_sampling_distributions.html": "b8139bfb"
+  },
+  "material.qmd": {
+    "material.html": "ad0014f8"
+  },
+  "calendar.qmd": {
+    "calendar.html": "4312895e"
+  },
+  "index.qmd": {
+    "index.html": "64376e40"
   }
 }
