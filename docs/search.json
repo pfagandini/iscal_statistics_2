@@ -711,14 +711,14 @@
     "href": "material.html#exercises",
     "title": "Material",
     "section": "Exercises",
-    "text": "Exercises\n\nCentral Limit Theorem"
+    "text": "Exercises\n\nCentral Limit Theorem\nSamling Distributions"
   },
   {
     "objectID": "calendar.html",
     "href": "calendar.html",
     "title": "Statistics II — Calendar",
     "section": "",
-    "text": "Week\nDate\nLecture\nTopic (from syllabus)\n\n\n\n\n1\nFev 24\n1-2\nCentral Limit Theorem (1.1-1.3)\n\n\n2\nMar 10\n3-4\nCentral Limit Theorem (1.4-1.6)\n\n\n3\nMar 17\n5-6\nParameter Estimation (2.1)\n\n\n4\nMar 24\n7-8\nTest 1\n\n\n5\nApr 7\n9-10\nParameter Estimation (2.2)\n\n\n6\nApr 14\n11-12\nParametric Hypothesis Tests (3.1-3.2)\n\n\n7\nApr 21\n13-14\nParametric Hypothesis Tests (3.3-3.5)\n\n\n8\nApr 28\n15-16\nLinear Regression Model (4.1-4.3)\n\n\n9\nMay 5\n17-18\nLinear Regression Model (4.4-4.5)\n\n\n10\nMay 12\n19-20\nLinear Regression Model (4.6-4.7)\n\n\n11\nMay 19\n21-22\nTest 2"
+    "text": "Week\nDate\nLecture\nTopic (from syllabus)\n\n\n\n\n1\nFev 24\n1-2\nSampling Distributions: Central Limit Theorem (1.1-1.3)\n\n\n2\nMar 10\n3-4\nSampling Distributions (1.4-1.6)\n\n\n3\nMar 17\n5-6\nParameter Estimation: Point Estimation (2.1)\n\n\n4\nMar 24\n7-8\nTest 1\n\n\n5\nApr 7\n9-10\nParameter Estimation: Interval Estimation (2.2)\n\n\n6\nApr 14\n11-12\nParametric Hypothesis Tests (3.1-3.2)\n\n\n7\nApr 21\n13-14\nParametric Hypothesis Tests (3.3-3.5)\n\n\n8\nApr 28\n15-16\nLinear Regression Model: Estimation (4.1-4.3)\n\n\n9\nMay 5\n17-18\nLinear Regression Model (4.4-4.5)\n\n\n10\nMay 12\n19-20\nLinear Regression Model: Inference (4.6-4.7)\n\n\n11\nMay 19\n21-22\nTest 2"
   },
   {
     "objectID": "exercises/01_Central_Limit_Theorem.html",
@@ -733,5 +733,257 @@
     "title": "Chapter I - Statistics II - Central Limit Theorem",
     "section": "Questions",
     "text": "Questions\n\nQuestion 1\n\nThe number of access to a certain website follows a Poisson distribution with an average rate of \\(30\\) per day.\n\nTRUEFALSE The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly \\(0.0323\\). The approximate probability, by using the CLT, leads to an error of \\(0.0049\\), from the exact result.\nThe probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: 0.50980.48790.4908None of the above\n\n\n\n\nQuestion 2\n\nA complex system is formed by 100 parts that work indepedently. The probability that any of the components fails during the operating period is equal to \\(0.1\\).\n\nTRUEFALSE Knowing that the working of the system demands that at least 85 parts are operative, the approximate probability that the system works is equal to 0.9664.\nTRUEFALSE In the previous calculus, the use of the CLT demands only that the sample size, from a non Normal population is large enough.\n\n\n\n\nQuestion 3\n\nIt is known that, in the TeleDigit, the probability that any phone call is to fill a complaint is equal to 0.05. Consider that the random experiment, consisting in picking a random sample of 20 calls, and count the ones that are complaints.\n\nTRUEFALSE The probability that in the sample there are between 2 and 5 (inclusive) is equal to 0.2639.\nThe approximate probability that, in a random sample of 250 calls, at most 10 complaints are detected is: 0.29090.28100.2327None of the above\n\n\n\n\nQuestion 4\n\nThe number of machines ordered every day to a factory can be considered a random variable distributed Poisson with mean 9.5.\n\nThe percentage of days in which no more than 10 machines are ordered is equal to: 64.53%12.35%35.47%87.65%\nTRUEFALSE Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.\n\n\n\n\nQuestion 5\n\nThe lifetime, in years, of a lightning projector is a random variable. It is known that 20% of the projectors fail during the first year of use.\nIn a random sample of 500 projectors, the approximate probability that at most 80 fail during the first year is: 0.98540.01250.0146None of the above\n\n\n\nQuestion 6\n\nConsider the time interval that passess between the arrival of two people to the reception desk of a hospital follows an exponential distribution with mean of 30 seconds.\n\nTRUEFALSE The approximate probability (by the CLT) that at most 40 people arrive to the reception desk of the hospital, during a time lapse of 18 minutes is 0.7734.\n\n\n\n\nQuestion 7\n\nIn a gas station, each customer fills a random amount of gas \\(X\\), that it is known to follow a Uniform distribution in \\([10,40]\\) liters. Assume that, each day, the gas station has 300 customers.\nTRUEFALSE The approximate probability that the daily (total) gas bought in that gas station is above 7410 liters of gas is equal to \\(\\Phi(0.6)\\).\n\n\n\nQuestion 8\n\nA study about the sales in the sumermarket Superstore arrived to the conclusion that the daily rice demand (in Kg) is a random variable with mean 40Kg and standard deviation of 5Kg.\nTRUEFALSE Having being ordered 14500 Kg of rice for sale in the next year, the probability that that stock satisfies the rice demand, in that year, is equal to 0.2643 (consider a year with 364 days)."
+  },
+  {
+    "objectID": "exercises/02_Sampling_Distributions.html",
+    "href": "exercises/02_Sampling_Distributions.html",
+    "title": "Chapter I - Statistics II - Sampling Distributions",
+    "section": "",
+    "text": "This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).\nContents: t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.\nThe exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately)."
+  },
+  {
+    "objectID": "exercises/02_Sampling_Distributions.html#questions",
+    "href": "exercises/02_Sampling_Distributions.html#questions",
+    "title": "Chapter I - Statistics II - Sampling Distributions",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 1\n\nLet \\((X_1,X_2,\\ldots,X_n)\\) with \\(n\\in\\mathbb{N}\\), a random sample from a population distributed \\(X\\sim Normal(\\mu=-2,\\sigma)\\), where \\(\\sigma\\) is unknown. Asses if, the following random variables are not statistics, i.e., if you select true, you are claiming that the random variable is not a statistic.\n\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)=X_1+X_2+\\ldots+X_n\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{X_1+X_2+\\ldots+X_n}{n}=\\bar{X}\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{\\bar{X}}{\\sigma}\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{\\bar{X}-\\mu}{\\sigma}\\sqrt{n}\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{\\sum_{i=1}^n(X_i-\\mu)^2}{n}\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{\\sum_{i=1}^n(X_i-\\bar{X})^2}{n}=S^2\\)\nTRUEFALSE \\(T(X_1,X_2,\\ldots,X_n)= \\frac{\\sum_{i=1}^n(X_i-\\bar{X})^2}{n-1}=S'^2\\)\n\n\n\n\nQuestion 2\n\nLet the waiting time for take-off of each plane in a given airport is a r.v. distributed \\(N(\\mu=4,\\sigma)\\). Randomly chosen 21 flights, the records allow to estimate \\(s'=1.81min\\).\nTRUEFALSE The probability that the average waiting time, from the sample, is larger than 5 minutes equals \\(0.010\\).\n\n\n\nQuestion 3\n\nIn a given financial firm, the profits obtained from each investment, in the last year, average 8,200 euro, and a standard deviation of 3,600 euro. Consider a random sample of 100 investments. The probability that the sample average is farther away from the true mean by 806.76 euro, is: 0.01250.0250.9875None of the previous\n\n\n\nQuestion 4\n\nA given company intends to check the value (in euro) of the receivable accounts, with an underlying statistical behavior that follows a Normal distribution with mean \\(\\mu=385\\) and standard deviation \\(\\sigma\\). Choosing randomly a sample with \\(n\\) accounts (independently), you obtained a (corrected) sample standard deviation of \\(122.6\\) euro.\nTRUEFALSE The size of the sample to collect (assuming that the estimate for \\(s'\\) is maintained) such that the sample mean is not farther from the true mean than 20 eur in 90% of the cases is \\(n=102\\). (Assume for your computations, that the value of \\(n\\) will be larger than 30)\n\n\n\nQuestion 5\n\nAssume that a particular streaming service is subscribed by 10% of the population in a given country. Because this service is very recent, a marketing firm decided to estimate that proportion, based in a sample of 100 citizens, before renewing their contract with the streaming service company.\nTRUEFALSE Knowing that the contracts will be renewed only if the sample proportion is larger than 8.5%, the probability tha this contract will be renewed is 0.6915.\n\n\n\nQuestion 6\n\nAssume that you intend to study the feasibility of a project which core variable is the price (in monetary units) of raw-materials, which is well represented by the random variable \\(X\\sim N(\\mu,\\sigma)\\). It was selected, randomly, a sample \\((X_1,\\ldots,X_{16})\\) from that population, where the sample (corrected) variance was found to be \\(0.18 um^2\\).\n\nTRUEFALSE \\(Q=\\frac{15S'^2}{\\sigma^2}\\sim \\chi^2_{16}\\)\nTRUEFALSE \\(P(S'2^2&gt;1.2163 \\sigma^2)=0.25\\)\n\n\n\n\nQuestion 7\n\n15 adult males, with ages between 35 and 50, participated in a study to assess the effect of diet and exercises in the cholesterol levels found in blood. The cholesterol was measured at the begining and after three months after participating of a program that consisted in a new diet and aerobic exercises. The data is found in the following table:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIndividual\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n\n\n\n\nBefore\n265\n240\n258\n295\n251\n245\n287\n314\n260\n279\n283\n240\n238\n225\n247\n\n\nAfter\n229\n231\n227\n240\n238\n241\n234\n256\n247\n239\n246\n218\n219\n226\n233\n\n\n\nAssume that:\n\nThe samples Before and After, are paired (each column is the same individual)\nEach sampled pair, is an independent observation of the other.\nThe cholesterol measures follow and Normal distribution.\n\nTRUEFALSE The probability that the mean of the difference between after and before the treatment is farther away from its mean by more than 6.61 is 0.2."
+  },
+  {
+    "objectID": "exercises/01_Central_Limit_Theorem copy.html",
+    "href": "exercises/01_Central_Limit_Theorem copy.html",
+    "title": "Chapter I - Statistics II - Central Limit Theorem",
+    "section": "",
+    "text": "This is a set of exercises for Statistics II, Chapter I — Central Limit Theorem, from the Lisbon Accounting and Business School (ISCAL–IPL).\nContents: We approach the Central Limit Theorem and use it to approximate other common distributions."
+  },
+  {
+    "objectID": "exercises/01_Central_Limit_Theorem copy.html#questions",
+    "href": "exercises/01_Central_Limit_Theorem copy.html#questions",
+    "title": "Chapter I - Statistics II - Central Limit Theorem",
+    "section": "Questions",
+    "text": "Questions\n\nQuestion 1\n\nThe number of access to a certain website follows a Poisson distribution with an average rate of \\(30\\) per day.\n\nTRUEFALSE The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly \\(0.0323\\). The approximate probability, by using the CLT, leads to an error of \\(0.0049\\), from the exact result.\nThe probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: 0.50980.48790.4908None of the above\n\n\n\n\nQuestion 2\n\nA complex system is formed by 100 parts that work indepedently. The probability that any of the components fails during the operating period is equal to \\(0.1\\).\n\nTRUEFALSE Knowing that the working of the system demands that at least 85 parts are operative, the approximate probability that the system works is equal to 0.9664.\nTRUEFALSE In the previous calculus, the use of the CLT demands only that the sample size, from a non Normal population is large enough.\n\n\n\n\nQuestion 3\n\nIt is known that, in the TeleDigit, the probability that any phone call is to fill a complaint is equal to 0.05. Consider that the random experiment, consisting in picking a random sample of 20 calls, and count the ones that are complaints.\n\nTRUEFALSE The probability that in the sample there are between 2 and 5 (inclusive) is equal to 0.2639.\nThe approximate probability that, in a random sample of 250 calls, at most 10 complaints are detected is: 0.29090.28100.2327None of the above\n\n\n\n\nQuestion 4\n\nThe number of machines ordered every day to a factory can be considered a random variable distributed Poisson with mean 9.5.\n\nThe percentage of days in which no more than 10 machines are ordered is equal to: 64.53%12.35%35.47%87.65%\nTRUEFALSE Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.\n\n\n\n\nQuestion 5\n\nThe lifetime, in years, of a lightning projector is a random variable. It is known that 20% of the projectors fail during the first year of use.\nIn a random sample of 500 projectors, the approximate probability that at most 80 fail during the first year is: 0.98540.01250.0146None of the above\n\n\n\nQuestion 6\n\nConsider the time interval that passess between the arrival of two people to the reception desk of a hospital follows an exponential distribution with mean of 30 seconds.\n\nTRUEFALSE The approximate probability (by the CLT) that at most 40 people arrive to the reception desk of the hospital, during a time lapse of 18 minutes is 0.7734.\n\n\n\n\nQuestion 7\n\nIn a gas station, each customer fills a random amount of gas \\(X\\), that it is known to follow a Uniform distribution in \\([10,40]\\) liters. Assume that, each day, the gas station has 300 customers.\nTRUEFALSE The approximate probability that the daily (total) gas bought in that gas station is above 7410 liters of gas is equal to \\(\\Phi(0.6)\\).\n\n\n\nQuestion 8\n\nA study about the sales in the sumermarket Superstore arrived to the conclusion that the daily rice demand (in Kg) is a random variable with mean 40Kg and standard deviation of 5Kg.\nTRUEFALSE Having being ordered 14500 Kg of rice for sale in the next year, the probability that that stock satisfies the rice demand, in that year, is equal to 0.2643 (consider a year with 364 days)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#random-casual-sample-and-statistic",
+    "href": "slides/02_Sampling_Distributions.html#random-casual-sample-and-statistic",
+    "title": "Sampling Distributions",
+    "section": "Random (Casual) Sample and Statistic",
+    "text": "Random (Casual) Sample and Statistic\n\n\nPopulation\n\nParameters (unknown)\n\n\nSample\n\nStatistics (known)\n\n\n\n\nStatistical Inference\n\nStatistical inference consists of a set of methods that allow us to draw conclusions about a population, based on a random (or casual) sample drawn from that population."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#random-sample-parameters-and-statistics",
+    "href": "slides/02_Sampling_Distributions.html#random-sample-parameters-and-statistics",
+    "title": "Sampling Distributions",
+    "section": "Random Sample, Parameters, and Statistics",
+    "text": "Random Sample, Parameters, and Statistics\nA sample of size \\(n\\), drawn from a population according to a random (or casual) process, is called a random sample if the values of the random variables \\(X_1, X_2, \\ldots, X_n\\) are independent and identically distributed. The term \\(X_1\\) denotes the first element of the sample, \\(X_2\\) the second, and \\(X_n\\) the \\(n\\)-th.\n\nParameters and Statistics\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\n\n\nA statistic is a characteristic that is a function of the sample values, i.e., it is a random variable that does not involve any unknown parameter, denoted by \\(T(X_1, X_2, \\ldots, X_n)\\)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#statistics-and-estimates",
+    "href": "slides/02_Sampling_Distributions.html#statistics-and-estimates",
+    "title": "Sampling Distributions",
+    "section": "Statistics and Estimates",
+    "text": "Statistics and Estimates\nOnce a particular sample \\(x_1, x_2, \\ldots, x_n\\) has been observed, it is possible to obtain the value of the statistic associated with this sample, namely \\(T(x_1, x_2, \\ldots, x_n)\\), yielding an estimate for the parameter.\n\nFrom each random sample drawn from a population, statistics with different values can be obtained.\n\n\nStatistics are random variables, and therefore their probabilistic behavior is given by their respective distribution function (density or probability function), leading to the sampling distributions of the statistic represented by \\(T(X_1, X_2, \\ldots, X_n)\\)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-i",
+    "href": "slides/02_Sampling_Distributions.html#exercise-i",
+    "title": "Sampling Distributions",
+    "section": "Exercise I",
+    "text": "Exercise I\nConsider \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), a random sample from a \\(Normal(\\mu = -2, \\sigma)\\) population, where \\(\\sigma\\) is unknown. The following r.v.’s are not statistics:\n\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\frac{\\sum \\left(X_i - \\mu\\right)^2}{n}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum (X_i - \\bar{X})^2}{n-1}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\sum \\left(\\dfrac{X_i - \\mu}{\\sigma}\\right)^2\\)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-ii-statement",
+    "href": "slides/02_Sampling_Distributions.html#exercise-ii-statement",
+    "title": "Sampling Distributions",
+    "section": "Exercise II (Statement)",
+    "text": "Exercise II (Statement)\nLet \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), be a random sample from a population \\(X\\) (with unknown probabilistic behavior), with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known.\n\nThe expected value of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to: a)\\(n\\mu\\) and \\(\\mu\\) \\(\\quad\\) b) \\(n\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) c) \\(\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) d) none of the above\n\nAnswer: (a)\n\nThe variance of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\n\n\n\\(n\\sigma^2\\) and \\(\\sigma\\) \\(\\quad\\) b)\\(n\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) c) \\(\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) d) none of the above\n\nAnswer: (b)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-ii-solution",
+    "href": "slides/02_Sampling_Distributions.html#exercise-ii-solution",
+    "title": "Sampling Distributions",
+    "section": "Exercise II (Solution)",
+    "text": "Exercise II (Solution)\ni)\n\\[E\\left(\\sum_{i=1}^n X_i\\right) = \\sum_{i=1}^n E(X_i) = \\sum_{i=1}^n \\mu = n\\mu\\]\n\\[E(\\bar{X}) = E\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right) = \\frac{1}{n}E\\left(\\sum_{i=1}^n X_i\\right) = \\frac{1}{n} \\times n\\mu = \\mu\\]\nThe correct answer is a).\n\nii)\n\\[V\\left(\\sum_{i=1}^n X_i\\right) = \\sum_{i=1}^n V(X_i) = \\sum_{i=1}^n \\sigma^2 = n\\sigma^2\\]\n\\[V(\\bar{X}) = V\\left(\\frac{1}{n}\\sum_{i=1}^n X_i\\right) = \\frac{1}{n^2}V\\left(\\sum_{i=1}^n X_i\\right) = \\frac{1}{n^2}\\times n\\sigma^2 = \\frac{\\sigma^2}{n}\\]\nThe correct answer is b)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution",
+    "href": "slides/02_Sampling_Distributions.html#chi-square-distribution",
+    "title": "Sampling Distributions",
+    "section": "Chi-Square Distribution",
+    "text": "Chi-Square Distribution\nA pertinent question arises: How to obtain the sampling distribution of a statistic or of a random variable?\n\nBefore answering this question, it is important to introduce two fundamental theoretical distributions within the scope of inference.\n\n\nChi-Square Distribution\nLet \\(Z_1, Z_2, \\ldots, Z_n\\) be independent and identically distributed random variables, \\(Z_i \\sim Normal(0, 1)\\).\n\\[Y = \\sum_{i=1}^{n} Z_i^2 = \\sum_{i=1}^{n}\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2\\]\nis a Chi-square random variable with \\(n\\) degrees of freedom, i.e.: \\(Y \\sim \\chi^2_{(n)}\\)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-1",
+    "href": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-1",
+    "title": "Sampling Distributions",
+    "section": "Chi-Square Distribution: Main Properties (1)",
+    "text": "Chi-Square Distribution: Main Properties (1)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-2",
+    "href": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-2",
+    "title": "Sampling Distributions",
+    "section": "Chi-Square Distribution: Main Properties (2)",
+    "text": "Chi-Square Distribution: Main Properties (2)\n\nThe graphical shape of the distribution depends on its degrees of freedom: \\(n\\) (\\(n \\in \\mathbb{N}\\)).\nIt is a positive and non-symmetric function. The skewness decreases as the degrees of freedom increase.\nIf \\(X \\sim \\chi^2_{(n)}\\), then: \\(E(X) = n\\) and \\(Var(X) = 2n\\).\nIt is an additive distribution. The sum of \\(k\\) independent random variables, where \\(X_i \\sim \\chi^2_{(n_i)}\\), is still a random variable such that: \\[\\sum_{i=1}^k X_i \\sim \\chi^2_{\\left(n = \\sum_{i=1}^k n_i\\right)}\\]\n\n\n\nWith increasing degrees of freedom, the Chi-square distribution tends to the Normal distribution, by the C.L.T.:\n\\[\\chi^2_{(n)} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(n,\\;\\sqrt{2n}) \\iff Z_n = \\frac{\\chi^2_{(n)} - n}{\\sqrt{2n}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-v",
+    "href": "slides/02_Sampling_Distributions.html#exercise-v",
+    "title": "Sampling Distributions",
+    "section": "Exercise V",
+    "text": "Exercise V\nLet \\((Z_1, Z_2, Z_3, Z_4, Z_5)\\) be a random sample from a \\(N(0, 1)\\) population and \\(Q = \\sum_{i=1}^5 Z_i^2\\).\n\n[V][F] \\(\\quad P(1.610 &lt; Q &lt; 9.236) = 0.8\\)\n[V][F] \\(\\quad\\) The standard deviation of \\(Z_3^2 + Z_4^2\\) is equal to 4.\n\n\na)\n\\(Q \\sim \\chi^2_{(5)}\\)\n\\[P(1.610 &lt; Q &lt; 9.236) = P(Q &gt; 1.610) - P(Q &gt; 9.236) = 0.9 - 0.1 = 0.8\\]\n(direct observation from the \\(\\chi^2\\) table)\nThe statement is true.\n\n\nb)\n\\(Z_3^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_4^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_3^2 + Z_4^2 \\sim \\chi^2_{(2)}\\) (Additivity Theorem)\n\\[Var(Z_3^2 + Z_4^2) = 2 \\times 2 = 4 \\implies \\sigma(Z_3^2 + Z_4^2) = \\sqrt{4} = 2\\]\nThe statement is false."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution",
+    "href": "slides/02_Sampling_Distributions.html#students-t-distribution",
+    "title": "Sampling Distributions",
+    "section": "Student’s t Distribution",
+    "text": "Student’s t Distribution\nLet \\(X \\sim Normal(0, 1)\\) and \\(Y \\sim \\chi^2_{(n)}\\) be independent random variables. Then the random variable:\n\\[T = \\frac{X}{\\sqrt{Y/n}} \\sim t_{(n)}\\]\nhas a Student’s \\(t\\) distribution with \\(n\\) degrees of freedom, i.e.: \\(T \\sim t_{(n)}\\).\n\nMain properties of the Student’s t distribution\n\nThe graphical shape depends on its degrees of freedom (\\(n\\)). As the d.f. increase, the quantiles of the Student’s \\(t\\) converge to the corresponding quantiles of the Standard Normal."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution-properties",
+    "href": "slides/02_Sampling_Distributions.html#students-t-distribution-properties",
+    "title": "Sampling Distributions",
+    "section": "Student’s t Distribution: Properties",
+    "text": "Student’s t Distribution: Properties\n\n\nIt is a symmetric function around the mean.\nIf \\(X \\sim t_{(n)}\\), then: \\(E(X) = 0\\) and \\(Var(X) = \\dfrac{n}{n-2}\\), with \\(n &gt; 2\\)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution-clt-approximation",
+    "href": "slides/02_Sampling_Distributions.html#students-t-distribution-clt-approximation",
+    "title": "Sampling Distributions",
+    "section": "Student’s t Distribution: CLT Approximation",
+    "text": "Student’s t Distribution: CLT Approximation\n\nWith increasing degrees of freedom, the Student’s \\(t\\) distribution tends to the Normal distribution, by the C.L.T.:\n\\[X \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(0, \\;\\frac{n}{n-2}\\right) \\iff Z_n = \\frac{X}{\\sqrt{\\frac{n}{n-2}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-1-normal-population-sigma2-known",
+    "href": "slides/02_Sampling_Distributions.html#case-1-normal-population-sigma2-known",
+    "title": "Sampling Distributions",
+    "section": "Case 1: Normal Population, \\(\\sigma^2\\) Known",
+    "text": "Case 1: Normal Population, \\(\\sigma^2\\) Known\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) known.\nFrom a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample mean:\n\\[\\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i\\]\n\nThe sampling distribution of \\(\\bar{X}\\) is still Normal, by the additivity theorem of the Normal distribution:\n\\[\\bar{X} \\sim N\\left(\\mu, \\;\\frac{\\sigma}{\\sqrt{n}}\\right) \\iff Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\sim N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-2-normal-population-sigma2-unknown",
+    "href": "slides/02_Sampling_Distributions.html#case-2-normal-population-sigma2-unknown",
+    "title": "Sampling Distributions",
+    "section": "Case 2: Normal Population, \\(\\sigma^2\\) Unknown",
+    "text": "Case 2: Normal Population, \\(\\sigma^2\\) Unknown\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) unknown.\nStatistic: Mean of a random sample of size \\(n\\): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)\n\nSampling distribution of \\(\\bar{X}\\):\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\sim t_{(n-1)}\\]\n\n\n\nNote: It is rare that one needs to infer the mean value when the variance is known. Thus, it is necessary to estimate the parameter \\(\\sigma^2\\) using the sample variance \\(S^2\\) or the corrected sample variance \\(S'^2\\)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-2-cont.-and-case-3",
+    "href": "slides/02_Sampling_Distributions.html#case-2-cont.-and-case-3",
+    "title": "Sampling Distributions",
+    "section": "Case 2 (cont.) and Case 3",
+    "text": "Case 2 (cont.) and Case 3\n\\[S^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i - \\bar{X})^2 \\qquad \\text{and} \\qquad S'^2 = \\frac{1}{n-1}\\sum_{i=1}^n (X_i - \\bar{X})^2 = \\frac{n}{n-1}S^2\\]\n\nApproximate sampling distribution of \\(\\bar{X}\\): for \\(n\\) sufficiently large (\\(n \\geq 30\\)), by the C.L.T.:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\n\nCase 3: Unknown population, with mean \\(\\mu\\) and known variance \\(\\sigma^2\\).\nStatistic: Mean of a random sample of size \\(n\\) (\\(n \\geq 30\\)): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-3-cont.",
+    "href": "slides/02_Sampling_Distributions.html#case-3-cont.",
+    "title": "Sampling Distributions",
+    "section": "Case 3 (cont.)",
+    "text": "Case 3 (cont.)\nApproximate sampling distribution of \\(\\bar{X}\\): by the C.L.T.,\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\nNote: If \\(\\sigma^2\\) is unknown, we have the approximate sampling distribution:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-vii-statement",
+    "href": "slides/02_Sampling_Distributions.html#exercise-vii-statement",
+    "title": "Sampling Distributions",
+    "section": "Exercise VII (Statement)",
+    "text": "Exercise VII (Statement)\nA certain company intends to validate the value (in euros) of its accounts receivable from clients, with an underlying distributional behavior of the account values being \\(Normal(\\mu = 385, \\sigma = ?)\\). A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation of \\(s' = 122.6\\) euros.\n\n\nV F \\(\\quad\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\n\n\n\n\nV F \\(\\quad\\) The sample size to be collected (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for the calculations, that the value of \\(n\\) to be found will be greater than 30.)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-vii-solution-a",
+    "href": "slides/02_Sampling_Distributions.html#exercise-vii-solution-a",
+    "title": "Sampling Distributions",
+    "section": "Exercise VII — Solution: a)",
+    "text": "Exercise VII — Solution: a)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 25 \\rightarrow s' = 122.6\\)\n\na)\nThe sampling distribution of the statistic sample mean (mean value of client accounts) is given by:\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(n-1)} \\equiv \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(24)}\\]\nThe statement is false."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-vii-solution-b",
+    "href": "slides/02_Sampling_Distributions.html#exercise-vii-solution-b",
+    "title": "Sampling Distributions",
+    "section": "Exercise VII — Solution: b)",
+    "text": "Exercise VII — Solution: b)\nb)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n \\geq 30 \\rightarrow s' = 122.6\\)\n\n\\[\\bar{X} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(\\mu, \\;\\frac{s'}{\\sqrt{n}}\\right) \\equiv N\\left(385, \\;\\frac{122.6}{\\sqrt{n}}\\right)\\]\n\n\n\\[P(|\\bar{X} - \\mu| &lt; 20) = 0.9 \\iff P\\left(|Z| &lt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.9\\]\n\n\n\\[\\iff P\\left(|Z| &gt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.1\\]\n\n\n\\[\\iff \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}} = 1.645 \\iff n \\geq 102\\]\nThe statement is true."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#sampling-distribution-of-s2",
+    "href": "slides/02_Sampling_Distributions.html#sampling-distribution-of-s2",
+    "title": "Sampling Distributions",
+    "section": "Sampling Distribution of \\(S^2\\)",
+    "text": "Sampling Distribution of \\(S^2\\)\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with mean \\(\\mu\\) unknown and variance \\(\\sigma^2\\).\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample variance \\(S^2\\) or corrected sample variance \\(S'^2\\):\n\nSampling distribution of \\(S^2\\) or \\(S'^2\\):\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{nS^2}{\\sigma^2} \\sim \\chi^2_{(n-1)}\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-viii",
+    "href": "slides/02_Sampling_Distributions.html#exercise-viii",
+    "title": "Sampling Distributions",
+    "section": "Exercise VIII",
+    "text": "Exercise VIII\nA pharmaceutical company produces pills in which the variability of the quantity of the active substance from one pill to another should be very small. The standard deviation of the population is, supposedly, one milligram. Inspectors from the Ministry of Health selected a random sample of 16 pills. Assuming the population is Normal, the probability that the corrected sample variance is greater than \\(0.736\\;mg^2\\) is equal to:\n\n0.76 \\(\\qquad\\) b) 0.25 \\(\\qquad\\) c) 0.75 \\(\\qquad\\) d) none of the above\n\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\)\nPivotal variable:\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{(n-1)S'^2}{1} = (n-1)S'^2 \\sim \\chi^2_{(n-1)} \\equiv \\chi^2_{(15)}\\]\n\n\nWe want:\n\\[P(S'^2 &gt; 0.736) = P(Q &gt; 15 \\times 0.736) = P(Q &gt; 11.04) \\approx 0.75\\]\n(direct observation from the \\(\\chi^2\\) distribution table)\nThe correct answer is c)."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-1-total-of-successes",
+    "href": "slides/02_Sampling_Distributions.html#case-1-total-of-successes",
+    "title": "Sampling Distributions",
+    "section": "Case 1: Total of Successes",
+    "text": "Case 1: Total of Successes\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\) from a Bernoulli population, where \\(X_i \\sim Bernoulli(1, p)\\), and let \\(Y\\) be the number of elements that possess the characteristic of interest (successes) in the sample of size \\(n\\).\n\nCase 1:\nThe statistic \\(Y = \\sum_{i=1}^n X_i\\) (total or absolute frequency of successes) has the sampling distribution:\n\\[Y = \\sum_{i=1}^n X_i \\sim Binomial(n, p)\\]\n\n\nIf \\(n\\) is sufficiently large, the C.L.T. justifies the approximate sampling distribution:\n\\[Y \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(np, \\;\\sqrt{np(1-p)}\\right) \\iff Z_n = \\frac{Y - np}{\\sqrt{np(1-p)}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-2-sample-proportion",
+    "href": "slides/02_Sampling_Distributions.html#case-2-sample-proportion",
+    "title": "Sampling Distributions",
+    "section": "Case 2: Sample Proportion",
+    "text": "Case 2: Sample Proportion\nCase 2:\nLet the statistic \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i = \\dfrac{Y}{n}\\), the proportion (relative frequency) of successes that, in a sample of size \\(n\\), possess a given attribute.\n\nIt is important to know the sampling distribution of this statistic \\(\\bar{X} = \\hat{p}\\).\n\n\n\\[E(\\bar{X}) = E\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n}E(X_1 + X_2 + \\cdots + X_n) = \\frac{1}{n}np = p\\]\n\\[Var(\\bar{X}) = Var\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n^2}Var(X_1 + \\cdots + X_n) = \\frac{1}{n^2}npq = \\frac{p(1-p)}{n}\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#case-2-approximate-distribution-of-hatp",
+    "href": "slides/02_Sampling_Distributions.html#case-2-approximate-distribution-of-hatp",
+    "title": "Sampling Distributions",
+    "section": "Case 2: Approximate Distribution of \\(\\hat{p}\\)",
+    "text": "Case 2: Approximate Distribution of \\(\\hat{p}\\)\nWhen \\(n \\to \\infty\\), the C.L.T. yields the approximate sampling distribution:\n\\[\\bar{X} = \\hat{p} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(p, \\;\\sqrt{\\frac{p(1-p)}{n}}\\right) \\iff Z_n = \\frac{\\bar{X} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-x-statement",
+    "href": "slides/02_Sampling_Distributions.html#exercise-x-statement",
+    "title": "Sampling Distributions",
+    "section": "Exercise X (Statement)",
+    "text": "Exercise X (Statement)\nIn a certain neighborhood, the proportion of inhabitants who consider the opening of a new supermarket useful is 0.8. The supermarket chain Gota Doce intends to open a new store in this neighborhood. Nevertheless, before making a decision, a study was conducted in which 400 inhabitants were randomly interviewed to assess their intention to use the services of the new supermarket.\n\n\nV F \\(\\quad\\) The approximate probability that, in the sample of interviewed inhabitants, at least 300 consider the opening of the Gota Doce supermarket useful is equal to 0.9948.\n\n\n\n\nV F \\(\\quad\\) The probability that the deviation between the sample proportion of inhabitants who stated they would actually use the services of the new supermarket, and the true proportion, is less than 0.02, is 0.8413."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-x-solution-a",
+    "href": "slides/02_Sampling_Distributions.html#exercise-x-solution-a",
+    "title": "Sampling Distributions",
+    "section": "Exercise X — Solution: a)",
+    "text": "Exercise X — Solution: a)\n\\(p = 0.8\\) (proportion of inhabitants who consider the opening of a new supermarket useful)\na) \\(X \\to\\) number of inhabitants, out of 400, who consider the opening of the new supermarket useful.\n\\[X \\sim Binomial(n = 400, p = 0.8)\\]\n\n\\[P(X \\geq 300) = P(X \\geq 299.5) \\approx P\\left(Z \\geq \\frac{299.5 - 400 \\times 0.8}{\\sqrt{400 \\times 0.8 \\times 0.2}}\\right)\\]\n\n\n\\[= P(Z \\geq -2.56) = P(Z \\leq 2.56) = \\Phi(2.56) = 0.9948\\]\n\n\nNote: 1) Continuity correction \\(\\quad\\) 2) CLT, approximation of the Binomial to the Normal distribution\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is true."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-x-solution-b",
+    "href": "slides/02_Sampling_Distributions.html#exercise-x-solution-b",
+    "title": "Sampling Distributions",
+    "section": "Exercise X — Solution: b)",
+    "text": "Exercise X — Solution: b)\nb) Of the interviews conducted, \\(X\\) inhabitants out of \\(n\\) expressed the opening of Gota Doce was useful, so the sample proportion is \\(\\frac{X}{n}\\).\n\n\\[P\\left(\\left|\\frac{X}{n} - p\\right| &lt; 0.02\\right) \\approx P\\left(|Z| &lt; \\frac{0.02}{\\sqrt{\\dfrac{0.8 \\times 0.2}{400}}}\\right) = P(|Z| &lt; 1)\\]\n\n\n\\[= P(-1 &lt; Z &lt; 1) = \\Phi(1) - \\Phi(-1) = \\Phi(1) - [1 - \\Phi(1)]\\]\n\n\n\\[= 2\\Phi(1) - 1 = 2 \\times 0.8413 - 1 = 0.6826\\]\n\n\nNote: Observe that \\(\\dfrac{X - np}{\\sqrt{np(1-p)}} = \\dfrac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}}\\) and that, by the CLT,\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1) \\quad\\text{and, therefore, also}\\quad Z = \\frac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is false."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#disclaimer",
+    "href": "slides/02_Sampling_Distributions.html#disclaimer",
+    "title": "Sampling Distributions",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThese slides are a free translation and adaptation from the slide deck for Distribuições por Amostragem (Sampling Distributions) by Prof. Sandra Gancho Custódio, Prof. Teresa Ferreira, and Prof. Sofia António from the Lisbon Accounting and Business School — Polytechnic University of Lisbon."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-ii",
+    "href": "slides/02_Sampling_Distributions.html#exercise-ii",
+    "title": "Sampling Distributions",
+    "section": "Exercise II",
+    "text": "Exercise II\nLet \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), be a random sample from a population \\(X\\) (with unknown probabilistic behavior), with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known.\n\nThe expected value of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\na)\\(n\\mu\\) and \\(\\mu\\) \\(\\quad\\) b) \\(n\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) c) \\(\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) d) none of the above\n\n\nAnswer: (a)\n\nThe variance of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\n\n\n\n\\(n\\sigma^2\\) and \\(\\sigma\\) \\(\\quad\\) b)\\(n\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) c) \\(\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) d) none of the above\n\n\n\nAnswer: (b)"
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#example",
+    "href": "slides/02_Sampling_Distributions.html#example",
+    "title": "Sampling Distributions",
+    "section": "Example",
+    "text": "Example\nExercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\ni) [T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\). ii) [T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html#exercise-vii",
+    "href": "slides/02_Sampling_Distributions.html#exercise-vii",
+    "title": "Sampling Distributions",
+    "section": "Exercise VII",
+    "text": "Exercise VII\nA certain company intends to validate the value (in euros) of its accounts receivable from clients, with an underlying distributional behavior of the account values being \\(Normal(\\mu = 385, \\sigma = ?)\\). A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation of \\(s' = 122.6\\) euros.\n\n\nV F \\(\\quad\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\n\n\n\n\nV F \\(\\quad\\) The sample size to be collected (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for the calculations, that the value of \\(n\\) to be found will be greater than 30.)"
   }
 ]

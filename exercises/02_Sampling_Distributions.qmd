@@ -1,0 +1,168 @@
+---
+title: "Chapter I - Statistics II - Sampling Distributions"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+library(webexercises)
+```
+
+```{r, echo = FALSE, include = FALSE}
+library(lubridate)
+y <- year(Sys.Date())-1
+```
+
+```{r, echo = FALSE, results='asis'}
+# Uncomment to change widget colours:
+#style_widgets(incorrect = "goldenrod", correct = "purple", highlight = "firebrick")
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+</style>
+
+<!-- Style Block for nice tables -->
+
+This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).
+
+**Contents:** t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.
+
+The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).
+
+---
+
+## Questions
+
+#### Question 1
+
+::: {.webex-check .webex-box}
+Let $(X_1,X_2,\ldots,X_n)$ with $n\in\mathbb{N}$, a random sample from a population distributed $X\sim Normal(\mu=-2,\sigma)$, where $\sigma$ is unknown. Asses if, the following random variables **are not** statistics, *i.e.*, if you select true, you are claiming that the random variable is not a statistic.
+
+a) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)=X_1+X_2+\ldots+X_n$
+
+b) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{X_1+X_2+\ldots+X_n}{n}=\bar{X}$
+
+c) `r torf(TRUE)` $T(X_1,X_2,\ldots,X_n)= \frac{\bar{X}}{\sigma}$
+
+d) `r torf(TRUE)` $T(X_1,X_2,\ldots,X_n)= \frac{\bar{X}-\mu}{\sigma}\sqrt{n}$
+
+e) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\mu)^2}{n}$
+
+f) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}=S^2$
+
+g) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}=S'^2$
+
+:::
+
+
+#### Question 2
+
+::: {.webex-check .webex-box}
+
+Let the waiting time for take-off of each plane in a given airport is a *r.v.* distributed $N(\mu=4,\sigma)$. Randomly chosen 21 flights, the records allow to estimate $s'=1.81min$.
+
+`r torf(TRUE)` The probability that the average waiting time, from the sample, is larger than 5 minutes equals $0.010$.
+
+:::
+
+
+#### Question 3
+
+::: {.webex-check .webex-box}
+
+In a given financial firm, the profits obtained from each investment, in the last year, average 8,200 euro, and a standard deviation of 3,600 euro. Consider a random sample of 100 investments. The probability that the sample average is farther away from the true mean by 806.76 euro, is: `r mcq(c("0.0125",answer="0.025","0.9875","None of the previous"))`
+
+:::
+
+
+#### Question 4
+
+::: {.webex-check .webex-box}
+
+A given company intends to check the value (in euro) of the *receivable accounts*, with an underlying statistical behavior that follows a Normal distribution with mean $\mu=385$ and standard deviation $\sigma$. Choosing randomly a sample with $n$ accounts (independently), you obtained a (corrected) sample standard deviation of $122.6$ euro.
+
+`r torf(TRUE)` The size of the sample to collect (assuming that the estimate for $s'$ is maintained) such that the sample mean is not farther from the true mean than 20 eur in 90% of the cases is $n=102$. (Assume for your computations, that the value of $n$ will be larger than 30)
+
+:::
+
+#### Question 5
+
+::: {.webex-check .webex-box}
+
+Assume that a particular streaming service is subscribed by 10% of the population in a given country. Because this service is very recent, a marketing firm decided to estimate that proportion, based in a sample of 100 citizens, before renewing their contract with the streaming service company.
+
+`r torf(TRUE)` Knowing that the contracts will be renewed only if the sample proportion is larger than 8.5%, the probability tha this contract will be renewed is 0.6915.
+
+:::
+
+
+#### Question 6 
+
+::: {.webex-check .webex-box}
+
+Assume that you intend to study the feasibility of a project which core variable is the price (in monetary units) of raw-materials, which is well represented by the random variable $X\sim N(\mu,\sigma)$. It was selected, randomly, a sample $(X_1,\ldots,X_{16})$ from that population, where the sample (corrected) variance was found to be $0.18 um^2$.
+
+a) `r torf(FALSE)` $Q=\frac{15S'^2}{\sigma^2}\sim \chi^2_{16}$
+b) `r torf(TRUE)` $P(S'2^2>1.2163 \sigma^2)=0.25$
+
+:::
+
+#### Question 7
+
+::: {.webex-check .webex-box}
+
+15 adult males, with ages between 35 and 50, participated in a study to assess the effect of diet and exercises in the cholesterol levels found in blood. The cholesterol was measured at the begining and after three months after participating of a program that consisted in a new diet and aerobic exercises. The data is found in the following table:
+
+| Individual | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Before | 265 | 240 | 258 | 295 | 251 | 245 | 287 | 314 | 260 | 279 | 283 | 240 | 238 | 225 | 247 |
+| After | 229 | 231 | 227 | 240 | 238 | 241 | 234 | 256 | 247 | 239 | 246 | 218 | 219 | 226 | 233 |
+
+Assume that:
+
+* The samples *Before* and *After*, are paired (each column is the same individual)
+* Each sampled pair, is an independent observation of the other.
+* The cholesterol measures follow and Normal distribution.
+
+`r torf(TRUE)` The probability that the **mean of the difference** between after and before the treatment is farther away from its mean by more than 6.61 is 0.2.
+
+:::

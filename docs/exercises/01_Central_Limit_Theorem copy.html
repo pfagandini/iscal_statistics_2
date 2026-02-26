@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Chapter I - Statistics II - Exercises – Statistics II</title>
+<title>Chapter I - Statistics II - Central Limit Theorem – Statistics II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -4121,14 +4121,7 @@ margin: 1em 0;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#questions" id="toc-questions" class="nav-link active" data-scroll-target="#questions">Questions</a>
-  <ul class="collapse">
-  <li><a href="#the-concept-of-a-statistic" id="toc-the-concept-of-a-statistic" class="nav-link" data-scroll-target="#the-concept-of-a-statistic">The Concept of a Statistic</a></li>
-  <li><a href="#sampling-distribution-of-the-mean" id="toc-sampling-distribution-of-the-mean" class="nav-link" data-scroll-target="#sampling-distribution-of-the-mean">Sampling Distribution of the Mean</a></li>
-  <li><a href="#sampling-distribution-of-the-proportion" id="toc-sampling-distribution-of-the-proportion" class="nav-link" data-scroll-target="#sampling-distribution-of-the-proportion">Sampling Distribution of the Proportion</a></li>
-  <li><a href="#sampling-distribution-of-the-variance" id="toc-sampling-distribution-of-the-variance" class="nav-link" data-scroll-target="#sampling-distribution-of-the-variance">Sampling Distribution of the Variance</a></li>
-  <li><a href="#sampling-distribution-for-the-difference-of-means-paired-samples" id="toc-sampling-distribution-for-the-difference-of-means-paired-samples" class="nav-link" data-scroll-target="#sampling-distribution-for-the-difference-of-means-paired-samples">Sampling Distribution for the Difference of Means (Paired Samples)</a></li>
-  </ul></li>
+  <li><a href="#questions" id="toc-questions" class="nav-link active" data-scroll-target="#questions">Questions</a></li>
   </ul>
 </nav>
     </div>
@@ -4137,7 +4130,7 @@ margin: 1em 0;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Chapter I - Statistics II - Exercises</h1>
+<h1 class="title">Chapter I - Statistics II - Central Limit Theorem</h1>
 </div>
 
 
@@ -4182,414 +4175,82 @@ vertical-align: middle;
 }
 </style>
 <!-- Style Block for nice tables -->
-<p>This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).</p>
-<p><strong>Contents:</strong> t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.</p>
-<p>The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).</p>
+<p>This is a set of exercises for Statistics II, Chapter I — Central Limit Theorem, from the Lisbon Accounting and Business School (ISCAL–IPL).</p>
+<p><strong>Contents:</strong> We approach the Central Limit Theorem and use it to approximate other common distributions.</p>
 <hr>
 <section id="questions" class="level2">
 <h2 class="anchored" data-anchor-id="questions">Questions</h2>
-<section id="the-concept-of-a-statistic" class="level3">
-<h3 class="anchored" data-anchor-id="the-concept-of-a-statistic">The Concept of a Statistic</h3>
 <section id="question-1" class="level4">
 <h4 class="anchored" data-anchor-id="question-1">Question 1</h4>
 <div class="webex-check webex-box">
-<p>Consider <span class="math inline">\((X_1, X_2, \ldots, X_n)\)</span>, <span class="math inline">\(n \in \mathbb{N}\)</span>, a random sample from a population <span class="math inline">\(X \sim \text{Normal}(\mu = -2,\; \sigma)\)</span>, where <span class="math inline">\(\sigma\)</span> is <strong>unknown</strong>. Determine whether the following random variables are <strong>not</strong> statistics:</p>
+<p>The number of access to a certain website follows a Poisson distribution with an average rate of <span class="math inline">\(30\)</span> per day.</p>
 <ol type="a">
-<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = X_1 + X_2 + \cdots + X_n\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \bar{X}\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \dfrac{\bar{X}}{\sigma}\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \dfrac{\bar{X} - \mu}{\sigma / \sqrt{n}}\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \mu)^2}{n}\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \bar{X})^2}{n} = S^2\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> <span class="math inline">\(T(X_1, X_2, \ldots, X_n) = \dfrac{\sum_{i=1}^{n}(X_i - \bar{X})^2}{n-1} = S&#39;^2\)</span></p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly <span class="math inline">\(0.0323\)</span>. The <strong>approximate</strong> probability, by using the CLT, leads to an error of <span class="math inline">\(0.0049\)</span>, from the exact result.</p></li>
+<li><p>The probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: <select class="webex-select"><option value="blank"></option><option value>0.5098</option><option value>0.4879</option><option value="answer">0.4908</option><option value>None of the above</option></select></p></li>
 </ol>
-<div class="webex-solution">
-<button>
-Hint
-</button>
-<p>Recall that a <strong>statistic</strong> is a function of the sample values that does <strong>not</strong> involve any unknown parameters. Here, <span class="math inline">\(\mu = -2\)</span> is known but <span class="math inline">\(\sigma\)</span> is unknown.</p>
-<ul>
-<li>Items (a), (b), (f), and (g) depend only on <span class="math inline">\(X_i\)</span> and <span class="math inline">\(\bar{X}\)</span> (and known constants like <span class="math inline">\(n\)</span>), so they <strong>are</strong> statistics — hence the statement that they are “not statistics” is <strong>False</strong>.</li>
-<li>Items (c), (d), and (e) involve the unknown parameter <span class="math inline">\(\sigma\)</span> or <span class="math inline">\(\mu\)</span> (note: although <span class="math inline">\(\mu=-2\)</span> is given, items (d) and (e) include <span class="math inline">\(\sigma\)</span> as well, and (c) directly uses <span class="math inline">\(\sigma\)</span>), so they are <strong>not</strong> statistics — the statement is <strong>True</strong>.</li>
-</ul>
-<p><strong>Correction on (d) and (e):</strong> Even though <span class="math inline">\(\mu=-2\)</span> is known, (d) involves <span class="math inline">\(\sigma\)</span> (unknown) in the denominator and (e) involves <span class="math inline">\(\mu\)</span> which, while numerically known here, in items (d) the presence of <span class="math inline">\(\sigma\)</span> makes it fail. For (e): since <span class="math inline">\(\mu\)</span> is known, this would actually be a statistic if all parameters involved were known. However, note the formulation carefully: (d) includes <span class="math inline">\(\sigma\)</span> explicitly → not a statistic. (e) includes <span class="math inline">\(\mu\)</span> (which is known = <span class="math inline">\(-2\)</span>) so actually is a statistic. Let us re-examine:</p>
-<p>Actually, since <span class="math inline">\(\mu = -2\)</span> is <strong>known</strong>:</p>
-<ul>
-<li><ol start="3" type="a">
-<li>involves <span class="math inline">\(\sigma\)</span> (unknown) → <strong>not</strong> a statistic → True ✓</li>
-</ol></li>
-<li><ol start="4" type="a">
-<li>involves <span class="math inline">\(\sigma\)</span> (unknown) → <strong>not</strong> a statistic → True ✓</li>
-</ol></li>
-<li><ol start="5" type="a">
-<li>involves <span class="math inline">\(\mu\)</span> (known) but <strong>not</strong> <span class="math inline">\(\sigma\)</span> → it <strong>is</strong> a statistic → False</li>
-</ol></li>
-</ul>
-<p>Let us reconsider (e) with additional context. In the original exercise, (e) is defined as <span class="math inline">\(T = \frac{\sum(X_i - \mu)^2}{n}\)</span>, and a separate item (f) from the original list includes <span class="math inline">\(\frac{\sum\left(\frac{X_i - \mu}{\sigma}\right)^2}{}\)</span>. The resolution confirms: (c), (d), and (f-original) are <strong>not</strong> statistics because they involve <span class="math inline">\(\sigma\)</span>.</p>
-</div>
 </div>
 </section>
-</section>
-<section id="sampling-distribution-of-the-mean" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-distribution-of-the-mean">Sampling Distribution of the Mean</h3>
-<section id="question-2-normal-population-sigma-unknown-t-student" class="level4">
-<h4 class="anchored" data-anchor-id="question-2-normal-population-sigma-unknown-t-student">Question 2 (Normal population, <span class="math inline">\(\sigma\)</span> unknown → t-Student)</h4>
+<section id="question-2" class="level4">
+<h4 class="anchored" data-anchor-id="question-2">Question 2</h4>
 <div class="webex-check webex-box">
-<p>Suppose the waiting time on the runway for takeoff at a certain airport is a random variable modelled by a Normal distribution with a mean of 4 minutes. A random sample of 21 aircraft was selected, yielding a corrected sample standard deviation <span class="math inline">\(s&#39; = 1.81\)</span> min.</p>
-<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The probability that the sample mean waiting time exceeds 5 minutes is equal to 0.010.</p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p><strong>Population:</strong> <span class="math inline">\(X \sim \text{Normal}(\mu = 4,\; \sigma = ?)\)</span> (standard deviation unknown)</p>
-<p><strong>Sample:</strong> <span class="math inline">\(n = 21 &lt; 30\)</span>; <span class="math inline">\(s&#39; = 1.81\)</span> min.</p>
-<p>Since the population is Normal and <span class="math inline">\(\sigma\)</span> is unknown, the sampling distribution of the mean is:</p>
-<p><span class="math display">\[T = \frac{\bar{X} - \mu}{S&#39;/\sqrt{n}} \sim t_{(20)}\]</span></p>
-<p><span class="math display">\[P(\bar{X} &gt; 5) = P\!\left(T &gt; \frac{5 - 4}{1.81/\sqrt{21}}\right) = P(T &gt; 2.53) = 0.010\]</span></p>
-<p>The statement is <strong>True</strong>.</p>
-</div>
-</div>
-</section>
-<section id="question-3-unknown-population-sigma-known-clt" class="level4">
-<h4 class="anchored" data-anchor-id="question-3-unknown-population-sigma-known-clt">Question 3 (Unknown population, <span class="math inline">\(\sigma\)</span> known → CLT)</h4>
-<div class="webex-check webex-box">
-<p>At a financial firm, the profit generated by each investment made in the last year has a mean of €8,200 and a standard deviation of €3,600. Consider a random sample of 100 investments.</p>
-<p>The probability that the sample mean differs from the population mean by more than €806.76 is equal to:</p>
-<p><select class="webex-select"><option value="blank"></option><option value>0.0125</option><option value="answer">0.025</option><option value>0.9875</option><option value>None of the above</option></select></p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p><strong>Population:</strong> <span class="math inline">\(L \to\)</span> profit (unknown distribution); <span class="math inline">\(\mu = 8{,}200\)</span>€; <span class="math inline">\(\sigma = 3{,}600\)</span>€ (known).</p>
-<p><strong>Sample:</strong> <span class="math inline">\(n = 100 &gt; 30\)</span>.</p>
-<p>By the CLT: <span class="math display">\[\bar{X} \;\dot{\sim}\; N\!\left(\mu,\; \frac{\sigma}{\sqrt{n}}\right) \equiv N(8200,\; 360)\]</span></p>
-<p><span class="math display">\[P(|\bar{X} - \mu| &gt; 806.76) = P\!\left(|Z| &gt; \frac{806.76}{360}\right) \approx P(|Z| &gt; 2.241)\]</span></p>
-<p><span class="math display">\[= 2 - 2\Phi(2.241) = 2 - 2 \times 0.9875 = 0.025\]</span></p>
-<p>The correct option is <strong>b) 0.025</strong>.</p>
-</div>
-</div>
-</section>
-<section id="question-4-normal-population-sigma-unknown-n-30-normal-approx." class="level4">
-<h4 class="anchored" data-anchor-id="question-4-normal-population-sigma-unknown-n-30-normal-approx.">Question 4 (Normal population, <span class="math inline">\(\sigma\)</span> unknown, <span class="math inline">\(n &gt; 30\)</span> → Normal approx.)</h4>
-<div class="webex-check webex-box">
-<p>A company wishes to validate the value (in euros) of its accounts receivable, which follow a Normal distribution with mean <span class="math inline">\(\mu = 385\)</span> and unknown standard deviation. A random sample of <span class="math inline">\(n\)</span> independent client accounts yields a corrected sample standard deviation <span class="math inline">\(s&#39; = 122.6\)</span> euros.</p>
-<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The sample size needed (assuming <span class="math inline">\(s&#39;\)</span> remains unchanged) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is <span class="math inline">\(n = 102\)</span>. (Assume, for calculations, that the value of <span class="math inline">\(n\)</span> will be greater than 30.)</p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p><strong>Population:</strong> <span class="math inline">\(X \sim N(\mu = 385,\; \sigma = ?)\)</span></p>
-<p><strong>Sample:</strong> <span class="math inline">\(n &gt; 30\)</span>; <span class="math inline">\(s&#39; = 122.6\)</span></p>
-<p>By the CLT (since <span class="math inline">\(n &gt; 30\)</span> and <span class="math inline">\(\sigma\)</span> unknown): <span class="math display">\[\bar{X} \;\dot{\sim}\; N\!\left(\mu,\; \frac{s&#39;}{\sqrt{n}}\right)\]</span></p>
-<p>We want: <span class="math display">\[P(|\bar{X} - \mu| &lt; 20) = 0.9 \iff P\!\left(|Z| &lt; \frac{20}{122.6/\sqrt{n}}\right) = 0.9\]</span> <span class="math display">\[\iff \frac{20}{122.6/\sqrt{n}} = 1.645 \iff \sqrt{n} = \frac{1.645 \times 122.6}{20}\]</span> <span class="math display">\[\iff n \geq \left(\frac{1.645 \times 122.6}{20}\right)^2 \approx 102\]</span></p>
-<p>The statement is <strong>True</strong>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="sampling-distribution-of-the-proportion" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-distribution-of-the-proportion">Sampling Distribution of the Proportion</h3>
-<section id="question-5-bernoulli-population-clt" class="level4">
-<h4 class="anchored" data-anchor-id="question-5-bernoulli-population-clt">Question 5 (Bernoulli population → CLT)</h4>
-<div class="webex-check webex-box">
-<p>Suppose a certain cable TV channel is subscribed to by 10% of the residents of a country. Since this channel has been operating for a very short time, a marketing firm decided to estimate this proportion based on a random sample of 100 residents before renewing its advertising contracts with the channel.</p>
-<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> Given that contracts will only be renewed if the sample proportion exceeds 8.5%, the approximate probability of this occurring is 0.6915.</p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p><strong>Population:</strong> <span class="math inline">\(X \sim \text{Bernoulli}(p = 0.1)\)</span></p>
-<p><strong>Sample:</strong> <span class="math inline">\(n = 100 &gt; 30\)</span> (CLT applies)</p>
-<p><span class="math display">\[\hat{p} = \bar{X} \;\dot{\sim}\; N\!\left(p,\; \sqrt{\frac{pq}{n}}\right) = N\!\left(0.1,\; \sqrt{\frac{0.1 \times 0.9}{100}}\right) = N(0.1,\; 0.03)\]</span></p>
-<p><span class="math display">\[P(\hat{p} &gt; 0.085) \approx P\!\left(Z &gt; \frac{0.085 - 0.1}{0.03}\right) = P(Z &gt; -0.5) = \Phi(0.5) = 0.6915\]</span></p>
-<p>The statement is <strong>True</strong>.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="sampling-distribution-of-the-variance" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-distribution-of-the-variance">Sampling Distribution of the Variance</h3>
-<section id="question-6-normal-population-chi-squared" class="level4">
-<h4 class="anchored" data-anchor-id="question-6-normal-population-chi-squared">Question 6 (Normal population, Chi-Squared)</h4>
-<div class="webex-check webex-box">
-<p>Suppose we wish to analyse the viability of a project whose key element is the price (in monetary units, m.u.) of the raw material, well modelled by a random variable <span class="math inline">\(X \sim N(\mu,\; \sigma)\)</span>.</p>
-<p>A random sample <span class="math inline">\((X_1, X_2, \ldots, X_{16})\)</span> was selected, yielding a corrected sample variance <span class="math inline">\(s&#39;^2 = 0.18\;\text{m.u.}^2\)</span>.</p>
+<p>A complex system is formed by 100 parts that work indepedently. The probability that any of the components fails during the operating period is equal to <span class="math inline">\(0.1\)</span>.</p>
 <ol type="a">
-<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> <span class="math inline">\(Q = \dfrac{15\,S&#39;^2}{\sigma^2} \sim \chi^2_{(16)}\)</span></p></li>
-<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> <span class="math inline">\(P(S&#39;^2 &gt; 1.2163\,\sigma^2) = 0.25\)</span></p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> Knowing that the working of the system demands that at least 85 parts are operative, the approximate probability that the system works is equal to 0.9664.</p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value>TRUE</option><option value="answer">FALSE</option></select> In the previous calculus, the use of the CLT demands only that the sample size, from a non Normal population is large enough.</p></li>
 </ol>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p><strong>Population:</strong> <span class="math inline">\(X \sim N(\mu,\; \sigma)\)</span></p>
-<p><strong>Sample:</strong> <span class="math inline">\(n = 16\)</span>; <span class="math inline">\(s&#39;^2 = 0.18\)</span></p>
-<p>The pivot quantity is: <span class="math display">\[Q = \frac{(n-1)S&#39;^2}{\sigma^2} \sim \chi^2_{(n-1)}\]</span></p>
-<p>So: <span class="math display">\[Q = \frac{15\,S&#39;^2}{\sigma^2} \sim \chi^2_{(\mathbf{15})}\]</span></p>
-<p><strong>a)</strong> The statement claims <span class="math inline">\(Q \sim \chi^2_{(16)}\)</span>, but the correct degrees of freedom are <span class="math inline">\(n - 1 = 15\)</span>. The statement is <strong>False</strong>.</p>
-<p><strong>b)</strong> <span class="math display">\[P(S&#39;^2 &gt; 1.2163\,\sigma^2) = P\!\left(\frac{S&#39;^2}{\sigma^2} &gt; 1.2163\right) = P(Q &gt; 15 \times 1.2163) = P(Q &gt; 18.245)\]</span></p>
-<p>Reading directly from the <span class="math inline">\(\chi^2\)</span> table with 15 degrees of freedom: <span class="math inline">\(P(Q &gt; 18.245) = 0.25\)</span>.</p>
-<p>The statement is <strong>True</strong>.</p>
-</div>
 </div>
 </section>
-</section>
-<section id="sampling-distribution-for-the-difference-of-means-paired-samples" class="level3">
-<h3 class="anchored" data-anchor-id="sampling-distribution-for-the-difference-of-means-paired-samples">Sampling Distribution for the Difference of Means (Paired Samples)</h3>
-<section id="question-7-paired-samples-small-sample-normal-populations" class="level4">
-<h4 class="anchored" data-anchor-id="question-7-paired-samples-small-sample-normal-populations">Question 7 (Paired samples, small sample, Normal populations)</h4>
+<section id="question-3" class="level4">
+<h4 class="anchored" data-anchor-id="question-3">Question 3</h4>
 <div class="webex-check webex-box">
-<p>Fifteen adult men, aged between 35 and 50, participated in a study to evaluate the effect of diet and exercise on blood cholesterol levels. Total cholesterol was measured in each individual at the start and after three months of participation in an aerobic exercise programme and a switch to a low-fat diet. The data are shown in the following table:</p>
-<table>
-<thead>
-<tr>
-<th colspan="16">
-Blood Cholesterol Level
-</th>
-</tr>
-<tr>
-<th>
-Individual
-</th>
-<th>
-1
-</th>
-<th>
-2
-</th>
-<th>
-3
-</th>
-<th>
-4
-</th>
-<th>
-5
-</th>
-<th>
-6
-</th>
-<th>
-7
-</th>
-<th>
-8
-</th>
-<th>
-9
-</th>
-<th>
-10
-</th>
-<th>
-11
-</th>
-<th>
-12
-</th>
-<th>
-13
-</th>
-<th>
-14
-</th>
-<th>
-15
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<strong>Before</strong>
-</td>
-<td>
-265
-</td>
-<td>
-240
-</td>
-<td>
-258
-</td>
-<td>
-295
-</td>
-<td>
-251
-</td>
-<td>
-245
-</td>
-<td>
-287
-</td>
-<td>
-314
-</td>
-<td>
-260
-</td>
-<td>
-279
-</td>
-<td>
-283
-</td>
-<td>
-240
-</td>
-<td>
-238
-</td>
-<td>
-225
-</td>
-<td>
-247
-</td>
-</tr>
-<tr>
-<td>
-<strong>After</strong>
-</td>
-<td>
-229
-</td>
-<td>
-231
-</td>
-<td>
-227
-</td>
-<td>
-240
-</td>
-<td>
-238
-</td>
-<td>
-241
-</td>
-<td>
-234
-</td>
-<td>
-256
-</td>
-<td>
-247
-</td>
-<td>
-239
-</td>
-<td>
-246
-</td>
-<td>
-218
-</td>
-<td>
-219
-</td>
-<td>
-226
-</td>
-<td>
-233
-</td>
-</tr>
-</tbody>
-</table>
-<p>Assume that:</p>
-<ul>
-<li>The samples (Before and After) are <strong>paired</strong> (each column corresponds to the same individual).</li>
-<li>Each pair of observations is independent.</li>
-<li>Cholesterol levels follow a <strong>Normal</strong> distribution.</li>
-</ul>
-<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The probability that the mean of the difference between Before and After differs from its expected value by more than 6.61 is equal to 0.2.</p>
-<div class="webex-solution">
-<button>
-Solution
-</button>
-<p>Let <span class="math inline">\(X_1\)</span> be the cholesterol before treatment and <span class="math inline">\(X_2\)</span> the cholesterol after treatment.</p>
-<p>Define <span class="math inline">\(D = X_1 - X_2\)</span>. Since both <span class="math inline">\(X_1\)</span> and <span class="math inline">\(X_2\)</span> are Normal, so is <span class="math inline">\(D\)</span>.</p>
-<p>Computing the differences:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-<col style="width: 6%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Individual</th>
-<th>1</th>
-<th>2</th>
-<th>3</th>
-<th>4</th>
-<th>5</th>
-<th>6</th>
-<th>7</th>
-<th>8</th>
-<th>9</th>
-<th>10</th>
-<th>11</th>
-<th>12</th>
-<th>13</th>
-<th>14</th>
-<th>15</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Diff</td>
-<td>36</td>
-<td>9</td>
-<td>31</td>
-<td>55</td>
-<td>13</td>
-<td>4</td>
-<td>53</td>
-<td>58</td>
-<td>13</td>
-<td>40</td>
-<td>37</td>
-<td>22</td>
-<td>19</td>
-<td>−1</td>
-<td>14</td>
-</tr>
-</tbody>
-</table>
-<p>From the data: <span class="math inline">\(\bar{d} = 26.87\)</span>; <span class="math inline">\(s&#39;_D = 19.04\)</span>.</p>
-<p><strong>Population:</strong> Normal, <span class="math inline">\(\sigma\)</span> unknown; <strong>Sample:</strong> <span class="math inline">\(n = 15 &lt; 30\)</span> → t-Student.</p>
-<p><span class="math display">\[T = \frac{\bar{D} - \mu_D}{S&#39;_D / \sqrt{n}} \sim t_{(n-1)} \equiv t_{(14)}\]</span></p>
-<p><span class="math display">\[P(|\bar{D} - \mu_D| &gt; 6.61) = P\!\left(|T| &gt; \frac{6.61}{19.04/\sqrt{15}}\right) = P\!\left(|T| &gt; \frac{6.61 \times \sqrt{15}}{19.04}\right)\]</span></p>
-<p><span class="math display">\[= P(|T| &gt; 1.345) = 2\,P(T &gt; 1.345)\]</span></p>
-<p>Reading from the t-distribution table with 14 degrees of freedom: <span class="math inline">\(P(T &gt; 1.345) = 0.1\)</span>.</p>
-<p><span class="math display">\[= 2 \times 0.1 = 0.2\]</span></p>
-<p>The statement is <strong>True</strong>.</p>
+<p>It is known that, in the <em>TeleDigit</em>, the probability that any phone call is to fill a complaint is equal to 0.05. Consider that the random experiment, consisting in picking a random sample of 20 calls, and count the ones that are complaints.</p>
+<ol type="a">
+<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The probability that in the sample there are between 2 and 5 (inclusive) is equal to 0.2639.</p></li>
+<li><p>The <strong>approximate</strong> probability that, in a random sample of 250 calls, at most 10 complaints are detected is: <select class="webex-select"><option value="blank"></option><option value>0.2909</option><option value="answer">0.2810</option><option value>0.2327</option><option value>None of the above</option></select></p></li>
+</ol>
 </div>
+</section>
+<section id="question-4" class="level4">
+<h4 class="anchored" data-anchor-id="question-4">Question 4</h4>
+<div class="webex-check webex-box">
+<p>The number of machines ordered every day to a factory can be considered a random variable distributed Poisson with mean 9.5.</p>
+<ol type="a">
+<li><p>The percentage of days in which no more than 10 machines are ordered is equal to: <select class="webex-select"><option value="blank"></option><option value>64.53%</option><option value>12.35%</option><option value="answer">35.47%</option><option value>87.65%</option></select></p></li>
+<li><p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.</p></li>
+</ol>
 </div>
-<hr>
-<p><em>Exercises adapted from the exercise booklet by Prof. Teresa Ferreira and Prof. Sandra Custódio, ISCAL–IPL. Solutions based on “Uma Resolução Possível” (2024/2025).</em></p>
+</section>
+<section id="question-5" class="level4">
+<h4 class="anchored" data-anchor-id="question-5">Question 5</h4>
+<div class="webex-check webex-box">
+<p>The lifetime, in years, of a lightning projector is a random variable. It is known that 20% of the projectors fail during the first year of use.</p>
+<p>In a random sample of 500 projectors, the <strong>approximate</strong> probability that at most 80 fail during the first year is: <select class="webex-select"><option value="blank"></option><option value>0.9854</option><option value>0.0125</option><option value="answer">0.0146</option><option value>None of the above</option></select></p>
+</div>
+</section>
+<section id="question-6" class="level4">
+<h4 class="anchored" data-anchor-id="question-6">Question 6</h4>
+<div class="webex-check webex-box">
+<p>Consider the time interval that passess between the arrival of two people to the reception desk of a hospital follows an exponential distribution with mean of 30 seconds.</p>
+<ol type="a">
+<li><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The approximate probability (by the CLT) that at most 40 people arrive to the reception desk of the hospital, during a time lapse of 18 minutes is 0.7734.</li>
+</ol>
+</div>
+</section>
+<section id="question-7" class="level4">
+<h4 class="anchored" data-anchor-id="question-7">Question 7</h4>
+<div class="webex-check webex-box">
+<p>In a gas station, each customer fills a random amount of gas <span class="math inline">\(X\)</span>, that it is known to follow a Uniform distribution in <span class="math inline">\([10,40]\)</span> liters. Assume that, each day, the gas station has 300 customers.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> The <strong>approximate</strong> probability that the daily (total) gas bought in that gas station is above 7410 liters of gas is equal to <span class="math inline">\(\Phi(0.6)\)</span>.</p>
+</div>
+</section>
+<section id="question-8" class="level4">
+<h4 class="anchored" data-anchor-id="question-8">Question 8</h4>
+<div class="webex-check webex-box">
+<p>A study about the sales in the sumermarket <em>Superstore</em> arrived to the conclusion that the daily rice demand (in Kg) is a random variable with mean 40Kg and standard deviation of 5Kg.</p>
+<p><select class="webex-select"><option value="blank"></option><option value="answer">TRUE</option><option value>FALSE</option></select> Having being ordered 14500 Kg of rice for sale in the next year, the probability that that stock satisfies the rice demand, in that year, is equal to 0.2643 (consider a year with 364 days).</p>
+</div>
 
 
-</section>
 </section>
 </section>
 

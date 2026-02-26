@@ -62,11 +62,9 @@ y <- year(Sys.Date())-1
 
 <!-- Style Block for nice tables -->
 
-This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).
+This is a set of exercises for Statistics II, Chapter I — Central Limit Theorem, from the Lisbon Accounting and Business School (ISCAL–IPL).
 
-**Contents:** t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.
-
-The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).
+**Contents:** We approach the Central Limit Theorem and use it to approximate other common distributions.
 
 ---
 

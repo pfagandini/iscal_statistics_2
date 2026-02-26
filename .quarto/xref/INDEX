@@ -31,5 +31,14 @@
   },
   "exercises/01_Central_Limit_Theorem.qmd": {
     "01_Central_Limit_Theorem.html": "5ae74e58"
+  },
+  "exercises/02_Sampling_Distributions.qmd": {
+    "02_Sampling_Distributions.html": "eeca791a"
+  },
+  "exercises/01_Central_Limit_Theorem copy.qmd": {
+    "01_Central_Limit_Theorem copy.html": "8847731b"
+  },
+  "slides/02_Sampling_Distributions.qmd": {
+    "02_Sampling_Distributions.html": "50d61176"
   }
 }

@@ -15,4 +15,5 @@ title: "Material"
 
 ## Exercises
 
-2. [Central Limit Theorem](exercises/01_Central_Limit_Theorem.qmd)
+1. [Central Limit Theorem](exercises/01_Central_Limit_Theorem.qmd)
+2. [Samling Distributions](exercises/02_Sampling_Distributions.qmd)
