@@ -12,6 +12,7 @@ title: "Material"
 
 1. [Central Limit Theorem](slides/01_CLT_slides.qmd)
 2. [Sampling Distributions](slides/02_sampling_distributions.qmd)
+3. [Point Estimation](slides/03_point_estimation.qmd)
 
 ## Exercises
 

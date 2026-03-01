@@ -704,7 +704,7 @@
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions"
+    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions\nPoint Estimation"
   },
   {
     "objectID": "material.html#exercises",
@@ -766,29 +766,29 @@
     "objectID": "slides/02_Sampling_Distributions.html#random-casual-sample-and-statistic",
     "href": "slides/02_Sampling_Distributions.html#random-casual-sample-and-statistic",
     "title": "Sampling Distributions",
-    "section": "Random (Casual) Sample and Statistic",
-    "text": "Random (Casual) Sample and Statistic\n\n\nPopulation\n\nParameters (unknown)\n\n\nSample\n\nStatistics (known)\n\n\n\n\nStatistical Inference\n\nStatistical inference consists of a set of methods that allow us to draw conclusions about a population, based on a random (or casual) sample drawn from that population."
+    "section": "",
+    "text": "Population\n\nParameters (unknown)\n\n\nSample\n\nStatistics (known)\n\n\n\n\n\nStatistical Inference\n. . .\nStatistical inference consists of a set of methods that allow us to draw conclusions about a population, based on a random (or casual) sample drawn from that population."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#random-sample-parameters-and-statistics",
     "href": "slides/02_Sampling_Distributions.html#random-sample-parameters-and-statistics",
     "title": "Sampling Distributions",
-    "section": "Random Sample, Parameters, and Statistics",
-    "text": "Random Sample, Parameters, and Statistics\nA sample of size \\(n\\), drawn from a population according to a random (or casual) process, is called a random sample if the values of the random variables \\(X_1, X_2, \\ldots, X_n\\) are independent and identically distributed. The term \\(X_1\\) denotes the first element of the sample, \\(X_2\\) the second, and \\(X_n\\) the \\(n\\)-th.\n\nParameters and Statistics\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\n\n\nA statistic is a characteristic that is a function of the sample values, i.e., it is a random variable that does not involve any unknown parameter, denoted by \\(T(X_1, X_2, \\ldots, X_n)\\)."
+    "section": "",
+    "text": "A sample of size \\(n\\), drawn from a population according to a random (or casual) process, is called a random sample if the values of the random variables \\(X_1, X_2, \\ldots, X_n\\) are independent and identically distributed. The term \\(X_1\\) denotes the first element of the sample, \\(X_2\\) the second, and \\(X_n\\) the \\(n\\)-th.\n. . .\nParameters and Statistics\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\n. . .\nA statistic is a characteristic that is a function of the sample values, i.e., it is a random variable that does not involve any unknown parameter, denoted by \\(T(X_1, X_2, \\ldots, X_n)\\)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#statistics-and-estimates",
     "href": "slides/02_Sampling_Distributions.html#statistics-and-estimates",
     "title": "Sampling Distributions",
-    "section": "Statistics and Estimates",
-    "text": "Statistics and Estimates\nOnce a particular sample \\(x_1, x_2, \\ldots, x_n\\) has been observed, it is possible to obtain the value of the statistic associated with this sample, namely \\(T(x_1, x_2, \\ldots, x_n)\\), yielding an estimate for the parameter.\n\nFrom each random sample drawn from a population, statistics with different values can be obtained.\n\n\nStatistics are random variables, and therefore their probabilistic behavior is given by their respective distribution function (density or probability function), leading to the sampling distributions of the statistic represented by \\(T(X_1, X_2, \\ldots, X_n)\\)."
+    "section": "",
+    "text": "Once a particular sample \\(x_1, x_2, \\ldots, x_n\\) has been observed, it is possible to obtain the value of the statistic associated with this sample, namely \\(T(x_1, x_2, \\ldots, x_n)\\), yielding an estimate for the parameter.\n. . .\nFrom each random sample drawn from a population, statistics with different values can be obtained.\n. . .\nStatistics are random variables, and therefore their probabilistic behavior is given by their respective distribution function (density or probability function), leading to the sampling distributions of the statistic represented by \\(T(X_1, X_2, \\ldots, X_n)\\)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-i",
     "href": "slides/02_Sampling_Distributions.html#exercise-i",
     "title": "Sampling Distributions",
-    "section": "Exercise I",
-    "text": "Exercise I\nConsider \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), a random sample from a \\(Normal(\\mu = -2, \\sigma)\\) population, where \\(\\sigma\\) is unknown. The following r.v.’s are not statistics:\n\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\frac{\\sum \\left(X_i - \\mu\\right)^2}{n}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum (X_i - \\bar{X})^2}{n-1}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\sum \\left(\\dfrac{X_i - \\mu}{\\sigma}\\right)^2\\)"
+    "section": "",
+    "text": "Consider \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), a random sample from a \\(Normal(\\mu = -2, \\sigma)\\) population, where \\(\\sigma\\) is unknown. The following r.v.’s are not statistics:\n\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\frac{\\sum \\left(X_i - \\mu\\right)^2}{n}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum (X_i - \\bar{X})^2}{n-1}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\sum \\left(\\dfrac{X_i - \\mu}{\\sigma}\\right)^2\\)"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-ii-statement",
@@ -808,8 +808,8 @@
     "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution",
     "href": "slides/02_Sampling_Distributions.html#chi-square-distribution",
     "title": "Sampling Distributions",
-    "section": "Chi-Square Distribution",
-    "text": "Chi-Square Distribution\nA pertinent question arises: How to obtain the sampling distribution of a statistic or of a random variable?\n\nBefore answering this question, it is important to introduce two fundamental theoretical distributions within the scope of inference.\n\n\nChi-Square Distribution\nLet \\(Z_1, Z_2, \\ldots, Z_n\\) be independent and identically distributed random variables, \\(Z_i \\sim Normal(0, 1)\\).\n\\[Y = \\sum_{i=1}^{n} Z_i^2 = \\sum_{i=1}^{n}\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2\\]\nis a Chi-square random variable with \\(n\\) degrees of freedom, i.e.: \\(Y \\sim \\chi^2_{(n)}\\)."
+    "section": "",
+    "text": "A pertinent question arises: How to obtain the sampling distribution of a statistic or of a random variable?\n. . .\nBefore answering this question, it is important to introduce two fundamental theoretical distributions within the scope of inference.\n. . .\nChi-Square Distribution\nLet \\(Z_1, Z_2, \\ldots, Z_n\\) be independent and identically distributed random variables, \\(Z_i \\sim Normal(0, 1)\\).\n\\[Y = \\sum_{i=1}^{n} Z_i^2 = \\sum_{i=1}^{n}\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2\\]\nis a Chi-square random variable with \\(n\\) degrees of freedom, i.e.: \\(Y \\sim \\chi^2_{(n)}\\)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-1",
@@ -822,64 +822,64 @@
     "objectID": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-2",
     "href": "slides/02_Sampling_Distributions.html#chi-square-distribution-main-properties-2",
     "title": "Sampling Distributions",
-    "section": "Chi-Square Distribution: Main Properties (2)",
-    "text": "Chi-Square Distribution: Main Properties (2)\n\nThe graphical shape of the distribution depends on its degrees of freedom: \\(n\\) (\\(n \\in \\mathbb{N}\\)).\nIt is a positive and non-symmetric function. The skewness decreases as the degrees of freedom increase.\nIf \\(X \\sim \\chi^2_{(n)}\\), then: \\(E(X) = n\\) and \\(Var(X) = 2n\\).\nIt is an additive distribution. The sum of \\(k\\) independent random variables, where \\(X_i \\sim \\chi^2_{(n_i)}\\), is still a random variable such that: \\[\\sum_{i=1}^k X_i \\sim \\chi^2_{\\left(n = \\sum_{i=1}^k n_i\\right)}\\]\n\n\n\nWith increasing degrees of freedom, the Chi-square distribution tends to the Normal distribution, by the C.L.T.:\n\\[\\chi^2_{(n)} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(n,\\;\\sqrt{2n}) \\iff Z_n = \\frac{\\chi^2_{(n)} - n}{\\sqrt{2n}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+    "section": "",
+    "text": "The graphical shape of the distribution depends on its degrees of freedom: \\(n\\) (\\(n \\in \\mathbb{N}\\)).\nIt is a positive and non-symmetric function. The skewness decreases as the degrees of freedom increase.\nIf \\(X \\sim \\chi^2_{(n)}\\), then: \\(E(X) = n\\) and \\(Var(X) = 2n\\).\nIt is an additive distribution. The sum of \\(k\\) independent random variables, where \\(X_i \\sim \\chi^2_{(n_i)}\\), is still a random variable such that: \\[\\sum_{i=1}^k X_i \\sim \\chi^2_{\\left(n = \\sum_{i=1}^k n_i\\right)}\\]\n\n. . .\n\nWith increasing degrees of freedom, the Chi-square distribution tends to the Normal distribution, by the C.L.T.:\n\\[\\chi^2_{(n)} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(n,\\;\\sqrt{2n}) \\iff Z_n = \\frac{\\chi^2_{(n)} - n}{\\sqrt{2n}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-v",
     "href": "slides/02_Sampling_Distributions.html#exercise-v",
     "title": "Sampling Distributions",
-    "section": "Exercise V",
-    "text": "Exercise V\nLet \\((Z_1, Z_2, Z_3, Z_4, Z_5)\\) be a random sample from a \\(N(0, 1)\\) population and \\(Q = \\sum_{i=1}^5 Z_i^2\\).\n\n[V][F] \\(\\quad P(1.610 &lt; Q &lt; 9.236) = 0.8\\)\n[V][F] \\(\\quad\\) The standard deviation of \\(Z_3^2 + Z_4^2\\) is equal to 4.\n\n\na)\n\\(Q \\sim \\chi^2_{(5)}\\)\n\\[P(1.610 &lt; Q &lt; 9.236) = P(Q &gt; 1.610) - P(Q &gt; 9.236) = 0.9 - 0.1 = 0.8\\]\n(direct observation from the \\(\\chi^2\\) table)\nThe statement is true.\n\n\nb)\n\\(Z_3^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_4^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_3^2 + Z_4^2 \\sim \\chi^2_{(2)}\\) (Additivity Theorem)\n\\[Var(Z_3^2 + Z_4^2) = 2 \\times 2 = 4 \\implies \\sigma(Z_3^2 + Z_4^2) = \\sqrt{4} = 2\\]\nThe statement is false."
+    "section": "",
+    "text": "Let \\((Z_1, Z_2, Z_3, Z_4, Z_5)\\) be a random sample from a \\(N(0, 1)\\) population and \\(Q = \\sum_{i=1}^5 Z_i^2\\).\n\n[V][F] \\(\\quad P(1.610 &lt; Q &lt; 9.236) = 0.8\\)\n[V][F] \\(\\quad\\) The standard deviation of \\(Z_3^2 + Z_4^2\\) is equal to 4.\n\n. . .\na)\n\\(Q \\sim \\chi^2_{(5)}\\)\n\\[P(1.610 &lt; Q &lt; 9.236) = P(Q &gt; 1.610) - P(Q &gt; 9.236) = 0.9 - 0.1 = 0.8\\]\n(direct observation from the \\(\\chi^2\\) table)\nThe statement is true.\n. . .\nb)\n\\(Z_3^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_4^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_3^2 + Z_4^2 \\sim \\chi^2_{(2)}\\) (Additivity Theorem)\n\\[Var(Z_3^2 + Z_4^2) = 2 \\times 2 = 4 \\implies \\sigma(Z_3^2 + Z_4^2) = \\sqrt{4} = 2\\]\nThe statement is false."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution",
     "href": "slides/02_Sampling_Distributions.html#students-t-distribution",
     "title": "Sampling Distributions",
-    "section": "Student’s t Distribution",
-    "text": "Student’s t Distribution\nLet \\(X \\sim Normal(0, 1)\\) and \\(Y \\sim \\chi^2_{(n)}\\) be independent random variables. Then the random variable:\n\\[T = \\frac{X}{\\sqrt{Y/n}} \\sim t_{(n)}\\]\nhas a Student’s \\(t\\) distribution with \\(n\\) degrees of freedom, i.e.: \\(T \\sim t_{(n)}\\).\n\nMain properties of the Student’s t distribution\n\nThe graphical shape depends on its degrees of freedom (\\(n\\)). As the d.f. increase, the quantiles of the Student’s \\(t\\) converge to the corresponding quantiles of the Standard Normal."
+    "section": "",
+    "text": "Let \\(X \\sim Normal(0, 1)\\) and \\(Y \\sim \\chi^2_{(n)}\\) be independent random variables. Then the random variable:\n\\[T = \\frac{X}{\\sqrt{Y/n}} \\sim t_{(n)}\\]\nhas a Student’s \\(t\\) distribution with \\(n\\) degrees of freedom, i.e.: \\(T \\sim t_{(n)}\\).\n. . .\nMain properties of the Student’s t distribution\n\nThe graphical shape depends on its degrees of freedom (\\(n\\)). As the d.f. increase, the quantiles of the Student’s \\(t\\) converge to the corresponding quantiles of the Standard Normal."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution-properties",
     "href": "slides/02_Sampling_Distributions.html#students-t-distribution-properties",
     "title": "Sampling Distributions",
-    "section": "Student’s t Distribution: Properties",
-    "text": "Student’s t Distribution: Properties\n\n\nIt is a symmetric function around the mean.\nIf \\(X \\sim t_{(n)}\\), then: \\(E(X) = 0\\) and \\(Var(X) = \\dfrac{n}{n-2}\\), with \\(n &gt; 2\\)."
+    "section": "",
+    "text": "It is a symmetric function around the mean.\nIf \\(X \\sim t_{(n)}\\), then: \\(E(X) = 0\\) and \\(Var(X) = \\dfrac{n}{n-2}\\), with \\(n &gt; 2\\)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#students-t-distribution-clt-approximation",
     "href": "slides/02_Sampling_Distributions.html#students-t-distribution-clt-approximation",
     "title": "Sampling Distributions",
-    "section": "Student’s t Distribution: CLT Approximation",
-    "text": "Student’s t Distribution: CLT Approximation\n\nWith increasing degrees of freedom, the Student’s \\(t\\) distribution tends to the Normal distribution, by the C.L.T.:\n\\[X \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(0, \\;\\frac{n}{n-2}\\right) \\iff Z_n = \\frac{X}{\\sqrt{\\frac{n}{n-2}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+    "section": "",
+    "text": "With increasing degrees of freedom, the Student’s \\(t\\) distribution tends to the Normal distribution, by the C.L.T.:\n\\[X \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(0, \\;\\frac{n}{n-2}\\right) \\iff Z_n = \\frac{X}{\\sqrt{\\frac{n}{n-2}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-1-normal-population-sigma2-known",
     "href": "slides/02_Sampling_Distributions.html#case-1-normal-population-sigma2-known",
     "title": "Sampling Distributions",
     "section": "Case 1: Normal Population, \\(\\sigma^2\\) Known",
-    "text": "Case 1: Normal Population, \\(\\sigma^2\\) Known\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) known.\nFrom a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample mean:\n\\[\\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i\\]\n\nThe sampling distribution of \\(\\bar{X}\\) is still Normal, by the additivity theorem of the Normal distribution:\n\\[\\bar{X} \\sim N\\left(\\mu, \\;\\frac{\\sigma}{\\sqrt{n}}\\right) \\iff Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\sim N(0, 1)\\]"
+    "text": "Case 1: Normal Population, \\(\\sigma^2\\) Known\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) known.\nFrom a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample mean:\n\\[\\bar{X} = \\frac{1}{n}\\sum_{i=1}^n X_i\\]\n. . .\nThe sampling distribution of \\(\\bar{X}\\) is still Normal, by the additivity theorem of the Normal distribution:\n\\[\\bar{X} \\sim N\\left(\\mu, \\;\\frac{\\sigma}{\\sqrt{n}}\\right) \\iff Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\sim N(0, 1)\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-2-normal-population-sigma2-unknown",
     "href": "slides/02_Sampling_Distributions.html#case-2-normal-population-sigma2-unknown",
     "title": "Sampling Distributions",
     "section": "Case 2: Normal Population, \\(\\sigma^2\\) Unknown",
-    "text": "Case 2: Normal Population, \\(\\sigma^2\\) Unknown\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) unknown.\nStatistic: Mean of a random sample of size \\(n\\): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)\n\nSampling distribution of \\(\\bar{X}\\):\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\sim t_{(n-1)}\\]\n\n\n\nNote: It is rare that one needs to infer the mean value when the variance is known. Thus, it is necessary to estimate the parameter \\(\\sigma^2\\) using the sample variance \\(S^2\\) or the corrected sample variance \\(S'^2\\)."
+    "text": "Case 2: Normal Population, \\(\\sigma^2\\) Unknown\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\sigma^2\\) unknown.\nStatistic: Mean of a random sample of size \\(n\\): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)\n. . .\nSampling distribution of \\(\\bar{X}\\):\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\sim t_{(n-1)}\\]\n. . .\n\nNote: It is rare that one needs to infer the mean value when the variance is known. Thus, it is necessary to estimate the parameter \\(\\sigma^2\\) using the sample variance \\(S^2\\) or the corrected sample variance \\(S'^2\\)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-2-cont.-and-case-3",
     "href": "slides/02_Sampling_Distributions.html#case-2-cont.-and-case-3",
     "title": "Sampling Distributions",
     "section": "Case 2 (cont.) and Case 3",
-    "text": "Case 2 (cont.) and Case 3\n\\[S^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i - \\bar{X})^2 \\qquad \\text{and} \\qquad S'^2 = \\frac{1}{n-1}\\sum_{i=1}^n (X_i - \\bar{X})^2 = \\frac{n}{n-1}S^2\\]\n\nApproximate sampling distribution of \\(\\bar{X}\\): for \\(n\\) sufficiently large (\\(n \\geq 30\\)), by the C.L.T.:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\n\nCase 3: Unknown population, with mean \\(\\mu\\) and known variance \\(\\sigma^2\\).\nStatistic: Mean of a random sample of size \\(n\\) (\\(n \\geq 30\\)): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)"
+    "text": "Case 2 (cont.) and Case 3\n\\[S^2 = \\frac{1}{n}\\sum_{i=1}^n (X_i - \\bar{X})^2 \\qquad \\text{and} \\qquad S'^2 = \\frac{1}{n-1}\\sum_{i=1}^n (X_i - \\bar{X})^2 = \\frac{n}{n-1}S^2\\]\n. . .\nApproximate sampling distribution of \\(\\bar{X}\\): for \\(n\\) sufficiently large (\\(n \\geq 30\\)), by the C.L.T.:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n. . .\nCase 3: Unknown population, with mean \\(\\mu\\) and known variance \\(\\sigma^2\\).\nStatistic: Mean of a random sample of size \\(n\\) (\\(n \\geq 30\\)): \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i\\)"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-3-cont.",
     "href": "slides/02_Sampling_Distributions.html#case-3-cont.",
     "title": "Sampling Distributions",
     "section": "Case 3 (cont.)",
-    "text": "Case 3 (cont.)\nApproximate sampling distribution of \\(\\bar{X}\\): by the C.L.T.,\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\nNote: If \\(\\sigma^2\\) is unknown, we have the approximate sampling distribution:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+    "text": "Case 3 (cont.)\nApproximate sampling distribution of \\(\\bar{X}\\): by the C.L.T.,\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{\\sigma}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n. . .\nNote: If \\(\\sigma^2\\) is unknown, we have the approximate sampling distribution:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\dfrac{S}{\\sqrt{n-1}}} = \\frac{\\bar{X} - \\mu}{\\dfrac{S'}{\\sqrt{n}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-vii-statement",
@@ -893,42 +893,42 @@
     "href": "slides/02_Sampling_Distributions.html#exercise-vii-solution-a",
     "title": "Sampling Distributions",
     "section": "Exercise VII — Solution: a)",
-    "text": "Exercise VII — Solution: a)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 25 \\rightarrow s' = 122.6\\)\n\na)\nThe sampling distribution of the statistic sample mean (mean value of client accounts) is given by:\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(n-1)} \\equiv \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(24)}\\]\nThe statement is false."
+    "text": "Exercise VII — Solution: a)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n = 25 \\rightarrow s' = 122.6\\)\n. . .\na)\nThe sampling distribution of the statistic sample mean (mean value of client accounts) is given by:\n\\[T = \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(n-1)} \\equiv \\frac{\\bar{X} - \\mu}{\\dfrac{s'}{\\sqrt{n}}} \\sim t_{(24)}\\]\nThe statement is false."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-vii-solution-b",
     "href": "slides/02_Sampling_Distributions.html#exercise-vii-solution-b",
     "title": "Sampling Distributions",
     "section": "Exercise VII — Solution: b)",
-    "text": "Exercise VII — Solution: b)\nb)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n \\geq 30 \\rightarrow s' = 122.6\\)\n\n\\[\\bar{X} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(\\mu, \\;\\frac{s'}{\\sqrt{n}}\\right) \\equiv N\\left(385, \\;\\frac{122.6}{\\sqrt{n}}\\right)\\]\n\n\n\\[P(|\\bar{X} - \\mu| &lt; 20) = 0.9 \\iff P\\left(|Z| &lt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.9\\]\n\n\n\\[\\iff P\\left(|Z| &gt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.1\\]\n\n\n\\[\\iff \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}} = 1.645 \\iff n \\geq 102\\]\nThe statement is true."
+    "text": "Exercise VII — Solution: b)\nb)\nPopulation: \\(X \\sim Normal(\\mu = 385, \\sigma = ?)\\) (standard deviation unknown)\nSample: \\(n \\geq 30 \\rightarrow s' = 122.6\\)\n. . .\n\\[\\bar{X} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(\\mu, \\;\\frac{s'}{\\sqrt{n}}\\right) \\equiv N\\left(385, \\;\\frac{122.6}{\\sqrt{n}}\\right)\\]\n. . .\n\\[P(|\\bar{X} - \\mu| &lt; 20) = 0.9 \\iff P\\left(|Z| &lt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.9\\]\n. . .\n\\[\\iff P\\left(|Z| &gt; \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}}\\right) = 0.1\\]\n. . .\n\\[\\iff \\frac{20}{\\dfrac{122.6}{\\sqrt{n}}} = 1.645 \\iff n \\geq 102\\]\nThe statement is true."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#sampling-distribution-of-s2",
     "href": "slides/02_Sampling_Distributions.html#sampling-distribution-of-s2",
     "title": "Sampling Distributions",
     "section": "Sampling Distribution of \\(S^2\\)",
-    "text": "Sampling Distribution of \\(S^2\\)\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with mean \\(\\mu\\) unknown and variance \\(\\sigma^2\\).\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample variance \\(S^2\\) or corrected sample variance \\(S'^2\\):\n\nSampling distribution of \\(S^2\\) or \\(S'^2\\):\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{nS^2}{\\sigma^2} \\sim \\chi^2_{(n-1)}\\]"
+    "text": "Sampling Distribution of \\(S^2\\)\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), with mean \\(\\mu\\) unknown and variance \\(\\sigma^2\\).\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\), where \\(X_i \\sim N(\\mu, \\sigma)\\), we obtain the statistic sample variance \\(S^2\\) or corrected sample variance \\(S'^2\\):\n. . .\nSampling distribution of \\(S^2\\) or \\(S'^2\\):\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{nS^2}{\\sigma^2} \\sim \\chi^2_{(n-1)}\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-viii",
     "href": "slides/02_Sampling_Distributions.html#exercise-viii",
     "title": "Sampling Distributions",
     "section": "Exercise VIII",
-    "text": "Exercise VIII\nA pharmaceutical company produces pills in which the variability of the quantity of the active substance from one pill to another should be very small. The standard deviation of the population is, supposedly, one milligram. Inspectors from the Ministry of Health selected a random sample of 16 pills. Assuming the population is Normal, the probability that the corrected sample variance is greater than \\(0.736\\;mg^2\\) is equal to:\n\n0.76 \\(\\qquad\\) b) 0.25 \\(\\qquad\\) c) 0.75 \\(\\qquad\\) d) none of the above\n\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\)\nPivotal variable:\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{(n-1)S'^2}{1} = (n-1)S'^2 \\sim \\chi^2_{(n-1)} \\equiv \\chi^2_{(15)}\\]\n\n\nWe want:\n\\[P(S'^2 &gt; 0.736) = P(Q &gt; 15 \\times 0.736) = P(Q &gt; 11.04) \\approx 0.75\\]\n(direct observation from the \\(\\chi^2\\) distribution table)\nThe correct answer is c)."
+    "text": "Exercise VIII\nA pharmaceutical company produces pills in which the variability of the quantity of the active substance from one pill to another should be very small. The standard deviation of the population is, supposedly, one milligram. Inspectors from the Ministry of Health selected a random sample of 16 pills. Assuming the population is Normal, the probability that the corrected sample variance is greater than \\(0.736\\;mg^2\\) is equal to:\n\n0.76 \\(\\qquad\\) b) 0.25 \\(\\qquad\\) c) 0.75 \\(\\qquad\\) d) none of the above\n\n. . .\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\)\nPivotal variable:\n\\[Q = \\frac{(n-1)S'^2}{\\sigma^2} = \\frac{(n-1)S'^2}{1} = (n-1)S'^2 \\sim \\chi^2_{(n-1)} \\equiv \\chi^2_{(15)}\\]\n. . .\nWe want:\n\\[P(S'^2 &gt; 0.736) = P(Q &gt; 15 \\times 0.736) = P(Q &gt; 11.04) \\approx 0.75\\]\n(direct observation from the \\(\\chi^2\\) distribution table)\nThe correct answer is c)."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-1-total-of-successes",
     "href": "slides/02_Sampling_Distributions.html#case-1-total-of-successes",
     "title": "Sampling Distributions",
     "section": "Case 1: Total of Successes",
-    "text": "Case 1: Total of Successes\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\) from a Bernoulli population, where \\(X_i \\sim Bernoulli(1, p)\\), and let \\(Y\\) be the number of elements that possess the characteristic of interest (successes) in the sample of size \\(n\\).\n\nCase 1:\nThe statistic \\(Y = \\sum_{i=1}^n X_i\\) (total or absolute frequency of successes) has the sampling distribution:\n\\[Y = \\sum_{i=1}^n X_i \\sim Binomial(n, p)\\]\n\n\nIf \\(n\\) is sufficiently large, the C.L.T. justifies the approximate sampling distribution:\n\\[Y \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(np, \\;\\sqrt{np(1-p)}\\right) \\iff Z_n = \\frac{Y - np}{\\sqrt{np(1-p)}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
+    "text": "Case 1: Total of Successes\nSelected a random sample \\(X_1, X_2, \\ldots, X_n\\) from a Bernoulli population, where \\(X_i \\sim Bernoulli(1, p)\\), and let \\(Y\\) be the number of elements that possess the characteristic of interest (successes) in the sample of size \\(n\\).\n. . .\nCase 1:\nThe statistic \\(Y = \\sum_{i=1}^n X_i\\) (total or absolute frequency of successes) has the sampling distribution:\n\\[Y = \\sum_{i=1}^n X_i \\sim Binomial(n, p)\\]\n. . .\nIf \\(n\\) is sufficiently large, the C.L.T. justifies the approximate sampling distribution:\n\\[Y \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(np, \\;\\sqrt{np(1-p)}\\right) \\iff Z_n = \\frac{Y - np}{\\sqrt{np(1-p)}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-2-sample-proportion",
     "href": "slides/02_Sampling_Distributions.html#case-2-sample-proportion",
     "title": "Sampling Distributions",
     "section": "Case 2: Sample Proportion",
-    "text": "Case 2: Sample Proportion\nCase 2:\nLet the statistic \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i = \\dfrac{Y}{n}\\), the proportion (relative frequency) of successes that, in a sample of size \\(n\\), possess a given attribute.\n\nIt is important to know the sampling distribution of this statistic \\(\\bar{X} = \\hat{p}\\).\n\n\n\\[E(\\bar{X}) = E\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n}E(X_1 + X_2 + \\cdots + X_n) = \\frac{1}{n}np = p\\]\n\\[Var(\\bar{X}) = Var\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n^2}Var(X_1 + \\cdots + X_n) = \\frac{1}{n^2}npq = \\frac{p(1-p)}{n}\\]"
+    "text": "Case 2: Sample Proportion\nCase 2:\nLet the statistic \\(\\bar{X} = \\dfrac{1}{n}\\displaystyle\\sum_{i=1}^n X_i = \\dfrac{Y}{n}\\), the proportion (relative frequency) of successes that, in a sample of size \\(n\\), possess a given attribute.\n. . .\nIt is important to know the sampling distribution of this statistic \\(\\bar{X} = \\hat{p}\\).\n. . .\n\\[E(\\bar{X}) = E\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n}E(X_1 + X_2 + \\cdots + X_n) = \\frac{1}{n}np = p\\]\n\\[Var(\\bar{X}) = Var\\left(\\frac{X_1 + X_2 + \\cdots + X_n}{n}\\right) = \\frac{1}{n^2}Var(X_1 + \\cdots + X_n) = \\frac{1}{n^2}npq = \\frac{p(1-p)}{n}\\]"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#case-2-approximate-distribution-of-hatp",
@@ -942,21 +942,21 @@
     "href": "slides/02_Sampling_Distributions.html#exercise-x-statement",
     "title": "Sampling Distributions",
     "section": "Exercise X (Statement)",
-    "text": "Exercise X (Statement)\nIn a certain neighborhood, the proportion of inhabitants who consider the opening of a new supermarket useful is 0.8. The supermarket chain Gota Doce intends to open a new store in this neighborhood. Nevertheless, before making a decision, a study was conducted in which 400 inhabitants were randomly interviewed to assess their intention to use the services of the new supermarket.\n\n\nV F \\(\\quad\\) The approximate probability that, in the sample of interviewed inhabitants, at least 300 consider the opening of the Gota Doce supermarket useful is equal to 0.9948.\n\n\n\n\nV F \\(\\quad\\) The probability that the deviation between the sample proportion of inhabitants who stated they would actually use the services of the new supermarket, and the true proportion, is less than 0.02, is 0.8413."
+    "text": "Exercise X (Statement)\nIn a certain neighborhood, the proportion of inhabitants who consider the opening of a new supermarket useful is 0.8. The supermarket chain Gota Doce intends to open a new store in this neighborhood. Nevertheless, before making a decision, a study was conducted in which 400 inhabitants were randomly interviewed to assess their intention to use the services of the new supermarket.\n. . .\n\nV F \\(\\quad\\) The approximate probability that, in the sample of interviewed inhabitants, at least 300 consider the opening of the Gota Doce supermarket useful is equal to 0.9948.\n\n. . .\n\nV F \\(\\quad\\) The probability that the deviation between the sample proportion of inhabitants who stated they would actually use the services of the new supermarket, and the true proportion, is less than 0.02, is 0.8413."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-x-solution-a",
     "href": "slides/02_Sampling_Distributions.html#exercise-x-solution-a",
     "title": "Sampling Distributions",
     "section": "Exercise X — Solution: a)",
-    "text": "Exercise X — Solution: a)\n\\(p = 0.8\\) (proportion of inhabitants who consider the opening of a new supermarket useful)\na) \\(X \\to\\) number of inhabitants, out of 400, who consider the opening of the new supermarket useful.\n\\[X \\sim Binomial(n = 400, p = 0.8)\\]\n\n\\[P(X \\geq 300) = P(X \\geq 299.5) \\approx P\\left(Z \\geq \\frac{299.5 - 400 \\times 0.8}{\\sqrt{400 \\times 0.8 \\times 0.2}}\\right)\\]\n\n\n\\[= P(Z \\geq -2.56) = P(Z \\leq 2.56) = \\Phi(2.56) = 0.9948\\]\n\n\nNote: 1) Continuity correction \\(\\quad\\) 2) CLT, approximation of the Binomial to the Normal distribution\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is true."
+    "text": "Exercise X — Solution: a)\n\\(p = 0.8\\) (proportion of inhabitants who consider the opening of a new supermarket useful)\na) \\(X \\to\\) number of inhabitants, out of 400, who consider the opening of the new supermarket useful.\n\\[X \\sim Binomial(n = 400, p = 0.8)\\]\n. . .\n\\[P(X \\geq 300) = P(X \\geq 299.5) \\approx P\\left(Z \\geq \\frac{299.5 - 400 \\times 0.8}{\\sqrt{400 \\times 0.8 \\times 0.2}}\\right)\\]\n. . .\n\\[= P(Z \\geq -2.56) = P(Z \\leq 2.56) = \\Phi(2.56) = 0.9948\\]\n. . .\nNote: 1) Continuity correction \\(\\quad\\) 2) CLT, approximation of the Binomial to the Normal distribution\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is true."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-x-solution-b",
     "href": "slides/02_Sampling_Distributions.html#exercise-x-solution-b",
     "title": "Sampling Distributions",
     "section": "Exercise X — Solution: b)",
-    "text": "Exercise X — Solution: b)\nb) Of the interviews conducted, \\(X\\) inhabitants out of \\(n\\) expressed the opening of Gota Doce was useful, so the sample proportion is \\(\\frac{X}{n}\\).\n\n\\[P\\left(\\left|\\frac{X}{n} - p\\right| &lt; 0.02\\right) \\approx P\\left(|Z| &lt; \\frac{0.02}{\\sqrt{\\dfrac{0.8 \\times 0.2}{400}}}\\right) = P(|Z| &lt; 1)\\]\n\n\n\\[= P(-1 &lt; Z &lt; 1) = \\Phi(1) - \\Phi(-1) = \\Phi(1) - [1 - \\Phi(1)]\\]\n\n\n\\[= 2\\Phi(1) - 1 = 2 \\times 0.8413 - 1 = 0.6826\\]\n\n\nNote: Observe that \\(\\dfrac{X - np}{\\sqrt{np(1-p)}} = \\dfrac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}}\\) and that, by the CLT,\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1) \\quad\\text{and, therefore, also}\\quad Z = \\frac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is false."
+    "text": "Exercise X — Solution: b)\nb) Of the interviews conducted, \\(X\\) inhabitants out of \\(n\\) expressed the opening of Gota Doce was useful, so the sample proportion is \\(\\frac{X}{n}\\).\n. . .\n\\[P\\left(\\left|\\frac{X}{n} - p\\right| &lt; 0.02\\right) \\approx P\\left(|Z| &lt; \\frac{0.02}{\\sqrt{\\dfrac{0.8 \\times 0.2}{400}}}\\right) = P(|Z| &lt; 1)\\]\n. . .\n\\[= P(-1 &lt; Z &lt; 1) = \\Phi(1) - \\Phi(-1) = \\Phi(1) - [1 - \\Phi(1)]\\]\n. . .\n\\[= 2\\Phi(1) - 1 = 2 \\times 0.8413 - 1 = 0.6826\\]\n. . .\nNote: Observe that \\(\\dfrac{X - np}{\\sqrt{np(1-p)}} = \\dfrac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}}\\) and that, by the CLT,\n\\[Z = \\frac{X - np}{\\sqrt{np(1-p)}} \\;\\dot\\sim\\; N(0,1) \\quad\\text{and, therefore, also}\\quad Z = \\frac{\\frac{X}{n} - p}{\\sqrt{\\dfrac{p(1-p)}{n}}} \\;\\dot\\sim\\; N(0,1)\\]\nThe statement is false."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#disclaimer",
@@ -969,22 +969,22 @@
     "objectID": "slides/02_Sampling_Distributions.html#exercise-ii",
     "href": "slides/02_Sampling_Distributions.html#exercise-ii",
     "title": "Sampling Distributions",
-    "section": "Exercise II",
-    "text": "Exercise II\nLet \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), be a random sample from a population \\(X\\) (with unknown probabilistic behavior), with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known.\n\nThe expected value of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\na)\\(n\\mu\\) and \\(\\mu\\) \\(\\quad\\) b) \\(n\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) c) \\(\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) d) none of the above\n\n\nAnswer: (a)\n\nThe variance of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\n\n\n\n\\(n\\sigma^2\\) and \\(\\sigma\\) \\(\\quad\\) b)\\(n\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) c) \\(\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) d) none of the above\n\n\n\nAnswer: (b)"
+    "section": "",
+    "text": "Let \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), be a random sample from a population \\(X\\) (with unknown probabilistic behavior), with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known.\n\nThe expected value of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\na)\\(n\\mu\\) and \\(\\mu\\) \\(\\quad\\) b) \\(n\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) c) \\(\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) d) none of the above\n\n. . .\nAnswer: (a)\n\nThe variance of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\n\n\n\n\\(n\\sigma^2\\) and \\(\\sigma\\) \\(\\quad\\) b)\\(n\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) c) \\(\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) d) none of the above\n\n. . .\nAnswer: (b)"
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#example",
     "href": "slides/02_Sampling_Distributions.html#example",
     "title": "Sampling Distributions",
-    "section": "Example",
-    "text": "Example\nExercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\ni) [T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\). ii) [T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
+    "section": "",
+    "text": "Exercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\ni) [T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\). ii) [T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n. . .\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-vii",
     "href": "slides/02_Sampling_Distributions.html#exercise-vii",
     "title": "Sampling Distributions",
     "section": "Exercise VII",
-    "text": "Exercise VII\nA certain company intends to validate the value (in euros) of its accounts receivable from clients, with an underlying distributional behavior of the account values being \\(Normal(\\mu = 385, \\sigma = ?)\\). A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation of \\(s' = 122.6\\) euros.\n\n\nV F \\(\\quad\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\n\n\n\n\nV F \\(\\quad\\) The sample size to be collected (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for the calculations, that the value of \\(n\\) to be found will be greater than 30.)"
+    "text": "Exercise VII\nA certain company intends to validate the value (in euros) of its accounts receivable from clients, with an underlying distributional behavior of the account values being \\(Normal(\\mu = 385, \\sigma = ?)\\). A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation of \\(s' = 122.6\\) euros.\n. . .\n\nV F \\(\\quad\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\n\n. . .\n\nV F \\(\\quad\\) The sample size to be collected (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for the calculations, that the value of \\(n\\) to be found will be greater than 30.)"
   },
   {
     "objectID": "slides/point_estimation.html",
@@ -1237,5 +1237,12 @@
     "title": "Point Estimation",
     "section": "Exercise 2 — Part ii",
     "text": "Exercise 2 — Part ii\nii) True or False: \\(\\theta^*\\) is a more efficient estimator than \\(\\hat{\\theta}\\).\n\nSolution:\nBoth estimators are unbiased, so the more efficient one has the smaller variance:\n\\[V(\\theta^*) = V(\\bar{X} + 2) = V(\\bar{X}) = \\frac{\\sigma^2}{n} = \\frac{1}{n}\\]\n\n\n\\[V(\\theta^*) = \\frac{1}{n} &lt; \\frac{2}{n} = V(\\hat{\\theta})\\]\nTherefore, \\(\\theta^*\\) is more efficient than \\(\\hat{\\theta}\\).\nThe statement is true."
+  },
+  {
+    "objectID": "slides/02_Sampling_Distributions.html",
+    "href": "slides/02_Sampling_Distributions.html",
+    "title": "Sampling Distributions",
+    "section": "",
+    "text": "Population\n\nParameters (unknown)\n\n\nSample\n\nStatistics (known)\n\n\n\n\n\nStatistical Inference\n. . .\nStatistical inference consists of a set of methods that allow us to draw conclusions about a population, based on a random (or casual) sample drawn from that population.\n\n\n\nA sample of size \\(n\\), drawn from a population according to a random (or casual) process, is called a random sample if the values of the random variables \\(X_1, X_2, \\ldots, X_n\\) are independent and identically distributed. The term \\(X_1\\) denotes the first element of the sample, \\(X_2\\) the second, and \\(X_n\\) the \\(n\\)-th.\n. . .\nParameters and Statistics\nA parameter is a value that characterizes a given population which, although unknown, is fixed.\n. . .\nA statistic is a characteristic that is a function of the sample values, i.e., it is a random variable that does not involve any unknown parameter, denoted by \\(T(X_1, X_2, \\ldots, X_n)\\).\n\n\n\nOnce a particular sample \\(x_1, x_2, \\ldots, x_n\\) has been observed, it is possible to obtain the value of the statistic associated with this sample, namely \\(T(x_1, x_2, \\ldots, x_n)\\), yielding an estimate for the parameter.\n. . .\nFrom each random sample drawn from a population, statistics with different values can be obtained.\n. . .\nStatistics are random variables, and therefore their probabilistic behavior is given by their respective distribution function (density or probability function), leading to the sampling distributions of the statistic represented by \\(T(X_1, X_2, \\ldots, X_n)\\).\n\n\n\nConsider \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), a random sample from a \\(Normal(\\mu = -2, \\sigma)\\) population, where \\(\\sigma\\) is unknown. The following r.v.’s are not statistics:\n\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = X_1 + X_2 + \\cdots + X_n\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\bar{X}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\bar{X}}{\\sigma}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\frac{\\sum \\left(X_i - \\mu\\right)^2}{n}\\)\n[T] [F] F \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\dfrac{\\sum (X_i - \\bar{X})^2}{n-1}\\)\n[T] [F] T \\(\\quad T(X_1, X_2, \\ldots, X_n) = \\displaystyle\\sum \\left(\\dfrac{X_i - \\mu}{\\sigma}\\right)^2\\)\n\n\n\n\nLet \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), be a random sample from a population \\(X\\) (with unknown probabilistic behavior), with expected value \\(\\mu\\) and variance \\(\\sigma^2\\), both known.\n\nThe expected value of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\na)\\(n\\mu\\) and \\(\\mu\\) \\(\\quad\\) b) \\(n\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) c) \\(\\mu\\) and \\(\\mu/n\\) \\(\\quad\\) d) none of the above\n\n. . .\nAnswer: (a)\n\nThe variance of the statistics \\(\\displaystyle\\sum_{i=1}^{n} X_i\\) and \\(\\bar{X}\\) are, respectively, equal to:\n\n\n\n\\(n\\sigma^2\\) and \\(\\sigma\\) \\(\\quad\\) b)\\(n\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) c) \\(\\sigma^2\\) and \\(\\sigma^2/n\\) \\(\\quad\\) d) none of the above\n\n. . .\nAnswer: (b)\n\n\n\nA pertinent question arises: How to obtain the sampling distribution of a statistic or of a random variable?\n. . .\nBefore answering this question, it is important to introduce two fundamental theoretical distributions within the scope of inference.\n. . .\nChi-Square Distribution\nLet \\(Z_1, Z_2, \\ldots, Z_n\\) be independent and identically distributed random variables, \\(Z_i \\sim Normal(0, 1)\\).\n\\[Y = \\sum_{i=1}^{n} Z_i^2 = \\sum_{i=1}^{n}\\left(\\frac{X_i - \\mu}{\\sigma}\\right)^2\\]\nis a Chi-square random variable with \\(n\\) degrees of freedom, i.e.: \\(Y \\sim \\chi^2_{(n)}\\).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe graphical shape of the distribution depends on its degrees of freedom: \\(n\\) (\\(n \\in \\mathbb{N}\\)).\nIt is a positive and non-symmetric function. The skewness decreases as the degrees of freedom increase.\nIf \\(X \\sim \\chi^2_{(n)}\\), then: \\(E(X) = n\\) and \\(Var(X) = 2n\\).\nIt is an additive distribution. The sum of \\(k\\) independent random variables, where \\(X_i \\sim \\chi^2_{(n_i)}\\), is still a random variable such that: \\[\\sum_{i=1}^k X_i \\sim \\chi^2_{\\left(n = \\sum_{i=1}^k n_i\\right)}\\]\n\n. . .\n\nWith increasing degrees of freedom, the Chi-square distribution tends to the Normal distribution, by the C.L.T.:\n\\[\\chi^2_{(n)} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(n,\\;\\sqrt{2n}) \\iff Z_n = \\frac{\\chi^2_{(n)} - n}{\\sqrt{2n}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\n\n\n\nLet \\((Z_1, Z_2, Z_3, Z_4, Z_5)\\) be a random sample from a \\(N(0, 1)\\) population and \\(Q = \\sum_{i=1}^5 Z_i^2\\).\n\n[V][F] \\(\\quad P(1.610 &lt; Q &lt; 9.236) = 0.8\\)\n[V][F] \\(\\quad\\) The standard deviation of \\(Z_3^2 + Z_4^2\\) is equal to 4.\n\n. . .\na)\n\\(Q \\sim \\chi^2_{(5)}\\)\n\\[P(1.610 &lt; Q &lt; 9.236) = P(Q &gt; 1.610) - P(Q &gt; 9.236) = 0.9 - 0.1 = 0.8\\]\n(direct observation from the \\(\\chi^2\\) table)\nThe statement is true.\n. . .\nb)\n\\(Z_3^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_4^2 \\sim \\chi^2_{(1)}\\) ; \\(Z_3^2 + Z_4^2 \\sim \\chi^2_{(2)}\\) (Additivity Theorem)\n\\[Var(Z_3^2 + Z_4^2) = 2 \\times 2 = 4 \\implies \\sigma(Z_3^2 + Z_4^2) = \\sqrt{4} = 2\\]\nThe statement is false.\n\n\n\nLet \\(X \\sim Normal(0, 1)\\) and \\(Y \\sim \\chi^2_{(n)}\\) be independent random variables. Then the random variable:\n\\[T = \\frac{X}{\\sqrt{Y/n}} \\sim t_{(n)}\\]\nhas a Student’s \\(t\\) distribution with \\(n\\) degrees of freedom, i.e.: \\(T \\sim t_{(n)}\\).\n. . .\nMain properties of the Student’s t distribution\n\nThe graphical shape depends on its degrees of freedom (\\(n\\)). As the d.f. increase, the quantiles of the Student’s \\(t\\) converge to the corresponding quantiles of the Standard Normal.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nIt is a symmetric function around the mean.\nIf \\(X \\sim t_{(n)}\\), then: \\(E(X) = 0\\) and \\(Var(X) = \\dfrac{n}{n-2}\\), with \\(n &gt; 2\\).\n\n\n\n\n\nWith increasing degrees of freedom, the Student’s \\(t\\) distribution tends to the Normal distribution, by the C.L.T.:\n\\[X \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N\\left(0, \\;\\frac{n}{n-2}\\right) \\iff Z_n = \\frac{X}{\\sqrt{\\frac{n}{n-2}}} \\;\\overset{\\text{CLT}}{\\dot\\sim}\\; N(0, 1)\\]\n\n\n\n\nExercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\ni) [T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\). ii) [T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n. . .\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
   }
 ]
