@@ -1,0 +1,290 @@
+---
+title: "Point Estimation"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format: 
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    self-contained: false
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: false
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Point Estimation"
+    from: markdown+emoji
+    progress: true
+editor: source
+execute:
+  enabled: false
+engine: knitr
+---
+
+## Outline
+
+1. Point Estimation — Overview
+2. Properties of Estimators
+3. Solved Exercises
+
+# 1) Point Estimation
+
+## Statistical Inference
+
+```{=html}
+<svg viewBox="0 0 720 210" xmlns="http://www.w3.org/2000/svg"
+     style="display:block; margin:2rem auto; max-width:680px; width:100%;">
+  <defs>
+    <filter id="pop-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8"
+                    flood-color="#8b1538" flood-opacity="0.30"/>
+    </filter>
+    <filter id="samp-shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8"
+                    flood-color="#8b1538" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Population box: filled burgundy -->
+  <rect x="30" y="55" width="200" height="90" rx="12"
+        fill="#8b1538" filter="url(#pop-shadow)"/>
+  <text x="130" y="96" text-anchor="middle"
+        fill="white" font-size="18" font-weight="bold"
+        font-family="Arial,sans-serif">Population</text>
+  <text x="130" y="118" text-anchor="middle"
+        fill="rgba(255,255,255,0.80)" font-size="13" font-style="italic"
+        font-family="Arial,sans-serif">Parameters (unknown)</text>
+
+  <!-- Sample box: outlined -->
+  <rect x="490" y="55" width="200" height="90" rx="12"
+        fill="white" stroke="#8b1538" stroke-width="2.5"
+        filter="url(#samp-shadow)"/>
+  <text x="590" y="96" text-anchor="middle"
+        fill="#8b1538" font-size="18" font-weight="bold"
+        font-family="Arial,sans-serif">Sample</text>
+  <text x="590" y="118" text-anchor="middle"
+        fill="#888" font-size="13" font-style="italic"
+        font-family="Arial,sans-serif">Statistics (known)</text>
+
+  <!-- Top arrow: Population → Sample -->
+  <line x1="234" y1="82" x2="484" y2="82"
+        stroke="#8b1538" stroke-width="2"/>
+  <polygon points="490,82 480,77 480,87" fill="#8b1538"/>
+  <text x="360" y="74" text-anchor="middle"
+        fill="#444" font-size="12.5"
+        font-family="Arial,sans-serif">Random Sampling</text>
+
+  <!-- Bottom arrow: Sample → Population -->
+  <line x1="486" y1="118" x2="236" y2="118"
+        stroke="#8b1538" stroke-width="2"/>
+  <polygon points="230,118 240,113 240,123" fill="#8b1538"/>
+  <text x="360" y="143" text-anchor="middle"
+        fill="#8b1538" font-size="13" font-weight="600"
+        font-family="Arial,sans-serif">Statistical Inference</text>
+</svg>
+```
+
+## Point Estimation (cont.)
+
+Let $X \sim N(\mu, \sigma)$, with $\mu$ and $\sigma$ unknown.
+
+Let $X_1, X_2, \ldots, X_n$ be a random sample from population $X$.
+
+**Goal:** How can we estimate $\mu$, the population mean, from the sample $X_1, X_2, \ldots, X_n$?
+
+. . .
+
+::: {.callout-note appearance="simple" icon="false"}
+The objective of point estimation is to use all available information from the sample in order to select a single value that is the most plausible for the (unknown) parameter to be estimated.
+:::
+
+## Point Estimation (cont.)
+
+Let $X$ be a random variable whose probabilistic behaviour is known and characterised by a parameter $\theta$, which is unknown.
+
+If $X_1, X_2, \ldots, X_n$ is a random sample of size $n$ from that population, a **point estimator** of $\theta$, denoted $\hat{\theta}$, is any statistic $T(X_1, X_2, \ldots, X_n)$ that takes values only in $\Theta$ (the set of possible values for $\theta$).
+
+Once a particular sample $x_1, x_2, \ldots, x_n$ is observed, we obtain a **point estimate** for $\theta$: $T(x_1, x_2, \ldots, x_n)$.
+
+## Point Estimation (cont.)
+
+There are specific methods that allow us to choose the estimator for each population parameter to be estimated, such as the **maximum likelihood method**, the **method of moments**, and others.
+
+. . .
+
+Because there may be several estimators for the same population parameter, we consider some properties that estimators should ideally possess, which serve as guidance on how to choose the "best" one.
+
+# 2) Properties of Estimators
+
+## Unbiased Estimator
+
+::: {.callout-note appearance="simple" icon="false"}
+## Definition
+An estimator $\hat{\theta}$ is said to be **unbiased** (or centred) for the parameter $\theta$ if and only if:
+$$E(\hat{\theta}) = \theta$$
+
+An estimator $\hat{\theta}$ is said to be **biased** for the parameter $\theta$ if and only if:
+$$E(\hat{\theta}) \neq \theta$$
+
+The **bias** of an estimator $\hat{\theta}$ is measured by:
+$$\text{Bias}(\hat{\theta}) = E(\hat{\theta}) - \theta$$
+:::
+
+## Unbiased Estimator — Examples
+
+Consider a population $X$ with mean $\mu$ and variance $\sigma^2$.
+
+Given a random sample $X_1, X_2, \ldots, X_n$ from $X$, the following hold for any distributional behaviour of $X$ (provided $E(X)$ and $V(X)$ exist):
+
+. . .
+
+$$E(\bar{X}) = \mu \quad \Rightarrow \quad \bar{X} \text{ is an unbiased estimator for } \mu$$
+
+. . .
+
+$$E(S'^2) = \sigma^2 \quad \Rightarrow \quad S'^2 \text{ is an unbiased estimator for } \sigma^2$$
+
+. . .
+
+$$E(S^2) = \frac{n-1}{n}\sigma^2 \neq \sigma^2 \quad \Rightarrow \quad S^2 \text{ is NOT an unbiased estimator for } \sigma^2$$
+
+## Relative Efficiency of Unbiased Estimators
+
+::: {.callout-note appearance="simple" icon="false"}
+## Definition
+Let $\hat{\theta}$ and $\tilde{\theta}$ be two unbiased estimators of the same parameter $\theta$.
+
+The estimator $\hat{\theta}$ is said to be **more efficient** than $\tilde{\theta}$ if:
+
+$$\text{Var}(\hat{\theta}) < \text{Var}(\tilde{\theta}) \quad \Longleftrightarrow \quad \frac{\text{Var}(\hat{\theta})}{\text{Var}(\tilde{\theta})} < 1$$
+:::
+
+## (Simply) Consistent Estimator
+
+::: {.callout-note appearance="simple" icon="false"}
+## Sufficient Condition for Consistency
+A sufficient condition for an estimator $\hat{\theta}$ to be **consistent** for the parameter $\theta$ is:
+
+$$\text{i)} \quad \lim_{n \to +\infty} E(\hat{\theta}) = \theta$$
+
+$$\text{ii)} \quad \lim_{n \to +\infty} \text{Var}(\hat{\theta}) = 0$$
+:::
+
+# 3) Solved Exercises
+
+## Exercise 1
+
+Consider a sample $X_1, X_2, \ldots, X_n$, $n \in \mathbb{N}$, drawn from a population $X$ with mean $\mu$ and variance $\sigma^2$, both finite.
+
+Consider the estimator $T_1$ for $\mu$:
+
+$$T_1 = X_1 + \frac{1}{n-1}\sum_{i=2}^{n} X_i$$
+
+**a)** True or False: This estimator is biased for $\mu$ and its bias equals $\mu$.
+
+## Exercise 1 — Solution (a)
+
+$$E(T_1) = E\!\left(X_1 + \frac{1}{n-1}\sum_{i=2}^{n}X_i\right) = E(X_1) + \frac{1}{n-1}\sum_{i=2}^{n}E(X_i)$$
+
+. . .
+
+$$= \mu + \frac{1}{n-1}\sum_{i=2}^{n}\mu = \mu + \frac{1}{n-1}(n-1)\mu = 2\mu \neq \mu$$
+
+. . .
+
+Therefore, $T_1$ is a **biased** estimator for $\mu$.
+
+$$\text{Bias}(T_1) = E(T_1) - \mu = 2\mu - \mu = \mu$$
+
+**The statement is true.**
+
+## Exercise 1 — Part (b)
+
+Now consider a second estimator $T_2$ for $\mu$:
+
+$$T_2 = \frac{1}{2}T_1$$
+
+**True or False:** $T_2$ is a consistent estimator for $\mu$.
+
+. . .
+
+For $T_2$ to be consistent for $\mu$, we need to verify:
+
+$$\text{i)} \quad \lim_{n \to +\infty} E(T_2) = \mu \qquad \text{ii)} \quad \lim_{n \to +\infty} \text{Var}(T_2) = 0$$
+
+## Exercise 1 — Solution (b), Part i
+
+$$\lim_{n \to +\infty} E(T_2) = \lim_{n \to +\infty} E\!\left(\frac{1}{2}T_1\right) = \lim_{n \to +\infty} \frac{1}{2}E(T_1) = \lim_{n \to +\infty} \frac{1}{2} \times 2\mu = \mu \checkmark$$
+
+Condition i) is satisfied.
+
+## Exercise 1 — Solution (b), Part ii {.smaller}
+
+We need $\lim_{n \to +\infty}\text{Var}(T_2)$. Let us first compute $\text{Var}(T_1)$:
+
+$$\text{Var}(T_1) = \text{Var}\!\left(X_1 + \frac{1}{n-1}\sum_{i=2}^{n}X_i\right) = \sigma^2 + \frac{1}{(n-1)^2}\sum_{i=2}^{n}\sigma^2 = \sigma^2 + \frac{n-1}{(n-1)^2}\sigma^2 = \sigma^2 + \frac{\sigma^2}{n-1}$$
+
+. . .
+
+Then:
+
+$$\lim_{n \to +\infty}\text{Var}(T_2) = \lim_{n \to +\infty}\frac{1}{4}\text{Var}(T_1) = \frac{1}{4}\lim_{n \to +\infty}\left(\sigma^2 + \frac{\sigma^2}{n-1}\right) = \frac{1}{4}\sigma^2 \neq 0$$
+
+. . .
+
+Condition ii) is **not** satisfied. Therefore $T_2$ is **not** a consistent estimator for $\mu$.
+
+**The statement is false.**
+
+## Exercise 2
+
+Consider a population $X$ whose distribution depends on a parameter $\theta \in \mathbb{R}$, with unknown value. It is known that:
+
+$$E(X) = \theta - 2 \qquad \text{and} \qquad V(X) = 1$$
+
+From a random sample $X_1, X_2, \ldots, X_n$, $n \geq 2$, two estimators $\theta^*$ and $\hat{\theta}$ were obtained, with the following known properties:
+
+$$\theta^* = \bar{X} + 2, \qquad E(\hat{\theta}) = \theta, \qquad V(\hat{\theta}) = \frac{2}{n}$$
+
+## Exercise 2 — Part i
+
+**i)** Regarding estimators $\theta^*$ and $\hat{\theta}$:
+
+| | |
+|---|---|
+| a) Only $\theta^*$ is unbiased | b) Neither estimator is unbiased |
+| c) Both are unbiased | d) Only $\hat{\theta}$ is unbiased |
+
+. . .
+
+**Solution:**
+
+Population $X$: $\mu = E(X) = \theta - 2$; $\sigma^2 = V(X) = 1$
+
+$E(\hat{\theta}) = \theta$ — given in the problem statement, so $\hat{\theta}$ **is unbiased**.
+
+$$E(\theta^*) = E(\bar{X} + 2) = E(\bar{X}) + 2 = \mu + 2 = (\theta - 2) + 2 = \theta$$
+
+Since $E(\theta^*) = E(\hat{\theta}) = \theta$, **both estimators are unbiased**. Answer: **(c)**.
+
+## Exercise 2 — Part ii
+
+**ii)** True or False: $\theta^*$ is a more efficient estimator than $\hat{\theta}$.
+
+. . .
+
+**Solution:**
+
+Both estimators are unbiased, so the more efficient one has the smaller variance:
+
+$$V(\theta^*) = V(\bar{X} + 2) = V(\bar{X}) = \frac{\sigma^2}{n} = \frac{1}{n}$$
+
+. . .
+
+$$V(\theta^*) = \frac{1}{n} < \frac{2}{n} = V(\hat{\theta})$$
+
+Therefore, $\theta^*$ is **more efficient** than $\hat{\theta}$.
+
+**The statement is true.**

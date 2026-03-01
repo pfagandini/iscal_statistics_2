@@ -7,9 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Paulo Fagandini">
-<meta name="dcterms.date" content="2026-01-01">
 
-<title>Central Limit Theorem – Statistics II</title>
+<title>Point Estimation – Statistics II</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -149,32 +148,41 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#additivity-normal-distribution" id="toc-additivity-normal-distribution" class="nav-link active" data-scroll-target="#additivity-normal-distribution">Additivity (Normal Distribution)</a></li>
-  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example 1</a></li>
-  <li><a href="#example-1-solution-cont." id="toc-example-1-solution-cont." class="nav-link" data-scroll-target="#example-1-solution-cont.">Example 1 — Solution (cont.)</a></li>
-  <li><a href="#central-limit-theorem-clt" id="toc-central-limit-theorem-clt" class="nav-link" data-scroll-target="#central-limit-theorem-clt">Central Limit Theorem (<em>CLT</em>)</a></li>
-  <li><a href="#example-1-revisited-clt" id="toc-example-1-revisited-clt" class="nav-link" data-scroll-target="#example-1-revisited-clt">Example 1 — Revisited (CLT)</a></li>
-  <li><a href="#example-1-revisited-cont." id="toc-example-1-revisited-cont." class="nav-link" data-scroll-target="#example-1-revisited-cont.">Example 1 — Revisited (cont.)</a></li>
-  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example 2</a></li>
-  <li><a href="#example-2-solution-cont." id="toc-example-2-solution-cont." class="nav-link" data-scroll-target="#example-2-solution-cont.">Example 2 — Solution (cont.)</a></li>
-  <li><a href="#example-2-solution-cont.-1" id="toc-example-2-solution-cont.-1" class="nav-link" data-scroll-target="#example-2-solution-cont.-1">Example 2 — Solution (cont.)</a></li>
-  <li><a href="#corollaries-of-the-clt" id="toc-corollaries-of-the-clt" class="nav-link" data-scroll-target="#corollaries-of-the-clt">Corollaries of the CLT</a></li>
-  <li><a href="#continuity-correction" id="toc-continuity-correction" class="nav-link" data-scroll-target="#continuity-correction">Continuity Correction</a></li>
-  <li><a href="#continuity-correction-other-cases" id="toc-continuity-correction-other-cases" class="nav-link" data-scroll-target="#continuity-correction-other-cases">Continuity Correction — Other Cases</a></li>
-  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example 3</a></li>
-  <li><a href="#example-3-approximate-solution" id="toc-example-3-approximate-solution" class="nav-link" data-scroll-target="#example-3-approximate-solution">Example 3 — Approximate Solution</a></li>
-  <li><a href="#example-4-exercise-1" id="toc-example-4-exercise-1" class="nav-link" data-scroll-target="#example-4-exercise-1">Example 4 [Exercise 1]</a></li>
-  <li><a href="#example-4-approximate-solution" id="toc-example-4-approximate-solution" class="nav-link" data-scroll-target="#example-4-approximate-solution">Example 4 — Approximate Solution</a></li>
+  <li><a href="#outline" id="toc-outline" class="nav-link active" data-scroll-target="#outline">Outline</a></li>
+  <li><a href="#point-estimation" id="toc-point-estimation" class="nav-link" data-scroll-target="#point-estimation">1) Point Estimation</a>
+  <ul class="collapse">
+  <li><a href="#statistical-inference" id="toc-statistical-inference" class="nav-link" data-scroll-target="#statistical-inference">Statistical Inference</a></li>
+  <li><a href="#point-estimation-cont." id="toc-point-estimation-cont." class="nav-link" data-scroll-target="#point-estimation-cont.">Point Estimation (cont.)</a></li>
+  <li><a href="#point-estimation-cont.-1" id="toc-point-estimation-cont.-1" class="nav-link" data-scroll-target="#point-estimation-cont.-1">Point Estimation (cont.)</a></li>
+  <li><a href="#point-estimation-cont.-2" id="toc-point-estimation-cont.-2" class="nav-link" data-scroll-target="#point-estimation-cont.-2">Point Estimation (cont.)</a></li>
+  </ul></li>
+  <li><a href="#properties-of-estimators" id="toc-properties-of-estimators" class="nav-link" data-scroll-target="#properties-of-estimators">2) Properties of Estimators</a>
+  <ul class="collapse">
+  <li><a href="#unbiased-estimator" id="toc-unbiased-estimator" class="nav-link" data-scroll-target="#unbiased-estimator">Unbiased Estimator</a></li>
+  <li><a href="#unbiased-estimator-examples" id="toc-unbiased-estimator-examples" class="nav-link" data-scroll-target="#unbiased-estimator-examples">Unbiased Estimator — Examples</a></li>
+  <li><a href="#relative-efficiency-of-unbiased-estimators" id="toc-relative-efficiency-of-unbiased-estimators" class="nav-link" data-scroll-target="#relative-efficiency-of-unbiased-estimators">Relative Efficiency of Unbiased Estimators</a></li>
+  <li><a href="#simply-consistent-estimator" id="toc-simply-consistent-estimator" class="nav-link" data-scroll-target="#simply-consistent-estimator">(Simply) Consistent Estimator</a></li>
+  </ul></li>
+  <li><a href="#solved-exercises" id="toc-solved-exercises" class="nav-link" data-scroll-target="#solved-exercises">3) Solved Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-1-solution-a" id="toc-exercise-1-solution-a" class="nav-link" data-scroll-target="#exercise-1-solution-a">Exercise 1 — Solution (a)</a></li>
+  <li><a href="#exercise-1-part-b" id="toc-exercise-1-part-b" class="nav-link" data-scroll-target="#exercise-1-part-b">Exercise 1 — Part (b)</a></li>
+  <li><a href="#exercise-1-solution-b-part-i" id="toc-exercise-1-solution-b-part-i" class="nav-link" data-scroll-target="#exercise-1-solution-b-part-i">Exercise 1 — Solution (b), Part i</a></li>
+  <li><a href="#exercise-1-solution-b-part-ii" id="toc-exercise-1-solution-b-part-ii" class="nav-link" data-scroll-target="#exercise-1-solution-b-part-ii">Exercise 1 — Solution (b), Part ii</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-2-part-i" id="toc-exercise-2-part-i" class="nav-link" data-scroll-target="#exercise-2-part-i">Exercise 2 — Part i</a></li>
+  <li><a href="#exercise-2-part-ii" id="toc-exercise-2-part-ii" class="nav-link" data-scroll-target="#exercise-2-part-ii">Exercise 2 — Part ii</a></li>
+  </ul></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="01_CLT_slides.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="point_estimation.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Central Limit Theorem</h1>
-<p class="subtitle lead">Statistics II</p>
+<h1 class="title">Point Estimation</h1>
 </div>
 
 
@@ -195,12 +203,6 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
       
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -210,227 +212,231 @@ window.Quarto = {
 </header>
 
 
-<section id="additivity-normal-distribution" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="additivity-normal-distribution">Additivity (Normal Distribution)</h2>
-<p><strong>Additivity</strong> (Normal Distribution):</p>
-<p>If:</p>
+<section id="outline" class="level2">
+<h2 class="anchored" data-anchor-id="outline">Outline</h2>
 <ol type="1">
-<li><p><span class="math inline">\(X_i \sim Normal(\mu,\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <strong>independent and identically distributed random variables</strong></p></li>
-<li><p><span class="math inline">\(T = X_1 + \ldots + X_n\)</span> and <span class="math inline">\(\bar{X} = \dfrac{T}{n}\)</span></p></li>
+<li>Point Estimation — Overview</li>
+<li>Properties of Estimators</li>
+<li>Solved Exercises</li>
 </ol>
-<p>then:</p>
-<p><span class="math display">\[T \sim Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
-<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
 </section>
-<section id="example-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-1">Example 1</h2>
-<p>Consider:</p>
-<ol type="1">
-<li><p>Independent variables: <span class="math inline">\(X_i \sim Normal(\mu_i = 40,\sigma_i = 10)\)</span></p>
-<p><span class="math inline">\(X_i\)</span> — lunch duration of student <span class="math inline">\(i\)</span> (in minutes)</p></li>
-<li><p><span class="math inline">\(\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)\)</span> — sample mean (<span class="math inline">\(n = 25\)</span> and <span class="math inline">\(n = 81\)</span> students)</p></li>
-</ol>
-<p>Find the probability that the sample mean lies between 39 and 41 minutes.</p>
-<p><strong>Solution:</strong> (assuming Normal distribution)</p>
-<p><span class="math display">\[\bar{X} \sim Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right)\]</span></p>
-<p><span class="math display">\[\Rightarrow P\!\left(39 &lt; \bar{X} \leq 41\right) = P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} &lt; Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right)\]</span></p>
-</section>
-<section id="example-1-solution-cont." class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-1-solution-cont.">Example 1 — Solution (cont.)</h2>
-<p><span class="math inline">\(P(39 &lt; \bar{X} \leq 41) =\)</span></p>
+<section id="point-estimation" class="level1">
+<h1>1) Point Estimation</h1>
+<section id="statistical-inference" class="level2">
+<h2 class="anchored" data-anchor-id="statistical-inference">Statistical Inference</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Population</strong></p>
 <ul>
-<li><p><span class="math inline">\(n = 25\)</span>: <span class="math inline">\(= P(-0.5 &lt; Z \leq 0.5) = \Phi(0.5) - \Phi(-0.5) = \mathbf{0.3829}\)</span></p></li>
-<li><p><span class="math inline">\(n = 81\)</span>: <span class="math inline">\(= P(-0.9 &lt; Z \leq 0.9) = \Phi(0.9) - \Phi(-0.9) = \mathbf{0.6319}\)</span></p></li>
+<li>Parameters (unknown)</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_CLT_slides_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>Comment:</strong> As sample size increases, the probability that the sample observations concentrate around the mean also increases.</p>
-</blockquote>
-</section>
-<section id="central-limit-theorem-clt" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="central-limit-theorem-clt">Central Limit Theorem (<em>CLT</em>)</h2>
-<p><strong>Central Limit Theorem (</strong><em>CLT</em><strong>):</strong></p>
-<p>If:</p>
-<ol type="1">
-<li><p><span class="math inline">\(X_i \sim \textit{Distribution}(\mu,\sigma)\)</span>, <span class="math inline">\(i = 1,\ldots,n\)</span> — <span style="color:#8B1538; font-weight:bold;">independent and identically distributed random variables</span></p></li>
-<li><p><span class="math inline">\(T = X_1 + \ldots + X_n\)</span>, <span class="math inline">\(\quad \bar{X} = \dfrac{T}{n}\)</span></p></li>
-</ol>
-<p>then, for <span class="math inline">\(n\)</span> sufficiently large (as a rule, <span class="math inline">\(n \geq 30\)</span>):</p>
-<div style="border: 2px solid #8B1538; border-radius: 8px; padding: 0.6em 1.2em; margin: 0.6em auto; display: table;">
-<p><span class="math display">\[T \;\dot{\sim}\; Normal\!\left(\mu_T = n \times \mu,\sigma_T = \sqrt{n} \times \sigma\right)\]</span></p>
-<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = \mu,\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}\right)\]</span></p>
-</div>
-</section>
-<section id="example-1-revisited-clt" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-1-revisited-clt">Example 1 — Revisited (CLT)</h2>
-<p>Consider:</p>
-<ol type="1">
-<li><p>Independent variables: <span class="math inline">\(X_i \sim \textit{Distribution}(\mu_i = 40,\sigma_i = 10)\)</span></p>
-<p><span class="math inline">\(X_i\)</span> — lunch duration of student <span class="math inline">\(i\)</span> (in minutes)</p></li>
-<li><p><span class="math inline">\(\bar{X} = \dfrac{1}{n}(X_1 + \ldots + X_n)\)</span> — sample mean</p>
-<p><span style="color:#8B1538;"><span class="math inline">\(n = 25,\; n = 81,\; n = 225\)</span> students</span></p></li>
-</ol>
-<p>Find <span class="math inline">\(P(39 &lt; \bar{X} \leq 41)\)</span>. Solution: (without the assumption of normality)</p>
-<p>With <span class="math inline">\(\mathbf{n \geq 30}\)</span>:</p>
-<p><span class="math display">\[\bar{X} \;\dot{\sim}\; Normal\!\left(\mu_{\bar{X}} = 40,\sigma_{\bar{X}} = \frac{10}{\sqrt{n}}\right) \quad \xrightarrow{CLT}\]</span></p>
-<p><span class="math display">\[\Rightarrow P(39 &lt; \bar{X} \leq 41) \approx P\!\left(\frac{39-40}{\tfrac{10}{\sqrt{n}}} &lt; Z \leq \frac{41-40}{\tfrac{10}{\sqrt{n}}}\right) =\]</span></p>
-</section>
-<section id="example-1-revisited-cont." class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-1-revisited-cont.">Example 1 — Revisited (cont.)</h2>
-<p><span class="math inline">\(P(39 &lt; \bar{X} \leq 41) \rightarrow (CLT)\)</span></p>
+<p><span class="math inline">\(\downarrow\)</span> <em>Random Sample</em> <span class="math inline">\(\uparrow\)</span></p>
+<p><strong>Sample</strong></p>
 <ul>
-<li><p><span class="math inline">\(n = 25\)</span>: <span style="color:#8B1538;">insufficient information for reliable calculations (<span class="math inline">\(n &lt; 30\)</span>)</span></p></li>
-<li><p><span class="math inline">\(n = 81\)</span>: <span class="math inline">\(P(-0.9 &lt; Z \leq 0.9) = \Phi(0.9) - \Phi(-0.9) = \mathbf{0.6319}\)</span></p></li>
-<li><p><span class="math inline">\(n = 225\)</span>: <span class="math inline">\(P(-1.5 &lt; Z \leq 1.5) = \Phi(1.5) - \Phi(-1.5) = \mathbf{0.8664}\)</span></p></li>
+<li>Statistics (known)</li>
 </ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_CLT_slides_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p><strong>Comment:</strong> The probability that observations concentrate around the mean increased with the larger sample (<span class="math inline">\(n = 225\)</span>).</p>
-</blockquote>
-</section>
-<section id="example-2" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-2">Example 2</h2>
-<p>Consider the independent variables:</p>
-<p><span class="math inline">\(X_i\)</span> — number of points on the <span class="math inline">\(i\)</span>-th roll of a die :game_die:</p>
-<p>Find: <span class="math inline">\(P(2.5 &lt; \bar{X} &lt; 3.5)\)</span> for <span class="math inline">\(n = 1,\; n = 2,\; n = 36\)</span> rolls.</p>
-<p><strong>Solution:</strong></p>
-<p><span class="math inline">\(n = 1\)</span>: <span class="math inline">\(= P(X_1 = 3) = \dfrac{1}{6}\)</span></p>
-<p><span class="math inline">\(n = 2\)</span>:</p>
-<p><span class="math inline">\(= P(X_1=1,\,X_2=5) + P(X_1=2,\,X_2=4) + P(X_1=3,\,X_2=3)\)</span> <span class="math inline">\(+ P(X_1=4,\,X_2=2) + \ldots + P(X_1=5,\,X_2=1) = \dfrac{5}{36}\)</span></p>
-</section>
-<section id="example-2-solution-cont." class="level2">
-<h2 class="anchored" data-anchor-id="example-2-solution-cont.">Example 2 — Solution (cont.)</h2>
-<p><span class="math inline">\(n = 36\)</span> (CLT): note that for a fair die <span class="math inline">\(\mu = 3.5\)</span> and <span class="math inline">\(\sigma = 1.7078\)</span></p>
-<p><span class="math display">\[= P\!\left(\frac{2.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}} &lt; Z &lt; \frac{3.5 - 3.5}{\tfrac{1.7078}{\sqrt{36}}}\right) = \Phi(0) - \Phi(-3.51) = 0.4998\]</span></p>
-</section>
-<section id="example-2-solution-cont.-1" class="level2">
-<h2 class="anchored" data-anchor-id="example-2-solution-cont.-1">Example 2 — Solution (cont.)</h2>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01_CLT_slides_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
-</figure>
-</div>
-</div>
-</div>
-<p><strong>Comments:</strong></p>
-<ol type="1">
-<li>The plots illustrate convergence towards the Normal distribution.</li>
-<li>The variable is discrete — see the continuity correction ahead.</li>
-</ol>
-</section>
-<section id="corollaries-of-the-clt" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="corollaries-of-the-clt">Corollaries of the CLT</h2>
-<div class="highlight-box">
-<p><strong>Corollary 1</strong></p>
-<p>Let <span class="math inline">\(X\)</span> be a random variable with a Binomial distribution with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span>, <span class="math inline">\(X \sim binomial(n,p)\)</span>. If <span class="math inline">\(n \geq 30\)</span>, <span class="math inline">\(np &gt; 5\)</span> or <span class="math inline">\(n(1-p) &gt; 5\)</span>, then:</p>
-<p><span class="math display">\[X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = np,\;\sigma = \sqrt{npq}\right) \;\Leftrightarrow\; Z_n = \frac{X - np}{\sqrt{npq}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)\]</span></p>
-</div>
-<div class="highlight-box">
-<p><strong>Corollary 2</strong></p>
-<p>Let <span class="math inline">\(X\)</span> be a random variable with a Poisson distribution with parameter <span class="math inline">\(\lambda\)</span>, <span class="math inline">\(X \sim Poisson(\lambda)\)</span>. In practice, if <span class="math inline">\(\lambda &gt; 20\)</span>, then:</p>
-<p><span class="math display">\[X \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = \lambda,\;\sigma = \sqrt{\lambda}\right) \;\Leftrightarrow\; Z_n = \frac{X - \lambda}{\sqrt{\lambda}} \;\underset{CLT}{\dot{\sim}}\; Normal(0,1)\]</span></p>
-</div>
-</section>
-<section id="continuity-correction" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="continuity-correction">Continuity Correction</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+</div><div class="column" style="width:50%;">
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Note
+<span class="screen-reader-only">Note</span>Statistical Inference
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Note:</strong> In both corollaries, we are approximating the distribution of a <strong>discrete</strong> random variable with a <strong>continuous</strong> (Normal) distribution. The <strong>continuity correction</strong> should therefore be applied:</p>
-<p><span class="math display">\[[F(x)]_{\text{Discrete}} \approx [F(x + 0.5)]_{\text{Normal}}\]</span></p>
+<p>Using sample information to draw conclusions about population parameters.</p>
 </div>
 </div>
-<p><strong>Example:</strong> <span class="math inline">\(X \sim Poisson(\lambda = 30)\)</span></p>
-<ul>
-<li><p>Exact probability: <span class="math inline">\(P(X = 40) = 0.01394\)</span></p></li>
-<li><p>Without correction: <span class="math inline">\(P\!\left(Z = \dfrac{40-30}{\sqrt{30}}\right) = 0\)</span> — unusable!</p></li>
-<li><p><strong>With continuity correction:</strong></p></li>
-</ul>
-<p><span class="math display">\[P(X = 40) = P(39.5 \leq X \leq 40.5) \approx P\!\left(\frac{39.5-30}{\sqrt{30}} \leq Z \leq \frac{40.5-30}{\sqrt{30}}\right)\]</span></p>
-<p><span class="math display">\[= \Phi(1.92) - \Phi(1.73) = 0.9726 - 0.9582 = \mathbf{0.01444}\]</span></p>
+</div>
+</div>
 </section>
-<section id="continuity-correction-other-cases" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="continuity-correction-other-cases">Continuity Correction — Other Cases</h2>
-<p>Remaining cases (discrete <span class="math inline">\(X\)</span>, applying continuity correction):</p>
-<p><span class="math display">\[P(X &lt; 40) = P(X \leq 39) = P(X \leq 39.5) \approx \cdots\]</span></p>
-<p><span class="math display">\[P(X &gt; 40) = P(X \geq 41) = P(X \geq 40.5) \approx \cdots\]</span></p>
-<p><span class="math display">\[P(35 &lt; X &lt; 40) = P(36 \leq X \leq 39) = P(35.5 \leq X \leq 39.5) \approx \cdots\]</span></p>
-<p><span class="math display">\[P(35 \leq X &lt; 40) = P(35 \leq X \leq 39) = P(34.5 \leq X \leq 39.5) \approx \cdots\]</span></p>
+<section id="point-estimation-cont." class="level2">
+<h2 class="anchored" data-anchor-id="point-estimation-cont.">Point Estimation (cont.)</h2>
+<p>Let <span class="math inline">\(X \sim N(\mu, \sigma)\)</span>, with <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> unknown.</p>
+<p>Let <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> be a random sample from population <span class="math inline">\(X\)</span>.</p>
+<p><strong>Goal:</strong> How can we estimate <span class="math inline">\(\mu\)</span>, the population mean, from the sample <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>?</p>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>The objective of point estimation is to use all available information from the sample in order to select a single value that is the most plausible for the (unknown) parameter to be estimated.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="example-3" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-3">Example 3</h2>
-<p>Consider:</p>
-<ol type="1">
-<li><p>Independent variables: <span class="math inline">\(X_i \sim binomial(n_i = 1\;;\;p = 0.05)\)</span></p>
-<p><span class="math inline">\(X_i = 1\)</span> if a tax return contains errors (otherwise <span class="math inline">\(X_i = 0\)</span>)</p></li>
-<li><p>Consider an inspection of a sample of <span class="math inline">\(n = 1000\)</span> tax returns.</p></li>
-</ol>
-<p>Find the probability that there are <strong>at least 60 incorrect</strong> returns.</p>
-<p><strong>Solution:</strong> (exact and approximate distributions)</p>
-<p><strong>Exact distribution:</strong></p>
-<p><span class="math inline">\(T \sim binomial(n = 1000\;;\;p = 0.05)\)</span> — by the additivity of the Binomial</p>
-<p><span class="math display">\[P(T \geq 60) = 1 - P(T &lt; 60) = 1 - P(T \leq 59) = \mathbf{0.0867}\]</span></p>
+<section id="point-estimation-cont.-1" class="level2">
+<h2 class="anchored" data-anchor-id="point-estimation-cont.-1">Point Estimation (cont.)</h2>
+<p>Let <span class="math inline">\(X\)</span> be a random variable whose probabilistic behaviour is known and characterised by a parameter <span class="math inline">\(\theta\)</span>, which is unknown.</p>
+<p>If <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> is a random sample of size <span class="math inline">\(n\)</span> from that population, a <strong>point estimator</strong> of <span class="math inline">\(\theta\)</span>, denoted <span class="math inline">\(\hat{\theta}\)</span>, is any statistic <span class="math inline">\(T(X_1, X_2, \ldots, X_n)\)</span> that takes values only in <span class="math inline">\(\Theta\)</span> (the set of possible values for <span class="math inline">\(\theta\)</span>).</p>
+<p>Once a particular sample <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> is observed, we obtain a <strong>point estimate</strong> for <span class="math inline">\(\theta\)</span>: <span class="math inline">\(T(x_1, x_2, \ldots, x_n)\)</span>.</p>
 </section>
-<section id="example-3-approximate-solution" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-3-approximate-solution">Example 3 — Approximate Solution</h2>
-<p><strong>Approximate distribution</strong> (exact and approximate):</p>
-<p><span class="math display">\[\mu = n_i p = 1 \times 0.05 \qquad \sigma = \sqrt{n_i p(1-p)} = \sqrt{1 \times 0.05 \times 0.95} = \sqrt{0.0475}\]</span></p>
-<p><span class="math display">\[T \;\dot{\sim}\; Normal\!\left(\mu_T = 1000 \times 0.05\;;\;\sigma_T = \sqrt{1000} \times \sqrt{0.0475}\right)\]</span></p>
-<p>Applying the continuity correction:</p>
-<p><span class="math display">\[P(T \geq 60) \;\underset{\text{cont. corr.}}{=}\; P(T \geq 59.5) = 1 - P(T &lt; 59.5)\]</span></p>
-<p><span class="math display">\[\underset{CLT}{\approx} 1 - P\!\left(Z \leq \frac{59.5 - 50}{6.89}\right) = 1 - \Phi(1.38) = \mathbf{0.0838}\]</span></p>
-<blockquote class="blockquote">
-<p><strong>Comment:</strong> The variable is discrete, so we applied a continuity correction.</p>
-</blockquote>
+<section id="point-estimation-cont.-2" class="level2">
+<h2 class="anchored" data-anchor-id="point-estimation-cont.-2">Point Estimation (cont.)</h2>
+<p>There are specific methods that allow us to choose the estimator for each population parameter to be estimated, such as the <strong>maximum likelihood method</strong>, the <strong>method of moments</strong>, and others.</p>
+<p>. . .</p>
+<p>Because there may be several estimators for the same population parameter, we consider some properties that estimators should ideally possess, which serve as guidance on how to choose the “best” one.</p>
 </section>
-<section id="example-4-exercise-1" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-4-exercise-1">Example 4 [Exercise 1]</h2>
-<p>Consider: <span class="math inline">\(T \sim Poisson(\lambda_T = 30)\)</span></p>
-<p><span class="math inline">\(T\)</span> = number of daily accesses to a website</p>
-<p>Find <span class="math inline">\(P(T &gt; 40)\)</span>.</p>
-<p><strong>Solution:</strong> (exact and approximate distributions)</p>
-<p><strong>Exact distribution:</strong></p>
-<p><span class="math display">\[P(T &gt; 40) = 1 - P(T \leq 40) = 0.0323 \simeq 0.03\]</span></p>
-<blockquote class="blockquote">
-<p><strong>Note:</strong> Since this is a homogeneous Poisson process, the day can be viewed as a sum of <span class="math inline">\(n\)</span> sub-periods, each with the same probability distribution.</p>
-</blockquote>
 </section>
-<section id="example-4-approximate-solution" class="level2 smaller">
-<h2 class="smaller anchored" data-anchor-id="example-4-approximate-solution">Example 4 — Approximate Solution</h2>
-<p><strong>Approximate distribution:</strong></p>
-<p><span class="math inline">\(T = X_1 + \ldots + X_n\)</span> (by additivity), where <span class="math inline">\(X_i \sim Poisson\!\left(\lambda = \dfrac{30}{n}\right)\)</span></p>
-<p><span class="math display">\[T \sim Poisson(\lambda = 30) \;\Rightarrow\; T \;\underset{CLT}{\dot{\sim}}\; Normal\!\left(\mu = \lambda = 30,\;\sigma = \sqrt{\lambda} = \sqrt{30}\right)\]</span></p>
-<p>Applying the continuity correction:</p>
-<p><span class="math display">\[P(T &gt; 40) \;\underset{\text{cont. corr.}}{=}\; P(T \geq 40.5) \;\underset{CLT}{\approx}\; P\!\left(Z \geq \frac{40.5 - 30}{\sqrt{30}}\right) = P(Z \geq 1.92)\]</span></p>
-<p><span class="math display">\[= 1 - \Phi(1.92) = 1 - 0.9726 = \mathbf{0.0274}\]</span></p>
-<p>Approximation error: <span class="math inline">\(\varepsilon = |0.0323 - 0.0274| = 0.0049\)</span></p>
+<section id="properties-of-estimators" class="level1">
+<h1>2) Properties of Estimators</h1>
+<section id="unbiased-estimator" class="level2">
+<h2 class="anchored" data-anchor-id="unbiased-estimator">Unbiased Estimator</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be <strong>unbiased</strong> (or centred) for the parameter <span class="math inline">\(\theta\)</span> if and only if: <span class="math display">\[E(\hat{\theta}) = \theta\]</span></p>
+<p>An estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be <strong>biased</strong> for the parameter <span class="math inline">\(\theta\)</span> if and only if: <span class="math display">\[E(\hat{\theta}) \neq \theta\]</span></p>
+<p>The <strong>bias</strong> of an estimator <span class="math inline">\(\hat{\theta}\)</span> is measured by: <span class="math display">\[\text{Bias}(\hat{\theta}) = E(\hat{\theta}) - \theta\]</span></p>
+</div>
+</div>
+</section>
+<section id="unbiased-estimator-examples" class="level2">
+<h2 class="anchored" data-anchor-id="unbiased-estimator-examples">Unbiased Estimator — Examples</h2>
+<p>Consider a population <span class="math inline">\(X\)</span> with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>Given a random sample <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> from <span class="math inline">\(X\)</span>, the following hold for any distributional behaviour of <span class="math inline">\(X\)</span> (provided <span class="math inline">\(E(X)\)</span> and <span class="math inline">\(V(X)\)</span> exist):</p>
+<p>. . .</p>
+<p><span class="math display">\[E(\bar{X}) = \mu \quad \Rightarrow \quad \bar{X} \text{ is an unbiased estimator for } \mu\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[E(S'^2) = \sigma^2 \quad \Rightarrow \quad S'^2 \text{ is an unbiased estimator for } \sigma^2\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[E(S^2) = \frac{n-1}{n}\sigma^2 \neq \sigma^2 \quad \Rightarrow \quad S^2 \text{ is NOT an unbiased estimator for } \sigma^2\]</span></p>
+</section>
+<section id="relative-efficiency-of-unbiased-estimators" class="level2">
+<h2 class="anchored" data-anchor-id="relative-efficiency-of-unbiased-estimators">Relative Efficiency of Unbiased Estimators</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(\hat{\theta}\)</span> and <span class="math inline">\(\tilde{\theta}\)</span> be two unbiased estimators of the same parameter <span class="math inline">\(\theta\)</span>.</p>
+<p>The estimator <span class="math inline">\(\hat{\theta}\)</span> is said to be <strong>more efficient</strong> than <span class="math inline">\(\tilde{\theta}\)</span> if:</p>
+<p><span class="math display">\[\text{Var}(\hat{\theta}) &lt; \text{Var}(\tilde{\theta}) \quad \Longleftrightarrow \quad \frac{\text{Var}(\hat{\theta})}{\text{Var}(\tilde{\theta})} &lt; 1\]</span></p>
+</div>
+</div>
+</section>
+<section id="simply-consistent-estimator" class="level2">
+<h2 class="anchored" data-anchor-id="simply-consistent-estimator">(Simply) Consistent Estimator</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Sufficient Condition for Consistency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sufficient condition for an estimator <span class="math inline">\(\hat{\theta}\)</span> to be <strong>consistent</strong> for the parameter <span class="math inline">\(\theta\)</span> is:</p>
+<p><span class="math display">\[\text{i)} \quad \lim_{n \to +\infty} E(\hat{\theta}) = \theta\]</span></p>
+<p><span class="math display">\[\text{ii)} \quad \lim_{n \to +\infty} \text{Var}(\hat{\theta}) = 0\]</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="solved-exercises" class="level1">
+<h1>3) Solved Exercises</h1>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>Consider a sample <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>, <span class="math inline">\(n \in \mathbb{N}\)</span>, drawn from a population <span class="math inline">\(X\)</span> with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, both finite.</p>
+<p>Consider the estimator <span class="math inline">\(T_1\)</span> for <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[T_1 = X_1 + \frac{1}{n-1}\sum_{i=2}^{n} X_i\]</span></p>
+<p><strong>a)</strong> True or False: This estimator is biased for <span class="math inline">\(\mu\)</span> and its bias equals <span class="math inline">\(\mu\)</span>.</p>
+</section>
+<section id="exercise-1-solution-a" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-solution-a">Exercise 1 — Solution (a)</h2>
+<p><span class="math display">\[E(T_1) = E\!\left(X_1 + \frac{1}{n-1}\sum_{i=2}^{n}X_i\right) = E(X_1) + \frac{1}{n-1}\sum_{i=2}^{n}E(X_i)\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[= \mu + \frac{1}{n-1}\sum_{i=2}^{n}\mu = \mu + \frac{1}{n-1}(n-1)\mu = 2\mu \neq \mu\]</span></p>
+<p>. . .</p>
+<p>Therefore, <span class="math inline">\(T_1\)</span> is a <strong>biased</strong> estimator for <span class="math inline">\(\mu\)</span>.</p>
+<p><span class="math display">\[\text{Bias}(T_1) = E(T_1) - \mu = 2\mu - \mu = \mu\]</span></p>
+<p><strong>The statement is true.</strong></p>
+</section>
+<section id="exercise-1-part-b" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-part-b">Exercise 1 — Part (b)</h2>
+<p>Now consider a second estimator <span class="math inline">\(T_2\)</span> for <span class="math inline">\(\mu\)</span>:</p>
+<p><span class="math display">\[T_2 = \frac{1}{2}T_1\]</span></p>
+<p><strong>True or False:</strong> <span class="math inline">\(T_2\)</span> is a consistent estimator for <span class="math inline">\(\mu\)</span>.</p>
+<p>. . .</p>
+<p>For <span class="math inline">\(T_2\)</span> to be consistent for <span class="math inline">\(\mu\)</span>, we need to verify:</p>
+<p><span class="math display">\[\text{i)} \quad \lim_{n \to +\infty} E(T_2) = \mu \qquad \text{ii)} \quad \lim_{n \to +\infty} \text{Var}(T_2) = 0\]</span></p>
+</section>
+<section id="exercise-1-solution-b-part-i" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-solution-b-part-i">Exercise 1 — Solution (b), Part i</h2>
+<p><span class="math display">\[\lim_{n \to +\infty} E(T_2) = \lim_{n \to +\infty} E\!\left(\frac{1}{2}T_1\right) = \lim_{n \to +\infty} \frac{1}{2}E(T_1) = \lim_{n \to +\infty} \frac{1}{2} \times 2\mu = \mu \checkmark\]</span></p>
+<p>Condition i) is satisfied.</p>
+</section>
+<section id="exercise-1-solution-b-part-ii" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="exercise-1-solution-b-part-ii">Exercise 1 — Solution (b), Part ii</h2>
+<p>We need <span class="math inline">\(\lim_{n \to +\infty}\text{Var}(T_2)\)</span>. Let us first compute <span class="math inline">\(\text{Var}(T_1)\)</span>:</p>
+<p><span class="math display">\[\text{Var}(T_1) = \text{Var}\!\left(X_1 + \frac{1}{n-1}\sum_{i=2}^{n}X_i\right) = \sigma^2 + \frac{1}{(n-1)^2}\sum_{i=2}^{n}\sigma^2 = \sigma^2 + \frac{n-1}{(n-1)^2}\sigma^2 = \sigma^2 + \frac{\sigma^2}{n-1}\]</span></p>
+<p>. . .</p>
+<p>Then:</p>
+<p><span class="math display">\[\lim_{n \to +\infty}\text{Var}(T_2) = \lim_{n \to +\infty}\frac{1}{4}\text{Var}(T_1) = \frac{1}{4}\lim_{n \to +\infty}\left(\sigma^2 + \frac{\sigma^2}{n-1}\right) = \frac{1}{4}\sigma^2 \neq 0\]</span></p>
+<p>. . .</p>
+<p>Condition ii) is <strong>not</strong> satisfied. Therefore <span class="math inline">\(T_2\)</span> is <strong>not</strong> a consistent estimator for <span class="math inline">\(\mu\)</span>.</p>
+<p><strong>The statement is false.</strong></p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>Consider a population <span class="math inline">\(X\)</span> whose distribution depends on a parameter <span class="math inline">\(\theta \in \mathbb{R}\)</span>, with unknown value. It is known that:</p>
+<p><span class="math display">\[E(X) = \theta - 2 \qquad \text{and} \qquad V(X) = 1\]</span></p>
+<p>From a random sample <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>, <span class="math inline">\(n \geq 2\)</span>, two estimators <span class="math inline">\(\theta^*\)</span> and <span class="math inline">\(\hat{\theta}\)</span> were obtained, with the following known properties:</p>
+<p><span class="math display">\[\theta^* = \bar{X} + 2, \qquad E(\hat{\theta}) = \theta, \qquad V(\hat{\theta}) = \frac{2}{n}\]</span></p>
+</section>
+<section id="exercise-2-part-i" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-part-i">Exercise 2 — Part i</h2>
+<p><strong>i)</strong> Regarding estimators <span class="math inline">\(\theta^*\)</span> and <span class="math inline">\(\hat{\theta}\)</span>:</p>
+<table class="caption-top table">
+<tbody>
+<tr class="odd">
+<td>a) Only <span class="math inline">\(\theta^*\)</span> is unbiased</td>
+<td>b) Neither estimator is unbiased</td>
+</tr>
+<tr class="even">
+<td>c) Both are unbiased</td>
+<td>d) Only <span class="math inline">\(\hat{\theta}\)</span> is unbiased</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p><strong>Solution:</strong></p>
+<p>Population <span class="math inline">\(X\)</span>: <span class="math inline">\(\mu = E(X) = \theta - 2\)</span>; <span class="math inline">\(\sigma^2 = V(X) = 1\)</span></p>
+<p><span class="math inline">\(E(\hat{\theta}) = \theta\)</span> — given in the problem statement, so <span class="math inline">\(\hat{\theta}\)</span> <strong>is unbiased</strong>.</p>
+<p><span class="math display">\[E(\theta^*) = E(\bar{X} + 2) = E(\bar{X}) + 2 = \mu + 2 = (\theta - 2) + 2 = \theta\]</span></p>
+<p>Since <span class="math inline">\(E(\theta^*) = E(\hat{\theta}) = \theta\)</span>, <strong>both estimators are unbiased</strong>. Answer: <strong>(c)</strong>.</p>
+</section>
+<section id="exercise-2-part-ii" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-part-ii">Exercise 2 — Part ii</h2>
+<p><strong>ii)</strong> True or False: <span class="math inline">\(\theta^*\)</span> is a more efficient estimator than <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p>. . .</p>
+<p><strong>Solution:</strong></p>
+<p>Both estimators are unbiased, so the more efficient one has the smaller variance:</p>
+<p><span class="math display">\[V(\theta^*) = V(\bar{X} + 2) = V(\bar{X}) = \frac{\sigma^2}{n} = \frac{1}{n}\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[V(\theta^*) = \frac{1}{n} &lt; \frac{2}{n} = V(\hat{\theta})\]</span></p>
+<p>Therefore, <span class="math inline">\(\theta^*\)</span> is <strong>more efficient</strong> than <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p><strong>The statement is true.</strong></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

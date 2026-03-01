@@ -122,8 +122,8 @@
     "objectID": "slides/01_CLT_slides.html#additivity-normal-distribution",
     "href": "slides/01_CLT_slides.html#additivity-normal-distribution",
     "title": "Central Limit Theorem",
-    "section": "Additivity (Normal Distribution)",
-    "text": "Additivity (Normal Distribution)\nAdditivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+    "section": "",
+    "text": "Additivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-1",
@@ -137,7 +137,7 @@
     "href": "slides/01_CLT_slides.html#example-1-solution-cont.",
     "title": "Central Limit Theorem",
     "section": "Example 1 — Solution (cont.)",
-    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
+    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\n\n\n\n\n\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
   },
   {
     "objectID": "slides/01_CLT_slides.html#central-limit-theorem-clt",
@@ -158,14 +158,14 @@
     "href": "slides/01_CLT_slides.html#example-1-revisited-cont.",
     "title": "Central Limit Theorem",
     "section": "Example 1 — Revisited (cont.)",
-    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
+    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\n\n\n\n\n\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-2",
     "href": "slides/01_CLT_slides.html#example-2",
     "title": "Central Limit Theorem",
     "section": "Example 2",
-    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die 🎲\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
+    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die :game_die:\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.",
@@ -179,7 +179,7 @@
     "href": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
     "title": "Central Limit Theorem",
     "section": "Example 2 — Solution (cont.)",
-    "text": "Example 2 — Solution (cont.)\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
+    "text": "Example 2 — Solution (cont.)\n\n\n\n\n\n\n\n\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
   },
   {
     "objectID": "slides/01_CLT_slides.html#corollaries-of-the-clt",
@@ -193,7 +193,7 @@
     "href": "slides/01_CLT_slides.html#continuity-correction",
     "title": "Central Limit Theorem",
     "section": "Continuity Correction",
-    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
+    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
   },
   {
     "objectID": "slides/01_CLT_slides.html#continuity-correction-other-cases",
@@ -985,5 +985,257 @@
     "title": "Sampling Distributions",
     "section": "Exercise VII",
     "text": "Exercise VII\nA certain company intends to validate the value (in euros) of its accounts receivable from clients, with an underlying distributional behavior of the account values being \\(Normal(\\mu = 385, \\sigma = ?)\\). A random sample of 25 client accounts (independent) was selected, yielding a corrected sample standard deviation of \\(s' = 122.6\\) euros.\n\n\nV F \\(\\quad\\) The sampling distribution of the mean value of client accounts is \\(t_{(25)}\\).\n\n\n\n\nV F \\(\\quad\\) The sample size to be collected (assuming the corrected sample standard deviation remains the same) so that the sample mean does not deviate from the population mean by more than 20 euros in 90% of cases is \\(n = 102\\). (Assume, for the calculations, that the value of \\(n\\) to be found will be greater than 30.)"
+  },
+  {
+    "objectID": "slides/point_estimation.html",
+    "href": "slides/point_estimation.html",
+    "title": "Point Estimation",
+    "section": "",
+    "text": "Point Estimation — Overview\nProperties of Estimators\nSolved Exercises"
+  },
+  {
+    "objectID": "slides/point_estimation.html#outline",
+    "href": "slides/point_estimation.html#outline",
+    "title": "Point Estimation",
+    "section": "",
+    "text": "Point Estimation — Overview\nProperties of Estimators\nSolved Exercises"
+  },
+  {
+    "objectID": "slides/point_estimation.html#statistical-inference",
+    "href": "slides/point_estimation.html#statistical-inference",
+    "title": "Point Estimation",
+    "section": "Statistical Inference",
+    "text": "Statistical Inference\n\n\nPopulation\n\nParameters (unknown)\n\n\\(\\downarrow\\) Random Sample \\(\\uparrow\\)\nSample\n\nStatistics (known)\n\n\n\n\n\n\n\n\nNoteStatistical Inference\n\n\n\nUsing sample information to draw conclusions about population parameters."
+  },
+  {
+    "objectID": "slides/point_estimation.html#point-estimation-cont.",
+    "href": "slides/point_estimation.html#point-estimation-cont.",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nLet \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\mu\\) and \\(\\sigma\\) unknown.\nLet \\(X_1, X_2, \\ldots, X_n\\) be a random sample from population \\(X\\).\nGoal: How can we estimate \\(\\mu\\), the population mean, from the sample \\(X_1, X_2, \\ldots, X_n\\)?\n. . .\n\n\n\n\n\n\nThe objective of point estimation is to use all available information from the sample in order to select a single value that is the most plausible for the (unknown) parameter to be estimated."
+  },
+  {
+    "objectID": "slides/point_estimation.html#point-estimation-cont.-1",
+    "href": "slides/point_estimation.html#point-estimation-cont.-1",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nLet \\(X\\) be a random variable whose probabilistic behaviour is known and characterised by a parameter \\(\\theta\\), which is unknown.\nIf \\(X_1, X_2, \\ldots, X_n\\) is a random sample of size \\(n\\) from that population, a point estimator of \\(\\theta\\), denoted \\(\\hat{\\theta}\\), is any statistic \\(T(X_1, X_2, \\ldots, X_n)\\) that takes values only in \\(\\Theta\\) (the set of possible values for \\(\\theta\\)).\nOnce a particular sample \\(x_1, x_2, \\ldots, x_n\\) is observed, we obtain a point estimate for \\(\\theta\\): \\(T(x_1, x_2, \\ldots, x_n)\\)."
+  },
+  {
+    "objectID": "slides/point_estimation.html#point-estimation-cont.-2",
+    "href": "slides/point_estimation.html#point-estimation-cont.-2",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nThere are specific methods that allow us to choose the estimator for each population parameter to be estimated, such as the maximum likelihood method, the method of moments, and others.\n. . .\nBecause there may be several estimators for the same population parameter, we consider some properties that estimators should ideally possess, which serve as guidance on how to choose the “best” one."
+  },
+  {
+    "objectID": "slides/point_estimation.html#unbiased-estimator",
+    "href": "slides/point_estimation.html#unbiased-estimator",
+    "title": "Point Estimation",
+    "section": "Unbiased Estimator",
+    "text": "Unbiased Estimator\n\n\n\n\n\n\nNoteDefinition\n\n\n\nAn estimator \\(\\hat{\\theta}\\) is said to be unbiased (or centred) for the parameter \\(\\theta\\) if and only if: \\[E(\\hat{\\theta}) = \\theta\\]\nAn estimator \\(\\hat{\\theta}\\) is said to be biased for the parameter \\(\\theta\\) if and only if: \\[E(\\hat{\\theta}) \\neq \\theta\\]\nThe bias of an estimator \\(\\hat{\\theta}\\) is measured by: \\[\\text{Bias}(\\hat{\\theta}) = E(\\hat{\\theta}) - \\theta\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#unbiased-estimator-examples",
+    "href": "slides/point_estimation.html#unbiased-estimator-examples",
+    "title": "Point Estimation",
+    "section": "Unbiased Estimator — Examples",
+    "text": "Unbiased Estimator — Examples\nConsider a population \\(X\\) with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\nGiven a random sample \\(X_1, X_2, \\ldots, X_n\\) from \\(X\\), the following hold for any distributional behaviour of \\(X\\) (provided \\(E(X)\\) and \\(V(X)\\) exist):\n. . .\n\\[E(\\bar{X}) = \\mu \\quad \\Rightarrow \\quad \\bar{X} \\text{ is an unbiased estimator for } \\mu\\]\n. . .\n\\[E(S'^2) = \\sigma^2 \\quad \\Rightarrow \\quad S'^2 \\text{ is an unbiased estimator for } \\sigma^2\\]\n. . .\n\\[E(S^2) = \\frac{n-1}{n}\\sigma^2 \\neq \\sigma^2 \\quad \\Rightarrow \\quad S^2 \\text{ is NOT an unbiased estimator for } \\sigma^2\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#relative-efficiency-of-unbiased-estimators",
+    "href": "slides/point_estimation.html#relative-efficiency-of-unbiased-estimators",
+    "title": "Point Estimation",
+    "section": "Relative Efficiency of Unbiased Estimators",
+    "text": "Relative Efficiency of Unbiased Estimators\n\n\n\n\n\n\nNoteDefinition\n\n\n\nLet \\(\\hat{\\theta}\\) and \\(\\tilde{\\theta}\\) be two unbiased estimators of the same parameter \\(\\theta\\).\nThe estimator \\(\\hat{\\theta}\\) is said to be more efficient than \\(\\tilde{\\theta}\\) if:\n\\[\\text{Var}(\\hat{\\theta}) &lt; \\text{Var}(\\tilde{\\theta}) \\quad \\Longleftrightarrow \\quad \\frac{\\text{Var}(\\hat{\\theta})}{\\text{Var}(\\tilde{\\theta})} &lt; 1\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#simply-consistent-estimator",
+    "href": "slides/point_estimation.html#simply-consistent-estimator",
+    "title": "Point Estimation",
+    "section": "(Simply) Consistent Estimator",
+    "text": "(Simply) Consistent Estimator\n\n\n\n\n\n\nNoteSufficient Condition for Consistency\n\n\n\nA sufficient condition for an estimator \\(\\hat{\\theta}\\) to be consistent for the parameter \\(\\theta\\) is:\n\\[\\text{i)} \\quad \\lim_{n \\to +\\infty} E(\\hat{\\theta}) = \\theta\\]\n\\[\\text{ii)} \\quad \\lim_{n \\to +\\infty} \\text{Var}(\\hat{\\theta}) = 0\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-1",
+    "href": "slides/point_estimation.html#exercise-1",
+    "title": "Point Estimation",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nConsider a sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), drawn from a population \\(X\\) with mean \\(\\mu\\) and variance \\(\\sigma^2\\), both finite.\nConsider the estimator \\(T_1\\) for \\(\\mu\\):\n\\[T_1 = X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n} X_i\\]\na) True or False: This estimator is biased for \\(\\mu\\) and its bias equals \\(\\mu\\)."
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-1-solution-a",
+    "href": "slides/point_estimation.html#exercise-1-solution-a",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (a)",
+    "text": "Exercise 1 — Solution (a)\n\\[E(T_1) = E\\!\\left(X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n}X_i\\right) = E(X_1) + \\frac{1}{n-1}\\sum_{i=2}^{n}E(X_i)\\]\n. . .\n\\[= \\mu + \\frac{1}{n-1}\\sum_{i=2}^{n}\\mu = \\mu + \\frac{1}{n-1}(n-1)\\mu = 2\\mu \\neq \\mu\\]\n. . .\nTherefore, \\(T_1\\) is a biased estimator for \\(\\mu\\).\n\\[\\text{Bias}(T_1) = E(T_1) - \\mu = 2\\mu - \\mu = \\mu\\]\nThe statement is true."
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-1-part-b",
+    "href": "slides/point_estimation.html#exercise-1-part-b",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Part (b)",
+    "text": "Exercise 1 — Part (b)\nNow consider a second estimator \\(T_2\\) for \\(\\mu\\):\n\\[T_2 = \\frac{1}{2}T_1\\]\nTrue or False: \\(T_2\\) is a consistent estimator for \\(\\mu\\).\n. . .\nFor \\(T_2\\) to be consistent for \\(\\mu\\), we need to verify:\n\\[\\text{i)} \\quad \\lim_{n \\to +\\infty} E(T_2) = \\mu \\qquad \\text{ii)} \\quad \\lim_{n \\to +\\infty} \\text{Var}(T_2) = 0\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-1-solution-b-part-i",
+    "href": "slides/point_estimation.html#exercise-1-solution-b-part-i",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (b), Part i",
+    "text": "Exercise 1 — Solution (b), Part i\n\\[\\lim_{n \\to +\\infty} E(T_2) = \\lim_{n \\to +\\infty} E\\!\\left(\\frac{1}{2}T_1\\right) = \\lim_{n \\to +\\infty} \\frac{1}{2}E(T_1) = \\lim_{n \\to +\\infty} \\frac{1}{2} \\times 2\\mu = \\mu \\checkmark\\]\nCondition i) is satisfied."
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-1-solution-b-part-ii",
+    "href": "slides/point_estimation.html#exercise-1-solution-b-part-ii",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (b), Part ii",
+    "text": "Exercise 1 — Solution (b), Part ii\nWe need \\(\\lim_{n \\to +\\infty}\\text{Var}(T_2)\\). Let us first compute \\(\\text{Var}(T_1)\\):\n\\[\\text{Var}(T_1) = \\text{Var}\\!\\left(X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n}X_i\\right) = \\sigma^2 + \\frac{1}{(n-1)^2}\\sum_{i=2}^{n}\\sigma^2 = \\sigma^2 + \\frac{n-1}{(n-1)^2}\\sigma^2 = \\sigma^2 + \\frac{\\sigma^2}{n-1}\\]\n. . .\nThen:\n\\[\\lim_{n \\to +\\infty}\\text{Var}(T_2) = \\lim_{n \\to +\\infty}\\frac{1}{4}\\text{Var}(T_1) = \\frac{1}{4}\\lim_{n \\to +\\infty}\\left(\\sigma^2 + \\frac{\\sigma^2}{n-1}\\right) = \\frac{1}{4}\\sigma^2 \\neq 0\\]\n. . .\nCondition ii) is not satisfied. Therefore \\(T_2\\) is not a consistent estimator for \\(\\mu\\).\nThe statement is false."
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-2",
+    "href": "slides/point_estimation.html#exercise-2",
+    "title": "Point Estimation",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider a population \\(X\\) whose distribution depends on a parameter \\(\\theta \\in \\mathbb{R}\\), with unknown value. It is known that:\n\\[E(X) = \\theta - 2 \\qquad \\text{and} \\qquad V(X) = 1\\]\nFrom a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\geq 2\\), two estimators \\(\\theta^*\\) and \\(\\hat{\\theta}\\) were obtained, with the following known properties:\n\\[\\theta^* = \\bar{X} + 2, \\qquad E(\\hat{\\theta}) = \\theta, \\qquad V(\\hat{\\theta}) = \\frac{2}{n}\\]"
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-2-part-i",
+    "href": "slides/point_estimation.html#exercise-2-part-i",
+    "title": "Point Estimation",
+    "section": "Exercise 2 — Part i",
+    "text": "Exercise 2 — Part i\ni) Regarding estimators \\(\\theta^*\\) and \\(\\hat{\\theta}\\):\n\n\n\na) Only \\(\\theta^*\\) is unbiased\nb) Neither estimator is unbiased\n\n\nc) Both are unbiased\nd) Only \\(\\hat{\\theta}\\) is unbiased\n\n\n\n. . .\nSolution:\nPopulation \\(X\\): \\(\\mu = E(X) = \\theta - 2\\); \\(\\sigma^2 = V(X) = 1\\)\n\\(E(\\hat{\\theta}) = \\theta\\) — given in the problem statement, so \\(\\hat{\\theta}\\) is unbiased.\n\\[E(\\theta^*) = E(\\bar{X} + 2) = E(\\bar{X}) + 2 = \\mu + 2 = (\\theta - 2) + 2 = \\theta\\]\nSince \\(E(\\theta^*) = E(\\hat{\\theta}) = \\theta\\), both estimators are unbiased. Answer: (c)."
+  },
+  {
+    "objectID": "slides/point_estimation.html#exercise-2-part-ii",
+    "href": "slides/point_estimation.html#exercise-2-part-ii",
+    "title": "Point Estimation",
+    "section": "Exercise 2 — Part ii",
+    "text": "Exercise 2 — Part ii\nii) True or False: \\(\\theta^*\\) is a more efficient estimator than \\(\\hat{\\theta}\\).\n. . .\nSolution:\nBoth estimators are unbiased, so the more efficient one has the smaller variance:\n\\[V(\\theta^*) = V(\\bar{X} + 2) = V(\\bar{X}) = \\frac{\\sigma^2}{n} = \\frac{1}{n}\\]\n. . .\n\\[V(\\theta^*) = \\frac{1}{n} &lt; \\frac{2}{n} = V(\\hat{\\theta})\\]\nTherefore, \\(\\theta^*\\) is more efficient than \\(\\hat{\\theta}\\).\nThe statement is true."
+  },
+  {
+    "objectID": "slides/01_CLT_slides.html",
+    "href": "slides/01_CLT_slides.html",
+    "title": "Central Limit Theorem",
+    "section": "",
+    "text": "Additivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#outline",
+    "href": "slides/03_point_estimation.html#outline",
+    "title": "Point Estimation",
+    "section": "Outline",
+    "text": "Outline\n\nPoint Estimation — Overview\nProperties of Estimators\nSolved Exercises"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#statistical-inference",
+    "href": "slides/03_point_estimation.html#statistical-inference",
+    "title": "Point Estimation",
+    "section": "Statistical Inference",
+    "text": "Statistical Inference\n\n  \n    \n      \n    \n    \n      \n    \n  \n\n  \n  \n  Population\n  Parameters (unknown)\n\n  \n  \n  Sample\n  Statistics (known)\n\n  \n  \n  \n  Random Sampling\n\n  \n  \n  \n  Statistical Inference"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#point-estimation-cont.",
+    "href": "slides/03_point_estimation.html#point-estimation-cont.",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nLet \\(X \\sim N(\\mu, \\sigma)\\), with \\(\\mu\\) and \\(\\sigma\\) unknown.\nLet \\(X_1, X_2, \\ldots, X_n\\) be a random sample from population \\(X\\).\nGoal: How can we estimate \\(\\mu\\), the population mean, from the sample \\(X_1, X_2, \\ldots, X_n\\)?\n\n\n\n\nThe objective of point estimation is to use all available information from the sample in order to select a single value that is the most plausible for the (unknown) parameter to be estimated."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#point-estimation-cont.-1",
+    "href": "slides/03_point_estimation.html#point-estimation-cont.-1",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nLet \\(X\\) be a random variable whose probabilistic behaviour is known and characterised by a parameter \\(\\theta\\), which is unknown.\nIf \\(X_1, X_2, \\ldots, X_n\\) is a random sample of size \\(n\\) from that population, a point estimator of \\(\\theta\\), denoted \\(\\hat{\\theta}\\), is any statistic \\(T(X_1, X_2, \\ldots, X_n)\\) that takes values only in \\(\\Theta\\) (the set of possible values for \\(\\theta\\)).\nOnce a particular sample \\(x_1, x_2, \\ldots, x_n\\) is observed, we obtain a point estimate for \\(\\theta\\): \\(T(x_1, x_2, \\ldots, x_n)\\)."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#point-estimation-cont.-2",
+    "href": "slides/03_point_estimation.html#point-estimation-cont.-2",
+    "title": "Point Estimation",
+    "section": "Point Estimation (cont.)",
+    "text": "Point Estimation (cont.)\nThere are specific methods that allow us to choose the estimator for each population parameter to be estimated, such as the maximum likelihood method, the method of moments, and others.\n\nBecause there may be several estimators for the same population parameter, we consider some properties that estimators should ideally possess, which serve as guidance on how to choose the “best” one."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#unbiased-estimator",
+    "href": "slides/03_point_estimation.html#unbiased-estimator",
+    "title": "Point Estimation",
+    "section": "Unbiased Estimator",
+    "text": "Unbiased Estimator\n\n\n\nDefinition\n\n\nAn estimator \\(\\hat{\\theta}\\) is said to be unbiased (or centred) for the parameter \\(\\theta\\) if and only if: \\[E(\\hat{\\theta}) = \\theta\\]\nAn estimator \\(\\hat{\\theta}\\) is said to be biased for the parameter \\(\\theta\\) if and only if: \\[E(\\hat{\\theta}) \\neq \\theta\\]\nThe bias of an estimator \\(\\hat{\\theta}\\) is measured by: \\[\\text{Bias}(\\hat{\\theta}) = E(\\hat{\\theta}) - \\theta\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#unbiased-estimator-examples",
+    "href": "slides/03_point_estimation.html#unbiased-estimator-examples",
+    "title": "Point Estimation",
+    "section": "Unbiased Estimator — Examples",
+    "text": "Unbiased Estimator — Examples\nConsider a population \\(X\\) with mean \\(\\mu\\) and variance \\(\\sigma^2\\).\nGiven a random sample \\(X_1, X_2, \\ldots, X_n\\) from \\(X\\), the following hold for any distributional behaviour of \\(X\\) (provided \\(E(X)\\) and \\(V(X)\\) exist):\n\n\\[E(\\bar{X}) = \\mu \\quad \\Rightarrow \\quad \\bar{X} \\text{ is an unbiased estimator for } \\mu\\]\n\n\n\\[E(S'^2) = \\sigma^2 \\quad \\Rightarrow \\quad S'^2 \\text{ is an unbiased estimator for } \\sigma^2\\]\n\n\n\\[E(S^2) = \\frac{n-1}{n}\\sigma^2 \\neq \\sigma^2 \\quad \\Rightarrow \\quad S^2 \\text{ is NOT an unbiased estimator for } \\sigma^2\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#relative-efficiency-of-unbiased-estimators",
+    "href": "slides/03_point_estimation.html#relative-efficiency-of-unbiased-estimators",
+    "title": "Point Estimation",
+    "section": "Relative Efficiency of Unbiased Estimators",
+    "text": "Relative Efficiency of Unbiased Estimators\n\n\n\nDefinition\n\n\nLet \\(\\hat{\\theta}\\) and \\(\\tilde{\\theta}\\) be two unbiased estimators of the same parameter \\(\\theta\\).\nThe estimator \\(\\hat{\\theta}\\) is said to be more efficient than \\(\\tilde{\\theta}\\) if:\n\\[\\text{Var}(\\hat{\\theta}) &lt; \\text{Var}(\\tilde{\\theta}) \\quad \\Longleftrightarrow \\quad \\frac{\\text{Var}(\\hat{\\theta})}{\\text{Var}(\\tilde{\\theta})} &lt; 1\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#simply-consistent-estimator",
+    "href": "slides/03_point_estimation.html#simply-consistent-estimator",
+    "title": "Point Estimation",
+    "section": "(Simply) Consistent Estimator",
+    "text": "(Simply) Consistent Estimator\n\n\n\nSufficient Condition for Consistency\n\n\nA sufficient condition for an estimator \\(\\hat{\\theta}\\) to be consistent for the parameter \\(\\theta\\) is:\n\\[\\text{i)} \\quad \\lim_{n \\to +\\infty} E(\\hat{\\theta}) = \\theta\\]\n\\[\\text{ii)} \\quad \\lim_{n \\to +\\infty} \\text{Var}(\\hat{\\theta}) = 0\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-1",
+    "href": "slides/03_point_estimation.html#exercise-1",
+    "title": "Point Estimation",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nConsider a sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), drawn from a population \\(X\\) with mean \\(\\mu\\) and variance \\(\\sigma^2\\), both finite.\nConsider the estimator \\(T_1\\) for \\(\\mu\\):\n\\[T_1 = X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n} X_i\\]\na) True or False: This estimator is biased for \\(\\mu\\) and its bias equals \\(\\mu\\)."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-1-solution-a",
+    "href": "slides/03_point_estimation.html#exercise-1-solution-a",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (a)",
+    "text": "Exercise 1 — Solution (a)\n\\[E(T_1) = E\\!\\left(X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n}X_i\\right) = E(X_1) + \\frac{1}{n-1}\\sum_{i=2}^{n}E(X_i)\\]\n\n\\[= \\mu + \\frac{1}{n-1}\\sum_{i=2}^{n}\\mu = \\mu + \\frac{1}{n-1}(n-1)\\mu = 2\\mu \\neq \\mu\\]\n\n\nTherefore, \\(T_1\\) is a biased estimator for \\(\\mu\\).\n\\[\\text{Bias}(T_1) = E(T_1) - \\mu = 2\\mu - \\mu = \\mu\\]\nThe statement is true."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-1-part-b",
+    "href": "slides/03_point_estimation.html#exercise-1-part-b",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Part (b)",
+    "text": "Exercise 1 — Part (b)\nNow consider a second estimator \\(T_2\\) for \\(\\mu\\):\n\\[T_2 = \\frac{1}{2}T_1\\]\nTrue or False: \\(T_2\\) is a consistent estimator for \\(\\mu\\).\n\nFor \\(T_2\\) to be consistent for \\(\\mu\\), we need to verify:\n\\[\\text{i)} \\quad \\lim_{n \\to +\\infty} E(T_2) = \\mu \\qquad \\text{ii)} \\quad \\lim_{n \\to +\\infty} \\text{Var}(T_2) = 0\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-1-solution-b-part-i",
+    "href": "slides/03_point_estimation.html#exercise-1-solution-b-part-i",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (b), Part i",
+    "text": "Exercise 1 — Solution (b), Part i\n\\[\\lim_{n \\to +\\infty} E(T_2) = \\lim_{n \\to +\\infty} E\\!\\left(\\frac{1}{2}T_1\\right) = \\lim_{n \\to +\\infty} \\frac{1}{2}E(T_1) = \\lim_{n \\to +\\infty} \\frac{1}{2} \\times 2\\mu = \\mu \\checkmark\\]\nCondition i) is satisfied."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-1-solution-b-part-ii",
+    "href": "slides/03_point_estimation.html#exercise-1-solution-b-part-ii",
+    "title": "Point Estimation",
+    "section": "Exercise 1 — Solution (b), Part ii",
+    "text": "Exercise 1 — Solution (b), Part ii\nWe need \\(\\lim_{n \\to +\\infty}\\text{Var}(T_2)\\). Let us first compute \\(\\text{Var}(T_1)\\):\n\\[\\text{Var}(T_1) = \\text{Var}\\!\\left(X_1 + \\frac{1}{n-1}\\sum_{i=2}^{n}X_i\\right) = \\sigma^2 + \\frac{1}{(n-1)^2}\\sum_{i=2}^{n}\\sigma^2 = \\sigma^2 + \\frac{n-1}{(n-1)^2}\\sigma^2 = \\sigma^2 + \\frac{\\sigma^2}{n-1}\\]\n\nThen:\n\\[\\lim_{n \\to +\\infty}\\text{Var}(T_2) = \\lim_{n \\to +\\infty}\\frac{1}{4}\\text{Var}(T_1) = \\frac{1}{4}\\lim_{n \\to +\\infty}\\left(\\sigma^2 + \\frac{\\sigma^2}{n-1}\\right) = \\frac{1}{4}\\sigma^2 \\neq 0\\]\n\n\nCondition ii) is not satisfied. Therefore \\(T_2\\) is not a consistent estimator for \\(\\mu\\).\nThe statement is false."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-2",
+    "href": "slides/03_point_estimation.html#exercise-2",
+    "title": "Point Estimation",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nConsider a population \\(X\\) whose distribution depends on a parameter \\(\\theta \\in \\mathbb{R}\\), with unknown value. It is known that:\n\\[E(X) = \\theta - 2 \\qquad \\text{and} \\qquad V(X) = 1\\]\nFrom a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\geq 2\\), two estimators \\(\\theta^*\\) and \\(\\hat{\\theta}\\) were obtained, with the following known properties:\n\\[\\theta^* = \\bar{X} + 2, \\qquad E(\\hat{\\theta}) = \\theta, \\qquad V(\\hat{\\theta}) = \\frac{2}{n}\\]"
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-2-part-i",
+    "href": "slides/03_point_estimation.html#exercise-2-part-i",
+    "title": "Point Estimation",
+    "section": "Exercise 2 — Part i",
+    "text": "Exercise 2 — Part i\ni) Regarding estimators \\(\\theta^*\\) and \\(\\hat{\\theta}\\):\n\n\n\na) Only \\(\\theta^*\\) is unbiased\nb) Neither estimator is unbiased\n\n\nc) Both are unbiased\nd) Only \\(\\hat{\\theta}\\) is unbiased\n\n\n\n\nSolution:\nPopulation \\(X\\): \\(\\mu = E(X) = \\theta - 2\\); \\(\\sigma^2 = V(X) = 1\\)\n\\(E(\\hat{\\theta}) = \\theta\\) — given in the problem statement, so \\(\\hat{\\theta}\\) is unbiased.\n\\[E(\\theta^*) = E(\\bar{X} + 2) = E(\\bar{X}) + 2 = \\mu + 2 = (\\theta - 2) + 2 = \\theta\\]\nSince \\(E(\\theta^*) = E(\\hat{\\theta}) = \\theta\\), both estimators are unbiased. Answer: (c)."
+  },
+  {
+    "objectID": "slides/03_point_estimation.html#exercise-2-part-ii",
+    "href": "slides/03_point_estimation.html#exercise-2-part-ii",
+    "title": "Point Estimation",
+    "section": "Exercise 2 — Part ii",
+    "text": "Exercise 2 — Part ii\nii) True or False: \\(\\theta^*\\) is a more efficient estimator than \\(\\hat{\\theta}\\).\n\nSolution:\nBoth estimators are unbiased, so the more efficient one has the smaller variance:\n\\[V(\\theta^*) = V(\\bar{X} + 2) = V(\\bar{X}) = \\frac{\\sigma^2}{n} = \\frac{1}{n}\\]\n\n\n\\[V(\\theta^*) = \\frac{1}{n} &lt; \\frac{2}{n} = V(\\hat{\\theta})\\]\nTherefore, \\(\\theta^*\\) is more efficient than \\(\\hat{\\theta}\\).\nThe statement is true."
   }
 ]

@@ -40,5 +40,11 @@
   },
   "slides/02_Sampling_Distributions.qmd": {
     "02_Sampling_Distributions.html": "50d61176"
+  },
+  "slides/point_estimation.qmd": {
+    "point_estimation.html": "cdeb3e37"
+  },
+  "slides/03_point_estimation.qmd": {
+    "03_point_estimation.html": "dc7139b1"
   }
 }
