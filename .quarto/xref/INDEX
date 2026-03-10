@@ -27,7 +27,8 @@
     "index.html": "64376e40"
   },
   "formulae.qmd": {
-    "formulae.html": "ee83ede0"
+    "formulae.html": "ee83ede0",
+    "formulae.tex": "b48922a3"
   },
   "exercises/01_Central_Limit_Theorem.qmd": {
     "01_Central_Limit_Theorem.html": "5ae74e58"

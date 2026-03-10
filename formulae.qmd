@@ -18,6 +18,19 @@ format:
       sidebar-width: 230px
       body-width: 900px
     math: mathjax
+  pdf:
+    toc: false
+    toc-title: "Contents"
+    toc-depth: 2
+    number-sections: false
+    geometry:
+      - top=25mm
+      - bottom=25mm
+      - left=25mm
+      - right=25mm
+    fontsize: 11pt
+    documentclass: article
+    latex-engine: xelatex
 engine: knitr
 execute:
   enabled: false
@@ -170,9 +183,8 @@ $$S^2 = \dfrac{n-1}{n}\,S'^{\,2} \qquad S'^{\,2} = \dfrac{n}{n-1}\,S^2$$
 ---
 
 ## Sampling Distributions and Confidence Intervals for $\mu$
-
-::: {.table-wrap}
-
+::: {.content-visible when-format="html"}
+::: {.table-wrap .smaller}
 | # | Population | Distribution of $\bar{X}$ | $(1-\alpha)\times 100\%$ Confidence Interval |
 |:--:|:--|:--|:--|
 | 1 | $X\sim N(\mu,\sigma)$; $\sigma^2$ **known** | $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$ |
@@ -180,31 +192,108 @@ $$S^2 = \dfrac{n-1}{n}\,S'^{\,2} \qquad S'^{\,2} = \dfrac{n}{n-1}\,S^2$$
 | 2b | $X\sim N(\mu,\sigma)$; $\sigma^2$ **unknown**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ *(approx.)* |
 | 3a | $X\sim{?}$; $\sigma^2$ **known**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$ *(approx.)* |
 | 3b | $X\sim{?}$; $\sigma^2$ **unknown**, $n \geq 30$ | $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ | $\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ *(approx.)* |
+:::
+:::
 
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\renewcommand{\arraystretch}{2.2}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{>{\centering\arraybackslash}p{0.7cm} p{3.8cm} p{4.2cm} p{5.8cm}}
+\hline
+\textbf{\#} & \textbf{Population} & \textbf{Distribution of $\bar{X}$} & \textbf{$(1-\alpha)\times 100\%$ Confidence Interval} \\
+\hline
+1 &
+  $X\sim N(\mu,\sigma)$; $\sigma^2$ \textbf{known} &
+  $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)$ &
+  $\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$ \\
+2 &
+  $X\sim N(\mu,\sigma)$; $\sigma^2$ \textbf{unknown} &
+  $T = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\sim t_{(n-1)}$ &
+  $\left(\bar{x} - t_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + t_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ \\
+2b &
+  $X\sim N(\mu,\sigma)$; $\sigma^2$ \textbf{unknown}, $n \geq 30$ &
+  $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ &
+  $\approx\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ \\
+3a &
+  $X\sim{?}$; $\sigma^2$ \textbf{known}, $n \geq 30$ &
+  $Z = \dfrac{\bar{X}-\mu}{\sigma/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ &
+  $\approx\left(\bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}\right)$  \\
+3b &
+  $X\sim{?}$; $\sigma^2$ \textbf{unknown}, $n \geq 30$ &
+  $Z = \dfrac{\bar{X}-\mu}{S'/\sqrt{n}}\;\dot{\sim}\; N(0,1)$ &
+  $\approx\left(\bar{x} - z_{\alpha/2}\dfrac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\dfrac{s'}{\sqrt{n}}\right)$ \\
+\hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+```
 :::
 
 ---
 
 ## Sampling Distribution and Confidence Interval for $p$
 
-::: {.table-wrap}
-
+::: {.content-visible when-format="html"}
+::: {.table-wrap .smaller}
 | Population | Distribution of $\hat{p} = X/n$ | $(1-\alpha)\times 100\%$ Confidence Interval |
 |:--|:--|:--|
 | $X\sim \mathrm{Binomial}(n,p)$, $n\geq 30$ | $\dfrac{\hat{p}-p}{\sqrt{\hat{p}(1-\hat{p})/n}}\;\dot{\sim}\; N(0,1)$ | $\left(\hat{p} - z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}},\; \hat{p} + z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\right)$ *(approx.)* |
+:::
+:::
 
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\renewcommand{\arraystretch}{2.5}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{3.8cm} p{4.2cm} p{6.0cm}}
+\hline
+\textbf{Population} & \textbf{Distribution of $\hat{p} = X/n$} & \textbf{$(1-\alpha)\times 100\%$ Confidence Interval} \\
+\hline
+$X\sim \mathrm{Binomial}(n,p)$, $n\geq 30$ &
+  $\dfrac{\hat{p}-p}{\sqrt{\hat{p}(1-\hat{p})/n}}\;\dot{\sim}\; N(0,1)$ &
+  $\left(\hat{p} - z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}},\; \hat{p} + z_{\alpha/2}\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}\right)$ \textit{(approx.)} \\
+\hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+```
 :::
 
 ---
 
 ## Sampling Distribution and Confidence Interval for $\sigma^2$
 
+::: {.content-visible when-format="html"}
 ::: {.table-wrap}
-
 | Population | Distribution of $S'^{\,2}$ | $(1-\alpha)\times 100\%$ Confidence Interval |
 |:--|:--|:--|
 | $X\sim N(\mu,\sigma)$ | $Q = \dfrac{(n-1)S'^{\,2}}{\sigma^2}\sim\chi^2_{(n-1)}$ | $\left(\dfrac{(n-1)s'^{\,2}}{q_{\sup}},\; \dfrac{(n-1)s'^{\,2}}{q_{\inf}}\right)$ |
+:::
+:::
 
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\renewcommand{\arraystretch}{2.5}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{3.5cm} p{5.0cm} p{5.5cm}}
+\hline
+\textbf{Population} & \textbf{Distribution of $S'^{\,2}$} & \textbf{$(1-\alpha)\times 100\%$ Confidence Interval} \\
+\hline
+$X\sim N(\mu,\sigma)$ &
+  $Q = \dfrac{(n-1)S'^{\,2}}{\sigma^2}\sim\chi^2_{(n-1)}$ &
+  $\left(\dfrac{(n-1)s'^{\,2}}{q_{\sup}},\; \dfrac{(n-1)s'^{\,2}}{q_{\inf}}\right)$ \\
+\hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+```
 :::
 
 $$P(Q > q_{\inf}) = 1 - \dfrac{\alpha}{2} \qquad P(Q > q_{\sup}) = \dfrac{\alpha}{2}$$
@@ -213,14 +302,39 @@ $$P(Q > q_{\inf}) = 1 - \dfrac{\alpha}{2} \qquad P(Q > q_{\sup}) = \dfrac{\alpha
 
 ## Parametric Hypothesis Tests (at level $\alpha$)
 
+::: {.content-visible when-format="html"}
 ::: {.table-wrap}
-
 | Hypotheses | Test Statistic (TS) | Critical Region |
 |:--|:--:|:--|
-| $H_0: \theta = \theta_0 \;\text{vs}\; H_1: \theta \neq \theta_0$ | $\mathrm{TS}_0$ | $(-\infty,\, q_{\alpha/2}) \cup (q_{\alpha/2},\, +\infty)$ |
-| $H_0: \theta \leq \theta_0 \;\text{vs}\; H_1: \theta > \theta_0$ | $\mathrm{TS}_0$ | $(q_{\alpha},\, +\infty)$ |
+| $H_0: \theta = \theta_0 \;\text{vs}\; H_1: \theta \neq \theta_0$ | $\mathrm{TS}_0$ | $(-\infty,\, q_{\alpha/2}) \cup (q_{1-\alpha/2},\, +\infty)$ |
+| $H_0: \theta \leq \theta_0 \;\text{vs}\; H_1: \theta > \theta_0$ | $\mathrm{TS}_0$ | $(q_{1-\alpha},\, +\infty)$ |
 | $H_0: \theta \geq \theta_0 \;\text{vs}\; H_1: \theta < \theta_0$ | $\mathrm{TS}_0$ | $(-\infty,\, q_{\alpha})$ |
+:::
+:::
 
+::: {.content-visible when-format="pdf"}
+```{=latex}
+\renewcommand{\arraystretch}{1.8}
+\begin{table}[h]
+\centering
+\begin{tabular}{p{6.0cm} >{\centering\arraybackslash}p{2.8cm} p{4.8cm}}
+\hline
+\textbf{Hypotheses} & \textbf{Test Statistic (TS)} & \textbf{Critical Region} \\
+\hline
+$H_0: \theta = \theta_0 \;\text{vs}\; H_1: \theta \neq \theta_0$ &
+  $\mathrm{TS}_0$ &
+  $(-\infty,\, q_{\alpha/2}) \cup (q_{1-\alpha/2},\, +\infty)$ \\
+$H_0: \theta \leq \theta_0 \;\text{vs}\; H_1: \theta > \theta_0$ &
+  $\mathrm{TS}_0$ &
+  $(q_{1-\alpha},\, +\infty)$ \\
+$H_0: \theta \geq \theta_0 \;\text{vs}\; H_1: \theta < \theta_0$ &
+  $\mathrm{TS}_0$ &
+  $(-\infty,\, q_{\alpha})$ \\
+\hline
+\end{tabular}
+\end{table}
+\renewcommand{\arraystretch}{1}
+```
 :::
 
 $$P(\mathrm{TS} > q_\alpha) = \alpha \qquad \text{Reject } H_0 \text{ if } \alpha > p\text{-value}$$
