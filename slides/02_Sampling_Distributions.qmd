@@ -288,7 +288,7 @@ Exercise 4: Let $T$ be a r.v distributed $t-Student$ with 11 d.o.f., $T\sim t(11
 
 . . . 
 
-i) $P(T\leq k)=0.75\ \Leftrightarrow\ P(T>k)=0.25\ \Leftrightarrow\ k=0.697$ directly from the table, and the the sentence is **False**.
+i) $P(T\leq k)=0.75\ \Leftrightarrow\ P(T>k)=0.25\ \Leftrightarrow\ k=0.697$ directly from the table, and the sentence is **False**.
 ii) $P(|T|>2.201)=2 P(T>2.201) = 2\times 0.025 = 0.05$ by symmetry of the distribution and direct observation of the table. The correct answer is **c**.
 
 # Sampling Distributions of the Sample Mean $\bar{X}$
