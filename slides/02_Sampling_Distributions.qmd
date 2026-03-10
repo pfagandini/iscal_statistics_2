@@ -280,7 +280,8 @@ $$X \;\overset{\text{CLT}}{\dot\sim}\; N\left(0, \;\frac{n}{n-2}\right) \iff Z_n
 
 ## Example
 
-Exercise 4: Let $T$ be a r.v distributed $t-Student$ with 11 d.o.f., $T\sim t(11)$.  
+Exercise 4: Let $T$ be a r.v distributed $t-Student$ with 11 d.o.f., $T\sim t(11)$.
+
   i) [T][F] The value of $k$ such that $P(T\leq k)=0.75$ is equal to $0.303$.
   ii) [T][F] The value of the probability $P(|T|>2.201)$ is:  
     a) 0.025  b) 0.95 c) 0.05   d) None

@@ -977,7 +977,7 @@
     "href": "slides/02_Sampling_Distributions.html#example",
     "title": "Sampling Distributions",
     "section": "Example",
-    "text": "Example\nExercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\ni) [T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\). ii) [T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
+    "text": "Example\nExercise 4: Let \\(T\\) be a r.v distributed \\(t-Student\\) with 11 d.o.f., \\(T\\sim t(11)\\).\n\n[T][F] The value of \\(k\\) such that \\(P(T\\leq k)=0.75\\) is equal to \\(0.303\\).\n[T][F] The value of the probability \\(P(|T|&gt;2.201)\\) is:\na) 0.025 b) 0.95 c) 0.05 d) None\n\n\n\n\\(P(T\\leq k)=0.75\\ \\Leftrightarrow\\ P(T&gt;k)=0.25\\ \\Leftrightarrow\\ k=0.697\\) directly from the table, and the the sentence is False.\n\\(P(|T|&gt;2.201)=2 P(T&gt;2.201) = 2\\times 0.025 = 0.05\\) by symmetry of the distribution and direct observation of the table. The correct answer is c."
   },
   {
     "objectID": "slides/02_Sampling_Distributions.html#exercise-vii",
