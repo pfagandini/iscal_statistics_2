@@ -47,5 +47,8 @@
   },
   "slides/03_point_estimation.qmd": {
     "03_point_estimation.html": "dc7139b1"
+  },
+  "exercises/03_Point_Estimation.qmd": {
+    "03_Point_Estimation.html": "2295366c"
   }
 }

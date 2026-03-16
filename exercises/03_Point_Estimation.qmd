@@ -62,9 +62,7 @@ y <- year(Sys.Date())-1
 
 <!-- Style Block for nice tables -->
 
-This is a set of exercises for Statistics II, Chapter II — Sampling Distributions, from the Lisbon Accounting and Business School (ISCAL–IPL).
-
-**Contents:** t-Student and Chi-Squared distributions. Random sample and statistic. Sampling distributions: of the mean in Normal and non-Normal populations, of the variance in Normal populations, and of the proportion from a Bernoulli population.
+This is a set of exercises for Statistics II, Chapter II — Point Estimators, from the Lisbon Accounting and Business School (ISCAL–IPL).
 
 The exercise set consists of True/False questions (where you should determine the truth value and justify your choice) and multiple choice questions (where you should select the correct option and justify it appropriately).
 
@@ -75,21 +73,23 @@ The exercise set consists of True/False questions (where you should determine th
 #### Question 1
 
 ::: {.webex-check .webex-box}
-Let $(X_1,X_2,\ldots,X_n)$ with $n\in\mathbb{N}$, a random sample from a population distributed $X\sim Normal(\mu=-2,\sigma)$, where $\sigma$ is unknown. Asses if, the following random variables **are not** statistics, *i.e.*, if you select true, you are claiming that the random variable is not a statistic.
+Consider the estimators $T_1,T_2$ and $T_3$ of parameter $\theta$ such that:
 
-a) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)=X_1+X_2+\ldots+X_n$
+$$
+\begin{aligned}
+  E(T_1)=\theta,\qquad V(T_1)=9\\
+  E(T_2)=3\theta,\qquad V(T_2)=3\\
+\end{aligned}
+$$
+$$
+T_3=\frac{T_2}{3}  
+$$
 
-b) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{X_1+X_2+\ldots+X_n}{n}=\bar{X}$
+a) `r torf(TRUE)` $T_2$ **is not** an unbiased estimator for $\theta$ and $Bias(T_3)=2\theta$
 
-c) `r torf(TRUE)` $T(X_1,X_2,\ldots,X_n)= \frac{\bar{X}}{\sigma}$
+b) `r torf(TRUE)` $T_2$ and $T_3$ unbiased estimators for $\theta$.
 
-d) `r torf(TRUE)` $T(X_1,X_2,\ldots,X_n)= \frac{\bar{X}-\mu}{\sigma}\sqrt{n}$
-
-e) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\mu)^2}{n}$
-
-f) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}=S^2$
-
-g) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}=S'^2$
+c) `r torf(FALSE)` $T_1$ is a more efficient estimator than $T_3$.
 
 :::
 
@@ -98,9 +98,9 @@ g) `r torf(FALSE)` $T(X_1,X_2,\ldots,X_n)= \frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-
 
 ::: {.webex-check .webex-box}
 
-Let the waiting time for take-off of each plane in a given airport is a *r.v.* distributed $N(\mu=4,\sigma)$. Randomly chosen 21 flights, the records allow to estimate $s'=1.81min$.
+Let $(X_1,X_2,\ldots,X_n)$ a sample with size $n\geq 2$ from a population $X$ uniformly distributed between $[a,0]$ (with $a<0$). Let $\hat{a}=2\bar{X}$ an estimator for the population parameter $a$.
 
-`r torf(TRUE)` The probability that the average waiting time, from the sample, is larger than 5 minutes equals $0.010$.
+`r torf(TRUE)` We have $E(\hat{a})=a$ $\forall x<0$.
 
 :::
 
@@ -109,7 +109,19 @@ Let the waiting time for take-off of each plane in a given airport is a *r.v.* d
 
 ::: {.webex-check .webex-box}
 
-In a given financial firm, the profits obtained from each investment, in the last year, average 8,200 euro, and a standard deviation of 3,600 euro. Consider a random sample of 100 investments. The probability that the sample average is farther away from the true mean by 806.76 euro, is: `r mcq(c("0.0125",answer="0.025","0.9875","None of the previous"))`
+Consider a random sample $(X_1,X_2,\ldots,X_n)$, with $n\in\mathbb{N}$, taken from a population $X$ with mean $\mu$ and variance $\sigma^2$. Consider the estimator $T_1$ for $\mu$:
+$$
+ T_1=X_1+\frac{1}{n-1} \sum_{i=2}^n X_i
+$$
+
+a) `r torf(TRUE)` This estimator is biased for $\mu$ and its bias is equal to $\mu$.
+
+b) Consider an alternative estimator, $T_2$, for $\mu$:
+$$
+  T_2=\frac{1}{2}T_1
+$$
+
+`r torf(TRUE)` $T_2$ is a consistent estimator.
 
 :::
 
@@ -118,9 +130,32 @@ In a given financial firm, the profits obtained from each investment, in the las
 
 ::: {.webex-check .webex-box}
 
-A given company intends to check the value (in euro) of the *receivable accounts*, with an underlying statistical behavior that follows a Normal distribution with mean $\mu=385$ and standard deviation $\sigma$. Choosing randomly a sample with $n$ accounts (independently), you obtained a (corrected) sample standard deviation of $122.6$ euro.
+Consider a population $X$ with distribution depends on some parameter $\theta\in\mathbb{R}$, unknown. From the population you know that
+$$
+E(X)=\theta-2\quad\text{and}\quad V(X)=1
+$$
 
-`r torf(TRUE)` The size of the sample to collect (assuming that the estimate for $s'$ is maintained) such that the sample mean is not farther from the true mean than 20 eur in 90% of the cases is $n=102$. (Assume for your computations, that the value of $n$ will be larger than 30)
+From a random sample $(X_1,X_2,\ldots,X_n)$ with $n\geq 2$, you got two estimators $\theta^*$ and $\hat{\theta}$, from which you know the following:
+
+$$
+  \begin{aligned}
+    \theta^*=\bar{X}+2\\
+    E(\hat{\theta})=\theta\\
+    V(\hat{\theta})=\frac{2}{n}
+  \end{aligned}
+$$
+
+i) In relation to the estimators $\theta^*$ and $\hat{\theta}$: 
+
+  a) Just $\theta^*$ is unbiased
+  b) None is unbiased
+  c) Both are unbiased
+  d) Just $\hat{\theta}$ is unbiased
+
+  `r mcq(c('a)', 'b)', answer='c)', 'd)'))`
+
+
+ii) `r torf(TRUE)` $\theta^*$ is more efficient than $\hat{\theta}$
 
 :::
 
@@ -128,9 +163,21 @@ A given company intends to check the value (in euro) of the *receivable accounts
 
 ::: {.webex-check .webex-box}
 
-Assume that a particular streaming service is subscribed by 10% of the population in a given country. Because this service is very recent, a marketing firm decided to estimate that proportion, based in a sample of 100 citizens, before renewing their contract with the streaming service company.
+The following estimators are proposed for the variance of a Normal population:
 
-`r torf(TRUE)` Knowing that the contracts will be renewed only if the sample proportion is larger than 8.5%, the probability tha this contract will be renewed is 0.6915.
+$$
+S^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n}\qquad S'^2=\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{n-1}
+$$
+
+i) `r torf(TRUE)` Knowing that $S'^2$ is an unbiased estimator for $\sigma^2$, we can say that $S^2$ is a biased estimator for $\sigma^2$, with bias equal to $(-1/n)\sigma^2$.
+
+ii) Two estimates for $\sigma$, $\sigma_1^*$ and $\sigma_2^*$, from 117 samples for $X$, knowing that the same samples satisfy the following:
+
+$$
+  \sum_{i=1}^{117} x_i=115\qquad \sum_{i=1}^{117}x_i^2=801
+$$
+
+Are, respectively, equal to: `r mcq(c('6.8297 and 2.625', '2.613 and 6.8886', answer='2.613 and 2.625', 'None of the above'))`
 
 :::
 
@@ -139,30 +186,13 @@ Assume that a particular streaming service is subscribed by 10% of the populatio
 
 ::: {.webex-check .webex-box}
 
-Assume that you intend to study the feasibility of a project which core variable is the price (in monetary units) of raw-materials, which is well represented by the random variable $X\sim N(\mu,\sigma)$. It was selected, randomly, a sample $(X_1,\ldots,X_{16})$ from that population, where the sample (corrected) variance was found to be $0.18 um^2$.
+If $\hat{\theta}$ is an unbiased estimator for the parameter $\theta$, unknown, from a population $X$,
 
-a) `r torf(FALSE)` $Q=\frac{15S'^2}{\sigma^2}\sim \chi^2_{16}$
-b) `r torf(TRUE)` $P(S'2^2>1.2163 \sigma^2)=0.25$
+a) $\hat{\theta}$ is the mean of the sampling distribution for $\theta$.
+b) $\theta$ is the mean of the sampling distribution for $\hat{\theta}$.
+c) $V(\hat{\theta})=\frac{V(\theta)}{n}$
+d) $\hat{\theta}=\theta$
 
-:::
-
-#### Question 7
-
-::: {.webex-check .webex-box}
-
-15 adult males, with ages between 35 and 50, participated in a study to assess the effect of diet and exercises in the cholesterol levels found in blood. The cholesterol was measured at the begining and after three months after participating of a program that consisted in a new diet and aerobic exercises. The data is found in the following table:
-
-| Individual | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Before | 265 | 240 | 258 | 295 | 251 | 245 | 287 | 314 | 260 | 279 | 283 | 240 | 238 | 225 | 247 |
-| After | 229 | 231 | 227 | 240 | 238 | 241 | 234 | 256 | 247 | 239 | 246 | 218 | 219 | 226 | 233 |
-
-Assume that:
-
-* The samples *Before* and *After*, are paired (each column is the same individual)
-* Each sampled pair, is an independent observation of the other.
-* The cholesterol measures follow and Normal distribution.
-
-`r torf(TRUE)` The probability that the **mean of the difference** between after and before the treatment is farther away from its mean by more than 6.61 is 0.2.
+`r mcq(c('a',answer='b','c','d'))`
 
 :::
