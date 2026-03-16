@@ -50,5 +50,14 @@
   },
   "exercises/03_Point_Estimation.qmd": {
     "03_Point_Estimation.html": "2295366c"
+  },
+  "detailed_solutions/01_Central_Limit_Theorem_Sols.qmd": {
+    "01_Central_Limit_Theorem_Sols.html": "050e381e"
+  },
+  "detailed_solutions/02_Sampling_Distributions.qmd": {
+    "02_Sampling_Distributions.html": "8a8f7568"
+  },
+  "detailed_solutions/03_Point_Estimation.qmd": {
+    "03_Point_Estimation.html": "af00cf1e"
   }
 }

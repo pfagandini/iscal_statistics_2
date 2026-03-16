@@ -87,7 +87,7 @@ $$
 
 a) `r torf(TRUE)` $T_2$ **is not** an unbiased estimator for $\theta$ and $Bias(T_3)=2\theta$
 
-b) `r torf(TRUE)` $T_2$ and $T_3$ unbiased estimators for $\theta$.
+b) `r torf(TRUE)` $T_1$ and $T_3$ unbiased estimators for $\theta$.
 
 c) `r torf(FALSE)` $T_1$ is a more efficient estimator than $T_3$.
 

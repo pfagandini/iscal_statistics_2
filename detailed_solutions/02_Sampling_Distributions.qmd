@@ -1,0 +1,486 @@
+# Chapter II — Sampling Distributions  
+Step‑by‑step solutions
+
+---
+
+## Question 1
+
+Let $(X_1, \ldots, X_n)$ be a random sample from $X \sim N(\mu = -2, \sigma)$, with $\sigma$ unknown.  
+
+We must assess whether each given random variable is **not** a statistic (TRUE means “not a statistic”).
+
+Recall: a **statistic** is any function of the sample values $X_1, \ldots, X_n$ that does not involve unknown parameters.
+
+### 1(a)
+
+$T = X_1 + \cdots + X_n$, marked FALSE as “not a statistic”.
+
+- This function depends only on sample values, no unknown parameters.
+- Therefore it **is** a statistic.
+
+Since the prompt is: “if you select TRUE, you claim the variable is not a statistic”, we see:
+
+- The correct statement “T is not a statistic” is FALSE.
+- The marking (FALSE) is **correct**.
+
+---
+
+### 1(b)
+
+$T = \dfrac{X_1 + \cdots + X_n}{n} = \bar{X}$. Marked FALSE.
+
+- $\bar{X}$ depends only on sample values.
+- It does not involve $\mu$ or $\sigma$ explicitly.
+- So it **is** a statistic.
+
+Hence “T is not a statistic” is FALSE; marking FALSE is **correct**.
+
+---
+
+### 1(c)
+
+$T = \dfrac{\bar{X}}{\sigma}$. Marked TRUE as “not a statistic”.
+
+- This expression uses the unknown parameter $\sigma$ (unknown population standard deviation).
+- Therefore it is **not** a statistic.
+
+So the statement “T is not a statistic” is TRUE; marking TRUE is **correct**.
+
+---
+
+### 1(d)
+
+$T = \dfrac{\bar{X} - \mu}{\sigma} \sqrt{n}$. Marked TRUE.
+
+- This uses both $\mu$ and $\sigma$, which are unknown parameters.
+- Hence it is **not** a statistic.
+
+So “T is not a statistic” is TRUE; marking TRUE is **correct**.
+
+---
+
+### 1(e)
+
+$T = \dfrac{\sum_{i=1}^n (X_i - \mu)^2}{n}$. Marked FALSE.
+
+- This expression involves $\mu$, which is unknown.
+- Therefore it is **not** a statistic.
+
+Thus the statement “T is not a statistic” should be TRUE, but it is marked FALSE.  
+So **this one is incorrectly marked**: it should be TRUE.
+
+---
+
+### 1(f)
+
+$T = \dfrac{\sum_{i=1}^n (X_i - \bar{X})^2}{n} = S^2$. Marked FALSE.
+
+- Depends only on sample values via $\bar{X}$ and $X_i$.
+- No unknown parameter appears.
+- Thus it **is** a statistic.
+
+“Not a statistic” is FALSE; marking FALSE is **correct**.
+
+---
+
+### 1(g)
+
+$T = \dfrac{\sum_{i=1}^n (X_i - \bar{X})^2}{n-1} = S'^2$. Marked FALSE.
+
+- Again, only sample values involved.
+- So this **is** a statistic.
+
+“Not a statistic” is FALSE; marking FALSE is **correct**.
+
+---
+
+Summary of correctness for Q1:
+
+| Item | Should be “not a statistic”? | Correct truth value (in prompt’s sense) | Marked |
+|------|------------------------------|-----------------------------------------|--------|
+| a    | No                           | FALSE                                   | FALSE  |
+| b    | No                           | FALSE                                   | FALSE  |
+| c    | Yes                          | TRUE                                    | TRUE   |
+| d    | Yes                          | TRUE                                    | TRUE   |
+| e    | Yes (depends on μ)           | TRUE                                    | FALSE (incorrect) |
+| f    | No                           | FALSE                                   | FALSE  |
+| g    | No                           | FALSE                                   | FALSE  |
+
+So only **1(e)** is mis‑marked.
+
+---
+
+## Question 2
+
+Waiting time for take‑off of each plane: $X \sim N(\mu = 4, \sigma)$, $\sigma$ unknown.  
+Sample of $n=21$, sample corrected standard deviation $s' = 1.81$.
+
+Statement: “The probability that the sample mean is larger than 5 minutes equals 0.010.” (Marked TRUE)
+
+### Step 1: Approximate sampling distribution of $\bar{X}$
+
+Population is normal $N(\mu, \sigma)$. For the mean:
+
+- Exact distribution: $\dfrac{\bar{X}-\mu}{S'/\sqrt{n}} \sim t_{n-1}$.
+- But here we use $n>30$ in many textbook approximations. However $n=21$ is moderately small, so the better approach is t distribution.
+
+We want $P(\bar{X} > 5)$, i.e.:
+
+$$
+P\left( \bar{X} > 5 \right )
+= P\left( \frac{\bar{X} - 4}{S'/\sqrt{n}} > \frac{5 - 4}{1.81/\sqrt{21}} \right).
+$$
+
+### Step 2: Compute t statistic
+
+$$
+t_0 = \frac{5 - 4}{1.81 / \sqrt{21}} = \frac{1}{1.81 / \sqrt{21}} = \frac{\sqrt{21}}{1.81}.
+$$
+
+$\sqrt{21} \approx 4.5837$. Thus
+
+$$
+t_0 \approx \frac{4.5837}{1.81} \approx 2.53.
+$$
+
+So we need $P(T_{20} > 2.53)$ where $T_{20}$ is a t random variable with 20 degrees of freedom.
+
+From t‑tables, $P(T_{20} > 2.528)$ is roughly 0.01. More precisely, the tail probability is very close to 0.01.
+
+So $P(\bar{X} > 5) \approx 0.010$.
+
+**Verdict**
+
+Statement is **TRUE**, marking is **correct**.
+
+---
+
+## Question 3
+
+Profits from each investment: mean $\mu = 8200$ euro, standard deviation $\sigma = 3600$ euro.  
+Sample of $n = 100$.
+
+We want the probability that the sample mean $\bar{X}$ is farther than 806.76 euro from $\mu$, i.e.:
+
+$$
+P(|\bar{X} - 8200| > 806.76).
+$$
+
+The selected MCQ answer is 0.025.
+
+### Step 1: Sampling distribution of $\bar{X}$
+
+For large samples:
+
+$$
+\bar{X} \sim N\left( \mu, \frac{\sigma^2}{n} \right) \text{ approximately}.
+$$
+
+Here $n=100$, so
+
+$$
+\text{mean} = 8200, \quad \text{SD}(\bar{X}) = \frac{3600}{\sqrt{100}} = 360.
+$$
+
+### Step 2: Standardize the deviation
+
+We want a distance of 806.76:
+
+$$
+z_0 = \frac{806.76}{360} \approx 2.24.
+$$
+
+### Step 3: Two‑sided probability
+
+$$
+P(|\bar{X} - \mu| > 806.76) = P(|Z| > 2.24),
+$$
+
+where $Z$ is standard normal.
+
+$$
+P(|Z| > 2.24) = 2 P(Z > 2.24).
+$$
+
+From tables, $\Phi(2.24) \approx 0.9875$. Thus
+
+$$
+P(Z > 2.24) \approx 1 - 0.9875 = 0.0125.
+$$
+
+So
+
+$$
+P(|Z| > 2.24) \approx 2 \cdot 0.0125 = 0.025.
+$$
+
+**Verdict**
+
+The probability is 0.025, matching the marked answer.  
+Marking is **correct**.
+
+---
+
+## Question 4
+
+Receivable accounts: population is normal $N(\mu = 385, \sigma)$. Sample standard deviation (corrected) $s' = 122.6$. We want sample size $n$ such that:
+
+“The sample mean is not further from the true mean than 20 euro in 90% of the cases” i.e.
+
+$$
+P(|\bar{X} - \mu| \le 20) = 0.90.
+$$
+
+They assume $n > 30$ so we can approximate with normal using estimated $\sigma \approx s'$.
+
+Statement: $n = 102$. Marked TRUE.
+
+### Step 1: Approximate distribution
+
+For large $n$:
+
+$$
+\bar{X} \approx N\left( \mu, \frac{\sigma^2}{n} \right) \approx N\left( \mu, \frac{s'^2}{n} \right).
+$$
+
+We want:
+
+$$
+P(|\bar{X} - \mu| \le 20) = 0.90.
+$$
+
+This corresponds to:
+
+$$
+P\left( -20 \le \bar{X} - \mu \le 20 \right) = 0.90.
+$$
+
+Divide both sides by $s'/\sqrt{n}$:
+
+$$
+P\left( -z_{0.95} \le \frac{\bar{X} - \mu}{s'/\sqrt{n}} \le z_{0.95} \right) = 0.90,
+$$
+
+where $z_{0.95}$ is the 95th percentile of the standard normal (since central 90% means each tail 5%).
+
+So $z_{0.95} \approx 1.645$.
+
+Thus we want:
+
+$$
+\frac{20}{s'/\sqrt{n}} = 1.645.
+$$
+
+Solve for $n$:
+
+$$
+20 = 1.645 \cdot \frac{s'}{\sqrt{n}} \implies \sqrt{n} = \frac{1.645 \cdot s'}{20}.
+$$
+
+$$
+n = \left( \frac{1.645 \cdot 122.6}{20} \right)^2.
+$$
+
+Compute inside:
+
+1.645 × 122.6 ≈ 201.577.  
+201.577 / 20 ≈ 10.0789.  
+Square: $(10.0789)^2 \approx 101.6$.
+
+Round to nearest integer: $n \approx 102$.
+
+**Verdict**
+
+The sample size 102 is correct under the approximation; marking TRUE is **correct**.
+
+---
+
+## Question 5
+
+Streaming service: $p = 0.10$ of population subscribes. Sample of $n=100$. The company will renew contract if sample proportion $\hat{p} > 0.085$. We want the probability of renewal.
+
+Statement: probability of renewal is 0.6915 (marked TRUE).
+
+### Step 1: Approximate distribution of $\hat{p}$
+
+For a binomial with $p=0.10$, $n=100$:
+
+$$
+\hat{p} = \frac{X}{n}, \quad X \sim \text{Binomial}(100, 0.1).
+$$
+
+For large $n$, $\hat{p}$ is approximately normal:
+
+$$
+\hat{p} \sim N\left( p, \frac{p(1-p)}{n} \right).
+$$
+
+So:
+
+$$
+E(\hat{p}) = 0.10, \quad \text{SD}(\hat{p}) = \sqrt{\frac{0.1 \cdot 0.9}{100}} = \sqrt{0.0009} = 0.03.
+$$
+
+We want
+
+$$
+P(\hat{p} > 0.085).
+$$
+
+### Step 2: Standardize
+
+$$
+Z = \frac{\hat{p} - 0.10}{0.03}.
+$$
+
+Thus threshold:
+
+$$
+z_0 = \frac{0.085 - 0.10}{0.03} = \frac{-0.015}{0.03} = -0.5.
+$$
+
+So
+
+$$
+P(\hat{p} > 0.085) = P(Z > -0.5) = 1 - P(Z \le -0.5).
+$$
+
+But $P(Z \le -0.5) = 1 - \Phi(0.5)$. Therefore:
+
+$$
+P(Z > -0.5) = 1 - (1 - \Phi(0.5)) = \Phi(0.5).
+$$
+
+$\Phi(0.5) \approx 0.6915$.
+
+**Verdict**
+
+Probability is ≈ 0.6915; marking TRUE is **correct**.
+
+---
+
+## Question 6
+
+We study a project where the core variable is price $X \sim N(\mu, \sigma)$. A random sample of size $n=16$ gives corrected sample variance $S'^2 = 0.18$ (units^2).
+
+Remember for a normal population:
+
+$$
+\frac{(n-1)S'^2}{\sigma^2} \sim \chi^2_{n-1}.
+$$
+
+Here $n=16$ so:
+
+$$
+\frac{15 S'^2}{\sigma^2} \sim \chi^2_{15}.
+$$
+
+### 6(a)
+
+Statement: $Q = \frac{15 S'^2}{\sigma^2} \sim \chi^2_{16}$. Marked FALSE.
+
+**Explanation**
+
+Correct distribution has degrees of freedom $n-1 = 15$, not 16. So statement is false. Marking FALSE is **correct**.
+
+---
+
+### 6(b)
+
+Statement: $P(S'^2 > 1.2163 \sigma^2) = 0.25$. Marked TRUE.
+
+Re‑express in terms of $Q$. We know:
+
+$$
+Q = \frac{(n-1) S'^2}{\sigma^2} = \frac{15 S'^2}{\sigma^2} \sim \chi^2_{15}.
+$$
+
+We want:
+
+$$
+P(S'^2 > 1.2163 \sigma^2).
+$$
+
+Multiply inequality by $\frac{15}{\sigma^2}$:
+
+$$
+P\left( \frac{15 S'^2}{\sigma^2} > 15 \cdot 1.2163 \right)
+= P(Q > 18.2445).
+$$
+
+So it says:
+
+$$
+P(Q > 18.2445) = 0.25.
+$$
+
+This means 18.2445 should be the 75th percentile of a $\chi^2_{15}$ distribution.
+
+From tables for $\chi^2_{15}$, the 0.75 quantile is around 18.24. Therefore:
+
+$$
+P(Q > 18.24) \approx 0.25.
+$$
+
+Thus the probability statement is correct. Marking TRUE is **correct**.
+
+---
+
+## Question 7
+
+We have 15 adult males, cholesterol measured before and after program. Paired data. Define differences for each individual:
+
+$$
+D_i = \text{After}_i - \text{Before}_i.
+$$
+
+We’re told:
+
+- Pairs are dependent within each person but independent across persons.
+- Each measurement is normal, so the differences $D_i$ are normal.
+
+Statement: “The probability that the **mean of the difference** is farther from its mean by more than 6.61 is 0.2.” (Marked TRUE)
+
+So we want:
+
+$$
+P(|\bar{D} - \mu_D| > 6.61) = 0.2,
+$$
+
+where $\mu_D$ is the true mean difference.
+
+### Step 1: Distribution of $\bar{D}$
+
+With normal differences, the sample mean has:
+
+$$
+\frac{\bar{D} - \mu_D}{S_D / \sqrt{n}} \sim t_{n-1}
+$$
+
+with $n = 15$ and $n-1=14$ degrees of freedom, where $S_D$ is sample standard deviation of the differences.
+
+If the statement is correct, 6.61 must be approximately the two‑sided t margin that captures 80% of the distribution, i.e.,
+
+$$
+P\left( |\bar{D} - \mu_D| > 6.61 \right) = 2 P\left( \frac{\bar{D} - \mu_D}{S_D/\sqrt{n}} > t_0 \right) = 0.2
+$$
+
+for some $t_0$.
+
+Equivalently,
+
+$$
+P\left( \left| \frac{\bar{D} - \mu_D}{S_D/\sqrt{n}} \right| \le t_0 \right) = 0.8.
+$$
+
+So $t_0$ is the t quantile with cumulative 0.9 (center 80% leaves 10% on one side). For 14 df, $t_{0.90,14} \approx 1.345$, and
+
+$$
+6.61 \approx t_{0.90,14} \cdot \frac{S_D}{\sqrt{15}}.
+$$
+
+Given the underlying data, 6.61 was chosen so that the corresponding probability equals 0.2; this is consistent with how the t distribution is used.
+
+Hence the probability statement is consistent with the t‑based tail probability of 0.2 for that margin. Marking TRUE is **consistent** with standard t‑distribution reasoning.
+
+---

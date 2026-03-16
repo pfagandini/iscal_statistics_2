@@ -118,7 +118,7 @@ The number of machines ordered every day to a factory can be considered a random
 
 a) The percentage of days in which more than 10 machines are ordered is equal to: `r mcq(c("64.53%","12.35%",answer="35.47%","87.65%"))`
 
-b) `r torf(TRUE)` Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.097964, the approximation (by the CLT) error is equal to 0.00416.
+b) `r torf(TRUE)` Knowing that the exact probability of having being sent less than 30 machines in 4 work days is 0.07964, the approximation (by the CLT) error is equal to 0.00416.
 
 :::
 

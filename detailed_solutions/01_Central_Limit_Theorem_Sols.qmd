@@ -1,0 +1,562 @@
+# Chapter I — Central Limit Theorem  
+Step‑by‑step solutions
+
+<!-- In each subquestion, I also indicate whether the answer encoded in the exercise file (TRUE/FALSE or selected MCQ option) is correct. -->
+
+---
+
+## Question 1
+
+The number of accesses per day: $X \sim \text{Poisson}(\lambda = 30)$.
+
+### 1(a)
+
+> Exact probability that, in a given day, the number of accesses is higher than 40 is 0.0323. The approximate probability using CLT differs from the exact result by 0.0049. (Marked TRUE)
+
+**Step 1: Exact probability**
+
+We want  
+$$
+P(X > 40) = 1 - P(X \le 40) = 1 - \sum_{k=0}^{40} e^{-30} \frac{30^k}{k!}.
+$$
+
+This is computed numerically (using a calculator or software).  
+If you compute $P(X \le 40)$ and subtract from 1, you get approximately $0.0323$.
+
+**Step 2: Normal approximation (CLT)**
+
+For a Poisson($\lambda$), when $\lambda$ is large,  
+$$
+X \approx N(\mu = \lambda, \sigma^2 = \lambda).
+$$
+
+So here: $\mu = 30$, $\sigma = \sqrt{30} \approx 5.477$.
+
+We approximate $P(X > 40)$ by $P(Y > 40.5)$ with continuity correction, where $Y \sim N(30, 30)$.
+
+Standardize:
+$$
+Z = \frac{40.5 - 30}{\sqrt{30}} \approx \frac{10.5}{5.477} \approx 1.917.
+$$
+
+Then
+$$
+P(X > 40) \approx P(Z > 1.917) = 1 - \Phi(1.917) \approx 0.0274 \quad (\text{approx}).
+$$
+
+**Step 3: Error of approximation**
+
+Exact: about $0.0323$.  
+Normal approximation: about $0.0274$.  
+Difference in absolute value: $|0.0323 - 0.0274| \approx 0.0049$.
+
+---
+
+### 1(b)
+
+Weekly number of accesses in 7 days. Let $S_7 = X_1 + \cdots + X_7$.
+
+Each day is Poisson(30) and independent, so  
+$$
+S_7 \sim \text{Poisson}(7 \cdot 30) = \text{Poisson}(210).
+$$
+
+We want $P(200 < S_7 \le 220)$ approximately.
+
+**Step 1: CLT approximation**
+
+For a Poisson with large mean $\lambda = 210$:  
+$$
+S_7 \approx N(\mu = 210, \sigma^2 = 210).
+$$
+
+Use continuity correction from 200.5 to 220.5:
+
+$$
+P(200 < S_7 \le 220) \approx P(200.5 \le Y \le 220.5),
+$$
+where $Y \sim N(210, 210)$.
+
+**Step 2: Standardize bounds**
+
+$$
+Z_1 = \frac{200.5 - 210}{\sqrt{210}},\quad
+Z_2 = \frac{220.5 - 210}{\sqrt{210}}.
+$$
+
+$\sqrt{210} \approx 14.491$.
+
+Then:
+$$
+Z_1 \approx \frac{-9.5}{14.491} \approx -0.656,
+$$
+$$
+Z_2 \approx \frac{10.5}{14.491} \approx 0.725.
+$$
+
+**Step 3: Use standard normal CDF**
+
+$$
+P(200.5 \le Y \le 220.5) = \Phi(0.725) - \Phi(-0.656).
+$$
+
+But $\Phi(-a) = 1 - \Phi(a)$. So:
+
+$$
+\Phi(0.725) - \Phi(-0.656) = \Phi(0.725) - (1 - \Phi(0.656)) = \Phi(0.725)+\Phi(0.656) - 1.
+$$
+
+Using a normal table or calculator, $\Phi(0.725) \approx 0.766$ and $\Phi(0.656)\approx 0.744$.
+
+So approximate probability:
+$$
+0.766 + 0.744 - 1 = 0.51 \text{ (around)}.
+$$
+
+More precise computation gives ~0.5098.
+
+
+
+---
+
+## Question 2
+
+System with 100 parts, independent, each fails with probability $p = 0.1$.  
+Let $X$ be the number of failed parts: $X \sim \text{Binomial}(n=100, p=0.1)$.  
+Number of working parts is $100 - X$.
+
+System works if at least 85 parts are operative. That means at most 15 failed:
+
+$$
+\text{System works} \iff X \le 15.
+$$
+
+### 2(a)
+
+Statement: approximate probability that system works is 0.9664. (Marked TRUE)
+
+So we need $P(X \le 15)$.
+
+**Step 1: Parameters for normal approximation**
+
+Mean:
+$$
+\mu = np = 100 \cdot 0.1 = 10.
+$$
+
+Variance:
+$$
+\sigma^2 = np(1-p) = 100 \cdot 0.1 \cdot 0.9 = 9.
+$$
+
+$\sigma = 3$.
+
+**Step 2: CLT with continuity correction**
+
+We want $P(X \le 15)$. With continuity correction:
+$$
+P(X \le 15) \approx P(Y \le 15.5), \quad Y \sim N(10, 9).
+$$
+
+Standardize:
+$$
+Z = \frac{15.5 - 10}{3} = \frac{5.5}{3} \approx 1.833.
+$$
+
+So
+$$
+P(X \le 15) \approx \Phi(1.833).
+$$
+
+Using a standard normal table, $\Phi(1.83)$ is around 0.9664.
+
+---
+
+### 2(b)
+
+Statement: In the previous calculation, using CLT requires only that sample size from a non-normal population is large enough. (Marked FALSE)
+
+**Explanation**
+
+Conditions to use CLT approximation for binomial also include that both $np$ and $n(1-p)$ are “not too small,” typically $np \ge 5$ and $n(1-p) \ge 5$. The statement that only a “large sample” is enough ignores this condition.
+
+Thus the statement is **FALSE**, marking is **correct**.
+
+---
+
+## Question 3
+
+TeleDigit calls. Each call is a complaint with probability $p = 0.05$.
+
+### 3(a)
+
+Sample of 20 calls. Let $X \sim \text{Binomial}(n=20, p=0.05)$.  
+We want $P(2 \le X \le 5)$.
+
+Statement: that probability equals 0.2639 (marked TRUE).
+
+**Step 1: Exact binomial probability**
+
+$$
+P(2 \le X \le 5) = \sum_{k=2}^5 \binom{20}{k} (0.05)^k (0.95)^{20-k}.
+$$
+
+Compute term by term:
+
+- For $k=2$: $\binom{20}{2} (0.05)^2 (0.95)^{18}$.
+- For $k=3$: $\binom{20}{3} (0.05)^3 (0.95)^{17}$.
+- For $k=4$: $\binom{20}{4} (0.05)^4 (0.95)^{16}$.
+- For $k=5$: $\binom{20}{5} (0.05)^5 (0.95)^{15}$.
+
+Using a calculator or software, the sum gives approximately 0.2639.
+
+**Verdict**
+
+The value 0.2639 is correct; statement is **TRUE**, marking is **correct**.
+
+---
+
+### 3(b)
+
+Sample of 250 calls. Let $Y \sim \text{Binomial}(n=250, p=0.05)$.  
+We want approximate $P(Y \le 10)$.
+
+**Step 1: Parameters for CLT**
+
+Mean:
+$$
+\mu = np = 250 \cdot 0.05 = 12.5.
+$$
+
+Variance:
+$$
+\sigma^2 = np(1-p) = 12.5 \cdot 0.95 = 11.875.
+$$
+
+$\sigma \approx \sqrt{11.875} \approx 3.447$.
+
+**Step 2: Continuity correction**
+
+We want $P(Y \le 10)$. Use $10.5$:
+
+$$
+P(Y \le 10) \approx P(Z \le z_0),
+\quad
+z_0 = \frac{10.5 - 12.5}{3.447} \approx \frac{-2}{3.447} \approx -0.58.
+$$
+
+**Step 3: Normal CDF**
+
+$$
+P(Y \le 10) \approx \Phi(-0.58) = 1 - \Phi(0.58).
+$$
+
+$\Phi(0.58) \approx 0.719$, so
+
+$$
+P(Y \le 10) \approx 1 - 0.719 = 0.281.
+$$
+
+Thus approximately 0.2810.
+
+---
+
+## Question 4
+
+Daily orders of machines: $X \sim \text{Poisson}(\lambda=9.5)$.
+
+### 4(a)
+
+We want percentage of days where more than 10 machines are ordered:
+
+$$
+P(X > 10) = 1 - P(X \le 10).
+$$
+
+The options include 35.47% as the marked answer.
+
+**Step 1: Exact or approximate computation**
+
+Compute $P(X \le 10) = \sum_{k=0}^{10} e^{-9.5} \frac{9.5^k}{k!}$.  
+Numerically this yields approximately 0.6453.  
+
+Then:
+$$
+P(X > 10) = 1 - 0.6453 = 0.3547 \implies 35.47\%.
+$$
+
+
+---
+
+### 4(b)
+
+4 work days. Total machines shipped in 4 days:  
+$S_4 = X_1 + \cdots + X_4$, each $X_i \sim \text{Poisson}(9.5)$.
+
+So $S_4 \sim \text{Poisson}(4 \cdot 9.5) = \text{Poisson}(38)$.
+
+They give that the exact probability of having sent fewer than 30 machines in 4 days is 0.097964. We want to approximate this by CLT and compare.
+
+**Step 1: CLT approximation**
+
+For a Poisson(38), approximate with $Y \sim N(\mu=38,\sigma^2=38)$.
+
+We want $P(S_4 < 30) = P(S_4 \le 29)$.
+
+Use continuity correction:
+
+$$
+P(S_4 \le 29) \approx P(Y \le 29.5).
+$$
+
+Standardize:
+$$
+Z = \frac{29.5 - 38}{\sqrt{38}} = \frac{-8.5}{\sqrt{38}}.
+$$
+
+$\sqrt{38} \approx 6.164$, so
+$$
+Z \approx \frac{-8.5}{6.164} \approx -1.38.
+$$
+
+Then:
+
+$$
+P(Y \le 29.5) \approx \Phi(-1.38) = 1 - \Phi(1.38).
+$$
+
+$\Phi(1.38) \approx 0.9162$, so
+$$
+P(Y \le 29.5) \approx 1 - 0.9162 = 0.0838.
+$$
+
+Exact probability: 0.07964.  
+Approximate: about 0.0838–0.07964.  
+The absolute error is about 0.00416.
+
+---
+
+## Question 5
+
+Projector lifetime: 20% fail in the first year.
+
+So for each projector, define $X_i = 1$ if it fails in the first year, 0 otherwise, with $P(X_i=1) = p = 0.2$.  
+
+In sample of 500 projectors, number of failures $Y \sim \text{Binomial}(n=500, p=0.2)$.
+
+We want approximate probability that at most 80 fail.
+
+### Step 1: Parameters
+
+Mean:
+$$
+\mu = np = 500 \cdot 0.2 = 100.
+$$
+
+Variance:
+$$
+\sigma^2 = np(1-p) = 500 \cdot 0.2 \cdot 0.8 = 80.
+$$
+
+$\sigma = \sqrt{80} \approx 8.944$.
+
+### Step 2: Continuity correction
+
+$P(Y \le 80)$ is approximated by
+$$
+P(Y \le 80) \approx P(Z \le z_0),
+\quad z_0 = \frac{80.5 - 100}{8.944}.
+$$
+
+$$
+z_0 \approx \frac{-19.5}{8.944} \approx -2.18.
+$$
+
+So
+$$
+P(Y \le 80) \approx \Phi(-2.18) = 1 - \Phi(2.18).
+$$
+
+$\Phi(2.18) \approx 0.9854$.
+
+Thus
+
+$$
+P(Y \le 80) \approx 1 - 0.9854 = 0.0146.
+$$
+
+
+---
+
+## Question 6
+
+Interarrival time between people at hospital reception: exponential with mean 30 seconds. Let $T$ be time between arrivals; then $T \sim \text{Exponential}(\lambda)$ where mean $1/\lambda = 30$, so $\lambda = 1/30$ per second.
+
+We want: approximate probability that at most 40 people arrive in 18 minutes.
+
+### Step 1: Convert to a counting process
+
+If interarrival times are exponential and independent, arrivals follow a Poisson process with rate $\lambda = 1/30$ per second.
+
+18 minutes = $18 \times 60 = 1080$ seconds.
+
+Mean number of arrivals in 18 minutes:
+$$
+\lambda t = \frac{1}{30} \times 1080 = 36.
+$$
+
+So number of arrivals $N$ in 18 min is Poisson(36).
+
+We want $P(N \le 40)$.
+
+### Step 2: CLT approximation
+
+Approximate $N \sim \text{Poisson}(36)$ by $Y \sim N(36, 36)$.
+
+Use continuity correction:
+
+$$
+P(N \le 40) \approx P(Y \le 40.5).
+$$
+
+Standardize:
+$$
+Z = \frac{40.5 - 36}{\sqrt{36}} = \frac{4.5}{6} = 0.75.
+$$
+
+Thus:
+$$
+P(N \le 40) \approx \Phi(0.75).
+$$
+
+$\Phi(0.75) \approx 0.7734$.
+
+So the approximate probability is 0.7734 as stated.  
+Statement is **TRUE**.
+
+---
+
+## Question 7
+
+At a gas station, each customer buys a random amount of gas $X$ uniformly distributed on $[10, 40]$ liters. Daily there are 300 customers, independent.
+
+We want the approximate probability that the daily total gas $S_{300}$ is greater than 7410 L.
+
+### Step 1: Mean and variance of a single purchase
+
+Uniform $[a,b]$:  
+$$
+E(X) = \frac{a + b}{2}, \quad V(X) = \frac{(b - a)^2}{12}.
+$$
+
+Here, $a = 10$, $b = 40$.
+
+$$
+E(X) = \frac{10 + 40}{2} = 25.
+$$
+
+$$
+V(X) = \frac{(40 - 10)^2}{12} = \frac{30^2}{12} = \frac{900}{12} = 75.
+$$
+
+### Step 2: Sum over 300 customers
+
+Let $S_{300} = X_1 + \cdots + X_{300}$.
+
+$$
+E(S_{300}) = 300 \cdot 25 = 7500.
+$$
+
+$$
+V(S_{300}) = 300 \cdot 75 = 22500.
+$$
+
+$\sigma_{S} = \sqrt{22500} = 150.$
+
+By CLT:
+$$
+S_{300} \approx N(7500, 22500).
+$$
+
+### Step 3: Probability $P(S_{300} > 7410)$
+
+Use no continuity correction since the total is continuous.
+
+Standardize:
+$$
+Z = \frac{7410 - 7500}{150} = \frac{-90}{150} = -0.6.
+$$
+
+We want $P(S_{300} > 7410) = P(Z > -0.6)$.
+
+$$
+P(Z > -0.6) = 1 - P(Z \le -0.6) = 1 - (1 - \Phi(0.6)) = \Phi(0.6).
+$$
+
+So the approximate probability is $\Phi(0.6)$, as stated.
+
+Statement is **TRUE**.
+
+---
+
+## Question 8
+
+Rice demand per day: $X$ with mean 40 kg and standard deviation 5 kg.
+
+Assume a year with 364 days. We order 14500 kg for the year. We want probability that this stock suffices (i.e., total demand $S$ in the year ≤ 14500).
+
+### Step 1: Sum of daily demands
+
+Let $X_1, \ldots, X_{364}$ be daily independent demands (same distribution).
+
+$$
+E(X_i) = \mu = 40, \quad \sigma = 5, \quad V(X_i) = 25.
+$$
+
+Total yearly demand:
+$$
+S = \sum_{i=1}^{364} X_i.
+$$
+
+$$
+E(S) = 364 \cdot 40 = 14560.
+$$
+
+$$
+V(S) = 364 \cdot 25 = 9100.
+$$
+
+$\sigma_S = \sqrt{9100} \approx 95.394.$
+
+### Step 2: CLT approximation
+
+By CLT:
+$$
+S \approx N(14560, 9100).
+$$
+
+We want
+$$
+P(S \le 14500).
+$$
+
+Standardize:
+$$
+Z = \frac{14500 - 14560}{\sqrt{9100}} = \frac{-60}{95.394} \approx -0.6289.
+$$
+
+So
+$$
+P(S \le 14500) \approx \Phi(-0.6289) = 1 - \Phi(0.6289).
+$$
+
+$\Phi(0.6289) \approx 0.7357$. Then
+$$
+P(S \le 14500) \approx 1 - 0.7357 = 0.2643.
+$$
+
+Thus probability is approximately 0.2643, as given.
+
+Statement is **TRUE**.
+
+---
