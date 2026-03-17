@@ -78,7 +78,7 @@ The number of access to a certain website follows a Poisson distribution with an
 
 a) `r torf(TRUE)` The probability (exact) that, in a a given day, the number of access is higher than 40 is exactly $0.0323$. The **approximate** probability, by using the CLT, leads to an error of $0.0049$, from the exact result.
 
-b) The probability that the number of accesses in a week (7 days) is between 200 and 220 (inclusive) is approximately: `r mcq(c(answer="0.5098","0.4879", "0.4908", "None of the above"))`
+b) The probability that the number of accesses in a week (7 days) is between 200 and 220 (exclusive) is approximately: `r mcq(c("0.5098",answer="0.4879", "0.4908", "None of the above"))`
 
 :::
 

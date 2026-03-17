@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>central_limit_theorem – Statistics II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/ISCAL_logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/ISCAL_logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics II</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../material.html"> 
+<span class="menu-text">Material</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#chapter-i-central-limit-theorem" id="toc-chapter-i-central-limit-theorem" class="nav-link active" data-scroll-target="#chapter-i-central-limit-theorem">Chapter I — Central Limit Theorem</a>
+  <ul class="collapse">
+  <li><a href="#question-1" id="toc-question-1" class="nav-link" data-scroll-target="#question-1">Question 1</a>
+  <ul class="collapse">
+  <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a">1(a)</a></li>
+  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">1(b)</a></li>
+  </ul></li>
+  <li><a href="#question-2" id="toc-question-2" class="nav-link" data-scroll-target="#question-2">Question 2</a>
+  <ul class="collapse">
+  <li><a href="#a-1" id="toc-a-1" class="nav-link" data-scroll-target="#a-1">2(a)</a></li>
+  <li><a href="#b-1" id="toc-b-1" class="nav-link" data-scroll-target="#b-1">2(b)</a></li>
+  </ul></li>
+  <li><a href="#question-3" id="toc-question-3" class="nav-link" data-scroll-target="#question-3">Question 3</a>
+  <ul class="collapse">
+  <li><a href="#a-2" id="toc-a-2" class="nav-link" data-scroll-target="#a-2">3(a)</a></li>
+  <li><a href="#b-2" id="toc-b-2" class="nav-link" data-scroll-target="#b-2">3(b)</a></li>
+  </ul></li>
+  <li><a href="#question-4" id="toc-question-4" class="nav-link" data-scroll-target="#question-4">Question 4</a>
+  <ul class="collapse">
+  <li><a href="#a-3" id="toc-a-3" class="nav-link" data-scroll-target="#a-3">4(a)</a></li>
+  <li><a href="#b-3" id="toc-b-3" class="nav-link" data-scroll-target="#b-3">4(b)</a></li>
+  </ul></li>
+  <li><a href="#question-5" id="toc-question-5" class="nav-link" data-scroll-target="#question-5">Question 5</a>
+  <ul class="collapse">
+  <li><a href="#step-1-parameters" id="toc-step-1-parameters" class="nav-link" data-scroll-target="#step-1-parameters">Step 1: Parameters</a></li>
+  <li><a href="#step-2-continuity-correction" id="toc-step-2-continuity-correction" class="nav-link" data-scroll-target="#step-2-continuity-correction">Step 2: Continuity correction</a></li>
+  </ul></li>
+  <li><a href="#question-6" id="toc-question-6" class="nav-link" data-scroll-target="#question-6">Question 6</a>
+  <ul class="collapse">
+  <li><a href="#step-1-convert-to-a-counting-process" id="toc-step-1-convert-to-a-counting-process" class="nav-link" data-scroll-target="#step-1-convert-to-a-counting-process">Step 1: Convert to a counting process</a></li>
+  <li><a href="#step-2-clt-approximation" id="toc-step-2-clt-approximation" class="nav-link" data-scroll-target="#step-2-clt-approximation">Step 2: CLT approximation</a></li>
+  </ul></li>
+  <li><a href="#question-7" id="toc-question-7" class="nav-link" data-scroll-target="#question-7">Question 7</a>
+  <ul class="collapse">
+  <li><a href="#step-1-mean-and-variance-of-a-single-purchase" id="toc-step-1-mean-and-variance-of-a-single-purchase" class="nav-link" data-scroll-target="#step-1-mean-and-variance-of-a-single-purchase">Step 1: Mean and variance of a single purchase</a></li>
+  <li><a href="#step-2-sum-over-300-customers" id="toc-step-2-sum-over-300-customers" class="nav-link" data-scroll-target="#step-2-sum-over-300-customers">Step 2: Sum over 300 customers</a></li>
+  <li><a href="#step-3-probability-ps_300-7410" id="toc-step-3-probability-ps_300-7410" class="nav-link" data-scroll-target="#step-3-probability-ps_300-7410">Step 3: Probability <span class="math inline">\(P(S_{300} &gt; 7410)\)</span></a></li>
+  </ul></li>
+  <li><a href="#question-8" id="toc-question-8" class="nav-link" data-scroll-target="#question-8">Question 8</a>
+  <ul class="collapse">
+  <li><a href="#step-1-sum-of-daily-demands" id="toc-step-1-sum-of-daily-demands" class="nav-link" data-scroll-target="#step-1-sum-of-daily-demands">Step 1: Sum of daily demands</a></li>
+  <li><a href="#step-2-clt-approximation-1" id="toc-step-2-clt-approximation-1" class="nav-link" data-scroll-target="#step-2-clt-approximation-1">Step 2: CLT approximation</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="chapter-i-central-limit-theorem" class="level1">
+<h1>Chapter I — Central Limit Theorem</h1>
+<p>Step‑by‑step solutions</p>
+<!-- In each subquestion, I also indicate whether the answer encoded in the exercise file (TRUE/FALSE or selected MCQ option) is correct. -->
+<hr>
+<section id="question-1" class="level2">
+<h2 class="anchored" data-anchor-id="question-1">Question 1</h2>
+<p>The number of accesses per day: <span class="math inline">\(X \sim \text{Poisson}(\lambda = 30)\)</span>.</p>
+<section id="a" class="level3">
+<h3 class="anchored" data-anchor-id="a">1(a)</h3>
+<blockquote class="blockquote">
+<p>Exact probability that, in a given day, the number of accesses is higher than 40 is 0.0323. The approximate probability using CLT differs from the exact result by 0.0049. (Marked TRUE)</p>
+</blockquote>
+<p><strong>Step 1: Exact probability</strong></p>
+<p>We want<br>
+<span class="math display">\[
+P(X &gt; 40) = 1 - P(X \le 40) = 1 - \sum_{k=0}^{40} e^{-30} \frac{30^k}{k!}.
+\]</span></p>
+<p>This is computed numerically (using a calculator or software).<br>
+If you compute <span class="math inline">\(P(X \le 40)\)</span> and subtract from 1, you get approximately <span class="math inline">\(0.0323\)</span>.</p>
+<p><strong>Step 2: Normal approximation (CLT)</strong></p>
+<p>For a Poisson(<span class="math inline">\(\lambda\)</span>), when <span class="math inline">\(\lambda\)</span> is large,<br>
+<span class="math display">\[
+X \approx N(\mu = \lambda, \sigma^2 = \lambda).
+\]</span></p>
+<p>So here: <span class="math inline">\(\mu = 30\)</span>, <span class="math inline">\(\sigma = \sqrt{30} \approx 5.477\)</span>.</p>
+<p>We approximate <span class="math inline">\(P(X &gt; 40)\)</span> by <span class="math inline">\(P(Y &gt; 40.5)\)</span> with continuity correction, where <span class="math inline">\(Y \sim N(30, 30)\)</span>.</p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{40.5 - 30}{\sqrt{30}} \approx \frac{10.5}{5.477} \approx 1.917.
+\]</span></p>
+<p>Then <span class="math display">\[
+P(X &gt; 40) \approx P(Z &gt; 1.917) = 1 - \Phi(1.917) \approx 0.0274 \quad (\text{approx}).
+\]</span></p>
+<p><strong>Step 3: Error of approximation</strong></p>
+<p>Exact: about <span class="math inline">\(0.0323\)</span>.<br>
+Normal approximation: about <span class="math inline">\(0.0274\)</span>.<br>
+Difference in absolute value: <span class="math inline">\(|0.0323 - 0.0274| \approx 0.0049\)</span>.</p>
+<hr>
+</section>
+<section id="b" class="level3">
+<h3 class="anchored" data-anchor-id="b">1(b)</h3>
+<p>Weekly number of accesses in 7 days. Let <span class="math inline">\(S_7 = X_1 + \cdots + X_7\)</span>.</p>
+<p>Each day is Poisson(30) and independent, so<br>
+<span class="math display">\[
+S_7 \sim \text{Poisson}(7 \cdot 30) = \text{Poisson}(210).
+\]</span></p>
+<p>We want <span class="math inline">\(P(200 &lt; S_7 \le 220)\)</span> approximately.</p>
+<p><strong>Step 1: CLT approximation</strong></p>
+<p>For a Poisson with large mean <span class="math inline">\(\lambda = 210\)</span>:<br>
+<span class="math display">\[
+S_7 \approx N(\mu = 210, \sigma^2 = 210).
+\]</span></p>
+<p>Use continuity correction from 200.5 to 220.5:</p>
+<p><span class="math display">\[
+P(200 &lt; S_7 \le 220) \approx P(200.5 \le Y \le 220.5),
+\]</span> where <span class="math inline">\(Y \sim N(210, 210)\)</span>.</p>
+<p><strong>Step 2: Standardize bounds</strong></p>
+<p><span class="math display">\[
+Z_1 = \frac{200.5 - 210}{\sqrt{210}},\quad
+Z_2 = \frac{220.5 - 210}{\sqrt{210}}.
+\]</span></p>
+<p><span class="math inline">\(\sqrt{210} \approx 14.491\)</span>.</p>
+<p>Then: <span class="math display">\[
+Z_1 \approx \frac{-9.5}{14.491} \approx -0.656,
+\]</span> <span class="math display">\[
+Z_2 \approx \frac{10.5}{14.491} \approx 0.725.
+\]</span></p>
+<p><strong>Step 3: Use standard normal CDF</strong></p>
+<p><span class="math display">\[
+P(200.5 \le Y \le 220.5) = \Phi(0.725) - \Phi(-0.656).
+\]</span></p>
+<p>But <span class="math inline">\(\Phi(-a) = 1 - \Phi(a)\)</span>. So:</p>
+<p><span class="math display">\[
+\Phi(0.725) - \Phi(-0.656) = \Phi(0.725) - (1 - \Phi(0.656)) = \Phi(0.725)+\Phi(0.656) - 1.
+\]</span></p>
+<p>Using a normal table or calculator, <span class="math inline">\(\Phi(0.725) \approx 0.766\)</span> and <span class="math inline">\(\Phi(0.656)\approx 0.744\)</span>.</p>
+<p>So approximate probability: <span class="math display">\[
+0.766 + 0.744 - 1 = 0.51 \text{ (around)}.
+\]</span></p>
+<p>More precise computation gives ~0.5098.</p>
+<hr>
+</section>
+</section>
+<section id="question-2" class="level2">
+<h2 class="anchored" data-anchor-id="question-2">Question 2</h2>
+<p>System with 100 parts, independent, each fails with probability <span class="math inline">\(p = 0.1\)</span>.<br>
+Let <span class="math inline">\(X\)</span> be the number of failed parts: <span class="math inline">\(X \sim \text{Binomial}(n=100, p=0.1)\)</span>.<br>
+Number of working parts is <span class="math inline">\(100 - X\)</span>.</p>
+<p>System works if at least 85 parts are operative. That means at most 15 failed:</p>
+<p><span class="math display">\[
+\text{System works} \iff X \le 15.
+\]</span></p>
+<section id="a-1" class="level3">
+<h3 class="anchored" data-anchor-id="a-1">2(a)</h3>
+<p>Statement: approximate probability that system works is 0.9664. (Marked TRUE)</p>
+<p>So we need <span class="math inline">\(P(X \le 15)\)</span>.</p>
+<p><strong>Step 1: Parameters for normal approximation</strong></p>
+<p>Mean: <span class="math display">\[
+\mu = np = 100 \cdot 0.1 = 10.
+\]</span></p>
+<p>Variance: <span class="math display">\[
+\sigma^2 = np(1-p) = 100 \cdot 0.1 \cdot 0.9 = 9.
+\]</span></p>
+<p><span class="math inline">\(\sigma = 3\)</span>.</p>
+<p><strong>Step 2: CLT with continuity correction</strong></p>
+<p>We want <span class="math inline">\(P(X \le 15)\)</span>. With continuity correction: <span class="math display">\[
+P(X \le 15) \approx P(Y \le 15.5), \quad Y \sim N(10, 9).
+\]</span></p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{15.5 - 10}{3} = \frac{5.5}{3} \approx 1.833.
+\]</span></p>
+<p>So <span class="math display">\[
+P(X \le 15) \approx \Phi(1.833).
+\]</span></p>
+<p>Using a standard normal table, <span class="math inline">\(\Phi(1.83)\)</span> is around 0.9664.</p>
+<hr>
+</section>
+<section id="b-1" class="level3">
+<h3 class="anchored" data-anchor-id="b-1">2(b)</h3>
+<p>Statement: In the previous calculation, using CLT requires only that sample size from a non-normal population is large enough. (Marked FALSE)</p>
+<p><strong>Explanation</strong></p>
+<p>Conditions to use CLT approximation for binomial also include that both <span class="math inline">\(np\)</span> and <span class="math inline">\(n(1-p)\)</span> are “not too small,” typically <span class="math inline">\(np \ge 5\)</span> and <span class="math inline">\(n(1-p) \ge 5\)</span>. The statement that only a “large sample” is enough ignores this condition.</p>
+<p>Thus the statement is <strong>FALSE</strong>, marking is <strong>correct</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="question-3" class="level2">
+<h2 class="anchored" data-anchor-id="question-3">Question 3</h2>
+<p>TeleDigit calls. Each call is a complaint with probability <span class="math inline">\(p = 0.05\)</span>.</p>
+<section id="a-2" class="level3">
+<h3 class="anchored" data-anchor-id="a-2">3(a)</h3>
+<p>Sample of 20 calls. Let <span class="math inline">\(X \sim \text{Binomial}(n=20, p=0.05)\)</span>.<br>
+We want <span class="math inline">\(P(2 \le X \le 5)\)</span>.</p>
+<p>Statement: that probability equals 0.2639 (marked TRUE).</p>
+<p><strong>Step 1: Exact binomial probability</strong></p>
+<p><span class="math display">\[
+P(2 \le X \le 5) = \sum_{k=2}^5 \binom{20}{k} (0.05)^k (0.95)^{20-k}.
+\]</span></p>
+<p>Compute term by term:</p>
+<ul>
+<li>For <span class="math inline">\(k=2\)</span>: <span class="math inline">\(\binom{20}{2} (0.05)^2 (0.95)^{18}\)</span>.</li>
+<li>For <span class="math inline">\(k=3\)</span>: <span class="math inline">\(\binom{20}{3} (0.05)^3 (0.95)^{17}\)</span>.</li>
+<li>For <span class="math inline">\(k=4\)</span>: <span class="math inline">\(\binom{20}{4} (0.05)^4 (0.95)^{16}\)</span>.</li>
+<li>For <span class="math inline">\(k=5\)</span>: <span class="math inline">\(\binom{20}{5} (0.05)^5 (0.95)^{15}\)</span>.</li>
+</ul>
+<p>Using a calculator or software, the sum gives approximately 0.2639.</p>
+<p><strong>Verdict</strong></p>
+<p>The value 0.2639 is correct; statement is <strong>TRUE</strong>, marking is <strong>correct</strong>.</p>
+<hr>
+</section>
+<section id="b-2" class="level3">
+<h3 class="anchored" data-anchor-id="b-2">3(b)</h3>
+<p>Sample of 250 calls. Let <span class="math inline">\(Y \sim \text{Binomial}(n=250, p=0.05)\)</span>.<br>
+We want approximate <span class="math inline">\(P(Y \le 10)\)</span>.</p>
+<p><strong>Step 1: Parameters for CLT</strong></p>
+<p>Mean: <span class="math display">\[
+\mu = np = 250 \cdot 0.05 = 12.5.
+\]</span></p>
+<p>Variance: <span class="math display">\[
+\sigma^2 = np(1-p) = 12.5 \cdot 0.95 = 11.875.
+\]</span></p>
+<p><span class="math inline">\(\sigma \approx \sqrt{11.875} \approx 3.447\)</span>.</p>
+<p><strong>Step 2: Continuity correction</strong></p>
+<p>We want <span class="math inline">\(P(Y \le 10)\)</span>. Use <span class="math inline">\(10.5\)</span>:</p>
+<p><span class="math display">\[
+P(Y \le 10) \approx P(Z \le z_0),
+\quad
+z_0 = \frac{10.5 - 12.5}{3.447} \approx \frac{-2}{3.447} \approx -0.58.
+\]</span></p>
+<p><strong>Step 3: Normal CDF</strong></p>
+<p><span class="math display">\[
+P(Y \le 10) \approx \Phi(-0.58) = 1 - \Phi(0.58).
+\]</span></p>
+<p><span class="math inline">\(\Phi(0.58) \approx 0.719\)</span>, so</p>
+<p><span class="math display">\[
+P(Y \le 10) \approx 1 - 0.719 = 0.281.
+\]</span></p>
+<p>Thus approximately 0.2810.</p>
+<hr>
+</section>
+</section>
+<section id="question-4" class="level2">
+<h2 class="anchored" data-anchor-id="question-4">Question 4</h2>
+<p>Daily orders of machines: <span class="math inline">\(X \sim \text{Poisson}(\lambda=9.5)\)</span>.</p>
+<section id="a-3" class="level3">
+<h3 class="anchored" data-anchor-id="a-3">4(a)</h3>
+<p>We want percentage of days where more than 10 machines are ordered:</p>
+<p><span class="math display">\[
+P(X &gt; 10) = 1 - P(X \le 10).
+\]</span></p>
+<p>The options include 35.47% as the marked answer.</p>
+<p><strong>Step 1: Exact or approximate computation</strong></p>
+<p>Compute <span class="math inline">\(P(X \le 10) = \sum_{k=0}^{10} e^{-9.5} \frac{9.5^k}{k!}\)</span>.<br>
+Numerically this yields approximately 0.6453.</p>
+<p>Then: <span class="math display">\[
+P(X &gt; 10) = 1 - 0.6453 = 0.3547 \implies 35.47\%.
+\]</span></p>
+<hr>
+</section>
+<section id="b-3" class="level3">
+<h3 class="anchored" data-anchor-id="b-3">4(b)</h3>
+<p>4 work days. Total machines shipped in 4 days:<br>
+<span class="math inline">\(S_4 = X_1 + \cdots + X_4\)</span>, each <span class="math inline">\(X_i \sim \text{Poisson}(9.5)\)</span>.</p>
+<p>So <span class="math inline">\(S_4 \sim \text{Poisson}(4 \cdot 9.5) = \text{Poisson}(38)\)</span>.</p>
+<p>They give that the exact probability of having sent fewer than 30 machines in 4 days is 0.097964. We want to approximate this by CLT and compare.</p>
+<p><strong>Step 1: CLT approximation</strong></p>
+<p>For a Poisson(38), approximate with <span class="math inline">\(Y \sim N(\mu=38,\sigma^2=38)\)</span>.</p>
+<p>We want <span class="math inline">\(P(S_4 &lt; 30) = P(S_4 \le 29)\)</span>.</p>
+<p>Use continuity correction:</p>
+<p><span class="math display">\[
+P(S_4 \le 29) \approx P(Y \le 29.5).
+\]</span></p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{29.5 - 38}{\sqrt{38}} = \frac{-8.5}{\sqrt{38}}.
+\]</span></p>
+<p><span class="math inline">\(\sqrt{38} \approx 6.164\)</span>, so <span class="math display">\[
+Z \approx \frac{-8.5}{6.164} \approx -1.38.
+\]</span></p>
+<p>Then:</p>
+<p><span class="math display">\[
+P(Y \le 29.5) \approx \Phi(-1.38) = 1 - \Phi(1.38).
+\]</span></p>
+<p><span class="math inline">\(\Phi(1.38) \approx 0.9162\)</span>, so <span class="math display">\[
+P(Y \le 29.5) \approx 1 - 0.9162 = 0.0838.
+\]</span></p>
+<p>Exact probability: 0.07964.<br>
+Approximate: about 0.0838–0.07964.<br>
+The absolute error is about 0.00416.</p>
+<hr>
+</section>
+</section>
+<section id="question-5" class="level2">
+<h2 class="anchored" data-anchor-id="question-5">Question 5</h2>
+<p>Projector lifetime: 20% fail in the first year.</p>
+<p>So for each projector, define <span class="math inline">\(X_i = 1\)</span> if it fails in the first year, 0 otherwise, with <span class="math inline">\(P(X_i=1) = p = 0.2\)</span>.</p>
+<p>In sample of 500 projectors, number of failures <span class="math inline">\(Y \sim \text{Binomial}(n=500, p=0.2)\)</span>.</p>
+<p>We want approximate probability that at most 80 fail.</p>
+<section id="step-1-parameters" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-parameters">Step 1: Parameters</h3>
+<p>Mean: <span class="math display">\[
+\mu = np = 500 \cdot 0.2 = 100.
+\]</span></p>
+<p>Variance: <span class="math display">\[
+\sigma^2 = np(1-p) = 500 \cdot 0.2 \cdot 0.8 = 80.
+\]</span></p>
+<p><span class="math inline">\(\sigma = \sqrt{80} \approx 8.944\)</span>.</p>
+</section>
+<section id="step-2-continuity-correction" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-continuity-correction">Step 2: Continuity correction</h3>
+<p><span class="math inline">\(P(Y \le 80)\)</span> is approximated by <span class="math display">\[
+P(Y \le 80) \approx P(Z \le z_0),
+\quad z_0 = \frac{80.5 - 100}{8.944}.
+\]</span></p>
+<p><span class="math display">\[
+z_0 \approx \frac{-19.5}{8.944} \approx -2.18.
+\]</span></p>
+<p>So <span class="math display">\[
+P(Y \le 80) \approx \Phi(-2.18) = 1 - \Phi(2.18).
+\]</span></p>
+<p><span class="math inline">\(\Phi(2.18) \approx 0.9854\)</span>.</p>
+<p>Thus</p>
+<p><span class="math display">\[
+P(Y \le 80) \approx 1 - 0.9854 = 0.0146.
+\]</span></p>
+<hr>
+</section>
+</section>
+<section id="question-6" class="level2">
+<h2 class="anchored" data-anchor-id="question-6">Question 6</h2>
+<p>Interarrival time between people at hospital reception: exponential with mean 30 seconds. Let <span class="math inline">\(T\)</span> be time between arrivals; then <span class="math inline">\(T \sim \text{Exponential}(\lambda)\)</span> where mean <span class="math inline">\(1/\lambda = 30\)</span>, so <span class="math inline">\(\lambda = 1/30\)</span> per second.</p>
+<p>We want: approximate probability that at most 40 people arrive in 18 minutes.</p>
+<section id="step-1-convert-to-a-counting-process" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-convert-to-a-counting-process">Step 1: Convert to a counting process</h3>
+<p>If interarrival times are exponential and independent, arrivals follow a Poisson process with rate <span class="math inline">\(\lambda = 1/30\)</span> per second.</p>
+<p>18 minutes = <span class="math inline">\(18 \times 60 = 1080\)</span> seconds.</p>
+<p>Mean number of arrivals in 18 minutes: <span class="math display">\[
+\lambda t = \frac{1}{30} \times 1080 = 36.
+\]</span></p>
+<p>So number of arrivals <span class="math inline">\(N\)</span> in 18 min is Poisson(36).</p>
+<p>We want <span class="math inline">\(P(N \le 40)\)</span>.</p>
+</section>
+<section id="step-2-clt-approximation" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-clt-approximation">Step 2: CLT approximation</h3>
+<p>Approximate <span class="math inline">\(N \sim \text{Poisson}(36)\)</span> by <span class="math inline">\(Y \sim N(36, 36)\)</span>.</p>
+<p>Use continuity correction:</p>
+<p><span class="math display">\[
+P(N \le 40) \approx P(Y \le 40.5).
+\]</span></p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{40.5 - 36}{\sqrt{36}} = \frac{4.5}{6} = 0.75.
+\]</span></p>
+<p>Thus: <span class="math display">\[
+P(N \le 40) \approx \Phi(0.75).
+\]</span></p>
+<p><span class="math inline">\(\Phi(0.75) \approx 0.7734\)</span>.</p>
+<p>So the approximate probability is 0.7734 as stated.<br>
+Statement is <strong>TRUE</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="question-7" class="level2">
+<h2 class="anchored" data-anchor-id="question-7">Question 7</h2>
+<p>At a gas station, each customer buys a random amount of gas <span class="math inline">\(X\)</span> uniformly distributed on <span class="math inline">\([10, 40]\)</span> liters. Daily there are 300 customers, independent.</p>
+<p>We want the approximate probability that the daily total gas <span class="math inline">\(S_{300}\)</span> is greater than 7410 L.</p>
+<section id="step-1-mean-and-variance-of-a-single-purchase" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-mean-and-variance-of-a-single-purchase">Step 1: Mean and variance of a single purchase</h3>
+<p>Uniform <span class="math inline">\([a,b]\)</span>:<br>
+<span class="math display">\[
+E(X) = \frac{a + b}{2}, \quad V(X) = \frac{(b - a)^2}{12}.
+\]</span></p>
+<p>Here, <span class="math inline">\(a = 10\)</span>, <span class="math inline">\(b = 40\)</span>.</p>
+<p><span class="math display">\[
+E(X) = \frac{10 + 40}{2} = 25.
+\]</span></p>
+<p><span class="math display">\[
+V(X) = \frac{(40 - 10)^2}{12} = \frac{30^2}{12} = \frac{900}{12} = 75.
+\]</span></p>
+</section>
+<section id="step-2-sum-over-300-customers" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-sum-over-300-customers">Step 2: Sum over 300 customers</h3>
+<p>Let <span class="math inline">\(S_{300} = X_1 + \cdots + X_{300}\)</span>.</p>
+<p><span class="math display">\[
+E(S_{300}) = 300 \cdot 25 = 7500.
+\]</span></p>
+<p><span class="math display">\[
+V(S_{300}) = 300 \cdot 75 = 22500.
+\]</span></p>
+<p><span class="math inline">\(\sigma_{S} = \sqrt{22500} = 150.\)</span></p>
+<p>By CLT: <span class="math display">\[
+S_{300} \approx N(7500, 22500).
+\]</span></p>
+</section>
+<section id="step-3-probability-ps_300-7410" class="level3">
+<h3 class="anchored" data-anchor-id="step-3-probability-ps_300-7410">Step 3: Probability <span class="math inline">\(P(S_{300} &gt; 7410)\)</span></h3>
+<p>Use no continuity correction since the total is continuous.</p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{7410 - 7500}{150} = \frac{-90}{150} = -0.6.
+\]</span></p>
+<p>We want <span class="math inline">\(P(S_{300} &gt; 7410) = P(Z &gt; -0.6)\)</span>.</p>
+<p><span class="math display">\[
+P(Z &gt; -0.6) = 1 - P(Z \le -0.6) = 1 - (1 - \Phi(0.6)) = \Phi(0.6).
+\]</span></p>
+<p>So the approximate probability is <span class="math inline">\(\Phi(0.6)\)</span>, as stated.</p>
+<p>Statement is <strong>TRUE</strong>.</p>
+<hr>
+</section>
+</section>
+<section id="question-8" class="level2">
+<h2 class="anchored" data-anchor-id="question-8">Question 8</h2>
+<p>Rice demand per day: <span class="math inline">\(X\)</span> with mean 40 kg and standard deviation 5 kg.</p>
+<p>Assume a year with 364 days. We order 14500 kg for the year. We want probability that this stock suffices (i.e., total demand <span class="math inline">\(S\)</span> in the year ≤ 14500).</p>
+<section id="step-1-sum-of-daily-demands" class="level3">
+<h3 class="anchored" data-anchor-id="step-1-sum-of-daily-demands">Step 1: Sum of daily demands</h3>
+<p>Let <span class="math inline">\(X_1, \ldots, X_{364}\)</span> be daily independent demands (same distribution).</p>
+<p><span class="math display">\[
+E(X_i) = \mu = 40, \quad \sigma = 5, \quad V(X_i) = 25.
+\]</span></p>
+<p>Total yearly demand: <span class="math display">\[
+S = \sum_{i=1}^{364} X_i.
+\]</span></p>
+<p><span class="math display">\[
+E(S) = 364 \cdot 40 = 14560.
+\]</span></p>
+<p><span class="math display">\[
+V(S) = 364 \cdot 25 = 9100.
+\]</span></p>
+<p><span class="math inline">\(\sigma_S = \sqrt{9100} \approx 95.394.\)</span></p>
+</section>
+<section id="step-2-clt-approximation-1" class="level3">
+<h3 class="anchored" data-anchor-id="step-2-clt-approximation-1">Step 2: CLT approximation</h3>
+<p>By CLT: <span class="math display">\[
+S \approx N(14560, 9100).
+\]</span></p>
+<p>We want <span class="math display">\[
+P(S \le 14500).
+\]</span></p>
+<p>Standardize: <span class="math display">\[
+Z = \frac{14500 - 14560}{\sqrt{9100}} = \frac{-60}{95.394} \approx -0.6289.
+\]</span></p>
+<p>So <span class="math display">\[
+P(S \le 14500) \approx \Phi(-0.6289) = 1 - \Phi(0.6289).
+\]</span></p>
+<p><span class="math inline">\(\Phi(0.6289) \approx 0.7357\)</span>. Then <span class="math display">\[
+P(S \le 14500) \approx 1 - 0.7357 = 0.2643.
+\]</span></p>
+<p>Thus probability is approximately 0.2643, as given.</p>
+<p>Statement is <strong>TRUE</strong>.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
