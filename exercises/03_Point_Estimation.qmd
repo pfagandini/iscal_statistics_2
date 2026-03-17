@@ -121,7 +121,7 @@ $$
   T_2=\frac{1}{2}T_1
 $$
 
-`r torf(TRUE)` $T_2$ is a consistent estimator.
+`r torf(FALSE)` $T_2$ is a consistent estimator.
 
 :::
 
