@@ -62,5 +62,11 @@
   },
   "detailed_solutions/01_Central_Limit_Theorem.qmd": {
     "01_Central_Limit_Theorem.html": "36022516"
+  },
+  "slides/04_interval_estimation_part1.qmd": {
+    "04_interval_estimation_part1.html": "8dda19f4"
+  },
+  "slides/05_interval_estimation_part2.qmd": {
+    "05_interval_estimation_part2.html": "d6c08d25"
   }
 }

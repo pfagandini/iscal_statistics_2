@@ -704,7 +704,7 @@
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions\nPoint Estimation"
+    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions\nPoint Estimation\nInterval Estimation I\nInterval Estimation II"
   },
   {
     "objectID": "material.html#exercises",
@@ -1489,5 +1489,376 @@
     "title": "Chapter I — Central Limit Theorem",
     "section": "",
     "text": "Rice demand per day: \\(X\\) with mean 40 kg and standard deviation 5 kg.\nAssume a year with 364 days. We order 14500 kg for the year. We want probability that this stock suffices (i.e., total demand \\(S\\) in the year ≤ 14500).\n\n\nLet \\(X_1, \\ldots, X_{364}\\) be daily independent demands (same distribution).\n\\[\nE(X_i) = \\mu = 40, \\quad \\sigma = 5, \\quad V(X_i) = 25.\n\\]\nTotal yearly demand: \\[\nS = \\sum_{i=1}^{364} X_i.\n\\]\n\\[\nE(S) = 364 \\cdot 40 = 14560.\n\\]\n\\[\nV(S) = 364 \\cdot 25 = 9100.\n\\]\n\\(\\sigma_S = \\sqrt{9100} \\approx 95.394.\\)\n\n\n\nBy CLT: \\[\nS \\approx N(14560, 9100).\n\\]\nWe want \\[\nP(S \\le 14500).\n\\]\nStandardize: \\[\nZ = \\frac{14500 - 14560}{\\sqrt{9100}} = \\frac{-60}{95.394} \\approx -0.6289.\n\\]\nSo \\[\nP(S \\le 14500) \\approx \\Phi(-0.6289) = 1 - \\Phi(0.6289).\n\\]\n\\(\\Phi(0.6289) \\approx 0.7357\\). Then \\[\nP(S \\le 14500) \\approx 1 - 0.7357 = 0.2643.\n\\]\nThus probability is approximately 0.2643, as given.\nStatement is TRUE."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#interval-estimation-part-1",
+    "href": "slides/04_interval_estimation_part1.html#interval-estimation-part-1",
+    "title": "Interval Estimation — Part 1",
+    "section": "Interval Estimation — Part 1",
+    "text": "Interval Estimation — Part 1\nTopics covered\n\nConfidence Intervals — General Concepts\nConfidence Interval for the Population Mean, \\(\\mu\\), of Normal Populations\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-1",
+    "href": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-1",
+    "title": "Interval Estimation — Part 1",
+    "section": "Confidence Intervals — General Concepts",
+    "text": "Confidence Intervals — General Concepts\n\n\n\nDefinition\n\n\nOnce a random sample has been drawn from the population, interval estimation yields an interval that, with a specified degree of confidence, contains the true (unknown) parameter (interval estimate for a parameter \\(\\theta\\))."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-2",
+    "href": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Confidence Intervals — General Concepts",
+    "text": "Confidence Intervals — General Concepts\nMethodology for constructing a confidence interval:\n\nFind a “good” point estimator;\nEstablish a confidence level (most common: 90%, 95%, and 99%);\nKnow the sample size;\nKnow the sampling distribution of the estimator."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-3",
+    "href": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-3",
+    "title": "Interval Estimation — Part 1",
+    "section": "Confidence Intervals — General Concepts",
+    "text": "Confidence Intervals — General Concepts\nIn choosing the estimator, the Pivotal Variable Method should be followed.\nAccording to this method, the pivot statistic (or pivotal variable):\n\nMust contain the parameter to be estimated in its expression;\nIts sampling distribution (exact or approximate) must not depend on the parameter, nor on any other unknown quantity."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#confidence-interval-for-mu-overview",
+    "href": "slides/04_interval_estimation_part1.html#confidence-interval-for-mu-overview",
+    "title": "Interval Estimation — Part 1",
+    "section": "Confidence Interval for \\(\\mu\\) — Overview",
+    "text": "Confidence Interval for \\(\\mu\\) — Overview\n\nCase 1 — Normal population, \\(\\sigma\\) known\nCase 2 — Normal population, \\(\\sigma\\) unknown"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-normal-population-and-sigma-known-1",
+    "href": "slides/04_interval_estimation_part1.html#case-1-normal-population-and-sigma-known-1",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Normal Population and \\(\\sigma\\) Known",
+    "text": "Case 1 — Normal Population and \\(\\sigma\\) Known\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), drawn from a population \\(X\\) with distribution \\(N(\\mu, \\sigma)\\), where \\(\\sigma\\) is known.\n\\[\\underbrace{\\mu}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\bar{X}}_{\\substack{\\text{point} \\\\ \\text{estimator}}} \\;\\longrightarrow\\; \\underbrace{Z = \\dfrac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim N(0,1)}_{\\text{pivot statistic}}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-setting-up-the-probability-statement",
+    "href": "slides/04_interval_estimation_part1.html#case-1-setting-up-the-probability-statement",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Setting Up the Probability Statement",
+    "text": "Case 1 — Setting Up the Probability Statement\n\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1 - \\alpha\\]\nConfidence attributed to the interval: \\((1 - \\alpha) \\times 100\\%\\)"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-deriving-the-confidence-interval",
+    "href": "slides/04_interval_estimation_part1.html#case-1-deriving-the-confidence-interval",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Deriving the Confidence Interval",
+    "text": "Case 1 — Deriving the Confidence Interval\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow\\]\n\\[P\\!\\left(-z_{\\alpha/2} &lt; \\frac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}} &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow \\quad \\cdots\\]\n\\[P\\!\\left(\\bar{X} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}} &lt; \\mu &lt; \\bar{X} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right) = 1-\\alpha\\]\n\n\\(T_1 \\hspace{18em} T_2\\)"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-the-confidence-interval",
+    "href": "slides/04_interval_estimation_part1.html#case-1-the-confidence-interval",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — The Confidence Interval",
+    "text": "Case 1 — The Confidence Interval\nThe \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times 100\\%}(\\mu) = \\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)}\\]\nwhere \\(t_1 = \\bar{x} - z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}}\\) and \\(t_2 = \\bar{x} + z_{\\alpha/2}\\dfrac{\\sigma}{\\sqrt{n}}\\) are the observed lower and upper bounds."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-random-nature-of-the-bounds",
+    "href": "slides/04_interval_estimation_part1.html#case-1-random-nature-of-the-bounds",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Random Nature of the Bounds",
+    "text": "Case 1 — Random Nature of the Bounds\nDifferent samples yield different values of \\(\\bar{x}\\) and, consequently, different values of the bounds \\(t_1\\) and \\(t_2\\).\nTherefore, those bounds are realizations of random variables \\(T_1\\) and \\(T_2\\), respectively.\n\n\n\nThe confidence interval is random — it varies from sample to sample. What we compute from our data is one particular realization of that random interval."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-interpretation",
+    "href": "slides/04_interval_estimation_part1.html#case-1-interpretation",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Interpretation",
+    "text": "Case 1 — Interpretation\n\n\n\nCorrect Interpretation\n\n\nIf an infinite number of random samples of the same size were drawn, and a \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) were computed from each sample, then \\((1-\\alpha)\\times 100\\%\\) of those intervals would contain the true value of \\(\\mu\\).\n\n\n\n\nA particular computed interval either contains \\(\\mu\\) or it does not — we just do not know which. The \\((1-\\alpha)\\times 100\\%\\) refers to the long-run coverage of the procedure."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-visualization-of-coverage",
+    "href": "slides/04_interval_estimation_part1.html#case-1-visualization-of-coverage",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Visualization of Coverage",
+    "text": "Case 1 — Visualization of Coverage"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-properties-of-the-ci",
+    "href": "slides/04_interval_estimation_part1.html#case-1-properties-of-the-ci",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Properties of the CI",
+    "text": "Case 1 — Properties of the CI\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu)=\\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\nThe interval is symmetric: the midpoint equals the point estimate \\(\\bar{x}\\), and \\(\\sigma_{\\bar{X}} = \\sigma/\\sqrt{n}\\) is the standard error of the estimator \\(\\bar{X}\\).\nThe estimation error is the maximum error committed:\n\\[|\\bar{X} - \\mu| &lt; z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}} \\quad \\longleftarrow \\text{estimation error}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-width-of-the-interval",
+    "href": "slides/04_interval_estimation_part1.html#case-1-width-of-the-interval",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — Width of the Interval",
+    "text": "Case 1 — Width of the Interval\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu)=\\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\n\nConfidence level \\(\\uparrow\\) \\(\\Rightarrow\\) width increases \\(\\Rightarrow\\) inference becomes less precise (and vice versa).\nVariance \\(\\uparrow\\) \\(\\Rightarrow\\) width increases, because the standard error of the estimator increases.\nSample size \\(\\uparrow\\) \\(\\Rightarrow\\) width decreases \\(\\Rightarrow\\) inference becomes more precise."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-1-a-practical-note",
+    "href": "slides/04_interval_estimation_part1.html#case-1-a-practical-note",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 1 — A Practical Note",
+    "text": "Case 1 — A Practical Note\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu)=\\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\n\n\nIt is not guaranteed that constructing a CI always produces useful information. It is necessary to strike a balance between:\n\nthe sample size,\nthe confidence level, and\nthe precision of the interval."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#application-exercise-setup",
+    "href": "slides/04_interval_estimation_part1.html#application-exercise-setup",
+    "title": "Interval Estimation — Part 1",
+    "section": "Application Exercise — Setup",
+    "text": "Application Exercise — Setup\nConsider a population with a Normal distribution and known standard deviation \\(\\sigma = 20\\).\nA random sample of size \\(n = 20\\) was drawn, yielding a sample mean \\(\\bar{x} = 320\\).\nFind the 90% confidence interval for the population mean."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#application-exercise-conditions-case-1",
+    "href": "slides/04_interval_estimation_part1.html#application-exercise-conditions-case-1",
+    "title": "Interval Estimation — Part 1",
+    "section": "Application Exercise — Conditions (Case 1)",
+    "text": "Application Exercise — Conditions (Case 1)\nWe are in the conditions of Case 1 (Normal population, \\(\\sigma\\) known):\n\\[X \\sim N(\\mu,\\; \\sigma = 20), \\qquad n = 20, \\qquad \\bar{x} = 320\\]\nThe pivot statistic is:\n\\[Z = \\frac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}} \\sim N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#application-exercise-finding-z_alpha2",
+    "href": "slides/04_interval_estimation_part1.html#application-exercise-finding-z_alpha2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Application Exercise — Finding \\(z_{\\alpha/2}\\)",
+    "text": "Application Exercise — Finding \\(z_{\\alpha/2}\\)\nThe confidence interval to use is:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) = \\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\nWe want 90% confidence \\(\\Rightarrow\\) \\(1 - \\alpha = 0.90\\) \\(\\Rightarrow\\) \\(\\alpha = 0.10\\).\nWe have \\(\\bar{x}\\), \\(\\sigma\\), and \\(n\\). We still need \\(z_{\\alpha/2}\\).\nFor the most common confidence levels (90%, 95%, …), the values of \\(z_{\\alpha/2}\\) are tabulated (Table 5).\nLooking at the table, for \\(\\alpha = 0.10\\):\n\\[z_{\\alpha/2} = z_{0.05} = 1.645\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#application-exercise-result",
+    "href": "slides/04_interval_estimation_part1.html#application-exercise-result",
+    "title": "Interval Estimation — Part 1",
+    "section": "Application Exercise — Result",
+    "text": "Application Exercise — Result\nSubstituting all values into the CI formula:\n\\[IC_{90\\%}(\\mu) = \\left(320 - 1.645 \\times \\frac{20}{\\sqrt{20}},\\; 320 + 1.645 \\times \\frac{20}{\\sqrt{20}}\\right)\\]\n\n\n\n90% Confidence Interval for \\(\\mu\\)\n\n\n\\[IC_{90\\%}(\\mu) = (312.64\\;;\\; 327.36)\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#application-exercise-interpretation",
+    "href": "slides/04_interval_estimation_part1.html#application-exercise-interpretation",
+    "title": "Interval Estimation — Part 1",
+    "section": "Application Exercise — Interpretation",
+    "text": "Application Exercise — Interpretation\n\\[IC_{90\\%}(\\mu) = (312.64\\;;\\; 327.36)\\]\nThe particular interval \\((312.64\\;;\\; 327.36)\\) is a 90% confidence interval for the true value of \\(\\mu\\).\nThis means: if we were to construct confidence intervals from many different samples of the same size, 90% of them would effectively contain the population mean \\(\\mu\\)."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-2-normal-population-and-sigma-unknown-1",
+    "href": "slides/04_interval_estimation_part1.html#case-2-normal-population-and-sigma-unknown-1",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 2 — Normal Population and \\(\\sigma\\) Unknown",
+    "text": "Case 2 — Normal Population and \\(\\sigma\\) Unknown\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), drawn from a population \\(X\\) with distribution \\(N(\\mu, \\sigma)\\), where \\(\\sigma\\) is unknown.\n\\[\\underbrace{\\mu}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\bar{X}}_{\\substack{\\text{point} \\\\ \\text{estimator}}} \\;\\longrightarrow\\; \\underbrace{T = \\dfrac{\\bar{X} - \\mu}{S' / \\sqrt{n}} \\sim t_{(n-1)}}_{\\text{pivot statistic}}\\]\nwhere \\(S'\\) is the corrected sample standard deviation."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-2-setting-up-the-probability-statement",
+    "href": "slides/04_interval_estimation_part1.html#case-2-setting-up-the-probability-statement",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 2 — Setting Up the Probability Statement",
+    "text": "Case 2 — Setting Up the Probability Statement\n\n\\[P\\!\\left(-t_{\\alpha/2} &lt; T &lt; t_{\\alpha/2}\\right) = 1-\\alpha \\qquad \\text{(confidence: }(1-\\alpha)\\times 100\\text{\\%)}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-2-the-confidence-interval",
+    "href": "slides/04_interval_estimation_part1.html#case-2-the-confidence-interval",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 2 — The Confidence Interval",
+    "text": "Case 2 — The Confidence Interval\nThe \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times 100\\%}(\\mu) = \\left(\\bar{x} - t_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + t_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)}\\]\nwhere \\(t_{\\alpha/2}\\) is the critical value from the \\(t_{(n-1)}\\) distribution.\n\n\n\nAll properties derived for the CI in Case 1 (see earlier slides) apply equally here: the interval is symmetric, and its width increases with the confidence level and variance, and decreases with the sample size."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-1-setup",
+    "href": "slides/04_interval_estimation_part1.html#exercise-1-setup",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 1 — Setup",
+    "text": "Exercise 1 — Setup\nBased on a random sample of \\(n = 16\\) observations from a Normal population, the following 90% confidence interval for the expected value was constructed:\n\\[(7.398\\;;\\; 12.602)\\]\nGiven that \\(s' = 3.872\\), determine the confidence level that can be attributed to this interval.\n(a) 98% (b) 99% (c) Between 98% and 99%"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-1-conditions-case-2",
+    "href": "slides/04_interval_estimation_part1.html#exercise-1-conditions-case-2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 1 — Conditions (Case 2)",
+    "text": "Exercise 1 — Conditions (Case 2)\nConditions: Case 2 — Normal population, \\(\\sigma\\) unknown.\n\\[X \\sim N(\\mu, \\sigma\\!=\\!?\\,), \\qquad n = 16, \\qquad s' = 3.872\\]\nPivot statistic: \\(\\;T = \\dfrac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\sim t_{(n-1)} \\equiv t_{(15)}\\)"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-1-finding-t_alpha2",
+    "href": "slides/04_interval_estimation_part1.html#exercise-1-finding-t_alpha2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 1 — Finding \\(t_{\\alpha/2}\\)",
+    "text": "Exercise 1 — Finding \\(t_{\\alpha/2}\\)\nThe interval given is:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) = (7.398\\;;\\; 12.602)\\]\nIts width is:\n\\[h = 12.602 - 7.398 = 5.204\\]\nThe width of the CI can also be expressed as:\n\\[h = 2 \\times t_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-1-solving-for-t_alpha2",
+    "href": "slides/04_interval_estimation_part1.html#exercise-1-solving-for-t_alpha2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 1 — Solving for \\(t_{\\alpha/2}\\)",
+    "text": "Exercise 1 — Solving for \\(t_{\\alpha/2}\\)\nSetting the two expressions for \\(h\\) equal:\n\\[2 \\times t_{\\alpha/2}\\frac{s'}{\\sqrt{n}} = 5.204 \\;\\Rightarrow\\; t_{\\alpha/2} = \\frac{5.204 \\times \\sqrt{n}}{2 \\times s'}\\]\n\\[t_{\\alpha/2} = \\frac{5.204 \\times \\sqrt{16}}{2 \\times 3.872} = \\frac{5.204 \\times 4}{7.744} = 2.688\\]\nFrom the \\(t\\)-Student table (Table 7, row for 15 d.f.):\n\\[\\underset{{\\scriptstyle\\text{area}=0.01}}{2.602} \\;&lt;\\; 2.688 \\;&lt;\\; \\underset{{\\scriptstyle\\text{area}=0.005}}{2.947}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-1-conclusion",
+    "href": "slides/04_interval_estimation_part1.html#exercise-1-conclusion",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 1 — Conclusion",
+    "text": "Exercise 1 — Conclusion\n\\[\\underset{{\\scriptstyle\\text{area}=0.01}}{2.602} &lt; 2.688 &lt; \\underset{{\\scriptstyle\\text{area}=0.005}}{2.947}\\]\n\\[0.005 &lt; \\frac{\\alpha}{2} &lt; 0.01 \\;\\Leftrightarrow\\; 0.01 &lt; \\alpha &lt; 0.02 \\;\\Leftrightarrow\\; 0.98 &lt; 1-\\alpha &lt; 0.99\\]\nThe confidence level of the given interval lies between 98% and 99%.\n\n\n\nThe correct answer is (c)."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-2-large-samples-n-30",
+    "href": "slides/04_interval_estimation_part1.html#case-2-large-samples-n-30",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 2 — Large Samples (\\(n > 30\\))",
+    "text": "Case 2 — Large Samples (\\(n &gt; 30\\))\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\) and \\(n &gt; 30\\), from a population \\(X \\sim N(\\mu, \\sigma)\\) with \\(\\sigma\\) unknown.\n\\[\\underbrace{\\mu}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\bar{X}}_{\\substack{\\text{point} \\\\ \\text{estimator}}} \\;\\longrightarrow\\; \\underbrace{Z = \\dfrac{\\bar{X} - \\mu}{S' / \\sqrt{n}} \\;\\dot{\\sim}\\; N(0,1)}_{\\text{pivot statistic (approx.)}}\\]\nThe pivot statistic no longer follows a \\(t_{(n-1)}\\) distribution — it follows an approximately \\(N(0,1)\\) distribution."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#case-2-large-sample-ci-n-30",
+    "href": "slides/04_interval_estimation_part1.html#case-2-large-sample-ci-n-30",
+    "title": "Interval Estimation — Part 1",
+    "section": "Case 2 — Large-Sample CI (\\(n > 30\\))",
+    "text": "Case 2 — Large-Sample CI (\\(n &gt; 30\\))\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[IC_{(1-\\alpha)\\times 100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\nNote: When \\(n &gt; 30\\) and \\(\\sigma\\) is unknown, the corrected sample standard deviation \\(s'\\) is used in place of \\(\\sigma\\), and the standard normal critical value \\(z_{\\alpha/2}\\) replaces the \\(t_{\\alpha/2}\\) critical value. The resulting interval is approximate."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-2-setup",
+    "href": "slides/04_interval_estimation_part1.html#exercise-2-setup",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 2 — Setup",
+    "text": "Exercise 2 — Setup\nUsing the same sample from Exercise 1 (\\(n = 16\\), \\(s' = 3.872\\), CI at 98%: \\((7.398\\;;\\;12.602)\\)):\nWhat sample size should be collected (assuming \\(s'\\) does not change) so that the width of the CI is reduced by half?"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-2-initial-analysis",
+    "href": "slides/04_interval_estimation_part1.html#exercise-2-initial-analysis",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 2 — Initial Analysis",
+    "text": "Exercise 2 — Initial Analysis\nCurrent width: \\(h = 5.204\\)\nNew target width: \\(h' = h/2 = 5.204/2 = 2.602\\)\nIncreasing precision while keeping all other conditions constant requires a larger sample. We assume \\(n &gt; 30\\), so the pivot becomes approximately \\(N(0,1)\\)."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-2-solving-for-n",
+    "href": "slides/04_interval_estimation_part1.html#exercise-2-solving-for-n",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 2 — Solving for \\(n\\)",
+    "text": "Exercise 2 — Solving for \\(n\\)\nThe approximate CI for \\(\\mu\\) becomes:\n\\[IC_{98\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\nThe new width satisfies:\n\\[h' = 2 \\times z_{\\alpha/2}\\frac{s'}{\\sqrt{n}} \\;\\Rightarrow\\; 2.602 = 2 \\times \\underset{\\substack{\\uparrow \\\\ \\text{Table 5},\\; \\varepsilon = 0.02}}{2.326} \\times \\frac{3.872}{\\sqrt{n}}\\]\n\\[\\sqrt{n} = \\frac{2 \\times 2.326 \\times 3.872}{2.602} \\approx 6.92\\]\n\\[n \\geq (6.92)^2 \\;\\Rightarrow\\; \\boxed{n = 48}\\]"
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#exercise-2-conclusion",
+    "href": "slides/04_interval_estimation_part1.html#exercise-2-conclusion",
+    "title": "Interval Estimation — Part 1",
+    "section": "Exercise 2 — Conclusion",
+    "text": "Exercise 2 — Conclusion\n\n\n\nRequired Sample Size\n\n\nTo reduce the width of the 98% CI by half (from 5.204 to 2.602), while keeping \\(s' = 3.872\\) unchanged, a sample of \\(n = 48\\) observations must be collected.\n\n\n\n\n\n\nNote that the assumption \\(n &gt; 30\\) is satisfied (\\(48 &gt; 30\\)), validating the use of the normal approximation."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html#summary-case-1-vs.-case-2",
+    "href": "slides/04_interval_estimation_part1.html#summary-case-1-vs.-case-2",
+    "title": "Interval Estimation — Part 1",
+    "section": "Summary — Case 1 vs. Case 2",
+    "text": "Summary — Case 1 vs. Case 2\n\n\n\n\n\n\n\n\n\n\nCase 1\nCase 2 (\\(n \\leq 30\\))\nCase 2 (\\(n &gt; 30\\))\n\n\n\n\nPopulation\n\\(N(\\mu, \\sigma)\\)\n\\(N(\\mu, \\sigma)\\)\n\\(N(\\mu, \\sigma)\\)\n\n\n\\(\\sigma\\)\nKnown\nUnknown\nUnknown\n\n\nPivot\n\\(Z \\sim N(0,1)\\)\n\\(T \\sim t_{(n-1)}\\)\n\\(Z \\;\\dot{\\sim}\\; N(0,1)\\)\n\n\nCritical value\n\\(z_{\\alpha/2}\\)\n\\(t_{\\alpha/2}\\)\n\\(z_{\\alpha/2}\\)\n\n\nSE\n\\(\\sigma/\\sqrt{n}\\)\n\\(s'/\\sqrt{n}\\)\n\\(s'/\\sqrt{n}\\)\n\n\nInterval\nExact\nExact\nApproximate"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#interval-estimation-part-2-1",
+    "href": "slides/05_interval_estimation_part2.html#interval-estimation-part-2-1",
+    "title": "Interval Estimation — Part 2",
+    "section": "Interval Estimation — Part 2",
+    "text": "Interval Estimation — Part 2\nTopics covered\n2’) Confidence Interval for the Population Mean, \\(\\mu\\), of Non-Normal Populations\n\nConfidence Interval for the Proportion, \\(p\\), of a Bernoulli Population\nConfidence Interval for the Variance, \\(\\sigma^2\\), and Standard Deviation, \\(\\sigma\\), of a Normal Population\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#case-3-non-normal-population-and-n-30",
+    "href": "slides/05_interval_estimation_part2.html#case-3-non-normal-population-and-n-30",
+    "title": "Interval Estimation — Part 2",
+    "section": "Case 3 — Non-Normal Population and \\(n > 30\\)",
+    "text": "Case 3 — Non-Normal Population and \\(n &gt; 30\\)\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\) and \\(n &gt; 30\\), drawn from a population \\(X\\) of unknown or non-Normal distribution.\nRegardless of whether \\(\\sigma\\) is known or not, the pivot statistic is always approximately \\(N(0,1)\\) (by the Central Limit Theorem):\n\nIf \\(\\sigma\\) known:\n\\[\\underbrace{\\mu}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\bar{X}}_{\\text{point estimator}} \\;\\longrightarrow\\; \\underbrace{Z = \\dfrac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}}}_{\\text{pivot statistic}} \\;\\dot{\\sim}\\; N(0,1)\\]\nIf \\(\\sigma\\) unknown:\n\\[\\underbrace{\\mu}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\bar{X}}_{\\text{point estimator}} \\;\\longrightarrow\\; \\underbrace{Z = \\dfrac{\\bar{X} - \\mu}{S' / \\sqrt{n}}}_{\\text{pivot statistic}} \\;\\dot{\\sim}\\; N(0,1)\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#case-3-confidence-intervals-for-mu",
+    "href": "slides/05_interval_estimation_part2.html#case-3-confidence-intervals-for-mu",
+    "title": "Interval Estimation — Part 2",
+    "section": "Case 3 — Confidence Intervals for \\(\\mu\\)",
+    "text": "Case 3 — Confidence Intervals for \\(\\mu\\)\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence intervals for \\(\\mu\\) are:\nIf \\(\\sigma\\) known:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\nIf \\(\\sigma\\) unknown:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\nBoth intervals are approximate. The approximation is justified by the Central Limit Theorem when \\(n &gt; 30\\)."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-setup",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-setup",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Setup",
+    "text": "Application Exercise — Setup\nAn insurance company has budgeted an average daily payout of no more than 5,000 monetary units (m.u.) per day to cover its policyholders’ claims. To validate this estimate, 100 days were randomly selected from the company’s historical records, yielding:\n\\[\\bar{x} = 5{,}625 \\text{ m.u.} \\qquad s' = 2{,}500 \\text{ m.u.}\\]\nFind a 95% CI for the mean daily payout and determine whether 5,000 m.u./day is sufficient."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-solution",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-solution",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Solution",
+    "text": "Application Exercise — Solution\nPopulation distribution: unknown; \\(\\sigma\\): unknown.\nSample: \\(n = 100\\), \\(\\bar{x} = 5{,}625\\), \\(s' = 2{,}500\\).\nPivot statistic: \\(\\;Z = \\dfrac{\\bar{X} - \\mu}{S'/\\sqrt{n}} \\;\\dot{\\sim}\\; N(0,1)\\)\n\\[1-\\alpha = 0.95 \\;\\Leftrightarrow\\; \\alpha = 0.05 \\;\\Rightarrow\\; z_{\\alpha/2} = 1.96\\]\n\\[IC_{95\\%}(\\mu) \\approx \\left(5{,}625 - 1.96\\times\\frac{2{,}500}{\\sqrt{100}}\\;;\\; 5{,}625 + 1.96\\times\\frac{2{,}500}{\\sqrt{100}}\\right)\\]\n\\[\\boxed{IC_{95\\%}(\\mu) \\approx (5{,}135\\;;\\; 6{,}115)}\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-conclusion",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-conclusion",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Conclusion",
+    "text": "Application Exercise — Conclusion\n\\[IC_{95\\%}(\\mu) \\approx (5{,}135\\;;\\; 6{,}115)\\]\n\n\n\nConclusion\n\n\n\\[5{,}000 \\notin IC_{95\\%}(\\mu)\\]\nThe value 5,000 m.u. lies below the entire confidence interval. With 95% confidence, the true mean daily payout exceeds 5,000 m.u./day. The company’s budget is likely insufficient."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-setup",
+    "href": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-setup",
+    "title": "Interval Estimation — Part 2",
+    "section": "CI for the Proportion — Setup",
+    "text": "CI for the Proportion — Setup\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), \\(n &gt; 30\\), drawn from a Bernoulli population:\n\\[X \\sim \\mathrm{Bernoulli}(p), \\quad 0 &lt; p &lt; 1\\]\n(equivalently, \\(X \\sim \\mathrm{Binomial}(1, p)\\))\n\\[\\underbrace{p}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{\\frac{Y}{n}}_{\\substack{\\text{point} \\\\ \\text{estimator}}} \\;\\longrightarrow\\; \\underbrace{Z = \\dfrac{\\hat{p} - p}{\\sqrt{\\hat{p}\\hat{q}/n}}}_{\\text{pivot statistic}} \\;\\dot{\\sim}\\; N(0,1)\\]\nwhere \\(Y = \\displaystyle\\sum_{i=1}^{n} X_i\\), \\(\\;\\hat{p} = \\bar{X} = \\dfrac{Y}{n}\\), and \\(\\hat{q} = 1 - \\hat{p}\\)."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-formula",
+    "href": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-formula",
+    "title": "Interval Estimation — Part 2",
+    "section": "CI for the Proportion — Formula",
+    "text": "CI for the Proportion — Formula\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(p\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times100\\%}(p) \\approx \\left(\\hat{p} - z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}},\\; \\hat{p} + z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}}\\right)}\\]\n\n\n\nConditions for validity: \\(n &gt; 30\\), and ideally \\(n\\hat{p} \\geq 5\\) and \\(n\\hat{q} \\geq 5\\), so that the Normal approximation to the Binomial is reliable."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-setup-1",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-setup-1",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Setup",
+    "text": "Application Exercise — Setup\nIn a given district, 840 out of 2,000 voters surveyed in a poll declared they would vote for Party A.\nConstruct a 95% confidence interval for the proportion of voters supporting Party A."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-solution-1",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-solution-1",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Solution",
+    "text": "Application Exercise — Solution\nPivot statistic: \\(\\;Z = \\dfrac{\\hat{p} - p}{\\sqrt{\\hat{p}\\hat{q}/n}} \\;\\dot{\\sim}\\; N(0,1)\\)\n\\[1-\\alpha = 0.95 \\;\\Leftrightarrow\\; \\alpha = 0.05 \\;\\Rightarrow\\; z_{\\alpha/2} = 1.96\\]\n\\[IC_{95\\%}(p) \\approx \\left(0.42 - 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\;;\\; 0.42 + 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\right)\\]\n\n\n\n95% Confidence Interval for \\(p\\)\n\n\n\\[IC_{95\\%}(p) \\approx (0.3983\\;;\\; 0.4416)\\]\n\n\n\nWith 95% confidence, the proportion of Party A voters in the district is between 39.83% and 44.16%."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#ci-for-the-variance-setup",
+    "href": "slides/05_interval_estimation_part2.html#ci-for-the-variance-setup",
+    "title": "Interval Estimation — Part 2",
+    "section": "CI for the Variance — Setup",
+    "text": "CI for the Variance — Setup\nConsider a random sample \\(X_1, X_2, \\ldots, X_n\\), \\(n \\in \\mathbb{N}\\), drawn from a Normal population \\(X \\sim N(\\mu, \\sigma)\\), with both \\(\\mu\\) and \\(\\sigma\\) unknown.\n\\[\\underbrace{\\sigma^2}_{\\text{parameter}} \\;\\longrightarrow\\; \\underbrace{S'^{\\,2}}_{\\substack{\\text{point} \\\\ \\text{estimator}}} \\;\\longrightarrow\\; \\underbrace{Q = \\dfrac{(n-1)S'^{\\,2}}{\\sigma^2}}_{\\text{pivot statistic}} \\;\\sim\\; \\chi^2_{(n-1)}\\]\nThe pivot statistic \\(Q\\) follows exactly a chi-squared distribution with \\(n-1\\) degrees of freedom."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#ci-for-sigma2-probability-statement",
+    "href": "slides/05_interval_estimation_part2.html#ci-for-sigma2-probability-statement",
+    "title": "Interval Estimation — Part 2",
+    "section": "CI for \\(\\sigma^2\\) — Probability Statement",
+    "text": "CI for \\(\\sigma^2\\) — Probability Statement\n\n\\[P(Q &lt; q_{\\inf}) = P(Q &gt; q_{\\sup}) = \\frac{\\alpha}{2}\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#ci-for-sigma2-and-sigma-formulas",
+    "href": "slides/05_interval_estimation_part2.html#ci-for-sigma2-and-sigma-formulas",
+    "title": "Interval Estimation — Part 2",
+    "section": "CI for \\(\\sigma^2\\) and \\(\\sigma\\) — Formulas",
+    "text": "CI for \\(\\sigma^2\\) and \\(\\sigma\\) — Formulas\nThe \\((1-\\alpha)\\times100\\%\\) confidence interval for \\(\\sigma^2\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times100\\%}(\\sigma^2) = \\left(\\frac{(n-1)\\,s'^{\\,2}}{q_{\\sup}}\\;,\\; \\frac{(n-1)\\,s'^{\\,2}}{q_{\\inf}}\\right)}\\]\nIf a CI for \\(\\sigma\\) is required, take the square root of each bound:\n\\[\\boxed{IC_{(1-\\alpha)\\times100\\%}(\\sigma) = \\left(\\sqrt{\\frac{(n-1)\\,s'^{\\,2}}{q_{\\sup}}}\\;,\\; \\sqrt{\\frac{(n-1)\\,s'^{\\,2}}{q_{\\inf}}}\\right)}\\]\nwhere \\(q_{\\inf}\\) and \\(q_{\\sup}\\) are the lower and upper critical values of the \\(\\chi^2_{(n-1)}\\) distribution."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-setup-2",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-setup-2",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Setup",
+    "text": "Application Exercise — Setup\nBased on a random sample of \\(n = 16\\) observations drawn from a Normal population, a corrected sample standard deviation of \\(s' = 3.872\\) was obtained.\nConstruct a 95% confidence interval for the population variance."
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-finding-the-critical-values",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-finding-the-critical-values",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Finding the Critical Values",
+    "text": "Application Exercise — Finding the Critical Values\nWe need \\(q_{\\inf}\\) and \\(q_{\\sup}\\) from the \\(\\chi^2_{(15)}\\) distribution (Table 6, row 15):\n\\[1-\\alpha = 0.95 \\;\\Leftrightarrow\\; \\alpha = 0.05 \\;\\Rightarrow\\; \\frac{\\alpha}{2} = 0.025\\]\n\\[P(Q &gt; q_{\\sup}) = \\frac{\\alpha}{2} = 0.025 \\;\\underset{\\substack{\\text{Table 6} \\\\ \\text{row 15},\\; \\varepsilon=0.025}}{\\Longrightarrow}\\; q_{\\sup} = 27.488\\]\n\\[P(Q &lt; q_{\\inf}) = \\frac{\\alpha}{2} \\;\\Leftrightarrow\\; P(Q &gt; q_{\\inf}) = 1 - \\frac{\\alpha}{2} = 0.975 \\;\\underset{\\substack{\\text{Table 6} \\\\ \\text{row 15},\\; \\varepsilon=0.975}}{\\Longrightarrow}\\; q_{\\inf} = 6.262\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma2",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma2",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Result for \\(\\sigma^2\\)",
+    "text": "Application Exercise — Result for \\(\\sigma^2\\)\n\\[IC_{95\\%}(\\sigma^2) = \\left(\\frac{(16-1)\\times 3.872^2}{27.488}\\;;\\; \\frac{(16-1)\\times 3.872^2}{6.262}\\right)\\]\n\n\n\n95% Confidence Interval for \\(\\sigma^2\\)\n\n\n\\[IC_{95\\%}(\\sigma^2) = (8.181\\;;\\; 35.913)\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma",
+    "href": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma",
+    "title": "Interval Estimation — Part 2",
+    "section": "Application Exercise — Result for \\(\\sigma\\)",
+    "text": "Application Exercise — Result for \\(\\sigma\\)\nIf a confidence interval for \\(\\sigma\\) is required, take the square root of each bound:\n\\[IC_{95\\%}(\\sigma) = \\left(\\sqrt{\\frac{(16-1)\\times 3.872^2}{27.488}}\\;;\\; \\sqrt{\\frac{(16-1)\\times 3.872^2}{6.262}}\\right)\\]\n\n\n\n95% Confidence Interval for \\(\\sigma\\)\n\n\n\\[IC_{95\\%}(\\sigma) = (2.860\\;;\\; 5.993)\\]"
+  },
+  {
+    "objectID": "slides/05_interval_estimation_part2.html#summary-all-cases",
+    "href": "slides/05_interval_estimation_part2.html#summary-all-cases",
+    "title": "Interval Estimation — Part 2",
+    "section": "Summary — All Cases",
+    "text": "Summary — All Cases\n\n\n\n\n\n\n\n\n\n\n\nCase\nParameter\nPopulation\n\\(n\\)\nPivot\nCI type\n\n\n\n\n1\n\\(\\mu\\)\nNormal, \\(\\sigma\\) known\nany\n\\(Z \\sim N(0,1)\\)\nExact\n\n\n2\n\\(\\mu\\)\nNormal, \\(\\sigma\\) unknown\n\\(\\leq 30\\)\n\\(T \\sim t_{(n-1)}\\)\nExact\n\n\n2*\n\\(\\mu\\)\nNormal, \\(\\sigma\\) unknown\n\\(&gt; 30\\)\n\\(Z \\;\\dot{\\sim}\\; N(0,1)\\)\nApprox.\n\n\n3\n\\(\\mu\\)\nAny, \\(\\sigma\\) known\n\\(&gt; 30\\)\n\\(Z \\;\\dot{\\sim}\\; N(0,1)\\)\nApprox.\n\n\n3*\n\\(\\mu\\)\nAny, \\(\\sigma\\) unknown\n\\(&gt; 30\\)\n\\(Z \\;\\dot{\\sim}\\; N(0,1)\\)\nApprox.\n\n\n—\n\\(p\\)\nBernoulli\n\\(&gt; 30\\)\n\\(Z \\;\\dot{\\sim}\\; N(0,1)\\)\nApprox.\n\n\n—\n\\(\\sigma^2\\)\nNormal\nany\n\\(Q \\sim \\chi^2_{(n-1)}\\)\nExact"
   }
 ]

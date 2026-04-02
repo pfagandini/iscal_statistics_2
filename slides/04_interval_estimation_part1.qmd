@@ -1,0 +1,539 @@
+---
+title: "Interval Estimation — Part 1"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format:
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    self-contained: false
+    logo: images/iscal_logo.svg
+    slide-number: true
+    incremental: false
+    math:
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Interval Estimation"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.75em
+    progress: true
+    width: 1280
+    height: 960
+    margin: 0.08
+    scrollable: false
+editor: source
+execute:
+  enabled: true
+  echo: false
+  warning: false
+  message: false
+engine: knitr
+---
+
+# Interval Estimation {background-color="#8B1538"}
+
+## Interval Estimation — Part 1
+
+### Topics covered
+
+1. Confidence Intervals — General Concepts
+
+2. Confidence Interval for the Population Mean, $\mu$, of Normal Populations
+
+::: {.callout-note appearance="simple" icon="false"}
+**Reference:** Newbold, P., Carlson, W., & Thorne, B. — *Statistics for Business and Economics*, Global Ed.
+:::
+
+# 1) Confidence Intervals — General Concepts {background-color="#8B1538"}
+
+## Confidence Intervals — General Concepts
+
+::: {.callout-note appearance="simple" icon="false"}
+## Definition
+
+Once a random sample has been drawn from the population, **interval estimation** yields an interval that, with a specified degree of confidence, contains the true (unknown) parameter (interval estimate for a parameter $\theta$).
+:::
+
+## Confidence Intervals — General Concepts
+
+**Methodology for constructing a confidence interval:**
+
+- Find a "good" point estimator;
+
+- Establish a **confidence level** (most common: 90%, 95%, and 99%);
+
+- Know the **sample size**;
+
+- Know the **sampling distribution** of the estimator.
+
+## Confidence Intervals — General Concepts
+
+**In choosing the estimator, the Pivotal Variable Method should be followed.**
+
+According to this method, the **pivot statistic** (or pivotal variable):
+
+- Must contain the parameter to be estimated in its expression;
+
+- Its sampling distribution (exact or approximate) must **not depend** on the parameter, nor on any other unknown quantity.
+
+# 2) CI for the Population Mean, $\mu$ {background-color="#8B1538"}
+
+## Confidence Interval for $\mu$ — Overview
+
+> **Case 1 —** Normal population, $\sigma$ **known**
+>
+> **Case 2 —** Normal population, $\sigma$ **unknown**
+
+# Case 1: Normal Population and $\sigma$ Known {background-color="#6B1028"}
+
+## Case 1 — Normal Population and $\sigma$ Known
+
+Consider a random sample $X_1, X_2, \ldots, X_n$, $n \in \mathbb{N}$, drawn from a population $X$ with distribution $N(\mu, \sigma)$, where $\sigma$ is **known**.
+
+$$\underbrace{\mu}_{\text{parameter}} \;\longrightarrow\; \underbrace{\bar{X}}_{\substack{\text{point} \\ \text{estimator}}} \;\longrightarrow\; \underbrace{Z = \dfrac{\bar{X} - \mu}{\sigma / \sqrt{n}} \sim N(0,1)}_{\text{pivot statistic}}$$
+
+## Case 1 — Setting Up the Probability Statement
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 4.5
+#| out-width: "80%"
+
+library(ggplot2)
+
+x <- seq(-3.5, 3.5, length.out = 500)
+y <- dnorm(x)
+df <- data.frame(x = x, y = y)
+
+# Shaded regions
+alpha_half <- 0.025
+z_crit <- qnorm(1 - alpha_half)
+
+df_mid   <- subset(df, x >= -z_crit & x <= z_crit)
+df_left  <- subset(df, x <= -z_crit)
+df_right <- subset(df, x >= z_crit)
+
+ggplot(df, aes(x, y)) +
+  geom_line(color = "#8B1538", linewidth = 1) +
+  geom_area(data = df_mid, fill = "#8B1538", alpha = 0.25) +
+  geom_area(data = df_left,  fill = "#8B1538", alpha = 0.65) +
+  geom_area(data = df_right, fill = "#8B1538", alpha = 0.65) +
+  annotate("text", x = 0, y = 0.18, label = "1 - alpha",
+           parse = TRUE, size = 5, color = "#333333") +
+  annotate("text", x = -2.8, y = 0.04, label = "alpha/2",
+           parse = TRUE, size = 4, color = "white") +
+  annotate("text", x =  2.8, y = 0.04, label = "alpha/2",
+           parse = TRUE, size = 4, color = "white") +
+  annotate("text", x = -z_crit, y = -0.018, label = expression(-z[alpha/2]),
+           size = 4.5, color = "#333333") +
+  annotate("text", x =  z_crit, y = -0.018, label = expression( z[alpha/2]),
+           size = 4.5, color = "#333333") +
+  annotate("text", x = 0, y = -0.018, label = "0",
+           size = 4.5, color = "#333333") +
+  annotate("text", x = 3.2, y = 0.005, label = "N(0,1)",
+           size = 4, color = "#333333", fontface = "italic") +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL, expand = c(0.05, 0)) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 14) +
+  theme(panel.grid = element_blank(),
+        axis.line.x = element_line(color = "#333333"))
+```
+
+$$P\!\left(-z_{\alpha/2} < Z < z_{\alpha/2}\right) = 1 - \alpha$$
+
+**Confidence attributed to the interval:** $(1 - \alpha) \times 100\%$
+
+## Case 1 — Deriving the Confidence Interval
+
+$$P\!\left(-z_{\alpha/2} < Z < z_{\alpha/2}\right) = 1-\alpha$$
+
+$$\Updownarrow$$
+
+$$P\!\left(-z_{\alpha/2} < \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} < z_{\alpha/2}\right) = 1-\alpha$$
+
+$$\Updownarrow \quad \cdots$$
+
+$$P\!\left(\bar{X} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu < \bar{X} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right) = 1-\alpha$$
+
+::: {.small style="text-align:center; color:#8B1538;"}
+$T_1 \hspace{18em} T_2$
+:::
+
+## Case 1 — The Confidence Interval
+
+The $(1-\alpha)\times 100\%$ **confidence interval for $\mu$** is:
+
+$$\boxed{IC_{(1-\alpha)\times 100\%}(\mu) = \left(\bar{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)}$$
+
+where $t_1 = \bar{x} - z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$ and $t_2 = \bar{x} + z_{\alpha/2}\dfrac{\sigma}{\sqrt{n}}$ are the **observed** lower and upper bounds.
+
+## Case 1 — Random Nature of the Bounds
+
+Different samples yield different values of $\bar{x}$ and, consequently, different values of the bounds $t_1$ and $t_2$.
+
+Therefore, those bounds are realizations of **random variables** $T_1$ and $T_2$, respectively.
+
+::: {.callout-note appearance="simple" icon="false"}
+The confidence interval is **random** — it varies from sample to sample. What we compute from our data is one particular realization of that random interval.
+:::
+
+## Case 1 — Interpretation
+
+::: {.callout-important appearance="simple" icon="false"}
+## Correct Interpretation
+
+If an **infinite number** of random samples of the same size were drawn, and a $(1-\alpha)\times 100\%$ confidence interval for $\mu$ were computed from each sample, then **$(1-\alpha)\times 100\%$ of those intervals** would contain the true value of $\mu$.
+:::
+
+::: {style="font-size:0.85em; margin-top:0.5em;"}
+A particular computed interval either contains $\mu$ or it does not — we just do not know which. The $(1-\alpha)\times 100\%$ refers to the **long-run coverage** of the procedure.
+:::
+
+## Case 1 — Visualization of Coverage
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 4.8
+#| out-width: "85%"
+
+set.seed(42)
+mu_true <- 100
+sigma   <- 10
+n       <- 30
+z_crit  <- qnorm(0.975)
+nsim    <- 10
+
+xbar_vec <- rnorm(nsim, mu_true, sigma / sqrt(n))
+lo <- xbar_vec - z_crit * sigma / sqrt(n)
+hi <- xbar_vec + z_crit * sigma / sqrt(n)
+contains <- lo <= mu_true & hi >= mu_true
+
+df_ci <- data.frame(
+  sample  = 1:nsim,
+  center  = xbar_vec,
+  lo      = lo,
+  hi      = hi,
+  covers  = contains
+)
+
+ggplot(df_ci) +
+  geom_hline(yintercept = mu_true, linetype = "dashed",
+             color = "#333333", linewidth = 0.7) +
+  geom_errorbar(aes(x = sample, ymin = lo, ymax = hi,
+                    color = covers), linewidth = 1.1, width = 0.4) +
+  geom_point(aes(x = sample, y = center, color = covers), size = 2.5) +
+  scale_color_manual(
+    values = c("TRUE" = "#0066CC", "FALSE" = "#8B1538"),
+    labels = c("TRUE" = "Contains \u03bc", "FALSE" = "Does not contain \u03bc"),
+    name   = NULL
+  ) +
+  annotate("text", x = 0.4, y = mu_true + 1.5, label = expression(mu == 100),
+           size = 4, hjust = 0) +
+  scale_x_continuous(breaks = 1:nsim, name = "Sample number") +
+  scale_y_continuous(name = NULL,
+                     breaks = c(90, 95, 100, 105, 110)) +
+  theme_minimal(base_size = 13) +
+  theme(legend.position = "bottom",
+        panel.grid.minor = element_blank())
+```
+
+## Case 1 — Properties of the CI
+
+$$IC_{(1-\alpha)\times100\%}(\mu)=\left(\bar{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)$$
+
+The interval is **symmetric**: the midpoint equals the point estimate $\bar{x}$, and $\sigma_{\bar{X}} = \sigma/\sqrt{n}$ is the standard error of the estimator $\bar{X}$.
+
+The **estimation error** is the maximum error committed:
+
+$$|\bar{X} - \mu| < z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \quad \longleftarrow \text{estimation error}$$
+
+## Case 1 — Width of the Interval
+
+$$IC_{(1-\alpha)\times100\%}(\mu)=\left(\bar{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)$$
+
+::: {style="font-size:0.88em;"}
+- **Confidence level $\uparrow$** $\Rightarrow$ width **increases** $\Rightarrow$ inference becomes **less precise** (and vice versa).
+
+- **Variance $\uparrow$** $\Rightarrow$ width **increases**, because the standard error of the estimator increases.
+
+- **Sample size $\uparrow$** $\Rightarrow$ width **decreases** $\Rightarrow$ inference becomes **more precise**.
+:::
+
+## Case 1 — A Practical Note
+
+$$IC_{(1-\alpha)\times100\%}(\mu)=\left(\bar{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)$$
+
+::: {.callout-note appearance="simple" icon="false"}
+It is **not** guaranteed that constructing a CI always produces useful information. It is necessary to strike a balance between:
+
+- the **sample size**,
+- the **confidence level**, and
+- the **precision** of the interval.
+:::
+
+# Case 1 — Application Exercise {background-color="#6B1028"}
+
+## Application Exercise — Setup
+
+Consider a population with a Normal distribution and known standard deviation $\sigma = 20$.
+
+A random sample of size $n = 20$ was drawn, yielding a sample mean $\bar{x} = 320$.
+
+**Find the 90% confidence interval for the population mean.**
+
+## Application Exercise — Conditions (Case 1)
+
+**We are in the conditions of Case 1** (Normal population, $\sigma$ known):
+
+$$X \sim N(\mu,\; \sigma = 20), \qquad n = 20, \qquad \bar{x} = 320$$
+
+The pivot statistic is:
+
+$$Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \sim N(0, 1)$$
+
+## Application Exercise — Finding $z_{\alpha/2}$
+
+The confidence interval to use is:
+
+$$IC_{(1-\alpha)\times100\%}(\mu) = \left(\bar{x} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right)$$
+
+We want 90% confidence $\Rightarrow$ $1 - \alpha = 0.90$ $\Rightarrow$ $\alpha = 0.10$.
+
+We have $\bar{x}$, $\sigma$, and $n$. We still need $z_{\alpha/2}$.
+
+For the most common confidence levels (90%, 95%, …), the values of $z_{\alpha/2}$ are tabulated (Table 5).
+
+Looking at the table, for $\alpha = 0.10$:
+
+$$z_{\alpha/2} = z_{0.05} = 1.645$$
+
+## Application Exercise — Result
+
+Substituting all values into the CI formula:
+
+$$IC_{90\%}(\mu) = \left(320 - 1.645 \times \frac{20}{\sqrt{20}},\; 320 + 1.645 \times \frac{20}{\sqrt{20}}\right)$$
+
+::: {.callout-important appearance="simple" icon="false"}
+## 90% Confidence Interval for $\mu$
+
+$$IC_{90\%}(\mu) = (312.64\;;\; 327.36)$$
+:::
+
+## Application Exercise — Interpretation
+
+$$IC_{90\%}(\mu) = (312.64\;;\; 327.36)$$
+
+The particular interval $(312.64\;;\; 327.36)$ is a **90% confidence interval** for the true value of $\mu$.
+
+This means: if we were to construct confidence intervals from many different samples of the same size, **90% of them would effectively contain the population mean $\mu$**.
+
+# Case 2: Normal Population and $\sigma$ Unknown {background-color="#6B1028"}
+
+## Case 2 — Normal Population and $\sigma$ Unknown
+
+Consider a random sample $X_1, X_2, \ldots, X_n$, $n \in \mathbb{N}$, drawn from a population $X$ with distribution $N(\mu, \sigma)$, where $\sigma$ is **unknown**.
+
+$$\underbrace{\mu}_{\text{parameter}} \;\longrightarrow\; \underbrace{\bar{X}}_{\substack{\text{point} \\ \text{estimator}}} \;\longrightarrow\; \underbrace{T = \dfrac{\bar{X} - \mu}{S' / \sqrt{n}} \sim t_{(n-1)}}_{\text{pivot statistic}}$$
+
+where $S'$ is the corrected sample standard deviation.
+
+## Case 2 — Setting Up the Probability Statement
+
+```{r}
+#| fig-align: center
+#| fig-width: 8
+#| fig-height: 4.2
+#| out-width: "80%"
+
+library(ggplot2)
+
+x <- seq(-4, 4, length.out = 600)
+df_t <- data.frame(x = x, y = dt(x, df = 15))
+
+t_crit <- qt(0.975, df = 15)
+
+df_mid_t   <- subset(df_t, x >= -t_crit & x <= t_crit)
+df_left_t  <- subset(df_t, x <= -t_crit)
+df_right_t <- subset(df_t, x >= t_crit)
+
+ggplot(df_t, aes(x, y)) +
+  geom_line(color = "#8B1538", linewidth = 1) +
+  geom_area(data = df_mid_t,   fill = "#8B1538", alpha = 0.25) +
+  geom_area(data = df_left_t,  fill = "#8B1538", alpha = 0.65) +
+  geom_area(data = df_right_t, fill = "#8B1538", alpha = 0.65) +
+  annotate("text", x = 0, y = 0.16, label = "1 - alpha",
+           parse = TRUE, size = 5, color = "#333333") +
+  annotate("text", x = -3.2, y = 0.03, label = "alpha/2",
+           parse = TRUE, size = 4, color = "white") +
+  annotate("text", x =  3.2, y = 0.03, label = "alpha/2",
+           parse = TRUE, size = 4, color = "white") +
+  annotate("text", x = -t_crit, y = -0.016,
+           label = expression(-t[alpha/2]),
+           size = 4.5, color = "#333333") +
+  annotate("text", x =  t_crit, y = -0.016,
+           label = expression( t[alpha/2]),
+           size = 4.5, color = "#333333") +
+  annotate("text", x = 0, y = -0.016, label = "0",
+           size = 4.5, color = "#333333") +
+  annotate("text", x = 3.5, y = 0.005,
+           label = expression(t[(n-1)]),
+           size = 4, color = "#333333", fontface = "italic") +
+  scale_x_continuous(breaks = NULL) +
+  scale_y_continuous(breaks = NULL, expand = c(0.05, 0)) +
+  labs(x = NULL, y = NULL) +
+  theme_minimal(base_size = 14) +
+  theme(panel.grid = element_blank(),
+        axis.line.x = element_line(color = "#333333"))
+```
+
+$$P\!\left(-t_{\alpha/2} < T < t_{\alpha/2}\right) = 1-\alpha \qquad \text{(confidence: }(1-\alpha)\times 100\text{\%)}$$
+
+## Case 2 — The Confidence Interval
+
+The $(1-\alpha)\times 100\%$ **confidence interval for $\mu$** is:
+
+$$\boxed{IC_{(1-\alpha)\times 100\%}(\mu) = \left(\bar{x} - t_{\alpha/2}\frac{s'}{\sqrt{n}},\; \bar{x} + t_{\alpha/2}\frac{s'}{\sqrt{n}}\right)}$$
+
+where $t_{\alpha/2}$ is the critical value from the $t_{(n-1)}$ distribution.
+
+::: {.callout-note appearance="simple" icon="false"}
+All properties derived for the CI in Case 1 (see earlier slides) apply equally here: the interval is symmetric, and its width increases with the confidence level and variance, and decreases with the sample size.
+:::
+
+# Case 2 — Application Exercise 1 {background-color="#6B1028"}
+
+## Exercise 1 — Setup
+
+Based on a random sample of **$n = 16$** observations from a **Normal population**, the following 90% confidence interval for the expected value was constructed:
+
+$$(7.398\;;\; 12.602)$$
+
+Given that $s' = 3.872$, determine the **confidence level** that can be attributed to this interval.
+
+**(a) 98%   (b) 99%   (c) Between 98% and 99%**
+
+## Exercise 1 — Conditions (Case 2)
+
+**Conditions:** Case 2 — Normal population, $\sigma$ unknown.
+
+$$X \sim N(\mu, \sigma\!=\!?\,), \qquad n = 16, \qquad s' = 3.872$$
+
+Pivot statistic: $\;T = \dfrac{\bar{X} - \mu}{S'/\sqrt{n}} \sim t_{(n-1)} \equiv t_{(15)}$
+
+## Exercise 1 — Finding $t_{\alpha/2}$
+
+The interval given is:
+
+$$IC_{(1-\alpha)\times100\%}(\mu) = (7.398\;;\; 12.602)$$
+
+Its **width** is:
+
+$$h = 12.602 - 7.398 = 5.204$$
+
+The width of the CI can also be expressed as:
+
+$$h = 2 \times t_{\alpha/2}\frac{s'}{\sqrt{n}}$$
+
+## Exercise 1 — Solving for $t_{\alpha/2}$
+
+Setting the two expressions for $h$ equal:
+
+$$2 \times t_{\alpha/2}\frac{s'}{\sqrt{n}} = 5.204 \;\Rightarrow\; t_{\alpha/2} = \frac{5.204 \times \sqrt{n}}{2 \times s'}$$
+
+$$t_{\alpha/2} = \frac{5.204 \times \sqrt{16}}{2 \times 3.872} = \frac{5.204 \times 4}{7.744} = 2.688$$
+
+From the $t$-Student table (Table 7, row for 15 d.f.):
+
+$$\underset{{\scriptstyle\text{area}=0.01}}{2.602} \;<\; 2.688 \;<\; \underset{{\scriptstyle\text{area}=0.005}}{2.947}$$
+
+## Exercise 1 — Conclusion
+
+$$\underset{{\scriptstyle\text{area}=0.01}}{2.602} < 2.688 < \underset{{\scriptstyle\text{area}=0.005}}{2.947}$$
+
+$$0.005 < \frac{\alpha}{2} < 0.01 \;\Leftrightarrow\; 0.01 < \alpha < 0.02 \;\Leftrightarrow\; 0.98 < 1-\alpha < 0.99$$
+
+The confidence level of the given interval lies **between 98% and 99%**.
+
+::: {.callout-important appearance="simple" icon="false"}
+**The correct answer is (c).**
+:::
+
+# Case 2 (continued): $\sigma$ Unknown and $n > 30$ {background-color="#6B1028"}
+
+## Case 2 — Large Samples ($n > 30$)
+
+Consider a random sample $X_1, X_2, \ldots, X_n$, $n \in \mathbb{N}$ and $n > 30$, from a population $X \sim N(\mu, \sigma)$ with $\sigma$ **unknown**.
+
+$$\underbrace{\mu}_{\text{parameter}} \;\longrightarrow\; \underbrace{\bar{X}}_{\substack{\text{point} \\ \text{estimator}}} \;\longrightarrow\; \underbrace{Z = \dfrac{\bar{X} - \mu}{S' / \sqrt{n}} \;\dot{\sim}\; N(0,1)}_{\text{pivot statistic (approx.)}}$$
+
+The pivot statistic **no longer follows** a $t_{(n-1)}$ distribution — it follows an **approximately** $N(0,1)$ distribution.
+
+## Case 2 — Large-Sample CI ($n > 30$)
+
+The **approximate** $(1-\alpha)\times 100\%$ confidence interval for $\mu$ is:
+
+$$IC_{(1-\alpha)\times 100\%}(\mu) \approx \left(\bar{x} - z_{\alpha/2}\frac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{s'}{\sqrt{n}}\right)$$
+
+::: {.callout-note appearance="simple" icon="false"}
+**Note:** When $n > 30$ and $\sigma$ is unknown, the corrected sample standard deviation $s'$ is used in place of $\sigma$, and the **standard normal** critical value $z_{\alpha/2}$ replaces the $t_{\alpha/2}$ critical value. The resulting interval is **approximate**.
+:::
+
+# Case 2 — Application Exercise 2 {background-color="#6B1028"}
+
+## Exercise 2 — Setup
+
+Using the same sample from Exercise 1 ($n = 16$, $s' = 3.872$, CI at 98%: $(7.398\;;\;12.602)$):
+
+**What sample size should be collected** (assuming $s'$ does not change) **so that the width of the CI is reduced by half?**
+
+## Exercise 2 — Initial Analysis
+
+Current width: $h = 5.204$
+
+New target width: $h' = h/2 = 5.204/2 = 2.602$
+
+Increasing precision while keeping all other conditions constant requires a **larger sample**. We assume $n > 30$, so the pivot becomes approximately $N(0,1)$.
+
+## Exercise 2 — Solving for $n$
+
+The approximate CI for $\mu$ becomes:
+
+$$IC_{98\%}(\mu) \approx \left(\bar{x} - z_{\alpha/2}\frac{s'}{\sqrt{n}},\; \bar{x} + z_{\alpha/2}\frac{s'}{\sqrt{n}}\right)$$
+
+The new width satisfies:
+
+$$h' = 2 \times z_{\alpha/2}\frac{s'}{\sqrt{n}} \;\Rightarrow\; 2.602 = 2 \times \underset{\substack{\uparrow \\ \text{Table 5},\; \varepsilon = 0.02}}{2.326} \times \frac{3.872}{\sqrt{n}}$$
+
+$$\sqrt{n} = \frac{2 \times 2.326 \times 3.872}{2.602} \approx 6.92$$
+
+$$n \geq (6.92)^2 \;\Rightarrow\; \boxed{n = 48}$$
+
+## Exercise 2 — Conclusion
+
+::: {.callout-important appearance="simple" icon="false"}
+## Required Sample Size
+
+To reduce the width of the 98% CI by half (from 5.204 to 2.602), while keeping $s' = 3.872$ unchanged, a sample of **$n = 48$** observations must be collected.
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
+Note that the assumption $n > 30$ is satisfied ($48 > 30$), validating the use of the normal approximation.
+:::
+
+## Summary — Case 1 vs. Case 2
+
+| | **Case 1** | **Case 2** ($n \leq 30$) | **Case 2** ($n > 30$) |
+|---|---|---|---|
+| **Population** | $N(\mu, \sigma)$ | $N(\mu, \sigma)$ | $N(\mu, \sigma)$ |
+| **$\sigma$** | Known | Unknown | Unknown |
+| **Pivot** | $Z \sim N(0,1)$ | $T \sim t_{(n-1)}$ | $Z \;\dot{\sim}\; N(0,1)$ |
+| **Critical value** | $z_{\alpha/2}$ | $t_{\alpha/2}$ | $z_{\alpha/2}$ |
+| **SE** | $\sigma/\sqrt{n}$ | $s'/\sqrt{n}$ | $s'/\sqrt{n}$ |
+| **Interval** | Exact | Exact | Approximate |
+
+: {tbl-colwidths="[18,18,22,22]"}
