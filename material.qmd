@@ -21,3 +21,4 @@ title: "Material"
 1. [Central Limit Theorem](exercises/01_Central_Limit_Theorem.qmd)
 2. [Sampling Distributions](exercises/02_Sampling_Distributions.qmd)
 3. [Point Estimation](exercises/03_Point_Estimation.qmd)
+4. [Interval Estimation](exercises/04_Interval_Estimation.qmdt)
