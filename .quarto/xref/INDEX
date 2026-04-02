@@ -68,5 +68,8 @@
   },
   "slides/05_interval_estimation_part2.qmd": {
     "05_interval_estimation_part2.html": "d6c08d25"
+  },
+  "exercises/04_Interval_Estimation.qmd": {
+    "04_Interval_Estimation.html": "7ad34d28"
   }
 }
