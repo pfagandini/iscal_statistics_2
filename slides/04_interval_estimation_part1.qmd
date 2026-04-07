@@ -157,11 +157,8 @@ $$P\!\left(-z_{\alpha/2} < \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} < z_{\alpha/2}\ri
 
 $$\Updownarrow \quad \cdots$$
 
-$$P\!\left(\bar{X} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}} < \mu < \bar{X} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}\right) = 1-\alpha$$
+$$P\!\left(\underbrace{\bar{X} - z_{\alpha/2}\frac{\sigma}{\sqrt{n}}}_{T_1} < \mu < \underbrace{\bar{X} + z_{\alpha/2}\frac{\sigma}{\sqrt{n}}}_{T_2}\right) = 1-\alpha$$
 
-::: {.small style="text-align:center; color:#8B1538;"}
-$T_1 \hspace{18em} T_2$
-:::
 
 ## Case 1 — The Confidence Interval
 

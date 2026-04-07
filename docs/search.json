@@ -1544,7 +1544,7 @@
     "href": "slides/04_interval_estimation_part1.html#case-1-deriving-the-confidence-interval",
     "title": "Interval Estimation — Part 1",
     "section": "Case 1 — Deriving the Confidence Interval",
-    "text": "Case 1 — Deriving the Confidence Interval\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow\\]\n\\[P\\!\\left(-z_{\\alpha/2} &lt; \\frac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}} &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow \\quad \\cdots\\]\n\\[P\\!\\left(\\bar{X} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}} &lt; \\mu &lt; \\bar{X} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right) = 1-\\alpha\\]\n\n\\(T_1 \\hspace{18em} T_2\\)"
+    "text": "Case 1 — Deriving the Confidence Interval\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow\\]\n\\[P\\!\\left(-z_{\\alpha/2} &lt; \\frac{\\bar{X}-\\mu}{\\sigma/\\sqrt{n}} &lt; z_{\\alpha/2}\\right) = 1-\\alpha\\]\n\\[\\Updownarrow \\quad \\cdots\\]\n\\[P\\!\\left(\\underbrace{\\bar{X} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}}_{T_1} &lt; \\mu &lt; \\underbrace{\\bar{X} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}}_{T_2}\\right) = 1-\\alpha\\]"
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-1-the-confidence-interval",
