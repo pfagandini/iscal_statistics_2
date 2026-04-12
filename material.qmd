@@ -15,6 +15,10 @@ title: "Material"
 3. [Point Estimation](slides/03_point_estimation.qmd)
 4. [Interval Estimation I](slides/04_interval_estimation_part1.qmd)
 5. [Interval Estimation II](slides/05_interval_estimation_part2.qmd)
+6. [Hypothesis Testing I](slides/06_hypothesis_testing_part1.qmd)
+7. [Hypothesis Testing II](slides/06_hypothesis_testing_part2.qmd)
+8. [Hypothesis Testing III](slides/07_hypothesis_testing_part1.qmd)
+9. [Hypothesis Testing IV](slides/07_hypothesis_testing_part2.qmd)
 
 ## Exercises
 

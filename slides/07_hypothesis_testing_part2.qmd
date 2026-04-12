@@ -1,0 +1,506 @@
+---
+title: "Parametric Hypothesis Tests — Part 4"
+subtitle: "Difference of Means and Large-Sample Tests"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School – Polytechnic University of Lisbon"
+date: "April 21, 2025"
+format: 
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    self-contained: false
+    logo: images/iscal_logo.svg
+    slide-number: true
+    incremental: true
+    math: 
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Parametric Hypothesis Tests"
+    from: markdown+emoji
+    code-overflow: wrap
+    progress: true
+    width: 1050
+    height: 700
+    margin: 0.1
+editor: source
+execute:
+  enabled: true
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(dplyr)
+
+iscal_burgundy <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_blue <- "#0066CC"
+iscal_accent <- "#D4AF37"
+iscal_dark_gray <- "#333333"
+iscal_light_gray <- "#F5F5F5"
+```
+
+# 3.4 — Tests for the Difference of Means
+
+## Setup
+
+We have **two independent** Normal populations:
+
+$$X_1 \sim N(\mu_1, \sigma_1) \qquad X_2 \sim N(\mu_2, \sigma_2)$$
+
+. . .
+
+Two independent random samples:
+
+- From population 1: $n_1$ observations → $\bar{X}_1$, $S'^2_1$
+- From population 2: $n_2$ observations → $\bar{X}_2$, $S'^2_2$
+
+. . .
+
+**Goal**: Test hypotheses about $\mu_1 - \mu_2$ (usually testing if $\mu_1 - \mu_2 = 0$, i.e., if the two means are equal).
+
+## The General Hypotheses
+
+| $H_0$ | $H_1$ | Type |
+|:---:|:---:|:---:|
+| $\mu_1 - \mu_2 = d_0$ | $\mu_1 - \mu_2 \neq d_0$ | Two-tailed |
+| $\mu_1 - \mu_2 \leq d_0$ | $\mu_1 - \mu_2 > d_0$ | Right-tailed |
+| $\mu_1 - \mu_2 \geq d_0$ | $\mu_1 - \mu_2 < d_0$ | Left-tailed |
+
+<small>Often $d_0 = 0$, i.e., we test whether the two population means are equal.</small>
+
+## Case A: Both $\sigma_1$ and $\sigma_2$ Known
+
+::: {.callout-note appearance="simple" icon="false"}
+## Test for $\mu_1 - \mu_2$ — variances known
+
+**Test statistic:**
+$$Z_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{\sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}} \underset{\text{under } H_0}{\sim} N(0, 1)$$
+
+Critical regions use $z_{\alpha}$ and $z_{\alpha/2}$ from the Normal table, as in the one-sample case.
+:::
+
+## Case B: Variances Unknown but Equal ($\sigma_1^2 = \sigma_2^2$)
+
+::: {.callout-note appearance="simple" icon="false"}
+## Test for $\mu_1 - \mu_2$ — variances unknown, assumed equal
+
+We estimate the **common variance** using the **pooled estimator**:
+
+$$S_p'^2 = \frac{(n_1 - 1)S'^2_1 + (n_2 - 1)S'^2_2}{n_1 + n_2 - 2}$$
+
+**Test statistic:**
+$$T_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{S'_p\sqrt{\dfrac{1}{n_1} + \dfrac{1}{n_2}}} \underset{\text{under } H_0}{\sim} t_{(n_1 + n_2 - 2)}$$
+:::
+
+<small>The degrees of freedom are $\nu = n_1 + n_2 - 2$. Critical values from Table 7.</small>
+
+## When Can We Assume Equal Variances?
+
+In practice, the assumption $\sigma_1^2 = \sigma_2^2$ can be tested using an **$F$-test** (not in our syllabus), or it may be given in the problem statement.
+
+. . .
+
+**Practical rule**: If the ratio of the larger sample variance to the smaller is less than about 2–3, the equal-variance assumption is often reasonable.
+
+. . .
+
+> When the problem says "assume equal variances" or "assume $\sigma_1 = \sigma_2$", use the pooled estimator.
+
+## Example 4: Difference of Means (Equal Variances)
+
+Two production lines manufacture the same component. To compare average lengths, independent random samples are taken:
+
+- **Line 1**: $n_1 = 12$, $\bar{x}_1 = 50.3$ mm, $s'_1 = 1.2$ mm
+- **Line 2**: $n_2 = 15$, $\bar{x}_2 = 49.7$ mm, $s'_2 = 1.4$ mm
+
+Assuming equal population variances and Normal populations, test whether the mean lengths differ at $\alpha = 0.05$.
+
+## Example 4: Solution — Step 1
+
+**Hypotheses**: $H_0: \mu_1 - \mu_2 = 0$ vs. $H_1: \mu_1 - \mu_2 \neq 0$ (two-tailed)
+
+. . .
+
+**Pooled variance:**
+$$s_p'^2 = \frac{(12-1)(1.2)^2 + (15-1)(1.4)^2}{12 + 15 - 2} = \frac{11 \times 1.44 + 14 \times 1.96}{25}$$
+
+$$= \frac{15.84 + 27.44}{25} = \frac{43.28}{25} = 1.7312$$
+
+$$s'_p = \sqrt{1.7312} \approx 1.3157$$
+
+## Example 4: Solution — Step 2
+
+**Test statistic**: $T_0 \sim t_{(25)}$
+
+$$t_{obs} = \frac{(50.3 - 49.7) - 0}{1.3157 \sqrt{\frac{1}{12} + \frac{1}{15}}} = \frac{0.6}{1.3157 \times \sqrt{0.0833 + 0.0667}}$$
+
+. . .
+
+$$= \frac{0.6}{1.3157 \times \sqrt{0.15}} = \frac{0.6}{1.3157 \times 0.3873} = \frac{0.6}{0.5095} \approx 1.18$$
+
+## Example 4: Solution — Step 3
+
+**Rejection region** (two-tailed, $\alpha = 0.05$, $\nu = 25$):
+
+From Table 7: $t_{0.025,(25)} = 2.060$
+
+Reject if $|t_{obs}| \geq 2.060$.
+
+. . .
+
+Since $|1.18| = 1.18 < 2.060$, we **do not reject $H_0$**.
+
+. . .
+
+**Conclusion**: At 5%, there is **no evidence** of a difference in mean lengths between the two production lines.
+
+## Case C: Variances Unknown, Large Samples
+
+::: {.callout-note appearance="simple" icon="false"}
+## Test for $\mu_1 - \mu_2$ — variances unknown, $n_1 > 30$ and $n_2 > 30$
+
+When both samples are large, the CLT applies and we can use:
+
+$$Z_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{\sqrt{\dfrac{S'^2_1}{n_1} + \dfrac{S'^2_2}{n_2}}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)$$
+
+No assumption about equal variances is needed.
+:::
+
+## Example 5: Difference of Means (Large Samples)
+
+A company wants to compare the average monthly sales (in thousands of euros) of two regions:
+
+- **Region A**: $n_1 = 50$, $\bar{x}_1 = 87.3$, $s'_1 = 12.5$
+- **Region B**: $n_2 = 45$, $\bar{x}_2 = 82.1$, $s'_2 = 14.8$
+
+Test $H_0: \mu_1 \leq \mu_2$ vs. $H_1: \mu_1 > \mu_2$ at $\alpha = 0.05$.
+
+## Example 5: Solution
+
+**Hypotheses**: $H_0: \mu_1 - \mu_2 \leq 0$ vs. $H_1: \mu_1 - \mu_2 > 0$ (right-tailed)
+
+. . .
+
+$$z_{obs} = \frac{(87.3 - 82.1) - 0}{\sqrt{\frac{(12.5)^2}{50} + \frac{(14.8)^2}{45}}} = \frac{5.2}{\sqrt{\frac{156.25}{50} + \frac{219.04}{45}}}$$
+
+. . .
+
+$$= \frac{5.2}{\sqrt{3.125 + 4.868}} = \frac{5.2}{\sqrt{7.993}} = \frac{5.2}{2.827} \approx 1.84$$
+
+. . .
+
+**Rejection region** (right-tailed, $\alpha = 0.05$): $z_{obs} \geq z_{0.05} = 1.645$
+
+Since $1.84 > 1.645$, we **reject $H_0$**.
+
+. . .
+
+**$p$-value**: $p = P(Z > 1.84) = 1 - \Phi(1.84) = 1 - 0.9671 = 0.0329$
+
+## Summary: Tests for $\mu_1 - \mu_2$
+
+| Case | Conditions | Test Statistic | Distribution |
+|:---:|:---|:---:|:---:|
+| A | $\sigma_1, \sigma_2$ known | $Z_0$ with $\sigma_1, \sigma_2$ | $N(0,1)$ |
+| B | $\sigma_1, \sigma_2$ unknown, equal | $T_0$ with $S'_p$ | $t_{(n_1+n_2-2)}$ |
+| C | Large samples ($n_1, n_2 > 30$) | $Z_0$ with $S'_1, S'_2$ | $\dot\sim N(0,1)$ |
+
+# 3.5 — Large-Sample Tests (Asymptotic Normality)
+
+## Motivation
+
+So far, we assumed **Normal populations** (except for Case 2' and Case C, where the CLT helped).
+
+. . .
+
+What if we do **not know** the population distribution, but have a **large sample** ($n > 30$)?
+
+. . .
+
+By the **Central Limit Theorem**, the sampling distribution of $\bar{X}$ is approximately Normal, regardless of the population distribution.
+
+This allows us to perform tests even without the Normality assumption.
+
+## Test for $\mu$ — Large Sample, Non-Normal Population
+
+::: {.callout-note appearance="simple" icon="false"}
+## Test for $\mu$ — large sample, any distribution
+
+If $n > 30$, by the CLT:
+
+$$Z_0 = \frac{\bar{X} - \mu_0}{S' / \sqrt{n}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)$$
+
+This is the **same formula** as Case 2' (Normal population, $\sigma$ unknown, $n > 30$), but now the Normality assumption on the population is relaxed.
+:::
+
+. . .
+
+The critical regions and $p$-value calculations use the Standard Normal table.
+
+## Example 6: Large-Sample Test for $\mu$
+
+A logistics company records the delivery time for packages. The distribution is unknown (likely right-skewed). A random sample of $n = 100$ deliveries gives $\bar{x} = 3.2$ days and $s' = 0.8$ days.
+
+Test $H_0: \mu \leq 3$ vs. $H_1: \mu > 3$ at $\alpha = 0.05$.
+
+## Example 6: Solution
+
+Even though the population is not Normal, $n = 100 > 30$, so the CLT applies.
+
+. . .
+
+$$z_{obs} = \frac{3.2 - 3}{0.8/\sqrt{100}} = \frac{0.2}{0.08} = 2.50$$
+
+. . .
+
+**Rejection region** (right-tailed, $\alpha = 0.05$): $z_{obs} \geq 1.645$
+
+Since $2.50 > 1.645$, we **reject $H_0$**.
+
+. . .
+
+**$p$-value**: $p = P(Z > 2.50) = 1 - \Phi(2.50) = 1 - 0.9938 = 0.0062$
+
+Strong evidence that the mean delivery time exceeds 3 days.
+
+## Test for a Proportion $p$ — Bernoulli Population
+
+::: {.callout-note appearance="simple" icon="false"}
+## Test for $p$ — large sample from a Bernoulli population
+
+Let $X \sim \text{Bernoulli}(p)$. The sample proportion is $\hat{p} = X/n$, where $X = \sum_{i=1}^n X_i$.
+
+For large $n$ (typically $np_0 \geq 5$ and $n(1-p_0) \geq 5$), by the CLT:
+
+$$Z_0 = \frac{\hat{p} - p_0}{\sqrt{\dfrac{p_0(1 - p_0)}{n}}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)$$
+:::
+
+. . .
+
+> **Note**: Under $H_0$, we use $p_0$ (not $\hat{p}$) in the denominator, because we assume $H_0$ is true when computing the test statistic.
+
+## Example 7: Test for a Proportion
+
+A company claims that at most 5% of its products are defective. In a random sample of $n = 200$ items, 15 are found to be defective.
+
+Test the company's claim at $\alpha = 0.05$.
+
+## Example 7: Solution
+
+**Hypotheses**: $H_0: p \leq 0.05$ vs. $H_1: p > 0.05$ (right-tailed)
+
+. . .
+
+$\hat{p} = 15/200 = 0.075$, $p_0 = 0.05$
+
+. . .
+
+**Checking conditions**: $np_0 = 200 \times 0.05 = 10 \geq 5$ ✓ and $n(1-p_0) = 190 \geq 5$ ✓
+
+. . .
+
+$$z_{obs} = \frac{0.075 - 0.05}{\sqrt{\frac{0.05 \times 0.95}{200}}} = \frac{0.025}{\sqrt{\frac{0.0475}{200}}} = \frac{0.025}{\sqrt{0.0002375}}$$
+
+. . .
+
+$$= \frac{0.025}{0.01541} \approx 1.62$$
+
+## Example 7: Solution (cont.)
+
+**Rejection region** (right-tailed, $\alpha = 0.05$): $z_{obs} \geq 1.645$
+
+. . .
+
+Since $1.62 < 1.645$, we **do not reject $H_0$**.
+
+. . .
+
+**$p$-value**: $p = P(Z > 1.62) = 1 - \Phi(1.62) = 1 - 0.9474 = 0.0526$
+
+. . .
+
+**Conclusion**: At 5%, there is **marginal** but insufficient evidence to reject the company's claim. The $p$-value ($0.0526$) is just barely above $\alpha$.
+
+. . .
+
+> This is a "borderline" case. At $\alpha = 0.10$ we would reject $H_0$.
+
+## Example 8: Test for Proportion (Two-tailed)
+
+In a survey of $n = 400$ voters, 224 favor a certain policy. Test whether the true proportion differs from 50% at $\alpha = 0.01$.
+
+## Example 8: Solution
+
+$H_0: p = 0.50$ vs. $H_1: p \neq 0.50$ (two-tailed)
+
+$\hat{p} = 224/400 = 0.56$
+
+. . .
+
+$$z_{obs} = \frac{0.56 - 0.50}{\sqrt{\frac{0.50 \times 0.50}{400}}} = \frac{0.06}{\sqrt{0.000625}} = \frac{0.06}{0.025} = 2.40$$
+
+. . .
+
+**Rejection region** (two-tailed, $\alpha = 0.01$): $|z_{obs}| \geq z_{0.005} = 2.576$
+
+Since $|2.40| = 2.40 < 2.576$, we **do not reject $H_0$** at 1%.
+
+. . .
+
+**$p$-value**: $p = 2 \times P(Z > 2.40) = 2 \times 0.0082 = 0.0164$
+
+At $\alpha = 0.05$ we **would** reject. At $\alpha = 0.01$ we do **not**.
+
+# Comprehensive Summary
+
+## All Test Cases — Complete Reference
+
+::: {style="font-size: 0.70em;"}
+
+| # | Parameter | Conditions | Test Statistic | Distribution |
+|:---:|:---:|:---|:---:|:---:|
+| 1 | $\mu$ | Normal, $\sigma$ known | $\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}$ | $N(0,1)$ |
+| 2 | $\mu$ | Normal, $\sigma$ unknown | $\frac{\bar{X}-\mu_0}{S'/\sqrt{n}}$ | $t_{(n-1)}$ |
+| 2' | $\mu$ | Normal, $\sigma$ unknown, $n>30$ | $\frac{\bar{X}-\mu_0}{S'/\sqrt{n}}$ | $\dot\sim N(0,1)$ |
+| 3 | $\sigma^2$ | Normal | $\frac{(n-1)S'^2}{\sigma_0^2}$ | $\chi^2_{(n-1)}$ |
+| 4a | $\mu_1-\mu_2$ | Normal, $\sigma_1,\sigma_2$ known | $\frac{(\bar{X}_1-\bar{X}_2)-d_0}{\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}$ | $N(0,1)$ |
+| 4b | $\mu_1-\mu_2$ | Normal, $\sigma_1=\sigma_2$ unknown | $\frac{(\bar{X}_1-\bar{X}_2)-d_0}{S'_p\sqrt{1/n_1+1/n_2}}$ | $t_{(n_1+n_2-2)}$ |
+| 4c | $\mu_1-\mu_2$ | Large samples | $\frac{(\bar{X}_1-\bar{X}_2)-d_0}{\sqrt{S'^2_1/n_1+S'^2_2/n_2}}$ | $\dot\sim N(0,1)$ |
+| 5 | $\mu$ | Any distrib., $n > 30$ | $\frac{\bar{X}-\mu_0}{S'/\sqrt{n}}$ | $\dot\sim N(0,1)$ |
+| 6 | $p$ | Bernoulli, large $n$ | $\frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}}$ | $\dot\sim N(0,1)$ |
+
+:::
+
+## Critical Regions — Quick Reference
+
+::: {style="font-size: 0.80em;"}
+
+For a test statistic $T$ with observed value $t_{obs}$:
+
+| $H_1$ | Rejection region | $p$-value |
+|:---:|:---|:---|
+| $\theta \neq \theta_0$ | $\|t_{obs}\| \geq c_{\alpha/2}$ | $2 \times P(T \geq \|t_{obs}\|)$ |
+| $\theta > \theta_0$ | $t_{obs} \geq c_{\alpha}$ | $P(T \geq t_{obs})$ |
+| $\theta < \theta_0$ | $t_{obs} \leq -c_{\alpha}$ (or $\leq c_{1-\alpha}$ for $\chi^2$) | $P(T \leq t_{obs})$ |
+
+<small>$c_{\alpha}$ is the critical value at level $\alpha$ from the appropriate table ($z_{\alpha}$, $t_{\alpha,(\nu)}$, or $q_{\alpha,(\nu)}$).</small>
+:::
+
+## The General Procedure — Revisited
+
+::: {.callout-important appearance="simple" icon="false"}
+## Step-by-step (for any case)
+
+1. **Identify** the parameter, population(s), and what is known/unknown
+2. **State** $H_0$ and $H_1$
+3. **Choose** $\alpha$
+4. **Select** the appropriate test statistic (from the summary table)
+5. **Determine** the critical region (using the correct table and type of test)
+6. **Compute** $t_{obs}$ (and the $p$-value, if requested)
+7. **Decide**: reject or do not reject $H_0$
+8. **Conclude** in context
+:::
+
+# Additional Practice
+
+## Exercise C
+
+In a random sample of $n = 250$ consumers surveyed, 75 stated they prefer brand A.
+
+a) Test $H_0: p = 0.35$ vs. $H_1: p \neq 0.35$ at $\alpha = 0.05$.
+
+b) Compute the $p$-value.
+
+## Exercise C: Solution
+
+$\hat{p} = 75/250 = 0.30$, $p_0 = 0.35$
+
+. . .
+
+$$z_{obs} = \frac{0.30 - 0.35}{\sqrt{\frac{0.35 \times 0.65}{250}}} = \frac{-0.05}{\sqrt{0.00091}} = \frac{-0.05}{0.03017} \approx -1.66$$
+
+. . .
+
+**Rejection region** (two-tailed, $\alpha = 0.05$): $|z_{obs}| \geq 1.96$
+
+Since $|-1.66| = 1.66 < 1.96$, we **do not reject $H_0$**.
+
+. . .
+
+**$p$-value**: $p = 2 \times P(Z \geq 1.66) = 2 \times (1 - 0.9515) = 2 \times 0.0485 = 0.0970$
+
+No evidence at 5% that $p \neq 0.35$.
+
+## Exercise D
+
+Two factories produce steel rods. Quality control takes samples:
+
+- **Factory 1**: $n_1 = 10$, $\bar{x}_1 = 502.1$ mm, $s'_1 = 4.5$ mm
+- **Factory 2**: $n_2 = 12$, $\bar{x}_2 = 498.3$ mm, $s'_2 = 5.1$ mm
+
+Assume Normal populations with equal variances. Test whether Factory 1 produces longer rods at $\alpha = 0.05$.
+
+## Exercise D: Solution
+
+$H_0: \mu_1 - \mu_2 \leq 0$ vs. $H_1: \mu_1 - \mu_2 > 0$ (right-tailed)
+
+. . .
+
+**Pooled variance:**
+$$s'^2_p = \frac{9 \times (4.5)^2 + 11 \times (5.1)^2}{10 + 12 - 2} = \frac{9 \times 20.25 + 11 \times 26.01}{20} = \frac{182.25 + 286.11}{20} = \frac{468.36}{20} = 23.418$$
+
+$$s'_p = \sqrt{23.418} \approx 4.839$$
+
+. . .
+
+$$t_{obs} = \frac{(502.1 - 498.3) - 0}{4.839\sqrt{\frac{1}{10} + \frac{1}{12}}} = \frac{3.8}{4.839 \times \sqrt{0.1833}} = \frac{3.8}{4.839 \times 0.4282} = \frac{3.8}{2.072} \approx 1.83$$
+
+## Exercise D: Solution (cont.)
+
+**Rejection region** (right-tailed, $\alpha = 0.05$, $\nu = 20$):
+
+From Table 7: $t_{0.05,(20)} = 1.725$
+
+. . .
+
+Since $1.83 > 1.725$, we **reject $H_0$**.
+
+. . .
+
+**$p$-value**: From Table 7, $t_{0.05,(20)} = 1.725$ and $t_{0.025,(20)} = 2.086$.
+
+Since $1.725 < 1.83 < 2.086$: $0.025 < p < 0.05$.
+
+. . .
+
+**Conclusion**: At 5%, there is evidence that Factory 1 produces longer rods on average than Factory 2.
+
+## Summary of Today's Lecture
+
+::: {.callout-important appearance="simple" icon="false"}
+## Key takeaways — Lecture 7
+
+- **Section 3.3**: Tests for $\mu$ ($\sigma$ known/unknown) and $\sigma^2$ of Normal populations use the same pivot variables as confidence intervals ($Z$, $T$, $Q$)
+- **Section 3.4**: Tests for $\mu_1 - \mu_2$ require identifying whether variances are known, unknown-but-equal (pooled), or whether samples are large
+- **Section 3.5**: Large-sample tests ($n > 30$) work for any distribution thanks to the CLT; tests for proportions use $\hat{p}$ and $p_0$
+- In **all cases**, the procedure is the same 8-step process
+- The $p$-value provides the strength of evidence and can be used alongside (or instead of) the critical region approach
+:::
+
+## What's Next
+
+The second midterm covers Topics 2.2, 3, and 4.
+
+. . .
+
+Next: **Topic 4 — The Linear Regression Model**.
+
+## Disclaimer
+
+These slides are a free adaptation of the course material for Estatística II by Prof. Teresa Ferreira and Prof. Sandra Custódio from the Lisbon Accounting and Business School — Polytechnic University of Lisbon.
+
+\
+
+Primary reference: Newbold, P., Carlson, W. & Thorne, B. — *Statistics for Business and Economics*, Global Edition.

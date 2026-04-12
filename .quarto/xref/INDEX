@@ -71,5 +71,17 @@
   },
   "exercises/04_Interval_Estimation.qmd": {
     "04_Interval_Estimation.html": "7ad34d28"
+  },
+  "slides/06_hypothesis_testing_part1.qmd": {
+    "06_hypothesis_testing_part1.html": "88b77f97"
+  },
+  "slides/06_hypothesis_testing_part2.qmd": {
+    "06_hypothesis_testing_part2.html": "6dbc1c60"
+  },
+  "slides/07_hypothesis_testing_part1.qmd": {
+    "07_hypothesis_testing_part1.html": "aa5c259d"
+  },
+  "slides/07_hypothesis_testing_part2.qmd": {
+    "07_hypothesis_testing_part2.html": "761ab1e8"
   }
 }
