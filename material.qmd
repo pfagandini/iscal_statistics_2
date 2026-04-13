@@ -26,3 +26,4 @@ title: "Material"
 2. [Sampling Distributions](exercises/02_Sampling_Distributions.qmd)
 3. [Point Estimation](exercises/03_Point_Estimation.qmd)
 4. [Interval Estimation](exercises/04_Interval_Estimation.qmdt)
+5. [Hypothesis Testing](exercises/05_Hypothesis_Testing.qmd)

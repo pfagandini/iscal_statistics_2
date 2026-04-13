@@ -95,5 +95,8 @@
   },
   "slides/08_hypothesis_testing_tests_mean_var.qmd": {
     "08_hypothesis_testing_tests_mean_var.html": "fc64d7dc"
+  },
+  "exercises/05_Hypothesis_Testing.qmd": {
+    "05_Hypothesis_Testing.html": "f9c51d73"
   }
 }

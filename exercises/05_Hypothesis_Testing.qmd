@@ -1,0 +1,276 @@
+---
+title: "Statistics II – Hypothesis Testing: Exercises"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+
+  .solution-box {
+    background-color: #f8f4f4;
+    border-left: 4px solid #8B1538;
+    padding: 10px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+  }
+</style>
+
+<!-- End Style Block -->
+
+This is a set of exercises prepared by the teaching faculty for **Statistics II – Applied Statistics for Finance**, covering **Parametric Hypothesis Testing** (tests for the mean, variance/standard deviation, and proportion), from the Lisbon Accounting and Business School (ISCAL–IPL).
+
+The workbook consists of **multiple-choice** questions — for which you must select the correct option and **justify** your choice — and **True (T) or False (F)** questions — where you must indicate the logical value of each statement and **justify** your answer adequately.
+
+---
+
+## Exercises
+
+### Exercise 1
+
+::: {.webex-check .webex-box}
+
+A can manufacturer claims that the mean content of its cans is **at least 250 grams**. Assume that the filling process follows a Normal distribution with $\sigma = 10$ g. To evaluate this claim, a random sample of $n = 16$ cans was drawn, yielding a sample mean of $\bar{x} = 245$ g.
+
+**1.i.** The hypotheses that allow the manufacturer's claim to be evaluated are:
+
+```{r, results='asis'}
+opts <- c(
+  "$H_0: \\mu < 250 \\text{ vs } H_1: \\mu \\geq 250$",
+  "$H_0: \\mu \\leq 250 \\text{ vs } H_1: \\mu > 250$",
+  answer = "$H_0: \\mu \\geq 250 \\text{ vs } H_1: \\mu < 250$",
+  "$H_0: \\mu > 250 \\text{ vs } H_1: \\mu \\leq 250$"
+)
+cat(longmcq(opts))
+```
+
+---
+
+**1.ii.** `r torf(TRUE)` At a significance level of 5%, we reject the hypothesis that the manufacturer is telling the truth.
+
+---
+
+**1.iii.** `r torf(FALSE)` For $\alpha > 0.0228$, the decision in **1.ii** would change.
+
+:::
+
+---
+
+### Exercise 2
+
+::: {.webex-check .webex-box}
+
+A wine producer assures the regulatory authorities that his wine has a mean acidity level that **does not exceed 0.5 g/l**. The acidity level is assumed to follow a Normal distribution with unknown parameters. A sample of 20 bottles was observed, yielding a mean of 0.7 g/l and a corrected sample standard deviation of $s' = 0.08$ g/l.
+
+**2.** `r torf(TRUE)` The statistical evidence leads us to conclude that the authorities should take action against the producer.
+
+:::
+
+---
+
+### Exercise 3
+
+::: {.webex-check .webex-box}
+
+Suppose $n = 100$ and we wish to test whether the population mean equals 20 against the two-sided alternative that it does not equal 20. The sample mean is $\bar{x} = 18$ and the corrected sample standard deviation is $s' = 10$. The $p$-value for this test is:
+
+```{r, results='asis'}
+opts <- c(
+  "0.0228",
+  answer = "0.0456",
+  "0.5532",
+  "0"
+)
+cat(longmcq(opts))
+```
+
+:::
+
+---
+
+### Exercise 4
+
+::: {.webex-check .webex-box}
+
+The income (in m.u.) of residents of Tugoland is well modelled by a random variable $X \sim N(\mu, \sigma)$. A random sample of $n = 15$ residents was selected, yielding a sample mean of $\bar{x} = 1.25$ m.u. and a corrected sample standard deviation of $s' = 1.5$ m.u.
+
+**4.i.** A trade union believes that the mean income of a resident **does not exceed** 1.1 m.u. To assess this claim, a hypothesis test was conducted with the following hypotheses:
+
+```{r, results='asis'}
+opts <- c(
+  "$H_0: \\mu = 1.1 \\text{ vs } H_1: \\mu \\neq 1.1$",
+  answer = "$H_0: \\mu \\leq 1.1 \\text{ vs } H_1: \\mu > 1.1$",
+  "$H_0: \\mu < 1.1 \\text{ vs } H_1: \\mu \\geq 1.1$",
+  "$H_0: \\mu \\geq 1.1 \\text{ vs } H_1: \\mu < 1.1$"
+)
+cat(longmcq(opts))
+```
+
+---
+
+**4.ii.** `r torf(TRUE)` For the test $H_0: \mu = 1.1 \text{ vs } H_1: \mu \neq 1.1$, the observed value of the test statistic is 0.387.
+
+---
+
+**4.iii.** `r torf(FALSE)` Consider the test $H_0: \mu \leq 1.1 \text{ vs } H_1: \mu > 1.1$ with the decision rule that rejects the null hypothesis when $\bar{x} > 1.782$. The significance level of the test for this decision rule is 0.04.
+
+:::
+
+---
+
+### Exercise 5
+
+::: {.webex-check .webex-box}
+
+The daily price (€) per litre of crude oil on the stock exchange is a random variable $X \sim N(\mu, \sigma)$. To better understand this price, 30 days were randomly selected and the corresponding daily crude oil prices per litre were recorded. From the collected data, $\bar{x} = 1.16$ € and ${s'}^{2} = 0.1567$ €² were obtained.
+
+**5.** `r torf(TRUE)` In a hypothesis test for the true mean daily price per litre of crude oil (with $\sigma$ **known**), the critical region obtained was $(1.645\,;\,+\infty)$ and a $p\text{-value} = 0.03$. Therefore, we reject the null hypothesis at the significance level fixed.
+
+:::
+
+---
+
+### Exercise 6
+
+::: {.webex-check .webex-box}
+
+Suppose you wish to test the following hypotheses at a 5% significance level:
+
+$$H_0: \mu = \mu_0 \text{ vs } H_1: \mu \neq \mu_0$$
+
+**6.a.** `r torf(FALSE)` The probability of a Type I error is 0.025.
+
+---
+
+**6.b.** `r torf(FALSE)` The test statistic, under $H_0$, follows a $t(n-1)$ distribution, where $n$ is the size of the random sample collected.
+
+:::
+
+---
+
+### Exercise 7
+
+::: {.webex-check .webex-box}
+
+A watch manufacturer wishes to assess the variability of its product. To this end, he recorded the deviations (in seconds) of 20 watches relative to a high-precision timepiece after one month, obtaining $s' = 2.3$ s. Based on long experience with watches of this brand, the manufacturer believes that the true standard deviation is **at most 2 seconds**.
+
+**7.** `r torf(TRUE)` The sample data lead to the conclusion that the manufacturer's assumption is correct. *(Assume any population conditions you consider appropriate.)*
+
+:::
+
+---
+
+### Exercise 8
+
+::: {.webex-check .webex-box}
+
+It is known that the unemployment rate in a given region is 9%. With the aim of implementing support measures for the unemployed, 500 workers were randomly selected from the region, of whom 50 were found to be unemployed.
+
+**8.i.** `r torf(TRUE)` For the test $H_0: p = 0.09 \text{ vs } H_1: p \neq 0.09$: when $H_0$ is true, $(\hat{p} - 0.09)\,/\,0.013$ is a statistic with an approximately $N(0,1)$ distribution.
+
+---
+
+**8.ii.** `r torf(FALSE)` For the test $H_0: p \leq 0.09 \text{ vs } H_1: p > 0.09$, we reject $H_0$ based on the $p$-value.
+
+:::
+
+---
+
+### Exercise 9
+
+::: {.webex-check .webex-box}
+
+In a parametric hypothesis test, the null hypothesis is rejected at a significance level of 5%. Then:
+
+```{r, results='asis'}
+opts <- c(
+  "$H_0$ is rejected at a significance level of 1%.",
+  "$H_0$ is not rejected at a significance level of 1%.",
+  answer = "$H_0$ may or may not be rejected at a significance level of 1%.",
+  "Since $H_0$ is rejected at 5%, it makes no sense to test at 1%."
+)
+cat(longmcq(opts))
+```
+
+:::
+
+---
+
+### Exercise 10
+
+::: {.webex-check .webex-box}
+
+Which of the following is **not** necessary to compute the $p$-value?
+
+```{r, results='asis'}
+opts <- c(
+  "Knowledge of whether the test is one-tailed or two-tailed.",
+  "The observed value of the test statistic.",
+  answer = "The significance level.",
+  "All of the above alternatives."
+)
+cat(longmcq(opts))
+```
+
+:::
+
+---
+
+### Exercise 11
+
+::: {.webex-check .webex-box}
+
+A **Type II error** occurs when:
+
+```{r, results='asis'}
+opts <- c(
+  answer = "The null hypothesis is incorrectly accepted when it is false.",
+  "The null hypothesis is incorrectly rejected when it is true.",
+  "The sample mean differs from the population mean.",
+  "The test is biased."
+)
+cat(longmcq(opts))
+```
+
+:::
