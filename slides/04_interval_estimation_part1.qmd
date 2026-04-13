@@ -8,7 +8,7 @@ format:
       - default
       - iscal_theme.scss
     self-contained: false
-    logo: images/iscal_logo.svg
+    logo: ../images/iscal_logo.svg
     slide-number: true
     incremental: false
     math:

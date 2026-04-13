@@ -83,5 +83,17 @@
   },
   "slides/07_hypothesis_testing_part2.qmd": {
     "07_hypothesis_testing_part2.html": "761ab1e8"
+  },
+  "slides/06_hypothesis_testing_intro.qmd": {
+    "06_hypothesis_testing_intro.html": "b2924577"
+  },
+  "slides/07_hypothesis_testing_pvalue.qmd": {
+    "07_hypothesis_testing_pvalue.html": "817280fc"
+  },
+  "slides/09_hypothesis_testing_mean_diff.qmd": {
+    "09_hypothesis_testing_mean_diff.html": "77c21541"
+  },
+  "slides/08_hypothesis_testing_tests_mean_var.qmd": {
+    "08_hypothesis_testing_tests_mean_var.html": "fc64d7dc"
   }
 }

@@ -10,7 +10,7 @@ format:
       - default
       - iscal_theme.scss
     self-contained: false
-    logo: images/iscal_logo.svg
+    logo: ../images/iscal_logo.svg
     slide-number: true
     incremental: true
     math: 
@@ -171,7 +171,7 @@ mtext(expression(p == 2 %*% P(T >= group("|", t[obs], "|"))), side = 1, line = 2
 
 <small>The shaded blue areas represent the $p$-value: the probability of obtaining a result as extreme as $t_{obs}$, under $H_0$.</small>
 
-## Example 3: $p$-value Calculation (cont. from Example 1)
+## Example 3: $p$-value Calculation (cont. from Example 1) {.smaller}
 
 Recall: $H_0: \mu \geq 500$ vs. $H_1: \mu < 500$, $z_{obs} = -2.25$, left-tailed test.
 
@@ -255,13 +255,13 @@ So $p = 0.005$ (exactly, in this case).
 
 > **Tip**: If $t_{obs}$ matches a table entry exactly, the $p$-value is the corresponding tail probability. Otherwise, state the interval.
 
-## Example 5: Two-tailed $p$-value
+## Example 5: Two-tailed $p$-value 
 
 A manufacturer specifies that the mean diameter of a component is $\mu_0 = 25$ mm. The population variance is known: $\sigma^2 = 4$. A random sample of $n = 49$ components has $\bar{x} = 25.6$ mm.
 
 Test $H_0: \mu = 25$ vs. $H_1: \mu \neq 25$. Compute the $p$-value.
 
-## Example 5: Solution
+## Example 5: Solution {.smaller}
 
 **Test statistic** ($\sigma$ known):
 
@@ -322,7 +322,7 @@ In practice, many practitioners prefer the $p$-value because:
 The probability of observing data as extreme as (or more extreme than) what was observed, **assuming $H_0$ is true**.
 :::
 
-## Practical Guidelines for Interpreting $p$-values
+## Practical Guidelines for Interpreting $p$-values {.smaller}
 
 While the decision rule ($p \leq \alpha \Rightarrow$ reject) is clear-cut, some authors provide informal guidelines:
 

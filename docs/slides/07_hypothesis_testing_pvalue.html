@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Paulo Fagandini">
+<meta name="dcterms.date" content="2025-04-14">
+
+<title>Parametric Hypothesis Tests — Part 2 – Statistics II</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../images/ISCAL_logo.png" alt="" class="navbar-logo light-content">
+    <img src="../images/ISCAL_logo.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Statistics II</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../material.html"> 
+<span class="menu-text">Material</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-p-value" id="toc-the-p-value" class="nav-link active" data-scroll-target="#the-p-value">3.2 — The <span class="math inline">\(p\)</span>-value</a>
+  <ul class="collapse">
+  <li><a href="#motivation" id="toc-motivation" class="nav-link" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#definition-of-the-p-value" id="toc-definition-of-the-p-value" class="nav-link" data-scroll-target="#definition-of-the-p-value">Definition of the <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#p-value-formulas" id="toc-p-value-formulas" class="nav-link" data-scroll-target="#p-value-formulas"><span class="math inline">\(p\)</span>-value Formulas</a></li>
+  <li><a href="#decision-rule-using-the-p-value" id="toc-decision-rule-using-the-p-value" class="nav-link" data-scroll-target="#decision-rule-using-the-p-value">Decision Rule Using the <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#p-value-graphical-interpretation" id="toc-p-value-graphical-interpretation" class="nav-link" data-scroll-target="#p-value-graphical-interpretation"><span class="math inline">\(p\)</span>-value: Graphical Interpretation</a></li>
+  <li><a href="#example-3-p-value-calculation-cont.-from-example-1" id="toc-example-3-p-value-calculation-cont.-from-example-1" class="nav-link" data-scroll-target="#example-3-p-value-calculation-cont.-from-example-1">Example 3: <span class="math inline">\(p\)</span>-value Calculation (cont. from Example 1)</a></li>
+  <li><a href="#example-4-p-value-with-the-t-distribution" id="toc-example-4-p-value-with-the-t-distribution" class="nav-link" data-scroll-target="#example-4-p-value-with-the-t-distribution">Example 4: <span class="math inline">\(p\)</span>-value with the <span class="math inline">\(t\)</span>-distribution</a></li>
+  <li><a href="#example-4-solution" id="toc-example-4-solution" class="nav-link" data-scroll-target="#example-4-solution">Example 4: Solution</a></li>
+  <li><a href="#example-4-solution-cont." id="toc-example-4-solution-cont." class="nav-link" data-scroll-target="#example-4-solution-cont.">Example 4: Solution (cont.)</a></li>
+  <li><a href="#reading-the-p-value-from-tables" id="toc-reading-the-p-value-from-tables" class="nav-link" data-scroll-target="#reading-the-p-value-from-tables">Reading the <span class="math inline">\(p\)</span>-value from Tables</a></li>
+  <li><a href="#example-5-two-tailed-p-value" id="toc-example-5-two-tailed-p-value" class="nav-link" data-scroll-target="#example-5-two-tailed-p-value">Example 5: Two-tailed <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#example-5-solution" id="toc-example-5-solution" class="nav-link" data-scroll-target="#example-5-solution">Example 5: Solution</a></li>
+  <li><a href="#equivalence-critical-region-vs.-p-value" id="toc-equivalence-critical-region-vs.-p-value" class="nav-link" data-scroll-target="#equivalence-critical-region-vs.-p-value">Equivalence: Critical Region vs.&nbsp;<span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#common-misinterpretations-of-the-p-value" id="toc-common-misinterpretations-of-the-p-value" class="nav-link" data-scroll-target="#common-misinterpretations-of-the-p-value">Common Misinterpretations of the <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#practical-guidelines-for-interpreting-p-values" id="toc-practical-guidelines-for-interpreting-p-values" class="nav-link" data-scroll-target="#practical-guidelines-for-interpreting-p-values">Practical Guidelines for Interpreting <span class="math inline">\(p\)</span>-values</a></li>
+  </ul></li>
+  <li><a href="#relationship-between-confidence-intervals-and-hypothesis-tests" id="toc-relationship-between-confidence-intervals-and-hypothesis-tests" class="nav-link" data-scroll-target="#relationship-between-confidence-intervals-and-hypothesis-tests">Relationship Between Confidence Intervals and Hypothesis Tests</a>
+  <ul class="collapse">
+  <li><a href="#the-connection" id="toc-the-connection" class="nav-link" data-scroll-target="#the-connection">The Connection</a></li>
+  <li><a href="#example-6-ci-and-test-equivalence" id="toc-example-6-ci-and-test-equivalence" class="nav-link" data-scroll-target="#example-6-ci-and-test-equivalence">Example 6: CI and Test Equivalence</a></li>
+  </ul></li>
+  <li><a href="#solved-exercises" id="toc-solved-exercises" class="nav-link" data-scroll-target="#solved-exercises">Solved Exercises</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#exercise-1-solution" id="toc-exercise-1-solution" class="nav-link" data-scroll-target="#exercise-1-solution">Exercise 1: Solution</a></li>
+  <li><a href="#exercise-1-solution-cont." id="toc-exercise-1-solution-cont." class="nav-link" data-scroll-target="#exercise-1-solution-cont.">Exercise 1: Solution (cont.)</a></li>
+  <li><a href="#exercise-1-p-value" id="toc-exercise-1-p-value" class="nav-link" data-scroll-target="#exercise-1-p-value">Exercise 1: <span class="math inline">\(p\)</span>-value</a></li>
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-2-solution" id="toc-exercise-2-solution" class="nav-link" data-scroll-target="#exercise-2-solution">Exercise 2: Solution</a></li>
+  <li><a href="#exercise-2-solution-cont." id="toc-exercise-2-solution-cont." class="nav-link" data-scroll-target="#exercise-2-solution-cont.">Exercise 2: Solution (cont.)</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-3-solution" id="toc-exercise-3-solution" class="nav-link" data-scroll-target="#exercise-3-solution">Exercise 3: Solution</a></li>
+  <li><a href="#summary-of-todays-lecture" id="toc-summary-of-todays-lecture" class="nav-link" data-scroll-target="#summary-of-todays-lecture">Summary of Today’s Lecture</a></li>
+  <li><a href="#next-lecture-april-21" id="toc-next-lecture-april-21" class="nav-link" data-scroll-target="#next-lecture-april-21">Next Lecture (April 21)</a></li>
+  <li><a href="#disclaimer" id="toc-disclaimer" class="nav-link" data-scroll-target="#disclaimer">Disclaimer</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="07_hypothesis_testing_pvalue.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Parametric Hypothesis Tests — Part 2</h1>
+<p class="subtitle lead">The <span class="math inline">\(p\)</span>-value and Further Examples</p>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Paulo Fagandini </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Lisbon Accounting and Business School – Polytechnic University of Lisbon
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="the-p-value" class="level1">
+<h1>3.2 — The <span class="math inline">\(p\)</span>-value</h1>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>Before the break, we used the <strong>critical region</strong> approach:</p>
+<ol type="1">
+<li>Fix <span class="math inline">\(\alpha\)</span></li>
+<li>Find the critical value(s)</li>
+<li>Compare <span class="math inline">\(z_{obs}\)</span> (or <span class="math inline">\(t_{obs}\)</span>, <span class="math inline">\(q_{obs}\)</span>) with the critical value</li>
+</ol>
+<p>. . .</p>
+<p>But this only tells us “reject” or “do not reject” for a <strong>specific</strong> <span class="math inline">\(\alpha\)</span>.</p>
+<p>. . .</p>
+<p>What if someone asks: <em>“Would you still reject <span class="math inline">\(H_0\)</span> at <span class="math inline">\(\alpha = 0.01\)</span>?”</em></p>
+<p>. . .</p>
+<p>The <strong><span class="math inline">\(p\)</span>-value</strong> answers this question for <strong>all possible</strong> significance levels at once.</p>
+</section>
+<section id="definition-of-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="definition-of-the-p-value">Definition of the <span class="math inline">\(p\)</span>-value</h2>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span><span class="math inline">\(p\)</span>-value
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <strong><span class="math inline">\(p\)</span>-value</strong> is the probability, computed under <span class="math inline">\(H_0\)</span>, of observing a test statistic value <strong>as extreme as, or more extreme than</strong>, the value actually observed.</p>
+<p>It is the <strong>smallest significance level</strong> at which we would reject <span class="math inline">\(H_0\)</span>.</p>
+</div>
+</div>
+<p>. . .</p>
+<p>Informally: the <span class="math inline">\(p\)</span>-value measures <em>how surprised we should be</em> by the sample data, if <span class="math inline">\(H_0\)</span> were true.</p>
+<ul>
+<li>Small <span class="math inline">\(p\)</span>-value <span class="math inline">\(\Rightarrow\)</span> data is very unlikely under <span class="math inline">\(H_0\)</span> <span class="math inline">\(\Rightarrow\)</span> strong evidence against <span class="math inline">\(H_0\)</span></li>
+<li>Large <span class="math inline">\(p\)</span>-value <span class="math inline">\(\Rightarrow\)</span> data is consistent with <span class="math inline">\(H_0\)</span> <span class="math inline">\(\Rightarrow\)</span> no evidence against <span class="math inline">\(H_0\)</span></li>
+</ul>
+</section>
+<section id="p-value-formulas" class="level2">
+<h2 class="anchored" data-anchor-id="p-value-formulas"><span class="math inline">\(p\)</span>-value Formulas</h2>
+<p>The formula depends on the type of test:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Type of test</th>
+<th style="text-align: left;"><span class="math inline">\(p\)</span>-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Left-tailed (<span class="math inline">\(H_1: \theta &lt; \theta_0\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(p = P(T \leq t_{obs} \mid H_0)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Right-tailed (<span class="math inline">\(H_1: \theta &gt; \theta_0\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(p = P(T \geq t_{obs} \mid H_0)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Two-tailed (<span class="math inline">\(H_1: \theta \neq \theta_0\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(p = 2 \times P(T \geq |t_{obs}| \mid H_0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><small>Here <span class="math inline">\(T\)</span> denotes the test statistic (could be <span class="math inline">\(Z\)</span>, <span class="math inline">\(T\)</span>, <span class="math inline">\(Q\)</span>, etc.) and <span class="math inline">\(t_{obs}\)</span> is its observed value.</small></p>
+</section>
+<section id="decision-rule-using-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="decision-rule-using-the-p-value">Decision Rule Using the <span class="math inline">\(p\)</span>-value</h2>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span><span class="math inline">\(p\)</span>-value decision rule
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a significance level <span class="math inline">\(\alpha\)</span>:</p>
+<ul>
+<li>If <span class="math inline">\(p\text{-value} \leq \alpha\)</span> <span class="math inline">\(\Rightarrow\)</span> <strong>reject <span class="math inline">\(H_0\)</span></strong></li>
+<li>If <span class="math inline">\(p\text{-value} &gt; \alpha\)</span> <span class="math inline">\(\Rightarrow\)</span> <strong>do not reject <span class="math inline">\(H_0\)</span></strong></li>
+</ul>
+</div>
+</div>
+<p>. . .</p>
+<p>This is equivalent to the critical region approach, but more informative:</p>
+<ul>
+<li>The critical region approach gives a binary answer for one specific <span class="math inline">\(\alpha\)</span></li>
+<li>The <span class="math inline">\(p\)</span>-value tells you <strong>exactly how much evidence</strong> the data provides against <span class="math inline">\(H_0\)</span></li>
+</ul>
+</section>
+<section id="p-value-graphical-interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="p-value-graphical-interpretation"><span class="math inline">\(p\)</span>-value: Graphical Interpretation</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="07_hypothesis_testing_pvalue_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><small>The shaded blue areas represent the <span class="math inline">\(p\)</span>-value: the probability of obtaining a result as extreme as <span class="math inline">\(t_{obs}\)</span>, under <span class="math inline">\(H_0\)</span>.</small></p>
+</section>
+<section id="example-3-p-value-calculation-cont.-from-example-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="example-3-p-value-calculation-cont.-from-example-1">Example 3: <span class="math inline">\(p\)</span>-value Calculation (cont. from Example 1)</h2>
+<p>Recall: <span class="math inline">\(H_0: \mu \geq 500\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu &lt; 500\)</span>, <span class="math inline">\(z_{obs} = -2.25\)</span>, left-tailed test.</p>
+<p>. . .</p>
+<p><span class="math display">\[p\text{-value} = P(Z \leq z_{obs} \mid H_0) = P(Z \leq -2.25)\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[= \Phi(-2.25) = 1 - \Phi(2.25) = 1 - 0.9878 = 0.0122\]</span></p>
+<p>. . .</p>
+<p><strong>Interpretation</strong>: If <span class="math inline">\(H_0\)</span> were true (<span class="math inline">\(\mu = 500\)</span>), the probability of observing a sample mean as low as (or lower than) 497 is only 1.22%.</p>
+<p>. . .</p>
+<p><strong>Decision</strong> (at <span class="math inline">\(\alpha = 0.05\)</span>): Since <span class="math inline">\(p = 0.0122 &lt; 0.05 = \alpha\)</span>, we reject <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Decision</strong> (at <span class="math inline">\(\alpha = 0.01\)</span>): Since <span class="math inline">\(p = 0.0122 &gt; 0.01 = \alpha\)</span>, we do <strong>not</strong> reject <span class="math inline">\(H_0\)</span>.</p>
+</section>
+<section id="example-4-p-value-with-the-t-distribution" class="level2">
+<h2 class="anchored" data-anchor-id="example-4-p-value-with-the-t-distribution">Example 4: <span class="math inline">\(p\)</span>-value with the <span class="math inline">\(t\)</span>-distribution</h2>
+<p>A random sample of <span class="math inline">\(n = 20\)</span> observations is drawn from a Normal population. The sample mean is <span class="math inline">\(\bar{x} = 101\)</span> and the corrected sample standard deviation is <span class="math inline">\(s' = 3\)</span>.</p>
+<p>Test <span class="math inline">\(H_0: \mu \leq 100\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu &gt; 100\)</span>.</p>
+</section>
+<section id="example-4-solution" class="level2">
+<h2 class="anchored" data-anchor-id="example-4-solution">Example 4: Solution</h2>
+<p><strong>Test statistic</strong> (<span class="math inline">\(\sigma\)</span> unknown, Normal population):</p>
+<p><span class="math display">\[T_0 = \frac{\bar{X} - \mu_0}{S'/\sqrt{n}} \underset{\text{under } H_0}{\sim} t_{(n-1)} = t_{(19)}\]</span></p>
+<p>. . .</p>
+<p><strong>Observed value:</strong></p>
+<p><span class="math display">\[t_{obs} = \frac{101 - 100}{3/\sqrt{20}} = \frac{1}{3/4.472} = \frac{1}{0.6708} \approx 1.49\]</span></p>
+</section>
+<section id="example-4-solution-cont." class="level2">
+<h2 class="anchored" data-anchor-id="example-4-solution-cont.">Example 4: Solution (cont.)</h2>
+<p><strong><span class="math inline">\(p\)</span>-value</strong> (right-tailed test):</p>
+<p><span class="math display">\[p = P(T &gt; 1.49 \mid H_0)\]</span></p>
+<p>. . .</p>
+<p>Using the <span class="math inline">\(t\)</span>-Student table (Table 7) with 19 degrees of freedom:</p>
+<p>We look for the row <span class="math inline">\(\nu = 19\)</span>. We find that <span class="math inline">\(t_{0.10,(19)} = 1.328\)</span> and <span class="math inline">\(t_{0.05,(19)} = 1.729\)</span>.</p>
+<p>Since <span class="math inline">\(1.328 &lt; 1.49 &lt; 1.729\)</span>, we have:</p>
+<p><span class="math display">\[0.05 &lt; p &lt; 0.10\]</span></p>
+<p>. . .</p>
+<p><strong>Decision</strong> (at <span class="math inline">\(\alpha = 0.05\)</span>): Since <span class="math inline">\(p &gt; 0.05\)</span>, we <strong>do not reject</strong> <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Conclusion</strong>: At the 5% level, there is <strong>not sufficient evidence</strong> to conclude that <span class="math inline">\(\mu &gt; 100\)</span>.</p>
+</section>
+<section id="reading-the-p-value-from-tables" class="level2">
+<h2 class="anchored" data-anchor-id="reading-the-p-value-from-tables">Reading the <span class="math inline">\(p\)</span>-value from Tables</h2>
+<p>When using the <span class="math inline">\(t\)</span>-Student or <span class="math inline">\(\chi^2\)</span> tables, we typically cannot compute the exact <span class="math inline">\(p\)</span>-value. Instead, we <strong>bracket</strong> it:</p>
+<p>. . .</p>
+<p><strong>Strategy</strong>: Find the two table entries that “sandwich” <span class="math inline">\(t_{obs}\)</span> (or <span class="math inline">\(q_{obs}\)</span>).</p>
+<p>. . .</p>
+<p><strong>Example</strong>: <span class="math inline">\(t_{obs} = 2.861\)</span>, <span class="math inline">\(\nu = 19\)</span> (right-tailed).</p>
+<p>From Table 7: <span class="math inline">\(t_{0.005,(19)} = 2.861\)</span>.</p>
+<p>. . .</p>
+<p>So <span class="math inline">\(p = 0.005\)</span> (exactly, in this case).</p>
+<p>. . .</p>
+<blockquote class="blockquote">
+<p><strong>Tip</strong>: If <span class="math inline">\(t_{obs}\)</span> matches a table entry exactly, the <span class="math inline">\(p\)</span>-value is the corresponding tail probability. Otherwise, state the interval.</p>
+</blockquote>
+</section>
+<section id="example-5-two-tailed-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="example-5-two-tailed-p-value">Example 5: Two-tailed <span class="math inline">\(p\)</span>-value</h2>
+<p>A manufacturer specifies that the mean diameter of a component is <span class="math inline">\(\mu_0 = 25\)</span> mm. The population variance is known: <span class="math inline">\(\sigma^2 = 4\)</span>. A random sample of <span class="math inline">\(n = 49\)</span> components has <span class="math inline">\(\bar{x} = 25.6\)</span> mm.</p>
+<p>Test <span class="math inline">\(H_0: \mu = 25\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu \neq 25\)</span>. Compute the <span class="math inline">\(p\)</span>-value.</p>
+</section>
+<section id="example-5-solution" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="example-5-solution">Example 5: Solution</h2>
+<p><strong>Test statistic</strong> (<span class="math inline">\(\sigma\)</span> known):</p>
+<p><span class="math display">\[Z_0 = \frac{\bar{X} - \mu_0}{\sigma/\sqrt{n}} \sim N(0,1)\]</span></p>
+<p>. . .</p>
+<p><strong>Observed value:</strong></p>
+<p><span class="math display">\[z_{obs} = \frac{25.6 - 25}{2/\sqrt{49}} = \frac{0.6}{2/7} = \frac{0.6}{0.2857} \approx 2.10\]</span></p>
+<p>. . .</p>
+<p><strong><span class="math inline">\(p\)</span>-value</strong> (two-tailed):</p>
+<p><span class="math display">\[p = 2 \times P(Z \geq |z_{obs}|) = 2 \times P(Z \geq 2.10)\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[= 2 \times [1 - \Phi(2.10)] = 2 \times (1 - 0.9821) = 2 \times 0.0179 = 0.0358\]</span></p>
+<p>. . .</p>
+<p><strong>Decision</strong>: <span class="math inline">\(p = 0.0358 &lt; 0.05\)</span>, so we reject <span class="math inline">\(H_0\)</span> at <span class="math inline">\(\alpha = 0.05\)</span>. There is evidence that <span class="math inline">\(\mu \neq 25\)</span> mm.</p>
+</section>
+<section id="equivalence-critical-region-vs.-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="equivalence-critical-region-vs.-p-value">Equivalence: Critical Region vs.&nbsp;<span class="math inline">\(p\)</span>-value</h2>
+<p>Both approaches always give the <strong>same conclusion</strong> for a given <span class="math inline">\(\alpha\)</span>:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Approach</th>
+<th style="text-align: left;">Reject <span class="math inline">\(H_0\)</span> if…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Critical region</td>
+<td style="text-align: left;"><span class="math inline">\(t_{obs}\)</span> falls in the rejection region</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(p\)</span>-value</td>
+<td style="text-align: left;"><span class="math inline">\(p\text{-value} \leq \alpha\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p>In practice, many practitioners prefer the <span class="math inline">\(p\)</span>-value because:</p>
+<ul>
+<li>It provides <strong>more information</strong> (the exact strength of evidence)</li>
+<li>It allows the reader to draw their own conclusion for their preferred <span class="math inline">\(\alpha\)</span></li>
+<li>It is the standard output of statistical software</li>
+</ul>
+</section>
+<section id="common-misinterpretations-of-the-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="common-misinterpretations-of-the-p-value">Common Misinterpretations of the <span class="math inline">\(p\)</span>-value</h2>
+<div class="callout callout-style-simple callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>The <span class="math inline">\(p\)</span>-value is NOT:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The probability that <span class="math inline">\(H_0\)</span> is true</li>
+<li>The probability that <span class="math inline">\(H_1\)</span> is false</li>
+<li>The probability of making an error</li>
+</ul>
+</div>
+</div>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The <span class="math inline">\(p\)</span>-value IS:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The probability of observing data as extreme as (or more extreme than) what was observed, <strong>assuming <span class="math inline">\(H_0\)</span> is true</strong>.</p>
+</div>
+</div>
+</section>
+<section id="practical-guidelines-for-interpreting-p-values" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="practical-guidelines-for-interpreting-p-values">Practical Guidelines for Interpreting <span class="math inline">\(p\)</span>-values</h2>
+<p>While the decision rule (<span class="math inline">\(p \leq \alpha \Rightarrow\)</span> reject) is clear-cut, some authors provide informal guidelines:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(p\)</span>-value</th>
+<th style="text-align: left;">Evidence against <span class="math inline">\(H_0\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(p &gt; 0.10\)</span></td>
+<td style="text-align: left;">No evidence</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.05 &lt; p \leq 0.10\)</span></td>
+<td style="text-align: left;">Weak (marginal) evidence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(0.01 &lt; p \leq 0.05\)</span></td>
+<td style="text-align: left;">Moderate evidence</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(0.001 &lt; p \leq 0.01\)</span></td>
+<td style="text-align: left;">Strong evidence</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(p \leq 0.001\)</span></td>
+<td style="text-align: left;">Very strong evidence</td>
+</tr>
+</tbody>
+</table>
+<p><small>Source: adapted from Newbold, Carlson &amp; Thorne.</small></p>
+<p>. . .</p>
+<blockquote class="blockquote">
+<p>These are informal guidelines, not strict rules. The choice of <span class="math inline">\(\alpha\)</span> remains a decision of the researcher.</p>
+</blockquote>
+</section>
+</section>
+<section id="relationship-between-confidence-intervals-and-hypothesis-tests" class="level1">
+<h1>Relationship Between Confidence Intervals and Hypothesis Tests</h1>
+<section id="the-connection" class="level2">
+<h2 class="anchored" data-anchor-id="the-connection">The Connection</h2>
+<p>There is a direct relationship between a <strong>two-tailed</strong> hypothesis test and a <strong>confidence interval</strong>:</p>
+<p>. . .</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>CI–Test Equivalence
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>At significance level <span class="math inline">\(\alpha\)</span>, we <strong>reject</strong> <span class="math inline">\(H_0: \mu = \mu_0\)</span> (two-tailed) if and only if <span class="math inline">\(\mu_0\)</span> <strong>does not belong</strong> to the <span class="math inline">\((1-\alpha)\times 100\%\)</span> confidence interval for <span class="math inline">\(\mu\)</span>.</p>
+</div>
+</div>
+<p>. . .</p>
+<p>This makes intuitive sense: if the hypothesized value <span class="math inline">\(\mu_0\)</span> is outside the plausible range given by the CI, then the data contradicts <span class="math inline">\(H_0\)</span>.</p>
+</section>
+<section id="example-6-ci-and-test-equivalence" class="level2">
+<h2 class="anchored" data-anchor-id="example-6-ci-and-test-equivalence">Example 6: CI and Test Equivalence</h2>
+<p>Recall Example 5: <span class="math inline">\(\mu_0 = 25\)</span>, <span class="math inline">\(\sigma = 2\)</span>, <span class="math inline">\(n = 49\)</span>, <span class="math inline">\(\bar{x} = 25.6\)</span>.</p>
+<p>The 95% confidence interval for <span class="math inline">\(\mu\)</span> is:</p>
+<p><span class="math display">\[\bar{x} \pm z_{0.025} \cdot \frac{\sigma}{\sqrt{n}} = 25.6 \pm 1.96 \times \frac{2}{7} = 25.6 \pm 0.56\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[\text{CI} = [25.04\, ;\, 26.16]\]</span></p>
+<p>. . .</p>
+<p>Since <span class="math inline">\(\mu_0 = 25 \notin [25.04\, ;\, 26.16]\)</span>, we reject <span class="math inline">\(H_0: \mu = 25\)</span> at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+<p>. . .</p>
+<p>This is consistent with our earlier finding (<span class="math inline">\(p = 0.0358 &lt; 0.05\)</span>).</p>
+</section>
+</section>
+<section id="solved-exercises" class="level1">
+<h1>Solved Exercises</h1>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>A manufacturer claims that light bulbs last, on average, at least 1000 hours. A random sample of 25 bulbs from a Normal population gives <span class="math inline">\(\bar{x} = 980\)</span> hours and <span class="math inline">\(s' = 40\)</span> hours.</p>
+<p>At <span class="math inline">\(\alpha = 0.05\)</span>, is there evidence against the manufacturer’s claim?</p>
+</section>
+<section id="exercise-1-solution" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-solution">Exercise 1: Solution</h2>
+<p><strong>Step 1</strong>: <span class="math inline">\(H_0: \mu \geq 1000\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu &lt; 1000\)</span> (left-tailed)</p>
+<p>. . .</p>
+<p><strong>Step 2</strong>: <span class="math inline">\(\alpha = 0.05\)</span></p>
+<p>. . .</p>
+<p><strong>Step 3</strong>: <span class="math inline">\(\sigma\)</span> unknown, Normal population, so:</p>
+<p><span class="math display">\[T_0 = \frac{\bar{X} - \mu_0}{S'/\sqrt{n}} \underset{\text{under } H_0}{\sim} t_{(24)}\]</span></p>
+</section>
+<section id="exercise-1-solution-cont." class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-solution-cont.">Exercise 1: Solution (cont.)</h2>
+<p><strong>Step 4</strong>: Left-tailed, <span class="math inline">\(\alpha = 0.05\)</span>, <span class="math inline">\(\nu = 24\)</span></p>
+<p><span class="math display">\[\text{Rejection region: } \left]-\infty\,;\, -t_{0.05,(24)}\right] = \left]-\infty\,;\, -1.711\right]\]</span></p>
+<p><small>(From Table 7: <span class="math inline">\(t_{0.05,(24)} = 1.711\)</span>)</small></p>
+<p>. . .</p>
+<p><strong>Step 5</strong>:</p>
+<p><span class="math display">\[t_{obs} = \frac{980 - 1000}{40/\sqrt{25}} = \frac{-20}{8} = -2.50\]</span></p>
+<p>. . .</p>
+<p><strong>Step 6</strong>: <span class="math inline">\(t_{obs} = -2.50 &lt; -1.711\)</span> → falls in the rejection region.</p>
+<p>. . .</p>
+<p><strong>Decision</strong>: Reject <span class="math inline">\(H_0\)</span>.</p>
+</section>
+<section id="exercise-1-p-value" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1-p-value">Exercise 1: <span class="math inline">\(p\)</span>-value</h2>
+<p><span class="math display">\[p = P(T \leq -2.50) = P(T \geq 2.50)\]</span></p>
+<p>From Table 7, <span class="math inline">\(\nu = 24\)</span>: <span class="math inline">\(t_{0.01,(24)} = 2.492\)</span> and <span class="math inline">\(t_{0.005,(24)} = 2.797\)</span>.</p>
+<p>. . .</p>
+<p>Since <span class="math inline">\(2.492 &lt; 2.50 &lt; 2.797\)</span>, we have <span class="math inline">\(0.005 &lt; p &lt; 0.01\)</span>.</p>
+<p>. . .</p>
+<p><strong>Conclusion</strong>: At 5%, there is strong evidence that the mean lifetime is less than 1000 hours (<span class="math inline">\(p &lt; 0.01\)</span>).</p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>A food processing company fills cereal boxes labeled as 500 g. The variance of the filling process is known to be <span class="math inline">\(\sigma^2 = 25 \text{ g}^2\)</span>. A random sample of <span class="math inline">\(n = 64\)</span> boxes yields <span class="math inline">\(\bar{x} = 498\)</span> g.</p>
+<ol type="a">
+<li><p>Test whether the mean weight differs from 500 g at <span class="math inline">\(\alpha = 0.05\)</span>.</p></li>
+<li><p>Compute the <span class="math inline">\(p\)</span>-value.</p></li>
+</ol>
+</section>
+<section id="exercise-2-solution" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-solution">Exercise 2: Solution</h2>
+<p><strong>a)</strong> <span class="math inline">\(H_0: \mu = 500\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu \neq 500\)</span> (two-tailed)</p>
+<p><span class="math inline">\(\sigma = 5\)</span> is known, <span class="math inline">\(n = 64\)</span>:</p>
+<p><span class="math display">\[Z_0 = \frac{\bar{X} - 500}{\sigma/\sqrt{n}} \sim N(0,1) \qquad z_{obs} = \frac{498 - 500}{5/\sqrt{64}} = \frac{-2}{5/8} = \frac{-2}{0.625} = -3.20\]</span></p>
+<p>. . .</p>
+<p>Rejection region (two-tailed, <span class="math inline">\(\alpha = 0.05\)</span>):</p>
+<p><span class="math display">\[\left]-\infty;\, -z_{0.025}\right] \cup \left[z_{0.025};\, +\infty\right[ = \left]-\infty;\, -1.96\right] \cup \left[1.96;\, +\infty\right[\]</span></p>
+<p>. . .</p>
+<p>Since <span class="math inline">\(z_{obs} = -3.20 &lt; -1.96\)</span>, we <strong>reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</section>
+<section id="exercise-2-solution-cont." class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2-solution-cont.">Exercise 2: Solution (cont.)</h2>
+<p><strong>b)</strong> <span class="math inline">\(p\)</span>-value (two-tailed):</p>
+<p><span class="math display">\[p = 2 \times P(Z \geq |{-3.20}|) = 2 \times P(Z \geq 3.20)\]</span></p>
+<p>. . .</p>
+<p><span class="math display">\[= 2 \times [1 - \Phi(3.20)] = 2 \times (1 - 0.9993) = 2 \times 0.0007 = 0.0014\]</span></p>
+<p>. . .</p>
+<p>Very strong evidence against <span class="math inline">\(H_0\)</span>: the <span class="math inline">\(p\)</span>-value is much smaller than any conventional <span class="math inline">\(\alpha\)</span>.</p>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>From a random sample of <span class="math inline">\(n = 20\)</span> observations drawn from a Normal population, one obtains <span class="math inline">\(\bar{x} = 101\)</span> and <span class="math inline">\(s' = 3\)</span>.</p>
+<p>Consider the test: <span class="math inline">\(H_0: \mu \leq 100\)</span> vs.&nbsp;<span class="math inline">\(H_1: \mu &gt; 100\)</span>.</p>
+<ol type="a">
+<li><p>For <span class="math inline">\(\alpha = 0.05\)</span>, determine the rejection region.</p></li>
+<li><p>If, for another sample of the same size, <span class="math inline">\(t_{obs} = 2.861\)</span>, what is the <span class="math inline">\(p\)</span>-value?</p></li>
+</ol>
+</section>
+<section id="exercise-3-solution" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-solution">Exercise 3: Solution</h2>
+<p><strong>a)</strong> Right-tailed test, <span class="math inline">\(T_0 \sim t_{(19)}\)</span>:</p>
+<p><span class="math display">\[\text{Rejection region: } \left[t_{0.05,(19)}\,;\, +\infty\right[ = \left[1.729\,;\, +\infty\right[\]</span></p>
+<p><small>(Table 7: <span class="math inline">\(t_{0.05,(19)} = 1.729\)</span>)</small></p>
+<p>. . .</p>
+<p><strong>b)</strong> For <span class="math inline">\(t_{obs} = 2.861\)</span>, right-tailed:</p>
+<p><span class="math display">\[p = P(T &gt; 2.861)\]</span></p>
+<p>From Table 7, <span class="math inline">\(\nu = 19\)</span>: <span class="math inline">\(t_{0.005,(19)} = 2.861\)</span>.</p>
+<p>. . .</p>
+<p>So <span class="math inline">\(p = 0.005\)</span>.</p>
+<p>There is evidence to reject <span class="math inline">\(H_0\)</span> for all usual significance levels (<span class="math inline">\(0.005 &lt; \alpha\)</span>, for any conventional <span class="math inline">\(\alpha\)</span>).</p>
+</section>
+<section id="summary-of-todays-lecture" class="level2">
+<h2 class="anchored" data-anchor-id="summary-of-todays-lecture">Summary of Today’s Lecture</h2>
+<div class="callout callout-style-simple callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Key takeaways — Lecture 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>A hypothesis test is a formal procedure to evaluate a claim about a population parameter</li>
+<li><span class="math inline">\(H_0\)</span> (status quo) vs.&nbsp;<span class="math inline">\(H_1\)</span> (research hypothesis); <span class="math inline">\(H_0\)</span> always contains equality</li>
+<li>The <strong>test statistic</strong> is a pivot variable computed under <span class="math inline">\(H_0\)</span></li>
+<li><strong>Type I Error</strong> (<span class="math inline">\(\alpha\)</span>) = rejecting true <span class="math inline">\(H_0\)</span>; <strong>Type II Error</strong> (<span class="math inline">\(\beta\)</span>) = not rejecting false <span class="math inline">\(H_0\)</span></li>
+<li>The <strong><span class="math inline">\(p\)</span>-value</strong> is the smallest <span class="math inline">\(\alpha\)</span> at which we would reject <span class="math inline">\(H_0\)</span></li>
+<li>Decision: reject <span class="math inline">\(H_0\)</span> if <span class="math inline">\(p \leq \alpha\)</span>, or equivalently, if <span class="math inline">\(t_{obs}\)</span> falls in the rejection region</li>
+<li>A two-tailed test at level <span class="math inline">\(\alpha\)</span> and a <span class="math inline">\((1-\alpha)\)</span> CI give equivalent conclusions</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="next-lecture-april-21" class="level2">
+<h2 class="anchored" data-anchor-id="next-lecture-april-21">Next Lecture (April 21)</h2>
+<p>We will apply the testing framework to specific cases:</p>
+<ul>
+<li><strong>Section 3.3</strong>: Tests for means and variances of Normal populations</li>
+<li><strong>Section 3.4</strong>: Tests for the difference of means of two Normal populations</li>
+<li><strong>Section 3.5</strong>: Large-sample tests (asymptotic normality)</li>
+</ul>
+<p>. . .</p>
+<p>Make sure to review the relevant sections in Newbold (Chapter 9).</p>
+</section>
+<section id="disclaimer" class="level2">
+<h2 class="anchored" data-anchor-id="disclaimer">Disclaimer</h2>
+<p>These slides are a free adaptation of the course material for Estatística II by Prof.&nbsp;Teresa Ferreira and Prof.&nbsp;Sandra Custódio from the Lisbon Accounting and Business School — Polytechnic University of Lisbon.</p>
+<p><br>
+</p>
+<p>Primary reference: Newbold, P., Carlson, W. &amp; Thorne, B. — <em>Statistics for Business and Economics</em>, Global Edition.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

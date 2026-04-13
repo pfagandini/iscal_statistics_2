@@ -122,8 +122,8 @@
     "objectID": "slides/01_CLT_slides.html#additivity-normal-distribution",
     "href": "slides/01_CLT_slides.html#additivity-normal-distribution",
     "title": "Central Limit Theorem",
-    "section": "Additivity (Normal Distribution)",
-    "text": "Additivity (Normal Distribution)\nAdditivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
+    "section": "",
+    "text": "Additivity (Normal Distribution):\nIf:\n\n\\(X_i \\sim Normal(\\mu,\\sigma)\\), \\(i = 1,\\ldots,n\\) — independent and identically distributed random variables\n\\(T = X_1 + \\ldots + X_n\\) and \\(\\bar{X} = \\dfrac{T}{n}\\)\n\nthen:\n\\[T \\sim Normal\\!\\left(\\mu_T = n \\times \\mu,\\sigma_T = \\sqrt{n} \\times \\sigma\\right)\\]\n\\[\\bar{X} \\sim Normal\\!\\left(\\mu_{\\bar{X}} = \\mu,\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}\\right)\\]"
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-1",
@@ -137,7 +137,7 @@
     "href": "slides/01_CLT_slides.html#example-1-solution-cont.",
     "title": "Central Limit Theorem",
     "section": "Example 1 — Solution (cont.)",
-    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
+    "text": "Example 1 — Solution (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) =\\)\n\n\\(n = 25\\): \\(= P(-0.5 &lt; Z \\leq 0.5) = \\Phi(0.5) - \\Phi(-0.5) = \\mathbf{0.3829}\\)\n\\(n = 81\\): \\(= P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\n\n\n\n\n\n\n\n\n\n\nComment: As sample size increases, the probability that the sample observations concentrate around the mean also increases."
   },
   {
     "objectID": "slides/01_CLT_slides.html#central-limit-theorem-clt",
@@ -158,14 +158,14 @@
     "href": "slides/01_CLT_slides.html#example-1-revisited-cont.",
     "title": "Central Limit Theorem",
     "section": "Example 1 — Revisited (cont.)",
-    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
+    "text": "Example 1 — Revisited (cont.)\n\\(P(39 &lt; \\bar{X} \\leq 41) \\rightarrow (CLT)\\)\n\n\\(n = 25\\): insufficient information for reliable calculations (\\(n &lt; 30\\))\n\\(n = 81\\): \\(P(-0.9 &lt; Z \\leq 0.9) = \\Phi(0.9) - \\Phi(-0.9) = \\mathbf{0.6319}\\)\n\\(n = 225\\): \\(P(-1.5 &lt; Z \\leq 1.5) = \\Phi(1.5) - \\Phi(-1.5) = \\mathbf{0.8664}\\)\n\n\n\n\n\n\n\n\n\n\n\nComment: The probability that observations concentrate around the mean increased with the larger sample (\\(n = 225\\))."
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-2",
     "href": "slides/01_CLT_slides.html#example-2",
     "title": "Central Limit Theorem",
     "section": "Example 2",
-    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die 🎲\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
+    "text": "Example 2\nConsider the independent variables:\n\\(X_i\\) — number of points on the \\(i\\)-th roll of a die :game_die:\nFind: \\(P(2.5 &lt; \\bar{X} &lt; 3.5)\\) for \\(n = 1,\\; n = 2,\\; n = 36\\) rolls.\nSolution:\n\\(n = 1\\): \\(= P(X_1 = 3) = \\dfrac{1}{6}\\)\n\\(n = 2\\):\n\\(= P(X_1=1,\\,X_2=5) + P(X_1=2,\\,X_2=4) + P(X_1=3,\\,X_2=3)\\) \\(+ P(X_1=4,\\,X_2=2) + \\ldots + P(X_1=5,\\,X_2=1) = \\dfrac{5}{36}\\)"
   },
   {
     "objectID": "slides/01_CLT_slides.html#example-2-solution-cont.",
@@ -179,7 +179,7 @@
     "href": "slides/01_CLT_slides.html#example-2-solution-cont.-1",
     "title": "Central Limit Theorem",
     "section": "Example 2 — Solution (cont.)",
-    "text": "Example 2 — Solution (cont.)\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
+    "text": "Example 2 — Solution (cont.)\n\n\n\n\n\n\n\n\n\nComments:\n\nThe plots illustrate convergence towards the Normal distribution.\nThe variable is discrete — see the continuity correction ahead."
   },
   {
     "objectID": "slides/01_CLT_slides.html#corollaries-of-the-clt",
@@ -193,7 +193,7 @@
     "href": "slides/01_CLT_slides.html#continuity-correction",
     "title": "Central Limit Theorem",
     "section": "Continuity Correction",
-    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
+    "text": "Continuity Correction\n\n\n\n\n\n\nNote\n\n\n\nNote: In both corollaries, we are approximating the distribution of a discrete random variable with a continuous (Normal) distribution. The continuity correction should therefore be applied:\n\\[[F(x)]_{\\text{Discrete}} \\approx [F(x + 0.5)]_{\\text{Normal}}\\]\n\n\nExample: \\(X \\sim Poisson(\\lambda = 30)\\)\n\nExact probability: \\(P(X = 40) = 0.01394\\)\nWithout correction: \\(P\\!\\left(Z = \\dfrac{40-30}{\\sqrt{30}}\\right) = 0\\) — unusable!\nWith continuity correction:\n\n\\[P(X = 40) = P(39.5 \\leq X \\leq 40.5) \\approx P\\!\\left(\\frac{39.5-30}{\\sqrt{30}} \\leq Z \\leq \\frac{40.5-30}{\\sqrt{30}}\\right)\\]\n\\[= \\Phi(1.92) - \\Phi(1.73) = 0.9726 - 0.9582 = \\mathbf{0.01444}\\]"
   },
   {
     "objectID": "slides/01_CLT_slides.html#continuity-correction-other-cases",
@@ -704,7 +704,7 @@
     "href": "material.html#slides",
     "title": "Material",
     "section": "Slides",
-    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions\nPoint Estimation\nInterval Estimation I\nInterval Estimation II\nHypothesis Testing I\nHypothesis Testing II\nHypothesis Testing III\nHypothesis Testing IV"
+    "text": "Slides\n\nCentral Limit Theorem\nSampling Distributions\nPoint Estimation\nInterval Estimation I\nInterval Estimation II\nHypothesis Testing Introduction\nHypothesis Testing p-value\nHypothesis Testing for \\(\\mu\\) and \\(\\sigma^2\\)\nHypothesis Testing mean difference"
   },
   {
     "objectID": "material.html#exercises",
@@ -1494,15 +1494,15 @@
     "objectID": "slides/04_interval_estimation_part1.html#interval-estimation-part-1",
     "href": "slides/04_interval_estimation_part1.html#interval-estimation-part-1",
     "title": "Interval Estimation — Part 1",
-    "section": "Interval Estimation — Part 1",
-    "text": "Interval Estimation — Part 1\nTopics covered\n\nConfidence Intervals — General Concepts\nConfidence Interval for the Population Mean, \\(\\mu\\), of Normal Populations\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+    "section": "",
+    "text": "Confidence Intervals — General Concepts\nConfidence Interval for the Population Mean, \\(\\mu\\), of Normal Populations\n\n\n\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-1",
     "href": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-1",
     "title": "Interval Estimation — Part 1",
     "section": "Confidence Intervals — General Concepts",
-    "text": "Confidence Intervals — General Concepts\n\n\n\nDefinition\n\n\nOnce a random sample has been drawn from the population, interval estimation yields an interval that, with a specified degree of confidence, contains the true (unknown) parameter (interval estimate for a parameter \\(\\theta\\))."
+    "text": "Confidence Intervals — General Concepts\n\n\n\n\n\n\nNoteDefinition\n\n\n\nOnce a random sample has been drawn from the population, interval estimation yields an interval that, with a specified degree of confidence, contains the true (unknown) parameter (interval estimate for a parameter \\(\\theta\\))."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#confidence-intervals-general-concepts-2",
@@ -1537,7 +1537,7 @@
     "href": "slides/04_interval_estimation_part1.html#case-1-setting-up-the-probability-statement",
     "title": "Interval Estimation — Part 1",
     "section": "Case 1 — Setting Up the Probability Statement",
-    "text": "Case 1 — Setting Up the Probability Statement\n\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1 - \\alpha\\]\nConfidence attributed to the interval: \\((1 - \\alpha) \\times 100\\%\\)"
+    "text": "Case 1 — Setting Up the Probability Statement\n\n\n\n\n\n\n\n\n\n\\[P\\!\\left(-z_{\\alpha/2} &lt; Z &lt; z_{\\alpha/2}\\right) = 1 - \\alpha\\]\nConfidence attributed to the interval: \\((1 - \\alpha) \\times 100\\%\\)"
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-1-deriving-the-confidence-interval",
@@ -1558,14 +1558,14 @@
     "href": "slides/04_interval_estimation_part1.html#case-1-random-nature-of-the-bounds",
     "title": "Interval Estimation — Part 1",
     "section": "Case 1 — Random Nature of the Bounds",
-    "text": "Case 1 — Random Nature of the Bounds\nDifferent samples yield different values of \\(\\bar{x}\\) and, consequently, different values of the bounds \\(t_1\\) and \\(t_2\\).\nTherefore, those bounds are realizations of random variables \\(T_1\\) and \\(T_2\\), respectively.\n\n\n\nThe confidence interval is random — it varies from sample to sample. What we compute from our data is one particular realization of that random interval."
+    "text": "Case 1 — Random Nature of the Bounds\nDifferent samples yield different values of \\(\\bar{x}\\) and, consequently, different values of the bounds \\(t_1\\) and \\(t_2\\).\nTherefore, those bounds are realizations of random variables \\(T_1\\) and \\(T_2\\), respectively.\n\n\n\n\n\n\nThe confidence interval is random — it varies from sample to sample. What we compute from our data is one particular realization of that random interval."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-1-interpretation",
     "href": "slides/04_interval_estimation_part1.html#case-1-interpretation",
     "title": "Interval Estimation — Part 1",
     "section": "Case 1 — Interpretation",
-    "text": "Case 1 — Interpretation\n\n\n\nCorrect Interpretation\n\n\nIf an infinite number of random samples of the same size were drawn, and a \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) were computed from each sample, then \\((1-\\alpha)\\times 100\\%\\) of those intervals would contain the true value of \\(\\mu\\).\n\n\n\n\nA particular computed interval either contains \\(\\mu\\) or it does not — we just do not know which. The \\((1-\\alpha)\\times 100\\%\\) refers to the long-run coverage of the procedure."
+    "text": "Case 1 — Interpretation\n\n\n\n\n\n\nImportantCorrect Interpretation\n\n\n\nIf an infinite number of random samples of the same size were drawn, and a \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) were computed from each sample, then \\((1-\\alpha)\\times 100\\%\\) of those intervals would contain the true value of \\(\\mu\\).\n\n\n\nA particular computed interval either contains \\(\\mu\\) or it does not — we just do not know which. The \\((1-\\alpha)\\times 100\\%\\) refers to the long-run coverage of the procedure."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-1-visualization-of-coverage",
@@ -1593,7 +1593,7 @@
     "href": "slides/04_interval_estimation_part1.html#case-1-a-practical-note",
     "title": "Interval Estimation — Part 1",
     "section": "Case 1 — A Practical Note",
-    "text": "Case 1 — A Practical Note\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu)=\\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\n\n\nIt is not guaranteed that constructing a CI always produces useful information. It is necessary to strike a balance between:\n\nthe sample size,\nthe confidence level, and\nthe precision of the interval."
+    "text": "Case 1 — A Practical Note\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu)=\\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\n\n\n\n\n\n\nIt is not guaranteed that constructing a CI always produces useful information. It is necessary to strike a balance between:\n\nthe sample size,\nthe confidence level, and\nthe precision of the interval."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#application-exercise-setup",
@@ -1621,7 +1621,7 @@
     "href": "slides/04_interval_estimation_part1.html#application-exercise-result",
     "title": "Interval Estimation — Part 1",
     "section": "Application Exercise — Result",
-    "text": "Application Exercise — Result\nSubstituting all values into the CI formula:\n\\[IC_{90\\%}(\\mu) = \\left(320 - 1.645 \\times \\frac{20}{\\sqrt{20}},\\; 320 + 1.645 \\times \\frac{20}{\\sqrt{20}}\\right)\\]\n\n\n\n90% Confidence Interval for \\(\\mu\\)\n\n\n\\[IC_{90\\%}(\\mu) = (312.64\\;;\\; 327.36)\\]"
+    "text": "Application Exercise — Result\nSubstituting all values into the CI formula:\n\\[IC_{90\\%}(\\mu) = \\left(320 - 1.645 \\times \\frac{20}{\\sqrt{20}},\\; 320 + 1.645 \\times \\frac{20}{\\sqrt{20}}\\right)\\]\n\n\n\n\n\n\nImportant90% Confidence Interval for \\(\\mu\\)\n\n\n\n\\[IC_{90\\%}(\\mu) = (312.64\\;;\\; 327.36)\\]"
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#application-exercise-interpretation",
@@ -1642,14 +1642,14 @@
     "href": "slides/04_interval_estimation_part1.html#case-2-setting-up-the-probability-statement",
     "title": "Interval Estimation — Part 1",
     "section": "Case 2 — Setting Up the Probability Statement",
-    "text": "Case 2 — Setting Up the Probability Statement\n\n\\[P\\!\\left(-t_{\\alpha/2} &lt; T &lt; t_{\\alpha/2}\\right) = 1-\\alpha \\qquad \\text{(confidence: }(1-\\alpha)\\times 100\\text{\\%)}\\]"
+    "text": "Case 2 — Setting Up the Probability Statement\n\n\n\n\n\n\n\n\n\n\\[P\\!\\left(-t_{\\alpha/2} &lt; T &lt; t_{\\alpha/2}\\right) = 1-\\alpha \\qquad \\text{(confidence: }(1-\\alpha)\\times 100\\text{\\%)}\\]"
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-2-the-confidence-interval",
     "href": "slides/04_interval_estimation_part1.html#case-2-the-confidence-interval",
     "title": "Interval Estimation — Part 1",
     "section": "Case 2 — The Confidence Interval",
-    "text": "Case 2 — The Confidence Interval\nThe \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times 100\\%}(\\mu) = \\left(\\bar{x} - t_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + t_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)}\\]\nwhere \\(t_{\\alpha/2}\\) is the critical value from the \\(t_{(n-1)}\\) distribution.\n\n\n\nAll properties derived for the CI in Case 1 (see earlier slides) apply equally here: the interval is symmetric, and its width increases with the confidence level and variance, and decreases with the sample size."
+    "text": "Case 2 — The Confidence Interval\nThe \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times 100\\%}(\\mu) = \\left(\\bar{x} - t_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + t_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)}\\]\nwhere \\(t_{\\alpha/2}\\) is the critical value from the \\(t_{(n-1)}\\) distribution.\n\n\n\n\n\n\nAll properties derived for the CI in Case 1 (see earlier slides) apply equally here: the interval is symmetric, and its width increases with the confidence level and variance, and decreases with the sample size."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#exercise-1-setup",
@@ -1684,7 +1684,7 @@
     "href": "slides/04_interval_estimation_part1.html#exercise-1-conclusion",
     "title": "Interval Estimation — Part 1",
     "section": "Exercise 1 — Conclusion",
-    "text": "Exercise 1 — Conclusion\n\\[\\underset{{\\scriptstyle\\text{area}=0.01}}{2.602} &lt; 2.688 &lt; \\underset{{\\scriptstyle\\text{area}=0.005}}{2.947}\\]\n\\[0.005 &lt; \\frac{\\alpha}{2} &lt; 0.01 \\;\\Leftrightarrow\\; 0.01 &lt; \\alpha &lt; 0.02 \\;\\Leftrightarrow\\; 0.98 &lt; 1-\\alpha &lt; 0.99\\]\nThe confidence level of the given interval lies between 98% and 99%.\n\n\n\nThe correct answer is (c)."
+    "text": "Exercise 1 — Conclusion\n\\[\\underset{{\\scriptstyle\\text{area}=0.01}}{2.602} &lt; 2.688 &lt; \\underset{{\\scriptstyle\\text{area}=0.005}}{2.947}\\]\n\\[0.005 &lt; \\frac{\\alpha}{2} &lt; 0.01 \\;\\Leftrightarrow\\; 0.01 &lt; \\alpha &lt; 0.02 \\;\\Leftrightarrow\\; 0.98 &lt; 1-\\alpha &lt; 0.99\\]\nThe confidence level of the given interval lies between 98% and 99%.\n\n\n\n\n\n\nThe correct answer is (c)."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#case-2-large-samples-n-30",
@@ -1698,7 +1698,7 @@
     "href": "slides/04_interval_estimation_part1.html#case-2-large-sample-ci-n-30",
     "title": "Interval Estimation — Part 1",
     "section": "Case 2 — Large-Sample CI (\\(n > 30\\))",
-    "text": "Case 2 — Large-Sample CI (\\(n &gt; 30\\))\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[IC_{(1-\\alpha)\\times 100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\nNote: When \\(n &gt; 30\\) and \\(\\sigma\\) is unknown, the corrected sample standard deviation \\(s'\\) is used in place of \\(\\sigma\\), and the standard normal critical value \\(z_{\\alpha/2}\\) replaces the \\(t_{\\alpha/2}\\) critical value. The resulting interval is approximate."
+    "text": "Case 2 — Large-Sample CI (\\(n &gt; 30\\))\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\) is:\n\\[IC_{(1-\\alpha)\\times 100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\n\n\n\nNote: When \\(n &gt; 30\\) and \\(\\sigma\\) is unknown, the corrected sample standard deviation \\(s'\\) is used in place of \\(\\sigma\\), and the standard normal critical value \\(z_{\\alpha/2}\\) replaces the \\(t_{\\alpha/2}\\) critical value. The resulting interval is approximate."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#exercise-2-setup",
@@ -1726,7 +1726,7 @@
     "href": "slides/04_interval_estimation_part1.html#exercise-2-conclusion",
     "title": "Interval Estimation — Part 1",
     "section": "Exercise 2 — Conclusion",
-    "text": "Exercise 2 — Conclusion\n\n\n\nRequired Sample Size\n\n\nTo reduce the width of the 98% CI by half (from 5.204 to 2.602), while keeping \\(s' = 3.872\\) unchanged, a sample of \\(n = 48\\) observations must be collected.\n\n\n\n\n\n\nNote that the assumption \\(n &gt; 30\\) is satisfied (\\(48 &gt; 30\\)), validating the use of the normal approximation."
+    "text": "Exercise 2 — Conclusion\n\n\n\n\n\n\nImportantRequired Sample Size\n\n\n\nTo reduce the width of the 98% CI by half (from 5.204 to 2.602), while keeping \\(s' = 3.872\\) unchanged, a sample of \\(n = 48\\) observations must be collected.\n\n\n\n\n\n\n\n\nNote that the assumption \\(n &gt; 30\\) is satisfied (\\(48 &gt; 30\\)), validating the use of the normal approximation."
   },
   {
     "objectID": "slides/04_interval_estimation_part1.html#summary-case-1-vs.-case-2",
@@ -2686,5 +2686,845 @@
     "title": "Interval Estimation — Part 2",
     "section": "",
     "text": "2’) Confidence Interval for the Population Mean, \\(\\mu\\), of Non-Normal Populations\n\nConfidence Interval for the Proportion, \\(p\\), of a Bernoulli Population\nConfidence Interval for the Variance, \\(\\sigma^2\\), and Standard Deviation, \\(\\sigma\\), of a Normal Population\n\n\n\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "",
+    "text": "In Lecture 6, we established:\n\nThe general framework: \\(H_0\\) vs. \\(H_1\\), test statistic, \\(\\alpha\\), critical region\nType I and Type II errors, power\nThe \\(p\\)-value: smallest \\(\\alpha\\) at which we reject \\(H_0\\)\nThe relationship between CIs and two-tailed tests\n\n. . .\nToday: We apply the framework systematically to every test case in the syllabus."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#recap-from-last-week",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#recap-from-last-week",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "",
+    "text": "In Lecture 6, we established:\n\nThe general framework: \\(H_0\\) vs. \\(H_1\\), test statistic, \\(\\alpha\\), critical region\nType I and Type II errors, power\nThe \\(p\\)-value: smallest \\(\\alpha\\) at which we reject \\(H_0\\)\nThe relationship between CIs and two-tailed tests\n\n. . .\nToday: We apply the framework systematically to every test case in the syllabus."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#road-map-for-today",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#road-map-for-today",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Road Map for Today",
+    "text": "Road Map for Today\n\n\n\nSection\nTopic\n\n\n\n\n3.3\nTests for \\(\\mu\\) (Normal, \\(\\sigma\\) known and unknown)\n\n\n\nTests for \\(\\sigma^2\\) (Normal population)\n\n\n3.4\nTests for \\(\\mu_1 - \\mu_2\\) (two Normal populations)\n\n\n3.5\nLarge-sample (asymptotic) tests: mean and proportion"
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#overview",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#overview",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Overview",
+    "text": "Overview\nWe consider a random sample \\((X_1, X_2, \\ldots, X_n)\\) from a Normal population \\(X \\sim N(\\mu, \\sigma)\\).\n. . .\nWe will cover four cases:\n\nCase 1: Test for \\(\\mu\\) with \\(\\sigma\\) known\nCase 2: Test for \\(\\mu\\) with \\(\\sigma\\) unknown (small sample)\nCase 2’: Test for \\(\\mu\\) with \\(\\sigma\\) unknown and \\(n &gt; 30\\)\nCase 3: Test for \\(\\sigma^2\\) (or \\(\\sigma\\))"
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#case-1-test-for-mu-sigma-known",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#case-1-test-for-mu-sigma-known",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Case 1: Test for \\(\\mu\\), \\(\\sigma\\) Known",
+    "text": "Case 1: Test for \\(\\mu\\), \\(\\sigma\\) Known\n\n\n\n\n\n\nNoteTest for \\(\\mu\\) — Normal population, \\(\\sigma\\) known\n\n\n\nTest statistic: \\[Z_0 = \\frac{\\bar{X} - \\mu_0}{\\sigma / \\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} N(0, 1)\\]\nCritical regions (at significance level \\(\\alpha\\)):\n\n\n\n\\(H_1\\)\nRejection region\n\n\n\n\n\\(\\mu \\neq \\mu_0\\)\n\\(\\|z_{obs}\\| \\geq z_{\\alpha/2}\\)\n\n\n\\(\\mu &gt; \\mu_0\\)\n\\(z_{obs} \\geq z_{\\alpha}\\)\n\n\n\\(\\mu &lt; \\mu_0\\)\n\\(z_{obs} \\leq -z_{\\alpha}\\)\n\n\n\n\n\nRecall: \\(z_{\\alpha}\\) is the value such that \\(P(Z &gt; z_{\\alpha}) = \\alpha\\), from the Standard Normal table."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-1-test-for-mu-sigma-known",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-1-test-for-mu-sigma-known",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 1: Test for \\(\\mu\\), \\(\\sigma\\) known",
+    "text": "Example 1: Test for \\(\\mu\\), \\(\\sigma\\) known\nThe nominal capacity of a soft drink bottle is 330 mL. The filling process has \\(\\sigma = 5\\) mL. A random sample of \\(n = 40\\) bottles has \\(\\bar{x} = 328.2\\) mL. At \\(\\alpha = 0.05\\), test whether the mean capacity differs from 330 mL."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-1-solution",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-1-solution",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 1: Solution",
+    "text": "Example 1: Solution\nHypotheses: \\(H_0: \\mu = 330\\) vs. \\(H_1: \\mu \\neq 330\\) (two-tailed)\n. . .\nTest statistic: \\(Z_0 = \\frac{\\bar{X} - 330}{5/\\sqrt{40}} \\sim N(0,1)\\)\n. . .\nObserved value: \\[z_{obs} = \\frac{328.2 - 330}{5/\\sqrt{40}} = \\frac{-1.8}{0.7906} \\approx -2.28\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.05\\)): \\[|z_{obs}| \\geq z_{0.025} = 1.96\\]\nSince \\(|-2.28| = 2.28 &gt; 1.96\\), we reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = 2 \\times P(Z \\geq 2.28) = 2 \\times (1 - 0.9887) = 2 \\times 0.0113 = 0.0226\\)"
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#case-2-test-for-mu-sigma-unknown",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#case-2-test-for-mu-sigma-unknown",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Case 2: Test for \\(\\mu\\), \\(\\sigma\\) Unknown",
+    "text": "Case 2: Test for \\(\\mu\\), \\(\\sigma\\) Unknown\n\n\n\n\n\n\nNoteTest for \\(\\mu\\) — Normal population, \\(\\sigma\\) unknown\n\n\n\nTest statistic: \\[T_0 = \\frac{\\bar{X} - \\mu_0}{S' / \\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} t_{(n-1)}\\]\nCritical regions (at significance level \\(\\alpha\\)):\n\n\n\n\\(H_1\\)\nRejection region\n\n\n\n\n\\(\\mu \\neq \\mu_0\\)\n\\(\\|t_{obs}\\| \\geq t_{\\alpha/2,(n-1)}\\)\n\n\n\\(\\mu &gt; \\mu_0\\)\n\\(t_{obs} \\geq t_{\\alpha,(n-1)}\\)\n\n\n\\(\\mu &lt; \\mu_0\\)\n\\(t_{obs} \\leq -t_{\\alpha,(n-1)}\\)\n\n\n\n\n\nRecall: \\(S'\\) is the corrected sample standard deviation, and \\(t_{\\alpha,(\\nu)}\\) is from Table 7 (\\(t\\)-Student)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-2-test-for-mu-sigma-unknown",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-2-test-for-mu-sigma-unknown",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 2: Test for \\(\\mu\\), \\(\\sigma\\) unknown",
+    "text": "Example 2: Test for \\(\\mu\\), \\(\\sigma\\) unknown\nAn engineer suspects that the mean weight of packages produced by a machine exceeds the nominal value of 100 g. A random sample of \\(n = 20\\) packages from a Normal population gives \\(\\bar{x} = 101\\) g and \\(s' = 3\\) g.\nTest at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-2-solution",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-2-solution",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 2: Solution",
+    "text": "Example 2: Solution\nHypotheses: \\(H_0: \\mu \\leq 100\\) vs. \\(H_1: \\mu &gt; 100\\) (right-tailed)\n. . .\nTest statistic: \\(T_0 = \\frac{\\bar{X} - 100}{S'/\\sqrt{20}} \\sim t_{(19)}\\)\n. . .\nObserved value: \\[t_{obs} = \\frac{101 - 100}{3/\\sqrt{20}} = \\frac{1}{0.6708} \\approx 1.49\\]\n. . .\nRejection region (right-tailed, \\(\\alpha = 0.05\\)): \\[t_{obs} \\geq t_{0.05,(19)} = 1.729\\]\n(Table 7)\n. . .\nSince \\(1.49 &lt; 1.729\\), we do not reject \\(H_0\\).\n. . .\nConclusion: At 5%, there is insufficient evidence that the mean weight exceeds 100 g."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#case-2-test-for-mu-sigma-unknown-n-30",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#case-2-test-for-mu-sigma-unknown-n-30",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Case 2’: Test for \\(\\mu\\), \\(\\sigma\\) Unknown, \\(n > 30\\)",
+    "text": "Case 2’: Test for \\(\\mu\\), \\(\\sigma\\) Unknown, \\(n &gt; 30\\)\n\n\n\n\n\n\nNoteTest for \\(\\mu\\) — Normal population, \\(\\sigma\\) unknown, large sample (\\(n &gt; 30\\))\n\n\n\nWhen \\(n &gt; 30\\), \\(S'\\) approximates \\(\\sigma\\) well and the \\(t\\)-distribution approaches the Standard Normal:\n\\[Z_0 = \\frac{\\bar{X} - \\mu_0}{S' / \\sqrt{n}} \\underset{\\text{under } H_0}{\\dot{\\sim}} N(0, 1)\\]\nThe critical regions are the same as in Case 1, using \\(z_{\\alpha}\\) and \\(z_{\\alpha/2}\\) from the Normal table.\n\n\n. . .\n\nThis is the same approach as in Case 1, but replacing \\(\\sigma\\) by \\(s'\\). The approximation is justified by the CLT and by the fact that \\(t_{(\\nu)} \\to N(0,1)\\) as \\(\\nu \\to \\infty\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#case-3-test-for-sigma2-variance",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#case-3-test-for-sigma2-variance",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Case 3: Test for \\(\\sigma^2\\) (Variance)",
+    "text": "Case 3: Test for \\(\\sigma^2\\) (Variance)\n\n\n\n\n\n\nNoteTest for \\(\\sigma^2\\) — Normal population\n\n\n\nTest statistic: \\[Q_0 = \\frac{(n-1)S'^2}{\\sigma_0^2} \\underset{\\text{under } H_0}{\\sim} \\chi^2_{(n-1)}\\]\nCritical regions (at significance level \\(\\alpha\\)):\n\n\n\n\n\n\n\n\\(H_1\\)\nRejection region\n\n\n\n\n\\(\\sigma^2 \\neq \\sigma_0^2\\)\n\\(q_{obs} \\leq q_{1-\\alpha/2}\\) or \\(q_{obs} \\geq q_{\\alpha/2}\\)\n\n\n\\(\\sigma^2 &gt; \\sigma_0^2\\)\n\\(q_{obs} \\geq q_{\\alpha}\\)\n\n\n\\(\\sigma^2 &lt; \\sigma_0^2\\)\n\\(q_{obs} \\leq q_{1-\\alpha}\\)\n\n\n\n\n\nHere \\(q_{\\alpha}\\) denotes the value from the \\(\\chi^2\\) table (Table 6) such that \\(P(Q &gt; q_{\\alpha}) = \\alpha\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#important-the-chi2-distribution-is-not-symmetric",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#important-the-chi2-distribution-is-not-symmetric",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Important: The \\(\\chi^2\\) Distribution is Not Symmetric",
+    "text": "Important: The \\(\\chi^2\\) Distribution is Not Symmetric\n\n\n\n\n\n\n\n\n\nBecause the \\(\\chi^2\\) distribution is right-skewed, the two-tailed rejection region is not symmetric around the center. The lower critical value is \\(q_{1-\\alpha/2}\\) and the upper is \\(q_{\\alpha/2}\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-3-test-for-sigma2",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-3-test-for-sigma2",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 3: Test for \\(\\sigma^2\\)",
+    "text": "Example 3: Test for \\(\\sigma^2\\)\nConsider the test: \\(H_0: \\sigma^2 \\geq 10\\) vs. \\(H_1: \\sigma^2 &lt; 10\\), with \\(n = 20\\) from a Normal population and \\(s'^2 = 9\\) (i.e., \\(s' = 3\\)).\nTest at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#example-3-solution",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#example-3-solution",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Example 3: Solution",
+    "text": "Example 3: Solution\nTest statistic: \\[Q_0 = \\frac{(n-1)S'^2}{\\sigma_0^2} \\underset{\\text{under } H_0}{\\sim} \\chi^2_{(19)}\\]\n. . .\nObserved value: \\[q_{obs} = \\frac{(20-1) \\times 9}{10} = \\frac{171}{10} = 17.1\\]\n. . .\nRejection region (left-tailed, \\(\\alpha = 0.05\\)):\nWe need \\(q_{1-\\alpha} = q_{0.95}\\) from the \\(\\chi^2\\) table with 19 d.f.\nFrom Table 6: \\(q_{0.95,(19)} = 10.117\\).\nRejection region: \\(\\left[0\\,;\\, 10.117\\right]\\).\n. . .\nSince \\(q_{obs} = 17.1 &gt; 10.117\\), we do not reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#summary-of-cases-section-3.3",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#summary-of-cases-section-3.3",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Summary of Cases — Section 3.3",
+    "text": "Summary of Cases — Section 3.3\n\n\n\n\n\n\n\n\n\n\nParameter\n\\(\\sigma\\)\nTest Stat.\nDistribution\nTable\n\n\n\n\n\\(\\mu\\)\nknown\n\\(Z_0 = \\frac{\\bar{X}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\n\\(N(0,1)\\)\nNormal\n\n\n\\(\\mu\\)\nunknown, \\(n\\leq 30\\)\n\\(T_0 = \\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(t_{(n-1)}\\)\nTable 7\n\n\n\\(\\mu\\)\nunknown, \\(n &gt; 30\\)\n\\(Z_0 = \\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(\\dot\\sim N(0,1)\\)\nNormal\n\n\n\\(\\sigma^2\\)\n—\n\\(Q_0 = \\frac{(n-1)S'^2}{\\sigma_0^2}\\)\n\\(\\chi^2_{(n-1)}\\)\nTable 6\n\n\n\nThis mirrors the cases from interval estimation — the pivot variables are the same."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-a",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-a",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Practice Exercise A",
+    "text": "Practice Exercise A\nA quality inspector measures the temperature of a chemical process. Historical data show \\(\\sigma = 2.5°\\)C. A random sample of \\(n = 16\\) measurements gives \\(\\bar{x} = 98.3°\\)C.\n\nTest \\(H_0: \\mu = 100\\) vs. \\(H_1: \\mu \\neq 100\\) at \\(\\alpha = 0.01\\).\nCompute the \\(p\\)-value."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-a-solution",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-a-solution",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Practice Exercise A: Solution",
+    "text": "Practice Exercise A: Solution\na) \\(Z_0 = \\frac{\\bar{X} - 100}{2.5/\\sqrt{16}} \\sim N(0,1)\\)\n\\[z_{obs} = \\frac{98.3 - 100}{2.5/4} = \\frac{-1.7}{0.625} = -2.72\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.01\\)): \\(|z_{obs}| \\geq z_{0.005} = 2.576\\)\nSince \\(|-2.72| = 2.72 &gt; 2.576\\), we reject \\(H_0\\).\n. . .\nb) \\(p = 2 \\times P(Z \\geq 2.72) = 2 \\times (1 - 0.9967) = 2 \\times 0.0033 = 0.0066\\)\n. . .\nConclusion: At 1%, there is evidence that the process temperature differs from 100°C."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-b",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-b",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Practice Exercise B",
+    "text": "Practice Exercise B\nFrom a Normal population, a sample of \\(n = 15\\) observations gives \\(s' = 5.04\\).\nTest \\(H_0: \\sigma^2 = 16\\) vs. \\(H_1: \\sigma^2 \\neq 16\\) at \\(\\alpha = 0.10\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-b-solution",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#practice-exercise-b-solution",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Practice Exercise B: Solution",
+    "text": "Practice Exercise B: Solution\nTest statistic: \\[Q_0 = \\frac{(n-1)S'^2}{\\sigma_0^2} \\sim \\chi^2_{(14)}\\]\n\\[q_{obs} = \\frac{14 \\times (5.04)^2}{16} = \\frac{14 \\times 25.4016}{16} = \\frac{355.62}{16} \\approx 22.23\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.10\\)):\nFrom Table 6, \\(\\nu = 14\\): \\(q_{0.95,(14)} = 6.571\\) and \\(q_{0.05,(14)} = 23.685\\)\nReject if \\(q_{obs} \\leq 6.571\\) or \\(q_{obs} \\geq 23.685\\).\n. . .\nSince \\(6.571 &lt; 22.23 &lt; 23.685\\), we do not reject \\(H_0\\).\n. . .\nConclusion: At 10%, there is no evidence that \\(\\sigma^2 \\neq 16\\)."
+  },
+  {
+    "objectID": "slides/08_hypothesis_testing_tests_mean_var.html#quick-recap-before-the-break",
+    "href": "slides/08_hypothesis_testing_tests_mean_var.html#quick-recap-before-the-break",
+    "title": "Parametric Hypothesis Tests — Part 3",
+    "section": "Quick Recap Before the Break",
+    "text": "Quick Recap Before the Break\n\n\n\n\n\n\nImportantWhat we covered (Section 3.3)\n\n\n\n\nCase 1: Test for \\(\\mu\\) with \\(\\sigma\\) known → \\(Z_0 \\sim N(0,1)\\)\nCase 2: Test for \\(\\mu\\) with \\(\\sigma\\) unknown → \\(T_0 \\sim t_{(n-1)}\\)\nCase 2’: Test for \\(\\mu\\) with \\(\\sigma\\) unknown, \\(n&gt;30\\) → \\(Z_0 \\dot\\sim N(0,1)\\)\nCase 3: Test for \\(\\sigma^2\\) → \\(Q_0 \\sim \\chi^2_{(n-1)}\\)\n\n\n\n. . .\nAfter the break: Sections 3.4 and 3.5."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html",
+    "href": "slides/07_hypothesis_testing_pvalue.html",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Before the break, we used the critical region approach:\n\nFix \\(\\alpha\\)\nFind the critical value(s)\nCompare \\(z_{obs}\\) (or \\(t_{obs}\\), \\(q_{obs}\\)) with the critical value\n\n. . .\nBut this only tells us “reject” or “do not reject” for a specific \\(\\alpha\\).\n. . .\nWhat if someone asks: “Would you still reject \\(H_0\\) at \\(\\alpha = 0.01\\)?”\n. . .\nThe \\(p\\)-value answers this question for all possible significance levels at once.\n\n\n\n\n\n\n\n\n\nNote\\(p\\)-value\n\n\n\nThe \\(p\\)-value is the probability, computed under \\(H_0\\), of observing a test statistic value as extreme as, or more extreme than, the value actually observed.\nIt is the smallest significance level at which we would reject \\(H_0\\).\n\n\n. . .\nInformally: the \\(p\\)-value measures how surprised we should be by the sample data, if \\(H_0\\) were true.\n\nSmall \\(p\\)-value \\(\\Rightarrow\\) data is very unlikely under \\(H_0\\) \\(\\Rightarrow\\) strong evidence against \\(H_0\\)\nLarge \\(p\\)-value \\(\\Rightarrow\\) data is consistent with \\(H_0\\) \\(\\Rightarrow\\) no evidence against \\(H_0\\)\n\n\n\n\nThe formula depends on the type of test:\n\n\n\n\n\n\n\nType of test\n\\(p\\)-value\n\n\n\n\nLeft-tailed (\\(H_1: \\theta &lt; \\theta_0\\))\n\\(p = P(T \\leq t_{obs} \\mid H_0)\\)\n\n\nRight-tailed (\\(H_1: \\theta &gt; \\theta_0\\))\n\\(p = P(T \\geq t_{obs} \\mid H_0)\\)\n\n\nTwo-tailed (\\(H_1: \\theta \\neq \\theta_0\\))\n\\(p = 2 \\times P(T \\geq |t_{obs}| \\mid H_0)\\)\n\n\n\nHere \\(T\\) denotes the test statistic (could be \\(Z\\), \\(T\\), \\(Q\\), etc.) and \\(t_{obs}\\) is its observed value.\n\n\n\n\n\n\n\n\n\nImportant\\(p\\)-value decision rule\n\n\n\nGiven a significance level \\(\\alpha\\):\n\nIf \\(p\\text{-value} \\leq \\alpha\\) \\(\\Rightarrow\\) reject \\(H_0\\)\nIf \\(p\\text{-value} &gt; \\alpha\\) \\(\\Rightarrow\\) do not reject \\(H_0\\)\n\n\n\n. . .\nThis is equivalent to the critical region approach, but more informative:\n\nThe critical region approach gives a binary answer for one specific \\(\\alpha\\)\nThe \\(p\\)-value tells you exactly how much evidence the data provides against \\(H_0\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe shaded blue areas represent the \\(p\\)-value: the probability of obtaining a result as extreme as \\(t_{obs}\\), under \\(H_0\\).\n\n\n\nRecall: \\(H_0: \\mu \\geq 500\\) vs. \\(H_1: \\mu &lt; 500\\), \\(z_{obs} = -2.25\\), left-tailed test.\n. . .\n\\[p\\text{-value} = P(Z \\leq z_{obs} \\mid H_0) = P(Z \\leq -2.25)\\]\n. . .\n\\[= \\Phi(-2.25) = 1 - \\Phi(2.25) = 1 - 0.9878 = 0.0122\\]\n. . .\nInterpretation: If \\(H_0\\) were true (\\(\\mu = 500\\)), the probability of observing a sample mean as low as (or lower than) 497 is only 1.22%.\n. . .\nDecision (at \\(\\alpha = 0.05\\)): Since \\(p = 0.0122 &lt; 0.05 = \\alpha\\), we reject \\(H_0\\).\nDecision (at \\(\\alpha = 0.01\\)): Since \\(p = 0.0122 &gt; 0.01 = \\alpha\\), we do not reject \\(H_0\\).\n\n\n\nA random sample of \\(n = 20\\) observations is drawn from a Normal population. The sample mean is \\(\\bar{x} = 101\\) and the corrected sample standard deviation is \\(s' = 3\\).\nTest \\(H_0: \\mu \\leq 100\\) vs. \\(H_1: \\mu &gt; 100\\).\n\n\n\nTest statistic (\\(\\sigma\\) unknown, Normal population):\n\\[T_0 = \\frac{\\bar{X} - \\mu_0}{S'/\\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} t_{(n-1)} = t_{(19)}\\]\n. . .\nObserved value:\n\\[t_{obs} = \\frac{101 - 100}{3/\\sqrt{20}} = \\frac{1}{3/4.472} = \\frac{1}{0.6708} \\approx 1.49\\]\n\n\n\n\\(p\\)-value (right-tailed test):\n\\[p = P(T &gt; 1.49 \\mid H_0)\\]\n. . .\nUsing the \\(t\\)-Student table (Table 7) with 19 degrees of freedom:\nWe look for the row \\(\\nu = 19\\). We find that \\(t_{0.10,(19)} = 1.328\\) and \\(t_{0.05,(19)} = 1.729\\).\nSince \\(1.328 &lt; 1.49 &lt; 1.729\\), we have:\n\\[0.05 &lt; p &lt; 0.10\\]\n. . .\nDecision (at \\(\\alpha = 0.05\\)): Since \\(p &gt; 0.05\\), we do not reject \\(H_0\\).\nConclusion: At the 5% level, there is not sufficient evidence to conclude that \\(\\mu &gt; 100\\).\n\n\n\nWhen using the \\(t\\)-Student or \\(\\chi^2\\) tables, we typically cannot compute the exact \\(p\\)-value. Instead, we bracket it:\n. . .\nStrategy: Find the two table entries that “sandwich” \\(t_{obs}\\) (or \\(q_{obs}\\)).\n. . .\nExample: \\(t_{obs} = 2.861\\), \\(\\nu = 19\\) (right-tailed).\nFrom Table 7: \\(t_{0.005,(19)} = 2.861\\).\n. . .\nSo \\(p = 0.005\\) (exactly, in this case).\n. . .\n\nTip: If \\(t_{obs}\\) matches a table entry exactly, the \\(p\\)-value is the corresponding tail probability. Otherwise, state the interval.\n\n\n\n\nA manufacturer specifies that the mean diameter of a component is \\(\\mu_0 = 25\\) mm. The population variance is known: \\(\\sigma^2 = 4\\). A random sample of \\(n = 49\\) components has \\(\\bar{x} = 25.6\\) mm.\nTest \\(H_0: \\mu = 25\\) vs. \\(H_1: \\mu \\neq 25\\). Compute the \\(p\\)-value.\n\n\n\nTest statistic (\\(\\sigma\\) known):\n\\[Z_0 = \\frac{\\bar{X} - \\mu_0}{\\sigma/\\sqrt{n}} \\sim N(0,1)\\]\n. . .\nObserved value:\n\\[z_{obs} = \\frac{25.6 - 25}{2/\\sqrt{49}} = \\frac{0.6}{2/7} = \\frac{0.6}{0.2857} \\approx 2.10\\]\n. . .\n\\(p\\)-value (two-tailed):\n\\[p = 2 \\times P(Z \\geq |z_{obs}|) = 2 \\times P(Z \\geq 2.10)\\]\n. . .\n\\[= 2 \\times [1 - \\Phi(2.10)] = 2 \\times (1 - 0.9821) = 2 \\times 0.0179 = 0.0358\\]\n. . .\nDecision: \\(p = 0.0358 &lt; 0.05\\), so we reject \\(H_0\\) at \\(\\alpha = 0.05\\). There is evidence that \\(\\mu \\neq 25\\) mm.\n\n\n\nBoth approaches always give the same conclusion for a given \\(\\alpha\\):\n\n\n\nApproach\nReject \\(H_0\\) if…\n\n\n\n\nCritical region\n\\(t_{obs}\\) falls in the rejection region\n\n\n\\(p\\)-value\n\\(p\\text{-value} \\leq \\alpha\\)\n\n\n\n. . .\nIn practice, many practitioners prefer the \\(p\\)-value because:\n\nIt provides more information (the exact strength of evidence)\nIt allows the reader to draw their own conclusion for their preferred \\(\\alpha\\)\nIt is the standard output of statistical software\n\n\n\n\n\n\n\n\n\n\nWarningThe \\(p\\)-value is NOT:\n\n\n\n\nThe probability that \\(H_0\\) is true\nThe probability that \\(H_1\\) is false\nThe probability of making an error\n\n\n\n. . .\n\n\n\n\n\n\nNoteThe \\(p\\)-value IS:\n\n\n\nThe probability of observing data as extreme as (or more extreme than) what was observed, assuming \\(H_0\\) is true.\n\n\n\n\n\nWhile the decision rule (\\(p \\leq \\alpha \\Rightarrow\\) reject) is clear-cut, some authors provide informal guidelines:\n\n\n\n\\(p\\)-value\nEvidence against \\(H_0\\)\n\n\n\n\n\\(p &gt; 0.10\\)\nNo evidence\n\n\n\\(0.05 &lt; p \\leq 0.10\\)\nWeak (marginal) evidence\n\n\n\\(0.01 &lt; p \\leq 0.05\\)\nModerate evidence\n\n\n\\(0.001 &lt; p \\leq 0.01\\)\nStrong evidence\n\n\n\\(p \\leq 0.001\\)\nVery strong evidence\n\n\n\nSource: adapted from Newbold, Carlson & Thorne.\n. . .\n\nThese are informal guidelines, not strict rules. The choice of \\(\\alpha\\) remains a decision of the researcher."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#motivation",
+    "href": "slides/07_hypothesis_testing_pvalue.html#motivation",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Before the break, we used the critical region approach:\n\nFix \\(\\alpha\\)\nFind the critical value(s)\nCompare \\(z_{obs}\\) (or \\(t_{obs}\\), \\(q_{obs}\\)) with the critical value\n\n. . .\nBut this only tells us “reject” or “do not reject” for a specific \\(\\alpha\\).\n. . .\nWhat if someone asks: “Would you still reject \\(H_0\\) at \\(\\alpha = 0.01\\)?”\n. . .\nThe \\(p\\)-value answers this question for all possible significance levels at once."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#definition-of-the-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#definition-of-the-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Note\\(p\\)-value\n\n\n\nThe \\(p\\)-value is the probability, computed under \\(H_0\\), of observing a test statistic value as extreme as, or more extreme than, the value actually observed.\nIt is the smallest significance level at which we would reject \\(H_0\\).\n\n\n. . .\nInformally: the \\(p\\)-value measures how surprised we should be by the sample data, if \\(H_0\\) were true.\n\nSmall \\(p\\)-value \\(\\Rightarrow\\) data is very unlikely under \\(H_0\\) \\(\\Rightarrow\\) strong evidence against \\(H_0\\)\nLarge \\(p\\)-value \\(\\Rightarrow\\) data is consistent with \\(H_0\\) \\(\\Rightarrow\\) no evidence against \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#p-value-formulas",
+    "href": "slides/07_hypothesis_testing_pvalue.html#p-value-formulas",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "The formula depends on the type of test:\n\n\n\n\n\n\n\nType of test\n\\(p\\)-value\n\n\n\n\nLeft-tailed (\\(H_1: \\theta &lt; \\theta_0\\))\n\\(p = P(T \\leq t_{obs} \\mid H_0)\\)\n\n\nRight-tailed (\\(H_1: \\theta &gt; \\theta_0\\))\n\\(p = P(T \\geq t_{obs} \\mid H_0)\\)\n\n\nTwo-tailed (\\(H_1: \\theta \\neq \\theta_0\\))\n\\(p = 2 \\times P(T \\geq |t_{obs}| \\mid H_0)\\)\n\n\n\nHere \\(T\\) denotes the test statistic (could be \\(Z\\), \\(T\\), \\(Q\\), etc.) and \\(t_{obs}\\) is its observed value."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#decision-rule-using-the-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#decision-rule-using-the-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Important\\(p\\)-value decision rule\n\n\n\nGiven a significance level \\(\\alpha\\):\n\nIf \\(p\\text{-value} \\leq \\alpha\\) \\(\\Rightarrow\\) reject \\(H_0\\)\nIf \\(p\\text{-value} &gt; \\alpha\\) \\(\\Rightarrow\\) do not reject \\(H_0\\)\n\n\n\n. . .\nThis is equivalent to the critical region approach, but more informative:\n\nThe critical region approach gives a binary answer for one specific \\(\\alpha\\)\nThe \\(p\\)-value tells you exactly how much evidence the data provides against \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#p-value-graphical-interpretation",
+    "href": "slides/07_hypothesis_testing_pvalue.html#p-value-graphical-interpretation",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "The shaded blue areas represent the \\(p\\)-value: the probability of obtaining a result as extreme as \\(t_{obs}\\), under \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-3-p-value-calculation-cont.-from-example-1",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-3-p-value-calculation-cont.-from-example-1",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Recall: \\(H_0: \\mu \\geq 500\\) vs. \\(H_1: \\mu &lt; 500\\), \\(z_{obs} = -2.25\\), left-tailed test.\n. . .\n\\[p\\text{-value} = P(Z \\leq z_{obs} \\mid H_0) = P(Z \\leq -2.25)\\]\n. . .\n\\[= \\Phi(-2.25) = 1 - \\Phi(2.25) = 1 - 0.9878 = 0.0122\\]\n. . .\nInterpretation: If \\(H_0\\) were true (\\(\\mu = 500\\)), the probability of observing a sample mean as low as (or lower than) 497 is only 1.22%.\n. . .\nDecision (at \\(\\alpha = 0.05\\)): Since \\(p = 0.0122 &lt; 0.05 = \\alpha\\), we reject \\(H_0\\).\nDecision (at \\(\\alpha = 0.01\\)): Since \\(p = 0.0122 &gt; 0.01 = \\alpha\\), we do not reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-4-p-value-with-the-t-distribution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-4-p-value-with-the-t-distribution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "A random sample of \\(n = 20\\) observations is drawn from a Normal population. The sample mean is \\(\\bar{x} = 101\\) and the corrected sample standard deviation is \\(s' = 3\\).\nTest \\(H_0: \\mu \\leq 100\\) vs. \\(H_1: \\mu &gt; 100\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-4-solution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-4-solution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Test statistic (\\(\\sigma\\) unknown, Normal population):\n\\[T_0 = \\frac{\\bar{X} - \\mu_0}{S'/\\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} t_{(n-1)} = t_{(19)}\\]\n. . .\nObserved value:\n\\[t_{obs} = \\frac{101 - 100}{3/\\sqrt{20}} = \\frac{1}{3/4.472} = \\frac{1}{0.6708} \\approx 1.49\\]"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-4-solution-cont.",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-4-solution-cont.",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "\\(p\\)-value (right-tailed test):\n\\[p = P(T &gt; 1.49 \\mid H_0)\\]\n. . .\nUsing the \\(t\\)-Student table (Table 7) with 19 degrees of freedom:\nWe look for the row \\(\\nu = 19\\). We find that \\(t_{0.10,(19)} = 1.328\\) and \\(t_{0.05,(19)} = 1.729\\).\nSince \\(1.328 &lt; 1.49 &lt; 1.729\\), we have:\n\\[0.05 &lt; p &lt; 0.10\\]\n. . .\nDecision (at \\(\\alpha = 0.05\\)): Since \\(p &gt; 0.05\\), we do not reject \\(H_0\\).\nConclusion: At the 5% level, there is not sufficient evidence to conclude that \\(\\mu &gt; 100\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#reading-the-p-value-from-tables",
+    "href": "slides/07_hypothesis_testing_pvalue.html#reading-the-p-value-from-tables",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "When using the \\(t\\)-Student or \\(\\chi^2\\) tables, we typically cannot compute the exact \\(p\\)-value. Instead, we bracket it:\n. . .\nStrategy: Find the two table entries that “sandwich” \\(t_{obs}\\) (or \\(q_{obs}\\)).\n. . .\nExample: \\(t_{obs} = 2.861\\), \\(\\nu = 19\\) (right-tailed).\nFrom Table 7: \\(t_{0.005,(19)} = 2.861\\).\n. . .\nSo \\(p = 0.005\\) (exactly, in this case).\n. . .\n\nTip: If \\(t_{obs}\\) matches a table entry exactly, the \\(p\\)-value is the corresponding tail probability. Otherwise, state the interval."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-5-two-tailed-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-5-two-tailed-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "A manufacturer specifies that the mean diameter of a component is \\(\\mu_0 = 25\\) mm. The population variance is known: \\(\\sigma^2 = 4\\). A random sample of \\(n = 49\\) components has \\(\\bar{x} = 25.6\\) mm.\nTest \\(H_0: \\mu = 25\\) vs. \\(H_1: \\mu \\neq 25\\). Compute the \\(p\\)-value."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-5-solution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-5-solution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Test statistic (\\(\\sigma\\) known):\n\\[Z_0 = \\frac{\\bar{X} - \\mu_0}{\\sigma/\\sqrt{n}} \\sim N(0,1)\\]\n. . .\nObserved value:\n\\[z_{obs} = \\frac{25.6 - 25}{2/\\sqrt{49}} = \\frac{0.6}{2/7} = \\frac{0.6}{0.2857} \\approx 2.10\\]\n. . .\n\\(p\\)-value (two-tailed):\n\\[p = 2 \\times P(Z \\geq |z_{obs}|) = 2 \\times P(Z \\geq 2.10)\\]\n. . .\n\\[= 2 \\times [1 - \\Phi(2.10)] = 2 \\times (1 - 0.9821) = 2 \\times 0.0179 = 0.0358\\]\n. . .\nDecision: \\(p = 0.0358 &lt; 0.05\\), so we reject \\(H_0\\) at \\(\\alpha = 0.05\\). There is evidence that \\(\\mu \\neq 25\\) mm."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#equivalence-critical-region-vs.-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#equivalence-critical-region-vs.-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "Both approaches always give the same conclusion for a given \\(\\alpha\\):\n\n\n\nApproach\nReject \\(H_0\\) if…\n\n\n\n\nCritical region\n\\(t_{obs}\\) falls in the rejection region\n\n\n\\(p\\)-value\n\\(p\\text{-value} \\leq \\alpha\\)\n\n\n\n. . .\nIn practice, many practitioners prefer the \\(p\\)-value because:\n\nIt provides more information (the exact strength of evidence)\nIt allows the reader to draw their own conclusion for their preferred \\(\\alpha\\)\nIt is the standard output of statistical software"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#common-misinterpretations-of-the-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#common-misinterpretations-of-the-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "WarningThe \\(p\\)-value is NOT:\n\n\n\n\nThe probability that \\(H_0\\) is true\nThe probability that \\(H_1\\) is false\nThe probability of making an error\n\n\n\n. . .\n\n\n\n\n\n\nNoteThe \\(p\\)-value IS:\n\n\n\nThe probability of observing data as extreme as (or more extreme than) what was observed, assuming \\(H_0\\) is true."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#practical-guidelines-for-interpreting-p-values",
+    "href": "slides/07_hypothesis_testing_pvalue.html#practical-guidelines-for-interpreting-p-values",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "",
+    "text": "While the decision rule (\\(p \\leq \\alpha \\Rightarrow\\) reject) is clear-cut, some authors provide informal guidelines:\n\n\n\n\\(p\\)-value\nEvidence against \\(H_0\\)\n\n\n\n\n\\(p &gt; 0.10\\)\nNo evidence\n\n\n\\(0.05 &lt; p \\leq 0.10\\)\nWeak (marginal) evidence\n\n\n\\(0.01 &lt; p \\leq 0.05\\)\nModerate evidence\n\n\n\\(0.001 &lt; p \\leq 0.01\\)\nStrong evidence\n\n\n\\(p \\leq 0.001\\)\nVery strong evidence\n\n\n\nSource: adapted from Newbold, Carlson & Thorne.\n. . .\n\nThese are informal guidelines, not strict rules. The choice of \\(\\alpha\\) remains a decision of the researcher."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#the-connection",
+    "href": "slides/07_hypothesis_testing_pvalue.html#the-connection",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "The Connection",
+    "text": "The Connection\nThere is a direct relationship between a two-tailed hypothesis test and a confidence interval:\n. . .\n\n\n\n\n\n\nNoteCI–Test Equivalence\n\n\n\nAt significance level \\(\\alpha\\), we reject \\(H_0: \\mu = \\mu_0\\) (two-tailed) if and only if \\(\\mu_0\\) does not belong to the \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(\\mu\\).\n\n\n. . .\nThis makes intuitive sense: if the hypothesized value \\(\\mu_0\\) is outside the plausible range given by the CI, then the data contradicts \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#example-6-ci-and-test-equivalence",
+    "href": "slides/07_hypothesis_testing_pvalue.html#example-6-ci-and-test-equivalence",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Example 6: CI and Test Equivalence",
+    "text": "Example 6: CI and Test Equivalence\nRecall Example 5: \\(\\mu_0 = 25\\), \\(\\sigma = 2\\), \\(n = 49\\), \\(\\bar{x} = 25.6\\).\nThe 95% confidence interval for \\(\\mu\\) is:\n\\[\\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} = 25.6 \\pm 1.96 \\times \\frac{2}{7} = 25.6 \\pm 0.56\\]\n. . .\n\\[\\text{CI} = [25.04\\, ;\\, 26.16]\\]\n. . .\nSince \\(\\mu_0 = 25 \\notin [25.04\\, ;\\, 26.16]\\), we reject \\(H_0: \\mu = 25\\) at \\(\\alpha = 0.05\\).\n. . .\nThis is consistent with our earlier finding (\\(p = 0.0358 &lt; 0.05\\))."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-1",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-1",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nA manufacturer claims that light bulbs last, on average, at least 1000 hours. A random sample of 25 bulbs from a Normal population gives \\(\\bar{x} = 980\\) hours and \\(s' = 40\\) hours.\nAt \\(\\alpha = 0.05\\), is there evidence against the manufacturer’s claim?"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-1-solution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-1-solution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 1: Solution",
+    "text": "Exercise 1: Solution\nStep 1: \\(H_0: \\mu \\geq 1000\\) vs. \\(H_1: \\mu &lt; 1000\\) (left-tailed)\n. . .\nStep 2: \\(\\alpha = 0.05\\)\n. . .\nStep 3: \\(\\sigma\\) unknown, Normal population, so:\n\\[T_0 = \\frac{\\bar{X} - \\mu_0}{S'/\\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} t_{(24)}\\]"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-1-solution-cont.",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-1-solution-cont.",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 1: Solution (cont.)",
+    "text": "Exercise 1: Solution (cont.)\nStep 4: Left-tailed, \\(\\alpha = 0.05\\), \\(\\nu = 24\\)\n\\[\\text{Rejection region: } \\left]-\\infty\\,;\\, -t_{0.05,(24)}\\right] = \\left]-\\infty\\,;\\, -1.711\\right]\\]\n(From Table 7: \\(t_{0.05,(24)} = 1.711\\))\n. . .\nStep 5:\n\\[t_{obs} = \\frac{980 - 1000}{40/\\sqrt{25}} = \\frac{-20}{8} = -2.50\\]\n. . .\nStep 6: \\(t_{obs} = -2.50 &lt; -1.711\\) → falls in the rejection region.\n. . .\nDecision: Reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-1-p-value",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-1-p-value",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 1: \\(p\\)-value",
+    "text": "Exercise 1: \\(p\\)-value\n\\[p = P(T \\leq -2.50) = P(T \\geq 2.50)\\]\nFrom Table 7, \\(\\nu = 24\\): \\(t_{0.01,(24)} = 2.492\\) and \\(t_{0.005,(24)} = 2.797\\).\n. . .\nSince \\(2.492 &lt; 2.50 &lt; 2.797\\), we have \\(0.005 &lt; p &lt; 0.01\\).\n. . .\nConclusion: At 5%, there is strong evidence that the mean lifetime is less than 1000 hours (\\(p &lt; 0.01\\))."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-2",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-2",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nA food processing company fills cereal boxes labeled as 500 g. The variance of the filling process is known to be \\(\\sigma^2 = 25 \\text{ g}^2\\). A random sample of \\(n = 64\\) boxes yields \\(\\bar{x} = 498\\) g.\n\nTest whether the mean weight differs from 500 g at \\(\\alpha = 0.05\\).\nCompute the \\(p\\)-value."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-2-solution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-2-solution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 2: Solution",
+    "text": "Exercise 2: Solution\na) \\(H_0: \\mu = 500\\) vs. \\(H_1: \\mu \\neq 500\\) (two-tailed)\n\\(\\sigma = 5\\) is known, \\(n = 64\\):\n\\[Z_0 = \\frac{\\bar{X} - 500}{\\sigma/\\sqrt{n}} \\sim N(0,1) \\qquad z_{obs} = \\frac{498 - 500}{5/\\sqrt{64}} = \\frac{-2}{5/8} = \\frac{-2}{0.625} = -3.20\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.05\\)):\n\\[\\left]-\\infty;\\, -z_{0.025}\\right] \\cup \\left[z_{0.025};\\, +\\infty\\right[ = \\left]-\\infty;\\, -1.96\\right] \\cup \\left[1.96;\\, +\\infty\\right[\\]\n. . .\nSince \\(z_{obs} = -3.20 &lt; -1.96\\), we reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-2-solution-cont.",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-2-solution-cont.",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 2: Solution (cont.)",
+    "text": "Exercise 2: Solution (cont.)\nb) \\(p\\)-value (two-tailed):\n\\[p = 2 \\times P(Z \\geq |{-3.20}|) = 2 \\times P(Z \\geq 3.20)\\]\n. . .\n\\[= 2 \\times [1 - \\Phi(3.20)] = 2 \\times (1 - 0.9993) = 2 \\times 0.0007 = 0.0014\\]\n. . .\nVery strong evidence against \\(H_0\\): the \\(p\\)-value is much smaller than any conventional \\(\\alpha\\)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-3",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-3",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 3",
+    "text": "Exercise 3\nFrom a random sample of \\(n = 20\\) observations drawn from a Normal population, one obtains \\(\\bar{x} = 101\\) and \\(s' = 3\\).\nConsider the test: \\(H_0: \\mu \\leq 100\\) vs. \\(H_1: \\mu &gt; 100\\).\n\nFor \\(\\alpha = 0.05\\), determine the rejection region.\nIf, for another sample of the same size, \\(t_{obs} = 2.861\\), what is the \\(p\\)-value?"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#exercise-3-solution",
+    "href": "slides/07_hypothesis_testing_pvalue.html#exercise-3-solution",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Exercise 3: Solution",
+    "text": "Exercise 3: Solution\na) Right-tailed test, \\(T_0 \\sim t_{(19)}\\):\n\\[\\text{Rejection region: } \\left[t_{0.05,(19)}\\,;\\, +\\infty\\right[ = \\left[1.729\\,;\\, +\\infty\\right[\\]\n(Table 7: \\(t_{0.05,(19)} = 1.729\\))\n. . .\nb) For \\(t_{obs} = 2.861\\), right-tailed:\n\\[p = P(T &gt; 2.861)\\]\nFrom Table 7, \\(\\nu = 19\\): \\(t_{0.005,(19)} = 2.861\\).\n. . .\nSo \\(p = 0.005\\).\nThere is evidence to reject \\(H_0\\) for all usual significance levels (\\(0.005 &lt; \\alpha\\), for any conventional \\(\\alpha\\))."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#summary-of-todays-lecture",
+    "href": "slides/07_hypothesis_testing_pvalue.html#summary-of-todays-lecture",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Summary of Today’s Lecture",
+    "text": "Summary of Today’s Lecture\n\n\n\n\n\n\nImportantKey takeaways — Lecture 6\n\n\n\n\nA hypothesis test is a formal procedure to evaluate a claim about a population parameter\n\\(H_0\\) (status quo) vs. \\(H_1\\) (research hypothesis); \\(H_0\\) always contains equality\nThe test statistic is a pivot variable computed under \\(H_0\\)\nType I Error (\\(\\alpha\\)) = rejecting true \\(H_0\\); Type II Error (\\(\\beta\\)) = not rejecting false \\(H_0\\)\nThe \\(p\\)-value is the smallest \\(\\alpha\\) at which we would reject \\(H_0\\)\nDecision: reject \\(H_0\\) if \\(p \\leq \\alpha\\), or equivalently, if \\(t_{obs}\\) falls in the rejection region\nA two-tailed test at level \\(\\alpha\\) and a \\((1-\\alpha)\\) CI give equivalent conclusions"
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#next-lecture-april-21",
+    "href": "slides/07_hypothesis_testing_pvalue.html#next-lecture-april-21",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Next Lecture (April 21)",
+    "text": "Next Lecture (April 21)\nWe will apply the testing framework to specific cases:\n\nSection 3.3: Tests for means and variances of Normal populations\nSection 3.4: Tests for the difference of means of two Normal populations\nSection 3.5: Large-sample tests (asymptotic normality)\n\n. . .\nMake sure to review the relevant sections in Newbold (Chapter 9)."
+  },
+  {
+    "objectID": "slides/07_hypothesis_testing_pvalue.html#disclaimer",
+    "href": "slides/07_hypothesis_testing_pvalue.html#disclaimer",
+    "title": "Parametric Hypothesis Tests — Part 2",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThese slides are a free adaptation of the course material for Estatística II by Prof. Teresa Ferreira and Prof. Sandra Custódio from the Lisbon Accounting and Business School — Polytechnic University of Lisbon.\n\n\nPrimary reference: Newbold, P., Carlson, W. & Thorne, B. — Statistics for Business and Economics, Global Edition."
+  },
+  {
+    "objectID": "slides/04_interval_estimation_part1.html",
+    "href": "slides/04_interval_estimation_part1.html",
+    "title": "Interval Estimation — Part 1",
+    "section": "",
+    "text": "Confidence Intervals — General Concepts\nConfidence Interval for the Population Mean, \\(\\mu\\), of Normal Populations\n\n\n\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html",
+    "href": "slides/06_hypothesis_testing_intro.html",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "",
+    "text": "So far in this course, we have covered:\n\nSampling distributions (Topic 1): how sample statistics behave\nPoint estimation (Topic 2.1): finding a single “best guess” for a parameter\nInterval estimation (Topic 2.2): constructing a range of plausible values\n\n. . .\nNow we ask a different question:\n\nGiven a claim about a population parameter, does the sample data support or contradict that claim?\n\n\n\n\nIn practice, decisions must be made under uncertainty:\n\nA pharmaceutical company claims a new drug lowers cholesterol by more than 20 mg/dL. Does the clinical trial data support this?\nAn engineer suspects that a machine is overfilling packages beyond the nominal 100 g. Is there statistical evidence?\nA bank manager believes the average processing time for loan applications has decreased. Can we confirm this?\n\n. . .\nHypothesis testing provides a formal, rigorous framework for answering these questions using sample data.\n\n\n\n\n\n\n\n\n\nNoteThe Key Shift\n\n\n\nIn estimation, we ask: “What is the value of the parameter?”\nIn hypothesis testing, we ask: “Is the parameter equal to (or greater than, or less than) a specific value?”\n\n\n. . .\nWe already have the building blocks:\n\nSampling distributions\nPivot (fulcral) variables: \\(Z\\), \\(T\\), \\(Q\\) (\\(\\chi^2\\))\nCritical values from statistical tables"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#recall-statistical-inference",
+    "href": "slides/06_hypothesis_testing_intro.html#recall-statistical-inference",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "",
+    "text": "So far in this course, we have covered:\n\nSampling distributions (Topic 1): how sample statistics behave\nPoint estimation (Topic 2.1): finding a single “best guess” for a parameter\nInterval estimation (Topic 2.2): constructing a range of plausible values\n\n. . .\nNow we ask a different question:\n\nGiven a claim about a population parameter, does the sample data support or contradict that claim?"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#why-hypothesis-testing",
+    "href": "slides/06_hypothesis_testing_intro.html#why-hypothesis-testing",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "",
+    "text": "In practice, decisions must be made under uncertainty:\n\nA pharmaceutical company claims a new drug lowers cholesterol by more than 20 mg/dL. Does the clinical trial data support this?\nAn engineer suspects that a machine is overfilling packages beyond the nominal 100 g. Is there statistical evidence?\nA bank manager believes the average processing time for loan applications has decreased. Can we confirm this?\n\n. . .\nHypothesis testing provides a formal, rigorous framework for answering these questions using sample data."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#from-estimation-to-testing",
+    "href": "slides/06_hypothesis_testing_intro.html#from-estimation-to-testing",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "",
+    "text": "NoteThe Key Shift\n\n\n\nIn estimation, we ask: “What is the value of the parameter?”\nIn hypothesis testing, we ask: “Is the parameter equal to (or greater than, or less than) a specific value?”\n\n\n. . .\nWe already have the building blocks:\n\nSampling distributions\nPivot (fulcral) variables: \\(Z\\), \\(T\\), \\(Q\\) (\\(\\chi^2\\))\nCritical values from statistical tables"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-structure-of-a-hypothesis-test",
+    "href": "slides/06_hypothesis_testing_intro.html#the-structure-of-a-hypothesis-test",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Structure of a Hypothesis Test",
+    "text": "The Structure of a Hypothesis Test\nEvery hypothesis test involves the same fundamental elements:\n\nNull hypothesis (\\(H_0\\)): the claim we assume to be true until evidence says otherwise\nAlternative hypothesis (\\(H_1\\)): the claim we are trying to find evidence for\nTest statistic: a function of the sample data (computed under \\(H_0\\))\nSignificance level (\\(\\alpha\\)): the probability of rejecting \\(H_0\\) when it is actually true\nCritical (rejection) region: the set of values of the test statistic that lead to rejection of \\(H_0\\)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-null-hypothesis-h_0",
+    "href": "slides/06_hypothesis_testing_intro.html#the-null-hypothesis-h_0",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Null Hypothesis (\\(H_0\\))",
+    "text": "The Null Hypothesis (\\(H_0\\))\n\n\n\n\n\n\nNoteNull Hypothesis\n\n\n\nThe null hypothesis, denoted \\(H_0\\), represents the status quo — the current belief, the manufacturer’s specification, or the default assumption.\nIt always contains an equality sign (\\(=\\), \\(\\leq\\), or \\(\\geq\\)).\n\n\n. . .\nExamples:\n\n\\(H_0\\): \\(\\mu = 100\\) (the mean weight is 100 g)\n\\(H_0\\): \\(\\mu \\leq 500\\) (the mean daily revenue does not exceed 500 €)\n\\(H_0\\): \\(\\sigma^2 \\geq 10\\) (the variance is at least 10)\n\n. . .\n\nImportant: We never “accept” \\(H_0\\). We either reject it or fail to reject it."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-alternative-hypothesis-h_1",
+    "href": "slides/06_hypothesis_testing_intro.html#the-alternative-hypothesis-h_1",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Alternative Hypothesis (\\(H_1\\))",
+    "text": "The Alternative Hypothesis (\\(H_1\\))\n\n\n\n\n\n\nNoteAlternative Hypothesis\n\n\n\nThe alternative hypothesis, denoted \\(H_1\\) (or \\(H_a\\)), represents what we are trying to find evidence for. It is the “research hypothesis.”\nIt contains a strict inequality (\\(\\neq\\), \\(&gt;\\), or \\(&lt;\\)).\n\n\n. . .\nThe form of \\(H_1\\) determines the type of test:\n\n\n\n\\(H_0\\)\n\\(H_1\\)\nType of test\n\n\n\n\n\\(\\mu = \\mu_0\\)\n\\(\\mu \\neq \\mu_0\\)\nTwo-tailed (bilateral)\n\n\n\\(\\mu \\leq \\mu_0\\)\n\\(\\mu &gt; \\mu_0\\)\nRight-tailed (unilateral right)\n\n\n\\(\\mu \\geq \\mu_0\\)\n\\(\\mu &lt; \\mu_0\\)\nLeft-tailed (unilateral left)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#how-to-formulate-h_0-and-h_1",
+    "href": "slides/06_hypothesis_testing_intro.html#how-to-formulate-h_0-and-h_1",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "How to Formulate \\(H_0\\) and \\(H_1\\)",
+    "text": "How to Formulate \\(H_0\\) and \\(H_1\\)\nA common source of confusion: which claim goes in \\(H_0\\) and which in \\(H_1\\)?\n. . .\nRule of thumb:\n\n\\(H_0\\) is the claim that we assume true unless the data convinces us otherwise\n\\(H_1\\) is the claim we want to prove (what the researcher suspects)\n\n. . .\n\nThink of it as a trial: \\(H_0\\) is “innocent” (the default), and \\(H_1\\) is “guilty.” The burden of proof lies on \\(H_1\\)."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-formulating-hypotheses",
+    "href": "slides/06_hypothesis_testing_intro.html#example-formulating-hypotheses",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example: Formulating Hypotheses",
+    "text": "Example: Formulating Hypotheses\nScenario: A food company states that each package contains, on average, 500 g of product. A consumer protection agency suspects the company is underfilling.\n. . .\nWhat are \\(H_0\\) and \\(H_1\\)?\n. . .\n\nThe status quo (company’s claim): \\(\\mu = 500\\) (or \\(\\mu \\geq 500\\))\nThe suspicion (what we want evidence for): \\(\\mu &lt; 500\\)\n\n\\[H_0: \\mu \\geq 500 \\quad \\text{vs.} \\quad H_1: \\mu &lt; 500\\]\n. . .\nThis is a left-tailed test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-formulating-hypotheses-cont.",
+    "href": "slides/06_hypothesis_testing_intro.html#example-formulating-hypotheses-cont.",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example: Formulating Hypotheses (cont.)",
+    "text": "Example: Formulating Hypotheses (cont.)\nScenario: An engineer suspects that a machine is overfilling packages beyond the nominal 100 g.\n. . .\n\\[H_0: \\mu \\leq 100 \\quad \\text{vs.} \\quad H_1: \\mu &gt; 100\\]\nThis is a right-tailed test.\n. . .\n\n\nScenario: A quality control inspector wants to check whether the mean weight differs from the specification of 100 g (could be above or below).\n. . .\n\\[H_0: \\mu = 100 \\quad \\text{vs.} \\quad H_1: \\mu \\neq 100\\]\nThis is a two-tailed (bilateral) test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-test-statistic",
+    "href": "slides/06_hypothesis_testing_intro.html#the-test-statistic",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Test Statistic",
+    "text": "The Test Statistic\n\n\n\n\n\n\nNoteTest Statistic\n\n\n\nThe test statistic is a random variable, computed from the sample, whose distribution is known under \\(H_0\\).\nIt measures how far the sample result is from what \\(H_0\\) predicts.\n\n\n. . .\nYou already know these from interval estimation:\n\n\n\n\n\n\n\n\n\nParameter\nConditions\nTest Statistic\nDistribution under \\(H_0\\)\n\n\n\n\n\\(\\mu\\)\n\\(\\sigma\\) known\n\\(Z_0 = \\frac{\\bar{X}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\n\\(N(0,1)\\)\n\n\n\\(\\mu\\)\n\\(\\sigma\\) unknown\n\\(T_0 = \\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(t_{(n-1)}\\)\n\n\n\\(\\sigma^2\\)\nNormal pop.\n\\(Q_0 = \\frac{(n-1)S'^2}{\\sigma_0^2}\\)\n\\(\\chi^2_{(n-1)}\\)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-significance-level-alpha",
+    "href": "slides/06_hypothesis_testing_intro.html#the-significance-level-alpha",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Significance Level (\\(\\alpha\\))",
+    "text": "The Significance Level (\\(\\alpha\\))\n\n\n\n\n\n\nNoteSignificance Level\n\n\n\nThe significance level \\(\\alpha\\) is the maximum probability of rejecting \\(H_0\\) when \\(H_0\\) is actually true.\n\\[\\alpha = P(\\text{reject } H_0 \\mid H_0 \\text{ is true})\\]\n\n\n. . .\nCommon values: \\(\\alpha = 0.01\\), \\(\\alpha = 0.05\\), \\(\\alpha = 0.10\\).\n. . .\n\nSmaller \\(\\alpha\\) \\(\\Rightarrow\\) harder to reject \\(H_0\\) \\(\\Rightarrow\\) stronger evidence required\nLarger \\(\\alpha\\) \\(\\Rightarrow\\) easier to reject \\(H_0\\) \\(\\Rightarrow\\) weaker evidence suffices\n\n. . .\n\n\\(\\alpha\\) is chosen before collecting data and performing the test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-critical-rejection-region",
+    "href": "slides/06_hypothesis_testing_intro.html#the-critical-rejection-region",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Critical (Rejection) Region",
+    "text": "The Critical (Rejection) Region\n\n\n\n\n\n\nNoteCritical Region\n\n\n\nThe critical region (or rejection region) is the set of values of the test statistic for which we reject \\(H_0\\).\nIts boundary is determined by the significance level \\(\\alpha\\) and the type of test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#critical-regions-visual-summary",
+    "href": "slides/06_hypothesis_testing_intro.html#critical-regions-visual-summary",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Critical Regions: Visual Summary",
+    "text": "Critical Regions: Visual Summary\n\n\n\n\n\n\n\n\n\nThe shaded areas represent the rejection region. If the observed test statistic falls in the shaded area, we reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-general-test-procedure",
+    "href": "slides/06_hypothesis_testing_intro.html#the-general-test-procedure",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The General Test Procedure",
+    "text": "The General Test Procedure\n\n\n\n\n\n\nImportantStep-by-step procedure for a hypothesis test\n\n\n\n\nState the hypotheses: write \\(H_0\\) and \\(H_1\\)\nChoose the significance level \\(\\alpha\\)\nIdentify the test statistic and its distribution under \\(H_0\\)\nDetermine the critical region (using \\(\\alpha\\) and statistical tables)\nCompute the observed value of the test statistic from the sample\nMake the decision: reject \\(H_0\\) if the observed value falls in the critical region; otherwise, do not reject \\(H_0\\)\nState the conclusion in the context of the problem"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#two-types-of-mistakes",
+    "href": "slides/06_hypothesis_testing_intro.html#two-types-of-mistakes",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Two Types of Mistakes",
+    "text": "Two Types of Mistakes\nWhen we make a decision based on sample data, we can make two kinds of errors:\n\n\n\n\n\n\n\n\n\n\\(H_0\\) is true\n\\(H_0\\) is false\n\n\n\n\nDo not reject \\(H_0\\)\nCorrect decision\nType II Error (\\(\\beta\\))\n\n\nReject \\(H_0\\)\nType I Error (\\(\\alpha\\))\nCorrect decision"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#type-i-error",
+    "href": "slides/06_hypothesis_testing_intro.html#type-i-error",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Type I Error",
+    "text": "Type I Error\n\n\n\n\n\n\nNoteType I Error\n\n\n\nA Type I error occurs when we reject \\(H_0\\) even though \\(H_0\\) is true.\n\\[\\alpha = P(\\text{Type I Error}) = P(\\text{reject } H_0 \\mid H_0 \\text{ is true})\\]\n\n\n. . .\nThis is exactly the significance level \\(\\alpha\\).\n. . .\nAnalogy: Convicting an innocent person in a trial."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#type-ii-error",
+    "href": "slides/06_hypothesis_testing_intro.html#type-ii-error",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Type II Error",
+    "text": "Type II Error\n\n\n\n\n\n\nNoteType II Error\n\n\n\nA Type II error occurs when we fail to reject \\(H_0\\) even though \\(H_0\\) is false (i.e., \\(H_1\\) is true).\n\\[\\beta = P(\\text{Type II Error}) = P(\\text{do not reject } H_0 \\mid H_1 \\text{ is true})\\]\n\n\n. . .\nAnalogy: Acquitting a guilty person in a trial.\n. . .\n\\(\\beta\\) depends on:\n\nThe true value of the parameter (how far from \\(H_0\\))\nThe sample size \\(n\\)\nThe significance level \\(\\alpha\\)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-power-of-a-test",
+    "href": "slides/06_hypothesis_testing_intro.html#the-power-of-a-test",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Power of a Test",
+    "text": "The Power of a Test\n\n\n\n\n\n\nNotePower\n\n\n\nThe power of a test is the probability of correctly rejecting \\(H_0\\) when \\(H_1\\) is true:\n\\[\\text{Power} = 1 - \\beta = P(\\text{reject } H_0 \\mid H_1 \\text{ is true})\\]\n\n\n. . .\nA good test has high power (close to 1).\n. . .\nIn practice:\n\nIncreasing \\(n\\) increases power (and reduces \\(\\beta\\))\nIncreasing \\(\\alpha\\) increases power but also increases the risk of Type I error\nThere is always a trade-off between \\(\\alpha\\) and \\(\\beta\\)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#the-trade-off-between-alpha-and-beta",
+    "href": "slides/06_hypothesis_testing_intro.html#the-trade-off-between-alpha-and-beta",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "The Trade-off Between \\(\\alpha\\) and \\(\\beta\\)",
+    "text": "The Trade-off Between \\(\\alpha\\) and \\(\\beta\\)\nFor a fixed sample size \\(n\\):\n\nIf we decrease \\(\\alpha\\) (more conservative) \\(\\Rightarrow\\) \\(\\beta\\) increases (harder to detect a real effect)\nIf we increase \\(\\alpha\\) (more liberal) \\(\\Rightarrow\\) \\(\\beta\\) decreases (easier to detect, but more false alarms)\n\n. . .\n\nThe only way to reduce both \\(\\alpha\\) and \\(\\beta\\) simultaneously is to increase the sample size \\(n\\)."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#analogy-fire-alarm",
+    "href": "slides/06_hypothesis_testing_intro.html#analogy-fire-alarm",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Analogy: Fire Alarm",
+    "text": "Analogy: Fire Alarm\nThink of a hypothesis test as a fire alarm:\n\nType I Error (\\(\\alpha\\)): The alarm goes off, but there is no fire (false alarm)\nType II Error (\\(\\beta\\)): There is a fire, but the alarm does not go off (missed detection)\n\n. . .\n\nIf we make the alarm very sensitive: fewer missed fires (\\(\\beta\\) small), but more false alarms (\\(\\alpha\\) large)\nIf we make the alarm less sensitive: fewer false alarms (\\(\\alpha\\) small), but more missed fires (\\(\\beta\\) large)"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#summary-errors-at-a-glance",
+    "href": "slides/06_hypothesis_testing_intro.html#summary-errors-at-a-glance",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Summary: Errors at a Glance",
+    "text": "Summary: Errors at a Glance"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-test-for-the-mean-sigma-known",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-test-for-the-mean-sigma-known",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Test for the Mean (\\(\\sigma\\) known)",
+    "text": "Example 1: Test for the Mean (\\(\\sigma\\) known)\nA bottling company fills bottles with a nominal volume of \\(\\mu_0 = 500\\) mL. The filling process is known to have a standard deviation of \\(\\sigma = 8\\) mL. A quality inspector takes a random sample of \\(n = 36\\) bottles and obtains a sample mean of \\(\\bar{x} = 497\\) mL.\nAt the 5% significance level, is there evidence that the machine is underfilling?"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-1",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-1",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 1",
+    "text": "Example 1: Solution — Step 1\nStep 1: State the hypotheses.\nThe inspector suspects underfilling, i.e., the mean is less than 500.\n\\[H_0: \\mu \\geq 500 \\quad \\text{vs.} \\quad H_1: \\mu &lt; 500\\]\n. . .\nThis is a left-tailed test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-2",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-2",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 2",
+    "text": "Example 1: Solution — Step 2\nStep 2: Significance level.\n\\[\\alpha = 0.05\\]"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-3",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-3",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 3",
+    "text": "Example 1: Solution — Step 3\nStep 3: Test statistic.\nThe population standard deviation \\(\\sigma = 8\\) is known, so:\n\\[Z_0 = \\frac{\\bar{X} - \\mu_0}{\\sigma / \\sqrt{n}} \\underset{\\text{under } H_0}{\\sim} N(0, 1)\\]"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-4",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-4",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 4",
+    "text": "Example 1: Solution — Step 4\nStep 4: Critical region.\nFor a left-tailed test at \\(\\alpha = 0.05\\):\n\\[\\text{Rejection region: } \\left]-\\infty\\, ;\\, -z_{\\alpha}\\right] = \\left]-\\infty\\, ;\\, -1.645\\right]\\]\n. . .\nWe reject \\(H_0\\) if \\(z_{obs} \\leq -1.645\\)."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-5",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-5",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 5",
+    "text": "Example 1: Solution — Step 5\nStep 5: Compute the observed value.\n\\[z_{obs} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}} = \\frac{497 - 500}{8 / \\sqrt{36}} = \\frac{-3}{8/6} = \\frac{-3}{1.333} \\approx -2.25\\]"
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-6",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-6",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 6",
+    "text": "Example 1: Solution — Step 6\nStep 6: Decision.\n\\[z_{obs} = -2.25 \\leq -1.645\\]\n. . .\nThe observed value falls in the rejection region.\n. . .\n\\(\\Rightarrow\\) We reject \\(H_0\\) at the 5% significance level."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-7",
+    "href": "slides/06_hypothesis_testing_intro.html#example-1-solution-step-7",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 1: Solution — Step 7",
+    "text": "Example 1: Solution — Step 7\nStep 7: Conclusion.\nAt the 5% significance level, there is sufficient statistical evidence to conclude that the machine is underfilling the bottles (i.e., the mean volume is less than 500 mL).\n. . ."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-2-formulating-hypotheses-practice",
+    "href": "slides/06_hypothesis_testing_intro.html#example-2-formulating-hypotheses-practice",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 2: Formulating Hypotheses — Practice",
+    "text": "Example 2: Formulating Hypotheses — Practice\nFor each scenario, write \\(H_0\\) and \\(H_1\\), and state the type of test:\n\nA bank claims the average time to process a loan is 5 days. A consultant believes it takes longer.\nA manufacturer states the defect rate is at most 3%. An auditor suspects it is higher.\nA researcher wants to test if a training program changes employee productivity from the current average of 40 units/day."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#example-2-solutions",
+    "href": "slides/06_hypothesis_testing_intro.html#example-2-solutions",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Example 2: Solutions",
+    "text": "Example 2: Solutions\n\n\\(H_0: \\mu \\leq 5 \\quad \\text{vs.} \\quad H_1: \\mu &gt; 5\\) → Right-tailed\n\n. . .\n\n\\(H_0: p \\leq 0.03 \\quad \\text{vs.} \\quad H_1: p &gt; 0.03\\) → Right-tailed\n\n. . .\n\n\\(H_0: \\mu = 40 \\quad \\text{vs.} \\quad H_1: \\mu \\neq 40\\) → Two-tailed\n\n. . .\n\nNote: In (c), the researcher does not have a directional suspicion — it could go either way — hence the two-tailed test."
+  },
+  {
+    "objectID": "slides/06_hypothesis_testing_intro.html#quick-recap-before-the-break",
+    "href": "slides/06_hypothesis_testing_intro.html#quick-recap-before-the-break",
+    "title": "Parametric Hypothesis Tests — Part 1",
+    "section": "Quick Recap Before the Break",
+    "text": "Quick Recap Before the Break\n\n\n\n\n\n\nImportantWhat we covered so far\n\n\n\n\nNull hypothesis (\\(H_0\\)): status quo, contains \\(=\\), \\(\\leq\\), or \\(\\geq\\)\nAlternative hypothesis (\\(H_1\\)): research claim, contains \\(\\neq\\), \\(&gt;\\), or \\(&lt;\\)\nTest statistic: pivot variable computed under \\(H_0\\)\nSignificance level (\\(\\alpha\\)): \\(P(\\text{reject } H_0 \\mid H_0 \\text{ true})\\)\nCritical region: values that lead to rejection of \\(H_0\\)\nType I Error (\\(\\alpha\\)): rejecting a true \\(H_0\\)\nType II Error (\\(\\beta\\)): not rejecting a false \\(H_0\\)\nPower = \\(1 - \\beta\\)\n\n\n\n. . .\nAfter the break: the \\(p\\)-value approach (Section 3.2)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html",
+    "href": "slides/09_hypothesis_testing_mean_diff.html",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "We have two independent Normal populations:\n\\[X_1 \\sim N(\\mu_1, \\sigma_1) \\qquad X_2 \\sim N(\\mu_2, \\sigma_2)\\]\n. . .\nTwo independent random samples:\n\nFrom population 1: \\(n_1\\) observations → \\(\\bar{X}_1\\), \\(S'^2_1\\)\nFrom population 2: \\(n_2\\) observations → \\(\\bar{X}_2\\), \\(S'^2_2\\)\n\n. . .\nGoal: Test hypotheses about \\(\\mu_1 - \\mu_2\\) (usually testing if \\(\\mu_1 - \\mu_2 = 0\\), i.e., if the two means are equal).\n\n\n\n\n\n\n\\(H_0\\)\n\\(H_1\\)\nType\n\n\n\n\n\\(\\mu_1 - \\mu_2 = d_0\\)\n\\(\\mu_1 - \\mu_2 \\neq d_0\\)\nTwo-tailed\n\n\n\\(\\mu_1 - \\mu_2 \\leq d_0\\)\n\\(\\mu_1 - \\mu_2 &gt; d_0\\)\nRight-tailed\n\n\n\\(\\mu_1 - \\mu_2 \\geq d_0\\)\n\\(\\mu_1 - \\mu_2 &lt; d_0\\)\nLeft-tailed\n\n\n\nOften \\(d_0 = 0\\), i.e., we test whether the two population means are equal.\n\n\n\n\n\n\n\n\n\nNoteTest for \\(\\mu_1 - \\mu_2\\) — variances known\n\n\n\nTest statistic: \\[Z_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{\\sqrt{\\dfrac{\\sigma_1^2}{n_1} + \\dfrac{\\sigma_2^2}{n_2}}} \\underset{\\text{under } H_0}{\\sim} N(0, 1)\\]\nCritical regions use \\(z_{\\alpha}\\) and \\(z_{\\alpha/2}\\) from the Normal table, as in the one-sample case.\n\n\n\n\n\n\n\n\n\n\n\nNoteTest for \\(\\mu_1 - \\mu_2\\) — variances unknown, assumed equal\n\n\n\nWe estimate the common variance using the pooled estimator:\n\\[S_p'^2 = \\frac{(n_1 - 1)S'^2_1 + (n_2 - 1)S'^2_2}{n_1 + n_2 - 2}\\]\nTest statistic: \\[T_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{S'_p\\sqrt{\\dfrac{1}{n_1} + \\dfrac{1}{n_2}}} \\underset{\\text{under } H_0}{\\sim} t_{(n_1 + n_2 - 2)}\\]\n\n\nThe degrees of freedom are \\(\\nu = n_1 + n_2 - 2\\). Critical values from Table 7.\n\n\n\nIn practice, the assumption \\(\\sigma_1^2 = \\sigma_2^2\\) can be tested using an \\(F\\)-test (not in our syllabus), or it may be given in the problem statement.\n. . .\nPractical rule: If the ratio of the larger sample variance to the smaller is less than about 2–3, the equal-variance assumption is often reasonable.\n. . .\n\nWhen the problem says “assume equal variances” or “assume \\(\\sigma_1 = \\sigma_2\\)”, use the pooled estimator.\n\n\n\n\nTwo production lines manufacture the same component. To compare average lengths, independent random samples are taken:\n\nLine 1: \\(n_1 = 12\\), \\(\\bar{x}_1 = 50.3\\) mm, \\(s'_1 = 1.2\\) mm\nLine 2: \\(n_2 = 15\\), \\(\\bar{x}_2 = 49.7\\) mm, \\(s'_2 = 1.4\\) mm\n\nAssuming equal population variances and Normal populations, test whether the mean lengths differ at \\(\\alpha = 0.05\\).\n\n\n\nHypotheses: \\(H_0: \\mu_1 - \\mu_2 = 0\\) vs. \\(H_1: \\mu_1 - \\mu_2 \\neq 0\\) (two-tailed)\n. . .\nPooled variance: \\[s_p'^2 = \\frac{(12-1)(1.2)^2 + (15-1)(1.4)^2}{12 + 15 - 2} = \\frac{11 \\times 1.44 + 14 \\times 1.96}{25}\\]\n\\[= \\frac{15.84 + 27.44}{25} = \\frac{43.28}{25} = 1.7312\\]\n\\[s'_p = \\sqrt{1.7312} \\approx 1.3157\\]\n\n\n\nTest statistic: \\(T_0 \\sim t_{(25)}\\)\n\\[t_{obs} = \\frac{(50.3 - 49.7) - 0}{1.3157 \\sqrt{\\frac{1}{12} + \\frac{1}{15}}} = \\frac{0.6}{1.3157 \\times \\sqrt{0.0833 + 0.0667}}\\]\n. . .\n\\[= \\frac{0.6}{1.3157 \\times \\sqrt{0.15}} = \\frac{0.6}{1.3157 \\times 0.3873} = \\frac{0.6}{0.5095} \\approx 1.18\\]\n\n\n\nRejection region (two-tailed, \\(\\alpha = 0.05\\), \\(\\nu = 25\\)):\nFrom Table 7: \\(t_{0.025,(25)} = 2.060\\)\nReject if \\(|t_{obs}| \\geq 2.060\\).\n. . .\nSince \\(|1.18| = 1.18 &lt; 2.060\\), we do not reject \\(H_0\\).\n. . .\nConclusion: At 5%, there is no evidence of a difference in mean lengths between the two production lines.\n\n\n\n\n\n\n\n\n\nNoteTest for \\(\\mu_1 - \\mu_2\\) — variances unknown, \\(n_1 &gt; 30\\) and \\(n_2 &gt; 30\\)\n\n\n\nWhen both samples are large, the CLT applies and we can use:\n\\[Z_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{\\sqrt{\\dfrac{S'^2_1}{n_1} + \\dfrac{S'^2_2}{n_2}}} \\underset{\\text{under } H_0}{\\dot{\\sim}} N(0, 1)\\]\nNo assumption about equal variances is needed.\n\n\n\n\n\nA company wants to compare the average monthly sales (in thousands of euros) of two regions:\n\nRegion A: \\(n_1 = 50\\), \\(\\bar{x}_1 = 87.3\\), \\(s'_1 = 12.5\\)\nRegion B: \\(n_2 = 45\\), \\(\\bar{x}_2 = 82.1\\), \\(s'_2 = 14.8\\)\n\nTest \\(H_0: \\mu_1 \\leq \\mu_2\\) vs. \\(H_1: \\mu_1 &gt; \\mu_2\\) at \\(\\alpha = 0.05\\).\n\n\n\nHypotheses: \\(H_0: \\mu_1 - \\mu_2 \\leq 0\\) vs. \\(H_1: \\mu_1 - \\mu_2 &gt; 0\\) (right-tailed)\n. . .\n\\[z_{obs} = \\frac{(87.3 - 82.1) - 0}{\\sqrt{\\frac{(12.5)^2}{50} + \\frac{(14.8)^2}{45}}} = \\frac{5.2}{\\sqrt{\\frac{156.25}{50} + \\frac{219.04}{45}}}\\]\n. . .\n\\[= \\frac{5.2}{\\sqrt{3.125 + 4.868}} = \\frac{5.2}{\\sqrt{7.993}} = \\frac{5.2}{2.827} \\approx 1.84\\]\n. . .\nRejection region (right-tailed, \\(\\alpha = 0.05\\)): \\(z_{obs} \\geq z_{0.05} = 1.645\\)\nSince \\(1.84 &gt; 1.645\\), we reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = P(Z &gt; 1.84) = 1 - \\Phi(1.84) = 1 - 0.9671 = 0.0329\\)\n\n\n\n\n\n\n\n\n\n\n\n\nCase\nConditions\nTest Statistic\nDistribution\n\n\n\n\nA\n\\(\\sigma_1, \\sigma_2\\) known\n\\(Z_0\\) with \\(\\sigma_1, \\sigma_2\\)\n\\(N(0,1)\\)\n\n\nB\n\\(\\sigma_1, \\sigma_2\\) unknown, equal\n\\(T_0\\) with \\(S'_p\\)\n\\(t_{(n_1+n_2-2)}\\)\n\n\nC\nLarge samples (\\(n_1, n_2 &gt; 30\\))\n\\(Z_0\\) with \\(S'_1, S'_2\\)\n\\(\\dot\\sim N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#setup",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#setup",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "We have two independent Normal populations:\n\\[X_1 \\sim N(\\mu_1, \\sigma_1) \\qquad X_2 \\sim N(\\mu_2, \\sigma_2)\\]\n. . .\nTwo independent random samples:\n\nFrom population 1: \\(n_1\\) observations → \\(\\bar{X}_1\\), \\(S'^2_1\\)\nFrom population 2: \\(n_2\\) observations → \\(\\bar{X}_2\\), \\(S'^2_2\\)\n\n. . .\nGoal: Test hypotheses about \\(\\mu_1 - \\mu_2\\) (usually testing if \\(\\mu_1 - \\mu_2 = 0\\), i.e., if the two means are equal)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#the-general-hypotheses",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#the-general-hypotheses",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "\\(H_0\\)\n\\(H_1\\)\nType\n\n\n\n\n\\(\\mu_1 - \\mu_2 = d_0\\)\n\\(\\mu_1 - \\mu_2 \\neq d_0\\)\nTwo-tailed\n\n\n\\(\\mu_1 - \\mu_2 \\leq d_0\\)\n\\(\\mu_1 - \\mu_2 &gt; d_0\\)\nRight-tailed\n\n\n\\(\\mu_1 - \\mu_2 \\geq d_0\\)\n\\(\\mu_1 - \\mu_2 &lt; d_0\\)\nLeft-tailed\n\n\n\nOften \\(d_0 = 0\\), i.e., we test whether the two population means are equal."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#case-a-both-sigma_1-and-sigma_2-known",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#case-a-both-sigma_1-and-sigma_2-known",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "NoteTest for \\(\\mu_1 - \\mu_2\\) — variances known\n\n\n\nTest statistic: \\[Z_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{\\sqrt{\\dfrac{\\sigma_1^2}{n_1} + \\dfrac{\\sigma_2^2}{n_2}}} \\underset{\\text{under } H_0}{\\sim} N(0, 1)\\]\nCritical regions use \\(z_{\\alpha}\\) and \\(z_{\\alpha/2}\\) from the Normal table, as in the one-sample case."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#case-b-variances-unknown-but-equal-sigma_12-sigma_22",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#case-b-variances-unknown-but-equal-sigma_12-sigma_22",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "NoteTest for \\(\\mu_1 - \\mu_2\\) — variances unknown, assumed equal\n\n\n\nWe estimate the common variance using the pooled estimator:\n\\[S_p'^2 = \\frac{(n_1 - 1)S'^2_1 + (n_2 - 1)S'^2_2}{n_1 + n_2 - 2}\\]\nTest statistic: \\[T_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{S'_p\\sqrt{\\dfrac{1}{n_1} + \\dfrac{1}{n_2}}} \\underset{\\text{under } H_0}{\\sim} t_{(n_1 + n_2 - 2)}\\]\n\n\nThe degrees of freedom are \\(\\nu = n_1 + n_2 - 2\\). Critical values from Table 7."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#when-can-we-assume-equal-variances",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#when-can-we-assume-equal-variances",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "In practice, the assumption \\(\\sigma_1^2 = \\sigma_2^2\\) can be tested using an \\(F\\)-test (not in our syllabus), or it may be given in the problem statement.\n. . .\nPractical rule: If the ratio of the larger sample variance to the smaller is less than about 2–3, the equal-variance assumption is often reasonable.\n. . .\n\nWhen the problem says “assume equal variances” or “assume \\(\\sigma_1 = \\sigma_2\\)”, use the pooled estimator."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-4-difference-of-means-equal-variances",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-4-difference-of-means-equal-variances",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Two production lines manufacture the same component. To compare average lengths, independent random samples are taken:\n\nLine 1: \\(n_1 = 12\\), \\(\\bar{x}_1 = 50.3\\) mm, \\(s'_1 = 1.2\\) mm\nLine 2: \\(n_2 = 15\\), \\(\\bar{x}_2 = 49.7\\) mm, \\(s'_2 = 1.4\\) mm\n\nAssuming equal population variances and Normal populations, test whether the mean lengths differ at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-1",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-1",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Hypotheses: \\(H_0: \\mu_1 - \\mu_2 = 0\\) vs. \\(H_1: \\mu_1 - \\mu_2 \\neq 0\\) (two-tailed)\n. . .\nPooled variance: \\[s_p'^2 = \\frac{(12-1)(1.2)^2 + (15-1)(1.4)^2}{12 + 15 - 2} = \\frac{11 \\times 1.44 + 14 \\times 1.96}{25}\\]\n\\[= \\frac{15.84 + 27.44}{25} = \\frac{43.28}{25} = 1.7312\\]\n\\[s'_p = \\sqrt{1.7312} \\approx 1.3157\\]"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-2",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-2",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Test statistic: \\(T_0 \\sim t_{(25)}\\)\n\\[t_{obs} = \\frac{(50.3 - 49.7) - 0}{1.3157 \\sqrt{\\frac{1}{12} + \\frac{1}{15}}} = \\frac{0.6}{1.3157 \\times \\sqrt{0.0833 + 0.0667}}\\]\n. . .\n\\[= \\frac{0.6}{1.3157 \\times \\sqrt{0.15}} = \\frac{0.6}{1.3157 \\times 0.3873} = \\frac{0.6}{0.5095} \\approx 1.18\\]"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-3",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-4-solution-step-3",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Rejection region (two-tailed, \\(\\alpha = 0.05\\), \\(\\nu = 25\\)):\nFrom Table 7: \\(t_{0.025,(25)} = 2.060\\)\nReject if \\(|t_{obs}| \\geq 2.060\\).\n. . .\nSince \\(|1.18| = 1.18 &lt; 2.060\\), we do not reject \\(H_0\\).\n. . .\nConclusion: At 5%, there is no evidence of a difference in mean lengths between the two production lines."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#case-c-variances-unknown-large-samples",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#case-c-variances-unknown-large-samples",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "NoteTest for \\(\\mu_1 - \\mu_2\\) — variances unknown, \\(n_1 &gt; 30\\) and \\(n_2 &gt; 30\\)\n\n\n\nWhen both samples are large, the CLT applies and we can use:\n\\[Z_0 = \\frac{(\\bar{X}_1 - \\bar{X}_2) - d_0}{\\sqrt{\\dfrac{S'^2_1}{n_1} + \\dfrac{S'^2_2}{n_2}}} \\underset{\\text{under } H_0}{\\dot{\\sim}} N(0, 1)\\]\nNo assumption about equal variances is needed."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-5-difference-of-means-large-samples",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-5-difference-of-means-large-samples",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "A company wants to compare the average monthly sales (in thousands of euros) of two regions:\n\nRegion A: \\(n_1 = 50\\), \\(\\bar{x}_1 = 87.3\\), \\(s'_1 = 12.5\\)\nRegion B: \\(n_2 = 45\\), \\(\\bar{x}_2 = 82.1\\), \\(s'_2 = 14.8\\)\n\nTest \\(H_0: \\mu_1 \\leq \\mu_2\\) vs. \\(H_1: \\mu_1 &gt; \\mu_2\\) at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-5-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-5-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Hypotheses: \\(H_0: \\mu_1 - \\mu_2 \\leq 0\\) vs. \\(H_1: \\mu_1 - \\mu_2 &gt; 0\\) (right-tailed)\n. . .\n\\[z_{obs} = \\frac{(87.3 - 82.1) - 0}{\\sqrt{\\frac{(12.5)^2}{50} + \\frac{(14.8)^2}{45}}} = \\frac{5.2}{\\sqrt{\\frac{156.25}{50} + \\frac{219.04}{45}}}\\]\n. . .\n\\[= \\frac{5.2}{\\sqrt{3.125 + 4.868}} = \\frac{5.2}{\\sqrt{7.993}} = \\frac{5.2}{2.827} \\approx 1.84\\]\n. . .\nRejection region (right-tailed, \\(\\alpha = 0.05\\)): \\(z_{obs} \\geq z_{0.05} = 1.645\\)\nSince \\(1.84 &gt; 1.645\\), we reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = P(Z &gt; 1.84) = 1 - \\Phi(1.84) = 1 - 0.9671 = 0.0329\\)"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#summary-tests-for-mu_1---mu_2",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#summary-tests-for-mu_1---mu_2",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "",
+    "text": "Case\nConditions\nTest Statistic\nDistribution\n\n\n\n\nA\n\\(\\sigma_1, \\sigma_2\\) known\n\\(Z_0\\) with \\(\\sigma_1, \\sigma_2\\)\n\\(N(0,1)\\)\n\n\nB\n\\(\\sigma_1, \\sigma_2\\) unknown, equal\n\\(T_0\\) with \\(S'_p\\)\n\\(t_{(n_1+n_2-2)}\\)\n\n\nC\nLarge samples (\\(n_1, n_2 &gt; 30\\))\n\\(Z_0\\) with \\(S'_1, S'_2\\)\n\\(\\dot\\sim N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#motivation",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#motivation",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Motivation",
+    "text": "Motivation\nSo far, we assumed Normal populations (except for Case 2’ and Case C, where the CLT helped).\n. . .\nWhat if we do not know the population distribution, but have a large sample (\\(n &gt; 30\\))?\n. . .\nBy the Central Limit Theorem, the sampling distribution of \\(\\bar{X}\\) is approximately Normal, regardless of the population distribution.\nThis allows us to perform tests even without the Normality assumption."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#test-for-mu-large-sample-non-normal-population",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#test-for-mu-large-sample-non-normal-population",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Test for \\(\\mu\\) — Large Sample, Non-Normal Population",
+    "text": "Test for \\(\\mu\\) — Large Sample, Non-Normal Population\n\n\n\n\n\n\nNoteTest for \\(\\mu\\) — large sample, any distribution\n\n\n\nIf \\(n &gt; 30\\), by the CLT:\n\\[Z_0 = \\frac{\\bar{X} - \\mu_0}{S' / \\sqrt{n}} \\underset{\\text{under } H_0}{\\dot{\\sim}} N(0, 1)\\]\nThis is the same formula as Case 2’ (Normal population, \\(\\sigma\\) unknown, \\(n &gt; 30\\)), but now the Normality assumption on the population is relaxed.\n\n\n. . .\nThe critical regions and \\(p\\)-value calculations use the Standard Normal table."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-6-large-sample-test-for-mu",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-6-large-sample-test-for-mu",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 6: Large-Sample Test for \\(\\mu\\)",
+    "text": "Example 6: Large-Sample Test for \\(\\mu\\)\nA logistics company records the delivery time for packages. The distribution is unknown (likely right-skewed). A random sample of \\(n = 100\\) deliveries gives \\(\\bar{x} = 3.2\\) days and \\(s' = 0.8\\) days.\nTest \\(H_0: \\mu \\leq 3\\) vs. \\(H_1: \\mu &gt; 3\\) at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-6-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-6-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 6: Solution",
+    "text": "Example 6: Solution\nEven though the population is not Normal, \\(n = 100 &gt; 30\\), so the CLT applies.\n. . .\n\\[z_{obs} = \\frac{3.2 - 3}{0.8/\\sqrt{100}} = \\frac{0.2}{0.08} = 2.50\\]\n. . .\nRejection region (right-tailed, \\(\\alpha = 0.05\\)): \\(z_{obs} \\geq 1.645\\)\nSince \\(2.50 &gt; 1.645\\), we reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = P(Z &gt; 2.50) = 1 - \\Phi(2.50) = 1 - 0.9938 = 0.0062\\)\nStrong evidence that the mean delivery time exceeds 3 days."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#test-for-a-proportion-p-bernoulli-population",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#test-for-a-proportion-p-bernoulli-population",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Test for a Proportion \\(p\\) — Bernoulli Population",
+    "text": "Test for a Proportion \\(p\\) — Bernoulli Population\n\n\n\n\n\n\nNoteTest for \\(p\\) — large sample from a Bernoulli population\n\n\n\nLet \\(X \\sim \\text{Bernoulli}(p)\\). The sample proportion is \\(\\hat{p} = X/n\\), where \\(X = \\sum_{i=1}^n X_i\\).\nFor large \\(n\\) (typically \\(np_0 \\geq 5\\) and \\(n(1-p_0) \\geq 5\\)), by the CLT:\n\\[Z_0 = \\frac{\\hat{p} - p_0}{\\sqrt{\\dfrac{p_0(1 - p_0)}{n}}} \\underset{\\text{under } H_0}{\\dot{\\sim}} N(0, 1)\\]\n\n\n. . .\n\nNote: Under \\(H_0\\), we use \\(p_0\\) (not \\(\\hat{p}\\)) in the denominator, because we assume \\(H_0\\) is true when computing the test statistic."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-7-test-for-a-proportion",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-7-test-for-a-proportion",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 7: Test for a Proportion",
+    "text": "Example 7: Test for a Proportion\nA company claims that at most 5% of its products are defective. In a random sample of \\(n = 200\\) items, 15 are found to be defective.\nTest the company’s claim at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-7-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-7-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 7: Solution",
+    "text": "Example 7: Solution\nHypotheses: \\(H_0: p \\leq 0.05\\) vs. \\(H_1: p &gt; 0.05\\) (right-tailed)\n. . .\n\\(\\hat{p} = 15/200 = 0.075\\), \\(p_0 = 0.05\\)\n. . .\nChecking conditions: \\(np_0 = 200 \\times 0.05 = 10 \\geq 5\\) ✓ and \\(n(1-p_0) = 190 \\geq 5\\) ✓\n. . .\n\\[z_{obs} = \\frac{0.075 - 0.05}{\\sqrt{\\frac{0.05 \\times 0.95}{200}}} = \\frac{0.025}{\\sqrt{\\frac{0.0475}{200}}} = \\frac{0.025}{\\sqrt{0.0002375}}\\]\n. . .\n\\[= \\frac{0.025}{0.01541} \\approx 1.62\\]"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-7-solution-cont.",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-7-solution-cont.",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 7: Solution (cont.)",
+    "text": "Example 7: Solution (cont.)\nRejection region (right-tailed, \\(\\alpha = 0.05\\)): \\(z_{obs} \\geq 1.645\\)\n. . .\nSince \\(1.62 &lt; 1.645\\), we do not reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = P(Z &gt; 1.62) = 1 - \\Phi(1.62) = 1 - 0.9474 = 0.0526\\)\n. . .\nConclusion: At 5%, there is marginal but insufficient evidence to reject the company’s claim. The \\(p\\)-value (\\(0.0526\\)) is just barely above \\(\\alpha\\).\n. . .\n\nThis is a “borderline” case. At \\(\\alpha = 0.10\\) we would reject \\(H_0\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-8-test-for-proportion-two-tailed",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-8-test-for-proportion-two-tailed",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 8: Test for Proportion (Two-tailed)",
+    "text": "Example 8: Test for Proportion (Two-tailed)\nIn a survey of \\(n = 400\\) voters, 224 favor a certain policy. Test whether the true proportion differs from 50% at \\(\\alpha = 0.01\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#example-8-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#example-8-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Example 8: Solution",
+    "text": "Example 8: Solution\n\\(H_0: p = 0.50\\) vs. \\(H_1: p \\neq 0.50\\) (two-tailed)\n\\(\\hat{p} = 224/400 = 0.56\\)\n. . .\n\\[z_{obs} = \\frac{0.56 - 0.50}{\\sqrt{\\frac{0.50 \\times 0.50}{400}}} = \\frac{0.06}{\\sqrt{0.000625}} = \\frac{0.06}{0.025} = 2.40\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.01\\)): \\(|z_{obs}| \\geq z_{0.005} = 2.576\\)\nSince \\(|2.40| = 2.40 &lt; 2.576\\), we do not reject \\(H_0\\) at 1%.\n. . .\n\\(p\\)-value: \\(p = 2 \\times P(Z &gt; 2.40) = 2 \\times 0.0082 = 0.0164\\)\nAt \\(\\alpha = 0.05\\) we would reject. At \\(\\alpha = 0.01\\) we do not."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#all-test-cases-complete-reference",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#all-test-cases-complete-reference",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "All Test Cases — Complete Reference",
+    "text": "All Test Cases — Complete Reference\n\n\n\n\n\n\n\n\n\n\n\n#\nParameter\nConditions\nTest Statistic\nDistribution\n\n\n\n\n1\n\\(\\mu\\)\nNormal, \\(\\sigma\\) known\n\\(\\frac{\\bar{X}-\\mu_0}{\\sigma/\\sqrt{n}}\\)\n\\(N(0,1)\\)\n\n\n2\n\\(\\mu\\)\nNormal, \\(\\sigma\\) unknown\n\\(\\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(t_{(n-1)}\\)\n\n\n2’\n\\(\\mu\\)\nNormal, \\(\\sigma\\) unknown, \\(n&gt;30\\)\n\\(\\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(\\dot\\sim N(0,1)\\)\n\n\n3\n\\(\\sigma^2\\)\nNormal\n\\(\\frac{(n-1)S'^2}{\\sigma_0^2}\\)\n\\(\\chi^2_{(n-1)}\\)\n\n\n4a\n\\(\\mu_1-\\mu_2\\)\nNormal, \\(\\sigma_1,\\sigma_2\\) known\n\\(\\frac{(\\bar{X}_1-\\bar{X}_2)-d_0}{\\sqrt{\\sigma_1^2/n_1+\\sigma_2^2/n_2}}\\)\n\\(N(0,1)\\)\n\n\n4b\n\\(\\mu_1-\\mu_2\\)\nNormal, \\(\\sigma_1=\\sigma_2\\) unknown\n\\(\\frac{(\\bar{X}_1-\\bar{X}_2)-d_0}{S'_p\\sqrt{1/n_1+1/n_2}}\\)\n\\(t_{(n_1+n_2-2)}\\)\n\n\n4c\n\\(\\mu_1-\\mu_2\\)\nLarge samples\n\\(\\frac{(\\bar{X}_1-\\bar{X}_2)-d_0}{\\sqrt{S'^2_1/n_1+S'^2_2/n_2}}\\)\n\\(\\dot\\sim N(0,1)\\)\n\n\n5\n\\(\\mu\\)\nAny distrib., \\(n &gt; 30\\)\n\\(\\frac{\\bar{X}-\\mu_0}{S'/\\sqrt{n}}\\)\n\\(\\dot\\sim N(0,1)\\)\n\n\n6\n\\(p\\)\nBernoulli, large \\(n\\)\n\\(\\frac{\\hat{p}-p_0}{\\sqrt{p_0(1-p_0)/n}}\\)\n\\(\\dot\\sim N(0,1)\\)"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#critical-regions-quick-reference",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#critical-regions-quick-reference",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Critical Regions — Quick Reference",
+    "text": "Critical Regions — Quick Reference\n\nFor a test statistic \\(T\\) with observed value \\(t_{obs}\\):\n\n\n\n\n\n\n\n\n\\(H_1\\)\nRejection region\n\\(p\\)-value\n\n\n\n\n\\(\\theta \\neq \\theta_0\\)\n\\(\\|t_{obs}\\| \\geq c_{\\alpha/2}\\)\n\\(2 \\times P(T \\geq \\|t_{obs}\\|)\\)\n\n\n\\(\\theta &gt; \\theta_0\\)\n\\(t_{obs} \\geq c_{\\alpha}\\)\n\\(P(T \\geq t_{obs})\\)\n\n\n\\(\\theta &lt; \\theta_0\\)\n\\(t_{obs} \\leq -c_{\\alpha}\\) (or \\(\\leq c_{1-\\alpha}\\) for \\(\\chi^2\\))\n\\(P(T \\leq t_{obs})\\)\n\n\n\n\\(c_{\\alpha}\\) is the critical value at level \\(\\alpha\\) from the appropriate table (\\(z_{\\alpha}\\), \\(t_{\\alpha,(\\nu)}\\), or \\(q_{\\alpha,(\\nu)}\\))."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#the-general-procedure-revisited",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#the-general-procedure-revisited",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "The General Procedure — Revisited",
+    "text": "The General Procedure — Revisited\n\n\n\n\n\n\nImportantStep-by-step (for any case)\n\n\n\n\nIdentify the parameter, population(s), and what is known/unknown\nState \\(H_0\\) and \\(H_1\\)\nChoose \\(\\alpha\\)\nSelect the appropriate test statistic (from the summary table)\nDetermine the critical region (using the correct table and type of test)\nCompute \\(t_{obs}\\) (and the \\(p\\)-value, if requested)\nDecide: reject or do not reject \\(H_0\\)\nConclude in context"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#exercise-c",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#exercise-c",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Exercise C",
+    "text": "Exercise C\nIn a random sample of \\(n = 250\\) consumers surveyed, 75 stated they prefer brand A.\n\nTest \\(H_0: p = 0.35\\) vs. \\(H_1: p \\neq 0.35\\) at \\(\\alpha = 0.05\\).\nCompute the \\(p\\)-value."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#exercise-c-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#exercise-c-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Exercise C: Solution",
+    "text": "Exercise C: Solution\n\\(\\hat{p} = 75/250 = 0.30\\), \\(p_0 = 0.35\\)\n. . .\n\\[z_{obs} = \\frac{0.30 - 0.35}{\\sqrt{\\frac{0.35 \\times 0.65}{250}}} = \\frac{-0.05}{\\sqrt{0.00091}} = \\frac{-0.05}{0.03017} \\approx -1.66\\]\n. . .\nRejection region (two-tailed, \\(\\alpha = 0.05\\)): \\(|z_{obs}| \\geq 1.96\\)\nSince \\(|-1.66| = 1.66 &lt; 1.96\\), we do not reject \\(H_0\\).\n. . .\n\\(p\\)-value: \\(p = 2 \\times P(Z \\geq 1.66) = 2 \\times (1 - 0.9515) = 2 \\times 0.0485 = 0.0970\\)\nNo evidence at 5% that \\(p \\neq 0.35\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#exercise-d",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#exercise-d",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Exercise D",
+    "text": "Exercise D\nTwo factories produce steel rods. Quality control takes samples:\n\nFactory 1: \\(n_1 = 10\\), \\(\\bar{x}_1 = 502.1\\) mm, \\(s'_1 = 4.5\\) mm\nFactory 2: \\(n_2 = 12\\), \\(\\bar{x}_2 = 498.3\\) mm, \\(s'_2 = 5.1\\) mm\n\nAssume Normal populations with equal variances. Test whether Factory 1 produces longer rods at \\(\\alpha = 0.05\\)."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#exercise-d-solution",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#exercise-d-solution",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Exercise D: Solution",
+    "text": "Exercise D: Solution\n\\(H_0: \\mu_1 - \\mu_2 \\leq 0\\) vs. \\(H_1: \\mu_1 - \\mu_2 &gt; 0\\) (right-tailed)\n. . .\nPooled variance: \\[s'^2_p = \\frac{9 \\times (4.5)^2 + 11 \\times (5.1)^2}{10 + 12 - 2} = \\frac{9 \\times 20.25 + 11 \\times 26.01}{20} = \\frac{182.25 + 286.11}{20} = \\frac{468.36}{20} = 23.418\\]\n\\[s'_p = \\sqrt{23.418} \\approx 4.839\\]\n. . .\n\\[t_{obs} = \\frac{(502.1 - 498.3) - 0}{4.839\\sqrt{\\frac{1}{10} + \\frac{1}{12}}} = \\frac{3.8}{4.839 \\times \\sqrt{0.1833}} = \\frac{3.8}{4.839 \\times 0.4282} = \\frac{3.8}{2.072} \\approx 1.83\\]"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#exercise-d-solution-cont.",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#exercise-d-solution-cont.",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Exercise D: Solution (cont.)",
+    "text": "Exercise D: Solution (cont.)\nRejection region (right-tailed, \\(\\alpha = 0.05\\), \\(\\nu = 20\\)):\nFrom Table 7: \\(t_{0.05,(20)} = 1.725\\)\n. . .\nSince \\(1.83 &gt; 1.725\\), we reject \\(H_0\\).\n. . .\n\\(p\\)-value: From Table 7, \\(t_{0.05,(20)} = 1.725\\) and \\(t_{0.025,(20)} = 2.086\\).\nSince \\(1.725 &lt; 1.83 &lt; 2.086\\): \\(0.025 &lt; p &lt; 0.05\\).\n. . .\nConclusion: At 5%, there is evidence that Factory 1 produces longer rods on average than Factory 2."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#summary-of-todays-lecture",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#summary-of-todays-lecture",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Summary of Today’s Lecture",
+    "text": "Summary of Today’s Lecture\n\n\n\n\n\n\nImportantKey takeaways — Lecture 7\n\n\n\n\nSection 3.3: Tests for \\(\\mu\\) (\\(\\sigma\\) known/unknown) and \\(\\sigma^2\\) of Normal populations use the same pivot variables as confidence intervals (\\(Z\\), \\(T\\), \\(Q\\))\nSection 3.4: Tests for \\(\\mu_1 - \\mu_2\\) require identifying whether variances are known, unknown-but-equal (pooled), or whether samples are large\nSection 3.5: Large-sample tests (\\(n &gt; 30\\)) work for any distribution thanks to the CLT; tests for proportions use \\(\\hat{p}\\) and \\(p_0\\)\nIn all cases, the procedure is the same 8-step process\nThe \\(p\\)-value provides the strength of evidence and can be used alongside (or instead of) the critical region approach"
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#whats-next",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#whats-next",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "What’s Next",
+    "text": "What’s Next\nThe second midterm covers Topics 2.2, 3, and 4.\n. . .\nNext: Topic 4 — The Linear Regression Model."
+  },
+  {
+    "objectID": "slides/09_hypothesis_testing_mean_diff.html#disclaimer",
+    "href": "slides/09_hypothesis_testing_mean_diff.html#disclaimer",
+    "title": "Parametric Hypothesis Tests — Part 4",
+    "section": "Disclaimer",
+    "text": "Disclaimer\nThese slides are a free adaptation of the course material for Estatística II by Prof. Teresa Ferreira and Prof. Sandra Custódio from the Lisbon Accounting and Business School — Polytechnic University of Lisbon.\n\n\nPrimary reference: Newbold, P., Carlson, W. & Thorne, B. — Statistics for Business and Economics, Global Edition."
   }
 ]
