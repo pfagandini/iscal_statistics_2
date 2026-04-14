@@ -1739,8 +1739,8 @@
     "objectID": "slides/05_interval_estimation_part2.html#interval-estimation-part-2-1",
     "href": "slides/05_interval_estimation_part2.html#interval-estimation-part-2-1",
     "title": "Interval Estimation — Part 2",
-    "section": "",
-    "text": "2’) Confidence Interval for the Population Mean, \\(\\mu\\), of Non-Normal Populations\n\nConfidence Interval for the Proportion, \\(p\\), of a Bernoulli Population\nConfidence Interval for the Variance, \\(\\sigma^2\\), and Standard Deviation, \\(\\sigma\\), of a Normal Population\n\n\n\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
+    "section": "Interval Estimation — Part 2",
+    "text": "Interval Estimation — Part 2\nTopics covered\n2’) Confidence Interval for the Population Mean, \\(\\mu\\), of Non-Normal Populations\n\nConfidence Interval for the Proportion, \\(p\\), of a Bernoulli Population\nConfidence Interval for the Variance, \\(\\sigma^2\\), and Standard Deviation, \\(\\sigma\\), of a Normal Population\n\n\n\n\nReference: Newbold, P., Carlson, W., & Thorne, B. — Statistics for Business and Economics, Global Ed."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#case-3-non-normal-population-and-n-30",
@@ -1754,7 +1754,7 @@
     "href": "slides/05_interval_estimation_part2.html#case-3-confidence-intervals-for-mu",
     "title": "Interval Estimation — Part 2",
     "section": "Case 3 — Confidence Intervals for \\(\\mu\\)",
-    "text": "Case 3 — Confidence Intervals for \\(\\mu\\)\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence intervals for \\(\\mu\\) are:\nIf \\(\\sigma\\) known:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\nIf \\(\\sigma\\) unknown:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\n\n\n\nBoth intervals are approximate. The approximation is justified by the Central Limit Theorem when \\(n &gt; 30\\)."
+    "text": "Case 3 — Confidence Intervals for \\(\\mu\\)\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence intervals for \\(\\mu\\) are:\nIf \\(\\sigma\\) known:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{\\sigma}{\\sqrt{n}}\\right)\\]\nIf \\(\\sigma\\) unknown:\n\\[IC_{(1-\\alpha)\\times100\\%}(\\mu) \\approx \\left(\\bar{x} - z_{\\alpha/2}\\frac{s'}{\\sqrt{n}},\\; \\bar{x} + z_{\\alpha/2}\\frac{s'}{\\sqrt{n}}\\right)\\]\n\n\n\nBoth intervals are approximate. The approximation is justified by the Central Limit Theorem when \\(n &gt; 30\\)."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#application-exercise-setup",
@@ -1775,7 +1775,7 @@
     "href": "slides/05_interval_estimation_part2.html#application-exercise-conclusion",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Conclusion",
-    "text": "Application Exercise — Conclusion\n\\[IC_{95\\%}(\\mu) \\approx (5{,}135\\;;\\; 6{,}115)\\]\n\n\n\n\n\n\nImportantConclusion\n\n\n\n\\[5{,}000 \\notin IC_{95\\%}(\\mu)\\]\nThe value 5,000 m.u. lies below the entire confidence interval. With 95% confidence, the true mean daily payout exceeds 5,000 m.u./day. The company’s budget is likely insufficient."
+    "text": "Application Exercise — Conclusion\n\\[IC_{95\\%}(\\mu) \\approx (5{,}135\\;;\\; 6{,}115)\\]\n\n\n\nConclusion\n\n\n\\[5{,}000 \\notin IC_{95\\%}(\\mu)\\]\nThe value 5,000 m.u. lies below the entire confidence interval. With 95% confidence, the true mean daily payout exceeds 5,000 m.u./day. The company’s budget is likely insufficient."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-setup",
@@ -1789,21 +1789,21 @@
     "href": "slides/05_interval_estimation_part2.html#ci-for-the-proportion-formula",
     "title": "Interval Estimation — Part 2",
     "section": "CI for the Proportion — Formula",
-    "text": "CI for the Proportion — Formula\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(p\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times100\\%}(p) \\approx \\left(\\hat{p} - z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}},\\; \\hat{p} + z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}}\\right)}\\]\n\n\n\n\n\n\nConditions for validity: \\(n &gt; 30\\), and ideally \\(n\\hat{p} \\geq 5\\) and \\(n\\hat{q} \\geq 5\\), so that the Normal approximation to the Binomial is reliable."
+    "text": "CI for the Proportion — Formula\nThe approximate \\((1-\\alpha)\\times 100\\%\\) confidence interval for \\(p\\) is:\n\\[\\boxed{IC_{(1-\\alpha)\\times100\\%}(p) \\approx \\left(\\hat{p} - z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}},\\; \\hat{p} + z_{\\alpha/2}\\sqrt{\\frac{\\hat{p}\\,\\hat{q}}{n}}\\right)}\\]\n\n\n\nConditions for validity: \\(n &gt; 30\\), and ideally \\(n\\hat{p} \\geq 5\\) and \\(n\\hat{q} \\geq 5\\), so that the Normal approximation to the Binomial is reliable."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#application-exercise-setup-1",
     "href": "slides/05_interval_estimation_part2.html#application-exercise-setup-1",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Setup",
-    "text": "Application Exercise — Setup\nIn a given district, 840 out of 2,000 voters surveyed in a poll declared they would vote for Party A.\nConstruct a 95% confidence interval for the proportion of voters supporting Party A.\n\nPopulation: \\(X \\sim \\mathrm{Bernoulli}(p)\\), where \\(p\\) = proportion of Party A voters.\nSample: \\(n = 2{,}000\\); \\(x = 840\\) (observed Party A voters in the sample).\n\\[\\hat{p} = \\frac{x}{n} = \\frac{840}{2{,}000} = 0.42 \\qquad \\hat{q} = 1 - \\hat{p} = 0.58\\]"
+    "text": "Application Exercise — Setup\nIn a given district, 840 out of 2,000 voters surveyed in a poll declared they would vote for Party A.\nConstruct a 95% confidence interval for the proportion of voters supporting Party A."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#application-exercise-solution-1",
     "href": "slides/05_interval_estimation_part2.html#application-exercise-solution-1",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Solution",
-    "text": "Application Exercise — Solution\nPivot statistic: \\(\\;Z = \\dfrac{\\hat{p} - p}{\\sqrt{\\hat{p}\\hat{q}/n}} \\;\\dot{\\sim}\\; N(0,1)\\)\n\\[1-\\alpha = 0.95 \\;\\Leftrightarrow\\; \\alpha = 0.05 \\;\\Rightarrow\\; z_{\\alpha/2} = 1.96\\]\n\\[IC_{95\\%}(p) \\approx \\left(0.42 - 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\;;\\; 0.42 + 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\right)\\]\n\n\n\n\n\n\nImportant95% Confidence Interval for \\(p\\)\n\n\n\n\\[IC_{95\\%}(p) \\approx (0.3983\\;;\\; 0.4416)\\]\n\n\nWith 95% confidence, the proportion of Party A voters in the district is between 39.83% and 44.16%."
+    "text": "Application Exercise — Solution\nPivot statistic: \\(\\;Z = \\dfrac{\\hat{p} - p}{\\sqrt{\\hat{p}\\hat{q}/n}} \\;\\dot{\\sim}\\; N(0,1)\\)\n\\[1-\\alpha = 0.95 \\;\\Leftrightarrow\\; \\alpha = 0.05 \\;\\Rightarrow\\; z_{\\alpha/2} = 1.96\\]\n\\[IC_{95\\%}(p) \\approx \\left(0.42 - 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\;;\\; 0.42 + 1.96\\sqrt{\\frac{0.42\\times 0.58}{2{,}000}}\\right)\\]\n\n\n\n95% Confidence Interval for \\(p\\)\n\n\n\\[IC_{95\\%}(p) \\approx (0.3983\\;;\\; 0.4416)\\]\n\n\n\nWith 95% confidence, the proportion of Party A voters in the district is between 39.83% and 44.16%."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#ci-for-the-variance-setup",
@@ -1817,7 +1817,7 @@
     "href": "slides/05_interval_estimation_part2.html#ci-for-sigma2-probability-statement",
     "title": "Interval Estimation — Part 2",
     "section": "CI for \\(\\sigma^2\\) — Probability Statement",
-    "text": "CI for \\(\\sigma^2\\) — Probability Statement\n\n\n\n\n\n\n\n\n\n\\[P(Q &lt; q_{\\inf}) = P(Q &gt; q_{\\sup}) = \\frac{\\alpha}{2}\\]"
+    "text": "CI for \\(\\sigma^2\\) — Probability Statement\n\n\\[P(Q &lt; q_{\\inf}) = P(Q &gt; q_{\\sup}) = \\frac{\\alpha}{2}\\]"
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#ci-for-sigma2-and-sigma-formulas",
@@ -1831,7 +1831,7 @@
     "href": "slides/05_interval_estimation_part2.html#application-exercise-setup-2",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Setup",
-    "text": "Application Exercise — Setup\nBased on a random sample of \\(n = 16\\) observations drawn from a Normal population, a corrected sample standard deviation of \\(s' = 3.872\\) was obtained.\nConstruct a 95% confidence interval for the population variance.\n\nPopulation: \\(X \\sim N(\\mu, \\sigma)\\), both parameters unknown.\nSample: \\(n = 16\\), \\(s' = 3.872\\).\nPivot statistic:\n\\[Q = \\frac{(n-1)\\,S'^{\\,2}}{\\sigma^2} \\sim \\chi^2_{(n-1)} \\equiv \\chi^2_{(15)}\\]"
+    "text": "Application Exercise — Setup\nBased on a random sample of \\(n = 16\\) observations drawn from a Normal population, a corrected sample standard deviation of \\(s' = 3.872\\) was obtained.\nConstruct a 95% confidence interval for the population variance."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#application-exercise-finding-the-critical-values",
@@ -1845,14 +1845,14 @@
     "href": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma2",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Result for \\(\\sigma^2\\)",
-    "text": "Application Exercise — Result for \\(\\sigma^2\\)\n\\[IC_{95\\%}(\\sigma^2) = \\left(\\frac{(16-1)\\times 3.872^2}{27.488}\\;;\\; \\frac{(16-1)\\times 3.872^2}{6.262}\\right)\\]\n\n\n\n\n\n\nImportant95% Confidence Interval for \\(\\sigma^2\\)\n\n\n\n\\[IC_{95\\%}(\\sigma^2) = (8.181\\;;\\; 35.913)\\]"
+    "text": "Application Exercise — Result for \\(\\sigma^2\\)\n\\[IC_{95\\%}(\\sigma^2) = \\left(\\frac{(16-1)\\times 3.872^2}{27.488}\\;;\\; \\frac{(16-1)\\times 3.872^2}{6.262}\\right)\\]\n\n\n\n95% Confidence Interval for \\(\\sigma^2\\)\n\n\n\\[IC_{95\\%}(\\sigma^2) = (8.181\\;;\\; 35.913)\\]"
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma",
     "href": "slides/05_interval_estimation_part2.html#application-exercise-result-for-sigma",
     "title": "Interval Estimation — Part 2",
     "section": "Application Exercise — Result for \\(\\sigma\\)",
-    "text": "Application Exercise — Result for \\(\\sigma\\)\nIf a confidence interval for \\(\\sigma\\) is required, take the square root of each bound:\n\\[IC_{95\\%}(\\sigma) = \\left(\\sqrt{\\frac{(16-1)\\times 3.872^2}{27.488}}\\;;\\; \\sqrt{\\frac{(16-1)\\times 3.872^2}{6.262}}\\right)\\]\n\n\n\n\n\n\nImportant95% Confidence Interval for \\(\\sigma\\)\n\n\n\n\\[IC_{95\\%}(\\sigma) = (2.860\\;;\\; 5.993)\\]"
+    "text": "Application Exercise — Result for \\(\\sigma\\)\nIf a confidence interval for \\(\\sigma\\) is required, take the square root of each bound:\n\\[IC_{95\\%}(\\sigma) = \\left(\\sqrt{\\frac{(16-1)\\times 3.872^2}{27.488}}\\;;\\; \\sqrt{\\frac{(16-1)\\times 3.872^2}{6.262}}\\right)\\]\n\n\n\n95% Confidence Interval for \\(\\sigma\\)\n\n\n\\[IC_{95\\%}(\\sigma) = (2.860\\;;\\; 5.993)\\]"
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#summary-all-cases",

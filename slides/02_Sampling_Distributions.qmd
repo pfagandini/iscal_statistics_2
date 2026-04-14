@@ -7,7 +7,6 @@ format:
     theme:
       - default
       - iscal_theme.scss
-    self-contained: true
     slide-number: true
     incremental: true
     math: 

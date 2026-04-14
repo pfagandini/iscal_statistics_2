@@ -9,7 +9,6 @@ format:
     theme:
       - default
       - iscal_theme.scss
-    self-contained: false
     logo: ../images/iscal_logo.svg
     slide-number: true
     incremental: true
