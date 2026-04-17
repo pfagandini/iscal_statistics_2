@@ -988,7 +988,7 @@ margin-right: 0; }
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Parametric Hypothesis Tests — Part 3</h1>
-  <p class="subtitle">Tests for Mean and Variance of Normal Populations</p>
+  <p class="subtitle">Tests for Mean and Variance of Normal Populations. Mean differences.</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1383,12 +1383,601 @@ Paulo Fagandini
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="tests-for-the-difference-of-means" class="title-slide slide level1 center">
+<h1>3.4 — Tests for the Difference of Means</h1>
+
+</section>
+<section id="setup" class="slide level2">
+<h2>Setup</h2>
+<p>We have <strong>two independent</strong> Normal populations:</p>
+<p><span class="math display">\[X_1 \sim N(\mu_1, \sigma_1) \qquad X_2 \sim N(\mu_2, \sigma_2)\]</span></p>
 <div class="fragment">
-<p>After the break: Sections 3.4 and 3.5.</p>
-
-
-
+<p>Two independent random samples:</p>
+<ul>
+<li class="fragment">From population 1: <span class="math inline">\(n_1\)</span> observations → <span class="math inline">\(\bar{X}_1\)</span>, <span class="math inline">\(S&#39;^2_1\)</span></li>
+<li class="fragment">From population 2: <span class="math inline">\(n_2\)</span> observations → <span class="math inline">\(\bar{X}_2\)</span>, <span class="math inline">\(S&#39;^2_2\)</span></li>
+</ul>
 </div>
+<div class="fragment">
+<p><strong>Goal</strong>: Test hypotheses about <span class="math inline">\(\mu_1 - \mu_2\)</span> (usually testing if <span class="math inline">\(\mu_1 - \mu_2 = 0\)</span>, i.e., if the two means are equal).</p>
+</div>
+</section>
+<section id="the-general-hypotheses" class="slide level2">
+<h2>The General Hypotheses</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(H_0\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(H_1\)</span></th>
+<th style="text-align: center;">Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 = d_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 \neq d_0\)</span></td>
+<td style="text-align: center;">Two-tailed</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 \leq d_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 &gt; d_0\)</span></td>
+<td style="text-align: center;">Right-tailed</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 \geq d_0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1 - \mu_2 &lt; d_0\)</span></td>
+<td style="text-align: center;">Left-tailed</td>
+</tr>
+</tbody>
+</table>
+<p><small>Often <span class="math inline">\(d_0 = 0\)</span>, i.e., we test whether the two population means are equal.</small></p>
+</section>
+<section id="case-a-both-sigma_1-and-sigma_2-known" class="slide level2">
+<h2>Case A: Both <span class="math inline">\(\sigma_1\)</span> and <span class="math inline">\(\sigma_2\)</span> Known</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Test for <span class="math inline">\(\mu_1 - \mu_2\)</span> — variances known</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Test statistic:</strong> <span class="math display">\[Z_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{\sqrt{\dfrac{\sigma_1^2}{n_1} + \dfrac{\sigma_2^2}{n_2}}} \underset{\text{under } H_0}{\sim} N(0, 1)\]</span></p>
+<p>Critical regions use <span class="math inline">\(z_{\alpha}\)</span> and <span class="math inline">\(z_{\alpha/2}\)</span> from the Normal table, as in the one-sample case.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="case-b-variances-unknown-but-equal-sigma_12-sigma_22" class="slide level2">
+<h2>Case B: Variances Unknown but Equal (<span class="math inline">\(\sigma_1^2 = \sigma_2^2\)</span>)</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Test for <span class="math inline">\(\mu_1 - \mu_2\)</span> — variances unknown, assumed equal</strong></p>
+</div>
+<div class="callout-content">
+<p>We estimate the <strong>common variance</strong> using the <strong>pooled estimator</strong>:</p>
+<p><span class="math display">\[S_p&#39;^2 = \frac{(n_1 - 1)S&#39;^2_1 + (n_2 - 1)S&#39;^2_2}{n_1 + n_2 - 2}\]</span></p>
+<p><strong>Test statistic:</strong> <span class="math display">\[T_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{S&#39;_p\sqrt{\dfrac{1}{n_1} + \dfrac{1}{n_2}}} \underset{\text{under } H_0}{\sim} t_{(n_1 + n_2 - 2)}\]</span></p>
+</div>
+</div>
+</div>
+<p><small>The degrees of freedom are <span class="math inline">\(\nu = n_1 + n_2 - 2\)</span>. Critical values from Table 7.</small></p>
+</section>
+<section id="when-can-we-assume-equal-variances" class="slide level2">
+<h2>When Can We Assume Equal Variances?</h2>
+<p>In practice, the assumption <span class="math inline">\(\sigma_1^2 = \sigma_2^2\)</span> can be tested using an <strong><span class="math inline">\(F\)</span>-test</strong> (not in our syllabus), or it may be given in the problem statement.</p>
+<div class="fragment">
+<p><strong>Practical rule</strong>: If the ratio of the larger sample variance to the smaller is less than about 2–3, the equal-variance assumption is often reasonable.</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>When the problem says “assume equal variances” or “assume <span class="math inline">\(\sigma_1 = \sigma_2\)</span>”, use the pooled estimator.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-4-difference-of-means-equal-variances" class="slide level2">
+<h2>Example 4: Difference of Means (Equal Variances)</h2>
+<p>Two production lines manufacture the same component. To compare average lengths, independent random samples are taken:</p>
+<ul>
+<li class="fragment"><strong>Line 1</strong>: <span class="math inline">\(n_1 = 12\)</span>, <span class="math inline">\(\bar{x}_1 = 50.3\)</span> mm, <span class="math inline">\(s&#39;_1 = 1.2\)</span> mm</li>
+<li class="fragment"><strong>Line 2</strong>: <span class="math inline">\(n_2 = 15\)</span>, <span class="math inline">\(\bar{x}_2 = 49.7\)</span> mm, <span class="math inline">\(s&#39;_2 = 1.4\)</span> mm</li>
+</ul>
+<p>Assuming equal population variances and Normal populations, test whether the mean lengths differ at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="example-4-solution-step-1" class="slide level2">
+<h2>Example 4: Solution — Step 1</h2>
+<p><strong>Hypotheses</strong>: <span class="math inline">\(H_0: \mu_1 - \mu_2 = 0\)</span> vs. <span class="math inline">\(H_1: \mu_1 - \mu_2 \neq 0\)</span> (two-tailed)</p>
+<div class="fragment">
+<p><strong>Pooled variance:</strong> <span class="math display">\[s_p&#39;^2 = \frac{(12-1)(1.2)^2 + (15-1)(1.4)^2}{12 + 15 - 2} = \frac{11 \times 1.44 + 14 \times 1.96}{25}\]</span></p>
+<p><span class="math display">\[= \frac{15.84 + 27.44}{25} = \frac{43.28}{25} = 1.7312\]</span></p>
+<p><span class="math display">\[s&#39;_p = \sqrt{1.7312} \approx 1.3157\]</span></p>
+</div>
+</section>
+<section id="example-4-solution-step-2" class="slide level2">
+<h2>Example 4: Solution — Step 2</h2>
+<p><strong>Test statistic</strong>: <span class="math inline">\(T_0 \sim t_{(25)}\)</span></p>
+<p><span class="math display">\[t_{obs} = \frac{(50.3 - 49.7) - 0}{1.3157 \sqrt{\frac{1}{12} + \frac{1}{15}}} = \frac{0.6}{1.3157 \times \sqrt{0.0833 + 0.0667}}\]</span></p>
+<div class="fragment">
+<p><span class="math display">\[= \frac{0.6}{1.3157 \times \sqrt{0.15}} = \frac{0.6}{1.3157 \times 0.3873} = \frac{0.6}{0.5095} \approx 1.18\]</span></p>
+</div>
+</section>
+<section id="example-4-solution-step-3" class="slide level2">
+<h2>Example 4: Solution — Step 3</h2>
+<p><strong>Rejection region</strong> (two-tailed, <span class="math inline">\(\alpha = 0.05\)</span>, <span class="math inline">\(\nu = 25\)</span>):</p>
+<p>From Table 7: <span class="math inline">\(t_{0.025,(25)} = 2.060\)</span></p>
+<p>Reject if <span class="math inline">\(|t_{obs}| \geq 2.060\)</span>.</p>
+<div class="fragment">
+<p>Since <span class="math inline">\(|1.18| = 1.18 &lt; 2.060\)</span>, we <strong>do not reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong>Conclusion</strong>: At 5%, there is <strong>no evidence</strong> of a difference in mean lengths between the two production lines.</p>
+</div>
+</section>
+<section id="case-c-variances-unknown-large-samples" class="slide level2">
+<h2>Case C: Variances Unknown, Large Samples</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Test for <span class="math inline">\(\mu_1 - \mu_2\)</span> — variances unknown, <span class="math inline">\(n_1 &gt; 30\)</span> and <span class="math inline">\(n_2 &gt; 30\)</span></strong></p>
+</div>
+<div class="callout-content">
+<p>When both samples are large, the CLT applies and we can use:</p>
+<p><span class="math display">\[Z_0 = \frac{(\bar{X}_1 - \bar{X}_2) - d_0}{\sqrt{\dfrac{S&#39;^2_1}{n_1} + \dfrac{S&#39;^2_2}{n_2}}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)\]</span></p>
+<p>No assumption about equal variances is needed.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-5-difference-of-means-large-samples" class="slide level2">
+<h2>Example 5: Difference of Means (Large Samples)</h2>
+<p>A company wants to compare the average monthly sales (in thousands of euros) of two regions:</p>
+<ul>
+<li class="fragment"><strong>Region A</strong>: <span class="math inline">\(n_1 = 50\)</span>, <span class="math inline">\(\bar{x}_1 = 87.3\)</span>, <span class="math inline">\(s&#39;_1 = 12.5\)</span></li>
+<li class="fragment"><strong>Region B</strong>: <span class="math inline">\(n_2 = 45\)</span>, <span class="math inline">\(\bar{x}_2 = 82.1\)</span>, <span class="math inline">\(s&#39;_2 = 14.8\)</span></li>
+</ul>
+<p>Test <span class="math inline">\(H_0: \mu_1 \leq \mu_2\)</span> vs. <span class="math inline">\(H_1: \mu_1 &gt; \mu_2\)</span> at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="example-5-solution" class="slide level2">
+<h2>Example 5: Solution</h2>
+<p><strong>Hypotheses</strong>: <span class="math inline">\(H_0: \mu_1 - \mu_2 \leq 0\)</span> vs. <span class="math inline">\(H_1: \mu_1 - \mu_2 &gt; 0\)</span> (right-tailed)</p>
+<div class="fragment">
+<p><span class="math display">\[z_{obs} = \frac{(87.3 - 82.1) - 0}{\sqrt{\frac{(12.5)^2}{50} + \frac{(14.8)^2}{45}}} = \frac{5.2}{\sqrt{\frac{156.25}{50} + \frac{219.04}{45}}}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[= \frac{5.2}{\sqrt{3.125 + 4.868}} = \frac{5.2}{\sqrt{7.993}} = \frac{5.2}{2.827} \approx 1.84\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Rejection region</strong> (right-tailed, <span class="math inline">\(\alpha = 0.05\)</span>): <span class="math inline">\(z_{obs} \geq z_{0.05} = 1.645\)</span></p>
+<p>Since <span class="math inline">\(1.84 &gt; 1.645\)</span>, we <strong>reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: <span class="math inline">\(p = P(Z &gt; 1.84) = 1 - \Phi(1.84) = 1 - 0.9671 = 0.0329\)</span></p>
+</div>
+</section>
+<section id="summary-tests-for-mu_1---mu_2" class="slide level2">
+<h2>Summary: Tests for <span class="math inline">\(\mu_1 - \mu_2\)</span></h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%">
+<col style="width: 21%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Case</th>
+<th style="text-align: left;">Conditions</th>
+<th style="text-align: center;">Test Statistic</th>
+<th style="text-align: center;">Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">A</td>
+<td style="text-align: left;"><span class="math inline">\(\sigma_1, \sigma_2\)</span> known</td>
+<td style="text-align: center;"><span class="math inline">\(Z_0\)</span> with <span class="math inline">\(\sigma_1, \sigma_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N(0,1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">B</td>
+<td style="text-align: left;"><span class="math inline">\(\sigma_1, \sigma_2\)</span> unknown, equal</td>
+<td style="text-align: center;"><span class="math inline">\(T_0\)</span> with <span class="math inline">\(S&#39;_p\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(t_{(n_1+n_2-2)}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">C</td>
+<td style="text-align: left;">Large samples (<span class="math inline">\(n_1, n_2 &gt; 30\)</span>)</td>
+<td style="text-align: center;"><span class="math inline">\(Z_0\)</span> with <span class="math inline">\(S&#39;_1, S&#39;_2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dot\sim N(0,1)\)</span></td>
+</tr>
+</tbody>
+</table>
+</section></section>
+<section>
+<section id="large-sample-tests-asymptotic-normality" class="title-slide slide level1 center">
+<h1>3.5 — Large-Sample Tests (Asymptotic Normality)</h1>
+
+</section>
+<section id="motivation" class="slide level2">
+<h2>Motivation</h2>
+<p>So far, we assumed <strong>Normal populations</strong> (except for Case 2’ and Case C, where the CLT helped).</p>
+<div class="fragment">
+<p>What if we do <strong>not know</strong> the population distribution, but have a <strong>large sample</strong> (<span class="math inline">\(n &gt; 30\)</span>)?</p>
+</div>
+<div class="fragment">
+<p>By the <strong>Central Limit Theorem</strong>, the sampling distribution of <span class="math inline">\(\bar{X}\)</span> is approximately Normal, regardless of the population distribution.</p>
+<p>This allows us to perform tests even without the Normality assumption.</p>
+</div>
+</section>
+<section id="test-for-mu-large-sample-non-normal-population" class="slide level2">
+<h2>Test for <span class="math inline">\(\mu\)</span> — Large Sample, Non-Normal Population</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Test for <span class="math inline">\(\mu\)</span> — large sample, any distribution</strong></p>
+</div>
+<div class="callout-content">
+<p>If <span class="math inline">\(n &gt; 30\)</span>, by the CLT:</p>
+<p><span class="math display">\[Z_0 = \frac{\bar{X} - \mu_0}{S&#39; / \sqrt{n}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)\]</span></p>
+<p>This is the <strong>same formula</strong> as Case 2’ (Normal population, <span class="math inline">\(\sigma\)</span> unknown, <span class="math inline">\(n &gt; 30\)</span>), but now the Normality assumption on the population is relaxed.</p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p>The critical regions and <span class="math inline">\(p\)</span>-value calculations use the Standard Normal table.</p>
+</div>
+</section>
+<section id="example-6-large-sample-test-for-mu" class="slide level2">
+<h2>Example 6: Large-Sample Test for <span class="math inline">\(\mu\)</span></h2>
+<p>A logistics company records the delivery time for packages. The distribution is unknown (likely right-skewed). A random sample of <span class="math inline">\(n = 100\)</span> deliveries gives <span class="math inline">\(\bar{x} = 3.2\)</span> days and <span class="math inline">\(s&#39; = 0.8\)</span> days.</p>
+<p>Test <span class="math inline">\(H_0: \mu \leq 3\)</span> vs. <span class="math inline">\(H_1: \mu &gt; 3\)</span> at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="example-6-solution" class="slide level2">
+<h2>Example 6: Solution</h2>
+<p>Even though the population is not Normal, <span class="math inline">\(n = 100 &gt; 30\)</span>, so the CLT applies.</p>
+<div class="fragment">
+<p><span class="math display">\[z_{obs} = \frac{3.2 - 3}{0.8/\sqrt{100}} = \frac{0.2}{0.08} = 2.50\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Rejection region</strong> (right-tailed, <span class="math inline">\(\alpha = 0.05\)</span>): <span class="math inline">\(z_{obs} \geq 1.645\)</span></p>
+<p>Since <span class="math inline">\(2.50 &gt; 1.645\)</span>, we <strong>reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: <span class="math inline">\(p = P(Z &gt; 2.50) = 1 - \Phi(2.50) = 1 - 0.9938 = 0.0062\)</span></p>
+<p>Strong evidence that the mean delivery time exceeds 3 days.</p>
+</div>
+</section>
+<section id="test-for-a-proportion-p-bernoulli-population" class="slide level2">
+<h2>Test for a Proportion <span class="math inline">\(p\)</span> — Bernoulli Population</h2>
+<div class="callout callout-note no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Test for <span class="math inline">\(p\)</span> — large sample from a Bernoulli population</strong></p>
+</div>
+<div class="callout-content">
+<p>Let <span class="math inline">\(X \sim \text{Bernoulli}(p)\)</span>. The sample proportion is <span class="math inline">\(\hat{p} = X/n\)</span>, where <span class="math inline">\(X = \sum_{i=1}^n X_i\)</span>.</p>
+<p>For large <span class="math inline">\(n\)</span> (typically <span class="math inline">\(np_0 \geq 5\)</span> and <span class="math inline">\(n(1-p_0) \geq 5\)</span>), by the CLT:</p>
+<p><span class="math display">\[Z_0 = \frac{\hat{p} - p_0}{\sqrt{\dfrac{p_0(1 - p_0)}{n}}} \underset{\text{under } H_0}{\dot{\sim}} N(0, 1)\]</span></p>
+</div>
+</div>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Note</strong>: Under <span class="math inline">\(H_0\)</span>, we use <span class="math inline">\(p_0\)</span> (not <span class="math inline">\(\hat{p}\)</span>) in the denominator, because we assume <span class="math inline">\(H_0\)</span> is true when computing the test statistic.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-7-test-for-a-proportion" class="slide level2">
+<h2>Example 7: Test for a Proportion</h2>
+<p>A company claims that at most 5% of its products are defective. In a random sample of <span class="math inline">\(n = 200\)</span> items, 15 are found to be defective.</p>
+<p>Test the company’s claim at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="example-7-solution" class="slide level2">
+<h2>Example 7: Solution</h2>
+<p><strong>Hypotheses</strong>: <span class="math inline">\(H_0: p \leq 0.05\)</span> vs. <span class="math inline">\(H_1: p &gt; 0.05\)</span> (right-tailed)</p>
+<div class="fragment">
+<p><span class="math inline">\(\hat{p} = 15/200 = 0.075\)</span>, <span class="math inline">\(p_0 = 0.05\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Checking conditions</strong>: <span class="math inline">\(np_0 = 200 \times 0.05 = 10 \geq 5\)</span> ✓ and <span class="math inline">\(n(1-p_0) = 190 \geq 5\)</span> ✓</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[z_{obs} = \frac{0.075 - 0.05}{\sqrt{\frac{0.05 \times 0.95}{200}}} = \frac{0.025}{\sqrt{\frac{0.0475}{200}}} = \frac{0.025}{\sqrt{0.0002375}}\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[= \frac{0.025}{0.01541} \approx 1.62\]</span></p>
+</div>
+</section>
+<section id="example-7-solution-cont." class="slide level2">
+<h2>Example 7: Solution (cont.)</h2>
+<p><strong>Rejection region</strong> (right-tailed, <span class="math inline">\(\alpha = 0.05\)</span>): <span class="math inline">\(z_{obs} \geq 1.645\)</span></p>
+<div class="fragment">
+<p>Since <span class="math inline">\(1.62 &lt; 1.645\)</span>, we <strong>do not reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: <span class="math inline">\(p = P(Z &gt; 1.62) = 1 - \Phi(1.62) = 1 - 0.9474 = 0.0526\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Conclusion</strong>: At 5%, there is <strong>marginal</strong> but insufficient evidence to reject the company’s claim. The <span class="math inline">\(p\)</span>-value (<span class="math inline">\(0.0526\)</span>) is just barely above <span class="math inline">\(\alpha\)</span>.</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>This is a “borderline” case. At <span class="math inline">\(\alpha = 0.10\)</span> we would reject <span class="math inline">\(H_0\)</span>.</p>
+</blockquote>
+</div>
+</section>
+<section id="example-8-test-for-proportion-two-tailed" class="slide level2">
+<h2>Example 8: Test for Proportion (Two-tailed)</h2>
+<p>In a survey of <span class="math inline">\(n = 400\)</span> voters, 224 favor a certain policy. Test whether the true proportion differs from 50% at <span class="math inline">\(\alpha = 0.01\)</span>.</p>
+</section>
+<section id="example-8-solution" class="slide level2">
+<h2>Example 8: Solution</h2>
+<p><span class="math inline">\(H_0: p = 0.50\)</span> vs. <span class="math inline">\(H_1: p \neq 0.50\)</span> (two-tailed)</p>
+<p><span class="math inline">\(\hat{p} = 224/400 = 0.56\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[z_{obs} = \frac{0.56 - 0.50}{\sqrt{\frac{0.50 \times 0.50}{400}}} = \frac{0.06}{\sqrt{0.000625}} = \frac{0.06}{0.025} = 2.40\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Rejection region</strong> (two-tailed, <span class="math inline">\(\alpha = 0.01\)</span>): <span class="math inline">\(|z_{obs}| \geq z_{0.005} = 2.576\)</span></p>
+<p>Since <span class="math inline">\(|2.40| = 2.40 &lt; 2.576\)</span>, we <strong>do not reject <span class="math inline">\(H_0\)</span></strong> at 1%.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: <span class="math inline">\(p = 2 \times P(Z &gt; 2.40) = 2 \times 0.0082 = 0.0164\)</span></p>
+<p>At <span class="math inline">\(\alpha = 0.05\)</span> we <strong>would</strong> reject. At <span class="math inline">\(\alpha = 0.01\)</span> we do <strong>not</strong>.</p>
+</div>
+</section></section>
+<section>
+<section id="comprehensive-summary" class="title-slide slide level1 center">
+<h1>Comprehensive Summary</h1>
+
+</section>
+<section id="all-test-cases-complete-reference" class="slide level2">
+<h2>All Test Cases — Complete Reference</h2>
+<div style="font-size: 0.70em;">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">#</th>
+<th style="text-align: center;">Parameter</th>
+<th style="text-align: left;">Conditions</th>
+<th style="text-align: center;">Test Statistic</th>
+<th style="text-align: center;">Distribution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Normal, <span class="math inline">\(\sigma\)</span> known</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\bar{X}-\mu_0}{\sigma/\sqrt{n}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N(0,1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Normal, <span class="math inline">\(\sigma\)</span> unknown</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\bar{X}-\mu_0}{S&#39;/\sqrt{n}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(t_{(n-1)}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2’</td>
+<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Normal, <span class="math inline">\(\sigma\)</span> unknown, <span class="math inline">\(n&gt;30\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\bar{X}-\mu_0}{S&#39;/\sqrt{n}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dot\sim N(0,1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">\(\sigma^2\)</span></td>
+<td style="text-align: left;">Normal</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{(n-1)S&#39;^2}{\sigma_0^2}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\chi^2_{(n-1)}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4a</td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
+<td style="text-align: left;">Normal, <span class="math inline">\(\sigma_1,\sigma_2\)</span> known</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{(\bar{X}_1-\bar{X}_2)-d_0}{\sqrt{\sigma_1^2/n_1+\sigma_2^2/n_2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(N(0,1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4b</td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
+<td style="text-align: left;">Normal, <span class="math inline">\(\sigma_1=\sigma_2\)</span> unknown</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{(\bar{X}_1-\bar{X}_2)-d_0}{S&#39;_p\sqrt{1/n_1+1/n_2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(t_{(n_1+n_2-2)}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4c</td>
+<td style="text-align: center;"><span class="math inline">\(\mu_1-\mu_2\)</span></td>
+<td style="text-align: left;">Large samples</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{(\bar{X}_1-\bar{X}_2)-d_0}{\sqrt{S&#39;^2_1/n_1+S&#39;^2_2/n_2}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dot\sim N(0,1)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">Any distrib., <span class="math inline">\(n &gt; 30\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\bar{X}-\mu_0}{S&#39;/\sqrt{n}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dot\sim N(0,1)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">\(p\)</span></td>
+<td style="text-align: left;">Bernoulli, large <span class="math inline">\(n\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\frac{\hat{p}-p_0}{\sqrt{p_0(1-p_0)/n}}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\dot\sim N(0,1)\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="critical-regions-quick-reference" class="slide level2">
+<h2>Critical Regions — Quick Reference</h2>
+<div style="font-size: 0.80em;">
+<p>For a test statistic <span class="math inline">\(T\)</span> with observed value <span class="math inline">\(t_{obs}\)</span>:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(H_1\)</span></th>
+<th style="text-align: left;">Rejection region</th>
+<th style="text-align: left;"><span class="math inline">\(p\)</span>-value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\theta \neq \theta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\|t_{obs}\| \geq c_{\alpha/2}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2 \times P(T \geq \|t_{obs}\|)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\theta &gt; \theta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(t_{obs} \geq c_{\alpha}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(P(T \geq t_{obs})\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\theta &lt; \theta_0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(t_{obs} \leq -c_{\alpha}\)</span> (or <span class="math inline">\(\leq c_{1-\alpha}\)</span> for <span class="math inline">\(\chi^2\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(P(T \leq t_{obs})\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><small><span class="math inline">\(c_{\alpha}\)</span> is the critical value at level <span class="math inline">\(\alpha\)</span> from the appropriate table (<span class="math inline">\(z_{\alpha}\)</span>, <span class="math inline">\(t_{\alpha,(\nu)}\)</span>, or <span class="math inline">\(q_{\alpha,(\nu)}\)</span>).</small></p>
+</div>
+</section>
+<section id="the-general-procedure-revisited" class="slide level2">
+<h2>The General Procedure — Revisited</h2>
+<div class="callout callout-important no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Step-by-step (for any case)</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li class="fragment"><strong>Identify</strong> the parameter, population(s), and what is known/unknown</li>
+<li class="fragment"><strong>State</strong> <span class="math inline">\(H_0\)</span> and <span class="math inline">\(H_1\)</span></li>
+<li class="fragment"><strong>Choose</strong> <span class="math inline">\(\alpha\)</span></li>
+<li class="fragment"><strong>Select</strong> the appropriate test statistic (from the summary table)</li>
+<li class="fragment"><strong>Determine</strong> the critical region (using the correct table and type of test)</li>
+<li class="fragment"><strong>Compute</strong> <span class="math inline">\(t_{obs}\)</span> (and the <span class="math inline">\(p\)</span>-value, if requested)</li>
+<li class="fragment"><strong>Decide</strong>: reject or do not reject <span class="math inline">\(H_0\)</span></li>
+<li class="fragment"><strong>Conclude</strong> in context</li>
+</ol>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="additional-practice" class="title-slide slide level1 center">
+<h1>Additional Practice</h1>
+
+</section>
+<section id="exercise-c" class="slide level2">
+<h2>Exercise C</h2>
+<p>In a random sample of <span class="math inline">\(n = 250\)</span> consumers surveyed, 75 stated they prefer brand A.</p>
+<ol type="a">
+<li class="fragment"><p>Test <span class="math inline">\(H_0: p = 0.35\)</span> vs. <span class="math inline">\(H_1: p \neq 0.35\)</span> at <span class="math inline">\(\alpha = 0.05\)</span>.</p></li>
+<li class="fragment"><p>Compute the <span class="math inline">\(p\)</span>-value.</p></li>
+</ol>
+</section>
+<section id="exercise-c-solution" class="slide level2">
+<h2>Exercise C: Solution</h2>
+<p><span class="math inline">\(\hat{p} = 75/250 = 0.30\)</span>, <span class="math inline">\(p_0 = 0.35\)</span></p>
+<div class="fragment">
+<p><span class="math display">\[z_{obs} = \frac{0.30 - 0.35}{\sqrt{\frac{0.35 \times 0.65}{250}}} = \frac{-0.05}{\sqrt{0.00091}} = \frac{-0.05}{0.03017} \approx -1.66\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Rejection region</strong> (two-tailed, <span class="math inline">\(\alpha = 0.05\)</span>): <span class="math inline">\(|z_{obs}| \geq 1.96\)</span></p>
+<p>Since <span class="math inline">\(|-1.66| = 1.66 &lt; 1.96\)</span>, we <strong>do not reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: <span class="math inline">\(p = 2 \times P(Z \geq 1.66) = 2 \times (1 - 0.9515) = 2 \times 0.0485 = 0.0970\)</span></p>
+<p>No evidence at 5% that <span class="math inline">\(p \neq 0.35\)</span>.</p>
+</div>
+</section>
+<section id="exercise-d" class="slide level2">
+<h2>Exercise D</h2>
+<p>Two factories produce steel rods. Quality control takes samples:</p>
+<ul>
+<li class="fragment"><strong>Factory 1</strong>: <span class="math inline">\(n_1 = 10\)</span>, <span class="math inline">\(\bar{x}_1 = 502.1\)</span> mm, <span class="math inline">\(s&#39;_1 = 4.5\)</span> mm</li>
+<li class="fragment"><strong>Factory 2</strong>: <span class="math inline">\(n_2 = 12\)</span>, <span class="math inline">\(\bar{x}_2 = 498.3\)</span> mm, <span class="math inline">\(s&#39;_2 = 5.1\)</span> mm</li>
+</ul>
+<p>Assume Normal populations with equal variances. Test whether Factory 1 produces longer rods at <span class="math inline">\(\alpha = 0.05\)</span>.</p>
+</section>
+<section id="exercise-d-solution" class="slide level2">
+<h2>Exercise D: Solution</h2>
+<p><span class="math inline">\(H_0: \mu_1 - \mu_2 \leq 0\)</span> vs. <span class="math inline">\(H_1: \mu_1 - \mu_2 &gt; 0\)</span> (right-tailed)</p>
+<div class="fragment">
+<p><strong>Pooled variance:</strong> <span class="math display">\[s&#39;^2_p = \frac{9 \times (4.5)^2 + 11 \times (5.1)^2}{10 + 12 - 2} = \frac{9 \times 20.25 + 11 \times 26.01}{20} = \frac{182.25 + 286.11}{20} = \frac{468.36}{20} = 23.418\]</span></p>
+<p><span class="math display">\[s&#39;_p = \sqrt{23.418} \approx 4.839\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[t_{obs} = \frac{(502.1 - 498.3) - 0}{4.839\sqrt{\frac{1}{10} + \frac{1}{12}}} = \frac{3.8}{4.839 \times \sqrt{0.1833}} = \frac{3.8}{4.839 \times 0.4282} = \frac{3.8}{2.072} \approx 1.83\]</span></p>
+</div>
+</section>
+<section id="exercise-d-solution-cont." class="slide level2">
+<h2>Exercise D: Solution (cont.)</h2>
+<p><strong>Rejection region</strong> (right-tailed, <span class="math inline">\(\alpha = 0.05\)</span>, <span class="math inline">\(\nu = 20\)</span>):</p>
+<p>From Table 7: <span class="math inline">\(t_{0.05,(20)} = 1.725\)</span></p>
+<div class="fragment">
+<p>Since <span class="math inline">\(1.83 &gt; 1.725\)</span>, we <strong>reject <span class="math inline">\(H_0\)</span></strong>.</p>
+</div>
+<div class="fragment">
+<p><strong><span class="math inline">\(p\)</span>-value</strong>: From Table 7, <span class="math inline">\(t_{0.05,(20)} = 1.725\)</span> and <span class="math inline">\(t_{0.025,(20)} = 2.086\)</span>.</p>
+<p>Since <span class="math inline">\(1.725 &lt; 1.83 &lt; 2.086\)</span>: <span class="math inline">\(0.025 &lt; p &lt; 0.05\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Conclusion</strong>: At 5%, there is evidence that Factory 1 produces longer rods on average than Factory 2.</p>
+</div>
+</section>
+<section id="summary-of-todays-lecture" class="slide level2">
+<h2>Summary of Today’s Lecture</h2>
+<div class="callout callout-important no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Key takeaways — Lecture 7</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li class="fragment"><strong>Section 3.3</strong>: Tests for <span class="math inline">\(\mu\)</span> (<span class="math inline">\(\sigma\)</span> known/unknown) and <span class="math inline">\(\sigma^2\)</span> of Normal populations use the same pivot variables as confidence intervals (<span class="math inline">\(Z\)</span>, <span class="math inline">\(T\)</span>, <span class="math inline">\(Q\)</span>)</li>
+<li class="fragment"><strong>Section 3.4</strong>: Tests for <span class="math inline">\(\mu_1 - \mu_2\)</span> require identifying whether variances are known, unknown-but-equal (pooled), or whether samples are large</li>
+<li class="fragment"><strong>Section 3.5</strong>: Large-sample tests (<span class="math inline">\(n &gt; 30\)</span>) work for any distribution thanks to the CLT; tests for proportions use <span class="math inline">\(\hat{p}\)</span> and <span class="math inline">\(p_0\)</span></li>
+<li class="fragment">In <strong>all cases</strong>, the procedure is the same 8-step process</li>
+<li class="fragment">The <span class="math inline">\(p\)</span>-value provides the strength of evidence and can be used alongside (or instead of) the critical region approach</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="whats-next" class="slide level2">
+<h2>What’s Next</h2>
+<p>The second midterm covers Topics 2.2, 3, and 4.</p>
+<div class="fragment">
+<p>Next: <strong>Topic 4 — The Linear Regression Model</strong>.</p>
+</div>
+</section>
+<section id="disclaimer" class="slide level2">
+<h2>Disclaimer</h2>
+<p>These slides are a free adaptation of the course material for Estatística II by Prof. Teresa Ferreira and Prof. Sandra Custódio from the Lisbon Accounting and Business School — Polytechnic University of Lisbon.</p>
+<p><br>
+</p>
+<p>Primary reference: Newbold, P., Carlson, W. &amp; Thorne, B. — <em>Statistics for Business and Economics</em>, Global Edition.</p>
+
+
+
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">

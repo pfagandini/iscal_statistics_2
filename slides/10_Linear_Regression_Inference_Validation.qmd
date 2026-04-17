@@ -1,0 +1,591 @@
+---
+title: "The Linear Regression Model"
+subtitle: "Part III — Statistical Inference & Model Validation"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format:
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    embed-resources: true
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: false
+    math:
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Linear Regression: Inference & Validation"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.65em
+    progress: true
+    width: 1280
+    height: 720
+editor: source
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+iscal_burgundy      <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_gray          <- "#333333"
+iscal_light         <- "#F5F5F5"
+iscal_blue          <- "#0066CC"
+
+# Reproduce the MLR example from Part II
+set.seed(5)
+n          <- 30
+revenue2   <- round(runif(n, 100, 500), 0)
+employees  <- round(runif(n, 10, 80), 0)
+profit2    <- round(5 + 0.15*revenue2 + 0.8*employees + rnorm(n, 0, 12), 1)
+mlr_model  <- lm(profit2 ~ revenue2 + employees)
+```
+
+# Statistical Inference in Regression {background-color="#8B1538"}
+
+## Lecture Overview
+
+**Lecture 10 — Statistical Inference & Model Validation**
+
+::: {.incremental}
+- Distributions of OLS estimators under normality
+- $t$-tests for individual coefficients
+- Confidence intervals for $\beta_j$
+- The $F$-test: overall model significance
+- The ANOVA table for regression
+- Point prediction and prediction intervals
+- Validating the classical assumptions:
+  - Linearity, normality, homoscedasticity, independence, multicollinearity
+:::
+
+::: {.callout-note}
+**Reference:** Newbold Ch. 11.6–11.8, Ch. 12.4–12.6.
+:::
+
+# Sampling Distributions of OLS Estimators {background-color="#8B1538"}
+
+## From Estimates to Inference
+
+We have $\hat{\beta}_j$ — point estimates. But **how uncertain** are they?
+
+Under the classical assumptions A1–A6:
+
+$$\hat{\beta}_j \sim N\!\left(\beta_j,\; \sigma^2_{\hat{\beta}_j}\right)$$
+
+. . .
+
+Since $\sigma^2$ is unknown, we replace it with $s^2 = \text{SSR}/(n-k-1)$:
+
+$$T_j = \frac{\hat{\beta}_j - \beta_j}{s_{\hat{\beta}_j}} \sim t_{n-k-1}$$
+
+where $s_{\hat{\beta}_j}$ is the **standard error** of $\hat{\beta}_j$ (reported by R in the `Std. Error` column).
+
+. . .
+
+::: {.callout-note}
+In SLR ($k=1$): $s_{\hat{\beta}_1} = \dfrac{s}{\sqrt{S_{XX}}}$, where $s = \sqrt{\text{SSR}/(n-2)}$.
+:::
+
+# $t$-Tests for Individual Coefficients {background-color="#8B1538"}
+
+## The Individual Significance Test
+
+**Question:** Is the variable $X_j$ statistically significant — i.e. does it contribute to explaining $Y$?
+
+. . .
+
+**Hypotheses:**
+
+$$H_0: \beta_j = 0 \quad \text{vs} \quad H_1: \beta_j \neq 0$$
+
+. . .
+
+**Test statistic:**
+
+$$t_j = \frac{\hat{\beta}_j}{s_{\hat{\beta}_j}} \;\sim\; t_{n-k-1} \quad \text{under } H_0$$
+
+. . .
+
+**Decision rule** at significance level $\alpha$:
+
+| Approach | Rule |
+|----------|------|
+| Critical value | Reject $H_0$ if $|t_j| > t_{n-k-1,\,\alpha/2}$ |
+| $p$-value | Reject $H_0$ if $p\text{-value} < \alpha$ |
+
+## Reading the R Output
+
+```{r ttest-output, echo=TRUE}
+summary(mlr_model)
+```
+
+## Interpreting the $t$-test Output
+
+From the `Coefficients` table in `summary()`:
+
+::: {style="font-size:0.88em"}
+
+| Column | Meaning |
+|--------|---------|
+| `Estimate` | $\hat{\beta}_j$ — the OLS point estimate |
+| `Std. Error` | $s_{\hat{\beta}_j}$ — standard error of the estimate |
+| `t value` | $t_j = \hat{\beta}_j / s_{\hat{\beta}_j}$ — the test statistic |
+| `Pr(>|t|)` | Two-sided $p$-value: probability of observing $|t_j|$ this large **if $H_0$ were true** |
+| Significance codes | `***` $p<0.001$, `**` $p<0.01$, `*` $p<0.05$, `.` $p<0.1$ |
+
+:::
+
+. . .
+
+::: {.callout-important}
+If `Pr(>|t|)` $< \alpha$ (e.g. 0.05): **reject $H_0$** — the variable is statistically significant at level $\alpha$.
+
+If not: we **fail to reject $H_0$** — the variable may not be contributing to the model after controlling for the others (principle of parsimony: consider removing it).
+:::
+
+## One-Sided Tests
+
+Sometimes theory suggests a **directional** hypothesis:
+
+$$H_0: \beta_j = 0 \quad \text{vs} \quad H_1: \beta_j > 0 \quad \text{(or } H_1: \beta_j < 0\text{)}$$
+
+. . .
+
+The test statistic is the same $t_j = \hat{\beta}_j / s_{\hat{\beta}_j}$.
+
+For $H_1: \beta_j > 0$: reject $H_0$ if $t_j > t_{n-k-1,\,\alpha}$
+
+For $H_1: \beta_j < 0$: reject $H_0$ if $t_j < -t_{n-k-1,\,\alpha}$
+
+. . .
+
+::: {.callout-note}
+The $p$-value from R is always **two-sided**. For a one-sided test, divide it by 2 — but only when the sign of $\hat{\beta}_j$ is consistent with $H_1$.
+:::
+
+# Confidence Intervals for $\beta_j$ {background-color="#8B1538"}
+
+## Construction
+
+A $(1-\alpha) \times 100\%$ confidence interval for $\beta_j$:
+
+$$\hat{\beta}_j \;\pm\; t_{n-k-1,\,\alpha/2} \;\cdot\; s_{\hat{\beta}_j}$$
+
+. . .
+
+::: {.callout-important}
+**Interpretation:** If we repeated the sampling procedure many times, $(1-\alpha)\times 100\%$ of the intervals constructed this way would contain the true $\beta_j$.
+
+The interval gives a range of **plausible values** for $\beta_j$ given the data.
+:::
+
+. . .
+
+**Link to hypothesis testing:** if $0$ is **not** in the $95\%$ confidence interval for $\beta_j$, then $H_0: \beta_j = 0$ is rejected at $\alpha = 5\%$.
+
+## Confidence Intervals in R
+
+```{r ci-r, echo=TRUE}
+confint(mlr_model, level = 0.95)
+```
+
+. . .
+
+**Interpretation:**
+
+- The 95% CI for $\beta_{\text{revenue}}$ is approximately [`r round(confint(mlr_model)[2,1], 3)`, `r round(confint(mlr_model)[2,2], 3)`].
+- Since 0 is **not** in this interval, we reject $H_0: \beta_{\text{revenue}} = 0$ at 5% — revenue has a statistically significant positive effect on profit.
+
+# The $F$-Test: Overall Significance {background-color="#8B1538"}
+
+## Motivation
+
+The $t$-tests assess **individual** regressors. But sometimes we want to ask:
+
+> *Does the model as a whole explain a significant amount of variation in $Y$?*
+
+This is the **overall significance test**:
+
+$$H_0: \beta_1 = \beta_2 = \cdots = \beta_k = 0$$
+$$H_1: \text{at least one } \beta_j \neq 0$$
+
+. . .
+
+::: {.callout-important}
+Under $H_0$, none of the regressors help explain $Y$ — the model is no better than simply predicting $\bar{Y}$ for everyone.
+:::
+
+## The $F$-Statistic
+
+$$F = \frac{\text{SSE}/k}{\text{SSR}/(n-k-1)} = \frac{\text{Explained MS}}{\text{Residual MS}} \;\sim\; F_{k,\, n-k-1} \quad \text{under } H_0$$
+
+. . .
+
+**The ANOVA table for regression:**
+
+| Source | SS | df | MS | $F$ |
+|--------|----|----|-----|-----|
+| Regression (Explained) | SSE | $k$ | SSE/$k$ | MSE/MSR |
+| Residual | SSR | $n-k-1$ | SSR/$(n-k-1)$ | |
+| **Total** | **SST** | $n-1$ | | |
+
+. . .
+
+**Decision:** Reject $H_0$ if $F > F_{k,\,n-k-1,\,\alpha}$ or if $p\text{-value} < \alpha$.
+
+## $F$-Test in R
+
+The $F$-statistic and its $p$-value appear at the **bottom** of `summary()`:
+
+```{r f-test, echo=TRUE}
+summary(mlr_model)
+```
+
+. . .
+
+The line `F-statistic: ... on k and n-k-1 DF, p-value: ...` gives the overall test.
+
+## Relationship Between $F$ and $R^2$
+
+In MLR, the $F$-statistic can be written as:
+
+$$F = \frac{R^2/k}{(1-R^2)/(n-k-1)}$$
+
+. . .
+
+This makes clear that:
+
+- A high $R^2$ tends to produce a large $F$ (and small $p$-value)
+- But a significant $F$ does **not** mean all individual coefficients are significant
+- And a significant $t_j$ does **not** imply overall model significance
+
+::: {.callout-note}
+In SLR ($k = 1$): $F = t^2$ — the $F$-test is equivalent to the two-sided $t$-test on the single slope.
+:::
+
+# Prediction {background-color="#8B1538"}
+
+## Point Prediction
+
+Given new values $X_1 = x_1^*, \ldots, X_k = x_k^*$, the **point prediction** is:
+
+$$\hat{Y}^* = \hat{\beta}_0 + \hat{\beta}_1 x_1^* + \cdots + \hat{\beta}_k x_k^*$$
+
+. . .
+
+```{r prediction, echo=TRUE}
+# Predict profit for revenue = 300, employees = 40
+new_obs <- data.frame(revenue2 = 300, employees = 40)
+predict(mlr_model, newdata = new_obs)
+```
+
+. . .
+
+::: {.callout-important}
+**Extrapolation warning:** predictions are only reliable within the range of the observed data. Predicting far outside the sample range (e.g. revenue = 5000 when the data only covers 100–500) is unreliable.
+:::
+
+## Prediction Intervals
+
+A **prediction interval** accounts for two sources of uncertainty:
+
+1. Uncertainty about the true mean $E[Y^*]$ (same as a confidence interval for the mean)
+2. Uncertainty about the **individual** outcome $Y^*$ around that mean
+
+. . .
+
+$$\hat{Y}^* \;\pm\; t_{n-k-1,\,\alpha/2} \;\cdot\; s \cdot \sqrt{1 + \mathbf{x}^{*\prime}(\mathbf{X}'\mathbf{X})^{-1}\mathbf{x}^*}$$
+
+In R:
+
+```{r pred-interval, echo=TRUE}
+predict(mlr_model, newdata = new_obs,
+        interval = "prediction", level = 0.95)
+```
+
+. . .
+
+The prediction interval is **always wider** than the confidence interval for the mean — it must additionally account for individual variation.
+
+# Validating the Classical Assumptions {background-color="#8B1538"}
+
+## Why Validation Matters
+
+Our inference (t-tests, F-test, confidence intervals) is only valid if the classical assumptions hold.
+
+**If they fail:**
+
+::: {.incremental}
+- **A2 violated** (non-zero mean error, omitted variables): OLS is biased
+- **A3 violated** (heteroscedasticity): OLS standard errors are wrong → invalid $t$ and $F$ tests
+- **A4 violated** (autocorrelation): same problem as heteroscedasticity
+- **A6 violated** (non-normality): $t$ and $F$ approximations may fail in small samples
+- **Multicollinearity** (not a classical assumption violation): inflated standard errors, unstable estimates
+:::
+
+. . .
+
+The tool for checking assumptions: **residual analysis**.
+
+## The Four Key Diagnostic Plots
+
+```{r diag-plots, echo=TRUE, fig.height=4.2, fig.width=11}
+par(mfrow = c(1, 4), mar = c(4, 4, 3, 1))
+plot(mlr_model)
+```
+
+## Residuals vs. Fitted: Checking Linearity and Homoscedasticity
+
+```{r resid-fitted, echo=FALSE, fig.height=4.0, fig.width=10}
+df_diag <- data.frame(
+  fitted   = fitted(mlr_model),
+  residuals = residuals(mlr_model)
+)
+ggplot(df_diag, aes(x = fitted, y = residuals)) +
+  geom_point(color = iscal_burgundy, size = 2.5, alpha = 0.8) +
+  geom_hline(yintercept = 0, linetype = "dashed", color = iscal_blue, linewidth = 1) +
+  geom_smooth(method = "loess", se = FALSE, color = iscal_dark_burgundy,
+              linewidth = 0.9, linetype = "solid") +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "Residuals vs. Fitted Values",
+       subtitle = "Ideal: random scatter around zero, constant spread",
+       x = "Fitted values (Ŷ)", y = "Residuals (e)")
+```
+
+**What to look for:**
+
+- **Random scatter around zero** → linearity OK
+- **Constant vertical spread** → homoscedasticity OK
+- **Funnel or fan shape** → heteroscedasticity (problem)
+- **Curved pattern** → non-linearity (problem)
+
+## Normality of Residuals: Q–Q Plot
+
+```{r qq-plot, echo=FALSE, fig.height=4.0, fig.width=9}
+df_qq <- data.frame(residuals = residuals(mlr_model))
+ggplot(df_qq, aes(sample = residuals)) +
+  stat_qq(color = iscal_burgundy, size = 2.5) +
+  stat_qq_line(color = iscal_blue, linewidth = 1.1, linetype = "dashed") +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "Normal Q–Q Plot of Residuals",
+       subtitle = "Ideal: points close to the diagonal line",
+       x = "Theoretical quantiles (Normal distribution)",
+       y = "Sample quantiles (residuals)")
+```
+
+**What to look for:**
+
+- **Points near the diagonal** → normality approximately satisfied
+- **S-shaped curve** → heavy tails (non-normal)
+- **Systematic departure** → consider transformations of $Y$
+
+## Detecting Heteroscedasticity
+
+::: {.columns}
+::: {.column width="50%"}
+**Scale-Location plot** (square root of standardised residuals vs. fitted):
+
+```{r scale-loc, echo=FALSE, fig.height=3.5, fig.width=5.5}
+df_sl <- data.frame(
+  fitted = fitted(mlr_model),
+  sqres  = sqrt(abs(rstandard(mlr_model)))
+)
+ggplot(df_sl, aes(x = fitted, y = sqres)) +
+  geom_point(color = iscal_burgundy, size = 2) +
+  geom_smooth(method = "loess", se = FALSE,
+              color = iscal_blue, linewidth = 0.9) +
+  theme_minimal(base_size = 12) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(x = "Fitted values", y = expression(sqrt("|Standardised residuals|")),
+       title = "Scale-Location")
+```
+:::
+::: {.column width="50%"}
+**Ideal:** the smooth line is **roughly horizontal** (constant spread).
+
+**Problem signs:**
+
+- Rising line → variance increases with $\hat{Y}$ (funnel-right)
+- Falling line → variance decreases with $\hat{Y}$ (funnel-left)
+
+**Formal test:** White's test (tests whether residual variance depends on any regressor or its square).
+
+**Practical fix:** Use robust (heteroscedasticity-consistent) standard errors or transform $Y$ (e.g. $\log Y$).
+:::
+:::
+
+## The Classical Assumptions: Summary Table
+
+::: {style="font-size:0.82em"}
+
+| Assumption | How to check | Symptom if violated | Consequence |
+|-----------|-------------|---------------------|-------------|
+| **A1** Linearity | Scatter plot, residuals vs. fitted | Curved pattern | Biased estimates |
+| **A2** Zero mean | Residuals vs. fitted | Systematic non-zero residuals | Biased $\hat{\beta}_0$ |
+| **A3** Homoscedasticity | Scale-location plot, White's test | Funnel shape | Invalid SEs & tests |
+| **A4** No autocorrelation | Durbin-Watson statistic, residuals vs. order | Pattern in residuals | Invalid SEs & tests |
+| **A6** Normality | Q–Q plot, Shapiro-Wilk test | S-curve in Q–Q | Invalid small-sample tests |
+| — | Multicollinearity: VIF | High pairwise $r$, VIF $> 5$ | Inflated SEs, unstable $\hat{\beta}_j$ |
+
+:::
+
+## Autocorrelation: The Durbin–Watson Test
+
+Relevant mainly for **time series** data. Tests $H_0$: no autocorrelation vs. $H_1$: positive autocorrelation.
+
+$$DW = \frac{\sum_{i=2}^{n}(e_i - e_{i-1})^2}{\sum_{i=1}^{n} e_i^2}$$
+
+**Rule of thumb:** $DW \approx 2$ → no autocorrelation; $DW < 1.5$ → concern.
+
+. . .
+
+```{r dw-test, echo=TRUE}
+# install.packages("lmtest") if needed
+library(lmtest)
+dwtest(mlr_model)
+```
+
+## Multicollinearity and VIF
+
+**Multicollinearity:** two or more regressors are highly correlated with each other.
+
+**Consequence:** OLS is still unbiased and BLUE, but standard errors are inflated → $t$-statistics are small → we may fail to detect significant effects.
+
+. . .
+
+The **Variance Inflation Factor (VIF)** for regressor $X_j$:
+
+$$\text{VIF}_j = \frac{1}{1 - R_j^2}$$
+
+where $R_j^2$ is the $R^2$ from regressing $X_j$ on all other regressors.
+
+::: {.callout-note}
+**Rule of thumb:** VIF $< 5$ is acceptable; VIF $> 10$ is a serious problem.
+:::
+
+## VIF in R
+
+```{r vif-r, echo=TRUE}
+# install.packages("car") if needed
+library(car)
+vif(mlr_model)
+```
+
+. . .
+
+Both VIF values are close to 1 → no multicollinearity problem in our example. This is expected since `revenue2` and `employees` were generated independently.
+
+## Putting It All Together: Model Validation Workflow
+
+::: {.incremental}
+1. **Fit the model** with `lm()` and check `summary()` for coefficient signs, magnitudes and significance.
+2. **Plot residuals vs. fitted** — check for linearity and homoscedasticity.
+3. **Inspect the Q–Q plot** — check for normality of residuals.
+4. **Run Durbin-Watson** (if data may have time ordering) — check for autocorrelation.
+5. **Compute VIF** (if $k \geq 2$) — check for multicollinearity.
+6. If violations are found: consider **transformations** (log $Y$, log $X$), **robust standard errors**, or **model re-specification** (add/remove variables).
+:::
+
+. . .
+
+::: {.callout-important}
+Validation is not a single pass — it is an **iterative dialogue** between the model and the data.
+:::
+
+# Complete R Workflow {background-color="#8B1538"}
+
+## End-to-End: From Data to Validated Model
+
+```{r full-workflow, echo=TRUE, eval=FALSE}
+# 1. Fit the model
+model <- lm(Y ~ X1 + X2, data = mydata)
+
+# 2. Inspect results
+summary(model)
+confint(model, level = 0.95)
+
+# 3. Residual diagnostics
+par(mfrow = c(2, 2))
+plot(model)
+
+# 4. Autocorrelation (if needed)
+library(lmtest)
+dwtest(model)
+
+# 5. Multicollinearity (if k >= 2)
+library(car)
+vif(model)
+
+# 6. Predict for new data
+predict(model,
+        newdata = data.frame(X1 = x1_new, X2 = x2_new),
+        interval = "prediction",
+        level = 0.95)
+```
+
+## Reading a Regression Table
+
+A typical regression output table (as seen in R or SPSS):
+
+::: {style="font-size:0.85em"}
+
+| | Estimate | Std. Error | $t$ value | $\Pr(>|t|)$ |
+|---|---------|-----------|-----------|------------|
+| (Intercept) | $\hat{\beta}_0$ | $s_{\hat{\beta}_0}$ | $t_0$ | $p_0$ |
+| $X_1$ | $\hat{\beta}_1$ | $s_{\hat{\beta}_1}$ | $t_1$ | $p_1$ |
+| $X_2$ | $\hat{\beta}_2$ | $s_{\hat{\beta}_2}$ | $t_2$ | $p_2$ |
+
+:::
+
+| Metric | What it tells you |
+|--------|-------------------|
+| Residual std. error ($s$) | Typical size of residuals; in the same units as $Y$ |
+| $R^2$ | Proportion of variance in $Y$ explained |
+| Adjusted $R^2$ | $R^2$ penalised for number of regressors |
+| $F$-statistic | Overall significance of the model |
+
+# Course Summary: Linear Regression {background-color="#8B1538"}
+
+## The Linear Regression Journey (3 Lectures)
+
+::: {style="font-size:0.88em"}
+
+| Lecture | Topic | Key Concepts |
+|---------|-------|-------------|
+| **8** | Introduction & OLS | Model specification, Gauss–Markov assumptions, OLS formulas, coefficient interpretation |
+| **9** | Fit & MLR | $R^2$, $\bar{R}^2$, Gauss–Markov theorem, Omitted Variable Bias, MLR *ceteris paribus* interpretation |
+| **10** | Inference & Validation | $t$-tests, $F$-test, CIs, prediction intervals, residual diagnostics, VIF |
+
+:::
+
+. . .
+
+**The core message:**
+
+> OLS gives us the best linear unbiased estimates — but only if the classical assumptions hold. Always validate your model before drawing conclusions.
+
+## Key Formulas at a Glance
+
+::: {style="font-size:0.85em"}
+
+| | Formula |
+|---|---------|
+| OLS slope | $\hat{\beta}_1 = S_{XY}/S_{XX}$ |
+| OLS intercept | $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$ |
+| Error variance | $s^2 = \text{SSR}/(n-k-1)$ |
+| $R^2$ | $1 - \text{SSR}/\text{SST}$ |
+| Adjusted $R^2$ | $1 - (1-R^2)(n-1)/(n-k-1)$ |
+| $t$-statistic | $t_j = \hat{\beta}_j / s_{\hat{\beta}_j}$ |
+| CI for $\beta_j$ | $\hat{\beta}_j \pm t_{n-k-1,\alpha/2} \cdot s_{\hat{\beta}_j}$ |
+| $F$-statistic | $(\text{SSE}/k)\,/\,(\text{SSR}/(n-k-1))$ |
+
+:::

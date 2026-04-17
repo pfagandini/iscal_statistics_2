@@ -1,0 +1,535 @@
+---
+title: "The Linear Regression Model"
+subtitle: "Part I — Introduction & OLS Estimation"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format:
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    embed-resources: true
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: false
+    math:
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Linear Regression: Introduction & OLS"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.65em
+    progress: true
+    width: 1280
+    height: 720
+editor: source
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+iscal_burgundy      <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_gray          <- "#333333"
+iscal_light         <- "#F5F5F5"
+iscal_blue          <- "#0066CC"
+```
+
+# The Linear Regression Model {background-color="#8B1538"}
+
+## Lecture Overview
+
+**Lecture 8 — Introduction & OLS Estimation**
+
+::: {.incremental}
+- Why regression? Motivation and examples
+- Statistical vs. deterministic relationships
+- Scatter diagrams and linear correlation
+- The Simple Linear Regression (SLR) model
+- The Classical Assumptions (Gauss–Markov)
+- OLS: deriving $\hat{\beta}_0$ and $\hat{\beta}_1$
+- Interpreting the estimated coefficients
+- Running a regression in R with `lm()`
+:::
+
+::: {.callout-note}
+**Reference:** Newbold, Carlson & Thorne — *Statistics for Business and Economics*, Chapters 11–12.
+:::
+
+# Why Regression? {background-color="#8B1538"}
+
+## Motivation
+
+In many situations, we observe that variables tend to **move together**:
+
+::: {.columns}
+::: {.column width="50%"}
+**Accounting & Finance**
+
+- Sales revenue → Operating profit
+- Advertising spend → Market share
+- Firm leverage → Cost of debt
+- Total assets → Audit fees
+:::
+::: {.column width="50%"}
+**Economics & Management**
+
+- Disposable income → Consumption
+- Interest rates → Investment
+- Education → Earnings
+- Hours studied → Exam grade
+:::
+:::
+
+. . .
+
+**Regression analysis** lets us:
+
+1. **Describe** the average relationship between variables
+2. **Quantify** the size of that relationship
+3. **Predict** values of one variable from another
+
+## Statistical vs. Deterministic Relationships
+
+::: {.columns}
+::: {.column width="46%"}
+**Deterministic:**
+$$C = 2\pi r$$
+
+Every value of $r$ gives **exactly one** $C$.
+
+No randomness. No need for statistics.
+:::
+::: {.column width="54%"}
+**Statistical:**
+$$\text{Profit}_i = \beta_0 + \beta_1\,\text{Revenue}_i + \varepsilon_i$$
+
+Same revenue $\rightarrow$ **different** profit across firms.
+
+The error $\varepsilon_i$ captures everything else.
+:::
+:::
+
+. . .
+
+::: {.callout-important}
+Regression models the **conditional mean** of $Y$ given $X$:
+
+$$E[Y \mid X = x] = \beta_0 + \beta_1\,x$$
+
+We do **not** claim $X$ determines $Y$ exactly — only **on average**.
+:::
+
+## Types of Variables
+
+| Role | Name | Also called | Symbol |
+|------|------|-------------|--------|
+| What we explain | **Dependent variable** | Response, regressand | $Y$ |
+| What explains it | **Independent variable** | Regressor, predictor | $X$ |
+
+. . .
+
+- $Y$ is always **quantitative**.
+- $X$ can be quantitative or qualitative (dummy variables — introduced in Part II).
+
+. . .
+
+**Running example (hypothetical data throughout):**
+
+> *A firm's operating profit ($Y$, m.u.) as a function of sales revenue ($X$, m.u.).*
+
+::: {.callout-note}
+All numerical examples use **hypothetical data** constructed for illustration purposes only.
+:::
+
+# Exploring the Relationship {background-color="#8B1538"}
+
+## The Scatter Diagram
+
+Before fitting any model, always **plot the data**. The scatter diagram displays the $n$ observed pairs $(x_i, y_i)$.
+
+```{r scatter-types, echo=FALSE, fig.height=3.5, fig.width=11}
+set.seed(42)
+n <- 45
+x <- runif(n, 10, 80)
+d_pos  <- data.frame(x = x, y = 3 + 0.6*x + rnorm(n,0,6),  lab = "Positive correlation")
+d_neg  <- data.frame(x = x, y = 58 - 0.5*x + rnorm(n,0,6), lab = "Negative correlation")
+d_none <- data.frame(x = x, y = 30 + rnorm(n,0,13),         lab = "No linear correlation")
+d_all  <- rbind(d_pos, d_neg, d_none)
+d_all$lab <- factor(d_all$lab,
+  levels = c("Positive correlation","Negative correlation","No linear correlation"))
+ggplot(d_all, aes(x = x, y = y)) +
+  geom_point(color = iscal_burgundy, alpha = 0.75, size = 2.2) +
+  facet_wrap(~lab) +
+  theme_minimal(base_size = 13) +
+  theme(strip.text = element_text(color = iscal_burgundy, face = "bold", size = 12),
+        panel.grid.minor = element_blank()) +
+  labs(x = "X", y = "Y")
+```
+
+## Reading the Scatter Diagram
+
+From the scatter diagram we assess:
+
+::: {.incremental}
+- **Direction:** positive (both increase together) or negative (one increases, the other decreases)?
+- **Form:** linear, curved, or no discernible pattern?
+- **Strength:** how tightly do points cluster around the trend?
+- **Outliers:** any unusual observations that break the pattern?
+:::
+
+. . .
+
+::: {.callout-important}
+**Always plot before you fit.**
+
+A high $R^2$ on a non-linear or structurally misspecified relationship can be meaningless.
+Classic illustration: **Anscombe's Quartet.**
+:::
+
+## Anscombe's Quartet
+
+```{r anscombe, echo=FALSE, fig.height=3.8, fig.width=11}
+data(anscombe)
+d <- data.frame(
+  x       = c(anscombe$x1, anscombe$x2, anscombe$x3, anscombe$x4),
+  y       = c(anscombe$y1, anscombe$y2, anscombe$y3, anscombe$y4),
+  dataset = rep(paste("Dataset", 1:4), each = 11)
+)
+ggplot(d, aes(x = x, y = y)) +
+  geom_point(color = iscal_burgundy, size = 2.8) +
+  geom_smooth(method = "lm", se = FALSE, color = iscal_blue, linewidth = 0.9) +
+  facet_wrap(~dataset, nrow = 1) +
+  theme_minimal(base_size = 13) +
+  theme(strip.text = element_text(color = iscal_burgundy, face = "bold"),
+        panel.grid.minor = element_blank()) +
+  labs(title = "All four datasets: same slope, intercept, and R²",
+       x = "X", y = "Y")
+```
+
+::: {.fragment}
+$\hat{\beta}_0 \approx 3.0$,  $\hat{\beta}_1 \approx 0.50$,  $R^2 \approx 0.67$ for **all four** — but only Dataset 1 is truly linear.
+:::
+
+# The SLR Model {background-color="#8B1538"}
+
+## Model Specification
+
+The **Simple Linear Regression (SLR)** model:
+
+$$\boxed{Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i, \qquad i = 1, 2, \ldots, n}$$
+
+. . .
+
+| Symbol | Name | Meaning |
+|--------|------|---------|
+| $Y_i$ | Dependent variable | Observed outcome for unit $i$ |
+| $X_i$ | Independent variable | Known regressor for unit $i$ |
+| $\beta_0$ | Intercept | Mean of $Y$ when $X = 0$ |
+| $\beta_1$ | Slope | Change in mean $Y$ per unit increase in $X$ |
+| $\varepsilon_i$ | Error term | All other factors affecting $Y_i$ |
+
+. . .
+
+::: {.callout-note}
+$\beta_0$ and $\beta_1$ are **unknown population parameters**.
+Our goal is to estimate them from data as $\hat{\beta}_0$ and $\hat{\beta}_1$.
+:::
+
+## The Error Term $\varepsilon_i$
+
+$$Y_i = \underbrace{\beta_0 + \beta_1 X_i}_{\text{systematic part}} + \underbrace{\varepsilon_i}_{\text{random part}}$$
+
+The error captures:
+
+::: {.incremental}
+- **Omitted variables** — factors that influence $Y$ but are not in the model
+- **Measurement error** — imprecision in recording $Y_i$ or $X_i$
+- **Inherent randomness** — unpredictable variation in behaviour or outcomes
+:::
+
+. . .
+
+::: {.callout-important}
+The error is **not a mistake** in the model — it is an unavoidable feature of any statistical relationship. What matters is that we make appropriate assumptions about its behaviour.
+:::
+
+# The Classical Assumptions {background-color="#8B1538"}
+
+## Gauss–Markov Assumptions
+
+For OLS to have good statistical properties, we require:
+
+::: {style="font-size:0.85em"}
+
+| # | Name | Statement |
+|---|------|-----------|
+| **A1** | Linearity | $Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$ |
+| **A2** | Zero mean | $E[\varepsilon_i] = 0 \;\forall\, i$ |
+| **A3** | Homoscedasticity | $\text{Var}(\varepsilon_i) = \sigma^2 \;\forall\, i$ |
+| **A4** | No autocorrelation | $\text{Cov}(\varepsilon_i, \varepsilon_j) = 0 \;\forall\, i \neq j$ |
+| **A5** | Exogeneity | $X_i$ is fixed or independent of $\varepsilon_i$ |
+| **A6** | Normality | $\varepsilon_i \sim N(0,\, \sigma^2)$ |
+
+:::
+
+. . .
+
+::: {.callout-note}
+**A1–A5** are the Gauss–Markov conditions. Under them, OLS is **BLUE** (Best Linear Unbiased Estimator).
+**A6** is additionally required for exact $t$- and $F$-tests in small samples.
+:::
+
+## What the Assumptions Imply
+
+Under A1–A6, for each $i$:
+
+$$Y_i \mid X_i \;\sim\; N\!\left(\beta_0 + \beta_1 X_i,\; \sigma^2\right)$$
+
+```{r assumptions-plot, echo=FALSE, fig.height=3.6, fig.width=10}
+set.seed(7)
+xs  <- c(20, 40, 60)
+pts <- do.call(rbind, lapply(xs, function(xv)
+  data.frame(x = xv, y = 5 + 0.4*xv + rnorm(60, 0, 4))))
+ggplot(pts, aes(x = x, y = y)) +
+  geom_point(color = iscal_burgundy, alpha = 0.35, size = 1.8) +
+  geom_abline(intercept = 5, slope = 0.4, color = iscal_blue, linewidth = 1.1) +
+  annotate("segment",
+           x = xs, xend = xs,
+           y = 5+0.4*xs-12, yend = 5+0.4*xs+12,
+           color = iscal_dark_burgundy, linewidth = 4, alpha = 0.2) +
+  annotate("text",
+           x = xs, y = 5+0.4*xs+14,
+           label = paste0("X = ", xs),
+           color = iscal_dark_burgundy, size = 4, fontface = "bold") +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "Homoscedasticity: equal spread σ² at every X",
+       x = "X", y = "Y",
+       caption = "The conditional distribution of Y|X is Normal with the same variance at every X value")
+```
+
+# OLS Estimation {background-color="#8B1538"}
+
+## The Idea: Minimise Squared Residuals
+
+Given data $(x_1,y_1),\ldots,(x_n,y_n)$, the **fitted line** is:
+
+$$\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i$$
+
+The **residual** for observation $i$:
+
+$$e_i = Y_i - \hat{Y}_i$$
+
+. . .
+
+::: {.callout-important}
+**Ordinary Least Squares (OLS):** choose $\hat{\beta}_0$ and $\hat{\beta}_1$ to minimise the **Sum of Squared Residuals**:
+
+$$\min_{\hat{\beta}_0,\,\hat{\beta}_1} \;\text{SSR} = \sum_{i=1}^{n} e_i^2 = \sum_{i=1}^{n}(Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i)^2$$
+:::
+
+Why **square** the residuals? To penalise large errors symmetrically and to obtain a unique closed-form solution.
+
+## OLS: Visualising the Criterion
+
+```{r ols-resid-plot, echo=FALSE, fig.height=4.0, fig.width=10}
+set.seed(3)
+n  <- 12
+xv <- seq(5, 55, length.out = n)
+yv <- 4 + 0.5*xv + rnorm(n, 0, 5)
+b1 <- cov(xv, yv) / var(xv)
+b0 <- mean(yv) - b1*mean(xv)
+yh <- b0 + b1*xv
+df_ols <- data.frame(x = xv, y = yv, yhat = yh)
+ggplot(df_ols, aes(x = x, y = y)) +
+  geom_segment(aes(xend = x, yend = yhat),
+               color = iscal_dark_burgundy, linewidth = 0.9, linetype = "dashed") +
+  geom_abline(intercept = b0, slope = b1,
+              color = iscal_blue, linewidth = 1.2) +
+  geom_point(color = iscal_burgundy, size = 3.5) +
+  geom_point(aes(y = yhat), shape = 4, color = iscal_blue, size = 3, stroke = 1.5) +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "OLS minimises the sum of squared residuals (dashed segments)",
+       x = "X", y = "Y",
+       caption = "● = observed Yi    ✕ = fitted Ŷi    dashed = residual ei = Yi − Ŷi")
+```
+
+## OLS Formulas
+
+Taking partial derivatives of SSR and setting them to zero yields:
+
+$$\boxed{\hat{\beta}_1 = \frac{\displaystyle\sum_{i=1}^{n}(X_i - \bar{X})(Y_i - \bar{Y})}{\displaystyle\sum_{i=1}^{n}(X_i - \bar{X})^2} = \frac{S_{XY}}{S_{XX}}}$$
+
+$$\boxed{\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\,\bar{X}}$$
+
+. . .
+
+where $S_{XY} = \sum(X_i-\bar{X})(Y_i-\bar{Y})$ and $S_{XX} = \sum(X_i-\bar{X})^2$.
+
+. . .
+
+::: {.callout-note}
+Since $\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$, the fitted line **always passes through** $(\bar{X},\,\bar{Y})$.
+:::
+
+## Deriving the OLS Formulas
+
+Minimise $\text{SSR} = \sum(Y_i - \beta_0 - \beta_1 X_i)^2$:
+
+$$\frac{\partial\,\text{SSR}}{\partial \beta_0} = -2\sum(Y_i - \beta_0 - \beta_1 X_i) = 0$$
+
+$$\frac{\partial\,\text{SSR}}{\partial \beta_1} = -2\sum X_i(Y_i - \beta_0 - \beta_1 X_i) = 0$$
+
+These are the **Normal Equations**:
+
+$$\sum Y_i = n\hat{\beta}_0 + \hat{\beta}_1 \sum X_i$$
+
+$$\sum X_i Y_i = \hat{\beta}_0 \sum X_i + \hat{\beta}_1 \sum X_i^2$$
+
+Solving simultaneously gives the formulas on the previous slide.
+
+# Interpreting the Estimates {background-color="#8B1538"}
+
+## Interpreting $\hat{\beta}_1$ and $\hat{\beta}_0$
+
+The **estimated regression equation**:
+
+$$\hat{Y}_i = \hat{\beta}_0 + \hat{\beta}_1 X_i$$
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+**Slope $\hat{\beta}_1$:**
+
+For every **one-unit increase** in $X$, the estimated mean of $Y$ changes by $\hat{\beta}_1$ units.
+
+This is a **marginal effect** — the effect of $X$ on the average $Y$.
+:::
+::: {.column width="50%"}
+**Intercept $\hat{\beta}_0$:**
+
+The estimated mean of $Y$ when $X = 0$.
+
+Often not directly meaningful — $X = 0$ may be outside the range of the data.
+:::
+:::
+
+. . .
+
+::: {.callout-important}
+$\hat{\beta}_1$ and $\hat{\beta}_0$ describe **averages** in the sample. They are estimates of the unknown population parameters $\beta_1$ and $\beta_0$.
+:::
+
+## R Demo: Fitting and Interpreting
+
+**Hypothetical data:** 20 observations on sales revenue ($X$) and operating profit ($Y$), both in m.u.
+
+```{r demo-fit, echo=TRUE}
+set.seed(5)
+n       <- 20
+revenue <- round(runif(n, 100, 500), 0)
+profit  <- round(10 + 0.18 * revenue + rnorm(n, 0, 15), 1)
+
+model <- lm(profit ~ revenue)
+coef(model)
+```
+
+. . .
+
+**Interpretation:**
+
+- $\hat{\beta}_1 = `r round(coef(model)[2], 3)`$: each additional m.u. of revenue is associated with an average increase of `r round(coef(model)[2], 3)` m.u. in operating profit.
+- $\hat{\beta}_0 = `r round(coef(model)[1], 2)`$: baseline estimate when revenue = 0 (extrapolation — interpret cautiously).
+
+## R Demo: The Full Summary
+
+```{r demo-summary, echo=TRUE}
+summary(model)
+```
+
+## R Demo: The Fitted Line
+
+```{r demo-plot, echo=FALSE, fig.height=4.0, fig.width=9}
+df_demo <- data.frame(revenue = revenue, profit = profit)
+ggplot(df_demo, aes(x = revenue, y = profit)) +
+  geom_point(color = iscal_burgundy, size = 3) +
+  geom_smooth(method = "lm", se = TRUE, color = iscal_blue,
+              fill = iscal_blue, alpha = 0.12, linewidth = 1.1) +
+  annotate("text",
+           x    = min(revenue) + 10,
+           y    = max(profit) - 2,
+           label = paste0("Profit\u0302 = ", round(coef(model)[1], 1),
+                          " + ", round(coef(model)[2], 3), " \u00d7 Revenue"),
+           color = iscal_blue, size = 4.5, hjust = 0) +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "Operating Profit vs. Sales Revenue (hypothetical data)",
+       x = "Sales Revenue (m.u.)", y = "Operating Profit (m.u.)")
+```
+
+## Properties of OLS Residuals
+
+These **algebraic identities** hold for every OLS fit:
+
+$$\sum_{i=1}^{n} e_i = 0$$
+
+$$\sum_{i=1}^{n} X_i\, e_i = 0$$
+
+$$\sum_{i=1}^{n} \hat{Y}_i\, e_i = 0$$
+
+. . .
+
+They are not assumptions — they are guaranteed by the OLS first-order conditions. The residuals automatically sum to zero and are uncorrelated with $X$ and with $\hat{Y}$.
+
+## Estimating the Error Variance
+
+The population error variance $\sigma^2$ is unknown. We estimate it with:
+
+$$\hat{\sigma}^2 = s^2 = \frac{\text{SSR}}{n - 2} = \frac{\displaystyle\sum_{i=1}^{n} e_i^2}{n - 2}$$
+
+We divide by $n - 2$ because estimating $\hat{\beta}_0$ and $\hat{\beta}_1$ **uses up two degrees of freedom**.
+
+. . .
+
+The **standard error of the regression** (residual standard error in R):
+
+$$s = \sqrt{\frac{\displaystyle\sum e_i^2}{n-2}}$$
+
+In R: `summary(model)$sigma`
+
+# Lecture Summary {background-color="#8B1538"}
+
+## Key Takeaways — Lecture 8
+
+::: {.incremental}
+- **Regression** models the **conditional mean** of $Y$ given $X$ — a statement about averages, not individual values.
+- The **SLR model** is $Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$; the error $\varepsilon_i$ is unavoidable.
+- The **Gauss–Markov assumptions** (A1–A5) ensure OLS is BLUE; adding normality (A6) enables exact inference.
+- **OLS** chooses $\hat{\beta}_0$ and $\hat{\beta}_1$ to minimise $\sum e_i^2$:
+$$\hat{\beta}_1 = \frac{S_{XY}}{S_{XX}}, \qquad \hat{\beta}_0 = \bar{Y} - \hat{\beta}_1\bar{X}$$
+- $\hat{\beta}_1$ is the **marginal effect**: estimated change in mean $Y$ per unit increase in $X$.
+- In R: `lm(Y ~ X)` fits the model; `summary()` shows coefficients, standard errors, and $p$-values.
+:::
+
+## Looking Ahead
+
+**Lecture 9 — Part II: Goodness of Fit, OLS Properties & Introduction to MLR**
+
+::: {.incremental}
+- How well does the line fit? — $R^2$ and the variance decomposition
+- Why trust OLS? — The Gauss–Markov theorem
+- What if we leave out a relevant variable? — **Omitted Variable Bias**
+- Adding more regressors — **Multiple Linear Regression**
+:::
+
+::: {.callout-note}
+**Reference:** Newbold Ch. 11.4–11.5, Ch. 12.1–12.3.
+:::

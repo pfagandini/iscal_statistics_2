@@ -15,10 +15,12 @@ title: "Material"
 3. [Point Estimation](slides/03_point_estimation.qmd) [PDF](PDF/03_point_estimation.pdf)
 4. [Interval Estimation I](slides/04_interval_estimation_part1.qmd) [PDF](PDF/04_interval_estimation_part1.pdf)
 5. [Interval Estimation II](slides/05_interval_estimation_part2.qmd) [PDF](PDF/05_interval_estimation_part2.pdf)
-6. [Hypothesis Testing Introduction](slides/06_hypothesis_testing_intro.qmd) [PDF](PDF/06_hypothesis_testing_intro.pdf)
-7. [Hypothesis Testing *p-value*](slides/07_hypothesis_testing_pvalue.qmd) [PDF](PDF/07_hypothesis_testing_pvalue.pdf)
-8. [Hypothesis Testing for $\mu$ and $\sigma^2$](slides/08_hypothesis_testing_tests_mean_var.qmd) [PDF](PDF/08_hypothesis_testing_tests_mean_var.pdf)
-9. [Hypothesis Testing mean difference](slides/09_hypothesis_testing_mean_diff.qmd) [PDF](PDF/09_hypothesis_testing_mean_diff.pdf)
+6. [Hypothesis Testing Introduction, *p-value*](slides/06_hypothesis_testing_intro_pvalue.qmd) [PDF](PDF/06_hypothesis_testing_intro_pvalue.pdf)
+7. [Hypothesis Testing for $\mu$ and $\sigma^2$, mean difference](slides/07_hypothesis_testing_tests_mean_var_mdiff.qmd) [PDF](PDF/07_hypothesis_testing_tests_mean_var_mdiff.pdf)
+8. [Linear Regression Introduction](slides/08_Linear_Regression_Introduction_OLS.qmd) [PDF](PDF/08_Linear_Regression_Introduction_OLS.pdf)
+9. [Linear Regression Fit](slides/09_Linear_Regression_GoodnessOfFit_MLR.qmd) [PDF](PDF/09_Linear_Regression_GoodnessOfFit_MLR.pdf)
+10. [Linear Regression Inference](slides/10_Linear_Regression_Inference_Validation.qmd) [PDF](PDF/10_Linear_Regression_Inference_Validation.pdf)
+
 
 ## Exercises
 

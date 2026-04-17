@@ -1,0 +1,548 @@
+---
+title: "The Linear Regression Model"
+subtitle: "Part II — Goodness of Fit, OLS Properties & Multiple Regression"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format:
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    embed-resources: true
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: false
+    math:
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Linear Regression: Goodness of Fit & MLR"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.65em
+    progress: true
+    width: 1280
+    height: 720
+editor: source
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+iscal_burgundy      <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_gray          <- "#333333"
+iscal_light         <- "#F5F5F5"
+iscal_blue          <- "#0066CC"
+
+# Running example data (same seed as Part I)
+set.seed(5)
+n       <- 20
+revenue <- round(runif(n, 100, 500), 0)
+profit  <- round(10 + 0.18 * revenue + rnorm(n, 0, 15), 1)
+model   <- lm(profit ~ revenue)
+```
+
+# Goodness of Fit {background-color="#8B1538"}
+
+## Lecture Overview
+
+**Lecture 9 — Goodness of Fit, OLS Properties & Multiple Regression**
+
+::: {.incremental}
+- How well does the fitted line describe the data? — the variance decomposition
+- The coefficient of determination $R^2$
+- The correlation coefficient $r$ and its link to $R^2$
+- Why OLS is a good estimator — the Gauss–Markov theorem (BLUE)
+- What goes wrong when we omit a relevant variable — **Omitted Variable Bias**
+- Extending to **Multiple Linear Regression (MLR)**
+- Interpreting MLR coefficients
+- Adjusted $R^2$
+:::
+
+::: {.callout-note}
+**Reference:** Newbold Ch. 11.4–11.5 (SLR fit), Ch. 12.1–12.3 (MLR).
+:::
+
+# The Variance Decomposition {background-color="#8B1538"}
+
+## Decomposing Total Variation
+
+For each observation $i$, we can write:
+
+$$Y_i - \bar{Y} = \underbrace{(\hat{Y}_i - \bar{Y})}_{\text{explained by regression}} + \underbrace{(Y_i - \hat{Y}_i)}_{\text{residual}}$$
+
+. . .
+
+Squaring and summing over all observations:
+
+$$\underbrace{\sum(Y_i - \bar{Y})^2}_{\text{SST}} = \underbrace{\sum(\hat{Y}_i - \bar{Y})^2}_{\text{SSE}} + \underbrace{\sum(Y_i - \hat{Y}_i)^2}_{\text{SSR}}$$
+
+. . .
+
+| Term | Name | Meaning |
+|------|------|---------|
+| **SST** | Total Sum of Squares | Total variation in $Y$ |
+| **SSE** | Explained Sum of Squares | Variation **explained** by $X$ |
+| **SSR** | Residual Sum of Squares | Variation **not explained** by $X$ |
+
+## Visualising the Decomposition
+
+```{r anova-decomp, echo=FALSE, fig.height=4.2, fig.width=10}
+set.seed(5)
+n2  <- 10
+x2  <- seq(10, 50, length.out = n2)
+y2  <- 5 + 0.6*x2 + rnorm(n2, 0, 4)
+m2  <- lm(y2 ~ x2)
+yh2 <- fitted(m2)
+ymn <- mean(y2)
+i0  <- 6   # highlight one point
+
+df2 <- data.frame(x = x2, y = y2, yhat = yh2)
+ggplot(df2, aes(x = x, y = y)) +
+  geom_hline(yintercept = ymn, linetype = "dotted", color = iscal_gray, linewidth = 0.9) +
+  geom_abline(intercept = coef(m2)[1], slope = coef(m2)[2],
+              color = iscal_blue, linewidth = 1.1) +
+  geom_point(color = iscal_burgundy, size = 2.8, alpha = 0.5) +
+  # SST segment: yi to y-bar
+  geom_segment(data = df2[i0,],
+               aes(x=x, xend=x, y=ymn, yend=y),
+               color = iscal_burgundy, linewidth = 1.5,
+               arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
+  # SSE segment: y-bar to y-hat
+  geom_segment(data = df2[i0,],
+               aes(x=x+1.2, xend=x+1.2, y=ymn, yend=yhat),
+               color = iscal_blue, linewidth = 1.5,
+               arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
+  # SSR segment: y-hat to y
+  geom_segment(data = df2[i0,],
+               aes(x=x-1.2, xend=x-1.2, y=yhat, yend=y),
+               color = iscal_dark_burgundy, linewidth = 1.5,
+               arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
+  annotate("text", x=x2[i0]+3.5, y=(y2[i0]+ymn)/2,
+           label="SST", color=iscal_burgundy, size=4.5, fontface="bold") +
+  annotate("text", x=x2[i0]+5.5, y=(yh2[i0]+ymn)/2,
+           label="SSE", color=iscal_blue, size=4.5, fontface="bold") +
+  annotate("text", x=x2[i0]-5, y=(y2[i0]+yh2[i0])/2,
+           label="SSR", color=iscal_dark_burgundy, size=4.5, fontface="bold") +
+  annotate("text", x=min(x2), y=ymn+0.8,
+           label=expression(bar(Y)), color=iscal_gray, size=4.5) +
+  theme_minimal(base_size = 13) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(title = "SST = SSE + SSR  (for one highlighted observation)",
+       x = "X", y = "Y")
+```
+
+# The Coefficient of Determination $R^2$ {background-color="#8B1538"}
+
+## Definition of $R^2$
+
+The **coefficient of determination** measures the **proportion of total variation in $Y$ explained by the regression**:
+
+$$\boxed{R^2 = \frac{\text{SSE}}{\text{SST}} = 1 - \frac{\text{SSR}}{\text{SST}}}$$
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+**Key properties:**
+
+- $0 \leq R^2 \leq 1$
+- $R^2 = 0$: $X$ explains nothing
+- $R^2 = 1$: perfect fit (all points on the line)
+- $R^2$ is **unit-free**
+:::
+::: {.column width="50%"}
+**Interpretation:**
+
+> "The model explains $R^2 \times 100\%$ of the total variation in $Y$."
+
+An $R^2$ of 0.82 means 82% of the variation in $Y$ is explained by $X$ via the estimated model.
+:::
+:::
+
+## $R^2$: Examples Across Different Fits
+
+```{r r2-examples, echo=FALSE, fig.height=3.6, fig.width=11}
+set.seed(21)
+n3 <- 40
+xb <- runif(n3, 0, 10)
+make_d <- function(noise, lab) {
+  yb  <- 2 + 1.5*xb + rnorm(n3, 0, noise)
+  m   <- lm(yb ~ xb)
+  r2  <- round(summary(m)$r.squared, 2)
+  data.frame(x=xb, y=yb,
+             lab = paste0(lab, "  (R² = ", r2, ")"))
+}
+d_all3 <- rbind(make_d(0.5, "Strong fit"),
+                make_d(2.5, "Moderate fit"),
+                make_d(6.0, "Weak fit"))
+ggplot(d_all3, aes(x = x, y = y)) +
+  geom_point(color = iscal_burgundy, alpha = 0.7, size = 2) +
+  geom_smooth(method = "lm", se = FALSE, color = iscal_blue, linewidth = 1) +
+  facet_wrap(~lab, scales = "free_y") +
+  theme_minimal(base_size = 13) +
+  theme(strip.text = element_text(color = iscal_burgundy, face = "bold"),
+        panel.grid.minor = element_blank()) +
+  labs(x = "X", y = "Y")
+```
+
+## Caution: $R^2$ Has Limits
+
+::: {.incremental}
+- A **high $R^2$** does not mean the model is correctly specified — it could be driven by a single outlier, or by a spurious correlation.
+- A **low $R^2$** does not mean the regression is useless — in many economic applications, $R^2 = 0.3$ is perfectly reasonable.
+- **Adding more regressors always increases $R^2$** — even if those variables are irrelevant. This is why MLR uses **Adjusted $R^2$** instead (covered shortly).
+- **$R^2$ does not measure causality.** Two unrelated trending variables can produce $R^2 \approx 1$ (spurious regression).
+:::
+
+. . .
+
+::: {.callout-important}
+Use $R^2$ as **one** indicator of fit — always combine it with the scatter diagram, residual plots, and hypothesis tests.
+:::
+
+## The Correlation Coefficient $r$
+
+In SLR, the sample **Pearson correlation coefficient** is:
+
+$$r = \frac{\displaystyle\sum(X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\displaystyle\sum(X_i-\bar{X})^2 \cdot \sum(Y_i-\bar{Y})^2}} = \frac{S_{XY}}{\sqrt{S_{XX} \cdot S_{YY}}}$$
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+**Properties:**
+
+- $-1 \leq r \leq 1$
+- Sign of $r$ = sign of $\hat{\beta}_1$
+- $r = 0$: no linear association
+- $|r| = 1$: perfect linear fit
+:::
+::: {.column width="50%"}
+**Link to $R^2$:**
+
+In SLR (one regressor):
+$$R^2 = r^2$$
+
+The coefficient of determination equals the square of the correlation coefficient.
+:::
+:::
+
+. . .
+
+::: {.callout-note}
+**Correlation $\neq$ causation.** A high $|r|$ tells us the variables move together linearly — nothing more.
+:::
+
+## $R^2$ and $r$ in R
+
+Continuing with our running example:
+
+```{r r2-r, echo=TRUE}
+# R-squared
+summary(model)$r.squared
+
+# Correlation coefficient
+cor(revenue, profit)
+
+# Verify: r² = R²
+cor(revenue, profit)^2
+```
+
+. . .
+
+**Interpretation:** the model explains `r round(summary(model)$r.squared * 100, 1)`% of the total variation in operating profit. The correlation between revenue and profit is $r = `r round(cor(revenue, profit), 3)`$ — a `r ifelse(cor(revenue, profit) > 0.7, "strong positive", "moderate positive")` linear association.
+
+# Why Trust OLS? {background-color="#8B1538"}
+
+## The Gauss–Markov Theorem
+
+::: {.callout-important}
+**Gauss–Markov Theorem:**
+
+Under assumptions A1–A5, the OLS estimators $\hat{\beta}_0$ and $\hat{\beta}_1$ are **BLUE**:
+
+- **B**est: minimum variance among all linear unbiased estimators
+- **L**inear: linear functions of $Y_1, \ldots, Y_n$
+- **U**nbiased: $E[\hat{\beta}_j] = \beta_j$ for $j = 0, 1$
+- **E**stimator
+:::
+
+. . .
+
+**Unbiasedness** means: if we repeated our sample many times, the average of the $\hat{\beta}_j$ values would equal the true $\beta_j$.
+
+**Minimum variance** means: no other linear unbiased estimator can be more precise than OLS.
+
+## Unbiasedness of OLS
+
+We can show that, under A1–A5:
+
+$$E[\hat{\beta}_1] = \beta_1, \qquad E[\hat{\beta}_0] = \beta_0$$
+
+The intuition: OLS residuals are constructed to be uncorrelated with $X$ (by the first-order conditions), so the error term $\varepsilon_i$ does not "leak" into the estimates on average.
+
+. . .
+
+**Variance of the slope estimator:**
+
+$$\text{Var}(\hat{\beta}_1) = \frac{\sigma^2}{S_{XX}} = \frac{\sigma^2}{\displaystyle\sum(X_i-\bar{X})^2}$$
+
+::: {.callout-note}
+The larger $S_{XX}$ (more spread in $X$), the **smaller** the variance of $\hat{\beta}_1$ — more variation in $X$ helps us pin down the slope more precisely.
+:::
+
+# Omitted Variable Bias {background-color="#8B1538"}
+
+## What Happens When We Omit a Variable?
+
+Suppose the **true model** is:
+
+$$Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \varepsilon_i$$
+
+But we estimate **only**:
+
+$$Y_i = \alpha_0 + \alpha_1 X_{1i} + u_i \qquad \text{(misspecified model)}$$
+
+. . .
+
+What is $E[\hat{\alpha}_1]$? One can show:
+
+$$E[\hat{\alpha}_1] = \beta_1 + \beta_2 \cdot \frac{S_{X_1 X_2}}{S_{X_1 X_1}}$$
+
+. . .
+
+::: {.callout-important}
+**Omitted Variable Bias (OVB):**
+
+$$\text{Bias} = E[\hat{\alpha}_1] - \beta_1 = \beta_2 \cdot \frac{S_{X_1 X_2}}{S_{X_1 X_1}}$$
+
+OLS is **biased and inconsistent** whenever $\beta_2 \neq 0$ **and** $X_1$ and $X_2$ are correlated.
+:::
+
+## OVB: When Is It a Problem?
+
+The bias is non-zero only when **both** conditions hold:
+
+::: {.columns}
+::: {.column width="50%"}
+**Condition 1:**
+$\beta_2 \neq 0$
+
+The omitted variable $X_2$ actually affects $Y$.
+
+*(If it doesn't matter, leaving it out is harmless.)*
+:::
+::: {.column width="50%"}
+**Condition 2:**
+$S_{X_1 X_2} \neq 0$
+
+The omitted variable $X_2$ is correlated with the included $X_1$.
+
+*(If they are uncorrelated, OLS for $\beta_1$ is still unbiased.)*
+:::
+:::
+
+. . .
+
+**Direction of bias:** $\text{sign}(\text{Bias}) = \text{sign}(\beta_2) \times \text{sign}(r_{X_1 X_2})$
+
+| $\beta_2$ | $\text{Corr}(X_1, X_2)$ | Bias direction |
+|-----------|--------------------------|----------------|
+| $+$ | $+$ | Upward (overestimate $\beta_1$) |
+| $+$ | $-$ | Downward |
+| $-$ | $+$ | Downward |
+| $-$ | $-$ | Upward |
+
+## OVB: A Motivating Example
+
+**Hypothetical scenario:** We want to estimate the effect of advertising spend $X_1$ on sales $Y$.
+
+The true model includes firm size $X_2$ (larger firms spend more **and** sell more).
+
+::: {.fragment}
+```{r ovb-demo, echo=TRUE}
+set.seed(7)
+n       <- 100
+size    <- rnorm(n, 50, 10)        # firm size (omitted variable)
+adspend <- 5 + 0.4*size + rnorm(n, 0, 5)   # corr. with size
+sales   <- 20 + 2*adspend + 3*size + rnorm(n, 0, 10)  # true: β1=2, β2=3
+
+# Short regression (omitting size)
+coef(lm(sales ~ adspend))["adspend"]
+
+# Long regression (including size)
+coef(lm(sales ~ adspend + size))["adspend"]
+```
+:::
+
+. . .
+
+The short regression overestimates the true effect of advertising ($\beta_1 = 2$) because it absorbs the positive effect of firm size. **This is why we need MLR.**
+
+# Multiple Linear Regression {background-color="#8B1538"}
+
+## The MLR Model
+
+The **Multiple Linear Regression (MLR)** model with $k$ regressors:
+
+$$\boxed{Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \cdots + \beta_k X_{ki} + \varepsilon_i}$$
+
+. . .
+
+| Symbol | Meaning |
+|--------|---------|
+| $\beta_0$ | Intercept — mean of $Y$ when all $X_j = 0$ |
+| $\beta_j$ | **Partial slope** — change in mean $Y$ per unit increase in $X_j$, holding all other regressors constant (*ceteris paribus*) |
+| $\varepsilon_i$ | Error term — same assumptions as SLR |
+
+. . .
+
+::: {.callout-note}
+The key word in MLR is ***ceteris paribus*** ("all else equal"). $\hat{\beta}_j$ measures the effect of $X_j$ **after controlling for** all other included variables.
+:::
+
+## OLS in MLR
+
+OLS still minimises $\text{SSR} = \sum e_i^2$, but now in $k+1$ dimensions.
+
+The normal equations become a system of $k+1$ linear equations — solved efficiently in matrix form:
+
+$$\hat{\boldsymbol{\beta}} = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{y}$$
+
+::: {.callout-note}
+You do not need to solve this by hand. In R, `lm(Y ~ X1 + X2 + ... + Xk)` handles everything. The interpretation principles are the same as SLR — only the *ceteris paribus* qualifier changes.
+:::
+
+. . .
+
+The Gauss–Markov theorem extends to MLR: under A1–A5 (appropriately generalised), OLS is still **BLUE**.
+
+## MLR: Interpreting Coefficients
+
+**Hypothetical example:** Explain operating profit ($Y$) using both sales revenue ($X_1$) and number of employees ($X_2$).
+
+```{r mlr-fit, echo=TRUE}
+set.seed(5)
+n          <- 30
+revenue2   <- round(runif(n, 100, 500), 0)
+employees  <- round(runif(n, 10, 80), 0)
+profit2    <- round(5 + 0.15*revenue2 + 0.8*employees + rnorm(n, 0, 12), 1)
+
+mlr_model  <- lm(profit2 ~ revenue2 + employees)
+coef(mlr_model)
+```
+
+. . .
+
+**Interpretation:**
+
+- $\hat{\beta}_1 = `r round(coef(mlr_model)[2], 3)`$: one additional m.u. of revenue is associated with `r round(coef(mlr_model)[2], 3)` m.u. more profit, **holding number of employees constant**.
+- $\hat{\beta}_2 = `r round(coef(mlr_model)[3], 3)`$: one additional employee is associated with `r round(coef(mlr_model)[3], 3)` m.u. more profit, **holding revenue constant**.
+
+## MLR: Full Summary
+
+```{r mlr-summary, echo=TRUE}
+summary(mlr_model)
+```
+
+# Adjusted $R^2$ {background-color="#8B1538"}
+
+## Why Regular $R^2$ Is Not Enough in MLR
+
+In MLR, adding any variable — **even a completely irrelevant one** — will weakly increase $R^2$:
+
+$$R^2 = 1 - \frac{\text{SSR}}{\text{SST}} \quad \Rightarrow \quad R^2 \text{ can only increase as we add regressors}$$
+
+. . .
+
+**This makes $R^2$ unreliable for comparing models with different numbers of regressors.**
+
+. . .
+
+::: {.callout-note}
+**Quick demonstration:**
+
+```{r r2-inflation, echo=TRUE}
+set.seed(9)
+noise <- rnorm(30)          # completely irrelevant variable
+m1 <- lm(profit2 ~ revenue2 + employees)
+m2 <- lm(profit2 ~ revenue2 + employees + noise)
+c(R2_without_noise = summary(m1)$r.squared,
+  R2_with_noise    = summary(m2)$r.squared)
+```
+:::
+
+## Adjusted $R^2$
+
+The **adjusted $R^2$** penalises for the number of regressors $k$:
+
+$$\boxed{\bar{R}^2 = 1 - \frac{\text{SSR}/(n-k-1)}{\text{SST}/(n-1)} = 1 - (1-R^2)\frac{n-1}{n-k-1}}$$
+
+. . .
+
+::: {.columns}
+::: {.column width="50%"}
+**Properties:**
+
+- $\bar{R}^2 \leq R^2$ always
+- $\bar{R}^2$ **can decrease** when an irrelevant variable is added
+- $\bar{R}^2$ can be negative (very poor fit)
+:::
+::: {.column width="50%"}
+**Use $\bar{R}^2$ when:**
+
+- Comparing models with **different numbers** of regressors
+- Deciding whether adding a new variable improves the model
+:::
+:::
+
+## Adjusted $R^2$: Demo
+
+```{r adj-r2, echo=TRUE}
+set.seed(9)
+noise <- rnorm(30)
+m1 <- lm(profit2 ~ revenue2 + employees)
+m2 <- lm(profit2 ~ revenue2 + employees + noise)
+
+c(Adj_R2_without = summary(m1)$adj.r.squared,
+  Adj_R2_with    = summary(m2)$adj.r.squared)
+```
+
+. . .
+
+Adding the irrelevant `noise` variable **increases** plain $R^2$ but **decreases** $\bar{R}^2$ — correctly signalling that the additional variable does not improve the model.
+
+# Lecture Summary {background-color="#8B1538"}
+
+## Key Takeaways — Lecture 9
+
+::: {.incremental}
+- **SST = SSE + SSR**: total variation = explained + unexplained.
+- **$R^2 = \text{SSE}/\text{SST}$**: proportion of variation explained by the model. In SLR, $R^2 = r^2$.
+- The **Gauss–Markov theorem** guarantees OLS is BLUE under A1–A5.
+- **OVB** arises when a relevant variable is omitted **and** it is correlated with included regressors — OLS becomes biased and inconsistent.
+- **MLR** includes multiple regressors. Each $\hat{\beta}_j$ is a **partial effect** — the effect of $X_j$ holding all other variables constant.
+- **Adjusted $R^2$** penalises for extra regressors — use it to compare models of different sizes.
+:::
+
+## Looking Ahead
+
+**Lecture 10 — Part III: Statistical Inference & Model Validation**
+
+::: {.incremental}
+- Are the estimated coefficients statistically different from zero? — **$t$-tests**
+- Is the model as a whole significant? — the **$F$-test** (ANOVA table)
+- Confidence intervals for $\beta_j$
+- Checking the classical assumptions — residual diagnostics
+- Normality, homoscedasticity, autocorrelation, and multicollinearity
+:::
+
+::: {.callout-note}
+**Reference:** Newbold Ch. 11.6–11.8 (inference), Ch. 12.4–12.6 (MLR inference and diagnostics).
+:::

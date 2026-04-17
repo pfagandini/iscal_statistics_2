@@ -98,5 +98,41 @@
   },
   "exercises/05_Hypothesis_Testing.qmd": {
     "05_Hypothesis_Testing.html": "f9c51d73"
+  },
+  "slides/10_Linear_Regression_Introduction_OLS.qmd": {
+    "10_Linear_Regression_Introduction_OLS.html": "8fdac3bb"
+  },
+  "slides/11_Linear_Regression_GoodnessOfFit_MLR.qmd": {
+    "11_Linear_Regression_GoodnessOfFit_MLR.html": "25df8ba8"
+  },
+  "slides/12_Linear_Regression_Inference_Validation.qmd": {
+    "12_Linear_Regression_Inference_Validation.html": "22b30945"
+  },
+  "slides/06a_hypothesis_testing_intro.qmd": {
+    "06a_hypothesis_testing_intro.html": "0b76d4f9"
+  },
+  "slides/06b_hypothesis_testing_pvalue.qmd": {
+    "06b_hypothesis_testing_pvalue.html": "654686bd"
+  },
+  "slides/07a_hypothesis_testing_tests_mean_var.qmd": {
+    "07a_hypothesis_testing_tests_mean_var.html": "9fce50a6"
+  },
+  "slides/07b_hypothesis_testing_mean_diff.qmd": {
+    "07b_hypothesis_testing_mean_diff.html": "b5e3acd9"
+  },
+  "slides/08_Linear_Regression_Introduction_OLS.qmd": {
+    "08_Linear_Regression_Introduction_OLS.html": "d48ec827"
+  },
+  "slides/09_Linear_Regression_GoodnessOfFit_MLR.qmd": {
+    "09_Linear_Regression_GoodnessOfFit_MLR.html": "6b08fa10"
+  },
+  "slides/10_Linear_Regression_Inference_Validation.qmd": {
+    "10_Linear_Regression_Inference_Validation.html": "777fb810"
+  },
+  "slides/06_hypothesis_testing_intro_pvalue.qmd": {
+    "06_hypothesis_testing_intro_pvalue.html": "b2b136c8"
+  },
+  "slides/07_hypothesis_testing_tests_mean_var_mdiff.qmd": {
+    "07_hypothesis_testing_tests_mean_var_mdiff.html": "47609bbd"
   }
 }
