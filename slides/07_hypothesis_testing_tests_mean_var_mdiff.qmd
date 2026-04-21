@@ -100,7 +100,7 @@ $$Z_0 = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}} \underset{\text{under } H_0}{\
 
 The nominal capacity of a soft drink bottle is 330 mL. The filling process has $\sigma = 5$ mL. A random sample of $n = 40$ bottles has $\bar{x} = 328.2$ mL. At $\alpha = 0.05$, test whether the mean capacity differs from 330 mL.
 
-## Example 1: Solution
+## Example 1: Solution {.smaller}
 
 **Hypotheses**: $H_0: \mu = 330$ vs. $H_1: \mu \neq 330$ (two-tailed)
 
@@ -149,7 +149,7 @@ An engineer suspects that the mean weight of packages produced by a machine exce
 
 Test at $\alpha = 0.05$.
 
-## Example 2: Solution
+## Example 2: Solution {.smaller}
 
 **Hypotheses**: $H_0: \mu \leq 100$ vs. $H_1: \mu > 100$ (right-tailed)
 
@@ -224,7 +224,7 @@ x <- seq(0, 40, length = 500)
 y <- dchisq(x, df = 10)
 
 plot(x, y, type = "l", lwd = 2, col = iscal_dark_gray,
-     xlab = "", ylab = "", yaxt = "n",
+     xlab = "", ylab = "", yaxt = "n", xaxt = "n",
      main = expression("Two-tailed critical region for " * chi^2 * " (df = 10)"),
      cex.main = 1)
 
@@ -239,7 +239,8 @@ polygon(c(x_right, rev(x_right)), c(dchisq(x_right, 10), rep(0, 100)),
         col = adjustcolor(iscal_burgundy, alpha = 0.3), border = NA)
 
 abline(v = c(q_low, q_high), lty = 2, col = iscal_burgundy, lwd = 2)
-axis(1, at = c(round(q_low, 2), 10, round(q_high, 2)),
+axis(1, labels = FALSE)
+axis(1, at = c(q_low, 10, q_high),
      labels = c(expression(q[1-alpha/2]), expression(nu), expression(q[alpha/2])))
 text(1.5, 0.06, expression(alpha/2), col = iscal_burgundy, cex = 1)
 text(25, 0.02, expression(alpha/2), col = iscal_burgundy, cex = 1)
@@ -253,7 +254,7 @@ Consider the test: $H_0: \sigma^2 \geq 10$ vs. $H_1: \sigma^2 < 10$, with $n = 2
 
 Test at $\alpha = 0.05$.
 
-## Example 3: Solution
+## Example 3: Solution {.smaller}
 
 **Test statistic:**
 $$Q_0 = \frac{(n-1)S'^2}{\sigma_0^2} \underset{\text{under } H_0}{\sim} \chi^2_{(19)}$$
@@ -296,7 +297,7 @@ a) Test $H_0: \mu = 100$ vs. $H_1: \mu \neq 100$ at $\alpha = 0.01$.
 
 b) Compute the $p$-value.
 
-## Practice Exercise A: Solution
+## Practice Exercise A: Solution {.smaller}
 
 **a)** $Z_0 = \frac{\bar{X} - 100}{2.5/\sqrt{16}} \sim N(0,1)$
 
@@ -322,7 +323,7 @@ From a Normal population, a sample of $n = 15$ observations gives $s' = 5.04$.
 
 Test $H_0: \sigma^2 = 16$ vs. $H_1: \sigma^2 \neq 16$ at $\alpha = 0.10$.
 
-## Practice Exercise B: Solution
+## Practice Exercise B: Solution {.smaller}
 
 **Test statistic:**
 $$Q_0 = \frac{(n-1)S'^2}{\sigma_0^2} \sim \chi^2_{(14)}$$
@@ -495,7 +496,7 @@ A company wants to compare the average monthly sales (in thousands of euros) of 
 
 Test $H_0: \mu_1 \leq \mu_2$ vs. $H_1: \mu_1 > \mu_2$ at $\alpha = 0.05$.
 
-## Example 5: Solution
+## Example 5: Solution {.smaller}
 
 **Hypotheses**: $H_0: \mu_1 - \mu_2 \leq 0$ vs. $H_1: \mu_1 - \mu_2 > 0$ (right-tailed)
 
@@ -649,7 +650,7 @@ Since $1.62 < 1.645$, we **do not reject $H_0$**.
 
 In a survey of $n = 400$ voters, 224 favor a certain policy. Test whether the true proportion differs from 50% at $\alpha = 0.01$.
 
-## Example 8: Solution
+## Example 8: Solution {.smaller}
 
 $H_0: p = 0.50$ vs. $H_1: p \neq 0.50$ (two-tailed)
 
@@ -673,7 +674,7 @@ At $\alpha = 0.05$ we **would** reject. At $\alpha = 0.01$ we do **not**.
 
 # Comprehensive Summary
 
-## All Test Cases — Complete Reference
+## All Test Cases — Complete Reference {.smaller}
 
 ::: {style="font-size: 0.70em;"}
 
@@ -760,7 +761,7 @@ Two factories produce steel rods. Quality control takes samples:
 
 Assume Normal populations with equal variances. Test whether Factory 1 produces longer rods at $\alpha = 0.05$.
 
-## Exercise D: Solution
+## Exercise D: Solution {.smaller}
 
 $H_0: \mu_1 - \mu_2 \leq 0$ vs. $H_1: \mu_1 - \mu_2 > 0$ (right-tailed)
 
