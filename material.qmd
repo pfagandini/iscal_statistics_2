@@ -29,3 +29,4 @@ title: "Material"
 3. [Point Estimation](exercises/03_Point_Estimation.qmd)
 4. [Interval Estimation](exercises/04_Interval_Estimation.qmd)
 5. [Hypothesis Testing](exercises/05_Hypothesis_Testing.qmd)
+6. [Linear Regression](exercises/06_Linear_Regression.qmd)

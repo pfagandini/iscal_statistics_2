@@ -90,12 +90,12 @@ opts <- c(
 cat(longmcq(opts))
 ```
 
-::: {.callout-note collapse="true" appearance="simple"}
+<!-- ::: {.callout-note collapse="true" appearance="simple"}
 ## Hint
 Pay attention to the **sign** of the slope coefficient and what it implies for the direction of the correlation. Also recall that $R = \pm\sqrt{R^2}$, with the sign matching the sign of $\hat{\beta}_1$.
-:::
+:::-->
 
-:::
+::: 
 
 ---
 
@@ -154,13 +154,13 @@ opts <- c(
 )
 cat(longmcq(opts))
 ```
-
+<!-- 
 ::: {.callout-note collapse="true" appearance="simple"}
 ## Hint
 A correlation of $-0.75$ indicates a **moderate-to-strong negative** linear association. The regression line should have a **negative slope**, and the points should be dispersed around it (not perfectly aligned).
-:::
+:::-->
 
-:::
+::: 
 
 ---
 
@@ -219,11 +219,11 @@ opts <- c(
 )
 cat(longmcq(opts))
 ```
-
+<!-- 
 ::: {.callout-note collapse="true" appearance="simple"}
 ## Hint
 Recall that $R = \hat{\beta}_1 \cdot \dfrac{s_X}{s_Y}$. Since standard deviations are always positive, the sign of $R$ must equal the sign of $\hat{\beta}_1$.
-:::
+::: -->
 
 :::
 
@@ -245,10 +245,10 @@ opts <- c(
 cat(longmcq(opts))
 ```
 
-::: {.callout-note collapse="true" appearance="simple"}
+<!-- ::: {.callout-note collapse="true" appearance="simple"}
 ## Hint
 $R^2$ measures the proportion of total variation in $y$ **explained** by the regression. A low $R^2$ means the **unexplained** portion (residual) exceeds the explained portion. Note that options a) and b) may be true in specific contexts but are not general or precise definitions of what a low $R^2$ implies.
-:::
+::: -->
 
 :::
 
@@ -282,10 +282,10 @@ cat(longmcq(opts))
 
 **8.iii.** `r torf(FALSE)` A reliable estimate of household income when the years of schooling equals 25 can be determined, and that estimate is €2,817.
 
-::: {.callout-note collapse="true" appearance="simple"}
+<!-- ::: {.callout-note collapse="true" appearance="simple"}
 ## Hint for 8.iii
 Consider two issues: (1) Is 25 years within the range of observed values in the sample? (2) Is $R^2 = 0.594$ high enough to consider the model's predictions reliable?
-:::
+::: -->
 
 :::
 
@@ -407,10 +407,10 @@ A Multiple Linear Regression Model was estimated to analyse the relationship bet
 
 **10.iii.** `r torf(TRUE)` Using an appropriate hypothesis test, we can conclude that the estimated regression model is globally significant.
 
-::: {.callout-note collapse="true" appearance="simple"}
+<!-- ::: {.callout-note collapse="true" appearance="simple"}
 ## Note on 10.iii
 Observe, however, that while the model is globally significant, neither regressor is individually significant when tested alone ($p = 0.023$ and $p = 0.181$). This apparent contradiction may signal multicollinearity or another violation of the classical assumptions.
-:::
+::: -->
 
 :::
 
@@ -533,7 +533,7 @@ $$\widehat{\text{GrossIncome}}_{\text{Lisbon}} = -7.872 + 5.532\,\text{EduLevel}
 
 ---
 
-::: {.callout-tip collapse="true"}
+<!-- ::: {.callout-tip collapse="true"}
 ## Answer Key
 
 | Exercise | Answers |
@@ -551,11 +551,11 @@ $$\widehat{\text{GrossIncome}}_{\text{Lisbon}} = -7.872 + 5.532\,\text{EduLevel}
 | **11** | i) T; ii) T; iii) c); iv) ≈€198.33 |
 | **12** | See 12.a above; b) F; c) T; d) T |
 
-:::
+::: -->
 
 ---
 
-::: {.callout-warning collapse="true"}
+<!-- ::: {.callout-warning collapse="true"}
 ## Instructor Notes
 
 **Exercise 1 — Sign of the correlation coefficient:**
@@ -566,4 +566,4 @@ The final answer key in the source lists 5.b as **False**, but the solution text
 
 **Exercise 12 — R² vs. R²\_adj:**
 Statement 12.b cites 96.4% — this matches $R = 0.964$ (i.e., $R^2 = 0.929$, not 96.4%). The 96.4% figure corresponds to the Multiple R, not $R^2$. The correct goodness-of-fit measure is the Adjusted $R^2 = 92.5\%$. The statement is False because it misidentifies the indicator.
-:::
+::: -->
