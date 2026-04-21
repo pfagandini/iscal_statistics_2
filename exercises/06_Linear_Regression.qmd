@@ -1,0 +1,569 @@
+---
+title: "Statistics II – Linear Regression: Exercises"
+format: 
+  html:
+    css: [Exercises/webex.css]
+    include-after-body: [Exercises/webex.js]
+    embed-resources: true
+lang: en
+editor: source
+page-layout: full
+code-annotations: none
+---
+
+```{r setup, include = FALSE, echo = FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(webexercises)
+```
+
+<!-- Style Block for nice tables -->
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  thead tr:first-child th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #999;
+  }
+
+  thead tr:nth-child(2) th {
+    background-color: #e0e0e0;
+    border-bottom: 2px solid #999;
+  }
+
+  tbody td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  tbody tr:nth-child(even) td {
+    background-color: #f9f9f9;
+  }
+
+  th, td {
+    vertical-align: middle;
+  }
+
+  .solution-box {
+    background-color: #f8f4f4;
+    border-left: 4px solid #8B1538;
+    padding: 10px 16px;
+    margin-top: 8px;
+    border-radius: 4px;
+  }
+</style>
+
+<!-- End Style Block -->
+
+This is a set of exercises prepared by the teaching faculty for **Statistics II**, covering the **Linear Regression Model** (simple and multiple linear regression, OLS estimation, goodness of fit, and inference), from the Lisbon Accounting and Business School (ISCAL–IPL).
+
+The workbook consists of **multiple-choice** questions — for which you must select the correct option and **justify** your choice — and **True (T) or False (F)** questions — where you must indicate the logical value of each statement and **justify** your answer adequately.
+
+> *Exercises adapted from: Custódio, S.G., Morgado, A.J., Ferreira, T. & Delgado, S. (2023). Análise de Regressão Linear: Exercícios de Aplicação Geral e Económica. Sílabas & Desafios. All data in this workbook are hypothetical.*
+
+---
+
+## Exercises
+
+### Exercise 1
+
+::: {.webex-check .webex-box}
+
+Consider the following information from a Simple Linear Regression study:
+
+$$\hat{y} = 4.3 - 1.25x \qquad R^2 = 0.97$$
+
+Which of the following statements is **true**?
+
+```{r, results='asis'}
+opts <- c(
+  "R = 0.985.",
+  "98.5% of the total variation in the dependent variable y can be explained by its linear relationship with x.",
+  answer = "For each unit increase in x, there is an estimated average decrease of 1.25 units in y.",
+  "There is a strong positive correlation between the variables."
+)
+cat(longmcq(opts))
+```
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Hint
+Pay attention to the **sign** of the slope coefficient and what it implies for the direction of the correlation. Also recall that $R = \pm\sqrt{R^2}$, with the sign matching the sign of $\hat{\beta}_1$.
+:::
+
+:::
+
+---
+
+### Exercise 2
+
+::: {.webex-check .webex-box}
+
+In a study examining whether grades in Mathematics ($x$) and Statistics ($y$) are linearly related, the grades of 10 randomly selected students were recorded. The data yielded the following fitted model and correlation coefficient:
+
+$$\hat{y} = 3.9 + 0.72x \qquad R = 0.94$$
+
+**2.a.** `r torf(TRUE)` The linear correlation is strong and positive.
+
+---
+
+**2.b.** `r torf(FALSE)` For each additional grade point obtained in Statistics, there is an average increase of 0.72 grade points in Mathematics.
+
+---
+
+**2.c.** `r torf(TRUE)` For each additional grade point obtained in Mathematics, there is an average increase of 0.72 grade points in Statistics.
+
+---
+
+**2.d.** `r torf(TRUE)` In the absence of a Mathematics grade (i.e., $x = 0$), the estimated average Statistics grade is 3.9.
+
+---
+
+**2.e.** `r torf(FALSE)` In the absence of a Statistics grade (i.e., $y = 0$), the estimated average Mathematics grade is 3.9.
+
+---
+
+**2.f.** `r torf(TRUE)` João and Maria obtained grades of 12 and 4, respectively, in Mathematics. Having missed the Statistics assessment, their estimated Statistics grades are **12.54** and **6.78**, respectively.
+
+---
+
+**2.g.** `r torf(TRUE)` Any prediction made in **2.f** is considered a good estimate.
+
+:::
+
+---
+
+### Exercise 3
+
+::: {.webex-check .webex-box}
+
+Two scatter diagrams, (A) and (B), are presented. Identify which diagram best corresponds to the statement:
+
+> *"The sample correlation coefficient is approximately $-0.75$."*
+
+```{r, results='asis'}
+opts <- c(
+  "Diagram (A) — a scatter plot showing a moderate negative trend.",
+  answer = "Diagram (B) — a scatter plot showing a moderate negative trend with a clearly downward-sloping regression line.",
+  "Neither diagram; a correlation of $-0.75$ implies a perfect negative association.",
+  "Both diagrams are equally consistent with the stated correlation."
+)
+cat(longmcq(opts))
+```
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Hint
+A correlation of $-0.75$ indicates a **moderate-to-strong negative** linear association. The regression line should have a **negative slope**, and the points should be dispersed around it (not perfectly aligned).
+:::
+
+:::
+
+---
+
+### Exercise 4
+
+::: {.webex-check .webex-box}
+
+Consider the following fitted regression line, where $y$ represents box-office revenue and $x$ represents the production budget of a film (both in millions of euros):
+
+$$\hat{y} = 2 + 1.5x \qquad R = 0.50$$
+
+**4.a.** `r torf(FALSE)` The intercept of the model is meaningful in the context of this problem.
+
+---
+
+**4.b.** `r torf(TRUE)` $\hat{\beta}_1$ is the estimated regression coefficient that supports the following statement: *"For each additional million euros spent on a film's production, its revenue increases on average by 1.5 million euros."*
+
+---
+
+**4.c.** `r torf(FALSE)` The expected revenue of a film with a production budget of €5 million is €9.5 million, and this is a credible prediction.
+
+:::
+
+---
+
+### Exercise 5
+
+::: {.webex-check .webex-box}
+
+The Statistics test grade can be estimated from the effective grade obtained, using OLS estimation. The following fitted model was obtained:
+
+$$\widehat{\text{Test}} = -1.068 + 1.101 \cdot \text{Grade} \qquad R = 0.9013$$
+
+**5.a.** `r torf(FALSE)` Approximately 90.13% of the total variability in the Statistics test grade is explained by the regression model.
+
+---
+
+**5.b.** `r torf(TRUE)` The expected Statistics test grade of a student with an effective grade of 13.2 is approximately **13.5**.
+
+:::
+
+---
+
+### Exercise 6
+
+::: {.webex-check .webex-box}
+
+Assume a linear relationship between $x$ and $y$. A sample linear correlation coefficient of $R = -0.30$ was obtained. Which of the following statements is **true**?
+
+```{r, results='asis'}
+opts <- c(
+  "There is no correlation whatsoever between the variables.",
+  answer = "The regression coefficient $\\hat{\\beta}_1$ is negative.",
+  "The variance of $x$ is negative.",
+  "There is no causal relationship between the variables $x$ and $y$."
+)
+cat(longmcq(opts))
+```
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Hint
+Recall that $R = \hat{\beta}_1 \cdot \dfrac{s_X}{s_Y}$. Since standard deviations are always positive, the sign of $R$ must equal the sign of $\hat{\beta}_1$.
+:::
+
+:::
+
+---
+
+### Exercise 7
+
+::: {.webex-check .webex-box}
+
+A **low value** of the coefficient of determination, $R^2$, means that:
+
+```{r, results='asis'}
+opts <- c(
+  "The regression model may still be used for prediction, albeit with caution.",
+  "The linear association between the variables is weak.",
+  answer = "The proportion of total variability in $y$ that is **not** explained by the regression line exceeds the proportion that is explained.",
+  "None of the above statements are correct."
+)
+cat(longmcq(opts))
+```
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Hint
+$R^2$ measures the proportion of total variation in $y$ **explained** by the regression. A low $R^2$ means the **unexplained** portion (residual) exceeds the explained portion. Note that options a) and b) may be true in specific contexts but are not general or precise definitions of what a low $R^2$ implies.
+:::
+
+:::
+
+---
+
+### Exercise 8
+
+::: {.webex-check .webex-box}
+
+Data on household income (in units of 100 €) and years of schooling were recorded for 25 households. The following results were obtained:
+
+$$\hat{y} = -6.065 + 1.369x \qquad R^2 = 0.594$$
+
+**8.i.** The linear correlation coefficient is:
+
+```{r, results='asis'}
+opts <- c(
+  "Negative",
+  answer = "Positive",
+  "Zero",
+  "Cannot be determined"
+)
+cat(longmcq(opts))
+```
+
+---
+
+**8.ii.** `r torf(FALSE)` On average, an additional year of schooling is associated with an increase of €1.369 in household income.
+
+---
+
+**8.iii.** `r torf(FALSE)` A reliable estimate of household income when the years of schooling equals 25 can be determined, and that estimate is €2,817.
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Hint for 8.iii
+Consider two issues: (1) Is 25 years within the range of observed values in the sample? (2) Is $R^2 = 0.594$ high enough to consider the model's predictions reliable?
+:::
+
+:::
+
+---
+
+### Exercise 9
+
+::: {.webex-check .webex-box}
+
+A Multiple Linear Regression Model (MLR) was estimated to analyse the relationship between student grades (in points, the dependent variable) and the average number of daily hours of study (*hours*) and daily complete meals (*meals*). A random sample of 45 students was used. The results are summarised below.
+
+**Regression Statistics**
+
+| Statistic | Value |
+|:--|--:|
+| Multiple R | 0.7859 |
+| R Square | 0.6177 |
+| Adjusted R Square | 0.5995 |
+| Standard Error | 2.6578 |
+| Observations | 45 |
+
+**ANOVA**
+
+| Source | df | SS | MS | F | Sig. F |
+|:--|--:|--:|--:|--:|--:|
+| Regression | 2 | 479.316 | 239.658 | 33.927 | 1.70×10⁻⁹ |
+| Residual | 42 | 296.684 | 7.064 | | |
+| Total | 44 | 776.000 | | | |
+
+**Coefficients**
+
+| Variable | Coefficient | Std. Error | t Stat | p-value |
+|:--|--:|--:|--:|--:|
+| Intercept | 3.5733 | 1.0656 | 3.353 | 0.0017 |
+| meals | 1.7632 | 0.2952 | 5.973 | 4.34×10⁻⁷ |
+| hours | 2.5489 | 0.7279 | 3.501 | 0.0011 |
+
+---
+
+**9.i.** In this study, the sample type is classified as:
+
+```{r, results='asis'}
+opts <- c(
+  answer = "Cross-sectional data",
+  "Panel data",
+  "Time series data",
+  "None of the above"
+)
+cat(longmcq(opts))
+```
+
+---
+
+**9.ii.** `r torf(TRUE)` From the OLS estimation, it can be concluded that the expected change in a student's grade when they eat one additional complete meal per day is **1.76 points** (holding all else constant).
+
+---
+
+**9.iii.** The change referred to in **9.ii** is a:
+
+```{r, results='asis'}
+opts <- c(
+  "Rate of change",
+  "Percentage change",
+  answer = "Marginal change",
+  "None of the above"
+)
+cat(longmcq(opts))
+```
+
+---
+
+**9.iv.** `r torf(TRUE)` For any conventional significance level $\alpha$, the variable *meals* significantly affects the dependent variable.
+
+---
+
+**9.v.** `r torf(FALSE)` 78.6% of the variation in student grades is jointly explained by the two regressors.
+
+:::
+
+---
+
+### Exercise 10
+
+::: {.webex-check .webex-box}
+
+A Multiple Linear Regression Model was estimated to analyse the relationship between consumption ($Y$), income ($X_1$), and interest rate ($X_2$). The following output was obtained.
+
+**Model Summary**
+
+| R | R Square | Adjusted R Square | Std. Error |
+|--:|--:|--:|--:|
+| 0.984 | 0.969 | 0.961 | 2.101 |
+
+**ANOVA**
+
+| Source | SS | df | MS | F | Sig. |
+|:--|--:|--:|--:|--:|--:|
+| Regression | 1092.879 | 2 | 546.439 | 123.829 | .000 |
+| Residual | 35.303 | 8 | 4.413 | | |
+| Total | 1128.182 | 10 | | | |
+
+**Coefficients**
+
+| Variable | B | Std. Error | Beta (Std.) | t | Sig. |
+|:--|--:|--:|--:|--:|--:|
+| (Constant) | 10.604 | 56.115 | — | 0.189 | .855 |
+| Income ($X_1$) | 0.371 | 0.133 | 0.652 | 2.797 | .023 |
+| Interest rate ($X_2$) | −164.996 | 112.724 | −0.341 | −1.464 | .181 |
+
+---
+
+**10.i.** `r torf(TRUE)` The estimated model is: $\hat{Y}_i = 10.604 + 0.371\,X_{1i} - 164.996\,X_{2i}$.
+
+---
+
+**10.ii.** `r torf(TRUE)` Using an appropriate indicator, we can conclude that the quality of the estimated model is very good, since only 3.1% of the total variability in $Y$ is not jointly explained by the regressors.
+
+---
+
+**10.iii.** `r torf(TRUE)` Using an appropriate hypothesis test, we can conclude that the estimated regression model is globally significant.
+
+::: {.callout-note collapse="true" appearance="simple"}
+## Note on 10.iii
+Observe, however, that while the model is globally significant, neither regressor is individually significant when tested alone ($p = 0.023$ and $p = 0.181$). This apparent contradiction may signal multicollinearity or another violation of the classical assumptions.
+:::
+
+:::
+
+---
+
+### Exercise 11
+
+::: {.webex-check .webex-box}
+
+A Multiple Linear Regression Model was estimated to analyse the monthly internet expenditure ($\widehat{\text{Gastos\_int}}$, in €) of 149 randomly selected individuals, using the following specification:
+
+$$\text{Gastos\_int}_i = \beta_0 + \beta_1\,\text{rend}_i + \beta_2\,\text{contas}_i + \beta_3\,\text{age}_i + \varepsilon_i$$
+
+where:
+
+- $\text{Gastos\_int}$: monthly internet expenditure (€);
+- $\text{rend}$: individual's monthly income (€);
+- $\text{contas}$: number of active internet accounts;
+- $\text{age}$: individual's age (years).
+
+The OLS estimation produced the following output:
+
+**ANOVA**
+
+| Source | df | SS | MS | F | Sig. F |
+|:--|--:|--:|--:|--:|--:|
+| Regression | 3 | 4,026,353.027 | 1,342,118.0 | 15,825,970.7 | 0 |
+| Residual | 146 | 12.381 | 0.085 | | |
+| Total | 149 | 4,026,365.408 | | | |
+
+**Coefficients**
+
+| Variable | Coefficient | Std. Error | t Stat | p-value |
+|:--|--:|--:|--:|--:|
+| Intercept | −44.4746 | 0.0709 | −626.852 | 2.62×10⁻²⁵² |
+| Income | 0.1600 | 0.0000235 | 6823.294 | ≈0 |
+| Accounts | 0.5538 | 0.00835 | 66.292 | 7.15×10⁻¹¹¹ |
+| Age | 0.0254 | 0.000859 | 29.595 | 1.46×10⁻⁶³ |
+
+---
+
+**11.i.** `r torf(TRUE)` Interpreting the coefficient associated with *income*: if monthly income increases by €100, the estimated average internet expenditure increases by approximately **€16**, holding all else constant.
+
+---
+
+**11.ii.** `r torf(TRUE)` For any conventional significance level, the regressor *age* is statistically significant.
+
+---
+
+**11.iii.** The $p$-value associated with the global significance test (F-test) allows us to conclude that:
+
+```{r, results='asis'}
+opts <- c(
+  "The OLS-estimated model has high goodness of fit.",
+  "All regressors are individually significant.",
+  answer = "The estimated regression model is globally significant — i.e., at least one explanatory variable is relevant in explaining the expected behaviour of the dependent variable.",
+  "None of the above."
+)
+cat(longmcq(opts))
+```
+
+---
+
+**11.iv.** The point estimate of expected monthly internet expenditure for an individual earning €1,500, with 3 active accounts, aged 45 years, is:
+
+```{r, results='asis'}
+opts <- c(
+  answer = "Approximately €198.33",
+  "Approximately €125.35",
+  "Approximately €201.58",
+  "It is not possible to determine."
+)
+cat(longmcq(opts))
+```
+
+:::
+
+---
+
+### Exercise 12
+
+::: {.webex-check .webex-box}
+
+For respondents from the Lisbon region, a multiple linear regression model was estimated to predict gross income (in €) as a function of age, highest educational level attained, and the income level considered fair for the work performed (in €). The following output was obtained (partial):
+
+| | R | R Square | Adjusted R Square |
+|:--|--:|--:|--:|
+| Model | 0.964 | 0.929 | 0.925 |
+
+**Standardized Coefficients (Beta)**
+
+| Variable | B | Beta (Std.) | Sig. |
+|:--|--:|--:|--:|
+| (Constant) | −7.872 | — | — |
+| Educational level | 5.532 | 0.104 | 0.579 |
+| Fair income level | 0.688 | 0.952 | 0.000 |
+| Age | 0.391 | 0.029 | 0.912 |
+
+---
+
+**12.a.** Write down the estimated OLS model.
+
+::: {.solution-box}
+$$\widehat{\text{GrossIncome}}_{\text{Lisbon}} = -7.872 + 5.532\,\text{EduLevel} + 0.688\,\text{FairIncome} + 0.391\,\text{Age}$$
+:::
+
+---
+
+**12.b.** `r torf(FALSE)` Since the percentage of total data variability explained by the fitted model is approximately 96.4%, it can be concluded that the degree of linear association between the variables is high.
+
+---
+
+**12.c.** `r torf(TRUE)` The independent variable with the greatest contribution to explaining the dependent variable is *fair income level*, as it presents the highest absolute value of the standardized beta coefficient.
+
+---
+
+**12.d.** `r torf(TRUE)` Although the appropriate test confirms that the model is globally significant, two of the three regressors are individually non-significant.
+
+:::
+
+---
+
+::: {.callout-tip collapse="true"}
+## Answer Key
+
+| Exercise | Answers |
+|:--|:--|
+| **1** | c) |
+| **2** | a) T; b) F; c) T; d) T; e) F; f) T; g) T |
+| **3** | Diagram (B) |
+| **4** | a) F; b) T; c) F |
+| **5** | a) F; b) T |
+| **6** | b) |
+| **7** | c) |
+| **8** | i) Positive; ii) F; iii) F |
+| **9** | i) Cross-sectional; ii) T; iii) Marginal change; iv) T; v) F |
+| **10** | i) T; ii) T; iii) T |
+| **11** | i) T; ii) T; iii) c); iv) ≈€198.33 |
+| **12** | See 12.a above; b) F; c) T; d) T |
+
+:::
+
+---
+
+::: {.callout-warning collapse="true"}
+## Instructor Notes
+
+**Exercise 1 — Sign of the correlation coefficient:**
+The source workbook states $R = 0.985$. This is technically incomplete: since $\hat{\beta}_1 = -1.25 < 0$, the sample correlation coefficient must be **negative**, i.e., $R = -0.985$. Option a) as written in the source is therefore false on two grounds (sign and magnitude). Please clarify this with students.
+
+**Exercise 5 — Answer key discrepancy:**
+The final answer key in the source lists 5.b as **False**, but the solution text correctly concludes it is **True** ($\widehat{\text{Test}}(13.2) \approx 13.5$). The solution text is correct; the answer key contains a typographical error.
+
+**Exercise 12 — R² vs. R²\_adj:**
+Statement 12.b cites 96.4% — this matches $R = 0.964$ (i.e., $R^2 = 0.929$, not 96.4%). The 96.4% figure corresponds to the Multiple R, not $R^2$. The correct goodness-of-fit measure is the Adjusted $R^2 = 92.5\%$. The statement is False because it misidentifies the indicator.
+:::

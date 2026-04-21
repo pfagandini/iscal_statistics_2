@@ -134,5 +134,8 @@
   },
   "slides/07_hypothesis_testing_tests_mean_var_mdiff.qmd": {
     "07_hypothesis_testing_tests_mean_var_mdiff.html": "47609bbd"
+  },
+  "exercises/06_Linear_Regression.qmd": {
+    "06_Linear_Regression.html": "f765cf0e"
   }
 }
