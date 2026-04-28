@@ -231,6 +231,20 @@ predict(model, newcars, interval = "prediction")
 ```
 </details>
 
+## Plot the data vs prediction
+
+Make a plot where you can observe the data, and also the predicte values as the estimated regression line.
+
+<details>
+<summary>Hint</summary>
+
+```r
+plot(mtcars$wt, mtcars$mpg)
+abline(model, col = 'darkred', lwd = 2)
+```
+
+</details>
+
 # Cheat sheet {background-color="#8B1538"}
 
 ## Core commands {.smaller}

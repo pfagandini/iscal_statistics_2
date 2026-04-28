@@ -2747,8 +2747,8 @@
     "objectID": "slides/08_R_SLR.html#no-installation-needed",
     "href": "slides/08_R_SLR.html#no-installation-needed",
     "title": "Simple Linear Regression — Exercises",
-    "section": "",
-    "text": "Scan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
+    "section": "No installation needed",
+    "text": "No installation needed\nScan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
   },
   {
     "objectID": "slides/08_R_SLR.html#learning-goals",
@@ -2804,7 +2804,7 @@
     "href": "slides/08_R_SLR.html#fit-the-model",
     "title": "Simple Linear Regression — Exercises",
     "section": "Fit the model",
-    "text": "Fit the model\nFit a simple linear regression model using lm().\n\nTask\n\nEstimate the model: [ mpg_i = _0 + _1 wt_i + _i ]\nDisplay the regression summary.\n\n\n\nHint\n\nmodel &lt;- lm(mpg ~ wt, data = mtcars)\nsummary(model)"
+    "text": "Fit the model\nFit a simple linear regression model using lm().\nTask\n\nEstimate the model: [ mpg_i = _0 + _1 wt_i + _i ]\nDisplay the regression summary.\n\n\n\nHint\n\nmodel &lt;- lm(mpg ~ wt, data = mtcars)\nsummary(model)"
   },
   {
     "objectID": "slides/08_R_SLR.html#interpret-the-coefficients",
@@ -2832,7 +2832,7 @@
     "href": "slides/08_R_SLR.html#prediction",
     "title": "Simple Linear Regression — Exercises",
     "section": "Prediction",
-    "text": "Prediction\nPredict fuel efficiency for a car weighing 3.0 and 4.0 units.\n\nTask\n\nCreate a new data frame.\nUse predict() to obtain predicted values.\nTry both confidence intervals and prediction intervals.\n\n\n\nHint\n\nnewcars &lt;- data.frame(wt = c(3.0, 4.0))\npredict(model, newcars, interval = \"confidence\")\npredict(model, newcars, interval = \"prediction\")"
+    "text": "Prediction\nPredict fuel efficiency for a car weighing 3.0 and 4.0 units.\nTask\n\nCreate a new data frame.\nUse predict() to obtain predicted values.\nTry both confidence intervals and prediction intervals.\n\n\n\nHint\n\nnewcars &lt;- data.frame(wt = c(3.0, 4.0))\npredict(model, newcars, interval = \"confidence\")\npredict(model, newcars, interval = \"prediction\")"
   },
   {
     "objectID": "slides/08_R_SLR.html#core-commands",
