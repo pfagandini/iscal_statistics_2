@@ -2,32 +2,22 @@
 title: "Simple Linear Regression — Exercises"
 subtitle: "Hands-on practice with pre-loaded R data"
 author: "Paulo Fagandini"
-institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+institute: "Lisbon Accounting and Business School"
 format:
   revealjs:
-    theme:
-      - default
-      - iscal_theme.scss
-    embed-resources: true
+    theme: [default, iscal_theme.scss]
     logo: ../images/iscal_logo.svg
     slide-number: true
     incremental: true
-    math:
-      method: mathjax
     transition: slide
-    footer: "Statistics II — Linear Regression: Introduction & OLS"
-    from: markdown+emoji
+    footer: "Statistics II — Linear Regression"
     code-overflow: wrap
-    code-block-font-size: 0.65em
-    progress: true
     width: 1280
     height: 720
-editor: source
 execute:
   echo: true
   warning: false
   message: false
-engine: knitr
 ---
 
 ```{r setup, include=FALSE}

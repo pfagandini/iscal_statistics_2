@@ -2854,5 +2854,12 @@
     "title": "Simple Linear Regression — Exercises",
     "section": "Homework (not graded)",
     "text": "Homework (not graded)\nExplore the dataset, and find a suitable alternative regression to predict mpg. Compare both results, and we will discuss next lecture. You do not need to prepare slides or anything like that, it can be printed, or you can send it by email."
+  },
+  {
+    "objectID": "slides/08_R_SLR.html#plot-the-data-vs-prediction",
+    "href": "slides/08_R_SLR.html#plot-the-data-vs-prediction",
+    "title": "Simple Linear Regression — Exercises",
+    "section": "Plot the data vs prediction",
+    "text": "Plot the data vs prediction\nMake a plot where you can observe the data, and also the predicte values as the estimated regression line.\n\n\nHint\n\nplot(mtcars$wt, mtcars$mpg)\nabline(model, col = 'darkred', lwd = 2)"
   }
 ]
