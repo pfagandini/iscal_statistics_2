@@ -1,0 +1,309 @@
+---
+title: "Simple Linear Regression — Exercises"
+subtitle: "Hands-on practice with pre-loaded R data"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School — Polytechnic University of Lisbon"
+format:
+  revealjs:
+    theme:
+      - default
+      - iscal_theme.scss
+    embed-resources: true
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: true
+    math:
+      method: mathjax
+    transition: slide
+    footer: "Statistics II — Linear Regression: Introduction & OLS"
+    from: markdown+emoji
+    code-overflow: wrap
+    code-block-font-size: 0.65em
+    progress: true
+    width: 1280
+    height: 720
+editor: source
+execute:
+  echo: true
+  warning: false
+  message: false
+engine: knitr
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+library(qrcode)
+iscal_burgundy      <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_gray          <- "#333333"
+iscal_light         <- "#F5F5F5"
+iscal_blue          <- "#0066CC"
+```
+
+# Try it online {background-color="#8B1538"}
+
+## No installation needed {.smaller}
+
+Scan the QR code or open the link below to try Jupyter in your browser.
+
+[https://jupyter.org](https://jupyter.org)
+
+```{r jupyter-qr, echo=FALSE, fig.align='center', out.width='35%'}
+plot(qr_code("https://jupyter.org"))
+```
+
+# Simple Linear Regression {background-color="#8B1538"}
+
+## Learning goals {.smaller}
+
+- Fit a simple linear regression model in R.
+- Interpret the slope and intercept in context.
+- Use residual plots to check whether the model is reasonable.
+- Make predictions with `predict()`.
+- Practice reading `summary(lm())`.
+
+# Dataset {background-color="#8B1538"}
+
+## Pre-loaded R data {.smaller}
+
+We will use a pre-loaded dataset in R.
+
+For this class, we will use `mtcars`, because it is already available in base R and has numeric variables that work well for regression.
+
+```{r}
+data(mtcars)
+```
+
+## Inspecting: Observe
+
+```{r}
+head(mtcars)
+```
+
+## Summary Statistics
+
+```{r}
+summary(mtcars)
+```
+
+
+
+## Variables to use {.smaller}
+
+Question: how does car weight relate to fuel efficiency?
+
+We will study:
+
+- `mpg` as the response variable \(Y\).
+- `wt` as the explanatory variable \(X\).
+
+## Plot
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = iscal_burgundy, size = 2.5) +
+  theme_minimal(base_size = 14) +
+  theme(panel.grid.minor = element_blank()) +
+  labs(x = "Weight (1000 lbs)", y = "Miles per gallon")
+```
+
+# Exercise 1 {background-color="#8B1538"}
+
+## First look at the data {.smaller}
+
+1. Create a scatter plot of `mpg` against `wt`.
+2. Describe the direction of the relationship.
+3. Is it roughly linear?
+4. Are there any unusual observations?
+
+<details>
+<summary>Hint</summary>
+
+```r
+plot(mtcars$wt, mtcars$mpg)
+```
+
+</details>
+
+# Exercise 2 {background-color="#8B1538"}
+
+## Fit the model {.smaller}
+
+Fit a simple linear regression model using `lm()`.
+
+### Task
+
+- Estimate the model:
+  \[
+  mpg_i = \beta_0 + \beta_1 wt_i + \varepsilon_i
+  \]
+- Display the regression summary.
+
+<details>
+<summary>Hint</summary>
+
+```r
+model <- lm(mpg ~ wt, data = mtcars)
+summary(model)
+```
+
+</details>
+
+# Exercise 3 {background-color="#8B1538"}
+
+## Interpret the coefficients {.smaller}
+
+Answer the following:
+
+- What does the slope mean in this context?
+- What does the intercept mean?
+- Is the intercept meaningful here?
+
+<details>
+<summary>Hint</summary>
+
+```r
+coef(model)
+```
+
+</details>
+
+# Exercise 4 {background-color="#8B1538"}
+
+## Compare fitted and observed values {.smaller}
+
+1. Extract the fitted values.
+2. Extract the residuals.
+3. Check whether residuals sum to approximately zero.
+
+<details>
+<summary>Hint</summary>
+
+```r
+fitted(model)
+resid(model)
+sum(resid(model))
+```
+
+</details>
+
+# Exercise 5 {background-color="#8B1538"}
+
+## Diagnostic plots {.smaller}
+
+1. Plot residuals against fitted values.
+2. Create a normal Q-Q plot of residuals.
+3. Decide whether the homoscedasticity and normality assumptions look reasonable.
+
+<details>
+<summary>Hint</summary>
+
+```r
+par(mfrow = c(2, 2))
+plot(model)
+par(mfrow = c(1, 1))
+```
+</details>
+
+# Exercise 6 {background-color="#8B1538"}
+
+## Prediction {.smaller}
+
+Predict fuel efficiency for a car weighing 3.0 and 4.0 units.
+
+### Task
+
+- Create a new data frame.
+- Use `predict()` to obtain predicted values.
+- Try both confidence intervals and prediction intervals.
+
+<details>
+<summary>Hint</summary>
+
+```r
+newcars <- data.frame(wt = c(3.0, 4.0))
+predict(model, newcars, interval = "confidence")
+predict(model, newcars, interval = "prediction")
+```
+</details>
+
+# Cheat sheet {background-color="#8B1538"}
+
+## Core commands {.smaller}
+
+```r
+# load data
+data(mtcars)
+
+# plot
+plot(mtcars$wt, mtcars$mpg)
+
+# fit model
+model <- lm(mpg ~ wt, data = mtcars)
+
+# regression output
+summary(model)
+
+# coefficients
+coef(model)
+
+# fitted values
+fitted(model)
+
+# residuals
+resid(model)
+
+# predictions
+newcars <- data.frame(wt = c(3.0, 4.0))
+predict(model, newcars)
+predict(model, newcars, interval = "confidence")
+predict(model, newcars, interval = "prediction")
+```
+
+## Useful checks {.smaller}
+
+```r
+# residual plot
+plot(fitted(model), resid(model))
+abline(h = 0, lty = 2)
+
+# normality check
+qqnorm(resid(model))
+qqline(resid(model))
+
+# diagnostics
+par(mfrow = c(2, 2))
+plot(model)
+par(mfrow = c(1, 1))
+```
+
+## Homework (not graded)
+
+Explore the dataset, and find a suitable alternative regression to predict `mpg`. Compare both results, and we will discuss next lecture. You do not need to prepare slides or anything like that, it can be printed, or you can send it by email.
+
+<!-- # Teacher notes {background-color="#8B1538"}
+
+## Suggested answers {.smaller}
+
+- The slope should be negative: heavier cars tend to have lower miles per gallon.
+- The intercept is the predicted mpg when `wt = 0`, which is not realistic here.
+- Residual plots may show some deviation, but the model is a good first example of SLR.
+
+## Extension question {.smaller}
+
+- Ask students what would happen if we used `disp` instead of `wt`.
+- Ask whether the relationship might be non-linear.
+- Ask students to compare two regressions and discuss which is more informative.
+
+# Wrap-up {background-color="#8B1538"}
+
+## What students should remember {.smaller}
+
+- `lm()` fits the line.
+- `summary()` gives the main regression output.
+- The slope measures change in the mean of \(Y\) for a one-unit increase in \(X\).
+- Always inspect the scatter plot and the residual plots before trusting the model. -->

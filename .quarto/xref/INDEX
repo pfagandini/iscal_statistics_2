@@ -137,5 +137,11 @@
   },
   "exercises/06_Linear_Regression.qmd": {
     "06_Linear_Regression.html": "f765cf0e"
+  },
+  "slides/08_R_practical.qmd": {
+    "08_R_practical.html": "bd8cd8a5"
+  },
+  "slides/08_R_SLR.qmd": {
+    "08_R_SLR.html": "98b145ec"
   }
 }

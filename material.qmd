@@ -22,6 +22,12 @@ title: "Material"
 10. [Linear Regression Inference](slides/10_Linear_Regression_Inference_Validation.qmd) [PDF](PDF/10_Linear_Regression_Inference_Validation.pdf)
 
 
+## Applied Lectures R
+
+We are going to try to apply what we have been learing in R. You can access a platform that will let you play with it in [Jupyter](https://jupyter.org).
+
+1. [SLR](slides/08_R_SLR.qmd)
+
 ## Exercises
 
 1. [Central Limit Theorem](exercises/01_Central_Limit_Theorem.qmd)
