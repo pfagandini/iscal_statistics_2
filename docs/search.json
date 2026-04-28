@@ -2746,119 +2746,119 @@
   {
     "objectID": "slides/08_R_SLR.html#no-installation-needed",
     "href": "slides/08_R_SLR.html#no-installation-needed",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "No installation needed",
     "text": "No installation needed\nScan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
   },
   {
     "objectID": "slides/08_R_SLR.html#learning-goals",
     "href": "slides/08_R_SLR.html#learning-goals",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Learning goals",
     "text": "Learning goals\n\nFit a simple linear regression model in R.\nInterpret the slope and intercept in context.\nUse residual plots to check whether the model is reasonable.\nMake predictions with predict().\nPractice reading summary(lm())."
   },
   {
     "objectID": "slides/08_R_SLR.html#pre-loaded-r-data",
     "href": "slides/08_R_SLR.html#pre-loaded-r-data",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Pre-loaded R data",
     "text": "Pre-loaded R data\nWe will use a pre-loaded dataset in R.\nFor this class, we will use mtcars, because it is already available in base R and has numeric variables that work well for regression.\n\ndata(mtcars)"
   },
   {
     "objectID": "slides/08_R_SLR.html#inspecting-observe",
     "href": "slides/08_R_SLR.html#inspecting-observe",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Inspecting: Observe",
     "text": "Inspecting: Observe\n\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1"
   },
   {
     "objectID": "slides/08_R_SLR.html#summary-statistics",
     "href": "slides/08_R_SLR.html#summary-statistics",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Summary Statistics",
     "text": "Summary Statistics\n\nsummary(mtcars)\n\n      mpg             cyl             disp             hp       \n Min.   :10.40   Min.   :4.000   Min.   : 71.1   Min.   : 52.0  \n 1st Qu.:15.43   1st Qu.:4.000   1st Qu.:120.8   1st Qu.: 96.5  \n Median :19.20   Median :6.000   Median :196.3   Median :123.0  \n Mean   :20.09   Mean   :6.188   Mean   :230.7   Mean   :146.7  \n 3rd Qu.:22.80   3rd Qu.:8.000   3rd Qu.:326.0   3rd Qu.:180.0  \n Max.   :33.90   Max.   :8.000   Max.   :472.0   Max.   :335.0  \n      drat             wt             qsec             vs        \n Min.   :2.760   Min.   :1.513   Min.   :14.50   Min.   :0.0000  \n 1st Qu.:3.080   1st Qu.:2.581   1st Qu.:16.89   1st Qu.:0.0000  \n Median :3.695   Median :3.325   Median :17.71   Median :0.0000  \n Mean   :3.597   Mean   :3.217   Mean   :17.85   Mean   :0.4375  \n 3rd Qu.:3.920   3rd Qu.:3.610   3rd Qu.:18.90   3rd Qu.:1.0000  \n Max.   :4.930   Max.   :5.424   Max.   :22.90   Max.   :1.0000  \n       am              gear            carb      \n Min.   :0.0000   Min.   :3.000   Min.   :1.000  \n 1st Qu.:0.0000   1st Qu.:3.000   1st Qu.:2.000  \n Median :0.0000   Median :4.000   Median :2.000  \n Mean   :0.4062   Mean   :3.688   Mean   :2.812  \n 3rd Qu.:1.0000   3rd Qu.:4.000   3rd Qu.:4.000  \n Max.   :1.0000   Max.   :5.000   Max.   :8.000"
   },
   {
     "objectID": "slides/08_R_SLR.html#variables-to-use",
     "href": "slides/08_R_SLR.html#variables-to-use",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Variables to use",
     "text": "Variables to use\nQuestion: how does car weight relate to fuel efficiency?\nWe will study:\n\nmpg as the response variable (Y).\nwt as the explanatory variable (X)."
   },
   {
     "objectID": "slides/08_R_SLR.html#plot",
     "href": "slides/08_R_SLR.html#plot",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Plot",
     "text": "Plot\n\n\nCode\nggplot(mtcars, aes(x = wt, y = mpg)) +\n  geom_point(color = iscal_burgundy, size = 2.5) +\n  theme_minimal(base_size = 14) +\n  theme(panel.grid.minor = element_blank()) +\n  labs(x = \"Weight (1000 lbs)\", y = \"Miles per gallon\")"
   },
   {
     "objectID": "slides/08_R_SLR.html#first-look-at-the-data",
     "href": "slides/08_R_SLR.html#first-look-at-the-data",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "First look at the data",
     "text": "First look at the data\n\nCreate a scatter plot of mpg against wt.\nDescribe the direction of the relationship.\nIs it roughly linear?\nAre there any unusual observations?\n\n\n\nHint\n\nplot(mtcars$wt, mtcars$mpg)"
   },
   {
     "objectID": "slides/08_R_SLR.html#fit-the-model",
     "href": "slides/08_R_SLR.html#fit-the-model",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Fit the model",
     "text": "Fit the model\nFit a simple linear regression model using lm().\nTask\n\nEstimate the model: [ mpg_i = _0 + _1 wt_i + _i ]\nDisplay the regression summary.\n\n\n\nHint\n\nmodel &lt;- lm(mpg ~ wt, data = mtcars)\nsummary(model)"
   },
   {
     "objectID": "slides/08_R_SLR.html#interpret-the-coefficients",
     "href": "slides/08_R_SLR.html#interpret-the-coefficients",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Interpret the coefficients",
     "text": "Interpret the coefficients\nAnswer the following:\n\nWhat does the slope mean in this context?\nWhat does the intercept mean?\nIs the intercept meaningful here?\n\n\n\nHint\n\ncoef(model)"
   },
   {
     "objectID": "slides/08_R_SLR.html#compare-fitted-and-observed-values",
     "href": "slides/08_R_SLR.html#compare-fitted-and-observed-values",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Compare fitted and observed values",
     "text": "Compare fitted and observed values\n\nExtract the fitted values.\nExtract the residuals.\nCheck whether residuals sum to approximately zero.\n\n\n\nHint\n\nfitted(model)\nresid(model)\nsum(resid(model))"
   },
   {
     "objectID": "slides/08_R_SLR.html#diagnostic-plots",
     "href": "slides/08_R_SLR.html#diagnostic-plots",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Diagnostic plots",
     "text": "Diagnostic plots\n\nPlot residuals against fitted values.\nCreate a normal Q-Q plot of residuals.\nDecide whether the homoscedasticity and normality assumptions look reasonable.\n\n\n\nHint\n\npar(mfrow = c(2, 2))\nplot(model)\npar(mfrow = c(1, 1))"
   },
   {
     "objectID": "slides/08_R_SLR.html#prediction",
     "href": "slides/08_R_SLR.html#prediction",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Prediction",
     "text": "Prediction\nPredict fuel efficiency for a car weighing 3.0 and 4.0 units.\nTask\n\nCreate a new data frame.\nUse predict() to obtain predicted values.\nTry both confidence intervals and prediction intervals.\n\n\n\nHint\n\nnewcars &lt;- data.frame(wt = c(3.0, 4.0))\npredict(model, newcars, interval = \"confidence\")\npredict(model, newcars, interval = \"prediction\")"
   },
   {
     "objectID": "slides/08_R_SLR.html#core-commands",
     "href": "slides/08_R_SLR.html#core-commands",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Core commands",
     "text": "Core commands\n# load data\ndata(mtcars)\n\n# plot\nplot(mtcars$wt, mtcars$mpg)\n\n# fit model\nmodel &lt;- lm(mpg ~ wt, data = mtcars)\n\n# regression output\nsummary(model)\n\n# coefficients\ncoef(model)\n\n# fitted values\nfitted(model)\n\n# residuals\nresid(model)\n\n# predictions\nnewcars &lt;- data.frame(wt = c(3.0, 4.0))\npredict(model, newcars)\npredict(model, newcars, interval = \"confidence\")\npredict(model, newcars, interval = \"prediction\")"
   },
   {
     "objectID": "slides/08_R_SLR.html#useful-checks",
     "href": "slides/08_R_SLR.html#useful-checks",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Useful checks",
     "text": "Useful checks\n# residual plot\nplot(fitted(model), resid(model))\nabline(h = 0, lty = 2)\n\n# normality check\nqqnorm(resid(model))\nqqline(resid(model))\n\n# diagnostics\npar(mfrow = c(2, 2))\nplot(model)\npar(mfrow = c(1, 1))"
   },
   {
     "objectID": "slides/08_R_SLR.html#homework-not-graded",
     "href": "slides/08_R_SLR.html#homework-not-graded",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Homework (not graded)",
     "text": "Homework (not graded)\nExplore the dataset, and find a suitable alternative regression to predict mpg. Compare both results, and we will discuss next lecture. You do not need to prepare slides or anything like that, it can be printed, or you can send it by email."
   },
   {
     "objectID": "slides/08_R_SLR.html#plot-the-data-vs-prediction",
     "href": "slides/08_R_SLR.html#plot-the-data-vs-prediction",
-    "title": "Simple Linear Regression — Exercises",
+    "title": "SLR: Application in R",
     "section": "Plot the data vs prediction",
     "text": "Plot the data vs prediction\nMake a plot where you can observe the data, and also the predicte values as the estimated regression line.\n\n\nHint\n\nplot(mtcars$wt, mtcars$mpg)\nabline(model, col = 'darkred', lwd = 2)"
   }

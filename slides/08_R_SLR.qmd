@@ -1,5 +1,5 @@
 ---
-title: "Simple Linear Regression — Exercises"
+title: "SLR: Application in R"
 subtitle: "Hands-on practice with pre-loaded R data"
 author: "Paulo Fagandini"
 institute: "Lisbon Accounting and Business School"
