@@ -1642,7 +1642,7 @@
     "href": "slides/08_Linear_Regression_Introduction_OLS.html#anscombes-quartet",
     "title": "The Linear Regression Model",
     "section": "Anscombe’s Quartet",
-    "text": "Anscombe’s Quartet\n\n\n\\(\\hat{\\beta}_0 \\approx 3.0\\), \\(\\hat{\\beta}_1 \\approx 0.50\\), \\(R^2 \\approx 0.67\\) for all four — but only Dataset 1 is truly linear."
+    "text": "Anscombe’s Quartet\n\n\n\\(\\hat{\\beta}_0 \\approx 3.0\\), \\(\\hat{\\beta}_1 \\approx 0.50\\), \\(R^2 \\approx 0.67\\) for all four — but only Dataset 1 works."
   },
   {
     "objectID": "slides/08_Linear_Regression_Introduction_OLS.html#model-specification",
@@ -1719,7 +1719,7 @@
     "href": "slides/08_Linear_Regression_Introduction_OLS.html#r-demo-the-full-summary",
     "title": "The Linear Regression Model",
     "section": "R Demo: The Full Summary",
-    "text": "R Demo: The Full Summary\n\nsummary(model)\n\n\nCall:\nlm(formula = profit ~ revenue)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-29.169 -10.033  -3.226  11.177  27.235 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 21.82688    9.99146   2.185 0.042392 *  \nrevenue      0.14360    0.03113   4.612 0.000216 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.32 on 18 degrees of freedom\nMultiple R-squared:  0.5417,    Adjusted R-squared:  0.5162 \nF-statistic: 21.27 on 1 and 18 DF,  p-value: 0.0002164"
+    "text": "R Demo: The Full Summary\n\n\nsummary(model)\n\n\nCall:\nlm(formula = profit ~ revenue)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-29.169 -10.033  -3.226  11.177  27.235 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 21.82688    9.99146   2.185 0.042392 *  \nrevenue      0.14360    0.03113   4.612 0.000216 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 15.32 on 18 degrees of freedom\nMultiple R-squared:  0.5417,    Adjusted R-squared:  0.5162 \nF-statistic: 21.27 on 1 and 18 DF,  p-value: 0.0002164"
   },
   {
     "objectID": "slides/08_Linear_Regression_Introduction_OLS.html#r-demo-the-fitted-line",
@@ -1747,7 +1747,7 @@
     "href": "slides/08_Linear_Regression_Introduction_OLS.html#key-takeaways-lecture-8",
     "title": "The Linear Regression Model",
     "section": "Key Takeaways — Lecture 8",
-    "text": "Key Takeaways — Lecture 8\n\nRegression models the conditional mean of \\(Y\\) given \\(X\\) — a statement about averages, not individual values.\nThe SLR model is \\(Y_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i\\); the error \\(\\varepsilon_i\\) is unavoidable.\nThe Gauss–Markov assumptions (A1–A5) ensure OLS is BLUE; adding normality (A6) enables exact inference.\nOLS chooses \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) to minimise \\(\\sum e_i^2\\): \\[\\hat{\\beta}_1 = \\frac{S_{XY}}{S_{XX}}, \\qquad \\hat{\\beta}_0 = \\bar{Y} - \\hat{\\beta}_1\\bar{X}\\]\n\\(\\hat{\\beta}_1\\) is the marginal effect: estimated change in mean \\(Y\\) per unit increase in \\(X\\).\nIn R: lm(Y ~ X) fits the model; summary() shows coefficients, standard errors, and \\(p\\)-values."
+    "text": "Key Takeaways — Lecture 8\n\n\nRegression models the conditional mean of \\(Y\\) given \\(X\\) — a statement about averages, not individual values.\nThe SLR model is \\(Y_i = \\beta_0 + \\beta_1 X_i + \\varepsilon_i\\); the error \\(\\varepsilon_i\\) is unavoidable.\nThe Gauss–Markov assumptions (A1–A5) ensure OLS is BLUE; adding normality (A6) enables exact inference.\nOLS chooses \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) to minimise \\(\\sum e_i^2\\): \\[\\hat{\\beta}_1 = \\frac{S_{XY}}{S_{XX}}, \\qquad \\hat{\\beta}_0 = \\bar{Y} - \\hat{\\beta}_1\\bar{X}\\]\n\\(\\hat{\\beta}_1\\) is the marginal effect: estimated change in mean \\(Y\\) per unit increase in \\(X\\).\nIn R: lm(Y ~ X) fits the model; summary() shows coefficients, standard errors, and \\(p\\)-values."
   },
   {
     "objectID": "slides/08_Linear_Regression_Introduction_OLS.html#looking-ahead",

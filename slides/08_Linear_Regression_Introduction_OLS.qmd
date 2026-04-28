@@ -42,7 +42,7 @@ iscal_blue          <- "#0066CC"
 
 # The Linear Regression Model {background-color="#8B1538"}
 
-## Lecture Overview
+## Lecture Overview{.smaller}
 
 **Lecture 8 — Introduction & OLS Estimation**
 
@@ -63,7 +63,7 @@ iscal_blue          <- "#0066CC"
 
 # Why Regression? {background-color="#8B1538"}
 
-## Motivation
+## Motivation{.smaller}
 
 In many situations, we observe that variables tend to **move together**:
 
@@ -125,7 +125,7 @@ $$E[Y \mid X = x] = \beta_0 + \beta_1\,x$$
 We do **not** claim $X$ determines $Y$ exactly — only **on average**.
 :::
 
-## Types of Variables
+## Types of Variables {.smaller}
 
 | Role | Name | Also called | Symbol |
 |------|------|-------------|--------|
@@ -213,7 +213,7 @@ ggplot(d, aes(x = x, y = y)) +
 ```
 
 ::: {.fragment}
-$\hat{\beta}_0 \approx 3.0$,  $\hat{\beta}_1 \approx 0.50$,  $R^2 \approx 0.67$ for **all four** — but only Dataset 1 is truly linear.
+$\hat{\beta}_0 \approx 3.0$,  $\hat{\beta}_1 \approx 0.50$,  $R^2 \approx 0.67$ for **all four** — but only Dataset 1 works.
 :::
 
 # The SLR Model {background-color="#8B1538"}
@@ -316,7 +316,7 @@ ggplot(pts, aes(x = x, y = y)) +
 
 # OLS Estimation {background-color="#8B1538"}
 
-## The Idea: Minimise Squared Residuals
+## The Idea: Minimise Squared Residuals {.smaller}
 
 Given data $(x_1,y_1),\ldots,(x_n,y_n)$, the **fitted line** is:
 
@@ -361,7 +361,7 @@ ggplot(df_ols, aes(x = x, y = y)) +
        caption = "● = observed Yi    ✕ = fitted Ŷi    dashed = residual ei = Yi − Ŷi")
 ```
 
-## OLS Formulas
+## OLS Formulas {.smaller}
 
 Taking partial derivatives of SSR and setting them to zero yields:
 
@@ -397,7 +397,7 @@ Solving simultaneously gives the formulas on the previous slide.
 
 # Interpreting the Estimates {background-color="#8B1538"}
 
-## Interpreting $\hat{\beta}_1$ and $\hat{\beta}_0$
+## Interpreting $\hat{\beta}_1$ and $\hat{\beta}_0$ {.smaller}
 
 The **estimated regression equation**:
 
@@ -428,7 +428,7 @@ Often not directly meaningful — $X = 0$ may be outside the range of the data.
 $\hat{\beta}_1$ and $\hat{\beta}_0$ describe **averages** in the sample. They are estimates of the unknown population parameters $\beta_1$ and $\beta_0$.
 :::
 
-## R Demo: Fitting and Interpreting
+## R Demo: Fitting and Interpreting {.smaller}
 
 **Hypothetical data:** 20 observations on sales revenue ($X$) and operating profit ($Y$), both in m.u.
 
@@ -451,9 +451,11 @@ coef(model)
 
 ## R Demo: The Full Summary
 
+::: {style="font-size: 0.75em"}
 ```{r demo-summary, echo=TRUE}
 summary(model)
 ```
+:::
 
 ## R Demo: The Fitted Line
 
@@ -475,7 +477,7 @@ ggplot(df_demo, aes(x = revenue, y = profit)) +
        x = "Sales Revenue (m.u.)", y = "Operating Profit (m.u.)")
 ```
 
-## Properties of OLS Residuals
+## Properties of OLS Residuals {.smaller}
 
 These **algebraic identities** hold for every OLS fit:
 
@@ -509,7 +511,7 @@ In R: `summary(model)$sigma`
 
 ## Key Takeaways — Lecture 8
 
-::: {.incremental}
+::: {.incremental style="font-size: 0.85em"}
 - **Regression** models the **conditional mean** of $Y$ given $X$ — a statement about averages, not individual values.
 - The **SLR model** is $Y_i = \beta_0 + \beta_1 X_i + \varepsilon_i$; the error $\varepsilon_i$ is unavoidable.
 - The **Gauss–Markov assumptions** (A1–A5) ensure OLS is BLUE; adding normality (A6) enables exact inference.
