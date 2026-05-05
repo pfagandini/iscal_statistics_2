@@ -49,7 +49,7 @@ model   <- lm(profit ~ revenue)
 
 # Goodness of Fit {background-color="#8B1538"}
 
-## Lecture Overview
+## Lecture Overview {.smaller}
 
 **Lecture 9 — Goodness of Fit, OLS Properties & Multiple Regression**
 
@@ -70,7 +70,7 @@ model   <- lm(profit ~ revenue)
 
 # The Variance Decomposition {background-color="#8B1538"}
 
-## Decomposing Total Variation
+## Decomposing Total Variation {.smaller}
 
 For each observation $i$, we can write:
 
@@ -100,7 +100,9 @@ y2  <- 5 + 0.6*x2 + rnorm(n2, 0, 4)
 m2  <- lm(y2 ~ x2)
 yh2 <- fitted(m2)
 ymn <- mean(y2)
-i0  <- 6   # highlight one point
+# pick a point where yi > yhat > ybar — all three levels clearly separated
+good <- which(y2 > yh2 & yh2 > ymn)
+i0   <- if (length(good) > 0) good[which.max(y2[good] - ymn)] else which.max(y2 - ymn)
 
 df2 <- data.frame(x = x2, y = y2, yhat = yh2)
 ggplot(df2, aes(x = x, y = y)) +
@@ -108,26 +110,26 @@ ggplot(df2, aes(x = x, y = y)) +
   geom_abline(intercept = coef(m2)[1], slope = coef(m2)[2],
               color = iscal_blue, linewidth = 1.1) +
   geom_point(color = iscal_burgundy, size = 2.8, alpha = 0.5) +
-  # SST segment: yi to y-bar
+  # SST segment: ybar to yi (left side)
   geom_segment(data = df2[i0,],
-               aes(x=x, xend=x, y=ymn, yend=y),
+               aes(x=x-0.5, xend=x-0.5, y=ymn, yend=y),
                color = iscal_burgundy, linewidth = 1.5,
                arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
-  # SSE segment: y-bar to y-hat
+  # SSE segment: ybar to yhat (right side, lower)
   geom_segment(data = df2[i0,],
-               aes(x=x+1.2, xend=x+1.2, y=ymn, yend=yhat),
+               aes(x=x, xend=x, y=ymn, yend=yhat),
                color = iscal_blue, linewidth = 1.5,
                arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
-  # SSR segment: y-hat to y
+  # SSR segment: yhat to yi (right side, upper)
   geom_segment(data = df2[i0,],
-               aes(x=x-1.2, xend=x-1.2, y=yhat, yend=y),
+               aes(x=x, xend=x, y=yhat, yend=y),
                color = iscal_dark_burgundy, linewidth = 1.5,
                arrow = arrow(length=unit(0.2,"cm"), ends="both")) +
-  annotate("text", x=x2[i0]+3.5, y=(y2[i0]+ymn)/2,
+  annotate("text", x=x2[i0]-1.5, y=(y2[i0]+ymn)/2,
            label="SST", color=iscal_burgundy, size=4.5, fontface="bold") +
-  annotate("text", x=x2[i0]+5.5, y=(yh2[i0]+ymn)/2,
+  annotate("text", x=x2[i0]+1.5, y=(yh2[i0]+ymn)/2,
            label="SSE", color=iscal_blue, size=4.5, fontface="bold") +
-  annotate("text", x=x2[i0]-5, y=(y2[i0]+yh2[i0])/2,
+  annotate("text", x=x2[i0]+1.5, y=(y2[i0]+yh2[i0])/2,
            label="SSR", color=iscal_dark_burgundy, size=4.5, fontface="bold") +
   annotate("text", x=min(x2), y=ymn+0.8,
            label=expression(bar(Y)), color=iscal_gray, size=4.5) +
@@ -206,7 +208,7 @@ ggplot(d_all3, aes(x = x, y = y)) +
 Use $R^2$ as **one** indicator of fit — always combine it with the scatter diagram, residual plots, and hypothesis tests.
 :::
 
-## The Correlation Coefficient $r$
+## The Correlation Coefficient $r$ {.smaller}
 
 In SLR, the sample **Pearson correlation coefficient** is:
 
@@ -279,7 +281,7 @@ Under assumptions A1–A5, the OLS estimators $\hat{\beta}_0$ and $\hat{\beta}_1
 
 **Minimum variance** means: no other linear unbiased estimator can be more precise than OLS.
 
-## Unbiasedness of OLS
+## Unbiasedness of OLS {.smaller}
 
 We can show that, under A1–A5:
 
@@ -299,7 +301,7 @@ The larger $S_{XX}$ (more spread in $X$), the **smaller** the variance of $\hat{
 
 # Omitted Variable Bias {background-color="#8B1538"}
 
-## What Happens When We Omit a Variable?
+## What Happens When We Omit a Variable? {.smaller}
 
 Suppose the **true model** is:
 
@@ -325,7 +327,7 @@ $$\text{Bias} = E[\hat{\alpha}_1] - \beta_1 = \beta_2 \cdot \frac{S_{X_1 X_2}}{S
 OLS is **biased and inconsistent** whenever $\beta_2 \neq 0$ **and** $X_1$ and $X_2$ are correlated.
 :::
 
-## OVB: When Is It a Problem?
+## OVB: When Is It a Problem? {.smaller}
 
 The bias is non-zero only when **both** conditions hold:
 
@@ -359,7 +361,7 @@ The omitted variable $X_2$ is correlated with the included $X_1$.
 | $-$ | $+$ | Downward |
 | $-$ | $-$ | Upward |
 
-## OVB: A Motivating Example
+## OVB: A Motivating Example {.smaller}
 
 **Hypothetical scenario:** We want to estimate the effect of advertising spend $X_1$ on sales $Y$.
 
@@ -423,7 +425,7 @@ You do not need to solve this by hand. In R, `lm(Y ~ X1 + X2 + ... + Xk)` handle
 
 The Gauss–Markov theorem extends to MLR: under A1–A5 (appropriately generalised), OLS is still **BLUE**.
 
-## MLR: Interpreting Coefficients
+## MLR: Interpreting Coefficients {.smaller}
 
 **Hypothetical example:** Explain operating profit ($Y$) using both sales revenue ($X_1$) and number of employees ($X_2$).
 
@@ -453,7 +455,7 @@ summary(mlr_model)
 
 # Adjusted $R^2$ {background-color="#8B1538"}
 
-## Why Regular $R^2$ Is Not Enough in MLR
+## Why Regular $R^2$ Is Not Enough in MLR {.smaller}
 
 In MLR, adding any variable — **even a completely irrelevant one** — will weakly increase $R^2$:
 

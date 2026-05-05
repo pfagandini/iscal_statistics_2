@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Rscript -e \"library\\(qrcode\\)\")",
+      "Bash(Rscript -e \"install.packages\\('qrcode', repos='https://cloud.r-project.org'\\)\")"
+    ]
+  }
+}

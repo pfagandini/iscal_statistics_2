@@ -563,15 +563,15 @@
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#lecture-overview",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#lecture-overview",
     "title": "The Linear Regression Model",
-    "section": "",
-    "text": "Lecture 9 — Goodness of Fit, OLS Properties & Multiple Regression\n\n\nHow well does the fitted line describe the data? — the variance decomposition\nThe coefficient of determination \\(R^2\\)\nThe correlation coefficient \\(r\\) and its link to \\(R^2\\)\nWhy OLS is a good estimator — the Gauss–Markov theorem (BLUE)\nWhat goes wrong when we omit a relevant variable — Omitted Variable Bias\nExtending to Multiple Linear Regression (MLR)\nInterpreting MLR coefficients\nAdjusted \\(R^2\\)\n\n\n\n\n\n\n\n\nNote\n\n\n\nReference: Newbold Ch. 11.4–11.5 (SLR fit), Ch. 12.1–12.3 (MLR)."
+    "section": "Lecture Overview",
+    "text": "Lecture Overview\nLecture 9 — Goodness of Fit, OLS Properties & Multiple Regression\n\nHow well does the fitted line describe the data? — the variance decomposition\nThe coefficient of determination \\(R^2\\)\nThe correlation coefficient \\(r\\) and its link to \\(R^2\\)\nWhy OLS is a good estimator — the Gauss–Markov theorem (BLUE)\nWhat goes wrong when we omit a relevant variable — Omitted Variable Bias\nExtending to Multiple Linear Regression (MLR)\nInterpreting MLR coefficients\nAdjusted \\(R^2\\)\n\n\n\n\n\n\n\nNote\n\n\nReference: Newbold Ch. 11.4–11.5 (SLR fit), Ch. 12.1–12.3 (MLR)."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#decomposing-total-variation",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#decomposing-total-variation",
     "title": "The Linear Regression Model",
     "section": "Decomposing Total Variation",
-    "text": "Decomposing Total Variation\nFor each observation \\(i\\), we can write:\n\\[Y_i - \\bar{Y} = \\underbrace{(\\hat{Y}_i - \\bar{Y})}_{\\text{explained by regression}} + \\underbrace{(Y_i - \\hat{Y}_i)}_{\\text{residual}}\\]\n. . .\nSquaring and summing over all observations:\n\\[\\underbrace{\\sum(Y_i - \\bar{Y})^2}_{\\text{SST}} = \\underbrace{\\sum(\\hat{Y}_i - \\bar{Y})^2}_{\\text{SSE}} + \\underbrace{\\sum(Y_i - \\hat{Y}_i)^2}_{\\text{SSR}}\\]\n. . .\n\n\n\n\n\n\n\n\nTerm\nName\nMeaning\n\n\n\n\nSST\nTotal Sum of Squares\nTotal variation in \\(Y\\)\n\n\nSSE\nExplained Sum of Squares\nVariation explained by \\(X\\)\n\n\nSSR\nResidual Sum of Squares\nVariation not explained by \\(X\\)"
+    "text": "Decomposing Total Variation\nFor each observation \\(i\\), we can write:\n\\[Y_i - \\bar{Y} = \\underbrace{(\\hat{Y}_i - \\bar{Y})}_{\\text{explained by regression}} + \\underbrace{(Y_i - \\hat{Y}_i)}_{\\text{residual}}\\]\n\nSquaring and summing over all observations:\n\\[\\underbrace{\\sum(Y_i - \\bar{Y})^2}_{\\text{SST}} = \\underbrace{\\sum(\\hat{Y}_i - \\bar{Y})^2}_{\\text{SSE}} + \\underbrace{\\sum(Y_i - \\hat{Y}_i)^2}_{\\text{SSR}}\\]\n\n\n\n\n\n\n\n\n\n\nTerm\nName\nMeaning\n\n\n\n\nSST\nTotal Sum of Squares\nTotal variation in \\(Y\\)\n\n\nSSE\nExplained Sum of Squares\nVariation explained by \\(X\\)\n\n\nSSR\nResidual Sum of Squares\nVariation not explained by \\(X\\)"
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#visualising-the-decomposition",
@@ -585,7 +585,7 @@
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#definition-of-r2",
     "title": "The Linear Regression Model",
     "section": "Definition of \\(R^2\\)",
-    "text": "Definition of \\(R^2\\)\nThe coefficient of determination measures the proportion of total variation in \\(Y\\) explained by the regression:\n\\[\\boxed{R^2 = \\frac{\\text{SSE}}{\\text{SST}} = 1 - \\frac{\\text{SSR}}{\\text{SST}}}\\]\n. . .\n\n\nKey properties:\n\n\\(0 \\leq R^2 \\leq 1\\)\n\\(R^2 = 0\\): \\(X\\) explains nothing\n\\(R^2 = 1\\): perfect fit (all points on the line)\n\\(R^2\\) is unit-free\n\n\nInterpretation:\n\n“The model explains \\(R^2 \\times 100\\%\\) of the total variation in \\(Y\\).”\n\nAn \\(R^2\\) of 0.82 means 82% of the variation in \\(Y\\) is explained by \\(X\\) via the estimated model."
+    "text": "Definition of \\(R^2\\)\nThe coefficient of determination measures the proportion of total variation in \\(Y\\) explained by the regression:\n\\[\\boxed{R^2 = \\frac{\\text{SSE}}{\\text{SST}} = 1 - \\frac{\\text{SSR}}{\\text{SST}}}\\]\n\n\n\nKey properties:\n\n\\(0 \\leq R^2 \\leq 1\\)\n\\(R^2 = 0\\): \\(X\\) explains nothing\n\\(R^2 = 1\\): perfect fit (all points on the line)\n\\(R^2\\) is unit-free\n\n\nInterpretation:\n\n“The model explains \\(R^2 \\times 100\\%\\) of the total variation in \\(Y\\).”\n\nAn \\(R^2\\) of 0.82 means 82% of the variation in \\(Y\\) is explained by \\(X\\) via the estimated model."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#r2-examples-across-different-fits",
@@ -599,77 +599,77 @@
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#caution-r2-has-limits",
     "title": "The Linear Regression Model",
     "section": "Caution: \\(R^2\\) Has Limits",
-    "text": "Caution: \\(R^2\\) Has Limits\n\n\nA high \\(R^2\\) does not mean the model is correctly specified — it could be driven by a single outlier, or by a spurious correlation.\nA low \\(R^2\\) does not mean the regression is useless — in many economic applications, \\(R^2 = 0.3\\) is perfectly reasonable.\nAdding more regressors always increases \\(R^2\\) — even if those variables are irrelevant. This is why MLR uses Adjusted \\(R^2\\) instead (covered shortly).\n\\(R^2\\) does not measure causality. Two unrelated trending variables can produce \\(R^2 \\approx 1\\) (spurious regression).\n\n\n. . .\n\n\n\n\n\n\nImportant\n\n\n\nUse \\(R^2\\) as one indicator of fit — always combine it with the scatter diagram, residual plots, and hypothesis tests."
+    "text": "Caution: \\(R^2\\) Has Limits\n\nA high \\(R^2\\) does not mean the model is correctly specified — it could be driven by a single outlier, or by a spurious correlation.\nA low \\(R^2\\) does not mean the regression is useless — in many economic applications, \\(R^2 = 0.3\\) is perfectly reasonable.\nAdding more regressors always increases \\(R^2\\) — even if those variables are irrelevant. This is why MLR uses Adjusted \\(R^2\\) instead (covered shortly).\n\\(R^2\\) does not measure causality. Two unrelated trending variables can produce \\(R^2 \\approx 1\\) (spurious regression).\n\n\n\n\n\n\n\n\nImportant\n\n\nUse \\(R^2\\) as one indicator of fit — always combine it with the scatter diagram, residual plots, and hypothesis tests."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-correlation-coefficient-r",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-correlation-coefficient-r",
     "title": "The Linear Regression Model",
     "section": "The Correlation Coefficient \\(r\\)",
-    "text": "The Correlation Coefficient \\(r\\)\nIn SLR, the sample Pearson correlation coefficient is:\n\\[r = \\frac{\\displaystyle\\sum(X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\displaystyle\\sum(X_i-\\bar{X})^2 \\cdot \\sum(Y_i-\\bar{Y})^2}} = \\frac{S_{XY}}{\\sqrt{S_{XX} \\cdot S_{YY}}}\\]\n. . .\n\n\nProperties:\n\n\\(-1 \\leq r \\leq 1\\)\nSign of \\(r\\) = sign of \\(\\hat{\\beta}_1\\)\n\\(r = 0\\): no linear association\n\\(|r| = 1\\): perfect linear fit\n\n\nLink to \\(R^2\\):\nIn SLR (one regressor): \\[R^2 = r^2\\]\nThe coefficient of determination equals the square of the correlation coefficient.\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nCorrelation \\(\\neq\\) causation. A high \\(|r|\\) tells us the variables move together linearly — nothing more."
+    "text": "The Correlation Coefficient \\(r\\)\nIn SLR, the sample Pearson correlation coefficient is:\n\\[r = \\frac{\\displaystyle\\sum(X_i - \\bar{X})(Y_i - \\bar{Y})}{\\sqrt{\\displaystyle\\sum(X_i-\\bar{X})^2 \\cdot \\sum(Y_i-\\bar{Y})^2}} = \\frac{S_{XY}}{\\sqrt{S_{XX} \\cdot S_{YY}}}\\]\n\n\n\nProperties:\n\n\\(-1 \\leq r \\leq 1\\)\nSign of \\(r\\) = sign of \\(\\hat{\\beta}_1\\)\n\\(r = 0\\): no linear association\n\\(|r| = 1\\): perfect linear fit\n\n\nLink to \\(R^2\\):\nIn SLR (one regressor): \\[R^2 = r^2\\]\nThe coefficient of determination equals the square of the correlation coefficient.\n\n\n\n\n\n\n\n\n\nNote\n\n\nCorrelation \\(\\neq\\) causation. A high \\(|r|\\) tells us the variables move together linearly — nothing more."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#r2-and-r-in-r",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#r2-and-r-in-r",
     "title": "The Linear Regression Model",
     "section": "\\(R^2\\) and \\(r\\) in R",
-    "text": "\\(R^2\\) and \\(r\\) in R\nContinuing with our running example:\n\n# R-squared\nsummary(model)$r.squared\n\n[1] 0.5416654\n\n# Correlation coefficient\ncor(revenue, profit)\n\n[1] 0.7359792\n\n# Verify: r² = R²\ncor(revenue, profit)^2\n\n[1] 0.5416654\n\n\n. . .\nInterpretation: the model explains 54.2% of the total variation in operating profit. The correlation between revenue and profit is \\(r = 0.736\\) — a strong positive linear association."
+    "text": "\\(R^2\\) and \\(r\\) in R\nContinuing with our running example:\n\n# R-squared\nsummary(model)$r.squared\n\n[1] 0.5416654\n\n# Correlation coefficient\ncor(revenue, profit)\n\n[1] 0.7359792\n\n# Verify: r² = R²\ncor(revenue, profit)^2\n\n[1] 0.5416654\n\n\n\nInterpretation: the model explains 54.2% of the total variation in operating profit. The correlation between revenue and profit is \\(r = 0.736\\) — a strong positive linear association."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-gaussmarkov-theorem",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-gaussmarkov-theorem",
     "title": "The Linear Regression Model",
     "section": "The Gauss–Markov Theorem",
-    "text": "The Gauss–Markov Theorem\n\n\n\n\n\n\nImportant\n\n\n\nGauss–Markov Theorem:\nUnder assumptions A1–A5, the OLS estimators \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) are BLUE:\n\nBest: minimum variance among all linear unbiased estimators\nLinear: linear functions of \\(Y_1, \\ldots, Y_n\\)\nUnbiased: \\(E[\\hat{\\beta}_j] = \\beta_j\\) for \\(j = 0, 1\\)\nEstimator\n\n\n\n. . .\nUnbiasedness means: if we repeated our sample many times, the average of the \\(\\hat{\\beta}_j\\) values would equal the true \\(\\beta_j\\).\nMinimum variance means: no other linear unbiased estimator can be more precise than OLS."
+    "text": "The Gauss–Markov Theorem\n\n\n\n\n\n\nImportant\n\n\nGauss–Markov Theorem:\nUnder assumptions A1–A5, the OLS estimators \\(\\hat{\\beta}_0\\) and \\(\\hat{\\beta}_1\\) are BLUE:\n\nBest: minimum variance among all linear unbiased estimators\nLinear: linear functions of \\(Y_1, \\ldots, Y_n\\)\nUnbiased: \\(E[\\hat{\\beta}_j] = \\beta_j\\) for \\(j = 0, 1\\)\nEstimator\n\n\n\n\n\nUnbiasedness means: if we repeated our sample many times, the average of the \\(\\hat{\\beta}_j\\) values would equal the true \\(\\beta_j\\).\nMinimum variance means: no other linear unbiased estimator can be more precise than OLS."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#unbiasedness-of-ols",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#unbiasedness-of-ols",
     "title": "The Linear Regression Model",
     "section": "Unbiasedness of OLS",
-    "text": "Unbiasedness of OLS\nWe can show that, under A1–A5:\n\\[E[\\hat{\\beta}_1] = \\beta_1, \\qquad E[\\hat{\\beta}_0] = \\beta_0\\]\nThe intuition: OLS residuals are constructed to be uncorrelated with \\(X\\) (by the first-order conditions), so the error term \\(\\varepsilon_i\\) does not “leak” into the estimates on average.\n. . .\nVariance of the slope estimator:\n\\[\\text{Var}(\\hat{\\beta}_1) = \\frac{\\sigma^2}{S_{XX}} = \\frac{\\sigma^2}{\\displaystyle\\sum(X_i-\\bar{X})^2}\\]\n\n\n\n\n\n\nNote\n\n\n\nThe larger \\(S_{XX}\\) (more spread in \\(X\\)), the smaller the variance of \\(\\hat{\\beta}_1\\) — more variation in \\(X\\) helps us pin down the slope more precisely."
+    "text": "Unbiasedness of OLS\nWe can show that, under A1–A5:\n\\[E[\\hat{\\beta}_1] = \\beta_1, \\qquad E[\\hat{\\beta}_0] = \\beta_0\\]\nThe intuition: OLS residuals are constructed to be uncorrelated with \\(X\\) (by the first-order conditions), so the error term \\(\\varepsilon_i\\) does not “leak” into the estimates on average.\n\nVariance of the slope estimator:\n\\[\\text{Var}(\\hat{\\beta}_1) = \\frac{\\sigma^2}{S_{XX}} = \\frac{\\sigma^2}{\\displaystyle\\sum(X_i-\\bar{X})^2}\\]\n\n\n\n\n\n\nNote\n\n\nThe larger \\(S_{XX}\\) (more spread in \\(X\\)), the smaller the variance of \\(\\hat{\\beta}_1\\) — more variation in \\(X\\) helps us pin down the slope more precisely."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#what-happens-when-we-omit-a-variable",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#what-happens-when-we-omit-a-variable",
     "title": "The Linear Regression Model",
     "section": "What Happens When We Omit a Variable?",
-    "text": "What Happens When We Omit a Variable?\nSuppose the true model is:\n\\[Y_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\varepsilon_i\\]\nBut we estimate only:\n\\[Y_i = \\alpha_0 + \\alpha_1 X_{1i} + u_i \\qquad \\text{(misspecified model)}\\]\n. . .\nWhat is \\(E[\\hat{\\alpha}_1]\\)? One can show:\n\\[E[\\hat{\\alpha}_1] = \\beta_1 + \\beta_2 \\cdot \\frac{S_{X_1 X_2}}{S_{X_1 X_1}}\\]\n. . .\n\n\n\n\n\n\nImportant\n\n\n\nOmitted Variable Bias (OVB):\n\\[\\text{Bias} = E[\\hat{\\alpha}_1] - \\beta_1 = \\beta_2 \\cdot \\frac{S_{X_1 X_2}}{S_{X_1 X_1}}\\]\nOLS is biased and inconsistent whenever \\(\\beta_2 \\neq 0\\) and \\(X_1\\) and \\(X_2\\) are correlated."
+    "text": "What Happens When We Omit a Variable?\nSuppose the true model is:\n\\[Y_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\varepsilon_i\\]\nBut we estimate only:\n\\[Y_i = \\alpha_0 + \\alpha_1 X_{1i} + u_i \\qquad \\text{(misspecified model)}\\]\n\nWhat is \\(E[\\hat{\\alpha}_1]\\)? One can show:\n\\[E[\\hat{\\alpha}_1] = \\beta_1 + \\beta_2 \\cdot \\frac{S_{X_1 X_2}}{S_{X_1 X_1}}\\]\n\n\n\n\n\n\n\n\nImportant\n\n\nOmitted Variable Bias (OVB):\n\\[\\text{Bias} = E[\\hat{\\alpha}_1] - \\beta_1 = \\beta_2 \\cdot \\frac{S_{X_1 X_2}}{S_{X_1 X_1}}\\]\nOLS is biased and inconsistent whenever \\(\\beta_2 \\neq 0\\) and \\(X_1\\) and \\(X_2\\) are correlated."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ovb-when-is-it-a-problem",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ovb-when-is-it-a-problem",
     "title": "The Linear Regression Model",
     "section": "OVB: When Is It a Problem?",
-    "text": "OVB: When Is It a Problem?\nThe bias is non-zero only when both conditions hold:\n\n\nCondition 1: \\(\\beta_2 \\neq 0\\)\nThe omitted variable \\(X_2\\) actually affects \\(Y\\).\n(If it doesn’t matter, leaving it out is harmless.)\n\nCondition 2: \\(S_{X_1 X_2} \\neq 0\\)\nThe omitted variable \\(X_2\\) is correlated with the included \\(X_1\\).\n(If they are uncorrelated, OLS for \\(\\beta_1\\) is still unbiased.)\n\n\n. . .\nDirection of bias: \\(\\text{sign}(\\text{Bias}) = \\text{sign}(\\beta_2) \\times \\text{sign}(r_{X_1 X_2})\\)\n\n\n\n\\(\\beta_2\\)\n\\(\\text{Corr}(X_1, X_2)\\)\nBias direction\n\n\n\n\n\\(+\\)\n\\(+\\)\nUpward (overestimate \\(\\beta_1\\))\n\n\n\\(+\\)\n\\(-\\)\nDownward\n\n\n\\(-\\)\n\\(+\\)\nDownward\n\n\n\\(-\\)\n\\(-\\)\nUpward"
+    "text": "OVB: When Is It a Problem?\nThe bias is non-zero only when both conditions hold:\n\n\nCondition 1: \\(\\beta_2 \\neq 0\\)\nThe omitted variable \\(X_2\\) actually affects \\(Y\\).\n(If it doesn’t matter, leaving it out is harmless.)\n\nCondition 2: \\(S_{X_1 X_2} \\neq 0\\)\nThe omitted variable \\(X_2\\) is correlated with the included \\(X_1\\).\n(If they are uncorrelated, OLS for \\(\\beta_1\\) is still unbiased.)\n\n\nDirection of bias: \\(\\text{sign}(\\text{Bias}) = \\text{sign}(\\beta_2) \\times \\text{sign}(r_{X_1 X_2})\\)\n\n\n\n\\(\\beta_2\\)\n\\(\\text{Corr}(X_1, X_2)\\)\nBias direction\n\n\n\n\n\\(+\\)\n\\(+\\)\nUpward (overestimate \\(\\beta_1\\))\n\n\n\\(+\\)\n\\(-\\)\nDownward\n\n\n\\(-\\)\n\\(+\\)\nDownward\n\n\n\\(-\\)\n\\(-\\)\nUpward"
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ovb-a-motivating-example",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ovb-a-motivating-example",
     "title": "The Linear Regression Model",
     "section": "OVB: A Motivating Example",
-    "text": "OVB: A Motivating Example\nHypothetical scenario: We want to estimate the effect of advertising spend \\(X_1\\) on sales \\(Y\\).\nThe true model includes firm size \\(X_2\\) (larger firms spend more and sell more).\n\n\nset.seed(7)\nn       &lt;- 100\nsize    &lt;- rnorm(n, 50, 10)        # firm size (omitted variable)\nadspend &lt;- 5 + 0.4*size + rnorm(n, 0, 5)   # corr. with size\nsales   &lt;- 20 + 2*adspend + 3*size + rnorm(n, 0, 10)  # true: β1=2, β2=3\n\n# Short regression (omitting size)\ncoef(lm(sales ~ adspend))[\"adspend\"]\n\n adspend \n5.099163 \n\n# Long regression (including size)\ncoef(lm(sales ~ adspend + size))[\"adspend\"]\n\n adspend \n2.313567 \n\n\n\n. . .\nThe short regression overestimates the true effect of advertising (\\(\\beta_1 = 2\\)) because it absorbs the positive effect of firm size. This is why we need MLR."
+    "text": "OVB: A Motivating Example\nHypothetical scenario: We want to estimate the effect of advertising spend \\(X_1\\) on sales \\(Y\\).\nThe true model includes firm size \\(X_2\\) (larger firms spend more and sell more).\n\n\nset.seed(7)\nn       &lt;- 100\nsize    &lt;- rnorm(n, 50, 10)        # firm size (omitted variable)\nadspend &lt;- 5 + 0.4*size + rnorm(n, 0, 5)   # corr. with size\nsales   &lt;- 20 + 2*adspend + 3*size + rnorm(n, 0, 10)  # true: β1=2, β2=3\n\n# Short regression (omitting size)\ncoef(lm(sales ~ adspend))[\"adspend\"]\n\n adspend \n5.099163 \n\n# Long regression (including size)\ncoef(lm(sales ~ adspend + size))[\"adspend\"]\n\n adspend \n2.313567 \n\n\n\n\nThe short regression overestimates the true effect of advertising (\\(\\beta_1 = 2\\)) because it absorbs the positive effect of firm size. This is why we need MLR."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-mlr-model",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#the-mlr-model",
     "title": "The Linear Regression Model",
     "section": "The MLR Model",
-    "text": "The MLR Model\nThe Multiple Linear Regression (MLR) model with \\(k\\) regressors:\n\\[\\boxed{Y_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\cdots + \\beta_k X_{ki} + \\varepsilon_i}\\]\n. . .\n\n\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n\\(\\beta_0\\)\nIntercept — mean of \\(Y\\) when all \\(X_j = 0\\)\n\n\n\\(\\beta_j\\)\nPartial slope — change in mean \\(Y\\) per unit increase in \\(X_j\\), holding all other regressors constant (ceteris paribus)\n\n\n\\(\\varepsilon_i\\)\nError term — same assumptions as SLR\n\n\n\n. . .\n\n\n\n\n\n\nNote\n\n\n\nThe key word in MLR is ceteris paribus (“all else equal”). \\(\\hat{\\beta}_j\\) measures the effect of \\(X_j\\) after controlling for all other included variables."
+    "text": "The MLR Model\nThe Multiple Linear Regression (MLR) model with \\(k\\) regressors:\n\\[\\boxed{Y_i = \\beta_0 + \\beta_1 X_{1i} + \\beta_2 X_{2i} + \\cdots + \\beta_k X_{ki} + \\varepsilon_i}\\]\n\n\n\n\n\n\n\n\nSymbol\nMeaning\n\n\n\n\n\\(\\beta_0\\)\nIntercept — mean of \\(Y\\) when all \\(X_j = 0\\)\n\n\n\\(\\beta_j\\)\nPartial slope — change in mean \\(Y\\) per unit increase in \\(X_j\\), holding all other regressors constant (ceteris paribus)\n\n\n\\(\\varepsilon_i\\)\nError term — same assumptions as SLR\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe key word in MLR is ceteris paribus (“all else equal”). \\(\\hat{\\beta}_j\\) measures the effect of \\(X_j\\) after controlling for all other included variables."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ols-in-mlr",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#ols-in-mlr",
     "title": "The Linear Regression Model",
     "section": "OLS in MLR",
-    "text": "OLS in MLR\nOLS still minimises \\(\\text{SSR} = \\sum e_i^2\\), but now in \\(k+1\\) dimensions.\nThe normal equations become a system of \\(k+1\\) linear equations — solved efficiently in matrix form:\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}'\\mathbf{X})^{-1}\\mathbf{X}'\\mathbf{y}\\]\n\n\n\n\n\n\nNote\n\n\n\nYou do not need to solve this by hand. In R, lm(Y ~ X1 + X2 + ... + Xk) handles everything. The interpretation principles are the same as SLR — only the ceteris paribus qualifier changes.\n\n\n. . .\nThe Gauss–Markov theorem extends to MLR: under A1–A5 (appropriately generalised), OLS is still BLUE."
+    "text": "OLS in MLR\nOLS still minimises \\(\\text{SSR} = \\sum e_i^2\\), but now in \\(k+1\\) dimensions.\nThe normal equations become a system of \\(k+1\\) linear equations — solved efficiently in matrix form:\n\\[\\hat{\\boldsymbol{\\beta}} = (\\mathbf{X}'\\mathbf{X})^{-1}\\mathbf{X}'\\mathbf{y}\\]\n\n\n\n\n\n\nNote\n\n\nYou do not need to solve this by hand. In R, lm(Y ~ X1 + X2 + ... + Xk) handles everything. The interpretation principles are the same as SLR — only the ceteris paribus qualifier changes.\n\n\n\n\nThe Gauss–Markov theorem extends to MLR: under A1–A5 (appropriately generalised), OLS is still BLUE."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#mlr-interpreting-coefficients",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#mlr-interpreting-coefficients",
     "title": "The Linear Regression Model",
     "section": "MLR: Interpreting Coefficients",
-    "text": "MLR: Interpreting Coefficients\nHypothetical example: Explain operating profit (\\(Y\\)) using both sales revenue (\\(X_1\\)) and number of employees (\\(X_2\\)).\n\nset.seed(5)\nn          &lt;- 30\nrevenue2   &lt;- round(runif(n, 100, 500), 0)\nemployees  &lt;- round(runif(n, 10, 80), 0)\nprofit2    &lt;- round(5 + 0.15*revenue2 + 0.8*employees + rnorm(n, 0, 12), 1)\n\nmlr_model  &lt;- lm(profit2 ~ revenue2 + employees)\ncoef(mlr_model)\n\n(Intercept)    revenue2   employees \n 21.4612459   0.1290236   0.6126250 \n\n\n. . .\nInterpretation:\n\n\\(\\hat{\\beta}_1 = 0.129\\): one additional m.u. of revenue is associated with 0.129 m.u. more profit, holding number of employees constant.\n\\(\\hat{\\beta}_2 = 0.613\\): one additional employee is associated with 0.613 m.u. more profit, holding revenue constant."
+    "text": "MLR: Interpreting Coefficients\nHypothetical example: Explain operating profit (\\(Y\\)) using both sales revenue (\\(X_1\\)) and number of employees (\\(X_2\\)).\n\nset.seed(5)\nn          &lt;- 30\nrevenue2   &lt;- round(runif(n, 100, 500), 0)\nemployees  &lt;- round(runif(n, 10, 80), 0)\nprofit2    &lt;- round(5 + 0.15*revenue2 + 0.8*employees + rnorm(n, 0, 12), 1)\n\nmlr_model  &lt;- lm(profit2 ~ revenue2 + employees)\ncoef(mlr_model)\n\n(Intercept)    revenue2   employees \n 21.4612459   0.1290236   0.6126250 \n\n\n\nInterpretation:\n\n\\(\\hat{\\beta}_1 = 0.129\\): one additional m.u. of revenue is associated with 0.129 m.u. more profit, holding number of employees constant.\n\\(\\hat{\\beta}_2 = 0.613\\): one additional employee is associated with 0.613 m.u. more profit, holding revenue constant."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#mlr-full-summary",
@@ -683,35 +683,35 @@
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#why-regular-r2-is-not-enough-in-mlr",
     "title": "The Linear Regression Model",
     "section": "Why Regular \\(R^2\\) Is Not Enough in MLR",
-    "text": "Why Regular \\(R^2\\) Is Not Enough in MLR\nIn MLR, adding any variable — even a completely irrelevant one — will weakly increase \\(R^2\\):\n\\[R^2 = 1 - \\frac{\\text{SSR}}{\\text{SST}} \\quad \\Rightarrow \\quad R^2 \\text{ can only increase as we add regressors}\\]\n. . .\nThis makes \\(R^2\\) unreliable for comparing models with different numbers of regressors.\n. . .\n\n\n\n\n\n\nNote\n\n\n\nQuick demonstration:\n\nset.seed(9)\nnoise &lt;- rnorm(30)          # completely irrelevant variable\nm1 &lt;- lm(profit2 ~ revenue2 + employees)\nm2 &lt;- lm(profit2 ~ revenue2 + employees + noise)\nc(R2_without_noise = summary(m1)$r.squared,\n  R2_with_noise    = summary(m2)$r.squared)\n\nR2_without_noise    R2_with_noise \n       0.6542932        0.6544614"
+    "text": "Why Regular \\(R^2\\) Is Not Enough in MLR\nIn MLR, adding any variable — even a completely irrelevant one — will weakly increase \\(R^2\\):\n\\[R^2 = 1 - \\frac{\\text{SSR}}{\\text{SST}} \\quad \\Rightarrow \\quad R^2 \\text{ can only increase as we add regressors}\\]\n\nThis makes \\(R^2\\) unreliable for comparing models with different numbers of regressors.\n\n\n\n\n\n\n\n\nNote\n\n\nQuick demonstration:\n\nset.seed(9)\nnoise &lt;- rnorm(30)          # completely irrelevant variable\nm1 &lt;- lm(profit2 ~ revenue2 + employees)\nm2 &lt;- lm(profit2 ~ revenue2 + employees + noise)\nc(R2_without_noise = summary(m1)$r.squared,\n  R2_with_noise    = summary(m2)$r.squared)\n\nR2_without_noise    R2_with_noise \n       0.6542932        0.6544614"
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#adjusted-r2-1",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#adjusted-r2-1",
     "title": "The Linear Regression Model",
     "section": "Adjusted \\(R^2\\)",
-    "text": "Adjusted \\(R^2\\)\nThe adjusted \\(R^2\\) penalises for the number of regressors \\(k\\):\n\\[\\boxed{\\bar{R}^2 = 1 - \\frac{\\text{SSR}/(n-k-1)}{\\text{SST}/(n-1)} = 1 - (1-R^2)\\frac{n-1}{n-k-1}}\\]\n. . .\n\n\nProperties:\n\n\\(\\bar{R}^2 \\leq R^2\\) always\n\\(\\bar{R}^2\\) can decrease when an irrelevant variable is added\n\\(\\bar{R}^2\\) can be negative (very poor fit)\n\n\nUse \\(\\bar{R}^2\\) when:\n\nComparing models with different numbers of regressors\nDeciding whether adding a new variable improves the model"
+    "text": "Adjusted \\(R^2\\)\nThe adjusted \\(R^2\\) penalises for the number of regressors \\(k\\):\n\\[\\boxed{\\bar{R}^2 = 1 - \\frac{\\text{SSR}/(n-k-1)}{\\text{SST}/(n-1)} = 1 - (1-R^2)\\frac{n-1}{n-k-1}}\\]\n\n\n\nProperties:\n\n\\(\\bar{R}^2 \\leq R^2\\) always\n\\(\\bar{R}^2\\) can decrease when an irrelevant variable is added\n\\(\\bar{R}^2\\) can be negative (very poor fit)\n\n\nUse \\(\\bar{R}^2\\) when:\n\nComparing models with different numbers of regressors\nDeciding whether adding a new variable improves the model"
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#adjusted-r2-demo",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#adjusted-r2-demo",
     "title": "The Linear Regression Model",
     "section": "Adjusted \\(R^2\\): Demo",
-    "text": "Adjusted \\(R^2\\): Demo\n\nset.seed(9)\nnoise &lt;- rnorm(30)\nm1 &lt;- lm(profit2 ~ revenue2 + employees)\nm2 &lt;- lm(profit2 ~ revenue2 + employees + noise)\n\nc(Adj_R2_without = summary(m1)$adj.r.squared,\n  Adj_R2_with    = summary(m2)$adj.r.squared)\n\nAdj_R2_without    Adj_R2_with \n     0.6286853      0.6145915 \n\n\n. . .\nAdding the irrelevant noise variable increases plain \\(R^2\\) but decreases \\(\\bar{R}^2\\) — correctly signalling that the additional variable does not improve the model."
+    "text": "Adjusted \\(R^2\\): Demo\n\nset.seed(9)\nnoise &lt;- rnorm(30)\nm1 &lt;- lm(profit2 ~ revenue2 + employees)\nm2 &lt;- lm(profit2 ~ revenue2 + employees + noise)\n\nc(Adj_R2_without = summary(m1)$adj.r.squared,\n  Adj_R2_with    = summary(m2)$adj.r.squared)\n\nAdj_R2_without    Adj_R2_with \n     0.6286853      0.6145915 \n\n\n\nAdding the irrelevant noise variable increases plain \\(R^2\\) but decreases \\(\\bar{R}^2\\) — correctly signalling that the additional variable does not improve the model."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#key-takeaways-lecture-9",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#key-takeaways-lecture-9",
     "title": "The Linear Regression Model",
     "section": "Key Takeaways — Lecture 9",
-    "text": "Key Takeaways — Lecture 9\n\n\nSST = SSE + SSR: total variation = explained + unexplained.\n\\(R^2 = \\text{SSE}/\\text{SST}\\): proportion of variation explained by the model. In SLR, \\(R^2 = r^2\\).\nThe Gauss–Markov theorem guarantees OLS is BLUE under A1–A5.\nOVB arises when a relevant variable is omitted and it is correlated with included regressors — OLS becomes biased and inconsistent.\nMLR includes multiple regressors. Each \\(\\hat{\\beta}_j\\) is a partial effect — the effect of \\(X_j\\) holding all other variables constant.\nAdjusted \\(R^2\\) penalises for extra regressors — use it to compare models of different sizes."
+    "text": "Key Takeaways — Lecture 9\n\nSST = SSE + SSR: total variation = explained + unexplained.\n\\(R^2 = \\text{SSE}/\\text{SST}\\): proportion of variation explained by the model. In SLR, \\(R^2 = r^2\\).\nThe Gauss–Markov theorem guarantees OLS is BLUE under A1–A5.\nOVB arises when a relevant variable is omitted and it is correlated with included regressors — OLS becomes biased and inconsistent.\nMLR includes multiple regressors. Each \\(\\hat{\\beta}_j\\) is a partial effect — the effect of \\(X_j\\) holding all other variables constant.\nAdjusted \\(R^2\\) penalises for extra regressors — use it to compare models of different sizes."
   },
   {
     "objectID": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#looking-ahead",
     "href": "slides/09_Linear_Regression_GoodnessOfFit_MLR.html#looking-ahead",
     "title": "The Linear Regression Model",
     "section": "Looking Ahead",
-    "text": "Looking Ahead\nLecture 10 — Part III: Statistical Inference & Model Validation\n\n\nAre the estimated coefficients statistically different from zero? — \\(t\\)-tests\nIs the model as a whole significant? — the \\(F\\)-test (ANOVA table)\nConfidence intervals for \\(\\beta_j\\)\nChecking the classical assumptions — residual diagnostics\nNormality, homoscedasticity, autocorrelation, and multicollinearity\n\n\n\n\n\n\n\n\nNote\n\n\n\nReference: Newbold Ch. 11.6–11.8 (inference), Ch. 12.4–12.6 (MLR inference and diagnostics)."
+    "text": "Looking Ahead\nLecture 10 — Part III: Statistical Inference & Model Validation\n\nAre the estimated coefficients statistically different from zero? — \\(t\\)-tests\nIs the model as a whole significant? — the \\(F\\)-test (ANOVA table)\nConfidence intervals for \\(\\beta_j\\)\nChecking the classical assumptions — residual diagnostics\nNormality, homoscedasticity, autocorrelation, and multicollinearity\n\n\n\n\n\n\n\nNote\n\n\nReference: Newbold Ch. 11.6–11.8 (inference), Ch. 12.4–12.6 (MLR inference and diagnostics)."
   },
   {
     "objectID": "slides/05_interval_estimation_part2.html#interval-estimation-part-2-1",
@@ -2671,7 +2671,7 @@
     "href": "material.html#applied-lectures-r",
     "title": "Material",
     "section": "Applied Lectures R",
-    "text": "Applied Lectures R\nWe are going to try to apply what we have been learing in R. You can access a platform that will let you play with it in Jupyter.\n\nSLR"
+    "text": "Applied Lectures R\nWe are going to try to apply what we have been learing in R. You can access a platform that will let you play with it in Jupyter.\n\nSLR\nMLR\nInference"
   },
   {
     "objectID": "slides/10_Linear_Regression_Inference_Validation.html",
@@ -2861,5 +2861,271 @@
     "title": "SLR: Application in R",
     "section": "Plot the data vs prediction",
     "text": "Plot the data vs prediction\nMake a plot where you can observe the data, and also the predicte values as the estimated regression line.\n\n\nHint\n\nplot(mtcars$wt, mtcars$mpg)\nabline(model, col = 'darkred', lwd = 2)"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#no-installation-needed",
+    "href": "slides/09_R_MLR.html#no-installation-needed",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "No installation needed",
+    "text": "No installation needed\nScan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#learning-goals",
+    "href": "slides/09_R_MLR.html#learning-goals",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Learning goals",
+    "text": "Learning goals\n\nCompute and interpret \\(R^2\\) from a fitted model.\nCompare \\(R^2\\) and adjusted \\(\\bar{R}^2\\) when adding regressors.\nFit a multiple linear regression model in R.\nInterpret partial slopes (ceteris paribus).\nSee omitted variable bias in action by comparing a short and a long regression.\nUse anova() to inspect the variance decomposition (SST, SSE, SSR)."
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#pre-loaded-r-data",
+    "href": "slides/09_R_MLR.html#pre-loaded-r-data",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Pre-loaded R data",
+    "text": "Pre-loaded R data\nWe will use airquality, available in base R.\nIt contains daily air quality measurements in New York, May–September 1973.\n\ndata(airquality)\n\n\n?airquality   # run this in your session to read the documentation"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#variables",
+    "href": "slides/09_R_MLR.html#variables",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Variables",
+    "text": "Variables\n\n\n\nVariable\nDescription\nUnit\n\n\n\n\nOzone\nOzone concentration\nppb\n\n\nSolar.R\nSolar radiation\nlang\n\n\nWind\nWind speed\nmph\n\n\nTemp\nMaximum daily temperature\n°F\n\n\nMonth\nMonth (5–9)\n—\n\n\nDay\nDay of month\n—\n\n\n\nOur research question:\n\nWhat predicts ozone concentration? We start with temperature alone, then add more variables."
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#inspecting-the-data",
+    "href": "slides/09_R_MLR.html#inspecting-the-data",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Inspecting the data",
+    "text": "Inspecting the data\n\nhead(airquality)\n\n  Ozone Solar.R Wind Temp Month Day\n1    41     190  7.4   67     5   1\n2    36     118  8.0   72     5   2\n3    12     149 12.6   74     5   3\n4    18     313 11.5   62     5   4\n5    NA      NA 14.3   56     5   5\n6    28      NA 14.9   66     5   6"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#summary-statistics",
+    "href": "slides/09_R_MLR.html#summary-statistics",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Summary statistics",
+    "text": "Summary statistics\n\nsummary(airquality)\n\n     Ozone           Solar.R           Wind             Temp      \n Min.   :  1.00   Min.   :  7.0   Min.   : 1.700   Min.   :56.00  \n 1st Qu.: 18.00   1st Qu.:115.8   1st Qu.: 7.400   1st Qu.:72.00  \n Median : 31.50   Median :205.0   Median : 9.700   Median :79.00  \n Mean   : 42.13   Mean   :185.9   Mean   : 9.958   Mean   :77.88  \n 3rd Qu.: 63.25   3rd Qu.:258.8   3rd Qu.:11.500   3rd Qu.:85.00  \n Max.   :168.00   Max.   :334.0   Max.   :20.700   Max.   :97.00  \n NAs    :37       NAs    :7                                       \n     Month            Day      \n Min.   :5.000   Min.   : 1.0  \n 1st Qu.:6.000   1st Qu.: 8.0  \n Median :7.000   Median :16.0  \n Mean   :6.993   Mean   :15.8  \n 3rd Qu.:8.000   3rd Qu.:23.0  \n Max.   :9.000   Max.   :31.0"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#a-note-on-missing-values",
+    "href": "slides/09_R_MLR.html#a-note-on-missing-values",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "A note on missing values",
+    "text": "A note on missing values\nairquality has missing values (NA) in Ozone and Solar.R.\nlm() handles them automatically by dropping incomplete rows — but it is good practice to check:\n\n# How many complete cases do we have?\nsum(complete.cases(airquality))\n\n[1] 111\n\n# Work with complete cases only\naq &lt;- airquality[complete.cases(airquality), ]\nnrow(aq)\n\n[1] 111"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#explore-the-data",
+    "href": "slides/09_R_MLR.html#explore-the-data",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Explore the data",
+    "text": "Explore the data\n\nCreate a scatter plot of Ozone (Y) against Temp (X).\nDescribe the direction and strength of the relationship.\nDoes a linear model seem reasonable?\n\n\n\nHint\n\nggplot(aq, aes(x = Temp, y = Ozone)) +\n  geom_point() +\n  theme_minimal()\nOr simply:\nplot(aq$Temp, aq$Ozone)"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#plot",
+    "href": "slides/09_R_MLR.html#plot",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Plot",
+    "text": "Plot\n\n\nCode\nggplot(aq, aes(x = Temp, y = Ozone)) +\n  geom_point(color = iscal_burgundy, size = 2.5, alpha = 0.7) +\n  theme_minimal(base_size = 14) +\n  theme(panel.grid.minor = element_blank()) +\n  labs(\n    title = \"Ozone concentration vs. Temperature\",\n    x     = \"Temperature (°F)\",\n    y     = \"Ozone (ppb)\"\n  )"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#fit-a-simple-linear-regression",
+    "href": "slides/09_R_MLR.html#fit-a-simple-linear-regression",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Fit a simple linear regression",
+    "text": "Fit a simple linear regression\nFit the model:\n\\[\\text{Ozone}_i = \\beta_0 + \\beta_1\\,\\text{Temp}_i + \\varepsilon_i\\]\nTasks\n\nEstimate the model with lm().\nDisplay the full summary().\nExtract the \\(R^2\\).\n\n\n\nHint\n\nslr &lt;- lm(Ozone ~ Temp, data = aq)\nsummary(slr)\nsummary(slr)$r.squared"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#interpret-the-output",
+    "href": "slides/09_R_MLR.html#interpret-the-output",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Interpret the output",
+    "text": "Interpret the output\nUsing the output from Exercise 2, answer:\n\nWhat does the slope \\(\\hat{\\beta}_1\\) mean in this context?\nWhat proportion of the variation in ozone is explained by temperature alone?\nIs the slope statistically significant? How do you know?\n\n\n\nHint\n\ncoef(slr)\nsummary(slr)$r.squared\nsummary(slr)$coefficients   # shows t-statistics and p-values"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#the-variance-decomposition",
+    "href": "slides/09_R_MLR.html#the-variance-decomposition",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "The variance decomposition",
+    "text": "The variance decomposition\nR can report SST, SSE, and SSR directly.\nTasks\n\nUse anova(slr) and examine the output.\nIdentify which row corresponds to SSE and which to SSR.\nVerify manually that \\(R^2 = \\text{SSE}/\\text{SST}\\).\n\n\n\nHint\n\nanova(slr)\n\n# SSE and SSR are in the \"Sum Sq\" column\na   &lt;- anova(slr)\nSSE &lt;- a[\"Temp\",    \"Sum Sq\"]\nSSR &lt;- a[\"Residuals\", \"Sum Sq\"]\nSST &lt;- SSE + SSR\n\nSSE / SST   # should equal summary(slr)$r.squared"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#residual-diagnostics",
+    "href": "slides/09_R_MLR.html#residual-diagnostics",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Residual diagnostics",
+    "text": "Residual diagnostics\n\nPlot residuals against fitted values — does the spread look constant?\nCreate a Q-Q plot of the residuals — do they look approximately normal?\nWhat concerns, if any, do you notice?\n\n\n\nHint\n\npar(mfrow = c(2, 2))\nplot(slr)\npar(mfrow = c(1, 1))\nOr manually:\nplot(fitted(slr), resid(slr))\nabline(h = 0, lty = 2)\n\nqqnorm(resid(slr))\nqqline(resid(slr))"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#add-a-second-regressor",
+    "href": "slides/09_R_MLR.html#add-a-second-regressor",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Add a second regressor",
+    "text": "Add a second regressor\nNow fit the multiple regression model including Wind:\n\\[\\text{Ozone}_i = \\beta_0 + \\beta_1\\,\\text{Temp}_i + \\beta_2\\,\\text{Wind}_i + \\varepsilon_i\\]\nTasks\n\nFit the model with lm().\nCompare \\(R^2\\) and \\(\\bar{R}^2\\) with the SLR from Exercise 2.\nHow did the coefficient on Temp change? Why?\n\n\n\nHint\n\nmlr1 &lt;- lm(Ozone ~ Temp + Wind, data = aq)\nsummary(mlr1)\n\n# Compare R² and adjusted R²\nsummary(slr)$r.squared;      summary(slr)$adj.r.squared\nsummary(mlr1)$r.squared;     summary(mlr1)$adj.r.squared"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#add-a-third-regressor",
+    "href": "slides/09_R_MLR.html#add-a-third-regressor",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Add a third regressor",
+    "text": "Add a third regressor\nNow include Solar.R as well:\n\\[\\text{Ozone}_i = \\beta_0 + \\beta_1\\,\\text{Temp}_i + \\beta_2\\,\\text{Wind}_i + \\beta_3\\,\\text{Solar.R}_i + \\varepsilon_i\\]\nTasks\n\nFit and summarise the model.\nBuild a table comparing \\(R^2\\) and \\(\\bar{R}^2\\) across all three models.\nWhich model would you prefer, and why?\n\n\n\nHint\n\nmlr2 &lt;- lm(Ozone ~ Temp + Wind + Solar.R, data = aq)\nsummary(mlr2)\n\n# Comparison table\ndata.frame(\n  Model    = c(\"SLR (Temp)\", \"MLR (Temp+Wind)\", \"MLR (Temp+Wind+Solar.R)\"),\n  R2       = c(summary(slr)$r.squared,\n               summary(mlr1)$r.squared,\n               summary(mlr2)$r.squared),\n  Adj_R2   = c(summary(slr)$adj.r.squared,\n               summary(mlr1)$adj.r.squared,\n               summary(mlr2)$adj.r.squared)\n)"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#omitted-variable-bias-in-action",
+    "href": "slides/09_R_MLR.html#omitted-variable-bias-in-action",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Omitted variable bias in action",
+    "text": "Omitted variable bias in action\nIn Exercise 6 you noticed the coefficient on Temp changed when Wind was added.\nTasks\n\nExtract \\(\\hat{\\beta}_{\\text{Temp}}\\) from the SLR (Exercise 2) and from the MLR with Wind (Exercise 6).\nAre they different? In which direction?\nCheck whether Temp and Wind are correlated — does the sign of the correlation explain the direction of the bias?\n\n\n\nHint\n\ncoef(slr)[\"Temp\"]\ncoef(mlr1)[\"Temp\"]\n\ncor(aq$Temp, aq$Wind)\nThink: what is the sign of \\(\\beta_{\\text{Wind}}\\) in the true model, and what is the sign of \\(\\text{Corr}(\\text{Temp}, \\text{Wind})\\)? Use the OVB table from the lecture."
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#prediction-with-mlr",
+    "href": "slides/09_R_MLR.html#prediction-with-mlr",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Prediction with MLR",
+    "text": "Prediction with MLR\nUsing your full model from Exercise 7, predict ozone concentration for two new days:\n\n\n\nDay\nTemp\nWind\nSolar.R\n\n\n\n\nA\n80\n10\n200\n\n\nB\n95\n5\n250\n\n\n\nTasks\n\nObtain point predictions.\nObtain 95% prediction intervals.\nWhich day is predicted to have higher ozone? Does it make sense?\n\n\n\nHint\n\nnew_days &lt;- data.frame(Temp = c(80, 95), Wind = c(10, 5), Solar.R = c(200, 250))\npredict(mlr2, new_days, interval = \"prediction\", level = 0.95)"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#core-commands",
+    "href": "slides/09_R_MLR.html#core-commands",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Core commands",
+    "text": "Core commands\n# Load and clean data\ndata(airquality)\naq &lt;- airquality[complete.cases(airquality), ]\n\n# Simple linear regression\nslr  &lt;- lm(Ozone ~ Temp, data = aq)\nsummary(slr)\n\n# Multiple linear regression\nmlr1 &lt;- lm(Ozone ~ Temp + Wind, data = aq)\nmlr2 &lt;- lm(Ozone ~ Temp + Wind + Solar.R, data = aq)\nsummary(mlr2)\n\n# Goodness of fit\nsummary(slr)$r.squared\nsummary(slr)$adj.r.squared\n\n# Variance decomposition\nanova(slr)\n\n# Coefficients\ncoef(mlr2)\n\n# Predictions\nnew_days &lt;- data.frame(Temp = c(80, 95), Wind = c(10, 5), Solar.R = c(200, 250))\npredict(mlr2, new_days, interval = \"prediction\")"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#useful-checks",
+    "href": "slides/09_R_MLR.html#useful-checks",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Useful checks",
+    "text": "Useful checks\n# Residual plots\npar(mfrow = c(2, 2))\nplot(mlr2)\npar(mfrow = c(1, 1))\n\n# Manual residual vs fitted\nplot(fitted(mlr2), resid(mlr2))\nabline(h = 0, lty = 2)\n\n# Normality check\nqqnorm(resid(mlr2))\nqqline(resid(mlr2))\n\n# Correlation between regressors (multicollinearity check)\ncor(aq[, c(\"Temp\", \"Wind\", \"Solar.R\")])\n\n# Compare R² across models\ndata.frame(\n  Model  = c(\"SLR\", \"MLR (2 vars)\", \"MLR (3 vars)\"),\n  R2     = c(summary(slr)$r.squared,\n             summary(mlr1)$r.squared,\n             summary(mlr2)$r.squared),\n  Adj_R2 = c(summary(slr)$adj.r.squared,\n             summary(mlr1)$adj.r.squared,\n             summary(mlr2)$adj.r.squared)\n)"
+  },
+  {
+    "objectID": "slides/09_R_MLR.html#homework-not-graded",
+    "href": "slides/09_R_MLR.html#homework-not-graded",
+    "title": "Goodness of Fit & Multiple Regression: Application in R",
+    "section": "Homework (not graded)",
+    "text": "Homework (not graded)\nThe full airquality dataset also has Month as a variable.\n\nAdd Month to the MLR model (treat it as numeric for now) and check whether \\(\\bar{R}^2\\) improves.\nLook at the scatter plot of Ozone vs Temp coloured by Month. Do you notice any pattern?\nWe will discuss in the next lecture whether controlling for Month makes conceptual sense, and what to do when a regressor is categorical rather than continuous.\n\nggplot(airquality[complete.cases(airquality),], aes(x = Temp, y = Ozone, color = factor(Month))) +\n  geom_point(size = 2.5) +\n  theme_minimal() +\n  labs(color = \"Month\")"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html",
+    "href": "slides/10_R_Inference_Validation.html",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "",
+    "text": "Scan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#no-installation-needed",
+    "href": "slides/10_R_Inference_Validation.html#no-installation-needed",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "No installation needed",
+    "text": "No installation needed\nScan the QR code or open the link below to try Jupyter in your browser.\nhttps://jupyter.org"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#learning-goals",
+    "href": "slides/10_R_Inference_Validation.html#learning-goals",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Learning goals",
+    "text": "Learning goals\n\nRead and interpret the full summary() output: \\(t\\)-statistics, \\(p\\)-values, and significance codes.\nConstruct and interpret confidence intervals for individual coefficients.\nConduct and interpret the \\(F\\)-test for overall model significance.\nObtain prediction intervals and understand how they differ from confidence intervals.\nProduce and interpret the four diagnostic plots.\nDetect heteroscedasticity and multicollinearity using formal tools.\nFollow a complete model validation workflow from start to finish."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#our-model-so-far",
+    "href": "slides/10_R_Inference_Validation.html#our-model-so-far",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Our model so far",
+    "text": "Our model so far\nIn Lecture 09 we settled on the three-variable model for daily ozone concentration in New York:\n\\[\\text{Ozone}_i = \\beta_0 + \\beta_1\\,\\text{Temp}_i + \\beta_2\\,\\text{Wind}_i + \\beta_3\\,\\text{Solar.R}_i + \\varepsilon_i\\]\nLet’s rebuild it quickly before we start:\n\ndata(airquality)\naq   &lt;- airquality[complete.cases(airquality), ]\nmlr2 &lt;- lm(Ozone ~ Temp + Wind + Solar.R, data = aq)\n\n\n\\(n =\\) 111 complete observations\n\\(k = 3\\) regressors → degrees of freedom for residuals: \\(n - k - 1 =\\) 107\n\nToday we ask: are the estimates trustworthy, and do the classical assumptions hold?"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#reading-the-full-summary",
+    "href": "slides/10_R_Inference_Validation.html#reading-the-full-summary",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Reading the full summary",
+    "text": "Reading the full summary\nRun summary(mlr2) and locate the following in the output:\n\nThe estimated coefficients and their standard errors.\nThe \\(t\\)-statistic and \\(p\\)-value for each coefficient.\nThe residual standard error \\(s\\).\n\\(R^2\\) and adjusted \\(\\bar{R}^2\\).\nThe \\(F\\)-statistic and its \\(p\\)-value.\n\n\n\nHint\n\nsummary(mlr2)\nEach row of the Coefficients table gives you: Estimate, Std. Error, t value, Pr(&gt;|t|).\nThe last line of the output contains the \\(F\\)-statistic."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#interpreting-the-t-tests",
+    "href": "slides/10_R_Inference_Validation.html#interpreting-the-t-tests",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Interpreting the \\(t\\)-tests",
+    "text": "Interpreting the \\(t\\)-tests\nUsing the output from Exercise 1:\n\nState \\(H_0\\) and \\(H_1\\) for the coefficient on Wind.\nWhat is the value of the \\(t\\)-statistic for Wind? How was it computed?\nAt \\(\\alpha = 5\\%\\), do you reject \\(H_0\\)? How do you know?\nRepeat for Solar.R.\n\n\n\nHint\n\nsummary(mlr2)$coefficients\n\n# t-statistic = Estimate / Std. Error\n# Reject H0 if |t| &gt; t critical value, OR if p-value &lt; alpha\n\n# Critical value for alpha = 0.05 (two-sided)\nqt(0.975, df = nrow(aq) - 4)"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#confidence-intervals",
+    "href": "slides/10_R_Inference_Validation.html#confidence-intervals",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Confidence intervals",
+    "text": "Confidence intervals\n\nCompute 95% confidence intervals for all coefficients.\nInterpret the interval for Temp in plain language.\nDoes the interval for any coefficient include zero? What does that imply?\nRecompute at the 99% level — how do the intervals change, and why?\n\n\n\nHint\n\nconfint(mlr2, level = 0.95)\nconfint(mlr2, level = 0.99)\nA coefficient whose 95% CI excludes zero is significant at \\(\\alpha = 5\\%\\) — this is exactly equivalent to rejecting \\(H_0: \\beta_j = 0\\) in the \\(t\\)-test."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#the-f-test",
+    "href": "slides/10_R_Inference_Validation.html#the-f-test",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "The \\(F\\)-test",
+    "text": "The \\(F\\)-test\n\nState the null hypothesis of the overall \\(F\\)-test.\nFind the \\(F\\)-statistic and its \\(p\\)-value in summary(mlr2).\nAt \\(\\alpha = 5\\%\\), what do you conclude?\nVerify the \\(F\\)-statistic manually using the formula:\n\n\\[F = \\frac{R^2 / k}{(1 - R^2) / (n - k - 1)}\\]\n\n\nHint\n\ns   &lt;- summary(mlr2)\nR2  &lt;- s$r.squared\nk   &lt;- 3\nn   &lt;- nrow(aq)\n\nF_manual &lt;- (R2 / k) / ((1 - R2) / (n - k - 1))\nF_manual\n\n# Compare to R's value\ns$fstatistic"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#one-sided-hypothesis-test",
+    "href": "slides/10_R_Inference_Validation.html#one-sided-hypothesis-test",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "One-sided hypothesis test",
+    "text": "One-sided hypothesis test\nTheory tells us that higher wind speed should reduce ozone (wind disperses pollutants).\n\nState this as a one-sided hypothesis test for \\(\\beta_{\\text{Wind}}\\).\nThe two-sided \\(p\\)-value is available from summary(). How do you convert it to a one-sided \\(p\\)-value?\nDo you reject \\(H_0\\) at \\(\\alpha = 5\\%\\)?\n\n\n\nHint\n\n# Extract the two-sided p-value for Wind\np_two_sided &lt;- summary(mlr2)$coefficients[\"Wind\", \"Pr(&gt;|t|)\"]\np_two_sided\n\n# One-sided p-value (H1: beta_Wind &lt; 0)\n# Only valid if the sign of the estimate is consistent with H1\ncoef(mlr2)[\"Wind\"]       # check the sign first\np_one_sided &lt;- p_two_sided / 2\np_one_sided"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#prediction-and-prediction-intervals",
+    "href": "slides/10_R_Inference_Validation.html#prediction-and-prediction-intervals",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Prediction and prediction intervals",
+    "text": "Prediction and prediction intervals\nPredict ozone concentration for three new days:\n\n\n\nDay\nTemp (°F)\nWind (mph)\nSolar.R (lang)\n\n\n\n\nA\n75\n8\n180\n\n\nB\n90\n4\n250\n\n\nC\n65\n15\n100\n\n\n\n\nObtain point predictions.\nObtain 95% prediction intervals.\nObtain 95% confidence intervals for the mean response.\nWhich interval is wider? Why?\n\n\n\nHint\n\nnew_days &lt;- data.frame(\n  Temp    = c(75, 90, 65),\n  Wind    = c(8, 4, 15),\n  Solar.R = c(180, 250, 100)\n)\n\n# Point predictions and prediction intervals (for individual outcomes)\npredict(mlr2, newdata = new_days, interval = \"prediction\", level = 0.95)\n\n# Confidence intervals for the mean response\npredict(mlr2, newdata = new_days, interval = \"confidence\", level = 0.95)\nThe prediction interval is wider because it must also account for the individual error \\(\\varepsilon_i\\) around the mean."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#residual-diagnostics-the-four-plots",
+    "href": "slides/10_R_Inference_Validation.html#residual-diagnostics-the-four-plots",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Residual diagnostics — the four plots",
+    "text": "Residual diagnostics — the four plots\n\nProduce the four standard diagnostic plots using plot(mlr2).\nFor each plot, state what assumption it checks and what you observe.\nAre there any observations flagged as influential?\n\n\n\nHint\n\npar(mfrow = c(2, 2))\nplot(mlr2)\npar(mfrow = c(1, 1))\n\n\n\nPlot\nAssumption checked\n\n\n\n\nResiduals vs. Fitted\nLinearity, homoscedasticity\n\n\nNormal Q–Q\nNormality of residuals\n\n\nScale-Location\nHomoscedasticity (more clearly)\n\n\nResiduals vs. Leverage\nInfluential observations"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#testing-normality-formally",
+    "href": "slides/10_R_Inference_Validation.html#testing-normality-formally",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Testing normality formally",
+    "text": "Testing normality formally\nThe Q–Q plot gives a visual impression, but we can also test formally.\n\nRun the Shapiro-Wilk test on the residuals.\nState \\(H_0\\) and interpret the \\(p\\)-value.\nIs the result consistent with what you saw in the Q–Q plot?\n\n\n\nHint\n\nshapiro.test(resid(mlr2))\n\\(H_0\\): residuals are normally distributed.\nIf \\(p &gt; 0.05\\), we do not reject normality at the 5% level."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#detecting-multicollinearity",
+    "href": "slides/10_R_Inference_Validation.html#detecting-multicollinearity",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Detecting multicollinearity",
+    "text": "Detecting multicollinearity\n\nCompute the correlation matrix of the three regressors.\nCalculate the VIF for each regressor.\nIs there a multicollinearity concern? What would be the consequence if VIF were very high?\n\n\n\nHint\n\n# Correlation matrix\ncor(aq[, c(\"Temp\", \"Wind\", \"Solar.R\")])\n\n# VIF (requires the car package)\n# install.packages(\"car\")\nlibrary(car)\nvif(mlr2)\nRule of thumb: VIF \\(&lt; 5\\) is acceptable; VIF \\(&gt; 10\\) is a serious concern."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#putting-it-all-together",
+    "href": "slides/10_R_Inference_Validation.html#putting-it-all-together",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Putting it all together",
+    "text": "Putting it all together\nNow carry out the full validation workflow for mlr2:\n\nCoefficients — signs, magnitudes, and significance. ✓ (Exercises 1–5)\nResiduals vs. fitted — any non-linearity or heteroscedasticity?\nQ–Q plot + Shapiro-Wilk — are residuals approximately normal?\nVIF — any multicollinearity?\nBased on all of the above: do you trust the inference from this model? Are there any concerns?\n\n\n\nHint\n\n# Complete workflow in one go\nsummary(mlr2)\nconfint(mlr2)\n\npar(mfrow = c(2, 2)); plot(mlr2); par(mfrow = c(1, 1))\n\nshapiro.test(resid(mlr2))\n\nlibrary(car)\nvif(mlr2)\nWrite a brief paragraph summarising your conclusions — this is exactly what you would include in a report."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#inference-commands",
+    "href": "slides/10_R_Inference_Validation.html#inference-commands",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Inference commands",
+    "text": "Inference commands\n# Full regression summary (t-tests, F-test, R²)\nsummary(mlr2)\n\n# Extract specific parts\nsummary(mlr2)$coefficients      # coefficient table\nsummary(mlr2)$r.squared         # R²\nsummary(mlr2)$adj.r.squared     # adjusted R²\nsummary(mlr2)$fstatistic        # F-statistic (value, df1, df2)\nsummary(mlr2)$sigma             # residual standard error s\n\n# Confidence intervals\nconfint(mlr2, level = 0.95)\n\n# Critical t-value (two-sided, alpha = 0.05)\nqt(0.975, df = nrow(aq) - 4)\n\n# Manual t-statistic\ncoef(mlr2)[\"Wind\"] / summary(mlr2)$coefficients[\"Wind\", \"Std. Error\"]"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#prediction-commands",
+    "href": "slides/10_R_Inference_Validation.html#prediction-commands",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Prediction commands",
+    "text": "Prediction commands\nnew_days &lt;- data.frame(Temp = c(75, 90), Wind = c(8, 4), Solar.R = c(180, 250))\n\n# Point prediction only\npredict(mlr2, newdata = new_days)\n\n# Prediction interval (for individual outcome)\npredict(mlr2, newdata = new_days, interval = \"prediction\", level = 0.95)\n\n# Confidence interval (for mean response)\npredict(mlr2, newdata = new_days, interval = \"confidence\", level = 0.95)"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#diagnostic-commands",
+    "href": "slides/10_R_Inference_Validation.html#diagnostic-commands",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Diagnostic commands",
+    "text": "Diagnostic commands\n# Four standard plots\npar(mfrow = c(2, 2))\nplot(mlr2)\npar(mfrow = c(1, 1))\n\n# Residuals vs fitted (manual, with ggplot)\nggplot(data.frame(fitted = fitted(mlr2), resid = resid(mlr2)),\n       aes(x = fitted, y = resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  theme_minimal()\n\n# Normality test\nshapiro.test(resid(mlr2))\n\n# Multicollinearity\nlibrary(car)\nvif(mlr2)\n\n# Correlation among regressors\ncor(aq[, c(\"Temp\", \"Wind\", \"Solar.R\")])"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#homework-not-graded",
+    "href": "slides/10_R_Inference_Validation.html#homework-not-graded",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Homework (not graded)",
+    "text": "Homework (not graded)\nIn the diagnostic plots you may have noticed that the residuals from mlr2 show some non-constant variance — ozone measurements are non-negative and right-skewed.\n\nFit a model using \\(\\log(\\text{Ozone})\\) as the response instead of Ozone:\n\nmlr_log &lt;- lm(log(Ozone) ~ Temp + Wind + Solar.R, data = aq)\n\nRe-run the full diagnostic workflow on mlr_log.\nDo the residuals look more normal and homoscedastic?\nHow does the interpretation of the coefficients change when the response is on a log scale?\n\nWe will discuss log transformations and their interpretation in the next lecture."
   }
 ]

@@ -143,5 +143,11 @@
   },
   "slides/08_R_SLR.qmd": {
     "08_R_SLR.html": "98b145ec"
+  },
+  "slides/09_R_MLR.qmd": {
+    "09_R_MLR.html": "5e3bd3c9"
+  },
+  "slides/10_R_Inference_Validation.qmd": {
+    "10_R_Inference_Validation.html": "9de1468e"
   }
 }

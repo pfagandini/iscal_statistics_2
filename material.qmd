@@ -27,6 +27,8 @@ title: "Material"
 We are going to try to apply what we have been learing in R. You can access a platform that will let you play with it in [Jupyter](https://jupyter.org).
 
 1. [SLR](slides/08_R_SLR.qmd)
+2. [MLR](slides/09_R_MLR.qmd)
+3. [Inference](slides/10_R_Inference_Validation.qmd)
 
 ## Exercises
 

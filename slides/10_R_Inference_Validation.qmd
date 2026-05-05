@@ -1,0 +1,437 @@
+---
+title: "Inference & Model Validation: Application in R"
+subtitle: "Hands-on practice with pre-loaded R data"
+author: "Paulo Fagandini"
+institute: "Lisbon Accounting and Business School"
+format:
+  revealjs:
+    theme: [default, iscal_theme.scss]
+    logo: ../images/iscal_logo.svg
+    slide-number: true
+    incremental: true
+    transition: slide
+    footer: "Statistics II — Inference & Model Validation"
+    code-overflow: wrap
+    width: 1280
+    height: 720
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+library(ggplot2)
+iscal_burgundy      <- "#8B1538"
+iscal_dark_burgundy <- "#6B1028"
+iscal_gray          <- "#333333"
+iscal_light         <- "#F5F5F5"
+iscal_blue          <- "#0066CC"
+
+# Reproduce the airquality model from Lecture 09
+data(airquality)
+aq   <- airquality[complete.cases(airquality), ]
+mlr2 <- lm(Ozone ~ Temp + Wind + Solar.R, data = aq)
+```
+
+# Try it online {background-color="#8B1538"}
+
+## No installation needed {.smaller}
+
+Scan the QR code or open the link below to try Jupyter in your browser.
+
+[https://jupyter.org](https://jupyter.org)
+
+```{r jupyter-qr, echo=FALSE, fig.align='center', out.width='35%'}
+library(qrcode)
+plot(qr_code("https://jupyter.org"))
+```
+
+# Statistical Inference & Model Validation {background-color="#8B1538"}
+
+## Learning goals {.smaller}
+
+- Read and interpret the full `summary()` output: $t$-statistics, $p$-values, and significance codes.
+- Construct and interpret **confidence intervals** for individual coefficients.
+- Conduct and interpret the **$F$-test** for overall model significance.
+- Obtain **prediction intervals** and understand how they differ from confidence intervals.
+- Produce and interpret the four **diagnostic plots**.
+- Detect **heteroscedasticity** and **multicollinearity** using formal tools.
+- Follow a complete **model validation workflow** from start to finish.
+
+# Picking up from Lecture 09 {background-color="#8B1538"}
+
+## Our model so far {.smaller}
+
+In Lecture 09 we settled on the three-variable model for daily ozone concentration in New York:
+
+$$\text{Ozone}_i = \beta_0 + \beta_1\,\text{Temp}_i + \beta_2\,\text{Wind}_i + \beta_3\,\text{Solar.R}_i + \varepsilon_i$$
+
+Let's rebuild it quickly before we start:
+
+```{r rebuild-model}
+data(airquality)
+aq   <- airquality[complete.cases(airquality), ]
+mlr2 <- lm(Ozone ~ Temp + Wind + Solar.R, data = aq)
+```
+
+- $n =$ `r nrow(aq)` complete observations
+- $k = 3$ regressors → degrees of freedom for residuals: $n - k - 1 =$ `r nrow(aq) - 4`
+
+Today we ask: **are the estimates trustworthy, and do the classical assumptions hold?**
+
+# Exercise 1 {background-color="#8B1538"}
+
+## Reading the full summary {.smaller}
+
+Run `summary(mlr2)` and locate the following in the output:
+
+1. The estimated coefficients and their standard errors.
+2. The $t$-statistic and $p$-value for each coefficient.
+3. The residual standard error $s$.
+4. $R^2$ and adjusted $\bar{R}^2$.
+5. The $F$-statistic and its $p$-value.
+
+<details>
+<summary>Hint</summary>
+
+```r
+summary(mlr2)
+```
+
+Each row of the `Coefficients` table gives you:
+`Estimate`, `Std. Error`, `t value`, `Pr(>|t|)`.
+
+The last line of the output contains the $F$-statistic.
+
+</details>
+
+# Exercise 2 {background-color="#8B1538"}
+
+## Interpreting the $t$-tests {.smaller}
+
+Using the output from Exercise 1:
+
+1. State $H_0$ and $H_1$ for the coefficient on `Wind`.
+2. What is the value of the $t$-statistic for `Wind`? How was it computed?
+3. At $\alpha = 5\%$, do you reject $H_0$? How do you know?
+4. Repeat for `Solar.R`.
+
+<details>
+<summary>Hint</summary>
+
+```r
+summary(mlr2)$coefficients
+
+# t-statistic = Estimate / Std. Error
+# Reject H0 if |t| > t critical value, OR if p-value < alpha
+
+# Critical value for alpha = 0.05 (two-sided)
+qt(0.975, df = nrow(aq) - 4)
+```
+
+</details>
+
+# Exercise 3 {background-color="#8B1538"}
+
+## Confidence intervals {.smaller}
+
+1. Compute 95% confidence intervals for all coefficients.
+2. Interpret the interval for `Temp` in plain language.
+3. Does the interval for any coefficient include zero? What does that imply?
+4. Recompute at the 99% level — how do the intervals change, and why?
+
+<details>
+<summary>Hint</summary>
+
+```r
+confint(mlr2, level = 0.95)
+confint(mlr2, level = 0.99)
+```
+
+A coefficient whose 95% CI **excludes** zero is significant at $\alpha = 5\%$ — this is exactly equivalent to rejecting $H_0: \beta_j = 0$ in the $t$-test.
+
+</details>
+
+# Exercise 4 {background-color="#8B1538"}
+
+## The $F$-test {.smaller}
+
+1. State the null hypothesis of the overall $F$-test.
+2. Find the $F$-statistic and its $p$-value in `summary(mlr2)`.
+3. At $\alpha = 5\%$, what do you conclude?
+4. Verify the $F$-statistic manually using the formula:
+
+$$F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}$$
+
+<details>
+<summary>Hint</summary>
+
+```r
+s   <- summary(mlr2)
+R2  <- s$r.squared
+k   <- 3
+n   <- nrow(aq)
+
+F_manual <- (R2 / k) / ((1 - R2) / (n - k - 1))
+F_manual
+
+# Compare to R's value
+s$fstatistic
+```
+
+</details>
+
+# Exercise 5 {background-color="#8B1538"}
+
+## One-sided hypothesis test {.smaller}
+
+Theory tells us that **higher wind speed should reduce ozone** (wind disperses pollutants).
+
+1. State this as a one-sided hypothesis test for $\beta_{\text{Wind}}$.
+2. The two-sided $p$-value is available from `summary()`. How do you convert it to a one-sided $p$-value?
+3. Do you reject $H_0$ at $\alpha = 5\%$?
+
+<details>
+<summary>Hint</summary>
+
+```r
+# Extract the two-sided p-value for Wind
+p_two_sided <- summary(mlr2)$coefficients["Wind", "Pr(>|t|)"]
+p_two_sided
+
+# One-sided p-value (H1: beta_Wind < 0)
+# Only valid if the sign of the estimate is consistent with H1
+coef(mlr2)["Wind"]       # check the sign first
+p_one_sided <- p_two_sided / 2
+p_one_sided
+```
+
+</details>
+
+# Exercise 6 {background-color="#8B1538"}
+
+## Prediction and prediction intervals {.smaller}
+
+Predict ozone concentration for three new days:
+
+| Day | Temp (°F) | Wind (mph) | Solar.R (lang) |
+|-----|-----------|------------|-----------------|
+| A   | 75        | 8          | 180             |
+| B   | 90        | 4          | 250             |
+| C   | 65        | 15         | 100             |
+
+1. Obtain point predictions.
+2. Obtain 95% prediction intervals.
+3. Obtain 95% confidence intervals for the **mean** response.
+4. Which interval is wider? Why?
+
+<details>
+<summary>Hint</summary>
+
+```r
+new_days <- data.frame(
+  Temp    = c(75, 90, 65),
+  Wind    = c(8, 4, 15),
+  Solar.R = c(180, 250, 100)
+)
+
+# Point predictions and prediction intervals (for individual outcomes)
+predict(mlr2, newdata = new_days, interval = "prediction", level = 0.95)
+
+# Confidence intervals for the mean response
+predict(mlr2, newdata = new_days, interval = "confidence", level = 0.95)
+```
+
+The prediction interval is wider because it must also account for the individual error $\varepsilon_i$ around the mean.
+
+</details>
+
+# Exercise 7 {background-color="#8B1538"}
+
+## Residual diagnostics — the four plots {.smaller}
+
+1. Produce the four standard diagnostic plots using `plot(mlr2)`.
+2. For each plot, state what assumption it checks and what you observe.
+3. Are there any observations flagged as influential?
+
+<details>
+<summary>Hint</summary>
+
+```r
+par(mfrow = c(2, 2))
+plot(mlr2)
+par(mfrow = c(1, 1))
+```
+
+| Plot | Assumption checked |
+|------|--------------------|
+| Residuals vs. Fitted | Linearity, homoscedasticity |
+| Normal Q–Q | Normality of residuals |
+| Scale-Location | Homoscedasticity (more clearly) |
+| Residuals vs. Leverage | Influential observations |
+
+</details>
+
+# Exercise 8 {background-color="#8B1538"}
+
+## Testing normality formally {.smaller}
+
+The Q–Q plot gives a visual impression, but we can also test formally.
+
+1. Run the **Shapiro-Wilk test** on the residuals.
+2. State $H_0$ and interpret the $p$-value.
+3. Is the result consistent with what you saw in the Q–Q plot?
+
+<details>
+<summary>Hint</summary>
+
+```r
+shapiro.test(resid(mlr2))
+```
+
+$H_0$: residuals are normally distributed.
+
+If $p > 0.05$, we do not reject normality at the 5% level.
+
+</details>
+
+# Exercise 9 {background-color="#8B1538"}
+
+## Detecting multicollinearity {.smaller}
+
+1. Compute the **correlation matrix** of the three regressors.
+2. Calculate the **VIF** for each regressor.
+3. Is there a multicollinearity concern? What would be the consequence if VIF were very high?
+
+<details>
+<summary>Hint</summary>
+
+```r
+# Correlation matrix
+cor(aq[, c("Temp", "Wind", "Solar.R")])
+
+# VIF (requires the car package)
+# install.packages("car")
+library(car)
+vif(mlr2)
+```
+
+Rule of thumb: VIF $< 5$ is acceptable; VIF $> 10$ is a serious concern.
+
+</details>
+
+# Exercise 10 {background-color="#8B1538"}
+
+## Putting it all together {.smaller}
+
+Now carry out the **full validation workflow** for `mlr2`:
+
+1. Coefficients — signs, magnitudes, and significance. ✓ (Exercises 1–5)
+2. Residuals vs. fitted — any non-linearity or heteroscedasticity?
+3. Q–Q plot + Shapiro-Wilk — are residuals approximately normal?
+4. VIF — any multicollinearity?
+5. Based on all of the above: do you trust the inference from this model? Are there any concerns?
+
+<details>
+<summary>Hint</summary>
+
+```r
+# Complete workflow in one go
+summary(mlr2)
+confint(mlr2)
+
+par(mfrow = c(2, 2)); plot(mlr2); par(mfrow = c(1, 1))
+
+shapiro.test(resid(mlr2))
+
+library(car)
+vif(mlr2)
+```
+
+Write a brief paragraph summarising your conclusions — this is exactly what you would include in a report.
+
+</details>
+
+# Cheat sheet {background-color="#8B1538"}
+
+## Inference commands {.smaller}
+
+```r
+# Full regression summary (t-tests, F-test, R²)
+summary(mlr2)
+
+# Extract specific parts
+summary(mlr2)$coefficients      # coefficient table
+summary(mlr2)$r.squared         # R²
+summary(mlr2)$adj.r.squared     # adjusted R²
+summary(mlr2)$fstatistic        # F-statistic (value, df1, df2)
+summary(mlr2)$sigma             # residual standard error s
+
+# Confidence intervals
+confint(mlr2, level = 0.95)
+
+# Critical t-value (two-sided, alpha = 0.05)
+qt(0.975, df = nrow(aq) - 4)
+
+# Manual t-statistic
+coef(mlr2)["Wind"] / summary(mlr2)$coefficients["Wind", "Std. Error"]
+```
+
+## Prediction commands {.smaller}
+
+```r
+new_days <- data.frame(Temp = c(75, 90), Wind = c(8, 4), Solar.R = c(180, 250))
+
+# Point prediction only
+predict(mlr2, newdata = new_days)
+
+# Prediction interval (for individual outcome)
+predict(mlr2, newdata = new_days, interval = "prediction", level = 0.95)
+
+# Confidence interval (for mean response)
+predict(mlr2, newdata = new_days, interval = "confidence", level = 0.95)
+```
+
+## Diagnostic commands {.smaller}
+
+```r
+# Four standard plots
+par(mfrow = c(2, 2))
+plot(mlr2)
+par(mfrow = c(1, 1))
+
+# Residuals vs fitted (manual, with ggplot)
+ggplot(data.frame(fitted = fitted(mlr2), resid = resid(mlr2)),
+       aes(x = fitted, y = resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed") +
+  theme_minimal()
+
+# Normality test
+shapiro.test(resid(mlr2))
+
+# Multicollinearity
+library(car)
+vif(mlr2)
+
+# Correlation among regressors
+cor(aq[, c("Temp", "Wind", "Solar.R")])
+```
+
+## Homework (not graded) {.smaller}
+
+In the diagnostic plots you may have noticed that the residuals from `mlr2` show some non-constant variance — ozone measurements are non-negative and right-skewed.
+
+1. Fit a model using $\log(\text{Ozone})$ as the response instead of `Ozone`:
+
+```r
+mlr_log <- lm(log(Ozone) ~ Temp + Wind + Solar.R, data = aq)
+```
+
+2. Re-run the full diagnostic workflow on `mlr_log`.
+3. Do the residuals look more normal and homoscedastic?
+4. How does the interpretation of the coefficients change when the response is on a log scale?
+
+We will discuss log transformations and their interpretation in the next lecture.
