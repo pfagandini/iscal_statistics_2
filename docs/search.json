@@ -606,21 +606,21 @@
     "href": "slides/10_Linear_Regression_Inference_Validation.html#residuals-vs.-fitted-checking-linearity-and-homoscedasticity",
     "title": "The Linear Regression Model",
     "section": "Residuals vs. Fitted: Checking Linearity and Homoscedasticity",
-    "text": "Residuals vs. Fitted: Checking Linearity and Homoscedasticity\n\nWhat to look for:\n\nRandom scatter around zero → linearity OK\nConstant vertical spread → homoscedasticity OK\nFunnel or fan shape → heteroscedasticity (problem)\nCurved pattern → non-linearity (problem)"
+    "text": "Residuals vs. Fitted: Checking Linearity and Homoscedasticity\n\n\n\n\n\n\n\n\n\n\n\n\nWhat to look for:\n\nRandom scatter around zero → linearity OK\nConstant vertical spread → homoscedasticity OK\nFunnel or fan shape → heteroscedasticity (problem)\nCurved pattern → non-linearity (problem)"
   },
   {
     "objectID": "slides/10_Linear_Regression_Inference_Validation.html#normality-of-residuals-qq-plot",
     "href": "slides/10_Linear_Regression_Inference_Validation.html#normality-of-residuals-qq-plot",
     "title": "The Linear Regression Model",
     "section": "Normality of Residuals: Q–Q Plot",
-    "text": "Normality of Residuals: Q–Q Plot\n\nWhat to look for:\n\nPoints near the diagonal → normality approximately satisfied\nS-shaped curve → heavy tails (non-normal)\nSystematic departure → consider transformations of \\(Y\\)"
+    "text": "Normality of Residuals: Q–Q Plot\n\n\n\n\n\n\n\n\n\n\n\n\nWhat to look for:\n\nPoints near the diagonal → normality approximately satisfied\nS-shaped curve → heavy tails (non-normal)\nSystematic departure → consider transformations of \\(Y\\)"
   },
   {
     "objectID": "slides/10_Linear_Regression_Inference_Validation.html#detecting-heteroscedasticity",
     "href": "slides/10_Linear_Regression_Inference_Validation.html#detecting-heteroscedasticity",
     "title": "The Linear Regression Model",
     "section": "Detecting Heteroscedasticity",
-    "text": "Detecting Heteroscedasticity\n\n\nScale-Location plot (square root of standardised residuals vs. fitted):\n\n\n\n\n\n\n\n\n\n\nIdeal: the smooth line is roughly horizontal (constant spread).\nProblem signs:\n\nRising line → variance increases with \\(\\hat{Y}\\) (funnel-right)\nFalling line → variance decreases with \\(\\hat{Y}\\) (funnel-left)\n\nFormal test: White’s test (tests whether residual variance depends on any regressor or its square).\nPractical fix: Use robust (heteroscedasticity-consistent) standard errors or transform \\(Y\\) (e.g. \\(\\log Y\\))."
+    "text": "Detecting Heteroscedasticity\n\n\n\n\n\n\n\n\n\n\n\n\nProblem signs:\n\nRising line → variance increases with \\(\\hat{Y}\\) (funnel-right)\nFalling line → variance decreases with \\(\\hat{Y}\\) (funnel-left)\n\nFormal test: White’s test (tests whether residual variance depends on any regressor or its square).\nPractical fix: Use robust (heteroscedasticity-consistent) standard errors or transform \\(Y\\) (e.g. \\(\\log Y\\))."
   },
   {
     "objectID": "slides/10_Linear_Regression_Inference_Validation.html#the-classical-assumptions-summary-table",
@@ -2903,5 +2903,19 @@
     "title": "Chapter I — Central Limit Theorem",
     "section": "",
     "text": "Rice demand per day: \\(X\\) with mean 40 kg and standard deviation 5 kg.\nAssume a year with 364 days. We order 14500 kg for the year. We want probability that this stock suffices (i.e., total demand \\(S\\) in the year ≤ 14500).\n\n\nLet \\(X_1, \\ldots, X_{364}\\) be daily independent demands (same distribution).\n\\[\nE(X_i) = \\mu = 40, \\quad \\sigma = 5, \\quad V(X_i) = 25.\n\\]\nTotal yearly demand: \\[\nS = \\sum_{i=1}^{364} X_i.\n\\]\n\\[\nE(S) = 364 \\cdot 40 = 14560.\n\\]\n\\[\nV(S) = 364 \\cdot 25 = 9100.\n\\]\n\\(\\sigma_S = \\sqrt{9100} \\approx 95.394.\\)\n\n\n\nBy CLT: \\[\nS \\approx N(14560, 9100).\n\\]\nWe want \\[\nP(S \\le 14500).\n\\]\nStandardize: \\[\nZ = \\frac{14500 - 14560}{\\sqrt{9100}} = \\frac{-60}{95.394} \\approx -0.6289.\n\\]\nSo \\[\nP(S \\le 14500) \\approx \\Phi(-0.6289) = 1 - \\Phi(0.6289).\n\\]\n\\(\\Phi(0.6289) \\approx 0.7357\\). Then \\[\nP(S \\le 14500) \\approx 1 - 0.7357 = 0.2643.\n\\]\nThus probability is approximately 0.2643, as given.\nStatement is TRUE."
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#diagnostic-commands-plots",
+    "href": "slides/10_R_Inference_Validation.html#diagnostic-commands-plots",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Diagnostic commands (plots)",
+    "text": "Diagnostic commands (plots)\n# Four standard plots\npar(mfrow = c(2, 2))\nplot(mlr2)\npar(mfrow = c(1, 1))\n\n# Residuals vs fitted (manual, with ggplot)\nggplot(data.frame(fitted = fitted(mlr2), resid = resid(mlr2)),\n       aes(x = fitted, y = resid)) +\n  geom_point() +\n  geom_hline(yintercept = 0, linetype = \"dashed\") +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/10_R_Inference_Validation.html#diagnostic-commands-tests",
+    "href": "slides/10_R_Inference_Validation.html#diagnostic-commands-tests",
+    "title": "Inference & Model Validation: Application in R",
+    "section": "Diagnostic commands (tests)",
+    "text": "Diagnostic commands (tests)\n# Normality test\nshapiro.test(resid(mlr2))\n\n# Multicollinearity\nlibrary(car)\nvif(mlr2)\n\n# Correlation among regressors\ncor(aq[, c(\"Temp\", \"Wind\", \"Solar.R\")])"
   }
 ]

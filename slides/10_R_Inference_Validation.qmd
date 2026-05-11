@@ -394,7 +394,7 @@ predict(mlr2, newdata = new_days, interval = "prediction", level = 0.95)
 predict(mlr2, newdata = new_days, interval = "confidence", level = 0.95)
 ```
 
-## Diagnostic commands {.smaller}
+## Diagnostic commands (plots) {.smaller}
 
 ```r
 # Four standard plots
@@ -408,7 +408,11 @@ ggplot(data.frame(fitted = fitted(mlr2), resid = resid(mlr2)),
   geom_point() +
   geom_hline(yintercept = 0, linetype = "dashed") +
   theme_minimal()
+```
 
+## Diagnostic commands (tests) {.smaller}
+
+```r
 # Normality test
 shapiro.test(resid(mlr2))
 

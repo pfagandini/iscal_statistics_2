@@ -50,7 +50,7 @@ mlr_model  <- lm(profit2 ~ revenue2 + employees)
 
 # Statistical Inference in Regression {background-color="#8B1538"}
 
-## Lecture Overview
+## Lecture Overview {.smaller}
 
 **Lecture 10 — Statistical Inference & Model Validation**
 
@@ -71,7 +71,7 @@ mlr_model  <- lm(profit2 ~ revenue2 + employees)
 
 # Sampling Distributions of OLS Estimators {background-color="#8B1538"}
 
-## From Estimates to Inference
+## From Estimates to Inference {.smaller}
 
 We have $\hat{\beta}_j$ — point estimates. But **how uncertain** are they?
 
@@ -95,7 +95,7 @@ In SLR ($k=1$): $s_{\hat{\beta}_1} = \dfrac{s}{\sqrt{S_{XX}}}$, where $s = \sqrt
 
 # $t$-Tests for Individual Coefficients {background-color="#8B1538"}
 
-## The Individual Significance Test
+## The Individual Significance Test {.smaller}
 
 **Question:** Is the variable $X_j$ statistically significant — i.e. does it contribute to explaining $Y$?
 
@@ -120,13 +120,13 @@ $$t_j = \frac{\hat{\beta}_j}{s_{\hat{\beta}_j}} \;\sim\; t_{n-k-1} \quad \text{u
 | Critical value | Reject $H_0$ if $|t_j| > t_{n-k-1,\,\alpha/2}$ |
 | $p$-value | Reject $H_0$ if $p\text{-value} < \alpha$ |
 
-## Reading the R Output
+## Reading the R Output {.smaller}
 
 ```{r ttest-output, echo=TRUE}
 summary(mlr_model)
 ```
 
-## Interpreting the $t$-test Output
+## Interpreting the $t$-test Output {.smaller}
 
 From the `Coefficients` table in `summary()`:
 
@@ -240,7 +240,7 @@ $$F = \frac{\text{SSE}/k}{\text{SSR}/(n-k-1)} = \frac{\text{Explained MS}}{\text
 
 **Decision:** Reject $H_0$ if $F > F_{k,\,n-k-1,\,\alpha}$ or if $p\text{-value} < \alpha$.
 
-## $F$-Test in R
+## $F$-Test in R {.smaller}
 
 The $F$-statistic and its $p$-value appear at the **bottom** of `summary()`:
 
@@ -252,7 +252,7 @@ summary(mlr_model)
 
 The line `F-statistic: ... on k and n-k-1 DF, p-value: ...` gives the overall test.
 
-## Relationship Between $F$ and $R^2$
+## Relationship Between $F$ and $R^2$ {.smaller}
 
 In MLR, the $F$-statistic can be written as:
 
@@ -292,7 +292,7 @@ predict(mlr_model, newdata = new_obs)
 **Extrapolation warning:** predictions are only reliable within the range of the observed data. Predicting far outside the sample range (e.g. revenue = 5000 when the data only covers 100–500) is unreliable.
 :::
 
-## Prediction Intervals
+## Prediction Intervals {.smaller}
 
 A **prediction interval** accounts for two sources of uncertainty:
 
@@ -316,7 +316,7 @@ The prediction interval is **always wider** than the confidence interval for the
 
 # Validating the Classical Assumptions {background-color="#8B1538"}
 
-## Why Validation Matters
+## Why Validation Matters {.smaller}
 
 Our inference (t-tests, F-test, confidence intervals) is only valid if the classical assumptions hold.
 
@@ -343,7 +343,9 @@ plot(mlr_model)
 
 ## Residuals vs. Fitted: Checking Linearity and Homoscedasticity
 
-```{r resid-fitted, echo=FALSE, fig.height=4.0, fig.width=10}
+::: {.columns}
+::: {.column width="65%"}
+```{r resid-fitted, echo=FALSE, fig.height=5.2, fig.width=8}
 df_diag <- data.frame(
   fitted   = fitted(mlr_model),
   residuals = residuals(mlr_model)
@@ -359,17 +361,22 @@ ggplot(df_diag, aes(x = fitted, y = residuals)) +
        subtitle = "Ideal: random scatter around zero, constant spread",
        x = "Fitted values (Ŷ)", y = "Residuals (e)")
 ```
-
+:::
+::: {.column width="35%"}
 **What to look for:**
 
 - **Random scatter around zero** → linearity OK
 - **Constant vertical spread** → homoscedasticity OK
 - **Funnel or fan shape** → heteroscedasticity (problem)
 - **Curved pattern** → non-linearity (problem)
+:::
+:::
 
 ## Normality of Residuals: Q–Q Plot
 
-```{r qq-plot, echo=FALSE, fig.height=4.0, fig.width=9}
+::: {.columns}
+::: {.column width="65%"}
+```{r qq-plot, echo=FALSE, fig.height=5.2, fig.width=8}
 df_qq <- data.frame(residuals = residuals(mlr_model))
 ggplot(df_qq, aes(sample = residuals)) +
   stat_qq(color = iscal_burgundy, size = 2.5) +
@@ -381,20 +388,21 @@ ggplot(df_qq, aes(sample = residuals)) +
        x = "Theoretical quantiles (Normal distribution)",
        y = "Sample quantiles (residuals)")
 ```
-
+:::
+::: {.column width="35%"}
 **What to look for:**
 
 - **Points near the diagonal** → normality approximately satisfied
 - **S-shaped curve** → heavy tails (non-normal)
 - **Systematic departure** → consider transformations of $Y$
+:::
+:::
 
 ## Detecting Heteroscedasticity
 
 ::: {.columns}
-::: {.column width="50%"}
-**Scale-Location plot** (square root of standardised residuals vs. fitted):
-
-```{r scale-loc, echo=FALSE, fig.height=3.5, fig.width=5.5}
+::: {.column width="65%"}
+```{r scale-loc, echo=FALSE, fig.height=5.2, fig.width=8}
 df_sl <- data.frame(
   fitted = fitted(mlr_model),
   sqres  = sqrt(abs(rstandard(mlr_model)))
@@ -406,12 +414,11 @@ ggplot(df_sl, aes(x = fitted, y = sqres)) +
   theme_minimal(base_size = 12) +
   theme(panel.grid.minor = element_blank()) +
   labs(x = "Fitted values", y = expression(sqrt("|Standardised residuals|")),
-       title = "Scale-Location")
+       title = "Scale-Location",
+       subtitle = "Ideal: smooth line roughly horizontal (constant spread)")
 ```
 :::
-::: {.column width="50%"}
-**Ideal:** the smooth line is **roughly horizontal** (constant spread).
-
+::: {.column width="35%" style="font-size: 0.7em;"}
 **Problem signs:**
 
 - Rising line → variance increases with $\hat{Y}$ (funnel-right)
@@ -484,7 +491,7 @@ vif(mlr_model)
 
 Both VIF values are close to 1 → no multicollinearity problem in our example. This is expected since `revenue2` and `employees` were generated independently.
 
-## Putting It All Together: Model Validation Workflow
+## Putting It All Together: Model Validation Workflow {.smaller}
 
 ::: {.incremental}
 1. **Fit the model** with `lm()` and check `summary()` for coefficient signs, magnitudes and significance.
@@ -503,7 +510,7 @@ Validation is not a single pass — it is an **iterative dialogue** between the 
 
 # Complete R Workflow {background-color="#8B1538"}
 
-## End-to-End: From Data to Validated Model
+## End-to-End: From Data to Validated Model {.smaller}
 
 ```{r full-workflow, echo=TRUE, eval=FALSE}
 # 1. Fit the model
@@ -532,7 +539,7 @@ predict(model,
         level = 0.95)
 ```
 
-## Reading a Regression Table
+## Reading a Regression Table {.smaller}
 
 A typical regression output table (as seen in R or SPSS):
 
@@ -573,7 +580,7 @@ A typical regression output table (as seen in R or SPSS):
 
 > OLS gives us the best linear unbiased estimates — but only if the classical assumptions hold. Always validate your model before drawing conclusions.
 
-## Key Formulas at a Glance
+## Key Formulas at a Glance {.smaller}
 
 ::: {style="font-size:0.85em"}
 
